@@ -5,8 +5,8 @@ management:
   speakeasyVersion: 1.7.1
 generation:
   telemetryEnabled: false
-  sdkClassName: SDK
-  sdkFlattening: false
+  sdkClassName: gusto
+  sdkFlattening: true
 typescript:
   version: 0.1.0
   author: Speakeasy
