@@ -1,0 +1,28 @@
+import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import * as shared from "../shared";
+import { Type } from "class-transformer";
+
+
+export class GetV1CompanyFinishOnboardingPathParams extends SpeakeasyBase {
+  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+  companyUuid: string;
+}
+
+export class GetV1CompanyFinishOnboardingRequest extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  pathParams: GetV1CompanyFinishOnboardingPathParams;
+}
+
+export class GetV1CompanyFinishOnboardingResponse extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  companyOnboardingStatus?: shared.CompanyOnboardingStatus;
+
+  @SpeakeasyMetadata()
+  contentType: string;
+
+  @SpeakeasyMetadata()
+  statusCode: number;
+
+  @SpeakeasyMetadata()
+  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+}

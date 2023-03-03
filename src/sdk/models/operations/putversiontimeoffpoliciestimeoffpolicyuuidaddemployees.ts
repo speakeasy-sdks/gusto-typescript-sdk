@@ -1,0 +1,48 @@
+import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import * as shared from "../shared";
+import { Expose, Type } from "class-transformer";
+
+
+export class PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesPathParams extends SpeakeasyBase {
+  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid" })
+  timeOffPolicyUuid: string;
+}
+
+export class PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEmployees extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  @Expose({ name: "balance" })
+  balance?: string;
+
+  @SpeakeasyMetadata()
+  @Expose({ name: "uuid" })
+  uuid?: string;
+}
+
+export class PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody extends SpeakeasyBase {
+  @SpeakeasyMetadata({ elemType: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEmployees })
+  @Expose({ name: "employees" })
+  @Type(() => PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEmployees)
+  employees?: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEmployees[];
+}
+
+export class PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  pathParams: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesPathParams;
+
+  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+  request?: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody;
+}
+
+export class PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  contentType: string;
+
+  @SpeakeasyMetadata()
+  statusCode: number;
+
+  @SpeakeasyMetadata()
+  timeOffPolicy?: shared.TimeOffPolicy;
+
+  @SpeakeasyMetadata()
+  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+}
