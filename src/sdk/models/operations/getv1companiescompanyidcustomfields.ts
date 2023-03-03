@@ -1,5 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
+import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 
@@ -37,6 +38,9 @@ export class GetV1CompaniesCompanyIdCustomFieldsResponse extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   statusCode: number;
+
+  @SpeakeasyMetadata()
+  rawResponse?: AxiosResponse;
 
   @SpeakeasyMetadata()
   getV1CompaniesCompanyIdCustomFields200ApplicationJSONObject?: GetV1CompaniesCompanyIdCustomFields200ApplicationJSON;

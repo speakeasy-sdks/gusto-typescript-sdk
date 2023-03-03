@@ -1,4 +1,5 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 
@@ -28,6 +29,9 @@ export class GetV1CompaniesCompanyUuidTaxRequirementsResponse extends SpeakeasyB
 
   @SpeakeasyMetadata()
   statusCode: number;
+
+  @SpeakeasyMetadata()
+  rawResponse?: AxiosResponse;
 
   @SpeakeasyMetadata({ elemType: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON })
   getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects?: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON[];

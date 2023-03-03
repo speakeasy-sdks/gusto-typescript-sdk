@@ -50,7 +50,7 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1ContractorsContractorIdResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.DeleteV1ContractorsContractorIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -95,7 +95,7 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdContractorsResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.GetV1CompaniesCompanyIdContractorsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -142,7 +142,7 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorsContractorIdResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.GetV1ContractorsContractorIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -193,7 +193,7 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorsContractorUuidAddressResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.GetV1ContractorsContractorUuidAddressResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -275,7 +275,7 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorsContractorUuidOnboardingStatusResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.GetV1ContractorsContractorUuidOnboardingStatusResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -345,7 +345,7 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompaniesCompanyIdContractorsResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.PostV1CompaniesCompanyIdContractorsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -422,7 +422,7 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1ContractorsContractorIdResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.PutV1ContractorsContractorIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -495,7 +495,7 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1ContractorsContractorUuidAddressResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.PutV1ContractorsContractorUuidAddressResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -577,7 +577,7 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1ContractorsContractorUuidOnboardingStatusResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.PutV1ContractorsContractorUuidOnboardingStatusResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {

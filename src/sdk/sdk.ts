@@ -53,8 +53,8 @@ export type SDKProps = {
   serverUrl?: string;
 }
 
-
-export class SDK {
+/* SDK Documentation: Welcome to Gusto's Embedded Payroll API documentation!*/
+export class Gusto {
   public bankAccounts: BankAccounts;
   public companies: Companies;
   public companyBenefits: CompanyBenefits;
@@ -93,8 +93,8 @@ export class SDK {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "0.1.0";
-  private _genVersion = "1.7.1";
+  private _sdkVersion = "0.2.0";
+  private _genVersion = "1.8.0";
 
   constructor(props: SDKProps) {
     this._serverURL = props.serverUrl ?? ServerList[ServerDemo];

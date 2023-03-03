@@ -28,6 +28,7 @@ export class FederalTaxDetails {
   **/
   getV1CompaniesCompanyIdFederalTaxDetails(
     req: operations.GetV1CompaniesCompanyIdFederalTaxDetailsRequest,
+    security: operations.GetV1CompaniesCompanyIdFederalTaxDetailsSecurity,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdFederalTaxDetailsResponse> {
     if (!(req instanceof utils.SpeakeasyBase)) {
@@ -36,8 +37,10 @@ export class FederalTaxDetails {
     
     const baseURL: string = this._serverURL;
     const url: string = utils.generateURL(baseURL, "/v1/companies/{company_id}/federal_tax_details", req.pathParams);
-    
-    const client: AxiosInstance = utils.createSecurityClient(this._defaultClient!, req.security)!;
+    if (!(security instanceof utils.SpeakeasyBase)) {
+      security = new operations.GetV1CompaniesCompanyIdFederalTaxDetailsSecurity(security);
+    }
+    const client: AxiosInstance = utils.createSecurityClient(this._defaultClient!, security)!;
     
     
     const r = client.request({
@@ -50,7 +53,7 @@ export class FederalTaxDetails {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdFederalTaxDetailsResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.GetV1CompaniesCompanyIdFederalTaxDetailsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -112,7 +115,7 @@ export class FederalTaxDetails {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyIdFederalTaxDetailsResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.PutV1CompaniesCompanyIdFederalTaxDetailsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {

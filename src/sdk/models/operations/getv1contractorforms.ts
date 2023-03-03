@@ -1,4 +1,5 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 
@@ -48,6 +49,9 @@ export class GetV1ContractorFormsResponse extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   statusCode: number;
+
+  @SpeakeasyMetadata()
+  rawResponse?: AxiosResponse;
 
   @SpeakeasyMetadata({ elemType: GetV1ContractorFormsForm })
   getV1ContractorFormsFormAllOfs?: GetV1ContractorFormsForm[];

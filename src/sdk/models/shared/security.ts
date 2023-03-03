@@ -1,13 +1,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Type } from "class-transformer";
 
-
-export class SchemeAuthorization extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "security, name=Authorization" })
-  authorization: string;
-}
 
 export class Security extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "security, scheme=true;type=http;subtype=bearer" })
-  authorization: SchemeAuthorization;
+  @SpeakeasyMetadata({ data: "security, scheme=true;type=http;subtype=bearer;name=Authorization" })
+  authorization: string;
 }

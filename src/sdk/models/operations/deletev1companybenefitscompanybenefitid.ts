@@ -1,4 +1,5 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 
@@ -46,6 +47,9 @@ export class DeleteV1CompanyBenefitsCompanyBenefitIdResponse extends SpeakeasyBa
 
   @SpeakeasyMetadata()
   statusCode: number;
+
+  @SpeakeasyMetadata()
+  rawResponse?: AxiosResponse;
 
   @SpeakeasyMetadata()
   deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON;

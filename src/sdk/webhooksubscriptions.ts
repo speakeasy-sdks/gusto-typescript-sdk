@@ -58,7 +58,7 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1WebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.DeleteV1WebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -108,7 +108,7 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1WebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.GetV1WebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -165,7 +165,7 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             break;
@@ -209,7 +209,7 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1WebhookSubscriptionsResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.GetV1WebhookSubscriptionsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -275,7 +275,7 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1WebhookSubscriptionResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.PostV1WebhookSubscriptionResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -357,7 +357,7 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1VerifyWebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.PutV1VerifyWebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -436,7 +436,7 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1WebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType};
+        const res: operations.PutV1WebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {

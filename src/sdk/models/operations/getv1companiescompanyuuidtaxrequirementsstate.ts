@@ -1,5 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
+import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
 
@@ -30,6 +31,9 @@ export class GetV1CompaniesCompanyUuidTaxRequirementsStateResponse extends Speak
 
   @SpeakeasyMetadata()
   statusCode: number;
+
+  @SpeakeasyMetadata()
+  rawResponse?: AxiosResponse;
 
   @SpeakeasyMetadata()
   taxRequirementsState?: shared.TaxRequirementsState;

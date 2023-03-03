@@ -1,5 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
+import { AxiosResponse } from "axios";
 import { Expose, Transform, Type } from "class-transformer";
 
 
@@ -61,6 +62,9 @@ export class PostV1CompaniesCompanyIdContractorPaymentsResponse extends Speakeas
 
   @SpeakeasyMetadata()
   statusCode: number;
+
+  @SpeakeasyMetadata()
+  rawResponse?: AxiosResponse;
 
   @SpeakeasyMetadata()
   unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
