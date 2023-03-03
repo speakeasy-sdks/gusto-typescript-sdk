@@ -1,4 +1,13 @@
-# gusto
+<div align="center">
+    <picture>
+        <source srcset="https://user-images.githubusercontent.com/68016351/222760986-d3c3b4d7-da97-49c5-b791-e8d8cbe64a6b.png" width="500">
+    </picture>
+   <p>Gusto's people platform helps growing businesses onboard, pay, insure, and support their hardworking teams with payroll, benefits, and more.</p>
+   <a href="https://docs-stoplight.gusto.com/docs/api/YXBpOjUyMTU1MjI-gusto-api"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000000&style=for-the-badge" /></a>
+   <a href="https://github.com/speakeasy-sdks/gusto-typescript-sdk/actions"><img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/gusto-typescript-sdk/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
+  <a href="https://github.com/speakeasy-sdks/gusto-typescript-sdk/releases"><img src="https://img.shields.io/github/v/release/speakeasy-sdks/gusto-typescript-sdk?sort=semver&style=for-the-badge" /></a>
+</div>
 
 <!-- Start SDK Installation -->
 ## SDK Installation
@@ -15,6 +24,20 @@ npm add gusto
 yarn add gusto
 ```
 <!-- End SDK Installation -->
+
+## Authentication
+
+To get started, fill out a [Production Pre-Approval form](https://gusto.az1.qualtrics.com/jfe/form/SV_1Oob0rNZpUwhSoS), sign up for a [Developer Portal account](https://dev.gusto.com/accounts/sign_in) and onboard to our sandbox environment.
+
+Once you’ve created an account and completed your Organization setup, you will have access to your unique API token from the Organizations tab. This is used for provisioning new Gusto accounts.
+
+Next, create an application to obtain API credentials - or “keys” - to access our demo environment. To create an application, you will need to provide at least one(1) redirect URI. You can enter multiple redirects for a single application - please do this instead of creating multiple applications for each one. OAuth2 does not support wildcard URIs or URIs with fragments (e.g #).
+
+The application will generate a unique `client_id` and `secret` to be used for authentication.
+
+Then create a demo company so that you can explore our product and successfully connect your application to Gusto via OAuth2 to begin making calls to the API. Demo companies are automatically generated with company info, employees, and previous payrolls so you can begin testing right away. The [Authentication Example](https://docs.gusto.com/) has everything you need to get started.
+
+Once you have your API Token, `client_id`, `secret`, and a demo company, you’re ready to begin building your integration. Check out this [short video tutorial](https://www.loom.com/share/b374109a4f98499195e49f1e52330bc8) for an introduction on testing the Gusto API (in demo).
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
