@@ -48,13 +48,11 @@ import {
 } from "gusto/dist/sdk/models/operations";
 
 import { AxiosError } from "axios";
-import { SDK } from "gusto";
+import { Gusto } from "gusto";
 
-const sdk = new SDK({
+const sdk = new Gusto({
   security: {
-    authorization: {
-      authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
-    },
+    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
   }
 });
     

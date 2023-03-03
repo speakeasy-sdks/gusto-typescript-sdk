@@ -1,5 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
+import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 
@@ -108,6 +109,9 @@ export class PutV1EmployeesEmployeeIdStateTaxesResponse extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   statusCode: number;
+
+  @SpeakeasyMetadata()
+  rawResponse?: AxiosResponse;
 
   @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON })
   putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects?: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON[];

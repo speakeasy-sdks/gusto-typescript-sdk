@@ -1,5 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
+import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 export enum PostV1WebhookSubscriptionRequestBodySubscriptionTypesEnum {
@@ -40,6 +41,9 @@ export class PostV1WebhookSubscriptionResponse extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   statusCode: number;
+
+  @SpeakeasyMetadata()
+  rawResponse?: AxiosResponse;
 
   @SpeakeasyMetadata()
   unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;

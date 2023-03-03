@@ -1,4 +1,5 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
 
@@ -21,6 +22,9 @@ export class PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse extends Spea
 
   @SpeakeasyMetadata()
   statusCode: number;
+
+  @SpeakeasyMetadata()
+  rawResponse?: AxiosResponse;
 
   @SpeakeasyMetadata()
   putV1CompaniesCompanyIdPayrollsPayrollIdSubmit422ApplicationJSONOneOf?: any;
