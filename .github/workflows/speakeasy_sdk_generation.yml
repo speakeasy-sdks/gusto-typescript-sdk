@@ -21,6 +21,8 @@ jobs:
       languages: |-
         - typescript
       publish_typescript: true
+      mode: pr
+      create_release: true
     secrets:
       speakeasy_api_key: ${{ secrets.SPEAKEASY_PROD_API_KEY }}
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
