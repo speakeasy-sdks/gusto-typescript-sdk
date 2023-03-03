@@ -1,6 +1,6 @@
 <div align="center">
     <picture>
-        <source srcset="https://user-images.githubusercontent.com/68016351/222760986-d3c3b4d7-da97-49c5-b791-e8d8cbe64a6b.png" width="500">
+        <source srcset="https://user-images.githubusercontent.com/68016351/222762994-30761ef1-db74-463e-b3f9-a4a1c9f50236.svg" width="500">
     </picture>
    <p>Gusto's people platform helps growing businesses onboard, pay, insure, and support their hardworking teams with payroll, benefits, and more.</p>
    <a href="https://docs-stoplight.gusto.com/docs/api/YXBpOjUyMTU1MjI-gusto-api"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000000&style=for-the-badge" /></a>
