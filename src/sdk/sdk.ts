@@ -93,8 +93,8 @@ export class Gusto {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "0.2.0";
-  private _genVersion = "1.8.0";
+  private _sdkVersion = "0.2.1";
+  private _genVersion = "1.8.2";
 
   constructor(props: SDKProps) {
     this._serverURL = props.serverUrl ?? ServerList[ServerDemo];
