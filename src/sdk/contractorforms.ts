@@ -152,7 +152,7 @@ export class ContractorForms {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.getV1ContractorFormsFormAllOfs = httpRes?.data;
+              res.getV1ContractorFormsFormAnies = httpRes?.data;
             }
             break;
           case httpRes?.status == 404:
