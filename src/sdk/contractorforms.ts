@@ -50,14 +50,18 @@ export class ContractorForms {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorFormResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ContractorFormResponse =
+            new operations.GetV1ContractorFormResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.form = plainToInstance(
+              res.form = utils.deserializeJSONResponse(
+                httpRes?.data,
                 operations.GetV1ContractorFormForm,
-                httpRes?.data as operations.GetV1ContractorFormForm,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -99,14 +103,18 @@ export class ContractorForms {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorFormPdfResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ContractorFormPdfResponse =
+            new operations.GetV1ContractorFormPdfResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.formPdf = plainToInstance(
+              res.formPdf = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.FormPdf,
-                httpRes?.data as shared.FormPdf,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -148,11 +156,22 @@ export class ContractorForms {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorFormsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ContractorFormsResponse =
+            new operations.GetV1ContractorFormsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.getV1ContractorFormsFormAnies = httpRes?.data;
+              res.getV1ContractorFormsFormAnies = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.getV1ContractorFormsFormAnies = utils.deserializeJSONResponse(
+                httpRes?.data,
+                operations.GetV1ContractorFormsForm,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -213,14 +232,18 @@ export class ContractorForms {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1SandboxGenerate1099Response = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1SandboxGenerate1099Response =
+            new operations.PostV1SandboxGenerate1099Response({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.form = plainToInstance(
+              res.form = utils.deserializeJSONResponse(
+                httpRes?.data,
                 operations.PostV1SandboxGenerate1099Form,
-                httpRes?.data as operations.PostV1SandboxGenerate1099Form,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -228,10 +251,9 @@ export class ContractorForms {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

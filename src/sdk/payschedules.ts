@@ -55,11 +55,22 @@ export class PaySchedules {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdPayPeriodsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdPayPeriodsResponse =
+            new operations.GetV1CompaniesCompanyIdPayPeriodsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payPeriods = httpRes?.data;
+              res.payPeriods = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.payPeriods = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.PayPeriod,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -103,11 +114,22 @@ export class PaySchedules {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdPaySchedulesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdPaySchedulesResponse =
+            new operations.GetV1CompaniesCompanyIdPaySchedulesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.paySchedules = httpRes?.data;
+              res.paySchedules = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.paySchedules = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.PaySchedule,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -150,14 +172,18 @@ export class PaySchedules {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse =
+            new operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.paySchedule = plainToInstance(
+              res.paySchedule = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.PaySchedule,
-                httpRes?.data as shared.PaySchedule,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -216,14 +242,18 @@ export class PaySchedules {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompaniesCompanyIdPaySchedulesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1CompaniesCompanyIdPaySchedulesResponse =
+            new operations.PostV1CompaniesCompanyIdPaySchedulesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.paySchedule = plainToInstance(
+              res.paySchedule = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.PaySchedule,
-                httpRes?.data as shared.PaySchedule,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -231,10 +261,9 @@ export class PaySchedules {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -287,14 +316,18 @@ export class PaySchedules {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse =
+            new operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.paySchedule = plainToInstance(
+              res.paySchedule = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.PaySchedule,
-                httpRes?.data as shared.PaySchedule,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -302,10 +335,9 @@ export class PaySchedules {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

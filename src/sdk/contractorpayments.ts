@@ -52,7 +52,12 @@ export class ContractorPayments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse =
+            new operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -96,14 +101,18 @@ export class ContractorPayments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse =
+            new operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorPayment = plainToInstance(
+              res.contractorPayment = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ContractorPayment,
-                httpRes?.data as shared.ContractorPayment,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -148,7 +157,12 @@ export class ContractorPayments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdContractorPaymentsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdContractorPaymentsResponse =
+            new operations.GetV1CompaniesCompanyIdContractorPaymentsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -202,14 +216,18 @@ export class ContractorPayments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse =
+            new operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorPaymentReceipt = plainToInstance(
+              res.contractorPaymentReceipt = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ContractorPaymentReceipt,
-                httpRes?.data as shared.ContractorPaymentReceipt,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -266,14 +284,18 @@ export class ContractorPayments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompaniesCompanyIdContractorPaymentsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1CompaniesCompanyIdContractorPaymentsResponse =
+            new operations.PostV1CompaniesCompanyIdContractorPaymentsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorPayment = plainToInstance(
+              res.contractorPayment = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ContractorPayment,
-                httpRes?.data as shared.ContractorPayment,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -281,10 +303,9 @@ export class ContractorPayments {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

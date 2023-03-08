@@ -53,11 +53,22 @@ export class Garnishments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1EmployeesEmployeeIdGarnishmentsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1EmployeesEmployeeIdGarnishmentsResponse =
+            new operations.GetV1EmployeesEmployeeIdGarnishmentsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.garnishments = httpRes?.data;
+              res.garnishments = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.garnishments = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Garnishment,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -100,14 +111,18 @@ export class Garnishments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1GarnishmentsGarnishmentIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1GarnishmentsGarnishmentIdResponse =
+            new operations.GetV1GarnishmentsGarnishmentIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.garnishment = plainToInstance(
+              res.garnishment = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Garnishment,
-                httpRes?.data as shared.Garnishment,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -164,14 +179,18 @@ export class Garnishments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1EmployeesEmployeeIdGarnishmentsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1EmployeesEmployeeIdGarnishmentsResponse =
+            new operations.PostV1EmployeesEmployeeIdGarnishmentsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.garnishment = plainToInstance(
+              res.garnishment = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Garnishment,
-                httpRes?.data as shared.Garnishment,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -179,10 +198,9 @@ export class Garnishments {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -237,14 +255,18 @@ export class Garnishments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1GarnishmentsGarnishmentIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1GarnishmentsGarnishmentIdResponse =
+            new operations.PutV1GarnishmentsGarnishmentIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.garnishment = plainToInstance(
+              res.garnishment = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Garnishment,
-                httpRes?.data as shared.Garnishment,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -252,10 +274,9 @@ export class Garnishments {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

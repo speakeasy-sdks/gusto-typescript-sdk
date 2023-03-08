@@ -50,7 +50,12 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1EmployeeResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1EmployeeResponse =
+            new operations.DeleteV1EmployeeResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -96,14 +101,18 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1EmployeesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1EmployeesResponse =
+            new operations.GetV1EmployeesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employee = plainToInstance(
+              res.employee = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Employee,
-                httpRes?.data as shared.Employee,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -148,14 +157,18 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1EmployeesEmployeeIdCustomFieldsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1EmployeesEmployeeIdCustomFieldsResponse =
+            new operations.GetV1EmployeesEmployeeIdCustomFieldsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.getV1EmployeesEmployeeIdCustomFields200ApplicationJSONObject = plainToInstance(
+              res.getV1EmployeesEmployeeIdCustomFields200ApplicationJSONObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 operations.GetV1EmployeesEmployeeIdCustomFields200ApplicationJSON,
-                httpRes?.data as operations.GetV1EmployeesEmployeeIdCustomFields200ApplicationJSON,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -199,14 +212,18 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1EmployeesEmployeeIdHomeAddressResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1EmployeesEmployeeIdHomeAddressResponse =
+            new operations.GetV1EmployeesEmployeeIdHomeAddressResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeeAddress = plainToInstance(
+              res.employeeAddress = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EmployeeAddress,
-                httpRes?.data as shared.EmployeeAddress,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -285,14 +302,18 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1EmployeesEmployeeIdOnboardingStatusResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1EmployeesEmployeeIdOnboardingStatusResponse =
+            new operations.GetV1EmployeesEmployeeIdOnboardingStatusResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeeOnboardingStatus = plainToInstance(
+              res.employeeOnboardingStatus = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EmployeeOnboardingStatus,
-                httpRes?.data as shared.EmployeeOnboardingStatus,
-                { excludeExtraneousValues: true }
               );
             }
             if (utils.matchContentType(contentType, `application/xml`)) {
@@ -343,14 +364,18 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetVersionEmployeesTimeOffActivitiesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetVersionEmployeesTimeOffActivitiesResponse =
+            new operations.GetVersionEmployeesTimeOffActivitiesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.timeOffActivity = plainToInstance(
+              res.timeOffActivity = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.TimeOffActivity,
-                httpRes?.data as shared.TimeOffActivity,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -407,14 +432,18 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1EmployeesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1EmployeesResponse =
+            new operations.PostV1EmployeesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employee = plainToInstance(
+              res.employee = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Employee,
-                httpRes?.data as shared.Employee,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -422,10 +451,9 @@ export class Employees {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -467,14 +495,18 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1EmployeeFinishOnboardingResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1EmployeeFinishOnboardingResponse =
+            new operations.PutV1EmployeeFinishOnboardingResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employee = plainToInstance(
+              res.employee = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Employee,
-                httpRes?.data as shared.Employee,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -529,14 +561,18 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1EmployeesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1EmployeesResponse =
+            new operations.PutV1EmployeesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employee = plainToInstance(
+              res.employee = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Employee,
-                httpRes?.data as shared.Employee,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -544,10 +580,9 @@ export class Employees {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -602,14 +637,18 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1EmployeesEmployeeIdHomeAddressResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1EmployeesEmployeeIdHomeAddressResponse =
+            new operations.PutV1EmployeesEmployeeIdHomeAddressResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeeAddress = plainToInstance(
+              res.employeeAddress = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EmployeeAddress,
-                httpRes?.data as shared.EmployeeAddress,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -617,10 +656,9 @@ export class Employees {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -684,14 +722,18 @@ export class Employees {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1EmployeesEmployeeIdOnboardingStatusResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1EmployeesEmployeeIdOnboardingStatusResponse =
+            new operations.PutV1EmployeesEmployeeIdOnboardingStatusResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeeOnboardingStatus = plainToInstance(
+              res.employeeOnboardingStatus = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EmployeeOnboardingStatus,
-                httpRes?.data as shared.EmployeeOnboardingStatus,
-                { excludeExtraneousValues: true }
               );
             }
             if (utils.matchContentType(contentType, `application/xml`)) {
@@ -705,10 +747,9 @@ export class Employees {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

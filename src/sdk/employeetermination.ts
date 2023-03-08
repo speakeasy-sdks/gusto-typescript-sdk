@@ -50,7 +50,12 @@ export class EmployeeTermination {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1EmployeesEmployeeIdTerminationsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1EmployeesEmployeeIdTerminationsResponse =
+            new operations.DeleteV1EmployeesEmployeeIdTerminationsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -94,11 +99,22 @@ export class EmployeeTermination {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse =
+            new operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessedTerminationPayPeriods = httpRes?.data;
+              res.unprocessedTerminationPayPeriods = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.unprocessedTerminationPayPeriods = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.UnprocessedTerminationPayPeriod,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -143,11 +159,22 @@ export class EmployeeTermination {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1EmployeesEmployeeIdTerminationsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1EmployeesEmployeeIdTerminationsResponse =
+            new operations.GetV1EmployeesEmployeeIdTerminationsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.terminations = httpRes?.data;
+              res.terminations = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.terminations = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Termination,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -205,14 +232,18 @@ export class EmployeeTermination {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1EmployeesEmployeeIdTerminationsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1EmployeesEmployeeIdTerminationsResponse =
+            new operations.PostV1EmployeesEmployeeIdTerminationsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.termination = plainToInstance(
+              res.termination = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Termination,
-                httpRes?.data as shared.Termination,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -220,10 +251,9 @@ export class EmployeeTermination {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -280,14 +310,18 @@ export class EmployeeTermination {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1TerminationsEmployeeIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1TerminationsEmployeeIdResponse =
+            new operations.PutV1TerminationsEmployeeIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.termination = plainToInstance(
+              res.termination = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Termination,
-                httpRes?.data as shared.Termination,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -295,10 +329,9 @@ export class EmployeeTermination {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

@@ -50,7 +50,12 @@ export class Signatories {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse =
+            new operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -92,11 +97,22 @@ export class Signatories {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyUuidSignatoriesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyUuidSignatoriesResponse =
+            new operations.GetV1CompaniesCompanyUuidSignatoriesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.signatories = httpRes?.data;
+              res.signatories = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.signatories = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Signatory,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -150,14 +166,18 @@ export class Signatories {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompaniesCompanyUuidSignatoriesInviteResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1CompaniesCompanyUuidSignatoriesInviteResponse =
+            new operations.PostV1CompaniesCompanyUuidSignatoriesInviteResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.signatory = plainToInstance(
+              res.signatory = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Signatory,
-                httpRes?.data as shared.Signatory,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -165,10 +185,9 @@ export class Signatories {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -221,14 +240,18 @@ export class Signatories {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompanySignatoriesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1CompanySignatoriesResponse =
+            new operations.PostV1CompanySignatoriesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.signatory = plainToInstance(
+              res.signatory = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Signatory,
-                httpRes?.data as shared.Signatory,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -236,10 +259,9 @@ export class Signatories {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -292,14 +314,18 @@ export class Signatories {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse =
+            new operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.signatory = plainToInstance(
+              res.signatory = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Signatory,
-                httpRes?.data as shared.Signatory,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -307,10 +333,9 @@ export class Signatories {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

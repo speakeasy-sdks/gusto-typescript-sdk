@@ -50,14 +50,18 @@ export class EmployeeTaxSetup {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1EmployeesEmployeeIdFederalTaxesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1EmployeesEmployeeIdFederalTaxesResponse =
+            new operations.GetV1EmployeesEmployeeIdFederalTaxesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeeFederalTax = plainToInstance(
+              res.employeeFederalTax = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EmployeeFederalTax,
-                httpRes?.data as shared.EmployeeFederalTax,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -111,11 +115,22 @@ export class EmployeeTaxSetup {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1EmployeesEmployeeIdStateTaxesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1EmployeesEmployeeIdStateTaxesResponse =
+            new operations.GetV1EmployeesEmployeeIdStateTaxesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeeStateTaxes = httpRes?.data;
+              res.employeeStateTaxes = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.employeeStateTaxes = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.EmployeeStateTax,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -169,14 +184,18 @@ export class EmployeeTaxSetup {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1EmployeesEmployeeIdFederalTaxesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1EmployeesEmployeeIdFederalTaxesResponse =
+            new operations.PutV1EmployeesEmployeeIdFederalTaxesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeeFederalTax = plainToInstance(
+              res.employeeFederalTax = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EmployeeFederalTax,
-                httpRes?.data as shared.EmployeeFederalTax,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -184,10 +203,9 @@ export class EmployeeTaxSetup {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -242,18 +260,35 @@ export class EmployeeTaxSetup {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1EmployeesEmployeeIdStateTaxesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1EmployeesEmployeeIdStateTaxesResponse =
+            new operations.PutV1EmployeesEmployeeIdStateTaxesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeeStateTaxes = httpRes?.data;
+              res.employeeStateTaxes = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.employeeStateTaxes = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.EmployeeStateTax,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects = httpRes?.data;
+              res.putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects = utils.deserializeJSONResponse(
+                httpRes?.data,
+                operations.PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON,
+                resFieldDepth
+              );
             }
             break;
         }

@@ -51,11 +51,22 @@ export class TaxLiabilities {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1TaxLiabilitiesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1TaxLiabilitiesResponse =
+            new operations.GetV1TaxLiabilitiesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.taxLiabilitiesSelections = httpRes?.data;
+              res.taxLiabilitiesSelections = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.taxLiabilitiesSelections = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.TaxLiabilitiesSelections,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -110,21 +121,31 @@ export class TaxLiabilities {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1TaxLiabilitiesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1TaxLiabilitiesResponse =
+            new operations.PutV1TaxLiabilitiesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.taxLiabilitiesSelections = httpRes?.data;
+              res.taxLiabilitiesSelections = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.taxLiabilitiesSelections = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.TaxLiabilitiesSelections,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -165,7 +186,12 @@ export class TaxLiabilities {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1TaxLiabilitiesFinishResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1TaxLiabilitiesFinishResponse =
+            new operations.PutV1TaxLiabilitiesFinishResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 202:
             break;
@@ -173,10 +199,9 @@ export class TaxLiabilities {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

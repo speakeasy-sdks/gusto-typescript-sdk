@@ -50,11 +50,22 @@ export class TaxRequirements {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse =
+            new operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects = httpRes?.data;
+              res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects = utils.deserializeJSONResponse(
+                httpRes?.data,
+                operations.GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -136,14 +147,18 @@ export class TaxRequirements {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse =
+            new operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.taxRequirementsState = plainToInstance(
+              res.taxRequirementsState = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.TaxRequirementsState,
-                httpRes?.data as shared.TaxRequirementsState,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -198,7 +213,12 @@ export class TaxRequirements {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse =
+            new operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             break;
@@ -206,10 +226,9 @@ export class TaxRequirements {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

@@ -50,14 +50,18 @@ export class CompanyForms {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompanyFormResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompanyFormResponse =
+            new operations.GetV1CompanyFormResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.form = plainToInstance(
+              res.form = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Form,
-                httpRes?.data as shared.Form,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -99,14 +103,18 @@ export class CompanyForms {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompanyFormPdfResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompanyFormPdfResponse =
+            new operations.GetV1CompanyFormPdfResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.formPdf = plainToInstance(
+              res.formPdf = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.FormPdf,
-                httpRes?.data as shared.FormPdf,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -148,11 +156,22 @@ export class CompanyForms {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompanyFormsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompanyFormsResponse =
+            new operations.GetV1CompanyFormsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.forms = httpRes?.data;
+              res.forms = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.forms = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Form,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -206,14 +225,18 @@ export class CompanyForms {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompanyFormSignResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompanyFormSignResponse =
+            new operations.PutV1CompanyFormSignResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.form = plainToInstance(
+              res.form = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Form,
-                httpRes?.data as shared.Form,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -221,10 +244,9 @@ export class CompanyForms {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

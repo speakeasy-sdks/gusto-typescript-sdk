@@ -53,7 +53,12 @@ export class CompanyBenefits {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1CompanyBenefitsCompanyBenefitIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1CompanyBenefitsCompanyBenefitIdResponse =
+            new operations.DeleteV1CompanyBenefitsCompanyBenefitIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -61,10 +66,9 @@ export class CompanyBenefits {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject = plainToInstance(
+              res.deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 operations.DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON,
-                httpRes?.data as operations.DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -103,11 +107,22 @@ export class CompanyBenefits {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1BenefitsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1BenefitsResponse =
+            new operations.GetV1BenefitsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.supportedBenefits = httpRes?.data;
+              res.supportedBenefits = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.supportedBenefits = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.SupportedBenefit,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -152,14 +167,18 @@ export class CompanyBenefits {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1BenefitsBenefitIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1BenefitsBenefitIdResponse =
+            new operations.GetV1BenefitsBenefitIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.supportedBenefit = plainToInstance(
+              res.supportedBenefit = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.SupportedBenefit,
-                httpRes?.data as shared.SupportedBenefit,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -203,14 +222,18 @@ export class CompanyBenefits {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1BenefitsBenefitsIdRequirementsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1BenefitsBenefitsIdRequirementsResponse =
+            new operations.GetV1BenefitsBenefitsIdRequirementsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.benefitTypeRequirements = plainToInstance(
+              res.benefitTypeRequirements = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.BenefitTypeRequirements,
-                httpRes?.data as shared.BenefitTypeRequirements,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -255,14 +278,18 @@ export class CompanyBenefits {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1BenefitsCompanyBenefitIdSummaryResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1BenefitsCompanyBenefitIdSummaryResponse =
+            new operations.GetV1BenefitsCompanyBenefitIdSummaryResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.benefitSummary = plainToInstance(
+              res.benefitSummary = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.BenefitSummary,
-                httpRes?.data as shared.BenefitSummary,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -309,11 +336,22 @@ export class CompanyBenefits {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdCompanyBenefitsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdCompanyBenefitsResponse =
+            new operations.GetV1CompaniesCompanyIdCompanyBenefitsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.companyBenefits = httpRes?.data;
+              res.companyBenefits = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.companyBenefits = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.CompanyBenefit,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -361,14 +399,18 @@ export class CompanyBenefits {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompanyBenefitsCompanyBenefitIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompanyBenefitsCompanyBenefitIdResponse =
+            new operations.GetV1CompanyBenefitsCompanyBenefitIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.companyBenefit = plainToInstance(
+              res.companyBenefit = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.CompanyBenefit,
-                httpRes?.data as shared.CompanyBenefit,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -427,14 +469,18 @@ export class CompanyBenefits {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompaniesCompanyIdCompanyBenefitsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1CompaniesCompanyIdCompanyBenefitsResponse =
+            new operations.PostV1CompaniesCompanyIdCompanyBenefitsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.companyBenefit = plainToInstance(
+              res.companyBenefit = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.CompanyBenefit,
-                httpRes?.data as shared.CompanyBenefit,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -442,10 +488,9 @@ export class CompanyBenefits {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -502,14 +547,18 @@ export class CompanyBenefits {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompanyBenefitsCompanyBenefitIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompanyBenefitsCompanyBenefitIdResponse =
+            new operations.PutV1CompanyBenefitsCompanyBenefitIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.companyBenefit = plainToInstance(
+              res.companyBenefit = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.CompanyBenefit,
-                httpRes?.data as shared.CompanyBenefit,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -517,10 +566,9 @@ export class CompanyBenefits {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

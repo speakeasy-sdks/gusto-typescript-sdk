@@ -50,11 +50,22 @@ export class ContractorPaymentMethod {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorsContractorUuidBankAccountsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ContractorsContractorUuidBankAccountsResponse =
+            new operations.GetV1ContractorsContractorUuidBankAccountsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorBankAccounts = httpRes?.data;
+              res.contractorBankAccounts = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.contractorBankAccounts = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.ContractorBankAccount,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -95,14 +106,18 @@ export class ContractorPaymentMethod {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorsContractorUuidPaymentMethodResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ContractorsContractorUuidPaymentMethodResponse =
+            new operations.GetV1ContractorsContractorUuidPaymentMethodResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorPaymentMethod = plainToInstance(
+              res.contractorPaymentMethod = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ContractorPaymentMethod,
-                httpRes?.data as shared.ContractorPaymentMethod,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -160,14 +175,18 @@ export class ContractorPaymentMethod {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1ContractorsContractorUuidBankAccountsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1ContractorsContractorUuidBankAccountsResponse =
+            new operations.PostV1ContractorsContractorUuidBankAccountsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorBankAccount = plainToInstance(
+              res.contractorBankAccount = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ContractorBankAccount,
-                httpRes?.data as shared.ContractorBankAccount,
-                { excludeExtraneousValues: true }
               );
             }
             if (utils.matchContentType(contentType, `application/xml`)) {
@@ -181,10 +200,9 @@ export class ContractorPaymentMethod {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -237,14 +255,18 @@ export class ContractorPaymentMethod {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1ContractorsContractorIdPaymentMethodResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1ContractorsContractorIdPaymentMethodResponse =
+            new operations.PutV1ContractorsContractorIdPaymentMethodResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorPaymentMethod = plainToInstance(
+              res.contractorPaymentMethod = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ContractorPaymentMethod,
-                httpRes?.data as shared.ContractorPaymentMethod,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -252,10 +274,9 @@ export class ContractorPaymentMethod {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

@@ -53,7 +53,12 @@ export class Departments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteDepartmentResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteDepartmentResponse =
+            new operations.DeleteDepartmentResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -61,10 +66,9 @@ export class Departments {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -106,11 +110,22 @@ export class Departments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetCompaniesDepartmentsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetCompaniesDepartmentsResponse =
+            new operations.GetCompaniesDepartmentsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.departments = httpRes?.data;
+              res.departments = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.departments = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Department,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -154,14 +169,18 @@ export class Departments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetDepartmentResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetDepartmentResponse =
+            new operations.GetDepartmentResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.department = plainToInstance(
+              res.department = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Department,
-                httpRes?.data as shared.Department,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -218,14 +237,18 @@ export class Departments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostDepartmentsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostDepartmentsResponse =
+            new operations.PostDepartmentsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.department = plainToInstance(
+              res.department = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Department,
-                httpRes?.data as shared.Department,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -233,10 +256,9 @@ export class Departments {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -292,14 +314,18 @@ export class Departments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutAddPeopleToDepartmentResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutAddPeopleToDepartmentResponse =
+            new operations.PutAddPeopleToDepartmentResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.department = plainToInstance(
+              res.department = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Department,
-                httpRes?.data as shared.Department,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -356,14 +382,18 @@ export class Departments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutDepartmentsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutDepartmentsResponse =
+            new operations.PutDepartmentsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.department = plainToInstance(
+              res.department = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Department,
-                httpRes?.data as shared.Department,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -371,10 +401,9 @@ export class Departments {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -430,14 +459,18 @@ export class Departments {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutRemovePeopleFromDepartmentResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutRemovePeopleFromDepartmentResponse =
+            new operations.PutRemovePeopleFromDepartmentResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.department = plainToInstance(
+              res.department = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Department,
-                httpRes?.data as shared.Department,
-                { excludeExtraneousValues: true }
               );
             }
             break;

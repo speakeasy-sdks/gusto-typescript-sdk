@@ -50,7 +50,12 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1ContractorsContractorIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1ContractorsContractorIdResponse =
+            new operations.DeleteV1ContractorsContractorIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -95,11 +100,22 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdContractorsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdContractorsResponse =
+            new operations.GetV1CompaniesCompanyIdContractorsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractors = httpRes?.data;
+              res.contractors = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.contractors = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Contractor,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -142,14 +158,18 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorsContractorIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ContractorsContractorIdResponse =
+            new operations.GetV1ContractorsContractorIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractor = plainToInstance(
+              res.contractor = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Contractor,
-                httpRes?.data as shared.Contractor,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -193,14 +213,18 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorsContractorUuidAddressResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ContractorsContractorUuidAddressResponse =
+            new operations.GetV1ContractorsContractorUuidAddressResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorAddress = plainToInstance(
+              res.contractorAddress = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ContractorAddress1,
-                httpRes?.data as shared.ContractorAddress1,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -275,14 +299,18 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ContractorsContractorUuidOnboardingStatusResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ContractorsContractorUuidOnboardingStatusResponse =
+            new operations.GetV1ContractorsContractorUuidOnboardingStatusResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorOnboardingStatus = plainToInstance(
+              res.contractorOnboardingStatus = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ContractorOnboardingStatus,
-                httpRes?.data as shared.ContractorOnboardingStatus,
-                { excludeExtraneousValues: true }
               );
             }
             if (utils.matchContentType(contentType, `application/xml`)) {
@@ -345,14 +373,18 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompaniesCompanyIdContractorsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1CompaniesCompanyIdContractorsResponse =
+            new operations.PostV1CompaniesCompanyIdContractorsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractor = plainToInstance(
+              res.contractor = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Contractor,
-                httpRes?.data as shared.Contractor,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -360,10 +392,9 @@ export class Contractors {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -422,14 +453,18 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1ContractorsContractorIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1ContractorsContractorIdResponse =
+            new operations.PutV1ContractorsContractorIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractor = plainToInstance(
+              res.contractor = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Contractor,
-                httpRes?.data as shared.Contractor,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -437,10 +472,9 @@ export class Contractors {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -495,14 +529,18 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1ContractorsContractorUuidAddressResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1ContractorsContractorUuidAddressResponse =
+            new operations.PutV1ContractorsContractorUuidAddressResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorAddress = plainToInstance(
+              res.contractorAddress = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ContractorAddress1,
-                httpRes?.data as shared.ContractorAddress1,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -510,10 +548,9 @@ export class Contractors {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -577,14 +614,18 @@ export class Contractors {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1ContractorsContractorUuidOnboardingStatusResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1ContractorsContractorUuidOnboardingStatusResponse =
+            new operations.PutV1ContractorsContractorUuidOnboardingStatusResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.contractorOnboardingStatus = plainToInstance(
+              res.contractorOnboardingStatus = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ContractorOnboardingStatus,
-                httpRes?.data as shared.ContractorOnboardingStatus,
-                { excludeExtraneousValues: true }
               );
             }
             if (utils.matchContentType(contentType, `application/xml`)) {
@@ -598,10 +639,9 @@ export class Contractors {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

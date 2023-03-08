@@ -50,7 +50,12 @@ export class EmployeePaymentMethod {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse =
+            new operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -92,14 +97,18 @@ export class EmployeePaymentMethod {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1EmployeesEmployeeIdPaymentMethodResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1EmployeesEmployeeIdPaymentMethodResponse =
+            new operations.GetV1EmployeesEmployeeIdPaymentMethodResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeePaymentMethod = plainToInstance(
+              res.employeePaymentMethod = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EmployeePaymentMethod,
-                httpRes?.data as shared.EmployeePaymentMethod,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -154,14 +163,18 @@ export class EmployeePaymentMethod {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1EmployeesEmployeeIdBankAccountsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1EmployeesEmployeeIdBankAccountsResponse =
+            new operations.PostV1EmployeesEmployeeIdBankAccountsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeeBankAccount = plainToInstance(
+              res.employeeBankAccount = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EmployeeBankAccount,
-                httpRes?.data as shared.EmployeeBankAccount,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -169,10 +182,9 @@ export class EmployeePaymentMethod {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -225,14 +237,18 @@ export class EmployeePaymentMethod {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1EmployeesEmployeeIdPaymentMethodResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1EmployeesEmployeeIdPaymentMethodResponse =
+            new operations.PutV1EmployeesEmployeeIdPaymentMethodResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.employeePaymentMethod = plainToInstance(
+              res.employeePaymentMethod = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EmployeePaymentMethod,
-                httpRes?.data as shared.EmployeePaymentMethod,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -240,10 +256,9 @@ export class EmployeePaymentMethod {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

@@ -53,14 +53,18 @@ export class FederalTaxDetails {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdFederalTaxDetailsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdFederalTaxDetailsResponse =
+            new operations.GetV1CompaniesCompanyIdFederalTaxDetailsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.federalTaxDetails = plainToInstance(
+              res.federalTaxDetails = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.FederalTaxDetails,
-                httpRes?.data as shared.FederalTaxDetails,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -115,14 +119,18 @@ export class FederalTaxDetails {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyIdFederalTaxDetailsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompaniesCompanyIdFederalTaxDetailsResponse =
+            new operations.PutV1CompaniesCompanyIdFederalTaxDetailsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.federalTaxDetails = plainToInstance(
+              res.federalTaxDetails = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.FederalTaxDetails,
-                httpRes?.data as shared.FederalTaxDetails,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -130,10 +138,9 @@ export class FederalTaxDetails {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

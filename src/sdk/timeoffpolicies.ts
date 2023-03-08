@@ -51,11 +51,22 @@ export class TimeOffPolicies {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse =
+            new operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.timeOffPolicies = httpRes?.data;
+              res.timeOffPolicies = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.timeOffPolicies = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.TimeOffPolicy,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -97,14 +108,18 @@ export class TimeOffPolicies {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse =
+            new operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.timeOffPolicy = plainToInstance(
+              res.timeOffPolicy = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.TimeOffPolicy,
-                httpRes?.data as shared.TimeOffPolicy,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -160,14 +175,18 @@ export class TimeOffPolicies {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse =
+            new operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.timeOffPolicy = plainToInstance(
+              res.timeOffPolicy = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.TimeOffPolicy,
-                httpRes?.data as shared.TimeOffPolicy,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -175,10 +194,9 @@ export class TimeOffPolicies {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -239,19 +257,29 @@ export class TimeOffPolicies {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse =
+            new operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.accruingTimeOffHours = httpRes?.data;
+              res.accruingTimeOffHours = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.accruingTimeOffHours = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.AccruingTimeOffHour,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -305,14 +333,18 @@ export class TimeOffPolicies {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse =
+            new operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.timeOffPolicy = plainToInstance(
+              res.timeOffPolicy = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.TimeOffPolicy,
-                httpRes?.data as shared.TimeOffPolicy,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -320,10 +352,9 @@ export class TimeOffPolicies {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -363,14 +394,18 @@ export class TimeOffPolicies {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse =
+            new operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.timeOffPolicy = plainToInstance(
+              res.timeOffPolicy = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.TimeOffPolicy,
-                httpRes?.data as shared.TimeOffPolicy,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -378,10 +413,9 @@ export class TimeOffPolicies {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -435,14 +469,18 @@ export class TimeOffPolicies {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse =
+            new operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.timeOffPolicy = plainToInstance(
+              res.timeOffPolicy = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.TimeOffPolicy,
-                httpRes?.data as shared.TimeOffPolicy,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -450,10 +488,9 @@ export class TimeOffPolicies {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -507,14 +544,18 @@ export class TimeOffPolicies {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse =
+            new operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.timeOffPolicy = plainToInstance(
+              res.timeOffPolicy = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.TimeOffPolicy,
-                httpRes?.data as shared.TimeOffPolicy,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -522,10 +563,9 @@ export class TimeOffPolicies {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -579,14 +619,18 @@ export class TimeOffPolicies {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse =
+            new operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.timeOffPolicy = plainToInstance(
+              res.timeOffPolicy = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.TimeOffPolicy,
-                httpRes?.data as shared.TimeOffPolicy,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -594,10 +638,9 @@ export class TimeOffPolicies {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
