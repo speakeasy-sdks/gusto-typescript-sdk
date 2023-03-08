@@ -53,7 +53,7 @@ export class FederalTaxDetails {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdFederalTaxDetailsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
+        const res: operations.GetV1CompaniesCompanyIdFederalTaxDetailsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -115,7 +115,7 @@ export class FederalTaxDetails {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyIdFederalTaxDetailsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
+        const res: operations.PutV1CompaniesCompanyIdFederalTaxDetailsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {

@@ -51,7 +51,7 @@ export class TaxLiabilities {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1TaxLiabilitiesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
+        const res: operations.GetV1TaxLiabilitiesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -110,7 +110,7 @@ export class TaxLiabilities {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1TaxLiabilitiesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
+        const res: operations.PutV1TaxLiabilitiesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
@@ -165,7 +165,7 @@ export class TaxLiabilities {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1TaxLiabilitiesFinishResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes,};
+        const res: operations.PutV1TaxLiabilitiesFinishResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
         switch (true) {
           case httpRes?.status == 202:
             break;

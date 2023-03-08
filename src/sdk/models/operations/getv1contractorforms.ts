@@ -54,5 +54,5 @@ export class GetV1ContractorFormsResponse extends SpeakeasyBase {
   rawResponse?: AxiosResponse;
 
   @SpeakeasyMetadata({ elemType: GetV1ContractorFormsForm })
-  getV1ContractorFormsFormAllOfs?: GetV1ContractorFormsForm[];
+  getV1ContractorFormsFormAnies?: GetV1ContractorFormsForm[];
 }

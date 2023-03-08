@@ -20,6 +20,12 @@ export class CompanyBenefitEmployeeBenefitsContributionValue2Tiers extends Speak
   thresholdDelta?: string;
 }
 
+// CompanyBenefitEmployeeBenefitsContributionValue2
+/** 
+ * For the `amount` and `percentage` contribution types, the value of the corresponding amount or percentage.
+ * 
+ * For the `tiered` contribution type, an array of tiers.
+**/
 export class CompanyBenefitEmployeeBenefitsContributionValue2 extends SpeakeasyBase {
   @SpeakeasyMetadata({ elemType: CompanyBenefitEmployeeBenefitsContributionValue2Tiers })
   @Expose({ name: "tiers" })
