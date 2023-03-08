@@ -58,7 +58,12 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1WebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1WebhookSubscriptionUuidResponse =
+            new operations.DeleteV1WebhookSubscriptionUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -108,14 +113,18 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1WebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1WebhookSubscriptionUuidResponse =
+            new operations.GetV1WebhookSubscriptionUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.webhookSubscription = plainToInstance(
+              res.webhookSubscription = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.WebhookSubscription,
-                httpRes?.data as shared.WebhookSubscription,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -165,7 +174,12 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse =
+            new operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             break;
@@ -209,11 +223,22 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1WebhookSubscriptionsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1WebhookSubscriptionsResponse =
+            new operations.GetV1WebhookSubscriptionsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.webhookSubscriptions = httpRes?.data;
+              res.webhookSubscriptions = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.webhookSubscriptions = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.WebhookSubscription,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -275,14 +300,18 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1WebhookSubscriptionResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1WebhookSubscriptionResponse =
+            new operations.PostV1WebhookSubscriptionResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.webhookSubscription = plainToInstance(
+              res.webhookSubscription = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.WebhookSubscription,
-                httpRes?.data as shared.WebhookSubscription,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -290,10 +319,9 @@ export class WebhookSubscriptions {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -357,14 +385,18 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1VerifyWebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1VerifyWebhookSubscriptionUuidResponse =
+            new operations.PutV1VerifyWebhookSubscriptionUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.webhookSubscription = plainToInstance(
+              res.webhookSubscription = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.WebhookSubscription,
-                httpRes?.data as shared.WebhookSubscription,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -372,10 +404,9 @@ export class WebhookSubscriptions {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -436,14 +467,18 @@ export class WebhookSubscriptions {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1WebhookSubscriptionUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1WebhookSubscriptionUuidResponse =
+            new operations.PutV1WebhookSubscriptionUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.webhookSubscription = plainToInstance(
+              res.webhookSubscription = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.WebhookSubscription,
-                httpRes?.data as shared.WebhookSubscription,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -451,10 +486,9 @@ export class WebhookSubscriptions {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

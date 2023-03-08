@@ -52,7 +52,12 @@ export class EarningTypes {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse =
+            new operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -102,14 +107,18 @@ export class EarningTypes {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdEarningTypesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdEarningTypesResponse =
+            new operations.GetV1CompaniesCompanyIdEarningTypesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.getV1CompaniesCompanyIdEarningTypes200ApplicationJSONObject = plainToInstance(
+              res.getV1CompaniesCompanyIdEarningTypes200ApplicationJSONObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 operations.GetV1CompaniesCompanyIdEarningTypes200ApplicationJSON,
-                httpRes?.data as operations.GetV1CompaniesCompanyIdEarningTypes200ApplicationJSON,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -168,14 +177,18 @@ export class EarningTypes {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompaniesCompanyIdEarningTypesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1CompaniesCompanyIdEarningTypesResponse =
+            new operations.PostV1CompaniesCompanyIdEarningTypesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.earningType = plainToInstance(
+              res.earningType = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EarningType,
-                httpRes?.data as shared.EarningType,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -183,10 +196,9 @@ export class EarningTypes {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -241,14 +253,18 @@ export class EarningTypes {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse =
+            new operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.earningType = plainToInstance(
+              res.earningType = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.EarningType,
-                httpRes?.data as shared.EarningType,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -256,10 +272,9 @@ export class EarningTypes {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

@@ -51,7 +51,12 @@ export class ExternalPayrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1ExternalPayrollResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1ExternalPayrollResponse =
+            new operations.DeleteV1ExternalPayrollResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -94,11 +99,22 @@ export class ExternalPayrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompanyExternalPayrollsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompanyExternalPayrollsResponse =
+            new operations.GetV1CompanyExternalPayrollsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.externalPayrollBasics = httpRes?.data;
+              res.externalPayrollBasics = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.externalPayrollBasics = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.ExternalPayrollBasic,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -140,14 +156,18 @@ export class ExternalPayrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ExternalPayrollResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ExternalPayrollResponse =
+            new operations.GetV1ExternalPayrollResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.externalPayroll = plainToInstance(
+              res.externalPayroll = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ExternalPayroll,
-                httpRes?.data as shared.ExternalPayroll,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -189,11 +209,22 @@ export class ExternalPayrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1ExternalPayrollCalculateTaxesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1ExternalPayrollCalculateTaxesResponse =
+            new operations.GetV1ExternalPayrollCalculateTaxesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.externalPayrollTaxSuggestions = httpRes?.data;
+              res.externalPayrollTaxSuggestions = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.externalPayrollTaxSuggestions = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.ExternalPayrollTaxSuggestions,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -248,14 +279,18 @@ export class ExternalPayrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1ExternalPayrollResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1ExternalPayrollResponse =
+            new operations.PostV1ExternalPayrollResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.externalPayroll = plainToInstance(
+              res.externalPayroll = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ExternalPayroll,
-                httpRes?.data as shared.ExternalPayroll,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -263,10 +298,9 @@ export class ExternalPayrolls {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -320,14 +354,18 @@ export class ExternalPayrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1ExternalPayrollResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1ExternalPayrollResponse =
+            new operations.PutV1ExternalPayrollResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.externalPayroll = plainToInstance(
+              res.externalPayroll = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.ExternalPayroll,
-                httpRes?.data as shared.ExternalPayroll,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -335,10 +373,9 @@ export class ExternalPayrolls {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

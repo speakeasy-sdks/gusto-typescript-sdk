@@ -53,14 +53,18 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdPayrollReversalsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdPayrollReversalsResponse =
+            new operations.GetV1CompaniesCompanyIdPayrollReversalsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payrollReversal = plainToInstance(
+              res.payrollReversal = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.PayrollReversal,
-                httpRes?.data as shared.PayrollReversal,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -111,11 +115,22 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdPayrollsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdPayrollsResponse =
+            new operations.GetV1CompaniesCompanyIdPayrollsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payrolls = httpRes?.data;
+              res.payrolls = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.payrolls = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Payroll,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -165,14 +180,18 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdPayrollsPayrollIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdPayrollsPayrollIdResponse =
+            new operations.GetV1CompaniesCompanyIdPayrollsPayrollIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payroll = plainToInstance(
+              res.payroll = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Payroll,
-                httpRes?.data as shared.Payroll,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -218,11 +237,22 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesPayrollBlockersCompanyUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesPayrollBlockersCompanyUuidResponse =
+            new operations.GetV1CompaniesPayrollBlockersCompanyUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payrollBlockers = httpRes?.data;
+              res.payrollBlockers = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.payrollBlockers = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.PayrollBlocker,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -270,14 +300,18 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1PaymentReceiptsPayrollsPayrollUuidResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1PaymentReceiptsPayrollsPayrollUuidResponse =
+            new operations.GetV1PaymentReceiptsPayrollsPayrollUuidResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payrollReceipt = plainToInstance(
+              res.payrollReceipt = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.PayrollReceipt,
-                httpRes?.data as shared.PayrollReceipt,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -321,7 +355,12 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse =
+            new operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             break;
@@ -380,14 +419,18 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompaniesCompanyIdPayrollsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1CompaniesCompanyIdPayrollsResponse =
+            new operations.PostV1CompaniesCompanyIdPayrollsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payroll = plainToInstance(
+              res.payroll = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Payroll,
-                httpRes?.data as shared.Payroll,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -395,10 +438,9 @@ export class Payrolls {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -453,14 +495,18 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse =
+            new operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payrollCheck = plainToInstance(
+              res.payrollCheck = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.PayrollCheck,
-                httpRes?.data as shared.PayrollCheck,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -468,10 +514,9 @@ export class Payrolls {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -514,14 +559,18 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse =
+            new operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payroll = plainToInstance(
+              res.payroll = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Payroll,
-                httpRes?.data as shared.Payroll,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -529,10 +578,9 @@ export class Payrolls {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -587,14 +635,18 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyIdPayrollsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompaniesCompanyIdPayrollsResponse =
+            new operations.PutV1CompaniesCompanyIdPayrollsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payroll = plainToInstance(
+              res.payroll = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Payroll,
-                httpRes?.data as shared.Payroll,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -602,10 +654,9 @@ export class Payrolls {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -662,14 +713,18 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse =
+            new operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.payroll = plainToInstance(
+              res.payroll = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Payroll,
-                httpRes?.data as shared.Payroll,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -677,10 +732,9 @@ export class Payrolls {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -724,7 +778,12 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse =
+            new operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 202:
             break;
@@ -773,7 +832,12 @@ export class Payrolls {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse =
+            new operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 202:
             break;

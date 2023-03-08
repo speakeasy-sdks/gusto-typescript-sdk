@@ -55,11 +55,22 @@ export class Locations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyIdLocationsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompaniesCompanyIdLocationsResponse =
+            new operations.GetV1CompaniesCompanyIdLocationsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.locations = httpRes?.data;
+              res.locations = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.locations = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Location,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -102,14 +113,18 @@ export class Locations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1LocationsLocationIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1LocationsLocationIdResponse =
+            new operations.GetV1LocationsLocationIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.location = plainToInstance(
+              res.location = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Location,
-                httpRes?.data as shared.Location,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -154,11 +169,22 @@ export class Locations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1LocationsLocationUuidMinimumWagesResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1LocationsLocationUuidMinimumWagesResponse =
+            new operations.GetV1LocationsLocationUuidMinimumWagesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.minimumWages = httpRes?.data;
+              res.minimumWages = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.minimumWages = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.MinimumWage,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -216,14 +242,18 @@ export class Locations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompaniesCompanyIdLocationsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1CompaniesCompanyIdLocationsResponse =
+            new operations.PostV1CompaniesCompanyIdLocationsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.location = plainToInstance(
+              res.location = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Location,
-                httpRes?.data as shared.Location,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -231,10 +261,9 @@ export class Locations {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -289,14 +318,18 @@ export class Locations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1LocationsLocationIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1LocationsLocationIdResponse =
+            new operations.PutV1LocationsLocationIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.location = plainToInstance(
+              res.location = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Location,
-                httpRes?.data as shared.Location,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -304,10 +337,9 @@ export class Locations {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;

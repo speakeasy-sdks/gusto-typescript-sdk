@@ -52,7 +52,12 @@ export class JobsAndCompensations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.DeleteV1JobsJobIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.DeleteV1JobsJobIdResponse =
+            new operations.DeleteV1JobsJobIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 204:
             break;
@@ -99,14 +104,18 @@ export class JobsAndCompensations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompensationsCompensationIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1CompensationsCompensationIdResponse =
+            new operations.GetV1CompensationsCompensationIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.compensation = plainToInstance(
+              res.compensation = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Compensation,
-                httpRes?.data as shared.Compensation,
-                { excludeExtraneousValues: true }
               );
             }
             if (utils.matchContentType(contentType, `application/xml`)) {
@@ -157,11 +166,22 @@ export class JobsAndCompensations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1EmployeesEmployeeIdJobsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1EmployeesEmployeeIdJobsResponse =
+            new operations.GetV1EmployeesEmployeeIdJobsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.jobs = httpRes?.data;
+              res.jobs = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.jobs = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Job,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -205,14 +225,18 @@ export class JobsAndCompensations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1JobsJobIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1JobsJobIdResponse =
+            new operations.GetV1JobsJobIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.job = plainToInstance(
+              res.job = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Job,
-                httpRes?.data as shared.Job,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -261,11 +285,22 @@ export class JobsAndCompensations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1JobsJobIdCompensationsResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.GetV1JobsJobIdCompensationsResponse =
+            new operations.GetV1JobsJobIdCompensationsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.compensations = httpRes?.data;
+              res.compensations = [];
+              const resFieldDepth: number = utils.getResFieldDepth(res);
+              res.compensations = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Compensation,
+                resFieldDepth
+              );
             }
             break;
           case httpRes?.status == 404:
@@ -321,14 +356,18 @@ export class JobsAndCompensations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1JobsJobIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PostV1JobsJobIdResponse =
+            new operations.PostV1JobsJobIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.job = plainToInstance(
+              res.job = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Job,
-                httpRes?.data as shared.Job,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -336,10 +375,9 @@ export class JobsAndCompensations {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -396,14 +434,18 @@ export class JobsAndCompensations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompensationsCompensationIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1CompensationsCompensationIdResponse =
+            new operations.PutV1CompensationsCompensationIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.compensation = plainToInstance(
+              res.compensation = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Compensation,
-                httpRes?.data as shared.Compensation,
-                { excludeExtraneousValues: true }
               );
             }
             if (utils.matchContentType(contentType, `application/xml`)) {
@@ -417,10 +459,9 @@ export class JobsAndCompensations {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -475,14 +516,18 @@ export class JobsAndCompensations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1JobsJobIdResponse = {statusCode: httpRes.status, contentType: contentType, rawResponse: httpRes};
+        const res: operations.PutV1JobsJobIdResponse =
+            new operations.PutV1JobsJobIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.job = plainToInstance(
+              res.job = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.Job,
-                httpRes?.data as shared.Job,
-                { excludeExtraneousValues: true }
               );
             }
             break;
@@ -490,10 +535,9 @@ export class JobsAndCompensations {
             break;
           case httpRes?.status == 422:
             if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = plainToInstance(
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
                 shared.UnprocessableEntityErrorObject,
-                httpRes?.data as shared.UnprocessableEntityErrorObject,
-                { excludeExtraneousValues: true }
               );
             }
             break;
