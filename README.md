@@ -266,7 +266,8 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(req).then((res: GetV1Compan
 * `getV1CompaniesCompanyIdLocations` - Get company locations
 * `getV1LocationsLocationId` - Get a location
 * `getV1LocationsLocationUuidMinimumWages` - Get minimum wages for a location
-* `postV1CompaniesCompanyIdLocations` - Create a company location
+* `postV1CompaniesCompanyIdLocationsJson` - Create a company location
+* `postV1CompaniesCompanyIdLocationsRaw` - Create a company location
 * `putV1LocationsLocationId` - Update a location
 
 ### paySchedules

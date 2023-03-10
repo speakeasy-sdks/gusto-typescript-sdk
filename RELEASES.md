@@ -55,3 +55,11 @@ Based on:
 - Speakeasy CLI 1.8.7 https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [NPM v0.2.5] https://www.npmjs.com/package/gusto/v/0.2.5 - .
+
+## 2023-03-10 00:30:58
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.9.1 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.3.0] https://www.npmjs.com/package/gusto/v/0.3.0 - .
