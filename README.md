@@ -44,7 +44,7 @@ Once you have your API Token, `client_id`, `secret`, and a demo company, you’r
 ```typescript
 import {
   GetV1CompaniesCompanyIdBankAccountsRequest,
-  GetV1CompaniesCompanyIdBankAccountsResponse 
+  GetV1CompaniesCompanyIdBankAccountsResponse
 } from "gusto/dist/sdk/models/operations";
 
 import { AxiosError } from "axios";
