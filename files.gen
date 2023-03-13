@@ -170,7 +170,8 @@ src/sdk/models/operations/putv1jobsjobid.ts
 src/sdk/models/operations/getv1companiescompanyidlocations.ts
 src/sdk/models/operations/getv1locationslocationid.ts
 src/sdk/models/operations/getv1locationslocationuuidminimumwages.ts
-src/sdk/models/operations/postv1companiescompanyidlocations.ts
+src/sdk/models/operations/postv1companiescompanyidlocationsjson.ts
+src/sdk/models/operations/postv1companiescompanyidlocationsraw.ts
 src/sdk/models/operations/putv1locationslocationid.ts
 src/sdk/models/operations/getv1companiescompanyidpayperiods.ts
 src/sdk/models/operations/getv1companiescompanyidpayschedules.ts

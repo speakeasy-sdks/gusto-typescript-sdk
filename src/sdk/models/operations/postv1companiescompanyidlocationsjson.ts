@@ -9,29 +9,6 @@ export class PostV1CompaniesCompanyIdLocationsPathParams extends SpeakeasyBase {
   companyId: string;
 }
 
-export class PostV1CompaniesCompanyIdLocationsApplicationXML extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  city: string;
-
-  @SpeakeasyMetadata()
-  country: string;
-
-  @SpeakeasyMetadata()
-  phoneNumber: string;
-
-  @SpeakeasyMetadata()
-  state: string;
-
-  @SpeakeasyMetadata()
-  street1: string;
-
-  @SpeakeasyMetadata()
-  street2: string;
-
-  @SpeakeasyMetadata()
-  zip: string;
-}
-
 export class PostV1CompaniesCompanyIdLocationsApplicationJSON extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "city" })
@@ -70,23 +47,15 @@ export class PostV1CompaniesCompanyIdLocationsApplicationJSON extends SpeakeasyB
   zip: string;
 }
 
-export class PostV1CompaniesCompanyIdLocationsRequests extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/xml" })
-  applicationXML: Uint8Array;
-
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  object?: PostV1CompaniesCompanyIdLocationsApplicationJSON;
-}
-
-export class PostV1CompaniesCompanyIdLocationsRequest extends SpeakeasyBase {
+export class PostV1CompaniesCompanyIdLocationsJsonRequest extends SpeakeasyBase {
   @SpeakeasyMetadata()
   pathParams: PostV1CompaniesCompanyIdLocationsPathParams;
 
-  @SpeakeasyMetadata()
-  request?: PostV1CompaniesCompanyIdLocationsRequests;
+  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+  request?: PostV1CompaniesCompanyIdLocationsApplicationJSON;
 }
 
-export class PostV1CompaniesCompanyIdLocationsResponse extends SpeakeasyBase {
+export class PostV1CompaniesCompanyIdLocationsJsonResponse extends SpeakeasyBase {
   @SpeakeasyMetadata()
   contentType: string;
 

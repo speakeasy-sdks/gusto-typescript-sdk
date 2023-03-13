@@ -93,14 +93,14 @@ export class Gusto {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "0.2.5";
-  private _genVersion = "1.8.7";
+  private _sdkVersion = "0.3.1";
+  private _genVersion = "1.9.2";
 
-  constructor(props: SDKProps) {
-    this._serverURL = props.serverUrl ?? ServerList[ServerDemo];
+  constructor(props?: SDKProps) {
+    this._serverURL = props?.serverUrl ?? ServerList[ServerDemo];
 
-    this._defaultClient = props.defaultClient ?? axios.create({ baseURL: this._serverURL });
-    if (props.security) {
+    this._defaultClient = props?.defaultClient ?? axios.create({ baseURL: this._serverURL });
+    if (props?.security) {
       let security: shared.Security = props.security;
       if (!(props.security instanceof utils.SpeakeasyBase))
         security = new shared.Security(props.security);

@@ -2,7 +2,7 @@
 ```typescript
 import {
   GetV1CompaniesCompanyIdBankAccountsRequest,
-  GetV1CompaniesCompanyIdBankAccountsResponse 
+  GetV1CompaniesCompanyIdBankAccountsResponse
 } from "gusto/dist/sdk/models/operations";
 
 import { AxiosError } from "axios";

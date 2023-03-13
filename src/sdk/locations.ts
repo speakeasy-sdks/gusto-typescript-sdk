@@ -197,7 +197,7 @@ export class Locations {
 
   
   /**
-   * postV1CompaniesCompanyIdLocations - Create a company location
+   * postV1CompaniesCompanyIdLocationsJson - Create a company location
    *
    * Company locations represent all addresses associated with a company. These can be filing addresses, mailing addresses, and/or work locations; one address may serve multiple, or all, purposes.
    * 
@@ -205,12 +205,12 @@ export class Locations {
    * 
    * scope: `companies.write`
   **/
-  postV1CompaniesCompanyIdLocations(
-    req: operations.PostV1CompaniesCompanyIdLocationsRequest,
+  postV1CompaniesCompanyIdLocationsJson(
+    req: operations.PostV1CompaniesCompanyIdLocationsJsonRequest,
     config?: AxiosRequestConfig
-  ): Promise<operations.PostV1CompaniesCompanyIdLocationsResponse> {
+  ): Promise<operations.PostV1CompaniesCompanyIdLocationsJsonResponse> {
     if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1CompaniesCompanyIdLocationsRequest(req);
+      req = new operations.PostV1CompaniesCompanyIdLocationsJsonRequest(req);
     }
     
     const baseURL: string = this._serverURL;
@@ -242,8 +242,86 @@ export class Locations {
         const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PostV1CompaniesCompanyIdLocationsResponse =
-            new operations.PostV1CompaniesCompanyIdLocationsResponse({
+        const res: operations.PostV1CompaniesCompanyIdLocationsJsonResponse =
+            new operations.PostV1CompaniesCompanyIdLocationsJsonResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes
+            });
+        switch (true) {
+          case httpRes?.status == 201:
+            if (utils.matchContentType(contentType, `application/json`)) {
+              res.location = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.Location,
+              );
+            }
+            break;
+          case httpRes?.status == 404:
+            break;
+          case httpRes?.status == 422:
+            if (utils.matchContentType(contentType, `application/json`)) {
+              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+                httpRes?.data,
+                shared.UnprocessableEntityErrorObject,
+              );
+            }
+            break;
+        }
+
+        return res;
+      })
+  }
+
+  
+  /**
+   * postV1CompaniesCompanyIdLocationsRaw - Create a company location
+   *
+   * Company locations represent all addresses associated with a company. These can be filing addresses, mailing addresses, and/or work locations; one address may serve multiple, or all, purposes.
+   * 
+   * Since all company locations are subsets of locations, retrieving or updating an individual record should be done via the locations endpoints.
+   * 
+   * scope: `companies.write`
+  **/
+  postV1CompaniesCompanyIdLocationsRaw(
+    req: operations.PostV1CompaniesCompanyIdLocationsRawRequest,
+    config?: AxiosRequestConfig
+  ): Promise<operations.PostV1CompaniesCompanyIdLocationsRawResponse> {
+    if (!(req instanceof utils.SpeakeasyBase)) {
+      req = new operations.PostV1CompaniesCompanyIdLocationsRawRequest(req);
+    }
+    
+    const baseURL: string = this._serverURL;
+    const url: string = utils.generateURL(baseURL, "/v1/companies/{company_id}/locations", req.pathParams);
+
+    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+    try {
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        throw new Error(`Error serializing request body, cause: ${e.message}`);
+      }
+    }
+    
+    const client: AxiosInstance = this._securityClient!;
+    
+    const headers = {...reqBodyHeaders, ...config?.headers};
+    
+    const r = client.request({
+      url: url,
+      method: "post",
+      headers: headers,
+      data: reqBody, 
+      ...config,
+    });
+    
+    return r.then((httpRes: AxiosResponse) => {
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
+        const res: operations.PostV1CompaniesCompanyIdLocationsRawResponse =
+            new operations.PostV1CompaniesCompanyIdLocationsRawResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes
