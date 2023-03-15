@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class ExternalPayrollApplicableBenefits extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "active" })
@@ -112,9 +111,9 @@ export class ExternalPayrollExternalPayrollItems extends SpeakeasyBase {
 }
 
 // ExternalPayrollMetadata
-/** 
+/**
  * Stores metadata of the external payroll.
-**/
+ **/
 export class ExternalPayrollMetadata extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "deletable" })
@@ -122,9 +121,9 @@ export class ExternalPayrollMetadata extends SpeakeasyBase {
 }
 
 // ExternalPayroll
-/** 
+/**
  * The representation of an external payroll.
-**/
+ **/
 export class ExternalPayroll extends SpeakeasyBase {
   @SpeakeasyMetadata({ elemType: ExternalPayrollApplicableBenefits })
   @Expose({ name: "applicable_benefits" })

@@ -2,11 +2,10 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { CustomFieldTypeEnum } from "./customfieldtypeenum";
 import { Expose } from "class-transformer";
 
-
 // CompanyCustomField
-/** 
+/**
  * A custom field on a company
-**/
+ **/
 export class CompanyCustomField extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "description" })

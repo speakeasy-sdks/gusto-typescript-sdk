@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class PayrollEmployeeCompensationsBenefits extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "company_contribution" })
@@ -76,8 +75,8 @@ export class PayrollEmployeeCompensationsPaidTimeOff extends SpeakeasyBase {
   name?: string;
 }
 export enum PayrollEmployeeCompensationsPaymentMethodEnum {
-    Check = "Check",
-    DirectDeposit = "Direct Deposit"
+  Check = "Check",
+  DirectDeposit = "Direct Deposit",
 }
 
 export class PayrollEmployeeCompensationsTaxes extends SpeakeasyBase {
@@ -113,7 +112,9 @@ export class PayrollEmployeeCompensations extends SpeakeasyBase {
   @Expose({ name: "excluded" })
   excluded?: boolean;
 
-  @SpeakeasyMetadata({ elemType: PayrollEmployeeCompensationsFixedCompensations })
+  @SpeakeasyMetadata({
+    elemType: PayrollEmployeeCompensationsFixedCompensations,
+  })
   @Expose({ name: "fixed_compensations" })
   @Type(() => PayrollEmployeeCompensationsFixedCompensations)
   fixedCompensations?: PayrollEmployeeCompensationsFixedCompensations[];
@@ -122,7 +123,9 @@ export class PayrollEmployeeCompensations extends SpeakeasyBase {
   @Expose({ name: "gross_pay" })
   grossPay?: string;
 
-  @SpeakeasyMetadata({ elemType: PayrollEmployeeCompensationsHourlyCompensations })
+  @SpeakeasyMetadata({
+    elemType: PayrollEmployeeCompensationsHourlyCompensations,
+  })
   @Expose({ name: "hourly_compensations" })
   @Type(() => PayrollEmployeeCompensationsHourlyCompensations)
   hourlyCompensations?: PayrollEmployeeCompensationsHourlyCompensations[];
@@ -146,13 +149,13 @@ export class PayrollEmployeeCompensations extends SpeakeasyBase {
   taxes?: PayrollEmployeeCompensationsTaxes[];
 }
 export enum PayrollOffCycleReasonEnum {
-    BenefitReversal = "Benefit reversal",
-    Bonus = "Bonus",
-    Correction = "Correction",
-    DismissedEmployee = "Dismissed employee",
-    HiredEmployee = "Hired employee",
-    WageCorrection = "Wage correction",
-    TaxReconciliation = "Tax Reconciliation"
+  BenefitReversal = "Benefit reversal",
+  Bonus = "Bonus",
+  Correction = "Correction",
+  DismissedEmployee = "Dismissed employee",
+  HiredEmployee = "Hired employee",
+  WageCorrection = "Wage correction",
+  TaxReconciliation = "Tax Reconciliation",
 }
 
 export class PayrollPayPeriod extends SpeakeasyBase {
@@ -170,9 +173,9 @@ export class PayrollPayPeriod extends SpeakeasyBase {
 }
 
 // PayrollPaymentSpeedChanged
-/** 
+/**
  * Only applicable when a payroll is moved to four day processing instead of fast ach.
-**/
+ **/
 export class PayrollPaymentSpeedChanged extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "current_check_date" })
@@ -196,9 +199,9 @@ export class PayrollPaymentSpeedChanged extends SpeakeasyBase {
 }
 
 // PayrollPayrollStatusMeta
-/** 
+/**
  * Information about the payroll's status and expected dates
-**/
+ **/
 export class PayrollPayrollStatusMeta extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "cancellable" })
@@ -226,9 +229,9 @@ export class PayrollPayrollStatusMeta extends SpeakeasyBase {
 }
 
 // PayrollTotals
-/** 
+/**
  * The subtotals for the payroll.
-**/
+ **/
 export class PayrollTotals extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "additional_earnings" })
@@ -311,13 +314,13 @@ export class PayrollTotals extends SpeakeasyBase {
   taxDebit?: string;
 }
 export enum PayrollWithholdingPayPeriodEnum {
-    EveryWeek = "Every week",
-    EveryOtherWeek = "Every other week",
-    TwicePerMonth = "Twice per month",
-    Monthly = "Monthly",
-    Quarterly = "Quarterly",
-    Semiannually = "Semiannually",
-    Annually = "Annually"
+  EveryWeek = "Every week",
+  EveryOtherWeek = "Every other week",
+  TwicePerMonth = "Twice per month",
+  Monthly = "Monthly",
+  Quarterly = "Quarterly",
+  Semiannually = "Semiannually",
+  Annually = "Annually",
 }
 
 export class Payroll extends SpeakeasyBase {

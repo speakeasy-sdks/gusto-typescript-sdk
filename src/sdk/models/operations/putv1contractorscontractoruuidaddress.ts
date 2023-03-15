@@ -3,9 +3,10 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PutV1ContractorsContractorUuidAddressPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=contractor_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=contractor_uuid",
+  })
   contractorUuid: string;
 }
 

@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class PayPeriodEligibleEmployees extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "id" })
@@ -17,9 +16,9 @@ export class PayPeriodEligibleEmployees extends SpeakeasyBase {
 }
 
 // PayPeriodPayroll
-/** 
+/**
  * Information about the payroll for the pay period.
-**/
+ **/
 export class PayPeriodPayroll extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "payroll_deadline" })
@@ -31,9 +30,9 @@ export class PayPeriodPayroll extends SpeakeasyBase {
 }
 
 // PayPeriod
-/** 
+/**
  * The representation of a pay period.
-**/
+ **/
 export class PayPeriod extends SpeakeasyBase {
   @SpeakeasyMetadata({ elemType: PayPeriodEligibleEmployees })
   @Expose({ name: "eligible_employees" })

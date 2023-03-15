@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Transform } from "class-transformer";
 
-
 // MinimumWage
-/** 
+/**
  * Representation of a Minimum Wage
-**/
+ **/
 export class MinimumWage extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "authority" })

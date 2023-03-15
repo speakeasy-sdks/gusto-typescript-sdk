@@ -2,12 +2,15 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=bank_account_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=bank_account_uuid",
+  })
   bankAccountUuid: string;
 
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_id",
+  })
   employeeId: string;
 }
 

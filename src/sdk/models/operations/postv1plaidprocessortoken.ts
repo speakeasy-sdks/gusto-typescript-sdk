@@ -4,7 +4,7 @@ import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 export enum PostV1PlaidProcessorTokenRequestBodyOwnerTypeEnum {
-    Company = "Company"
+  Company = "Company",
 }
 
 export class PostV1PlaidProcessorTokenRequestBody extends SpeakeasyBase {

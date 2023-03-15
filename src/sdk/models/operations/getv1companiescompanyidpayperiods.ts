@@ -3,17 +3,22 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class GetV1CompaniesCompanyIdPayPeriodsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
   companyId: string;
 }
 
 export class GetV1CompaniesCompanyIdPayPeriodsQueryParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=end_date" })
+  @SpeakeasyMetadata({
+    data: "queryParam, style=form;explode=true;name=end_date",
+  })
   endDate?: string;
 
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=start_date" })
+  @SpeakeasyMetadata({
+    data: "queryParam, style=form;explode=true;name=start_date",
+  })
   startDate?: string;
 }
 

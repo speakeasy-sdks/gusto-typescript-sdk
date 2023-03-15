@@ -2,28 +2,28 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export enum CompanyBankAccountAccountTypeEnum {
-    Checking = "Checking",
-    Savings = "Savings"
+  Checking = "Checking",
+  Savings = "Savings",
 }
 export enum CompanyBankAccountPlaidStatusEnum {
-    Connected = "connected",
-    Disconnected = "disconnected"
+  Connected = "connected",
+  Disconnected = "disconnected",
 }
 export enum CompanyBankAccountVerificationStatusEnum {
-    AwaitingDeposits = "awaiting_deposits",
-    ReadyForVerification = "ready_for_verification",
-    Verified = "verified"
+  AwaitingDeposits = "awaiting_deposits",
+  ReadyForVerification = "ready_for_verification",
+  Verified = "verified",
 }
 export enum CompanyBankAccountVerificationTypeEnum {
-    BankDeposits = "bank_deposits",
-    Plaid = "plaid",
-    PlaidExternal = "plaid_external"
+  BankDeposits = "bank_deposits",
+  Plaid = "plaid",
+  PlaidExternal = "plaid_external",
 }
 
 // CompanyBankAccount
-/** 
+/**
  * The company bank account
-**/
+ **/
 export class CompanyBankAccount extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "account_type" })

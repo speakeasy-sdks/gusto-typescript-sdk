@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 // CompanyBenefitEmployeeBenefitsContributionValue2Tiers
-/** 
+/**
  * A single tier of a tiered matching scheme.
-**/
+ **/
 export class CompanyBenefitEmployeeBenefitsContributionValue2Tiers extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "rate" })
@@ -21,22 +20,24 @@ export class CompanyBenefitEmployeeBenefitsContributionValue2Tiers extends Speak
 }
 
 // CompanyBenefitEmployeeBenefitsContributionValue2
-/** 
+/**
  * For the `amount` and `percentage` contribution types, the value of the corresponding amount or percentage.
- * 
+ *
  * For the `tiered` contribution type, an array of tiers.
-**/
+ **/
 export class CompanyBenefitEmployeeBenefitsContributionValue2 extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: CompanyBenefitEmployeeBenefitsContributionValue2Tiers })
+  @SpeakeasyMetadata({
+    elemType: CompanyBenefitEmployeeBenefitsContributionValue2Tiers,
+  })
   @Expose({ name: "tiers" })
   @Type(() => CompanyBenefitEmployeeBenefitsContributionValue2Tiers)
   tiers?: CompanyBenefitEmployeeBenefitsContributionValue2Tiers[];
 }
 
 // CompanyBenefitEmployeeBenefitsContribution
-/** 
+/**
  * An object representing the type and value of the company contribution.
-**/
+ **/
 export class CompanyBenefitEmployeeBenefitsContribution extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
@@ -83,9 +84,9 @@ export class CompanyBenefitEmployeeBenefits extends SpeakeasyBase {
 }
 
 // CompanyBenefit
-/** 
+/**
  * The representation of a company benefit.
-**/
+ **/
 export class CompanyBenefit extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "active" })

@@ -3,14 +3,15 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PostV1EmployeesEmployeeIdBankAccountsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_id",
+  })
   employeeId: string;
 }
 export enum PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountTypeEnum {
-    Checking = "Checking",
-    Savings = "Savings"
+  Checking = "Checking",
+  Savings = "Savings",
 }
 
 export class PostV1EmployeesEmployeeIdBankAccountsRequestBody extends SpeakeasyBase {

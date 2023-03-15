@@ -2,9 +2,10 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class GetV1WebhookSubscriptionVerificationTokenUuidPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid",
+  })
   webhookSubscriptionUuid: string;
 }
 

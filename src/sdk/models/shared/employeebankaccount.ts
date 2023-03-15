@@ -2,8 +2,8 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export enum EmployeeBankAccountAccountTypeEnum {
-    Checking = "Checking",
-    Savings = "Savings"
+  Checking = "Checking",
+  Savings = "Savings",
 }
 
 export class EmployeeBankAccount extends SpeakeasyBase {

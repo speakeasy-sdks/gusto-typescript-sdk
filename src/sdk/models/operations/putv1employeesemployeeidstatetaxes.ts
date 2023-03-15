@@ -3,9 +3,10 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PutV1EmployeesEmployeeIdStateTaxesPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_uuid",
+  })
   employeeUuid: string;
 }
 
@@ -24,9 +25,14 @@ export class PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers
 }
 
 export class PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers })
+  @SpeakeasyMetadata({
+    elemType:
+      PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers,
+  })
   @Expose({ name: "answers" })
-  @Type(() => PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers)
+  @Type(
+    () => PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers
+  )
   answers?: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers[];
 
   @SpeakeasyMetadata()
@@ -35,7 +41,9 @@ export class PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions extend
 }
 
 export class PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions })
+  @SpeakeasyMetadata({
+    elemType: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions,
+  })
   @Expose({ name: "questions" })
   @Type(() => PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions)
   questions?: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions[];
@@ -50,7 +58,9 @@ export class PutV1EmployeesEmployeeIdStateTaxesRequestBody extends SpeakeasyBase
   @Expose({ name: "employee_id" })
   employeeId: string;
 
-  @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates })
+  @SpeakeasyMetadata({
+    elemType: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates,
+  })
   @Expose({ name: "states" })
   @Type(() => PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates)
   states: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates[];
@@ -79,9 +89,14 @@ export class PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswer
 }
 
 export class PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestions extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswers })
+  @SpeakeasyMetadata({
+    elemType:
+      PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswers,
+  })
   @Expose({ name: "answers" })
-  @Type(() => PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswers)
+  @Type(
+    () => PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswers
+  )
   answers?: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswers[];
 
   @SpeakeasyMetadata()
@@ -90,7 +105,9 @@ export class PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestions exten
 }
 
 export class PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestions })
+  @SpeakeasyMetadata({
+    elemType: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestions,
+  })
   @Expose({ name: "questions" })
   @Type(() => PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestions)
   questions: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestions[];
@@ -113,6 +130,8 @@ export class PutV1EmployeesEmployeeIdStateTaxesResponse extends SpeakeasyBase {
   @SpeakeasyMetadata()
   rawResponse?: AxiosResponse;
 
-  @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON })
+  @SpeakeasyMetadata({
+    elemType: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON,
+  })
   putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects?: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON[];
 }

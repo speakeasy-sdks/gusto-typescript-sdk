@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 // EmployeeBenefitContributionValue2Tiers
-/** 
+/**
  * A single tier of a tiered matching scheme.
-**/
+ **/
 export class EmployeeBenefitContributionValue2Tiers extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "rate" })
@@ -21,11 +20,11 @@ export class EmployeeBenefitContributionValue2Tiers extends SpeakeasyBase {
 }
 
 // EmployeeBenefitContributionValue2
-/** 
+/**
  * For the `amount` and `percentage` contribution types, the value of the corresponding amount or percentage.
- * 
+ *
  * For the `tiered` contribution type, an array of tiers.
-**/
+ **/
 export class EmployeeBenefitContributionValue2 extends SpeakeasyBase {
   @SpeakeasyMetadata({ elemType: EmployeeBenefitContributionValue2Tiers })
   @Expose({ name: "tiers" })
@@ -34,9 +33,9 @@ export class EmployeeBenefitContributionValue2 extends SpeakeasyBase {
 }
 
 // EmployeeBenefitContribution
-/** 
+/**
  * An object representing the type and value of the company contribution.
-**/
+ **/
 export class EmployeeBenefitContribution extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
@@ -47,16 +46,16 @@ export class EmployeeBenefitContribution extends SpeakeasyBase {
   value?: any;
 }
 export enum EmployeeBenefitDeductionReducesTaxableIncomeEnum {
-    Unset = "unset",
-    ReducesTaxableIncome = "reduces_taxable_income",
-    DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
-    Unknown = ""
+  Unset = "unset",
+  ReducesTaxableIncome = "reduces_taxable_income",
+  DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
+  Unknown = "",
 }
 
 // EmployeeBenefit
-/** 
+/**
  * The representation of an employee benefit.
-**/
+ **/
 export class EmployeeBenefit extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "active" })

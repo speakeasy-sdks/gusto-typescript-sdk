@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-
 // UnprocessedTerminationPayPeriod
-/** 
+/**
  * The representation of an unprocessed termination pay period.
-**/
+ **/
 export class UnprocessedTerminationPayPeriod extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "check_date" })

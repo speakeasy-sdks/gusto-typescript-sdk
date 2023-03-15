@@ -2,20 +2,27 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class GetV1CompaniesCompanyIdContractorPaymentsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
   companyId: string;
 }
 
 export class GetV1CompaniesCompanyIdContractorPaymentsQueryParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=contractor_uuid" })
+  @SpeakeasyMetadata({
+    data: "queryParam, style=form;explode=true;name=contractor_uuid",
+  })
   contractorUuid?: string;
 
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=end_date" })
+  @SpeakeasyMetadata({
+    data: "queryParam, style=form;explode=true;name=end_date",
+  })
   endDate: string;
 
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=group_by_date" })
+  @SpeakeasyMetadata({
+    data: "queryParam, style=form;explode=true;name=group_by_date",
+  })
   groupByDate?: boolean;
 
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
@@ -24,7 +31,9 @@ export class GetV1CompaniesCompanyIdContractorPaymentsQueryParams extends Speake
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
   per?: number;
 
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=start_date" })
+  @SpeakeasyMetadata({
+    data: "queryParam, style=form;explode=true;name=start_date",
+  })
   startDate: string;
 }
 

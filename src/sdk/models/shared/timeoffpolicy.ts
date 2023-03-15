@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class TimeOffPolicyEmployees extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "uuid" })
@@ -9,9 +8,9 @@ export class TimeOffPolicyEmployees extends SpeakeasyBase {
 }
 
 // TimeOffPolicy
-/** 
+/**
  * Representation of a Time Off Policy
-**/
+ **/
 export class TimeOffPolicy extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "accrual_method" })

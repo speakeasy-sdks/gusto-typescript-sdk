@@ -3,9 +3,10 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class GetV1GarnishmentsGarnishmentIdPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=garnishment_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=garnishment_id",
+  })
   garnishmentId: string;
 }
 

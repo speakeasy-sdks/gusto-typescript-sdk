@@ -3,14 +3,17 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class GetV1CompaniesCompanyIdFederalTaxDetailsSecurity extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "security, scheme=true;type=http;subtype=bearer;name=Authorization" })
+  @SpeakeasyMetadata({
+    data: "security, scheme=true;type=http;subtype=bearer;name=Authorization",
+  })
   authorization: string;
 }
 
 export class GetV1CompaniesCompanyIdFederalTaxDetailsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
   companyId: string;
 }
 

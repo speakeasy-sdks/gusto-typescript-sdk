@@ -8,21 +8,21 @@ import { Termination } from "./termination";
 import { Expose, Type } from "class-transformer";
 
 export enum EmployeeCurrentEmploymentStatusEnum {
-    FullTime = "full_time",
-    PartTimeUnderTwentyHours = "part_time_under_twenty_hours",
-    PartTimeTwentyPlusHours = "part_time_twenty_plus_hours",
-    Variable = "variable",
-    Seasonal = "seasonal"
+  FullTime = "full_time",
+  PartTimeUnderTwentyHours = "part_time_under_twenty_hours",
+  PartTimeTwentyPlusHours = "part_time_twenty_plus_hours",
+  Variable = "variable",
+  Seasonal = "seasonal",
 }
 export enum EmployeePaymentMethodEnum {
-    DirectDeposit = "Direct Deposit",
-    Check = "Check"
+  DirectDeposit = "Direct Deposit",
+  Check = "Check",
 }
 
 // Employee
-/** 
+/**
  * The representation of an employee in Gusto.
-**/
+ **/
 export class Employee extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "company_uuid" })

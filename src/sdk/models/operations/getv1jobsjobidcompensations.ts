@@ -3,17 +3,20 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class GetV1JobsJobIdCompensationsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=job_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=job_id",
+  })
   jobId: string;
 }
 export enum GetV1JobsJobIdCompensationsIncludeEnum {
-    AllCompensations = "all_compensations"
+  AllCompensations = "all_compensations",
 }
 
 export class GetV1JobsJobIdCompensationsQueryParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
+  @SpeakeasyMetadata({
+    data: "queryParam, style=form;explode=true;name=include",
+  })
   include?: GetV1JobsJobIdCompensationsIncludeEnum;
 
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })

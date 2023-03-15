@@ -3,12 +3,12 @@ import { PaymentMethodBankAccount } from "./paymentmethodbankaccount";
 import { Expose, Type } from "class-transformer";
 
 export enum EmployeePaymentMethodSplitByEnum {
-    Amount = "Amount",
-    Percentage = "Percentage"
+  Amount = "Amount",
+  Percentage = "Percentage",
 }
 export enum EmployeePaymentMethodTypeEnum {
-    DirectDeposit = "Direct Deposit",
-    Check = "Check"
+  DirectDeposit = "Direct Deposit",
+  Check = "Check",
 }
 
 export class EmployeePaymentMethod extends SpeakeasyBase {

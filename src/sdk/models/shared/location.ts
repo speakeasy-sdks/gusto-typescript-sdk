@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-
 // Location
-/** 
+/**
  * The representation of an address in Gusto.
-**/
+ **/
 export class Location extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "active" })

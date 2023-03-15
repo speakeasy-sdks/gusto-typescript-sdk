@@ -2,7 +2,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Compensation } from "./compensation";
 import { Expose, Type } from "class-transformer";
 
-
 export class JobLocation extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "city" })
@@ -38,9 +37,9 @@ export class JobLocation extends SpeakeasyBase {
 }
 
 // Job
-/** 
+/**
  * The representation of a job in Gusto.
-**/
+ **/
 export class Job extends SpeakeasyBase {
   @SpeakeasyMetadata({ elemType: Compensation })
   @Expose({ name: "compensations" })

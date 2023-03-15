@@ -3,14 +3,15 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PutV1EmployeesEmployeeIdPaymentMethodPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_id",
+  })
   employeeId: string;
 }
 export enum PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitByEnum {
-    Amount = "Amount",
-    Percentage = "Percentage"
+  Amount = "Amount",
+  Percentage = "Percentage",
 }
 
 export class PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits extends SpeakeasyBase {
@@ -31,8 +32,8 @@ export class PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits extends Spea
   uuid?: string;
 }
 export enum PutV1EmployeesEmployeeIdPaymentMethodRequestBodyTypeEnum {
-    DirectDeposit = "Direct Deposit",
-    Check = "Check"
+  DirectDeposit = "Direct Deposit",
+  Check = "Check",
 }
 
 export class PutV1EmployeesEmployeeIdPaymentMethodRequestBody extends SpeakeasyBase {
@@ -40,7 +41,9 @@ export class PutV1EmployeesEmployeeIdPaymentMethodRequestBody extends SpeakeasyB
   @Expose({ name: "split_by" })
   splitBy?: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitByEnum;
 
-  @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits })
+  @SpeakeasyMetadata({
+    elemType: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits,
+  })
   @Expose({ name: "splits" })
   @Type(() => PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits)
   splits?: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits[];

@@ -2,7 +2,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { CompanyAddress } from "./companyaddress";
 import { Expose, Type } from "class-transformer";
 
-
 export class CurrentUserRolesPayrollAdminCompanies extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "is_partner_managed" })
@@ -38,9 +37,9 @@ export class CurrentUserRolesPayrollAdmin extends SpeakeasyBase {
 }
 
 // CurrentUserRoles
-/** 
+/**
  * An object containing each of the user's permissions.
-**/
+ **/
 export class CurrentUserRoles extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "payroll_admin" })

@@ -3,21 +3,22 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PutV1EmployeeBenefitsEmployeeBenefitIdPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_benefit_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_benefit_id",
+  })
   employeeBenefitId: string;
 }
 export enum PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionTypeEnum {
-    Amount = "amount",
-    Percentage = "percentage",
-    Tiered = "tiered"
+  Amount = "amount",
+  Percentage = "percentage",
+  Tiered = "tiered",
 }
 
 // PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionValue2
-/** 
+/**
  * A single tier of a tiered matching scheme.
-**/
+ **/
 export class PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionValue2 extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "rate" })
@@ -29,9 +30,9 @@ export class PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionValue2
 }
 
 // PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContribution
-/** 
+/**
  * An object representing the type and value of the company contribution.
-**/
+ **/
 export class PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContribution extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
@@ -42,10 +43,10 @@ export class PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContribution exten
   value?: any;
 }
 export enum PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncomeEnum {
-    Unset = "unset",
-    ReducesTaxableIncome = "reduces_taxable_income",
-    DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
-    Unknown = ""
+  Unset = "unset",
+  ReducesTaxableIncome = "reduces_taxable_income",
+  DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
+  Unknown = "",
 }
 
 export class PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody extends SpeakeasyBase {

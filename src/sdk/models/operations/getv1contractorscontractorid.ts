@@ -3,9 +3,10 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class GetV1ContractorsContractorIdPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=contractor_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=contractor_id",
+  })
   contractorId: string;
 }
 

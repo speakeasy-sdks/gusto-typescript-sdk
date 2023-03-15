@@ -2,9 +2,10 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class DeleteV1CompanyBenefitsCompanyBenefitIdPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_benefit_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_benefit_id",
+  })
   companyBenefitId: string;
 }
 
@@ -28,9 +29,14 @@ export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase
 }
 
 export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrors extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase })
+  @SpeakeasyMetadata({
+    elemType:
+      DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase,
+  })
   @Expose({ name: "base" })
-  @Type(() => DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase)
+  @Type(
+    () => DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase
+  )
   base?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase[];
 }
 

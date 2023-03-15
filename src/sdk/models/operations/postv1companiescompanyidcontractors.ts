@@ -3,18 +3,19 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PostV1CompaniesCompanyIdContractorsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
   companyId: string;
 }
 export enum PostV1CompaniesCompanyIdContractorsRequestBodyTypeEnum {
-    Individual = "Individual",
-    Business = "Business"
+  Individual = "Individual",
+  Business = "Business",
 }
 export enum PostV1CompaniesCompanyIdContractorsRequestBodyWageTypeEnum {
-    Fixed = "Fixed",
-    Hourly = "Hourly"
+  Fixed = "Fixed",
+  Hourly = "Hourly",
 }
 
 export class PostV1CompaniesCompanyIdContractorsRequestBody extends SpeakeasyBase {

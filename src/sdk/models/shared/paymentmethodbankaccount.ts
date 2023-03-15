@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-
 // PaymentMethodBankAccount
-/** 
+/**
  * Representation of a bank account item
-**/
+ **/
 export class PaymentMethodBankAccount extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "hidden_account_number" })

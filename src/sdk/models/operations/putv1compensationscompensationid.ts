@@ -3,35 +3,36 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PutV1CompensationsCompensationIdPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=compensation_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=compensation_id",
+  })
   compensationId: string;
 }
 export enum PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum {
-    Exempt = "Exempt",
-    SalariedNonexempt = "Salaried Nonexempt",
-    Nonexempt = "Nonexempt",
-    CommissionOnlyExempt = "Commission Only Exempt",
-    CommissionOnlyNonexempt = "Commission Only Nonexempt",
-    Owner = "Owner"
+  Exempt = "Exempt",
+  SalariedNonexempt = "Salaried Nonexempt",
+  Nonexempt = "Nonexempt",
+  CommissionOnlyExempt = "Commission Only Exempt",
+  CommissionOnlyNonexempt = "Commission Only Nonexempt",
+  Owner = "Owner",
 }
 
 // PutV1CompensationsCompensationIdRequestBodyMinimumWages
-/** 
+/**
  * The minimum wage record you want to apply to the compensation
-**/
+ **/
 export class PutV1CompensationsCompensationIdRequestBodyMinimumWages extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "uuid" })
   uuid?: string;
 }
 export enum PutV1CompensationsCompensationIdRequestBodyPaymentUnitEnum {
-    Hour = "Hour",
-    Week = "Week",
-    Month = "Month",
-    Year = "Year",
-    Paycheck = "Paycheck"
+  Hour = "Hour",
+  Week = "Week",
+  Month = "Month",
+  Year = "Year",
+  Paycheck = "Paycheck",
 }
 
 export class PutV1CompensationsCompensationIdRequestBody extends SpeakeasyBase {
@@ -43,7 +44,9 @@ export class PutV1CompensationsCompensationIdRequestBody extends SpeakeasyBase {
   @Expose({ name: "flsa_status" })
   flsaStatus?: PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum;
 
-  @SpeakeasyMetadata({ elemType: PutV1CompensationsCompensationIdRequestBodyMinimumWages })
+  @SpeakeasyMetadata({
+    elemType: PutV1CompensationsCompensationIdRequestBodyMinimumWages,
+  })
   @Expose({ name: "minimum_wages" })
   @Type(() => PutV1CompensationsCompensationIdRequestBodyMinimumWages)
   minimumWages?: PutV1CompensationsCompensationIdRequestBodyMinimumWages[];

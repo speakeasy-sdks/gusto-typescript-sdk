@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-
 // Admin
-/** 
+/**
  * The representation of an admin user in Gusto.
-**/
+ **/
 export class Admin extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "email" })

@@ -3,7 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PostV1PartnerManagedCompaniesRequestBodyCompany extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "ein" })
@@ -19,9 +18,9 @@ export class PostV1PartnerManagedCompaniesRequestBodyCompany extends SpeakeasyBa
 }
 
 // PostV1PartnerManagedCompaniesRequestBodyUser
-/** 
+/**
  * Information for the user who will be the primary payroll administrator for the new company.
-**/
+ **/
 export class PostV1PartnerManagedCompaniesRequestBodyUser extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "email" })
@@ -58,9 +57,9 @@ export class PostV1PartnerManagedCompaniesRequest extends SpeakeasyBase {
 }
 
 // PostV1PartnerManagedCompanies200ApplicationJSON
-/** 
+/**
  * Object returned when creating a partner managed company
-**/
+ **/
 export class PostV1PartnerManagedCompanies200ApplicationJSON extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "access_token" })

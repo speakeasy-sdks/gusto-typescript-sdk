@@ -3,20 +3,21 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PostCompaniesCompanyUuidTimeOffPoliciesPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
   companyUuid: string;
 }
 export enum PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethodEnum {
-    Unlimited = "unlimited",
-    PerPayPeriod = "per_pay_period",
-    PerCalendarYear = "per_calendar_year",
-    PerAnniversaryYear = "per_anniversary_year",
-    PerHourWorked = "per_hour_worked",
-    PerHourWorkedNoOvertime = "per_hour_worked_no_overtime",
-    PerHourPaid = "per_hour_paid",
-    PerHourPaidNoOvertime = "per_hour_paid_no_overtime"
+  Unlimited = "unlimited",
+  PerPayPeriod = "per_pay_period",
+  PerCalendarYear = "per_calendar_year",
+  PerAnniversaryYear = "per_anniversary_year",
+  PerHourWorked = "per_hour_worked",
+  PerHourWorkedNoOvertime = "per_hour_worked_no_overtime",
+  PerHourPaid = "per_hour_paid",
+  PerHourPaidNoOvertime = "per_hour_paid_no_overtime",
 }
 
 export class PostCompaniesCompanyUuidTimeOffPoliciesRequestBody extends SpeakeasyBase {

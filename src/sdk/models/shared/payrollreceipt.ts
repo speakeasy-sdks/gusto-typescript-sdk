@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class PayrollReceiptEmployeeCompensations extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "child_support_garnishment" })
@@ -41,9 +40,9 @@ export class PayrollReceiptEmployeeCompensations extends SpeakeasyBase {
 }
 
 // PayrollReceiptLicensee
-/** 
+/**
  * The licensed payroll processor
-**/
+ **/
 export class PayrollReceiptLicensee extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "address" })
@@ -81,9 +80,9 @@ export class PayrollReceiptTaxes extends SpeakeasyBase {
 }
 
 // PayrollReceiptTotals
-/** 
+/**
  * The subtotals for the payroll.
-**/
+ **/
 export class PayrollReceiptTotals extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "child_support_debit" })
