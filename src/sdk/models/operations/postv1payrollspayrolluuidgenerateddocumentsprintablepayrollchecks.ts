@@ -3,9 +3,10 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=payroll_id",
+  })
   payrollId: string;
 }
 

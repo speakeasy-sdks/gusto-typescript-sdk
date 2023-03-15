@@ -2,7 +2,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { TaxRequirementMetadata } from "./taxrequirementmetadata";
 import { Expose, Type } from "class-transformer";
 
-
 export class TaxRequirementApplicableIf extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "key" })

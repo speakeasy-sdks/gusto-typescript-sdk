@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class EmployeeStateTaxInputQuestionFormatOptions extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "label" })

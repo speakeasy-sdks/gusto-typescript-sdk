@@ -3,7 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PostV1SandboxGenerate1099RequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "contractor_id" })

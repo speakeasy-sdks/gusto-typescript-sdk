@@ -3,12 +3,15 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
   companyId: string;
 
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=payroll_id",
+  })
   payrollId: string;
 }
 

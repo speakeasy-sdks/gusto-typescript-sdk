@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-
 // PaidTimeOff
-/** 
+/**
  * The representation of paid time off in Gusto.
-**/
+ **/
 export class PaidTimeOff extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "accrual_balance" })

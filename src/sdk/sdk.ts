@@ -39,21 +39,18 @@ export const ServerDemo = "demo";
 export const ServerProd = "prod";
 
 export const ServerList: Record<string, string> = {
-	[ServerDemo]: "https://api.gusto-demo.com",
-	[ServerProd]: "https://api.gusto.com",
+  [ServerDemo]: "https://api.gusto-demo.com",
+  [ServerProd]: "https://api.gusto.com",
 } as const;
 
-
-
 export type SDKProps = {
-  defaultClient?: AxiosInstance;
-
   security?: shared.Security;
-
+  defaultClient?: AxiosInstance;
   serverUrl?: string;
-}
+};
 
-/* SDK Documentation: Welcome to Gusto's Embedded Payroll API documentation!*/
+/* SDK Documentation: Welcome to Gusto's Embedded Payroll API documentation!
+ */
 export class Gusto {
   public bankAccounts: BankAccounts;
   public companies: Companies;
@@ -93,13 +90,15 @@ export class Gusto {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "0.3.1";
-  private _genVersion = "1.9.2";
+  private _sdkVersion = "0.4.1";
+  private _genVersion = "1.11.2";
+  private _globals: any;
 
   constructor(props?: SDKProps) {
     this._serverURL = props?.serverUrl ?? ServerList[ServerDemo];
 
-    this._defaultClient = props?.defaultClient ?? axios.create({ baseURL: this._serverURL });
+    this._defaultClient =
+      props?.defaultClient ?? axios.create({ baseURL: this._serverURL });
     if (props?.security) {
       let security: shared.Security = props.security;
       if (!(props.security instanceof utils.SpeakeasyBase))
@@ -111,7 +110,7 @@ export class Gusto {
     } else {
       this._securityClient = this._defaultClient;
     }
-    
+
     this.bankAccounts = new BankAccounts(
       this._defaultClient,
       this._securityClient,
@@ -120,7 +119,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.companies = new Companies(
       this._defaultClient,
       this._securityClient,
@@ -129,7 +128,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.companyBenefits = new CompanyBenefits(
       this._defaultClient,
       this._securityClient,
@@ -138,7 +137,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.companyForms = new CompanyForms(
       this._defaultClient,
       this._securityClient,
@@ -147,7 +146,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.contractorForms = new ContractorForms(
       this._defaultClient,
       this._securityClient,
@@ -156,7 +155,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.contractorPaymentMethod = new ContractorPaymentMethod(
       this._defaultClient,
       this._securityClient,
@@ -165,7 +164,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.contractorPayments = new ContractorPayments(
       this._defaultClient,
       this._securityClient,
@@ -174,7 +173,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.contractors = new Contractors(
       this._defaultClient,
       this._securityClient,
@@ -183,7 +182,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.departments = new Departments(
       this._defaultClient,
       this._securityClient,
@@ -192,7 +191,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.earningTypes = new EarningTypes(
       this._defaultClient,
       this._securityClient,
@@ -201,7 +200,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.employeeBenefits = new EmployeeBenefits(
       this._defaultClient,
       this._securityClient,
@@ -210,7 +209,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.employeeForms = new EmployeeForms(
       this._defaultClient,
       this._securityClient,
@@ -219,7 +218,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.employeePaymentMethod = new EmployeePaymentMethod(
       this._defaultClient,
       this._securityClient,
@@ -228,7 +227,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.employeeTaxSetup = new EmployeeTaxSetup(
       this._defaultClient,
       this._securityClient,
@@ -237,7 +236,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.employeeTermination = new EmployeeTermination(
       this._defaultClient,
       this._securityClient,
@@ -246,7 +245,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.employees = new Employees(
       this._defaultClient,
       this._securityClient,
@@ -255,7 +254,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.externalPayrolls = new ExternalPayrolls(
       this._defaultClient,
       this._securityClient,
@@ -264,7 +263,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.federalTaxDetails = new FederalTaxDetails(
       this._defaultClient,
       this._securityClient,
@@ -273,7 +272,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.flows = new Flows(
       this._defaultClient,
       this._securityClient,
@@ -282,7 +281,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.garnishments = new Garnishments(
       this._defaultClient,
       this._securityClient,
@@ -291,7 +290,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.generatedDocuments = new GeneratedDocuments(
       this._defaultClient,
       this._securityClient,
@@ -300,7 +299,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.industrySelection = new IndustrySelection(
       this._defaultClient,
       this._securityClient,
@@ -309,7 +308,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.jobsAndCompensations = new JobsAndCompensations(
       this._defaultClient,
       this._securityClient,
@@ -318,7 +317,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.locations = new Locations(
       this._defaultClient,
       this._securityClient,
@@ -327,7 +326,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.paySchedules = new PaySchedules(
       this._defaultClient,
       this._securityClient,
@@ -336,7 +335,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.paymentConfigs = new PaymentConfigs(
       this._defaultClient,
       this._securityClient,
@@ -345,7 +344,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.payrolls = new Payrolls(
       this._defaultClient,
       this._securityClient,
@@ -354,7 +353,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.signatories = new Signatories(
       this._defaultClient,
       this._securityClient,
@@ -363,7 +362,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.taxLiabilities = new TaxLiabilities(
       this._defaultClient,
       this._securityClient,
@@ -372,7 +371,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.taxRequirements = new TaxRequirements(
       this._defaultClient,
       this._securityClient,
@@ -381,7 +380,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.timeOffPolicies = new TimeOffPolicies(
       this._defaultClient,
       this._securityClient,
@@ -390,7 +389,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.user = new User(
       this._defaultClient,
       this._securityClient,
@@ -399,7 +398,7 @@ export class Gusto {
       this._sdkVersion,
       this._genVersion
     );
-    
+
     this.webhookSubscriptions = new WebhookSubscriptions(
       this._defaultClient,
       this._securityClient,
@@ -409,5 +408,4 @@ export class Gusto {
       this._genVersion
     );
   }
-  
 }

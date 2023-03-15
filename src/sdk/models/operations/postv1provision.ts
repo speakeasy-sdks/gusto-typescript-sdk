@@ -3,7 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PostV1ProvisionRequestBodyCompanyAddresses extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "city" })
@@ -62,9 +61,9 @@ export class PostV1ProvisionRequestBodyCompany extends SpeakeasyBase {
 }
 
 // PostV1ProvisionRequestBodyUser
-/** 
+/**
  * Information for the user who will be the primary payroll administrator for the new company.
-**/
+ **/
 export class PostV1ProvisionRequestBodyUser extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "email" })

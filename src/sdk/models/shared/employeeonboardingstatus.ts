@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class EmployeeOnboardingStatusOnboardingStep extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "completed" })
@@ -25,7 +24,7 @@ export class EmployeeOnboardingStatusOnboardingStep extends SpeakeasyBase {
 }
 
 // EmployeeOnboardingStatus
-/** 
+/**
  * The representation of an employee's onboarding status.
  * ## onboarding_status
  * ### Admin-facilitated onboarding
@@ -56,7 +55,7 @@ export class EmployeeOnboardingStatusOnboardingStep extends SpeakeasyBase {
  * | `employee_form_signing` | Employee forms (e.g., W4, direct deposit authorization) are generated & signed. |
  * | `file_new_hire_report` | File a new hire report for this employee. |
  * | `admin_review` | (only required for employee self-onboarding) Admin finishes reviewing and confirms employee details. |
-**/
+ **/
 export class EmployeeOnboardingStatus extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "onboarding_status" })

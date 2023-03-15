@@ -3,12 +3,15 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PutV1CompaniesCompanyUuidTaxRequirementsStatePathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
   companyUuid: string;
 
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=state" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=state",
+  })
   state: string;
 }
 
@@ -31,9 +34,15 @@ export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirement
   @Expose({ name: "key" })
   key?: string;
 
-  @SpeakeasyMetadata({ elemType: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements })
+  @SpeakeasyMetadata({
+    elemType:
+      PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements,
+  })
   @Expose({ name: "requirements" })
-  @Type(() => PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements)
+  @Type(
+    () =>
+      PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements
+  )
   requirements?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements[];
 
   @SpeakeasyMetadata()
@@ -42,9 +51,15 @@ export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirement
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets })
+  @SpeakeasyMetadata({
+    elemType:
+      PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets,
+  })
   @Expose({ name: "requirement_sets" })
-  @Type(() => PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets)
+  @Type(
+    () =>
+      PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets
+  )
   requirementSets?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets[];
 }
 

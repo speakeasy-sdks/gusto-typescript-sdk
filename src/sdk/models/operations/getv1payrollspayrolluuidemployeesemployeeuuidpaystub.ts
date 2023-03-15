@@ -2,12 +2,15 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_id",
+  })
   employeeId: string;
 
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=payroll_id",
+  })
   payrollId: string;
 }
 

@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 // TaxLiabilitiesSelectionsPossibleLiabilities
-/** 
+/**
  * Possible tax liabilities selections.
-**/
+ **/
 export class TaxLiabilitiesSelectionsPossibleLiabilities extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "external_payroll_uuid" })
@@ -21,9 +20,9 @@ export class TaxLiabilitiesSelectionsPossibleLiabilities extends SpeakeasyBase {
 }
 
 // TaxLiabilitiesSelections
-/** 
+/**
  * The representation of tax liabilities selections.
-**/
+ **/
 export class TaxLiabilitiesSelections extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "last_unpaid_external_payroll_uuid" })

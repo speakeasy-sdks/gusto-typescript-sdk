@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class CompanyOnboardingStatusOnboardingStep extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "completed" })
@@ -25,9 +24,9 @@ export class CompanyOnboardingStatusOnboardingStep extends SpeakeasyBase {
 }
 
 // CompanyOnboardingStatus
-/** 
+/**
  * The representation of a company's onboarding status
-**/
+ **/
 export class CompanyOnboardingStatus extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "onboarding_completed" })

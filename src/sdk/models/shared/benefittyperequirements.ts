@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class BenefitTypeRequirementsCatchUpDefaultValue extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
@@ -48,7 +47,9 @@ export class BenefitTypeRequirementsCompanyContributionAnnualMaximum extends Spe
 
   @SpeakeasyMetadata()
   @Expose({ name: "default_value" })
-  @Type(() => BenefitTypeRequirementsCompanyContributionAnnualMaximumDefaultValue)
+  @Type(
+    () => BenefitTypeRequirementsCompanyContributionAnnualMaximumDefaultValue
+  )
   defaultValue?: BenefitTypeRequirementsCompanyContributionAnnualMaximumDefaultValue;
 
   @SpeakeasyMetadata()

@@ -2,24 +2,24 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export enum ContractorPaymentPaymentMethodEnum {
-    DirectDeposit = "Direct Deposit",
-    Check = "Check",
-    HistoricalPayment = "Historical Payment",
-    CorrectionPayment = "Correction Payment"
+  DirectDeposit = "Direct Deposit",
+  Check = "Check",
+  HistoricalPayment = "Historical Payment",
+  CorrectionPayment = "Correction Payment",
 }
 export enum ContractorPaymentStatusEnum {
-    Funded = "Funded",
-    Unfunded = "Unfunded"
+  Funded = "Funded",
+  Unfunded = "Unfunded",
 }
 export enum ContractorPaymentWageTypeEnum {
-    Hourly = "Hourly",
-    Fixed = "Fixed"
+  Hourly = "Hourly",
+  Fixed = "Fixed",
 }
 
 // ContractorPayment
-/** 
+/**
  * The representation of a single contractor payment.
-**/
+ **/
 export class ContractorPayment extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "bonus" })

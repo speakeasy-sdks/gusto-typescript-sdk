@@ -3,9 +3,10 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid",
+  })
   timeOffPolicyUuid: string;
 }
 
@@ -16,9 +17,15 @@ export class PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmpl
 }
 
 export class PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees })
+  @SpeakeasyMetadata({
+    elemType:
+      PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees,
+  })
   @Expose({ name: "employees" })
-  @Type(() => PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees)
+  @Type(
+    () =>
+      PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees
+  )
   employees?: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees[];
 }
 

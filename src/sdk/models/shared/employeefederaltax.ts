@@ -2,8 +2,8 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export enum EmployeeFederalTaxW4DataTypeEnum {
-    Pre2020W4 = "pre_2020_w4",
-    Rev2020W4 = "rev_2020_w4"
+  Pre2020W4 = "pre_2020_w4",
+  Rev2020W4 = "rev_2020_w4",
 }
 
 export class EmployeeFederalTax extends SpeakeasyBase {
