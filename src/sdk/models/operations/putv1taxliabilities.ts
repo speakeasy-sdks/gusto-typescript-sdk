@@ -3,9 +3,10 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PutV1TaxLiabilitiesPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
   companyUuid: string;
 }
 
@@ -24,7 +25,9 @@ export class PutV1TaxLiabilitiesRequestBodyLiabilitySelections extends Speakeasy
 }
 
 export class PutV1TaxLiabilitiesRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: PutV1TaxLiabilitiesRequestBodyLiabilitySelections })
+  @SpeakeasyMetadata({
+    elemType: PutV1TaxLiabilitiesRequestBodyLiabilitySelections,
+  })
   @Expose({ name: "liability_selections" })
   @Type(() => PutV1TaxLiabilitiesRequestBodyLiabilitySelections)
   liabilitySelections?: PutV1TaxLiabilitiesRequestBodyLiabilitySelections[];

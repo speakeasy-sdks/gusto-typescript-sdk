@@ -3,9 +3,9 @@ import { CompanyAddress } from "./companyaddress";
 import { Expose, Type } from "class-transformer";
 
 export enum CompanyCompanyStatusEnum {
-    Approved = "Approved",
-    NotApproved = "Not Approved",
-    Suspended = "Suspended"
+  Approved = "Approved",
+  NotApproved = "Not Approved",
+  Suspended = "Suspended",
 }
 
 export class CompanyCompensationsFixed extends SpeakeasyBase {
@@ -31,9 +31,9 @@ export class CompanyCompensationsPaidTimeOff extends SpeakeasyBase {
 }
 
 // CompanyCompensations
-/** 
+/**
  * The available company-wide compensation rates for the company.
-**/
+ **/
 export class CompanyCompensations extends SpeakeasyBase {
   @SpeakeasyMetadata({ elemType: CompanyCompensationsFixed })
   @Expose({ name: "fixed" })
@@ -51,24 +51,24 @@ export class CompanyCompensations extends SpeakeasyBase {
   paidTimeOff?: CompanyCompensationsPaidTimeOff[];
 }
 export enum CompanyEntityTypeEnum {
-    CCorporation = "C-Corporation",
-    SCorporation = "S-Corporation",
-    SoleProprietor = "Sole proprietor",
-    Llc = "LLC",
-    Llp = "LLP",
-    LimitedPartnership = "Limited partnership",
-    CoOwnership = "Co-ownership",
-    Association = "Association",
-    Trusteeship = "Trusteeship",
-    GeneralPartnership = "General partnership",
-    JointVenture = "Joint venture",
-    NonProfit = "Non-Profit"
+  CCorporation = "C-Corporation",
+  SCorporation = "S-Corporation",
+  SoleProprietor = "Sole proprietor",
+  Llc = "LLC",
+  Llp = "LLP",
+  LimitedPartnership = "Limited partnership",
+  CoOwnership = "Co-ownership",
+  Association = "Association",
+  Trusteeship = "Trusteeship",
+  GeneralPartnership = "General partnership",
+  JointVenture = "Joint venture",
+  NonProfit = "Non-Profit",
 }
 
 // CompanyPrimaryPayrollAdmin
-/** 
+/**
  * The primary payroll admin of the company.
-**/
+ **/
 export class CompanyPrimaryPayrollAdmin extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "email" })
@@ -114,9 +114,9 @@ export class CompanyPrimarySignatoryHomeAddress extends SpeakeasyBase {
 }
 
 // CompanyPrimarySignatory
-/** 
+/**
  * The primary signatory of the company.
-**/
+ **/
 export class CompanyPrimarySignatory extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "email" })
@@ -144,20 +144,20 @@ export class CompanyPrimarySignatory extends SpeakeasyBase {
   phone?: string;
 }
 export enum CompanyTierEnum {
-    Simple = "simple",
-    Plus = "plus",
-    Premium = "premium",
-    Core = "core",
-    Complete = "complete",
-    Concierge = "concierge",
-    ContractorOnly = "contractor_only",
-    Basic = "basic"
+  Simple = "simple",
+  Plus = "plus",
+  Premium = "premium",
+  Core = "core",
+  Complete = "complete",
+  Concierge = "concierge",
+  ContractorOnly = "contractor_only",
+  Basic = "basic",
 }
 
 // Company
-/** 
+/**
  * The representation of a company in Gusto.
-**/
+ **/
 export class Company extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "company_status" })

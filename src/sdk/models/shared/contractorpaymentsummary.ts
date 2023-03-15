@@ -2,7 +2,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { ContractorPayment } from "./contractorpayment";
 import { Expose, Type } from "class-transformer";
 
-
 export class ContractorPaymentSummaryContractorPayments extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "contractor_uuid" })
@@ -23,9 +22,9 @@ export class ContractorPaymentSummaryContractorPayments extends SpeakeasyBase {
 }
 
 // ContractorPaymentSummaryTotal
-/** 
+/**
  * The wage and reimbursement totals for all contractor payments within a given time period.
-**/
+ **/
 export class ContractorPaymentSummaryTotal extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "reimbursements" })
@@ -37,9 +36,9 @@ export class ContractorPaymentSummaryTotal extends SpeakeasyBase {
 }
 
 // ContractorPaymentSummary
-/** 
+/**
  * The representation of the summary of contractor payments for a given company in a given time period.
-**/
+ **/
 export class ContractorPaymentSummary extends SpeakeasyBase {
   @SpeakeasyMetadata({ elemType: ContractorPaymentSummaryContractorPayments })
   @Expose({ name: "contractor_payments" })

@@ -3,12 +3,15 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class GetV1CompaniesCompanyIdContractorPaymentContractorPaymentPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
   companyId: string;
 
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=contractor_payment_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=contractor_payment_id",
+  })
   contractorPaymentId: string;
 }
 

@@ -3,12 +3,15 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class GetV1GeneratedDocumentsDocumentTypeRequestUuidPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=document_type" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=document_type",
+  })
   documentType: string;
 
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=request_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=request_uuid",
+  })
   requestUuid: string;
 }
 

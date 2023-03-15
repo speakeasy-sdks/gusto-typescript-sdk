@@ -2,7 +2,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { EmployeeStateTaxQuestion } from "./employeestatetaxquestion";
 import { Expose, Type } from "class-transformer";
 
-
 export class EmployeeStateTax extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "employee_uuid" })

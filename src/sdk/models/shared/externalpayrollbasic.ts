@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-
 // ExternalPayrollBasic
-/** 
+/**
  * The representation of an external payroll with minimal information.
-**/
+ **/
 export class ExternalPayrollBasic extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "check_date" })

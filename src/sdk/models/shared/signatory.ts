@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class SignatoryHomeAddress extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "city" })
@@ -28,15 +27,15 @@ export class SignatoryHomeAddress extends SpeakeasyBase {
   zip?: string;
 }
 export enum SignatoryIdentityVerificationStatusEnum {
-    Pass = "Pass",
-    Fail = "Fail",
-    Skipped = "Skipped"
+  Pass = "Pass",
+  Fail = "Fail",
+  Skipped = "Skipped",
 }
 
 // Signatory
-/** 
+/**
  * The representation of a company's signatory
-**/
+ **/
 export class Signatory extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "birthday" })

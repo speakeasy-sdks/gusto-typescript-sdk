@@ -2,25 +2,25 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export enum CompensationFlsaStatusEnum {
-    Exempt = "Exempt",
-    SalariedNonexempt = "Salaried Nonexempt",
-    Nonexempt = "Nonexempt",
-    CommissionOnlyExempt = "Commission Only Exempt",
-    CommissionOnlyNonexempt = "Commission Only Nonexempt",
-    Owner = "Owner"
+  Exempt = "Exempt",
+  SalariedNonexempt = "Salaried Nonexempt",
+  Nonexempt = "Nonexempt",
+  CommissionOnlyExempt = "Commission Only Exempt",
+  CommissionOnlyNonexempt = "Commission Only Nonexempt",
+  Owner = "Owner",
 }
 export enum CompensationPaymentUnitEnum {
-    Hour = "Hour",
-    Week = "Week",
-    Month = "Month",
-    Year = "Year",
-    Paycheck = "Paycheck"
+  Hour = "Hour",
+  Week = "Week",
+  Month = "Month",
+  Year = "Year",
+  Paycheck = "Paycheck",
 }
 
 // Compensation
-/** 
+/**
  * The representation of compensation in Gusto.
-**/
+ **/
 export class Compensation extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "adjust_for_minimum_wage" })

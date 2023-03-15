@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-
 export class GeneratedDocument extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "document_urls" })

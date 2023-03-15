@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 export class TaxRequirementMetadataOptions extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "label" })
@@ -16,28 +15,28 @@ export class TaxRequirementMetadataOptions extends SpeakeasyBase {
   value: string;
 }
 export enum TaxRequirementMetadataRateTypeEnum {
-    Percent = "percent",
-    CurrencyPerHour = "currency_per_hour"
+  Percent = "percent",
+  CurrencyPerHour = "currency_per_hour",
 }
 export enum TaxRequirementMetadataTypeEnum {
-    Text = "text",
-    Currency = "currency",
-    Radio = "radio",
-    Select = "select",
-    Percent = "percent",
-    AccountNumber = "account_number",
-    TaxRate = "tax_rate",
-    WorkersCompensationRate = "workers_compensation_rate"
+  Text = "text",
+  Currency = "currency",
+  Radio = "radio",
+  Select = "select",
+  Percent = "percent",
+  AccountNumber = "account_number",
+  TaxRate = "tax_rate",
+  WorkersCompensationRate = "workers_compensation_rate",
 }
 export enum TaxRequirementMetadataValidationTypeEnum {
-    OneOf = "one_of",
-    MinMax = "min_max"
+  OneOf = "one_of",
+  MinMax = "min_max",
 }
 
 // TaxRequirementMetadataValidation
-/** 
+/**
  * [for `tax_rate`] Describes the validation required for the tax rate
-**/
+ **/
 export class TaxRequirementMetadataValidation extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "max" })

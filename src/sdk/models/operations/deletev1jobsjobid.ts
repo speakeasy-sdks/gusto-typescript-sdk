@@ -2,9 +2,10 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-
 export class DeleteV1JobsJobIdPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=job_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=job_id",
+  })
   jobId: string;
 }
 

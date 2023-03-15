@@ -2,9 +2,10 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class GetV1CompaniesCompanyUuidTaxRequirementsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
   companyUuid: string;
 }
 
@@ -33,6 +34,8 @@ export class GetV1CompaniesCompanyUuidTaxRequirementsResponse extends SpeakeasyB
   @SpeakeasyMetadata()
   rawResponse?: AxiosResponse;
 
-  @SpeakeasyMetadata({ elemType: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON })
+  @SpeakeasyMetadata({
+    elemType: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON,
+  })
   getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects?: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON[];
 }

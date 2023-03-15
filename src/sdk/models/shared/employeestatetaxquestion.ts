@@ -3,7 +3,6 @@ import { EmployeeStateTaxAnswer } from "./employeestatetaxanswer";
 import { EmployeeStateTaxInputQuestionFormat } from "./employeestatetaxinputquestionformat";
 import { Expose, Type } from "class-transformer";
 
-
 export class EmployeeStateTaxQuestion extends SpeakeasyBase {
   @SpeakeasyMetadata({ elemType: EmployeeStateTaxAnswer })
   @Expose({ name: "answers" })

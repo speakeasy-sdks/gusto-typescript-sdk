@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-
 // TimeOffActivity
-/** 
+/**
  * Representation of a Time Off Activity
-**/
+ **/
 export class TimeOffActivity extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "balance" })

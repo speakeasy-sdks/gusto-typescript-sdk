@@ -3,24 +3,25 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PostV1CompaniesCompanyIdPayrollsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
   companyId: string;
 }
 export enum PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReasonEnum {
-    Bonus = "Bonus",
-    Correction = "Correction",
-    DismissedEmployee = "Dismissed employee"
+  Bonus = "Bonus",
+  Correction = "Correction",
+  DismissedEmployee = "Dismissed employee",
 }
 export enum PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriodEnum {
-    EveryWeek = "Every week",
-    EveryOtherWeek = "Every other week",
-    TwicePerMonth = "Twice per month",
-    Monthly = "Monthly",
-    Quarterly = "Quarterly",
-    Semiannually = "Semiannually",
-    Annually = "Annually"
+  EveryWeek = "Every week",
+  EveryOtherWeek = "Every other week",
+  TwicePerMonth = "Twice per month",
+  Monthly = "Monthly",
+  Quarterly = "Quarterly",
+  Semiannually = "Semiannually",
+  Annually = "Annually",
 }
 
 export class PostV1CompaniesCompanyIdPayrollsRequestBody extends SpeakeasyBase {

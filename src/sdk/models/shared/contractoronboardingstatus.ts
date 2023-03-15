@@ -2,9 +2,9 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
 export enum ContractorOnboardingStatusOnboardingStatusEnum {
-    OnboardingCompleted = "onboarding_completed",
-    AdminOnboardingReview = "admin_onboarding_review",
-    AdminOnboardingIncomplete = "admin_onboarding_incomplete"
+  OnboardingCompleted = "onboarding_completed",
+  AdminOnboardingReview = "admin_onboarding_review",
+  AdminOnboardingIncomplete = "admin_onboarding_incomplete",
 }
 
 export class ContractorOnboardingStatusOnboardingStep extends SpeakeasyBase {
@@ -30,9 +30,9 @@ export class ContractorOnboardingStatusOnboardingStep extends SpeakeasyBase {
 }
 
 // ContractorOnboardingStatus
-/** 
+/**
  * The representation of an contractor's onboarding status.
-**/
+ **/
 export class ContractorOnboardingStatus extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "onboarding_status" })

@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Transform, Type } from "class-transformer";
 
-
 export class ContractorPaymentReceiptContractorPayments extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "bonus" })
@@ -41,9 +40,9 @@ export class ContractorPaymentReceiptContractorPayments extends SpeakeasyBase {
 }
 
 // ContractorPaymentReceiptLicensee
-/** 
+/**
  * The licensed payroll processor
-**/
+ **/
 export class ContractorPaymentReceiptLicensee extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "address" })
@@ -71,9 +70,9 @@ export class ContractorPaymentReceiptLicensee extends SpeakeasyBase {
 }
 
 // ContractorPaymentReceiptTotals
-/** 
+/**
  * The subtotals for the contractor payment.
-**/
+ **/
 export class ContractorPaymentReceiptTotals extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "company_debit" })

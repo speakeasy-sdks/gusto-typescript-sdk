@@ -12,7 +12,14 @@ export class TaxRequirements {
   _sdkVersion: string;
   _genVersion: string;
 
-  constructor(defaultClient: AxiosInstance, securityClient: AxiosInstance, serverURL: string, language: string, sdkVersion: string, genVersion: string) {
+  constructor(
+    defaultClient: AxiosInstance,
+    securityClient: AxiosInstance,
+    serverURL: string,
+    language: string,
+    sdkVersion: string,
+    genVersion: string
+  ) {
     this._defaultClient = defaultClient;
     this._securityClient = securityClient;
     this._serverURL = serverURL;
@@ -20,12 +27,12 @@ export class TaxRequirements {
     this._sdkVersion = sdkVersion;
     this._genVersion = genVersion;
   }
-  
+
   /**
    * getV1CompaniesCompanyUuidTaxRequirements - Get All Tax Requirement States
    *
    * Returns objects describing the states that have tax requirements for the company
-  **/
+   **/
   getV1CompaniesCompanyUuidTaxRequirements(
     req: operations.GetV1CompaniesCompanyUuidTaxRequirementsRequest,
     config?: AxiosRequestConfig
@@ -33,57 +40,62 @@ export class TaxRequirements {
     if (!(req instanceof utils.SpeakeasyBase)) {
       req = new operations.GetV1CompaniesCompanyUuidTaxRequirementsRequest(req);
     }
-    
+
     const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(baseURL, "/v1/companies/{company_uuid}/tax_requirements", req.pathParams);
-    
+    const url: string = utils.generateURL(
+      baseURL,
+      "/v1/companies/{company_uuid}/tax_requirements",
+      req.pathParams
+    );
+
     const client: AxiosInstance = this._securityClient!;
-    
-    
+
     const r = client.request({
       url: url,
       method: "get",
       ...config,
     });
-    
-    return r.then((httpRes: AxiosResponse) => {
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-        if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse =
-            new operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes
-            });
-        switch (true) {
-          case httpRes?.status == 200:
-            if (utils.matchContentType(contentType, `application/json`)) {
-              res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects = [];
-              const resFieldDepth: number = utils.getResFieldDepth(res);
-              res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects = utils.deserializeJSONResponse(
+    return r.then((httpRes: AxiosResponse) => {
+      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+      if (httpRes?.status == null)
+        throw new Error(`status code not found in response: ${httpRes}`);
+      const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse =
+        new operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse({
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        });
+      switch (true) {
+        case httpRes?.status == 200:
+          if (utils.matchContentType(contentType, `application/json`)) {
+            res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects =
+              [];
+            const resFieldDepth: number = utils.getResFieldDepth(res);
+            res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects =
+              utils.deserializeJSONResponse(
                 httpRes?.data,
                 operations.GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON,
                 resFieldDepth
               );
-            }
-            break;
-          case httpRes?.status == 404:
-            break;
-        }
+          }
+          break;
+        case httpRes?.status == 404:
+          break;
+      }
 
-        return res;
-      })
+      return res;
+    });
   }
 
-  
   /**
    * getV1CompaniesCompanyUuidTaxRequirementsState - Get State Tax Requirements
    *
    * Get all tax requirements for a given state.
-   * 
+   *
    * ### Metadata Examples
-   * 
+   *
    * ```json select
    * {
    *   "type": "select",
@@ -120,72 +132,84 @@ export class TaxRequirements {
    *   }
    * }
    * ```
-   * 
-  **/
+   *
+   **/
   getV1CompaniesCompanyUuidTaxRequirementsState(
     req: operations.GetV1CompaniesCompanyUuidTaxRequirementsStateRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse> {
     if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1CompaniesCompanyUuidTaxRequirementsStateRequest(req);
+      req = new operations.GetV1CompaniesCompanyUuidTaxRequirementsStateRequest(
+        req
+      );
     }
-    
+
     const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(baseURL, "/v1/companies/{company_uuid}/tax_requirements/{state}", req.pathParams);
-    
+    const url: string = utils.generateURL(
+      baseURL,
+      "/v1/companies/{company_uuid}/tax_requirements/{state}",
+      req.pathParams
+    );
+
     const client: AxiosInstance = this._securityClient!;
-    
+
     const queryParams: string = utils.serializeQueryParams(req.queryParams);
-    
+
     const r = client.request({
       url: url + queryParams,
       method: "get",
       ...config,
     });
-    
+
     return r.then((httpRes: AxiosResponse) => {
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-        if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse =
-            new operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes
-            });
-        switch (true) {
-          case httpRes?.status == 200:
-            if (utils.matchContentType(contentType, `application/json`)) {
-              res.taxRequirementsState = utils.deserializeJSONResponse(
-                httpRes?.data,
-                shared.TaxRequirementsState,
-              );
-            }
-            break;
-          case httpRes?.status == 404:
-            break;
-        }
+      if (httpRes?.status == null)
+        throw new Error(`status code not found in response: ${httpRes}`);
+      const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse =
+        new operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse({
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        });
+      switch (true) {
+        case httpRes?.status == 200:
+          if (utils.matchContentType(contentType, `application/json`)) {
+            res.taxRequirementsState = utils.deserializeJSONResponse(
+              httpRes?.data,
+              shared.TaxRequirementsState
+            );
+          }
+          break;
+        case httpRes?.status == 404:
+          break;
+      }
 
-        return res;
-      })
+      return res;
+    });
   }
 
-  
   /**
    * putV1CompaniesCompanyUuidTaxRequirementsState - Update State Tax Requirements
    *
    * Update State Tax Requirements
-  **/
+   **/
   putV1CompaniesCompanyUuidTaxRequirementsState(
     req: operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse> {
     if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequest(req);
+      req = new operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequest(
+        req
+      );
     }
-    
+
     const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(baseURL, "/v1/companies/{company_uuid}/tax_requirements/{state}", req.pathParams);
+    const url: string = utils.generateURL(
+      baseURL,
+      "/v1/companies/{company_uuid}/tax_requirements/{state}",
+      req.pathParams
+    );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
@@ -196,46 +220,44 @@ export class TaxRequirements {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
       }
     }
-    
+
     const client: AxiosInstance = this._securityClient!;
-    
-    const headers = {...reqBodyHeaders, ...config?.headers};
-    
+
+    const headers = { ...reqBodyHeaders, ...config?.headers };
+
     const r = client.request({
       url: url,
       method: "put",
       headers: headers,
-      data: reqBody, 
+      data: reqBody,
       ...config,
     });
-    
+
     return r.then((httpRes: AxiosResponse) => {
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-        if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse =
-            new operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes
-            });
-        switch (true) {
-          case httpRes?.status == 200:
-            break;
-          case httpRes?.status == 404:
-            break;
-          case httpRes?.status == 422:
-            if (utils.matchContentType(contentType, `application/json`)) {
-              res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
-                httpRes?.data,
-                shared.UnprocessableEntityErrorObject,
-              );
-            }
-            break;
-        }
+      if (httpRes?.status == null)
+        throw new Error(`status code not found in response: ${httpRes}`);
+      const res: operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse =
+        new operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse({
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        });
+      switch (true) {
+        case [200, 404].includes(httpRes?.status):
+          break;
+        case httpRes?.status == 422:
+          if (utils.matchContentType(contentType, `application/json`)) {
+            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+              httpRes?.data,
+              shared.UnprocessableEntityErrorObject
+            );
+          }
+          break;
+      }
 
-        return res;
-      })
+      return res;
+    });
   }
-
 }

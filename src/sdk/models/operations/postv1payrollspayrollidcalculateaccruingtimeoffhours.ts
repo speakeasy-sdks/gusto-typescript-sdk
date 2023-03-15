@@ -3,12 +3,15 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_id",
+  })
   employeeId: string;
 
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=payroll_id",
+  })
   payrollId: string;
 }
 

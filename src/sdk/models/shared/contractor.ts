@@ -1,11 +1,10 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-
 // ContractorAddress
-/** 
+/**
  * The contractor’s home address.
-**/
+ **/
 export class ContractorAddress extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "city" })
@@ -32,23 +31,23 @@ export class ContractorAddress extends SpeakeasyBase {
   zip?: string;
 }
 export enum ContractorOnboardingStatusEnum {
-    OnboardingCompleted = "onboarding_completed",
-    AdminOnboardingReview = "admin_onboarding_review",
-    AdminOnboardingIncomplete = "admin_onboarding_incomplete"
+  OnboardingCompleted = "onboarding_completed",
+  AdminOnboardingReview = "admin_onboarding_review",
+  AdminOnboardingIncomplete = "admin_onboarding_incomplete",
 }
 export enum ContractorTypeEnum {
-    Individual = "Individual",
-    Business = "Business"
+  Individual = "Individual",
+  Business = "Business",
 }
 export enum ContractorWageTypeEnum {
-    Fixed = "Fixed",
-    Hourly = "Hourly"
+  Fixed = "Fixed",
+  Hourly = "Hourly",
 }
 
 // Contractor
-/** 
+/**
  * The representation of a contractor (individual or business) in Gusto.
-**/
+ **/
 export class Contractor extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "address" })

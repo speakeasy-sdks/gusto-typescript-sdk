@@ -49,11 +49,10 @@ import {
 
 import { AxiosError } from "axios";
 import { Gusto } from "gusto";
-
 const sdk = new Gusto({
   security: {
     authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
-  }
+  },
 });
     
 const req: GetV1CompaniesCompanyIdBankAccountsRequest = {

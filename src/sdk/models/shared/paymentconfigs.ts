@@ -1,7 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-
 export class PaymentConfigs extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "company_uuid" })

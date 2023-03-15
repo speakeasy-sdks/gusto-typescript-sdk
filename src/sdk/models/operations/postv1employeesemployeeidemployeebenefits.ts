@@ -3,21 +3,22 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PostV1EmployeesEmployeeIdEmployeeBenefitsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_id",
+  })
   employeeId: string;
 }
 export enum PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionTypeEnum {
-    Tiered = "tiered",
-    Percentage = "percentage",
-    Amount = "amount"
+  Tiered = "tiered",
+  Percentage = "percentage",
+  Amount = "amount",
 }
 
 // PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionValue2
-/** 
+/**
  * A single tier of a tiered matching scheme.
-**/
+ **/
 export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionValue2 extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "rate" })
@@ -29,9 +30,9 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionVal
 }
 
 // PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution
-/** 
+/**
  * An object representing the company contribution type and value.
-**/
+ **/
 export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
@@ -42,10 +43,10 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution ex
   value?: any;
 }
 export enum PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncomeEnum {
-    Unset = "unset",
-    ReducesTaxableIncome = "reduces_taxable_income",
-    DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
-    Unknown = ""
+  Unset = "unset",
+  ReducesTaxableIncome = "reduces_taxable_income",
+  DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
+  Unknown = "",
 }
 
 export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody extends SpeakeasyBase {

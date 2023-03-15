@@ -3,12 +3,15 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-
 export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
   companyUuid: string;
 
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=signatory_uuid" })
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=signatory_uuid",
+  })
   signatoryUuid: string;
 }
 
@@ -45,7 +48,10 @@ export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody extend
 
   @SpeakeasyMetadata()
   @Expose({ name: "home_address" })
-  @Type(() => PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress)
+  @Type(
+    () =>
+      PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress
+  )
   homeAddress?: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress;
 
   @SpeakeasyMetadata()
