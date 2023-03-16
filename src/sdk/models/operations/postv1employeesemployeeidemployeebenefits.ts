@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostV1EmployeesEmployeeIdEmployeeBenefitsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
-}
 export enum PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionTypeEnum {
   Tiered = "tiered",
   Percentage = "percentage",
@@ -113,11 +107,13 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody extends Speake
 }
 
 export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PostV1EmployeesEmployeeIdEmployeeBenefitsPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody;
+  requestBody?: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_id",
+  })
+  employeeId: string;
 }
 
 export class PostV1EmployeesEmployeeIdEmployeeBenefitsResponse extends SpeakeasyBase {

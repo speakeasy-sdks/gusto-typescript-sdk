@@ -54,11 +54,9 @@ const sdk = new Gusto({
     authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
   },
 });
-    
+
 const req: GetV1CompaniesCompanyIdBankAccountsRequest = {
-  pathParams: {
-    companyId: "unde",
-  },
+  companyId: "unde",
 };
 
 sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(req).then((res: GetV1CompaniesCompanyIdBankAccountsResponse | AxiosError) => {

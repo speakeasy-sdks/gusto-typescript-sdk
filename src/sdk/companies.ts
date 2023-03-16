@@ -50,7 +50,7 @@ export class Companies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -106,12 +106,12 @@ export class Companies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/admins",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
 
-    const queryParams: string = utils.serializeQueryParams(req.queryParams);
+    const queryParams: string = utils.serializeQueryParams(req);
 
     const r = client.request({
       url: url + queryParams,
@@ -169,12 +169,12 @@ export class Companies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/custom_fields",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
 
-    const queryParams: string = utils.serializeQueryParams(req.queryParams);
+    const queryParams: string = utils.serializeQueryParams(req);
 
     const r = client.request({
       url: url + queryParams,
@@ -239,7 +239,7 @@ export class Companies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/finish_onboarding",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -303,7 +303,7 @@ export class Companies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/onboarding_status",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -362,13 +362,17 @@ export class Companies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/partner_managed_companies/{company_uuid}/accept_terms_of_service",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -446,13 +450,17 @@ export class Companies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/partner_managed_companies/{company_uuid}/retrieve_terms_of_service",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -527,13 +535,17 @@ export class Companies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/admins",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -594,11 +606,11 @@ export class Companies {
    * Create a new partner managed company
    **/
   postV1PartnerManagedCompanies(
-    req: operations.PostV1PartnerManagedCompaniesRequest,
+    req: operations.PostV1PartnerManagedCompaniesRequestBody,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1PartnerManagedCompaniesResponse> {
     if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1PartnerManagedCompaniesRequest(req);
+      req = new operations.PostV1PartnerManagedCompaniesRequestBody(req);
     }
 
     const baseURL: string = this._serverURL;
@@ -608,7 +620,11 @@ export class Companies {
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "request",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -682,11 +698,11 @@ export class Companies {
    * ```
    **/
   postV1Provision(
-    req: operations.PostV1ProvisionRequest,
+    req: operations.PostV1ProvisionRequestBody,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1ProvisionResponse> {
     if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1ProvisionRequest(req);
+      req = new operations.PostV1ProvisionRequestBody(req);
     }
 
     const baseURL: string = this._serverURL;
@@ -695,7 +711,11 @@ export class Companies {
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "request",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -771,13 +791,17 @@ export class Companies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/partner_managed_companies/{company_uuid}/migrate",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

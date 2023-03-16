@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutTimeOffPoliciesTimeOffPolicyUuidPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid",
-  })
-  timeOffPolicyUuid: string;
-}
 export enum PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethodEnum {
   Unlimited = "unlimited",
   PerPayPeriod = "per_pay_period",
@@ -59,11 +53,13 @@ export class PutTimeOffPoliciesTimeOffPolicyUuidRequestBody extends SpeakeasyBas
 }
 
 export class PutTimeOffPoliciesTimeOffPolicyUuidRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutTimeOffPoliciesTimeOffPolicyUuidPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody;
+  requestBody?: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid",
+  })
+  timeOffPolicyUuid: string;
 }
 
 export class PutTimeOffPoliciesTimeOffPolicyUuidResponse extends SpeakeasyBase {

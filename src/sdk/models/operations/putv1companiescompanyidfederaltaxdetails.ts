@@ -3,13 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompaniesCompanyIdFederalTaxDetailsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
-}
-
 export class PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "ein" })
@@ -37,11 +30,13 @@ export class PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody extends Speakea
 }
 
 export class PutV1CompaniesCompanyIdFederalTaxDetailsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompaniesCompanyIdFederalTaxDetailsPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody;
+  requestBody?: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
+  companyId: string;
 }
 
 export class PutV1CompaniesCompanyIdFederalTaxDetailsResponse extends SpeakeasyBase {

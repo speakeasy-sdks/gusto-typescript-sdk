@@ -48,7 +48,7 @@ export class CompanyBenefits {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/company_benefits/{company_benefit_id}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -163,7 +163,7 @@ export class CompanyBenefits {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/benefits/{benefit_id}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -221,7 +221,7 @@ export class CompanyBenefits {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/benefits/{benefit_id}/requirements",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -279,12 +279,12 @@ export class CompanyBenefits {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/company_benefits/{company_benefit_id}/summary",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
 
-    const queryParams: string = utils.serializeQueryParams(req.queryParams);
+    const queryParams: string = utils.serializeQueryParams(req);
 
     const r = client.request({
       url: url + queryParams,
@@ -341,12 +341,12 @@ export class CompanyBenefits {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/company_benefits",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
 
-    const queryParams: string = utils.serializeQueryParams(req.queryParams);
+    const queryParams: string = utils.serializeQueryParams(req);
 
     const r = client.request({
       url: url + queryParams,
@@ -408,12 +408,12 @@ export class CompanyBenefits {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/company_benefits/{company_benefit_id}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
 
-    const queryParams: string = utils.serializeQueryParams(req.queryParams);
+    const queryParams: string = utils.serializeQueryParams(req);
 
     const r = client.request({
       url: url + queryParams,
@@ -470,13 +470,17 @@ export class CompanyBenefits {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/company_benefits",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -552,13 +556,17 @@ export class CompanyBenefits {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/company_benefits/{company_benefit_id}",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

@@ -3,27 +3,17 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class GetV1CompaniesCompanyIdCustomFieldsPathParams extends SpeakeasyBase {
+export class GetV1CompaniesCompanyIdCustomFieldsRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "pathParam, style=simple;explode=false;name=company_id",
   })
   companyId: string;
-}
 
-export class GetV1CompaniesCompanyIdCustomFieldsQueryParams extends SpeakeasyBase {
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
   page?: number;
 
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
   per?: number;
-}
-
-export class GetV1CompaniesCompanyIdCustomFieldsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: GetV1CompaniesCompanyIdCustomFieldsPathParams;
-
-  @SpeakeasyMetadata()
-  queryParams: GetV1CompaniesCompanyIdCustomFieldsQueryParams;
 }
 
 export class GetV1CompaniesCompanyIdCustomFields200ApplicationJSON extends SpeakeasyBase {

@@ -1,8 +1,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
-import { Type } from "class-transformer";
 
-export class DeleteV1ExternalPayrollPathParams extends SpeakeasyBase {
+export class DeleteV1ExternalPayrollRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "pathParam, style=simple;explode=false;name=company_uuid",
   })
@@ -12,11 +11,6 @@ export class DeleteV1ExternalPayrollPathParams extends SpeakeasyBase {
     data: "pathParam, style=simple;explode=false;name=external_payroll_id",
   })
   externalPayrollId: string;
-}
-
-export class DeleteV1ExternalPayrollRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: DeleteV1ExternalPayrollPathParams;
 }
 
 export class DeleteV1ExternalPayrollResponse extends SpeakeasyBase {

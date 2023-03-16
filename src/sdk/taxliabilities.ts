@@ -46,7 +46,7 @@ export class TaxLiabilities {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/external_payrolls/tax_liabilities",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -106,13 +106,17 @@ export class TaxLiabilities {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/external_payrolls/tax_liabilities",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -188,7 +192,7 @@ export class TaxLiabilities {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/external_payrolls/tax_liabilities/finish",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;

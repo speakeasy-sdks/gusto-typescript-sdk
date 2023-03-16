@@ -48,7 +48,7 @@ export class Signatories {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/signatories/{signatory_uuid}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -98,7 +98,7 @@ export class Signatories {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/signatories",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -159,13 +159,17 @@ export class Signatories {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/signatories/invite",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -237,13 +241,17 @@ export class Signatories {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/signatories",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -318,13 +326,17 @@ export class Signatories {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/signatories/{signatory_uuid}",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

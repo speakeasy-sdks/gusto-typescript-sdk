@@ -3,23 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDatePathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
-
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=pay_period_end_date",
-  })
-  payPeriodEndDate: string;
-
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=pay_period_start_date",
-  })
-  payPeriodStartDate: string;
-}
-
 // PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsFixedCompensations
 /**
  * An array of fixed compensations for the employee. Fixed compensations include tips, bonuses, and one time reimbursements.
@@ -139,11 +122,23 @@ export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRe
 }
 
 export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDatePathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody;
+  requestBody?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
+  companyId: string;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=pay_period_end_date",
+  })
+  payPeriodEndDate: string;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=pay_period_start_date",
+  })
+  payPeriodStartDate: string;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse extends SpeakeasyBase {

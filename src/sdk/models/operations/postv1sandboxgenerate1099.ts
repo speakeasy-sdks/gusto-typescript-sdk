@@ -13,11 +13,6 @@ export class PostV1SandboxGenerate1099RequestBody extends SpeakeasyBase {
   year?: number;
 }
 
-export class PostV1SandboxGenerate1099Request extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1SandboxGenerate1099RequestBody;
-}
-
 export class PostV1SandboxGenerate1099Form extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "contractor_uuid" })
