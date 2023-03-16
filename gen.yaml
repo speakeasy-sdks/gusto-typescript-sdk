@@ -9,5 +9,5 @@ generation:
   sdkFlattening: true
 typescript:
   version: 0.4.1
-  author: Speakeasy
-  packageName: gusto
+  author: gusto
+  packageName: "@speakeasy-sdks/gusto"
