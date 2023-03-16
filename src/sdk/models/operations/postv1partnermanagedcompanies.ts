@@ -51,11 +51,6 @@ export class PostV1PartnerManagedCompaniesRequestBody extends SpeakeasyBase {
   user: PostV1PartnerManagedCompaniesRequestBodyUser;
 }
 
-export class PostV1PartnerManagedCompaniesRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1PartnerManagedCompaniesRequestBody;
-}
-
 // PostV1PartnerManagedCompanies200ApplicationJSON
 /**
  * Object returned when creating a partner managed company

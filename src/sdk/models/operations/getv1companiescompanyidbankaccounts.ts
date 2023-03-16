@@ -3,16 +3,11 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-export class GetV1CompaniesCompanyIdBankAccountsPathParams extends SpeakeasyBase {
+export class GetV1CompaniesCompanyIdBankAccountsRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "pathParam, style=simple;explode=false;name=company_id",
   })
   companyId: string;
-}
-
-export class GetV1CompaniesCompanyIdBankAccountsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: GetV1CompaniesCompanyIdBankAccountsPathParams;
 }
 
 export class GetV1CompaniesCompanyIdBankAccountsResponse extends SpeakeasyBase {

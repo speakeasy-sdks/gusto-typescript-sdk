@@ -3,18 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
-
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=signatory_uuid",
-  })
-  signatoryUuid: string;
-}
-
 export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "city" })
@@ -80,11 +68,18 @@ export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody extend
 }
 
 export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody;
+  requestBody?: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
+  companyUuid: string;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=signatory_uuid",
+  })
+  signatoryUuid: string;
 }
 
 export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse extends SpeakeasyBase {

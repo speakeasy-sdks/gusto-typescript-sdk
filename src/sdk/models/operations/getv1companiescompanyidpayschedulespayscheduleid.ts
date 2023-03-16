@@ -3,7 +3,7 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-export class GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdPathParams extends SpeakeasyBase {
+export class GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "pathParam, style=simple;explode=false;name=company_id",
   })
@@ -13,11 +13,6 @@ export class GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdPathParams extends 
     data: "pathParam, style=simple;explode=false;name=pay_schedule_id",
   })
   payScheduleId: string;
-}
-
-export class GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdPathParams;
 }
 
 export class GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse extends SpeakeasyBase {

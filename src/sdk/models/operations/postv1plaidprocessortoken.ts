@@ -21,11 +21,6 @@ export class PostV1PlaidProcessorTokenRequestBody extends SpeakeasyBase {
   processorToken: string;
 }
 
-export class PostV1PlaidProcessorTokenRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1PlaidProcessorTokenRequestBody;
-}
-
 export class PostV1PlaidProcessorTokenResponse extends SpeakeasyBase {
   @SpeakeasyMetadata()
   contentType: string;

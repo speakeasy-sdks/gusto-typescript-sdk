@@ -46,7 +46,7 @@ export class FederalTaxDetails {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/federal_tax_details",
-      req.pathParams
+      req
     );
     if (!(security instanceof utils.SpeakeasyBase)) {
       security =
@@ -110,13 +110,17 @@ export class FederalTaxDetails {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/federal_tax_details",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

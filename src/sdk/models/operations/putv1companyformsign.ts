@@ -3,13 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompanyFormSignPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=form_id",
-  })
-  formId: string;
-}
-
 export class PutV1CompanyFormSignRequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "agree" })
@@ -25,11 +18,13 @@ export class PutV1CompanyFormSignRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1CompanyFormSignRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompanyFormSignPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1CompanyFormSignRequestBody;
+  requestBody?: PutV1CompanyFormSignRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=form_id",
+  })
+  formId: string;
 }
 
 export class PutV1CompanyFormSignResponse extends SpeakeasyBase {

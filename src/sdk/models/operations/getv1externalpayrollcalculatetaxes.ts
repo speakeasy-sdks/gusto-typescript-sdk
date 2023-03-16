@@ -3,7 +3,7 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-export class GetV1ExternalPayrollCalculateTaxesPathParams extends SpeakeasyBase {
+export class GetV1ExternalPayrollCalculateTaxesRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "pathParam, style=simple;explode=false;name=company_uuid",
   })
@@ -13,11 +13,6 @@ export class GetV1ExternalPayrollCalculateTaxesPathParams extends SpeakeasyBase 
     data: "pathParam, style=simple;explode=false;name=external_payroll_id",
   })
   externalPayrollId: string;
-}
-
-export class GetV1ExternalPayrollCalculateTaxesRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: GetV1ExternalPayrollCalculateTaxesPathParams;
 }
 
 export class GetV1ExternalPayrollCalculateTaxesResponse extends SpeakeasyBase {

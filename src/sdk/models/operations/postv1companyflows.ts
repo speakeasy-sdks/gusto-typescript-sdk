@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostV1CompanyFlowsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
-}
 export enum PostV1CompanyFlowsRequestBodyEntityTypeEnum {
   Company = "Company",
   Employee = "Employee",
@@ -29,11 +23,13 @@ export class PostV1CompanyFlowsRequestBody extends SpeakeasyBase {
 }
 
 export class PostV1CompanyFlowsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PostV1CompanyFlowsPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1CompanyFlowsRequestBody;
+  requestBody?: PostV1CompanyFlowsRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
+  companyUuid: string;
 }
 
 export class PostV1CompanyFlowsResponse extends SpeakeasyBase {

@@ -1,15 +1,12 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
-import { Type } from "class-transformer";
 
-export class GetV1CompaniesCompanyIdContractorPaymentsPathParams extends SpeakeasyBase {
+export class GetV1CompaniesCompanyIdContractorPaymentsRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "pathParam, style=simple;explode=false;name=company_id",
   })
   companyId: string;
-}
 
-export class GetV1CompaniesCompanyIdContractorPaymentsQueryParams extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "queryParam, style=form;explode=true;name=contractor_uuid",
   })
@@ -35,14 +32,6 @@ export class GetV1CompaniesCompanyIdContractorPaymentsQueryParams extends Speake
     data: "queryParam, style=form;explode=true;name=start_date",
   })
   startDate: string;
-}
-
-export class GetV1CompaniesCompanyIdContractorPaymentsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: GetV1CompaniesCompanyIdContractorPaymentsPathParams;
-
-  @SpeakeasyMetadata()
-  queryParams: GetV1CompaniesCompanyIdContractorPaymentsQueryParams;
 }
 
 export class GetV1CompaniesCompanyIdContractorPaymentsResponse extends SpeakeasyBase {

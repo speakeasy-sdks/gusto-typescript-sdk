@@ -94,11 +94,6 @@ export class PostV1ProvisionRequestBody extends SpeakeasyBase {
   user: PostV1ProvisionRequestBodyUser;
 }
 
-export class PostV1ProvisionRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1ProvisionRequestBody;
-}
-
 export class PostV1Provision200ApplicationJSON extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "account_claim_url" })

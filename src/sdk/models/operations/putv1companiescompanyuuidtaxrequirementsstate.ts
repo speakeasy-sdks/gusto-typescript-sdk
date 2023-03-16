@@ -3,18 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompaniesCompanyUuidTaxRequirementsStatePathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
-
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=state",
-  })
-  state: string;
-}
-
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "key" })
@@ -64,11 +52,18 @@ export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody extends Sp
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompaniesCompanyUuidTaxRequirementsStatePathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody;
+  requestBody?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
+  companyUuid: string;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=state",
+  })
+  state: string;
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateResponse extends SpeakeasyBase {
