@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompanyPaymentConfigsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
-}
 export enum PutV1CompanyPaymentConfigsRequestBodyPaymentSpeedEnum {
   TwoDay = "2-day",
   FourDay = "4-day",
@@ -25,11 +19,13 @@ export class PutV1CompanyPaymentConfigsRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1CompanyPaymentConfigsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompanyPaymentConfigsPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1CompanyPaymentConfigsRequestBody;
+  requestBody?: PutV1CompanyPaymentConfigsRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
+  companyUuid: string;
 }
 
 export class PutV1CompanyPaymentConfigsResponse extends SpeakeasyBase {

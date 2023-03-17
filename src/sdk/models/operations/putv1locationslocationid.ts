@@ -3,13 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1LocationsLocationIdPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=location_id",
-  })
-  locationId: string;
-}
-
 export class PutV1LocationsLocationIdRequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "city" })
@@ -53,11 +46,13 @@ export class PutV1LocationsLocationIdRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1LocationsLocationIdRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1LocationsLocationIdPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1LocationsLocationIdRequestBody;
+  requestBody?: PutV1LocationsLocationIdRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=location_id",
+  })
+  locationId: string;
 }
 
 export class PutV1LocationsLocationIdResponse extends SpeakeasyBase {

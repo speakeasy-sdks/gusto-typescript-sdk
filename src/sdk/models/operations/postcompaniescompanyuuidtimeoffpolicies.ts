@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostCompaniesCompanyUuidTimeOffPoliciesPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
-}
 export enum PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethodEnum {
   Unlimited = "unlimited",
   PerPayPeriod = "per_pay_period",
@@ -63,11 +57,13 @@ export class PostCompaniesCompanyUuidTimeOffPoliciesRequestBody extends Speakeas
 }
 
 export class PostCompaniesCompanyUuidTimeOffPoliciesRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PostCompaniesCompanyUuidTimeOffPoliciesPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody;
+  requestBody?: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
+  companyUuid: string;
 }
 
 export class PostCompaniesCompanyUuidTimeOffPoliciesResponse extends SpeakeasyBase {

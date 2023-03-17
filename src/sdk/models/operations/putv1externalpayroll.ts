@@ -3,18 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1ExternalPayrollPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
-
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=external_payroll_id",
-  })
-  externalPayrollId: string;
-}
-
 // PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits
 /**
  * An array of benefits for the employee. Depends on your company selections, benefits include 401k, health insurance and more.
@@ -114,11 +102,18 @@ export class PutV1ExternalPayrollRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1ExternalPayrollRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1ExternalPayrollPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1ExternalPayrollRequestBody;
+  requestBody?: PutV1ExternalPayrollRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
+  companyUuid: string;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=external_payroll_id",
+  })
+  externalPayrollId: string;
 }
 
 export class PutV1ExternalPayrollResponse extends SpeakeasyBase {

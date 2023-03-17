@@ -46,7 +46,7 @@ export class TimeOffPolicies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/time_off_policies",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -106,7 +106,7 @@ export class TimeOffPolicies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/time_off_policies/{time_off_policy_uuid}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -163,13 +163,17 @@ export class TimeOffPolicies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/time_off_policies",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -252,13 +256,17 @@ export class TimeOffPolicies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/payrolls/{payroll_id}/employees/{employee_id}/calculate_accruing_time_off_hours",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -334,13 +342,17 @@ export class TimeOffPolicies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/time_off_policies/{time_off_policy_uuid}",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -415,7 +427,7 @@ export class TimeOffPolicies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/time_off_policies/{time_off_policy_uuid}/deactivate",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -483,13 +495,17 @@ export class TimeOffPolicies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/time_off_policies/{time_off_policy_uuid}/remove_employees",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -567,13 +583,17 @@ export class TimeOffPolicies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/time_off_policies/{time_off_policy_uuid}/add_employees",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -651,13 +671,17 @@ export class TimeOffPolicies {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/time_off_policies/{time_off_policy_uuid}/balance",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

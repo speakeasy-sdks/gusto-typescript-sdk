@@ -45,7 +45,7 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -96,12 +96,12 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
 
-    const queryParams: string = utils.serializeQueryParams(req.queryParams);
+    const queryParams: string = utils.serializeQueryParams(req);
 
     const r = client.request({
       url: url + queryParams,
@@ -156,12 +156,12 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/custom_fields",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
 
-    const queryParams: string = utils.serializeQueryParams(req.queryParams);
+    const queryParams: string = utils.serializeQueryParams(req);
 
     const r = client.request({
       url: url + queryParams,
@@ -217,7 +217,7 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/home_address",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -310,7 +310,7 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/onboarding_status",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -375,12 +375,12 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_uuid}/time_off_activities",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
 
-    const queryParams: string = utils.serializeQueryParams(req.queryParams);
+    const queryParams: string = utils.serializeQueryParams(req);
 
     const r = client.request({
       url: url + queryParams,
@@ -435,13 +435,17 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/employees",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -515,7 +519,7 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/finish_onboarding",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -571,13 +575,17 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -651,13 +659,17 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/home_address",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -740,13 +752,17 @@ export class Employees {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/onboarding_status",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

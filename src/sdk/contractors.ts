@@ -45,7 +45,7 @@ export class Contractors {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/contractors/{contractor_id}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -95,12 +95,12 @@ export class Contractors {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/contractors",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
 
-    const queryParams: string = utils.serializeQueryParams(req.queryParams);
+    const queryParams: string = utils.serializeQueryParams(req);
 
     const r = client.request({
       url: url + queryParams,
@@ -158,7 +158,7 @@ export class Contractors {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/contractors/{contractor_id}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -216,7 +216,7 @@ export class Contractors {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/contractors/{contractor_uuid}/address",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -308,7 +308,7 @@ export class Contractors {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/contractors/{contractor_uuid}/onboarding_status",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -373,13 +373,17 @@ export class Contractors {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/contractors",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -457,13 +461,17 @@ export class Contractors {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/contractors/{contractor_id}",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -537,13 +545,17 @@ export class Contractors {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/contractors/{contractor_uuid}/address",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -629,13 +641,17 @@ export class Contractors {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/contractors/{contractor_uuid}/onboarding_status",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

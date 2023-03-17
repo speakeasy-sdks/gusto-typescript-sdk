@@ -45,7 +45,7 @@ export class ContractorForms {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/contractors/{contractor_uuid}/forms/{form_id}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -101,7 +101,7 @@ export class ContractorForms {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/contractors/{contractor_uuid}/forms/{form_id}/pdf",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -157,7 +157,7 @@ export class ContractorForms {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/contractors/{contractor_uuid}/forms",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -212,11 +212,11 @@ export class ContractorForms {
    *
    **/
   postV1SandboxGenerate1099(
-    req: operations.PostV1SandboxGenerate1099Request,
+    req: operations.PostV1SandboxGenerate1099RequestBody,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1SandboxGenerate1099Response> {
     if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1SandboxGenerate1099Request(req);
+      req = new operations.PostV1SandboxGenerate1099RequestBody(req);
     }
 
     const baseURL: string = this._serverURL;
@@ -226,7 +226,11 @@ export class ContractorForms {
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "request",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

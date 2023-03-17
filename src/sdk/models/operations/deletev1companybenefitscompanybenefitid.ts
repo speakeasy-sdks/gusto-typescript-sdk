@@ -2,16 +2,11 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class DeleteV1CompanyBenefitsCompanyBenefitIdPathParams extends SpeakeasyBase {
+export class DeleteV1CompanyBenefitsCompanyBenefitIdRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "pathParam, style=simple;explode=false;name=company_benefit_id",
   })
   companyBenefitId: string;
-}
-
-export class DeleteV1CompanyBenefitsCompanyBenefitIdRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: DeleteV1CompanyBenefitsCompanyBenefitIdPathParams;
 }
 
 export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase extends SpeakeasyBase {

@@ -3,13 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServicePathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
-}
-
 export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "email" })
@@ -17,11 +10,13 @@ export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequest
 }
 
 export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServicePathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody;
+  requestBody?: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
+  companyUuid: string;
 }
 
 export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSON extends SpeakeasyBase {

@@ -53,7 +53,7 @@ export class WebhookSubscriptions {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/webhook_subscriptions/{webhook_subscription_uuid}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -109,7 +109,7 @@ export class WebhookSubscriptions {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/webhook_subscriptions/{webhook_subscription_uuid}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -175,7 +175,7 @@ export class WebhookSubscriptions {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/webhook_subscriptions/{webhook_subscription_uuid}/request_verification_token",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -278,11 +278,11 @@ export class WebhookSubscriptions {
    * ```
    **/
   postV1WebhookSubscription(
-    req: operations.PostV1WebhookSubscriptionRequest,
+    req: operations.PostV1WebhookSubscriptionRequestBody,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1WebhookSubscriptionResponse> {
     if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1WebhookSubscriptionRequest(req);
+      req = new operations.PostV1WebhookSubscriptionRequestBody(req);
     }
 
     const baseURL: string = this._serverURL;
@@ -292,7 +292,11 @@ export class WebhookSubscriptions {
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "request",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -375,13 +379,17 @@ export class WebhookSubscriptions {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/webhook_subscriptions/{webhook_subscription_uuid}/verify",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -461,13 +469,17 @@ export class WebhookSubscriptions {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/webhook_subscriptions/{webhook_subscription_uuid}",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

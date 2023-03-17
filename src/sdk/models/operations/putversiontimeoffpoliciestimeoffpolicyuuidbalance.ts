@@ -3,13 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalancePathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid",
-  })
-  timeOffPolicyUuid: string;
-}
-
 export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBodyEmployees extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "balance" })
@@ -33,11 +26,13 @@ export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody extend
 }
 
 export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalancePathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody;
+  requestBody?: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid",
+  })
+  timeOffPolicyUuid: string;
 }
 
 export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse extends SpeakeasyBase {
