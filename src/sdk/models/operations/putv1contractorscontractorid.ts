@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1ContractorsContractorIdPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=contractor_id",
-  })
-  contractorId: string;
-}
 export enum PutV1ContractorsContractorIdRequestBodyTypeEnum {
   Individual = "Individual",
   Business = "Business",
@@ -85,11 +79,13 @@ export class PutV1ContractorsContractorIdRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1ContractorsContractorIdRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1ContractorsContractorIdPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1ContractorsContractorIdRequestBody;
+  requestBody?: PutV1ContractorsContractorIdRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=contractor_id",
+  })
+  contractorId: string;
 }
 
 export class PutV1ContractorsContractorIdResponse extends SpeakeasyBase {

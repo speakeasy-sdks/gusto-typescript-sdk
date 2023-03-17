@@ -48,7 +48,7 @@ export class EmployeePaymentMethod {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/bank_accounts/{bank_account_uuid}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -98,7 +98,7 @@ export class EmployeePaymentMethod {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/payment_method",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -154,13 +154,17 @@ export class EmployeePaymentMethod {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/bank_accounts",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -232,13 +236,17 @@ export class EmployeePaymentMethod {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/payment_method",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

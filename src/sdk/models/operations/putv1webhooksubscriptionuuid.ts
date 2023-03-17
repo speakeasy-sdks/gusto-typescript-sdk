@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1WebhookSubscriptionUuidPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid",
-  })
-  webhookSubscriptionUuid: string;
-}
 export enum PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypesEnum {
   BankAccount = "BankAccount",
   Company = "Company",
@@ -33,11 +27,13 @@ export class PutV1WebhookSubscriptionUuidRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1WebhookSubscriptionUuidRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1WebhookSubscriptionUuidPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1WebhookSubscriptionUuidRequestBody;
+  requestBody?: PutV1WebhookSubscriptionUuidRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid",
+  })
+  webhookSubscriptionUuid: string;
 }
 
 export class PutV1WebhookSubscriptionUuidResponse extends SpeakeasyBase {

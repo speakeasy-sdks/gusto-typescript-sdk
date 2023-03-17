@@ -30,11 +30,6 @@ export class PostV1WebhookSubscriptionRequestBody extends SpeakeasyBase {
   url: string;
 }
 
-export class PostV1WebhookSubscriptionRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1WebhookSubscriptionRequestBody;
-}
-
 export class PostV1WebhookSubscriptionResponse extends SpeakeasyBase {
   @SpeakeasyMetadata()
   contentType: string;

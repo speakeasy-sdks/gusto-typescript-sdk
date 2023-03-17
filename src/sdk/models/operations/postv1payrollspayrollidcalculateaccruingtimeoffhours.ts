@@ -3,18 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
-
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=payroll_id",
-  })
-  payrollId: string;
-}
-
 export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "double_overtime_hours_worked" })
@@ -38,11 +26,18 @@ export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody ext
 }
 
 export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody;
+  requestBody?: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_id",
+  })
+  employeeId: string;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=payroll_id",
+  })
+  payrollId: string;
 }
 
 export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse extends SpeakeasyBase {

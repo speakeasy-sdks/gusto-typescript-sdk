@@ -3,13 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompanyIndustryPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
-}
-
 export class PutV1CompanyIndustryRequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "naics_code" })
@@ -25,11 +18,13 @@ export class PutV1CompanyIndustryRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1CompanyIndustryRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompanyIndustryPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1CompanyIndustryRequestBody;
+  requestBody?: PutV1CompanyIndustryRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
+  companyId: string;
 }
 
 export class PutV1CompanyIndustryResponse extends SpeakeasyBase {

@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Type } from "class-transformer";
 
-export class GetV1CompaniesCompanyIdPayrollsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
-}
 export enum GetV1CompaniesCompanyIdPayrollsIncludeEnum {
   Benefits = "benefits",
   Deductions = "deductions",
@@ -16,7 +10,12 @@ export enum GetV1CompaniesCompanyIdPayrollsIncludeEnum {
   Taxes = "taxes",
 }
 
-export class GetV1CompaniesCompanyIdPayrollsQueryParams extends SpeakeasyBase {
+export class GetV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
+  companyId: string;
+
   @SpeakeasyMetadata({
     data: "queryParam, style=form;explode=true;name=end_date",
   })
@@ -41,14 +40,6 @@ export class GetV1CompaniesCompanyIdPayrollsQueryParams extends SpeakeasyBase {
     data: "queryParam, style=form;explode=true;name=start_date",
   })
   startDate?: string;
-}
-
-export class GetV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: GetV1CompaniesCompanyIdPayrollsPathParams;
-
-  @SpeakeasyMetadata()
-  queryParams: GetV1CompaniesCompanyIdPayrollsQueryParams;
 }
 
 export class GetV1CompaniesCompanyIdPayrollsResponse extends SpeakeasyBase {

@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostV1CompaniesCompanyIdPaySchedulesPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
-}
 export enum PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequencyEnum {
   EveryWeek = "Every week",
   EveryOtherWeek = "Every other week",
@@ -39,11 +33,13 @@ export class PostV1CompaniesCompanyIdPaySchedulesRequestBody extends SpeakeasyBa
 }
 
 export class PostV1CompaniesCompanyIdPaySchedulesRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PostV1CompaniesCompanyIdPaySchedulesPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1CompaniesCompanyIdPaySchedulesRequestBody;
+  requestBody?: PostV1CompaniesCompanyIdPaySchedulesRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
+  companyId: string;
 }
 
 export class PostV1CompaniesCompanyIdPaySchedulesResponse extends SpeakeasyBase {

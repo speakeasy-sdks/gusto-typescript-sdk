@@ -3,18 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompaniesCompanyIdBankAccountsVerifyPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=bank_account_uuid",
-  })
-  bankAccountUuid: string;
-
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
-}
-
 export class PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "deposit_1" })
@@ -26,11 +14,18 @@ export class PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody extends Speake
 }
 
 export class PutV1CompaniesCompanyIdBankAccountsVerifyRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompaniesCompanyIdBankAccountsVerifyPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody;
+  requestBody?: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=bank_account_uuid",
+  })
+  bankAccountUuid: string;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
+  companyId: string;
 }
 
 export class PutV1CompaniesCompanyIdBankAccountsVerifyResponse extends SpeakeasyBase {

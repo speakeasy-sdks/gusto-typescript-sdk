@@ -1,8 +1,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
-import { Type } from "class-transformer";
 
-export class DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidPathParams extends SpeakeasyBase {
+export class DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "pathParam, style=simple;explode=false;name=company_uuid",
   })
@@ -12,11 +11,6 @@ export class DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidPathParams exte
     data: "pathParam, style=simple;explode=false;name=signatory_uuid",
   })
   signatoryUuid: string;
-}
-
-export class DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidPathParams;
 }
 
 export class DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse extends SpeakeasyBase {

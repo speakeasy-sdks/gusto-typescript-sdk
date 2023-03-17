@@ -45,7 +45,7 @@ export class BankAccounts {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/bank_accounts",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -113,13 +113,17 @@ export class BankAccounts {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/bank_accounts",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -189,11 +193,11 @@ export class BankAccounts {
    * > If a default company bank account exists, it will be disabled and the new bank account will replace it as the company's default funding method.
    **/
   postV1PlaidProcessorToken(
-    req: operations.PostV1PlaidProcessorTokenRequest,
+    req: operations.PostV1PlaidProcessorTokenRequestBody,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1PlaidProcessorTokenResponse> {
     if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1PlaidProcessorTokenRequest(req);
+      req = new operations.PostV1PlaidProcessorTokenRequestBody(req);
     }
 
     const baseURL: string = this._serverURL;
@@ -203,7 +207,11 @@ export class BankAccounts {
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "request",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -288,13 +296,17 @@ export class BankAccounts {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/bank_accounts/{bank_account_uuid}/verify",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
