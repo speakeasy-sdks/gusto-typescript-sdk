@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostV1ContractorsContractorUuidBankAccountsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=contractor_uuid",
-  })
-  contractorUuid: string;
-}
 export enum PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountTypeEnum {
   Checking = "Checking",
   Savings = "Savings",
@@ -33,11 +27,13 @@ export class PostV1ContractorsContractorUuidBankAccountsRequestBody extends Spea
 }
 
 export class PostV1ContractorsContractorUuidBankAccountsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PostV1ContractorsContractorUuidBankAccountsPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1ContractorsContractorUuidBankAccountsRequestBody;
+  requestBody?: PostV1ContractorsContractorUuidBankAccountsRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=contractor_uuid",
+  })
+  contractorUuid: string;
 }
 
 export class PostV1ContractorsContractorUuidBankAccountsResponse extends SpeakeasyBase {

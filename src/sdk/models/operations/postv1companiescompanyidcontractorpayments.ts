@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Transform, Type } from "class-transformer";
 
-export class PostV1CompaniesCompanyIdContractorPaymentsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
-}
 export enum PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethodEnum {
   DirectDeposit = "Direct Deposit",
   Check = "Check",
@@ -47,11 +41,13 @@ export class PostV1CompaniesCompanyIdContractorPaymentsRequestBody extends Speak
 }
 
 export class PostV1CompaniesCompanyIdContractorPaymentsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PostV1CompaniesCompanyIdContractorPaymentsPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1CompaniesCompanyIdContractorPaymentsRequestBody;
+  requestBody?: PostV1CompaniesCompanyIdContractorPaymentsRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
+  companyId: string;
 }
 
 export class PostV1CompaniesCompanyIdContractorPaymentsResponse extends SpeakeasyBase {

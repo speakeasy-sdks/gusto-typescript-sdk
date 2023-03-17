@@ -2,7 +2,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class GetV1ContractorFormPathParams extends SpeakeasyBase {
+export class GetV1ContractorFormRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "pathParam, style=simple;explode=false;name=contractor_uuid",
   })
@@ -12,11 +12,6 @@ export class GetV1ContractorFormPathParams extends SpeakeasyBase {
     data: "pathParam, style=simple;explode=false;name=form_id",
   })
   formId: string;
-}
-
-export class GetV1ContractorFormRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: GetV1ContractorFormPathParams;
 }
 
 export class GetV1ContractorFormForm extends SpeakeasyBase {

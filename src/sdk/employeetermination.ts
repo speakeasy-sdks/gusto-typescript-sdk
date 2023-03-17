@@ -45,7 +45,7 @@ export class EmployeeTermination {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/terminations",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -98,7 +98,7 @@ export class EmployeeTermination {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_id}/pay_periods/unprocessed_termination_pay_periods",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -164,7 +164,7 @@ export class EmployeeTermination {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/terminations",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -227,13 +227,17 @@ export class EmployeeTermination {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/employees/{employee_id}/terminations",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -309,13 +313,17 @@ export class EmployeeTermination {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/terminations/{employee_id}",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

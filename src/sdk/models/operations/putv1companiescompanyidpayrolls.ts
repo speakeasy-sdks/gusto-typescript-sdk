@@ -3,18 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompaniesCompanyIdPayrollsPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
-
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=payroll_id",
-  })
-  payrollId: string;
-}
-
 // PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations
 /**
  * An array of fixed compensations for the employee. Fixed compensations include tips, bonuses, and one time reimbursements.
@@ -134,11 +122,18 @@ export class PutV1CompaniesCompanyIdPayrollsRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompaniesCompanyIdPayrollsPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1CompaniesCompanyIdPayrollsRequestBody;
+  requestBody?: PutV1CompaniesCompanyIdPayrollsRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_id",
+  })
+  companyId: string;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=payroll_id",
+  })
+  payrollId: string;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsResponse extends SpeakeasyBase {

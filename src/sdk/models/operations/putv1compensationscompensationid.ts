@@ -3,12 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompensationsCompensationIdPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=compensation_id",
-  })
-  compensationId: string;
-}
 export enum PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum {
   Exempt = "Exempt",
   SalariedNonexempt = "Salaried Nonexempt",
@@ -65,11 +59,13 @@ export class PutV1CompensationsCompensationIdRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1CompensationsCompensationIdRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompensationsCompensationIdPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1CompensationsCompensationIdRequestBody;
+  requestBody?: PutV1CompensationsCompensationIdRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=compensation_id",
+  })
+  compensationId: string;
 }
 
 export class PutV1CompensationsCompensationIdResponse extends SpeakeasyBase {

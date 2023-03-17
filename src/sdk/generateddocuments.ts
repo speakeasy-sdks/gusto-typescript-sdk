@@ -50,7 +50,7 @@ export class GeneratedDocuments {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/generated_documents/{document_type}/{request_uuid}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;

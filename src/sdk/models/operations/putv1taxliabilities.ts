@@ -3,13 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1TaxLiabilitiesPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
-}
-
 export class PutV1TaxLiabilitiesRequestBodyLiabilitySelections extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "last_unpaid_external_payroll_uuid" })
@@ -34,11 +27,13 @@ export class PutV1TaxLiabilitiesRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1TaxLiabilitiesRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1TaxLiabilitiesPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1TaxLiabilitiesRequestBody;
+  requestBody?: PutV1TaxLiabilitiesRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=company_uuid",
+  })
+  companyUuid: string;
 }
 
 export class PutV1TaxLiabilitiesResponse extends SpeakeasyBase {

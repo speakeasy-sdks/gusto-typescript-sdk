@@ -13,11 +13,6 @@ export class PostV1SandboxGenerateW2RequestBody extends SpeakeasyBase {
   year?: number;
 }
 
-export class PostV1SandboxGenerateW2Request extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1SandboxGenerateW2RequestBody;
-}
-
 export class PostV1SandboxGenerateW2Form extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "description" })

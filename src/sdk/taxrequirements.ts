@@ -45,7 +45,7 @@ export class TaxRequirements {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/tax_requirements",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
@@ -148,12 +148,12 @@ export class TaxRequirements {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/tax_requirements/{state}",
-      req.pathParams
+      req
     );
 
     const client: AxiosInstance = this._securityClient!;
 
-    const queryParams: string = utils.serializeQueryParams(req.queryParams);
+    const queryParams: string = utils.serializeQueryParams(req);
 
     const r = client.request({
       url: url + queryParams,
@@ -208,13 +208,17 @@ export class TaxRequirements {
     const url: string = utils.generateURL(
       baseURL,
       "/v1/companies/{company_uuid}/tax_requirements/{state}",
-      req.pathParams
+      req
     );
 
     let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
     try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req);
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "requestBody",
+        "json"
+      );
     } catch (e: unknown) {
       if (e instanceof Error) {
         throw new Error(`Error serializing request body, cause: ${e.message}`);

@@ -1,8 +1,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
-import { Type } from "class-transformer";
 
-export class PutV1CompaniesCompanyIdPayrollsPayrollIdCalculatePathParams extends SpeakeasyBase {
+export class PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "pathParam, style=simple;explode=false;name=company_id",
   })
@@ -12,11 +11,6 @@ export class PutV1CompaniesCompanyIdPayrollsPayrollIdCalculatePathParams extends
     data: "pathParam, style=simple;explode=false;name=payroll_id",
   })
   payrollId: string;
-}
-
-export class PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1CompaniesCompanyIdPayrollsPayrollIdCalculatePathParams;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse extends SpeakeasyBase {

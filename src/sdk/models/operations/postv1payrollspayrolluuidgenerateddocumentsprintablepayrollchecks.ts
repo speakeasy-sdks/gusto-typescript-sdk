@@ -3,13 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=payroll_id",
-  })
-  payrollId: string;
-}
-
 export class PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "printing_format" })
@@ -21,11 +14,13 @@ export class PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRe
 }
 
 export class PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody;
+  requestBody?: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=payroll_id",
+  })
+  payrollId: string;
 }
 
 export class PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse extends SpeakeasyBase {

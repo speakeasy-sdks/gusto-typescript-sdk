@@ -3,18 +3,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1EmployeeFormSignPathParams extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
-
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=form_id",
-  })
-  formId: string;
-}
-
 export class PutV1EmployeeFormSignRequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "agree" })
@@ -30,11 +18,18 @@ export class PutV1EmployeeFormSignRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1EmployeeFormSignRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  pathParams: PutV1EmployeeFormSignPathParams;
-
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  request?: PutV1EmployeeFormSignRequestBody;
+  requestBody?: PutV1EmployeeFormSignRequestBody;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=employee_id",
+  })
+  employeeId: string;
+
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=form_id",
+  })
+  formId: string;
 }
 
 export class PutV1EmployeeFormSignResponse extends SpeakeasyBase {
