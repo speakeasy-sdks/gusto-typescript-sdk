@@ -59,9 +59,9 @@ export class FederalTaxDetails {
         );
     }
     const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient!,
+      this._defaultClient,
       security
-    )!;
+    );
 
     const r = client.request({
       url: url,
@@ -132,7 +132,7 @@ export class FederalTaxDetails {
       }
     }
 
-    const client: AxiosInstance = this._securityClient!;
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 

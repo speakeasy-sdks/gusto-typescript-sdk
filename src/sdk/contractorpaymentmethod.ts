@@ -54,7 +54,7 @@ export class ContractorPaymentMethod {
       req
     );
 
-    const client: AxiosInstance = this._securityClient!;
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const r = client.request({
       url: url,
@@ -116,7 +116,7 @@ export class ContractorPaymentMethod {
       req
     );
 
-    const client: AxiosInstance = this._securityClient!;
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const r = client.request({
       url: url,
@@ -192,7 +192,7 @@ export class ContractorPaymentMethod {
       }
     }
 
-    const client: AxiosInstance = this._securityClient!;
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
@@ -225,8 +225,8 @@ export class ContractorPaymentMethod {
           }
           if (utils.matchContentType(contentType, `application/xml`)) {
             const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-            let out: Uint8Array = new Uint8Array(resBody.length);
-            for (let i: number = 0; i < resBody.length; i++)
+            const out: Uint8Array = new Uint8Array(resBody.length);
+            for (let i = 0; i < resBody.length; i++)
               out[i] = resBody.charCodeAt(i);
             res.body = out;
           }
@@ -284,7 +284,7 @@ export class ContractorPaymentMethod {
       }
     }
 
-    const client: AxiosInstance = this._securityClient!;
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 

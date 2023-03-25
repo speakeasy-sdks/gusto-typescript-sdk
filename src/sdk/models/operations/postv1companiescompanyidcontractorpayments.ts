@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 export enum PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethodEnum {
   DirectDeposit = "Direct Deposit",
