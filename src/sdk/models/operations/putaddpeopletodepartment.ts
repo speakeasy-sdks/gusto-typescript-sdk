@@ -5,22 +5,38 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
-import { Expose } from "class-transformer";
+import { Expose, Type } from "class-transformer";
+
+export class PutAddPeopleToDepartmentRequestBodyContractors extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  @Expose({ name: "uuid" })
+  uuid?: string;
+}
+
+export class PutAddPeopleToDepartmentRequestBodyEmployees extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  @Expose({ name: "uuid" })
+  uuid?: string;
+}
 
 export class PutAddPeopleToDepartmentRequestBody extends SpeakeasyBase {
   /**
    * Array of contractors to add to the department
    */
-  @SpeakeasyMetadata()
+  @SpeakeasyMetadata({
+    elemType: PutAddPeopleToDepartmentRequestBodyContractors,
+  })
   @Expose({ name: "contractors" })
-  contractors?: any[];
+  @Type(() => PutAddPeopleToDepartmentRequestBodyContractors)
+  contractors?: PutAddPeopleToDepartmentRequestBodyContractors[];
 
   /**
    * Array of employees to add to the department
    */
-  @SpeakeasyMetadata()
+  @SpeakeasyMetadata({ elemType: PutAddPeopleToDepartmentRequestBodyEmployees })
   @Expose({ name: "employees" })
-  employees?: any[];
+  @Type(() => PutAddPeopleToDepartmentRequestBodyEmployees)
+  employees?: PutAddPeopleToDepartmentRequestBodyEmployees[];
 
   /**
    * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.

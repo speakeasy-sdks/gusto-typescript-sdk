@@ -5,22 +5,40 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
-import { Expose } from "class-transformer";
+import { Expose, Type } from "class-transformer";
+
+export class PutRemovePeopleFromDepartmentRequestBodyContractors extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  @Expose({ name: "uuid" })
+  uuid?: string;
+}
+
+export class PutRemovePeopleFromDepartmentRequestBodyEmployees extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  @Expose({ name: "uuid" })
+  uuid?: string;
+}
 
 export class PutRemovePeopleFromDepartmentRequestBody extends SpeakeasyBase {
   /**
    * Array of contractors to remove from a department
    */
-  @SpeakeasyMetadata()
+  @SpeakeasyMetadata({
+    elemType: PutRemovePeopleFromDepartmentRequestBodyContractors,
+  })
   @Expose({ name: "contractors" })
-  contractors?: any[];
+  @Type(() => PutRemovePeopleFromDepartmentRequestBodyContractors)
+  contractors?: PutRemovePeopleFromDepartmentRequestBodyContractors[];
 
   /**
    * Array of employees to remove from a department
    */
-  @SpeakeasyMetadata()
+  @SpeakeasyMetadata({
+    elemType: PutRemovePeopleFromDepartmentRequestBodyEmployees,
+  })
   @Expose({ name: "employees" })
-  employees?: any[];
+  @Type(() => PutRemovePeopleFromDepartmentRequestBodyEmployees)
+  employees?: PutRemovePeopleFromDepartmentRequestBodyEmployees[];
 
   /**
    * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
