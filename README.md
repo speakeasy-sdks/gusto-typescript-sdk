@@ -56,7 +56,7 @@ const sdk = new Gusto({
 });
 
 const req: GetV1CompaniesCompanyIdBankAccountsRequest = {
-  companyId: "unde",
+  companyId: "corrupti",
 };
 
 sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(req).then((res: GetV1CompaniesCompanyIdBankAccountsResponse | AxiosError) => {
@@ -66,7 +66,7 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(req).then((res: GetV1Compan
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
 ### bankAccounts

@@ -3,7 +3,19 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Expose, Type } from "class-transformer";
+
+export class DepartmentContractors extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  @Expose({ name: "uuid" })
+  uuid?: string;
+}
+
+export class DepartmentEmployees extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  @Expose({ name: "uuid" })
+  uuid?: string;
+}
 
 /**
  * Department Object Example
@@ -19,16 +31,18 @@ export class Department extends SpeakeasyBase {
   /**
    * Array of contractors assigned to the department.
    */
-  @SpeakeasyMetadata()
+  @SpeakeasyMetadata({ elemType: DepartmentContractors })
   @Expose({ name: "contractors" })
-  contractors?: any[];
+  @Type(() => DepartmentContractors)
+  contractors?: DepartmentContractors[];
 
   /**
    * Array of employees assigned to the department.
    */
-  @SpeakeasyMetadata()
+  @SpeakeasyMetadata({ elemType: DepartmentEmployees })
   @Expose({ name: "employees" })
-  employees?: any[];
+  @Type(() => DepartmentEmployees)
+  employees?: DepartmentEmployees[];
 
   /**
    * Name of the department
