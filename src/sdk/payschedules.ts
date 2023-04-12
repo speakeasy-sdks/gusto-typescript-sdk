@@ -82,7 +82,7 @@ export class PaySchedules {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.payPeriods = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.payPeriods = utils.deserializeJSONResponse(
+            res.payPeriods = utils.objectToClass(
               httpRes?.data,
               shared.PayPeriod,
               resFieldDepth
@@ -146,7 +146,7 @@ export class PaySchedules {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.paySchedules = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.paySchedules = utils.deserializeJSONResponse(
+            res.paySchedules = utils.objectToClass(
               httpRes?.data,
               shared.PaySchedule,
               resFieldDepth
@@ -211,7 +211,7 @@ export class PaySchedules {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.paySchedule = utils.deserializeJSONResponse(
+            res.paySchedule = utils.objectToClass(
               httpRes?.data,
               shared.PaySchedule
             );
@@ -290,7 +290,7 @@ export class PaySchedules {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.paySchedule = utils.deserializeJSONResponse(
+            res.paySchedule = utils.objectToClass(
               httpRes?.data,
               shared.PaySchedule
             );
@@ -300,7 +300,7 @@ export class PaySchedules {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -378,7 +378,7 @@ export class PaySchedules {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.paySchedule = utils.deserializeJSONResponse(
+            res.paySchedule = utils.objectToClass(
               httpRes?.data,
               shared.PaySchedule
             );
@@ -388,7 +388,7 @@ export class PaySchedules {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

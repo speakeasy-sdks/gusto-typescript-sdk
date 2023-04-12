@@ -79,7 +79,7 @@ export class GeneratedDocuments {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.generatedDocument = utils.deserializeJSONResponse(
+            res.generatedDocument = utils.objectToClass(
               httpRes?.data,
               shared.GeneratedDocument
             );

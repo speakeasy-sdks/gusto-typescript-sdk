@@ -126,7 +126,7 @@ export class JobsAndCompensations {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.compensation = utils.deserializeJSONResponse(
+            res.compensation = utils.objectToClass(
               httpRes?.data,
               shared.Compensation
             );
@@ -196,7 +196,7 @@ export class JobsAndCompensations {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.jobs = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.jobs = utils.deserializeJSONResponse(
+            res.jobs = utils.objectToClass(
               httpRes?.data,
               shared.Job,
               resFieldDepth
@@ -254,7 +254,7 @@ export class JobsAndCompensations {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.job = utils.deserializeJSONResponse(httpRes?.data, shared.Job);
+            res.job = utils.objectToClass(httpRes?.data, shared.Job);
           }
           break;
         case httpRes?.status == 404:
@@ -318,7 +318,7 @@ export class JobsAndCompensations {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.compensations = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.compensations = utils.deserializeJSONResponse(
+            res.compensations = utils.objectToClass(
               httpRes?.data,
               shared.Compensation,
               resFieldDepth
@@ -396,14 +396,14 @@ export class JobsAndCompensations {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.job = utils.deserializeJSONResponse(httpRes?.data, shared.Job);
+            res.job = utils.objectToClass(httpRes?.data, shared.Job);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -480,7 +480,7 @@ export class JobsAndCompensations {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.compensation = utils.deserializeJSONResponse(
+            res.compensation = utils.objectToClass(
               httpRes?.data,
               shared.Compensation
             );
@@ -497,7 +497,7 @@ export class JobsAndCompensations {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -568,14 +568,14 @@ export class JobsAndCompensations {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.job = utils.deserializeJSONResponse(httpRes?.data, shared.Job);
+            res.job = utils.objectToClass(httpRes?.data, shared.Job);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

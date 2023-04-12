@@ -80,7 +80,7 @@ export class Garnishments {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.garnishments = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.garnishments = utils.deserializeJSONResponse(
+            res.garnishments = utils.objectToClass(
               httpRes?.data,
               shared.Garnishment,
               resFieldDepth
@@ -140,7 +140,7 @@ export class Garnishments {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.garnishment = utils.deserializeJSONResponse(
+            res.garnishment = utils.objectToClass(
               httpRes?.data,
               shared.Garnishment
             );
@@ -217,7 +217,7 @@ export class Garnishments {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.garnishment = utils.deserializeJSONResponse(
+            res.garnishment = utils.objectToClass(
               httpRes?.data,
               shared.Garnishment
             );
@@ -227,7 +227,7 @@ export class Garnishments {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -302,7 +302,7 @@ export class Garnishments {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.garnishment = utils.deserializeJSONResponse(
+            res.garnishment = utils.objectToClass(
               httpRes?.data,
               shared.Garnishment
             );
@@ -312,7 +312,7 @@ export class Garnishments {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

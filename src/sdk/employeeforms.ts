@@ -74,10 +74,7 @@ export class EmployeeForms {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Form
-            );
+            res.form = utils.objectToClass(httpRes?.data, shared.Form);
           }
           break;
         case httpRes?.status == 404:
@@ -131,10 +128,7 @@ export class EmployeeForms {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.formPdf = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.FormPdf
-            );
+            res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
           }
           break;
         case httpRes?.status == 404:
@@ -190,7 +184,7 @@ export class EmployeeForms {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.forms = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.forms = utils.deserializeJSONResponse(
+            res.forms = utils.objectToClass(
               httpRes?.data,
               shared.Form,
               resFieldDepth
@@ -269,7 +263,7 @@ export class EmployeeForms {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.deserializeJSONResponse(
+            res.form = utils.objectToClass(
               httpRes?.data,
               operations.PostV1SandboxGenerateW2Form
             );
@@ -279,7 +273,7 @@ export class EmployeeForms {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -352,17 +346,14 @@ export class EmployeeForms {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Form
-            );
+            res.form = utils.objectToClass(httpRes?.data, shared.Form);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

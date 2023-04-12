@@ -74,7 +74,7 @@ export class PaymentConfigs {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.paymentConfigs = utils.deserializeJSONResponse(
+            res.paymentConfigs = utils.objectToClass(
               httpRes?.data,
               shared.PaymentConfigs
             );
@@ -149,7 +149,7 @@ export class PaymentConfigs {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.paymentConfigs = utils.deserializeJSONResponse(
+            res.paymentConfigs = utils.objectToClass(
               httpRes?.data,
               shared.PaymentConfigs
             );
@@ -159,7 +159,7 @@ export class PaymentConfigs {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

@@ -92,17 +92,14 @@ export class Flows {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.flow = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Flow
-            );
+            res.flow = utils.objectToClass(httpRes?.data, shared.Flow);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

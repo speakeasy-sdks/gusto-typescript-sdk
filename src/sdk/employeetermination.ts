@@ -132,12 +132,11 @@ export class EmployeeTermination {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.unprocessedTerminationPayPeriods = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.unprocessedTerminationPayPeriods =
-              utils.deserializeJSONResponse(
-                httpRes?.data,
-                shared.UnprocessedTerminationPayPeriod,
-                resFieldDepth
-              );
+            res.unprocessedTerminationPayPeriods = utils.objectToClass(
+              httpRes?.data,
+              shared.UnprocessedTerminationPayPeriod,
+              resFieldDepth
+            );
           }
           break;
         case httpRes?.status == 404:
@@ -197,7 +196,7 @@ export class EmployeeTermination {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.terminations = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.terminations = utils.deserializeJSONResponse(
+            res.terminations = utils.objectToClass(
               httpRes?.data,
               shared.Termination,
               resFieldDepth
@@ -277,7 +276,7 @@ export class EmployeeTermination {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.termination = utils.deserializeJSONResponse(
+            res.termination = utils.objectToClass(
               httpRes?.data,
               shared.Termination
             );
@@ -287,7 +286,7 @@ export class EmployeeTermination {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -364,7 +363,7 @@ export class EmployeeTermination {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.termination = utils.deserializeJSONResponse(
+            res.termination = utils.objectToClass(
               httpRes?.data,
               shared.Termination
             );
@@ -374,7 +373,7 @@ export class EmployeeTermination {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

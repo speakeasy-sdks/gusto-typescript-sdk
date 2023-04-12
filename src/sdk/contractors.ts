@@ -129,7 +129,7 @@ export class Contractors {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.contractors = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.contractors = utils.deserializeJSONResponse(
+            res.contractors = utils.objectToClass(
               httpRes?.data,
               shared.Contractor,
               resFieldDepth
@@ -189,7 +189,7 @@ export class Contractors {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractor = utils.deserializeJSONResponse(
+            res.contractor = utils.objectToClass(
               httpRes?.data,
               shared.Contractor
             );
@@ -248,7 +248,7 @@ export class Contractors {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorAddress = utils.deserializeJSONResponse(
+            res.contractorAddress = utils.objectToClass(
               httpRes?.data,
               shared.ContractorAddress1
             );
@@ -341,7 +341,7 @@ export class Contractors {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorOnboardingStatus = utils.deserializeJSONResponse(
+            res.contractorOnboardingStatus = utils.objectToClass(
               httpRes?.data,
               shared.ContractorOnboardingStatus
             );
@@ -425,7 +425,7 @@ export class Contractors {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractor = utils.deserializeJSONResponse(
+            res.contractor = utils.objectToClass(
               httpRes?.data,
               shared.Contractor
             );
@@ -435,7 +435,7 @@ export class Contractors {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -514,7 +514,7 @@ export class Contractors {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractor = utils.deserializeJSONResponse(
+            res.contractor = utils.objectToClass(
               httpRes?.data,
               shared.Contractor
             );
@@ -524,7 +524,7 @@ export class Contractors {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -599,7 +599,7 @@ export class Contractors {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorAddress = utils.deserializeJSONResponse(
+            res.contractorAddress = utils.objectToClass(
               httpRes?.data,
               shared.ContractorAddress1
             );
@@ -609,7 +609,7 @@ export class Contractors {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -696,7 +696,7 @@ export class Contractors {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorOnboardingStatus = utils.deserializeJSONResponse(
+            res.contractorOnboardingStatus = utils.objectToClass(
               httpRes?.data,
               shared.ContractorOnboardingStatus
             );
@@ -713,7 +713,7 @@ export class Contractors {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

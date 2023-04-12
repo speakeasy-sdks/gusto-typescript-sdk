@@ -74,7 +74,7 @@ export class EmployeeTaxSetup {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeFederalTax = utils.deserializeJSONResponse(
+            res.employeeFederalTax = utils.objectToClass(
               httpRes?.data,
               shared.EmployeeFederalTax
             );
@@ -145,7 +145,7 @@ export class EmployeeTaxSetup {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.employeeStateTaxes = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.employeeStateTaxes = utils.deserializeJSONResponse(
+            res.employeeStateTaxes = utils.objectToClass(
               httpRes?.data,
               shared.EmployeeStateTax,
               resFieldDepth
@@ -221,7 +221,7 @@ export class EmployeeTaxSetup {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeFederalTax = utils.deserializeJSONResponse(
+            res.employeeFederalTax = utils.objectToClass(
               httpRes?.data,
               shared.EmployeeFederalTax
             );
@@ -231,7 +231,7 @@ export class EmployeeTaxSetup {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -308,7 +308,7 @@ export class EmployeeTaxSetup {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.employeeStateTaxes = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.employeeStateTaxes = utils.deserializeJSONResponse(
+            res.employeeStateTaxes = utils.objectToClass(
               httpRes?.data,
               shared.EmployeeStateTax,
               resFieldDepth
@@ -323,7 +323,7 @@ export class EmployeeTaxSetup {
               [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
             res.putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects =
-              utils.deserializeJSONResponse(
+              utils.objectToClass(
                 httpRes?.data,
                 operations.PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON,
                 resFieldDepth

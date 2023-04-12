@@ -66,7 +66,7 @@ export class User {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.currentUser = utils.deserializeJSONResponse(
+            res.currentUser = utils.objectToClass(
               httpRes?.data,
               shared.CurrentUser
             );

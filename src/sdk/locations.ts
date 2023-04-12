@@ -82,7 +82,7 @@ export class Locations {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.locations = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.locations = utils.deserializeJSONResponse(
+            res.locations = utils.objectToClass(
               httpRes?.data,
               shared.Location,
               resFieldDepth
@@ -142,10 +142,7 @@ export class Locations {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.location = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Location
-            );
+            res.location = utils.objectToClass(httpRes?.data, shared.Location);
           }
           break;
         case httpRes?.status == 404:
@@ -205,7 +202,7 @@ export class Locations {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.minimumWages = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.minimumWages = utils.deserializeJSONResponse(
+            res.minimumWages = utils.objectToClass(
               httpRes?.data,
               shared.MinimumWage,
               resFieldDepth
@@ -285,17 +282,14 @@ export class Locations {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.location = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Location
-            );
+            res.location = utils.objectToClass(httpRes?.data, shared.Location);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -372,17 +366,14 @@ export class Locations {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.location = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Location
-            );
+            res.location = utils.objectToClass(httpRes?.data, shared.Location);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -457,17 +448,14 @@ export class Locations {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.location = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Location
-            );
+            res.location = utils.objectToClass(httpRes?.data, shared.Location);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

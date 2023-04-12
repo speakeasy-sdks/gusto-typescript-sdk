@@ -78,7 +78,7 @@ export class Payrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.payrollReversal = utils.deserializeJSONResponse(
+            res.payrollReversal = utils.objectToClass(
               httpRes?.data,
               shared.PayrollReversal
             );
@@ -147,7 +147,7 @@ export class Payrolls {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.payrolls = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.payrolls = utils.deserializeJSONResponse(
+            res.payrolls = utils.objectToClass(
               httpRes?.data,
               shared.Payroll,
               resFieldDepth
@@ -215,10 +215,7 @@ export class Payrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.payroll = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Payroll
-            );
+            res.payroll = utils.objectToClass(httpRes?.data, shared.Payroll);
           }
           break;
         case httpRes?.status == 404:
@@ -278,7 +275,7 @@ export class Payrolls {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.payrollBlockers = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.payrollBlockers = utils.deserializeJSONResponse(
+            res.payrollBlockers = utils.objectToClass(
               httpRes?.data,
               shared.PayrollBlocker,
               resFieldDepth
@@ -343,7 +340,7 @@ export class Payrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.payrollReceipt = utils.deserializeJSONResponse(
+            res.payrollReceipt = utils.objectToClass(
               httpRes?.data,
               shared.PayrollReceipt
             );
@@ -478,17 +475,14 @@ export class Payrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.payroll = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Payroll
-            );
+            res.payroll = utils.objectToClass(httpRes?.data, shared.Payroll);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -568,7 +562,7 @@ export class Payrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.payrollCheck = utils.deserializeJSONResponse(
+            res.payrollCheck = utils.objectToClass(
               httpRes?.data,
               shared.PayrollCheck
             );
@@ -578,7 +572,7 @@ export class Payrolls {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -641,17 +635,14 @@ export class Payrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.payroll = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Payroll
-            );
+            res.payroll = utils.objectToClass(httpRes?.data, shared.Payroll);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -726,17 +717,14 @@ export class Payrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.payroll = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Payroll
-            );
+            res.payroll = utils.objectToClass(httpRes?.data, shared.Payroll);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -818,17 +806,14 @@ export class Payrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.payroll = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Payroll
-            );
+            res.payroll = utils.objectToClass(httpRes?.data, shared.Payroll);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
