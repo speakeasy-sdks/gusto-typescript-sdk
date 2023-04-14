@@ -3,6 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { RFCDate } from "../../types";
 import { Expose, Transform, Type } from "class-transformer";
 
 export class ContractorPaymentReceiptContractorPayments extends SpeakeasyBase {
@@ -168,8 +169,8 @@ export class ContractorPaymentReceipt extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "debit_date" })
-  @Transform(({ value }) => new Date(value), { toClassOnly: true })
-  debitDate?: Date;
+  @Transform(({ value }) => new RFCDate(value), { toClassOnly: true })
+  debitDate?: RFCDate;
 
   /**
    * URL for information related to right to liability of licensee. Always the fixed string "https://gusto.com/about/licenses"

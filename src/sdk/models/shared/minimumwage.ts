@@ -3,6 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { RFCDate } from "../../types";
 import { Expose, Transform } from "class-transformer";
 
 /**
@@ -21,8 +22,8 @@ export class MinimumWage extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "effective_date" })
-  @Transform(({ value }) => new Date(value), { toClassOnly: true })
-  effectiveDate: Date;
+  @Transform(({ value }) => new RFCDate(value), { toClassOnly: true })
+  effectiveDate: RFCDate;
 
   /**
    * Description of parties the minimum wage applies to.
