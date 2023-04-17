@@ -139,7 +139,7 @@ export class WebhookSubscriptions {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.webhookSubscription = utils.deserializeJSONResponse(
+            res.webhookSubscription = utils.objectToClass(
               httpRes?.data,
               shared.WebhookSubscription
             );
@@ -256,7 +256,7 @@ export class WebhookSubscriptions {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.webhookSubscriptions = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.webhookSubscriptions = utils.deserializeJSONResponse(
+            res.webhookSubscriptions = utils.objectToClass(
               httpRes?.data,
               shared.WebhookSubscription,
               resFieldDepth
@@ -337,7 +337,7 @@ export class WebhookSubscriptions {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.webhookSubscription = utils.deserializeJSONResponse(
+            res.webhookSubscription = utils.objectToClass(
               httpRes?.data,
               shared.WebhookSubscription
             );
@@ -347,7 +347,7 @@ export class WebhookSubscriptions {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -431,7 +431,7 @@ export class WebhookSubscriptions {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.webhookSubscription = utils.deserializeJSONResponse(
+            res.webhookSubscription = utils.objectToClass(
               httpRes?.data,
               shared.WebhookSubscription
             );
@@ -441,7 +441,7 @@ export class WebhookSubscriptions {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -522,7 +522,7 @@ export class WebhookSubscriptions {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.webhookSubscription = utils.deserializeJSONResponse(
+            res.webhookSubscription = utils.objectToClass(
               httpRes?.data,
               shared.WebhookSubscription
             );
@@ -532,7 +532,7 @@ export class WebhookSubscriptions {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

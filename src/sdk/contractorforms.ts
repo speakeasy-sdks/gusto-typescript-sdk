@@ -74,7 +74,7 @@ export class ContractorForms {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.deserializeJSONResponse(
+            res.form = utils.objectToClass(
               httpRes?.data,
               operations.GetV1ContractorFormForm
             );
@@ -131,10 +131,7 @@ export class ContractorForms {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.formPdf = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.FormPdf
-            );
+            res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
           }
           break;
         case httpRes?.status == 404:
@@ -190,7 +187,7 @@ export class ContractorForms {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.getV1ContractorFormsFormAnies = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.getV1ContractorFormsFormAnies = utils.deserializeJSONResponse(
+            res.getV1ContractorFormsFormAnies = utils.objectToClass(
               httpRes?.data,
               operations.GetV1ContractorFormsForm,
               resFieldDepth
@@ -270,7 +267,7 @@ export class ContractorForms {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.deserializeJSONResponse(
+            res.form = utils.objectToClass(
               httpRes?.data,
               operations.PostV1SandboxGenerate1099Form
             );
@@ -280,7 +277,7 @@ export class ContractorForms {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

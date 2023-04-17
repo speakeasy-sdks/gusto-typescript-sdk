@@ -37,7 +37,8 @@ import { TaxRequirements } from "./taxrequirements";
 import { TimeOffPolicies } from "./timeoffpolicies";
 import { User } from "./user";
 import { WebhookSubscriptions } from "./webhooksubscriptions";
-import axios, { AxiosInstance } from "axios";
+import axios from "axios";
+import { AxiosInstance } from "axios";
 
 /**
  * Demo
@@ -116,8 +117,8 @@ export class Gusto {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "0.9.0";
-  private _genVersion = "2.17.8";
+  private _sdkVersion = "0.10.0";
+  private _genVersion = "2.18.0";
   private _globals: any;
 
   constructor(props?: SDKProps) {

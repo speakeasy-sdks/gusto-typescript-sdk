@@ -52,6 +52,7 @@ export class FederalTaxDetails {
       "/v1/companies/{company_id}/federal_tax_details",
       req
     );
+
     if (!(security instanceof utils.SpeakeasyBase)) {
       security =
         new operations.GetV1CompaniesCompanyIdFederalTaxDetailsSecurity(
@@ -83,7 +84,7 @@ export class FederalTaxDetails {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.federalTaxDetails = utils.deserializeJSONResponse(
+            res.federalTaxDetails = utils.objectToClass(
               httpRes?.data,
               shared.FederalTaxDetails
             );
@@ -158,7 +159,7 @@ export class FederalTaxDetails {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.federalTaxDetails = utils.deserializeJSONResponse(
+            res.federalTaxDetails = utils.objectToClass(
               httpRes?.data,
               shared.FederalTaxDetails
             );
@@ -168,7 +169,7 @@ export class FederalTaxDetails {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

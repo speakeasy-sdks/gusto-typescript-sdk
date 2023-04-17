@@ -78,7 +78,7 @@ export class TaxRequirements {
               [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
             res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects =
-              utils.deserializeJSONResponse(
+              utils.objectToClass(
                 httpRes?.data,
                 operations.GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON,
                 resFieldDepth
@@ -180,7 +180,7 @@ export class TaxRequirements {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.taxRequirementsState = utils.deserializeJSONResponse(
+            res.taxRequirementsState = utils.objectToClass(
               httpRes?.data,
               shared.TaxRequirementsState
             );
@@ -259,7 +259,7 @@ export class TaxRequirements {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

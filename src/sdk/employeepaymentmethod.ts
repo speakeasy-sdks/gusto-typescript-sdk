@@ -128,7 +128,7 @@ export class EmployeePaymentMethod {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeePaymentMethod = utils.deserializeJSONResponse(
+            res.employeePaymentMethod = utils.objectToClass(
               httpRes?.data,
               shared.EmployeePaymentMethod
             );
@@ -203,7 +203,7 @@ export class EmployeePaymentMethod {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeBankAccount = utils.deserializeJSONResponse(
+            res.employeeBankAccount = utils.objectToClass(
               httpRes?.data,
               shared.EmployeeBankAccount
             );
@@ -213,7 +213,7 @@ export class EmployeePaymentMethod {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -286,7 +286,7 @@ export class EmployeePaymentMethod {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeePaymentMethod = utils.deserializeJSONResponse(
+            res.employeePaymentMethod = utils.objectToClass(
               httpRes?.data,
               shared.EmployeePaymentMethod
             );
@@ -296,7 +296,7 @@ export class EmployeePaymentMethod {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

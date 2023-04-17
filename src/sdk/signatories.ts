@@ -130,7 +130,7 @@ export class Signatories {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.signatories = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.signatories = utils.deserializeJSONResponse(
+            res.signatories = utils.objectToClass(
               httpRes?.data,
               shared.Signatory,
               resFieldDepth
@@ -208,7 +208,7 @@ export class Signatories {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.signatory = utils.deserializeJSONResponse(
+            res.signatory = utils.objectToClass(
               httpRes?.data,
               shared.Signatory
             );
@@ -218,7 +218,7 @@ export class Signatories {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -291,7 +291,7 @@ export class Signatories {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.signatory = utils.deserializeJSONResponse(
+            res.signatory = utils.objectToClass(
               httpRes?.data,
               shared.Signatory
             );
@@ -301,7 +301,7 @@ export class Signatories {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -379,7 +379,7 @@ export class Signatories {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.signatory = utils.deserializeJSONResponse(
+            res.signatory = utils.objectToClass(
               httpRes?.data,
               shared.Signatory
             );
@@ -389,7 +389,7 @@ export class Signatories {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

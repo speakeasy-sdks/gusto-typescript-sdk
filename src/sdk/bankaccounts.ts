@@ -76,7 +76,7 @@ export class BankAccounts {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.companyBankAccounts = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.companyBankAccounts = utils.deserializeJSONResponse(
+            res.companyBankAccounts = utils.objectToClass(
               httpRes?.data,
               shared.CompanyBankAccount,
               resFieldDepth
@@ -161,7 +161,7 @@ export class BankAccounts {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBankAccount = utils.deserializeJSONResponse(
+            res.companyBankAccount = utils.objectToClass(
               httpRes?.data,
               shared.CompanyBankAccount
             );
@@ -171,7 +171,7 @@ export class BankAccounts {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -258,7 +258,7 @@ export class BankAccounts {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -346,7 +346,7 @@ export class BankAccounts {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBankAccount = utils.deserializeJSONResponse(
+            res.companyBankAccount = utils.objectToClass(
               httpRes?.data,
               shared.CompanyBankAccount
             );
@@ -356,7 +356,7 @@ export class BankAccounts {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

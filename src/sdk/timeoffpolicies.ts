@@ -77,7 +77,7 @@ export class TimeOffPolicies {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.timeOffPolicies = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.timeOffPolicies = utils.deserializeJSONResponse(
+            res.timeOffPolicies = utils.objectToClass(
               httpRes?.data,
               shared.TimeOffPolicy,
               resFieldDepth
@@ -136,7 +136,7 @@ export class TimeOffPolicies {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.deserializeJSONResponse(
+            res.timeOffPolicy = utils.objectToClass(
               httpRes?.data,
               shared.TimeOffPolicy
             );
@@ -212,7 +212,7 @@ export class TimeOffPolicies {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.deserializeJSONResponse(
+            res.timeOffPolicy = utils.objectToClass(
               httpRes?.data,
               shared.TimeOffPolicy
             );
@@ -222,7 +222,7 @@ export class TimeOffPolicies {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -310,7 +310,7 @@ export class TimeOffPolicies {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.accruingTimeOffHours = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.accruingTimeOffHours = utils.deserializeJSONResponse(
+            res.accruingTimeOffHours = utils.objectToClass(
               httpRes?.data,
               shared.AccruingTimeOffHour,
               resFieldDepth
@@ -319,7 +319,7 @@ export class TimeOffPolicies {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -393,7 +393,7 @@ export class TimeOffPolicies {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.deserializeJSONResponse(
+            res.timeOffPolicy = utils.objectToClass(
               httpRes?.data,
               shared.TimeOffPolicy
             );
@@ -403,7 +403,7 @@ export class TimeOffPolicies {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -461,7 +461,7 @@ export class TimeOffPolicies {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.deserializeJSONResponse(
+            res.timeOffPolicy = utils.objectToClass(
               httpRes?.data,
               shared.TimeOffPolicy
             );
@@ -471,7 +471,7 @@ export class TimeOffPolicies {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -550,7 +550,7 @@ export class TimeOffPolicies {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.deserializeJSONResponse(
+            res.timeOffPolicy = utils.objectToClass(
               httpRes?.data,
               shared.TimeOffPolicy
             );
@@ -560,7 +560,7 @@ export class TimeOffPolicies {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -639,7 +639,7 @@ export class TimeOffPolicies {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.deserializeJSONResponse(
+            res.timeOffPolicy = utils.objectToClass(
               httpRes?.data,
               shared.TimeOffPolicy
             );
@@ -649,7 +649,7 @@ export class TimeOffPolicies {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -728,7 +728,7 @@ export class TimeOffPolicies {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.deserializeJSONResponse(
+            res.timeOffPolicy = utils.objectToClass(
               httpRes?.data,
               shared.TimeOffPolicy
             );
@@ -738,7 +738,7 @@ export class TimeOffPolicies {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

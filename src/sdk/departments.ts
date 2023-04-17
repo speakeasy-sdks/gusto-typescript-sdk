@@ -79,7 +79,7 @@ export class Departments {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -138,7 +138,7 @@ export class Departments {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.departments = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.departments = utils.deserializeJSONResponse(
+            res.departments = utils.objectToClass(
               httpRes?.data,
               shared.Department,
               resFieldDepth
@@ -199,7 +199,7 @@ export class Departments {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.department = utils.deserializeJSONResponse(
+            res.department = utils.objectToClass(
               httpRes?.data,
               shared.Department
             );
@@ -276,7 +276,7 @@ export class Departments {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.department = utils.deserializeJSONResponse(
+            res.department = utils.objectToClass(
               httpRes?.data,
               shared.Department
             );
@@ -286,7 +286,7 @@ export class Departments {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -362,7 +362,7 @@ export class Departments {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.department = utils.deserializeJSONResponse(
+            res.department = utils.objectToClass(
               httpRes?.data,
               shared.Department
             );
@@ -439,7 +439,7 @@ export class Departments {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.department = utils.deserializeJSONResponse(
+            res.department = utils.objectToClass(
               httpRes?.data,
               shared.Department
             );
@@ -449,7 +449,7 @@ export class Departments {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -525,7 +525,7 @@ export class Departments {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.department = utils.deserializeJSONResponse(
+            res.department = utils.objectToClass(
               httpRes?.data,
               shared.Department
             );

@@ -78,7 +78,7 @@ export class ContractorPaymentMethod {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.contractorBankAccounts = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.contractorBankAccounts = utils.deserializeJSONResponse(
+            res.contractorBankAccounts = utils.objectToClass(
               httpRes?.data,
               shared.ContractorBankAccount,
               resFieldDepth
@@ -138,7 +138,7 @@ export class ContractorPaymentMethod {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorPaymentMethod = utils.deserializeJSONResponse(
+            res.contractorPaymentMethod = utils.objectToClass(
               httpRes?.data,
               shared.ContractorPaymentMethod
             );
@@ -218,7 +218,7 @@ export class ContractorPaymentMethod {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorBankAccount = utils.deserializeJSONResponse(
+            res.contractorBankAccount = utils.objectToClass(
               httpRes?.data,
               shared.ContractorBankAccount
             );
@@ -235,7 +235,7 @@ export class ContractorPaymentMethod {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -310,7 +310,7 @@ export class ContractorPaymentMethod {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorPaymentMethod = utils.deserializeJSONResponse(
+            res.contractorPaymentMethod = utils.objectToClass(
               httpRes?.data,
               shared.ContractorPaymentMethod
             );
@@ -320,7 +320,7 @@ export class ContractorPaymentMethod {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

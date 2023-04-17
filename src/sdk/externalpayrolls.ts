@@ -127,7 +127,7 @@ export class ExternalPayrolls {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.externalPayrollBasics = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.externalPayrollBasics = utils.deserializeJSONResponse(
+            res.externalPayrollBasics = utils.objectToClass(
               httpRes?.data,
               shared.ExternalPayrollBasic,
               resFieldDepth
@@ -186,7 +186,7 @@ export class ExternalPayrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.externalPayroll = utils.deserializeJSONResponse(
+            res.externalPayroll = utils.objectToClass(
               httpRes?.data,
               shared.ExternalPayroll
             );
@@ -245,7 +245,7 @@ export class ExternalPayrolls {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.externalPayrollTaxSuggestions = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.externalPayrollTaxSuggestions = utils.deserializeJSONResponse(
+            res.externalPayrollTaxSuggestions = utils.objectToClass(
               httpRes?.data,
               shared.ExternalPayrollTaxSuggestions,
               resFieldDepth
@@ -322,7 +322,7 @@ export class ExternalPayrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.externalPayroll = utils.deserializeJSONResponse(
+            res.externalPayroll = utils.objectToClass(
               httpRes?.data,
               shared.ExternalPayroll
             );
@@ -332,7 +332,7 @@ export class ExternalPayrolls {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -406,7 +406,7 @@ export class ExternalPayrolls {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.externalPayroll = utils.deserializeJSONResponse(
+            res.externalPayroll = utils.objectToClass(
               httpRes?.data,
               shared.ExternalPayroll
             );
@@ -416,7 +416,7 @@ export class ExternalPayrolls {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

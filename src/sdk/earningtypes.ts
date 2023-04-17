@@ -139,7 +139,7 @@ export class EarningTypes {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
             res.getV1CompaniesCompanyIdEarningTypes200ApplicationJSONObject =
-              utils.deserializeJSONResponse(
+              utils.objectToClass(
                 httpRes?.data,
                 operations.GetV1CompaniesCompanyIdEarningTypes200ApplicationJSON
               );
@@ -218,7 +218,7 @@ export class EarningTypes {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.earningType = utils.deserializeJSONResponse(
+            res.earningType = utils.objectToClass(
               httpRes?.data,
               shared.EarningType
             );
@@ -228,7 +228,7 @@ export class EarningTypes {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -308,7 +308,7 @@ export class EarningTypes {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.earningType = utils.deserializeJSONResponse(
+            res.earningType = utils.objectToClass(
               httpRes?.data,
               shared.EarningType
             );
@@ -318,7 +318,7 @@ export class EarningTypes {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

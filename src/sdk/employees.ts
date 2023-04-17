@@ -128,10 +128,7 @@ export class Employees {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employee = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Employee
-            );
+            res.employee = utils.objectToClass(httpRes?.data, shared.Employee);
           }
           break;
         case httpRes?.status == 404:
@@ -190,7 +187,7 @@ export class Employees {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
             res.getV1EmployeesEmployeeIdCustomFields200ApplicationJSONObject =
-              utils.deserializeJSONResponse(
+              utils.objectToClass(
                 httpRes?.data,
                 operations.GetV1EmployeesEmployeeIdCustomFields200ApplicationJSON
               );
@@ -249,7 +246,7 @@ export class Employees {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeAddress = utils.deserializeJSONResponse(
+            res.employeeAddress = utils.objectToClass(
               httpRes?.data,
               shared.EmployeeAddress
             );
@@ -343,7 +340,7 @@ export class Employees {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeOnboardingStatus = utils.deserializeJSONResponse(
+            res.employeeOnboardingStatus = utils.objectToClass(
               httpRes?.data,
               shared.EmployeeOnboardingStatus
             );
@@ -411,7 +408,7 @@ export class Employees {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffActivity = utils.deserializeJSONResponse(
+            res.timeOffActivity = utils.objectToClass(
               httpRes?.data,
               shared.TimeOffActivity
             );
@@ -488,17 +485,14 @@ export class Employees {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employee = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Employee
-            );
+            res.employee = utils.objectToClass(httpRes?.data, shared.Employee);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -555,10 +549,7 @@ export class Employees {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employee = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Employee
-            );
+            res.employee = utils.objectToClass(httpRes?.data, shared.Employee);
           }
           break;
       }
@@ -630,17 +621,14 @@ export class Employees {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employee = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Employee
-            );
+            res.employee = utils.objectToClass(httpRes?.data, shared.Employee);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -715,7 +703,7 @@ export class Employees {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeAddress = utils.deserializeJSONResponse(
+            res.employeeAddress = utils.objectToClass(
               httpRes?.data,
               shared.EmployeeAddress
             );
@@ -725,7 +713,7 @@ export class Employees {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -809,7 +797,7 @@ export class Employees {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeOnboardingStatus = utils.deserializeJSONResponse(
+            res.employeeOnboardingStatus = utils.objectToClass(
               httpRes?.data,
               shared.EmployeeOnboardingStatus
             );
@@ -826,7 +814,7 @@ export class Employees {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

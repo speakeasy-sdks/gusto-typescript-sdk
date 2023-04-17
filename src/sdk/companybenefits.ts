@@ -80,7 +80,7 @@ export class CompanyBenefits {
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
             res.deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject =
-              utils.deserializeJSONResponse(
+              utils.objectToClass(
                 httpRes?.data,
                 operations.DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON
               );
@@ -132,7 +132,7 @@ export class CompanyBenefits {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.supportedBenefits = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.supportedBenefits = utils.deserializeJSONResponse(
+            res.supportedBenefits = utils.objectToClass(
               httpRes?.data,
               shared.SupportedBenefit,
               resFieldDepth
@@ -194,7 +194,7 @@ export class CompanyBenefits {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.supportedBenefit = utils.deserializeJSONResponse(
+            res.supportedBenefit = utils.objectToClass(
               httpRes?.data,
               shared.SupportedBenefit
             );
@@ -253,7 +253,7 @@ export class CompanyBenefits {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.benefitTypeRequirements = utils.deserializeJSONResponse(
+            res.benefitTypeRequirements = utils.objectToClass(
               httpRes?.data,
               shared.BenefitTypeRequirements
             );
@@ -314,7 +314,7 @@ export class CompanyBenefits {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.benefitSummary = utils.deserializeJSONResponse(
+            res.benefitSummary = utils.objectToClass(
               httpRes?.data,
               shared.BenefitSummary
             );
@@ -379,7 +379,7 @@ export class CompanyBenefits {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.companyBenefits = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.companyBenefits = utils.deserializeJSONResponse(
+            res.companyBenefits = utils.objectToClass(
               httpRes?.data,
               shared.CompanyBenefit,
               resFieldDepth
@@ -445,7 +445,7 @@ export class CompanyBenefits {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBenefit = utils.deserializeJSONResponse(
+            res.companyBenefit = utils.objectToClass(
               httpRes?.data,
               shared.CompanyBenefit
             );
@@ -524,7 +524,7 @@ export class CompanyBenefits {
       switch (true) {
         case httpRes?.status == 201:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBenefit = utils.deserializeJSONResponse(
+            res.companyBenefit = utils.objectToClass(
               httpRes?.data,
               shared.CompanyBenefit
             );
@@ -534,7 +534,7 @@ export class CompanyBenefits {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -611,7 +611,7 @@ export class CompanyBenefits {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBenefit = utils.deserializeJSONResponse(
+            res.companyBenefit = utils.objectToClass(
               httpRes?.data,
               shared.CompanyBenefit
             );
@@ -621,7 +621,7 @@ export class CompanyBenefits {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

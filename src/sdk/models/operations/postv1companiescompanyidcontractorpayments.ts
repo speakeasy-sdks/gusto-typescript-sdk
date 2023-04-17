@@ -3,6 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { RFCDate } from "../../types";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Transform } from "class-transformer";
@@ -33,8 +34,8 @@ export class PostV1CompaniesCompanyIdContractorPaymentsRequestBody extends Speak
    */
   @SpeakeasyMetadata()
   @Expose({ name: "date" })
-  @Transform(({ value }) => new Date(value), { toClassOnly: true })
-  date: Date;
+  @Transform(({ value }) => new RFCDate(value), { toClassOnly: true })
+  date: RFCDate;
 
   /**
    * If the contractor is on an hourly wage, this is the number of hours that the contractor worked for the payment

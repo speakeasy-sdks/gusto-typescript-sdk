@@ -70,10 +70,7 @@ export class CompanyForms {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Form
-            );
+            res.form = utils.objectToClass(httpRes?.data, shared.Form);
           }
           break;
         case httpRes?.status == 404:
@@ -127,10 +124,7 @@ export class CompanyForms {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.formPdf = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.FormPdf
-            );
+            res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
           }
           break;
         case httpRes?.status == 404:
@@ -186,7 +180,7 @@ export class CompanyForms {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.forms = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.forms = utils.deserializeJSONResponse(
+            res.forms = utils.objectToClass(
               httpRes?.data,
               shared.Form,
               resFieldDepth
@@ -262,17 +256,14 @@ export class CompanyForms {
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.deserializeJSONResponse(
-              httpRes?.data,
-              shared.Form
-            );
+            res.form = utils.objectToClass(httpRes?.data, shared.Form);
           }
           break;
         case httpRes?.status == 404:
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );

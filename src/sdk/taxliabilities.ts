@@ -77,7 +77,7 @@ export class TaxLiabilities {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.taxLiabilitiesSelections = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.taxLiabilitiesSelections = utils.deserializeJSONResponse(
+            res.taxLiabilitiesSelections = utils.objectToClass(
               httpRes?.data,
               shared.TaxLiabilitiesSelections,
               resFieldDepth
@@ -156,7 +156,7 @@ export class TaxLiabilities {
           if (utils.matchContentType(contentType, `application/json`)) {
             res.taxLiabilitiesSelections = [];
             const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.taxLiabilitiesSelections = utils.deserializeJSONResponse(
+            res.taxLiabilitiesSelections = utils.objectToClass(
               httpRes?.data,
               shared.TaxLiabilitiesSelections,
               resFieldDepth
@@ -167,7 +167,7 @@ export class TaxLiabilities {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
@@ -225,7 +225,7 @@ export class TaxLiabilities {
           break;
         case httpRes?.status == 422:
           if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.deserializeJSONResponse(
+            res.unprocessableEntityErrorObject = utils.objectToClass(
               httpRes?.data,
               shared.UnprocessableEntityErrorObject
             );
