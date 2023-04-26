@@ -42,13 +42,19 @@ Once you have your API Token, `client_id`, `secret`, and a demo company, you’r
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```typescript
+import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   GetV1CompaniesCompanyIdBankAccountsRequest,
-  GetV1CompaniesCompanyIdBankAccountsResponse
+  GetV1CompaniesCompanyIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-
+import {
+  CompanyBankAccountAccountTypeEnum,
+  CompanyBankAccountPlaidStatusEnum,
+  CompanyBankAccountVerificationStatusEnum,
+  CompanyBankAccountVerificationTypeEnum,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 import { AxiosError } from "axios";
-import { Gusto } from "@speakeasy-sdks/gusto";
+
 const sdk = new Gusto({
   security: {
     authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
@@ -60,7 +66,9 @@ const req: GetV1CompaniesCompanyIdBankAccountsRequest = {
 };
 
 sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(req).then((res: GetV1CompaniesCompanyIdBankAccountsResponse | AxiosError) => {
-   // handle response
+  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+    // handle response
+  }
 });
 ```
 <!-- End SDK Example Usage -->
@@ -69,278 +77,278 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(req).then((res: GetV1Compan
 ## Available Resources and Operations
 
 
-### bankAccounts
-
-* `getV1CompaniesCompanyIdBankAccounts` - Get all company bank accounts
-* `postV1CompaniesCompanyIdBankAccounts` - Create a company bank account
-* `postV1PlaidProcessorToken` - Create a bank account from a plaid processor token
-* `putV1CompaniesCompanyIdBankAccountsVerify` - Verify a company bank account
-
-### companies
-
-* `getV1Companies` - Get a company
-* `getV1CompaniesCompanyIdAdmins` - Get all the admins at a company
-* `getV1CompaniesCompanyIdCustomFields` - Get the custom fields of a company
-* `getV1CompanyFinishOnboarding` - Finish company onboarding
-* `getV1CompanyOnboardingStatus` - Get the company's onboarding status
-* `postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService` - Accept terms of service for a company user
-* `postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService` - Retrieve terms of service status for a company user
-* `postV1CompaniesCompanyIdAdmins` - Create an admin for the company
-* `postV1PartnerManagedCompanies` - Create a partner managed company
-* `postV1Provision` - Create a company
-* `putV1PartnerManagedCompaniesCompanyUuidMigrate` - Migrate company to embedded payroll
-
-### companyBenefits
-
-* `deleteV1CompanyBenefitsCompanyBenefitId` - Delete a company benefit
-* `getV1Benefits` - Get all benefits supported by Gusto
-* `getV1BenefitsBenefitId` - Get a supported benefit by ID
-* `getV1BenefitsBenefitsIdRequirements` - Get benefit fields requirements by ID
-* `getV1BenefitsCompanyBenefitIdSummary` - Get company benefit summary by company benefit id.
-* `getV1CompaniesCompanyIdCompanyBenefits` - Get benefits for a company
-* `getV1CompanyBenefitsCompanyBenefitId` - Get a company benefit
-* `postV1CompaniesCompanyIdCompanyBenefits` - Create a company benefit
-* `putV1CompanyBenefitsCompanyBenefitId` - Update a company benefit
-
-### companyForms
-
-* `getV1CompanyForm` - Get a company form
-* `getV1CompanyFormPdf` - Get a company form pdf
-* `getV1CompanyForms` - Get all company forms
-* `putV1CompanyFormSign` - Sign a company form
-
-### contractorForms
-
-* `getV1ContractorForm` - Get a contractor form
-* `getV1ContractorFormPdf` - Get the contractor form pdf
-* `getV1ContractorForms` - Get all contractor forms
-* `postV1SandboxGenerate1099` - Generate a 1099 form [SANDBOX]
-
-### contractorPaymentMethod
-
-* `getV1ContractorsContractorUuidBankAccounts` - Get all contractor bank accounts
-* `getV1ContractorsContractorUuidPaymentMethod` - Get a contractor's payment method
-* `postV1ContractorsContractorUuidBankAccounts` - Create an contractor bank account
-* `putV1ContractorsContractorIdPaymentMethod` - Update a contractor's payment method
-
-### contractorPayments
-
-* `deleteV1CompaniesCompanyIdContractorPaymentContractorPayment` - Cancel a contractor payment
-* `getV1CompaniesCompanyIdContractorPaymentContractorPayment` - Get a single contractor payment
-* `getV1CompaniesCompanyIdContractorPayments` - Get contractor payments for a company
-* `getV1ContractorPaymentsContractorPaymentUuidReceipt` - Get a single contractor payment receipt
-* `postV1CompaniesCompanyIdContractorPayments` - Create a contractor payment
-
-### contractors
-
-* `deleteV1ContractorsContractorId` - Delete a contractor
-* `getV1CompaniesCompanyIdContractors` - Get contractors of a company
-* `getV1ContractorsContractorId` - Get a contractor
-* `getV1ContractorsContractorUuidAddress` - Get a contractor address
-* `getV1ContractorsContractorUuidOnboardingStatus` - Get the contractor's onboarding status
-* `postV1CompaniesCompanyIdContractors` - Create a contractor
-* `putV1ContractorsContractorId` - Update a contractor
-* `putV1ContractorsContractorUuidAddress` - Update a contractor's address
-* `putV1ContractorsContractorUuidOnboardingStatus` - Change the contractor's onboarding status
-
-### departments
-
-* `deleteDepartment` - Delete a department
-* `getCompaniesDepartments` - Get all departments of a company
-* `getDepartment` - Get a department
-* `postDepartments` - Create a department
-* `putAddPeopleToDepartment` - Add people to a department
-* `putDepartments` - Update a department
-* `putRemovePeopleFromDepartment` - Remove people from a department
-
-### earningTypes
-
-* `deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid` - Deactivate an earning type
-* `getV1CompaniesCompanyIdEarningTypes` - Get all earning types for a company
-* `postV1CompaniesCompanyIdEarningTypes` - Create a custom earning type
-* `putV1CompaniesCompanyIdEarningTypesEarningTypeUuid` - Update an earning type
-
-### employeeBenefits
-
-* `deleteV1EmployeeBenefitsEmployeeBenefitId` - Delete an employee benefit
-* `getV1EmployeeBenefitsEmployeeBenefitId` - Get an employee benefit
-* `getV1EmployeesEmployeeIdEmployeeBenefits` - Get all benefits for an employee
-* `postEmployeeYtdBenefitAmountsFromDifferentCompany` - Create year-to-date benefit amounts from a different company
-* `postV1EmployeesEmployeeIdEmployeeBenefits` - Create an employee benefit
-* `putV1EmployeeBenefitsEmployeeBenefitId` - Update an employee benefit
-
-### employeeForms
+### [bankAccounts](docs/bankaccounts/README.md)
+
+* [getV1CompaniesCompanyIdBankAccounts](docs/bankaccounts/README.md#getv1companiescompanyidbankaccounts) - Get all company bank accounts
+* [postV1CompaniesCompanyIdBankAccounts](docs/bankaccounts/README.md#postv1companiescompanyidbankaccounts) - Create a company bank account
+* [postV1PlaidProcessorToken](docs/bankaccounts/README.md#postv1plaidprocessortoken) - Create a bank account from a plaid processor token
+* [putV1CompaniesCompanyIdBankAccountsVerify](docs/bankaccounts/README.md#putv1companiescompanyidbankaccountsverify) - Verify a company bank account
+
+### [companies](docs/companies/README.md)
+
+* [getV1Companies](docs/companies/README.md#getv1companies) - Get a company
+* [getV1CompaniesCompanyIdAdmins](docs/companies/README.md#getv1companiescompanyidadmins) - Get all the admins at a company
+* [getV1CompaniesCompanyIdCustomFields](docs/companies/README.md#getv1companiescompanyidcustomfields) - Get the custom fields of a company
+* [getV1CompanyFinishOnboarding](docs/companies/README.md#getv1companyfinishonboarding) - Finish company onboarding
+* [getV1CompanyOnboardingStatus](docs/companies/README.md#getv1companyonboardingstatus) - Get the company's onboarding status
+* [postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService](docs/companies/README.md#postpartnermanagedcompaniescompanyuuidaccepttermsofservice) - Accept terms of service for a company user
+* [postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService](docs/companies/README.md#postpartnermanagedcompaniescompanyuuidretrievetermsofservice) - Retrieve terms of service status for a company user
+* [postV1CompaniesCompanyIdAdmins](docs/companies/README.md#postv1companiescompanyidadmins) - Create an admin for the company
+* [postV1PartnerManagedCompanies](docs/companies/README.md#postv1partnermanagedcompanies) - Create a partner managed company
+* [postV1Provision](docs/companies/README.md#postv1provision) - Create a company
+* [putV1PartnerManagedCompaniesCompanyUuidMigrate](docs/companies/README.md#putv1partnermanagedcompaniescompanyuuidmigrate) - Migrate company to embedded payroll
+
+### [companyBenefits](docs/companybenefits/README.md)
+
+* [deleteV1CompanyBenefitsCompanyBenefitId](docs/companybenefits/README.md#deletev1companybenefitscompanybenefitid) - Delete a company benefit
+* [getV1Benefits](docs/companybenefits/README.md#getv1benefits) - Get all benefits supported by Gusto
+* [getV1BenefitsBenefitId](docs/companybenefits/README.md#getv1benefitsbenefitid) - Get a supported benefit by ID
+* [getV1BenefitsBenefitsIdRequirements](docs/companybenefits/README.md#getv1benefitsbenefitsidrequirements) - Get benefit fields requirements by ID
+* [getV1BenefitsCompanyBenefitIdSummary](docs/companybenefits/README.md#getv1benefitscompanybenefitidsummary) - Get company benefit summary by company benefit id.
+* [getV1CompaniesCompanyIdCompanyBenefits](docs/companybenefits/README.md#getv1companiescompanyidcompanybenefits) - Get benefits for a company
+* [getV1CompanyBenefitsCompanyBenefitId](docs/companybenefits/README.md#getv1companybenefitscompanybenefitid) - Get a company benefit
+* [postV1CompaniesCompanyIdCompanyBenefits](docs/companybenefits/README.md#postv1companiescompanyidcompanybenefits) - Create a company benefit
+* [putV1CompanyBenefitsCompanyBenefitId](docs/companybenefits/README.md#putv1companybenefitscompanybenefitid) - Update a company benefit
+
+### [companyForms](docs/companyforms/README.md)
+
+* [getV1CompanyForm](docs/companyforms/README.md#getv1companyform) - Get a company form
+* [getV1CompanyFormPdf](docs/companyforms/README.md#getv1companyformpdf) - Get a company form pdf
+* [getV1CompanyForms](docs/companyforms/README.md#getv1companyforms) - Get all company forms
+* [putV1CompanyFormSign](docs/companyforms/README.md#putv1companyformsign) - Sign a company form
+
+### [contractorForms](docs/contractorforms/README.md)
+
+* [getV1ContractorForm](docs/contractorforms/README.md#getv1contractorform) - Get a contractor form
+* [getV1ContractorFormPdf](docs/contractorforms/README.md#getv1contractorformpdf) - Get the contractor form pdf
+* [getV1ContractorForms](docs/contractorforms/README.md#getv1contractorforms) - Get all contractor forms
+* [postV1SandboxGenerate1099](docs/contractorforms/README.md#postv1sandboxgenerate1099) - Generate a 1099 form [SANDBOX]
+
+### [contractorPaymentMethod](docs/contractorpaymentmethod/README.md)
+
+* [getV1ContractorsContractorUuidBankAccounts](docs/contractorpaymentmethod/README.md#getv1contractorscontractoruuidbankaccounts) - Get all contractor bank accounts
+* [getV1ContractorsContractorUuidPaymentMethod](docs/contractorpaymentmethod/README.md#getv1contractorscontractoruuidpaymentmethod) - Get a contractor's payment method
+* [postV1ContractorsContractorUuidBankAccounts](docs/contractorpaymentmethod/README.md#postv1contractorscontractoruuidbankaccounts) - Create an contractor bank account
+* [putV1ContractorsContractorIdPaymentMethod](docs/contractorpaymentmethod/README.md#putv1contractorscontractoridpaymentmethod) - Update a contractor's payment method
+
+### [contractorPayments](docs/contractorpayments/README.md)
+
+* [deleteV1CompaniesCompanyIdContractorPaymentContractorPayment](docs/contractorpayments/README.md#deletev1companiescompanyidcontractorpaymentcontractorpayment) - Cancel a contractor payment
+* [getV1CompaniesCompanyIdContractorPaymentContractorPayment](docs/contractorpayments/README.md#getv1companiescompanyidcontractorpaymentcontractorpayment) - Get a single contractor payment
+* [getV1CompaniesCompanyIdContractorPayments](docs/contractorpayments/README.md#getv1companiescompanyidcontractorpayments) - Get contractor payments for a company
+* [getV1ContractorPaymentsContractorPaymentUuidReceipt](docs/contractorpayments/README.md#getv1contractorpaymentscontractorpaymentuuidreceipt) - Get a single contractor payment receipt
+* [postV1CompaniesCompanyIdContractorPayments](docs/contractorpayments/README.md#postv1companiescompanyidcontractorpayments) - Create a contractor payment
+
+### [contractors](docs/contractors/README.md)
+
+* [deleteV1ContractorsContractorId](docs/contractors/README.md#deletev1contractorscontractorid) - Delete a contractor
+* [getV1CompaniesCompanyIdContractors](docs/contractors/README.md#getv1companiescompanyidcontractors) - Get contractors of a company
+* [getV1ContractorsContractorId](docs/contractors/README.md#getv1contractorscontractorid) - Get a contractor
+* [getV1ContractorsContractorUuidAddress](docs/contractors/README.md#getv1contractorscontractoruuidaddress) - Get a contractor address
+* [getV1ContractorsContractorUuidOnboardingStatus](docs/contractors/README.md#getv1contractorscontractoruuidonboardingstatus) - Get the contractor's onboarding status
+* [postV1CompaniesCompanyIdContractors](docs/contractors/README.md#postv1companiescompanyidcontractors) - Create a contractor
+* [putV1ContractorsContractorId](docs/contractors/README.md#putv1contractorscontractorid) - Update a contractor
+* [putV1ContractorsContractorUuidAddress](docs/contractors/README.md#putv1contractorscontractoruuidaddress) - Update a contractor's address
+* [putV1ContractorsContractorUuidOnboardingStatus](docs/contractors/README.md#putv1contractorscontractoruuidonboardingstatus) - Change the contractor's onboarding status
+
+### [departments](docs/departments/README.md)
+
+* [deleteDepartment](docs/departments/README.md#deletedepartment) - Delete a department
+* [getCompaniesDepartments](docs/departments/README.md#getcompaniesdepartments) - Get all departments of a company
+* [getDepartment](docs/departments/README.md#getdepartment) - Get a department
+* [postDepartments](docs/departments/README.md#postdepartments) - Create a department
+* [putAddPeopleToDepartment](docs/departments/README.md#putaddpeopletodepartment) - Add people to a department
+* [putDepartments](docs/departments/README.md#putdepartments) - Update a department
+* [putRemovePeopleFromDepartment](docs/departments/README.md#putremovepeoplefromdepartment) - Remove people from a department
+
+### [earningTypes](docs/earningtypes/README.md)
+
+* [deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid](docs/earningtypes/README.md#deletev1companiescompanyidearningtypesearningtypeuuid) - Deactivate an earning type
+* [getV1CompaniesCompanyIdEarningTypes](docs/earningtypes/README.md#getv1companiescompanyidearningtypes) - Get all earning types for a company
+* [postV1CompaniesCompanyIdEarningTypes](docs/earningtypes/README.md#postv1companiescompanyidearningtypes) - Create a custom earning type
+* [putV1CompaniesCompanyIdEarningTypesEarningTypeUuid](docs/earningtypes/README.md#putv1companiescompanyidearningtypesearningtypeuuid) - Update an earning type
+
+### [employeeBenefits](docs/employeebenefits/README.md)
+
+* [deleteV1EmployeeBenefitsEmployeeBenefitId](docs/employeebenefits/README.md#deletev1employeebenefitsemployeebenefitid) - Delete an employee benefit
+* [getV1EmployeeBenefitsEmployeeBenefitId](docs/employeebenefits/README.md#getv1employeebenefitsemployeebenefitid) - Get an employee benefit
+* [getV1EmployeesEmployeeIdEmployeeBenefits](docs/employeebenefits/README.md#getv1employeesemployeeidemployeebenefits) - Get all benefits for an employee
+* [postEmployeeYtdBenefitAmountsFromDifferentCompany](docs/employeebenefits/README.md#postemployeeytdbenefitamountsfromdifferentcompany) - Create year-to-date benefit amounts from a different company
+* [postV1EmployeesEmployeeIdEmployeeBenefits](docs/employeebenefits/README.md#postv1employeesemployeeidemployeebenefits) - Create an employee benefit
+* [putV1EmployeeBenefitsEmployeeBenefitId](docs/employeebenefits/README.md#putv1employeebenefitsemployeebenefitid) - Update an employee benefit
+
+### [employeeForms](docs/employeeforms/README.md)
 
-* `getV1EmployeeForm` - Get an employee form
-* `getV1EmployeeFormPdf` - Get the employee form pdf
-* `getV1EmployeeForms` - Get all employee forms
-* `postV1SandboxGenerateW2` - Generate a W2 form [SANDBOX]
-* `putV1EmployeeFormSign` - Sign an employee form
+* [getV1EmployeeForm](docs/employeeforms/README.md#getv1employeeform) - Get an employee form
+* [getV1EmployeeFormPdf](docs/employeeforms/README.md#getv1employeeformpdf) - Get the employee form pdf
+* [getV1EmployeeForms](docs/employeeforms/README.md#getv1employeeforms) - Get all employee forms
+* [postV1SandboxGenerateW2](docs/employeeforms/README.md#postv1sandboxgeneratew2) - Generate a W2 form [SANDBOX]
+* [putV1EmployeeFormSign](docs/employeeforms/README.md#putv1employeeformsign) - Sign an employee form
 
-### employeePaymentMethod
+### [employeePaymentMethod](docs/employeepaymentmethod/README.md)
 
-* `deleteV1EmployeesEmployeeIdBankAccountsBankAccountId` - Delete an employee bank account
-* `getV1EmployeesEmployeeIdPaymentMethod` - Get an employee's payment method
-* `postV1EmployeesEmployeeIdBankAccounts` - Create an employee bank account
-* `putV1EmployeesEmployeeIdPaymentMethod` - Update an employee's payment method
+* [deleteV1EmployeesEmployeeIdBankAccountsBankAccountId](docs/employeepaymentmethod/README.md#deletev1employeesemployeeidbankaccountsbankaccountid) - Delete an employee bank account
+* [getV1EmployeesEmployeeIdPaymentMethod](docs/employeepaymentmethod/README.md#getv1employeesemployeeidpaymentmethod) - Get an employee's payment method
+* [postV1EmployeesEmployeeIdBankAccounts](docs/employeepaymentmethod/README.md#postv1employeesemployeeidbankaccounts) - Create an employee bank account
+* [putV1EmployeesEmployeeIdPaymentMethod](docs/employeepaymentmethod/README.md#putv1employeesemployeeidpaymentmethod) - Update an employee's payment method
 
-### employeeTaxSetup
+### [employeeTaxSetup](docs/employeetaxsetup/README.md)
 
-* `getV1EmployeesEmployeeIdFederalTaxes` - Get an employee's federal taxes
-* `getV1EmployeesEmployeeIdStateTaxes` - Get an employee's state taxes
-* `putV1EmployeesEmployeeIdFederalTaxes` - Update an employee's federal taxes
-* `putV1EmployeesEmployeeIdStateTaxes` - Update an employee's state taxes
+* [getV1EmployeesEmployeeIdFederalTaxes](docs/employeetaxsetup/README.md#getv1employeesemployeeidfederaltaxes) - Get an employee's federal taxes
+* [getV1EmployeesEmployeeIdStateTaxes](docs/employeetaxsetup/README.md#getv1employeesemployeeidstatetaxes) - Get an employee's state taxes
+* [putV1EmployeesEmployeeIdFederalTaxes](docs/employeetaxsetup/README.md#putv1employeesemployeeidfederaltaxes) - Update an employee's federal taxes
+* [putV1EmployeesEmployeeIdStateTaxes](docs/employeetaxsetup/README.md#putv1employeesemployeeidstatetaxes) - Update an employee's state taxes
 
-### employeeTermination
+### [employeeTermination](docs/employeetermination/README.md)
 
-* `deleteV1EmployeesEmployeeIdTerminations` - Delete an employee termination
-* `getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods` - Get termination pay periods for a company
-* `getV1EmployeesEmployeeIdTerminations` - Get terminations for an employee
-* `postV1EmployeesEmployeeIdTerminations` - Create an employee termination
-* `putV1TerminationsEmployeeId` - Update an employee termination
+* [deleteV1EmployeesEmployeeIdTerminations](docs/employeetermination/README.md#deletev1employeesemployeeidterminations) - Delete an employee termination
+* [getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods](docs/employeetermination/README.md#getv1companiescompanyidunprocessedterminationpayperiods) - Get termination pay periods for a company
+* [getV1EmployeesEmployeeIdTerminations](docs/employeetermination/README.md#getv1employeesemployeeidterminations) - Get terminations for an employee
+* [postV1EmployeesEmployeeIdTerminations](docs/employeetermination/README.md#postv1employeesemployeeidterminations) - Create an employee termination
+* [putV1TerminationsEmployeeId](docs/employeetermination/README.md#putv1terminationsemployeeid) - Update an employee termination
 
-### employees
+### [employees](docs/employees/README.md)
 
-* `deleteV1Employee` - Delete an onboarding employee
-* `getV1Employees` - Get an employee
-* `getV1EmployeesEmployeeIdCustomFields` - Get an employee's custom fields
-* `getV1EmployeesEmployeeIdHomeAddress` - Get an employee's home address
-* `getV1EmployeesEmployeeIdOnboardingStatus` - Get the employee's onboarding status
-* `getVersionEmployeesTimeOffActivities` - Get employee time off activities
-* `postV1Employees` - Create an employee
-* `putV1EmployeeFinishOnboarding` - Finish onboarding an employee
-* `putV1Employees` - Update an employee
-* `putV1EmployeesEmployeeIdHomeAddress` - Update an employee's home address
-* `putV1EmployeesEmployeeIdOnboardingStatus` - Update the employee's onboarding status
+* [deleteV1Employee](docs/employees/README.md#deletev1employee) - Delete an onboarding employee
+* [getV1Employees](docs/employees/README.md#getv1employees) - Get an employee
+* [getV1EmployeesEmployeeIdCustomFields](docs/employees/README.md#getv1employeesemployeeidcustomfields) - Get an employee's custom fields
+* [getV1EmployeesEmployeeIdHomeAddress](docs/employees/README.md#getv1employeesemployeeidhomeaddress) - Get an employee's home address
+* [getV1EmployeesEmployeeIdOnboardingStatus](docs/employees/README.md#getv1employeesemployeeidonboardingstatus) - Get the employee's onboarding status
+* [getVersionEmployeesTimeOffActivities](docs/employees/README.md#getversionemployeestimeoffactivities) - Get employee time off activities
+* [postV1Employees](docs/employees/README.md#postv1employees) - Create an employee
+* [putV1EmployeeFinishOnboarding](docs/employees/README.md#putv1employeefinishonboarding) - Finish onboarding an employee
+* [putV1Employees](docs/employees/README.md#putv1employees) - Update an employee
+* [putV1EmployeesEmployeeIdHomeAddress](docs/employees/README.md#putv1employeesemployeeidhomeaddress) - Update an employee's home address
+* [putV1EmployeesEmployeeIdOnboardingStatus](docs/employees/README.md#putv1employeesemployeeidonboardingstatus) - Update the employee's onboarding status
 
-### externalPayrolls
+### [externalPayrolls](docs/externalpayrolls/README.md)
 
-* `deleteV1ExternalPayroll` - Delete an external payroll
-* `getV1CompanyExternalPayrolls` - Get external payrolls for a company
-* `getV1ExternalPayroll` - Get an external payroll
-* `getV1ExternalPayrollCalculateTaxes` - Get tax suggestions for an external payroll
-* `postV1ExternalPayroll` - Create a new external payroll for a company
-* `putV1ExternalPayroll` - Update an external payroll
+* [deleteV1ExternalPayroll](docs/externalpayrolls/README.md#deletev1externalpayroll) - Delete an external payroll
+* [getV1CompanyExternalPayrolls](docs/externalpayrolls/README.md#getv1companyexternalpayrolls) - Get external payrolls for a company
+* [getV1ExternalPayroll](docs/externalpayrolls/README.md#getv1externalpayroll) - Get an external payroll
+* [getV1ExternalPayrollCalculateTaxes](docs/externalpayrolls/README.md#getv1externalpayrollcalculatetaxes) - Get tax suggestions for an external payroll
+* [postV1ExternalPayroll](docs/externalpayrolls/README.md#postv1externalpayroll) - Create a new external payroll for a company
+* [putV1ExternalPayroll](docs/externalpayrolls/README.md#putv1externalpayroll) - Update an external payroll
 
-### federalTaxDetails
+### [federalTaxDetails](docs/federaltaxdetails/README.md)
 
-* `getV1CompaniesCompanyIdFederalTaxDetails` - Get Federal Tax Details
-* `putV1CompaniesCompanyIdFederalTaxDetails` - Update Federal Tax Details
-
-### flows
+* [getV1CompaniesCompanyIdFederalTaxDetails](docs/federaltaxdetails/README.md#getv1companiescompanyidfederaltaxdetails) - Get Federal Tax Details
+* [putV1CompaniesCompanyIdFederalTaxDetails](docs/federaltaxdetails/README.md#putv1companiescompanyidfederaltaxdetails) - Update Federal Tax Details
+
+### [flows](docs/flows/README.md)
 
-* `postV1CompanyFlows` - Create a flow
+* [postV1CompanyFlows](docs/flows/README.md#postv1companyflows) - Create a flow
 
-### garnishments
+### [garnishments](docs/garnishments/README.md)
 
-* `getV1EmployeesEmployeeIdGarnishments` - Get garnishments for an employee
-* `getV1GarnishmentsGarnishmentId` - Get a garnishment
-* `postV1EmployeesEmployeeIdGarnishments` - Create a garnishment
-* `putV1GarnishmentsGarnishmentId` - Update a garnishment
+* [getV1EmployeesEmployeeIdGarnishments](docs/garnishments/README.md#getv1employeesemployeeidgarnishments) - Get garnishments for an employee
+* [getV1GarnishmentsGarnishmentId](docs/garnishments/README.md#getv1garnishmentsgarnishmentid) - Get a garnishment
+* [postV1EmployeesEmployeeIdGarnishments](docs/garnishments/README.md#postv1employeesemployeeidgarnishments) - Create a garnishment
+* [putV1GarnishmentsGarnishmentId](docs/garnishments/README.md#putv1garnishmentsgarnishmentid) - Update a garnishment
 
-### generatedDocuments
+### [generatedDocuments](docs/generateddocuments/README.md)
 
-* `getV1GeneratedDocumentsDocumentTypeRequestUuid` - Get a generated document
+* [getV1GeneratedDocumentsDocumentTypeRequestUuid](docs/generateddocuments/README.md#getv1generateddocumentsdocumenttyperequestuuid) - Get a generated document
 
-### industrySelection
+### [industrySelection](docs/industryselection/README.md)
 
-* `getV1CompanyIndustry` - Get a company industry selection
-* `putV1CompanyIndustry` - Update a company industry selection
+* [getV1CompanyIndustry](docs/industryselection/README.md#getv1companyindustry) - Get a company industry selection
+* [putV1CompanyIndustry](docs/industryselection/README.md#putv1companyindustry) - Update a company industry selection
 
-### jobsAndCompensations
+### [jobsAndCompensations](docs/jobsandcompensations/README.md)
 
-* `deleteV1JobsJobId` - Delete an individual job
-* `getV1CompensationsCompensationId` - Get a compensation
-* `getV1EmployeesEmployeeIdJobs` - Get jobs for an employee
-* `getV1JobsJobId` - Get a job
-* `getV1JobsJobIdCompensations` - Get compensations for a job
-* `postV1JobsJobId` - Create a job
-* `putV1CompensationsCompensationId` - Update a compensation
-* `putV1JobsJobId` - Update a job
+* [deleteV1JobsJobId](docs/jobsandcompensations/README.md#deletev1jobsjobid) - Delete an individual job
+* [getV1CompensationsCompensationId](docs/jobsandcompensations/README.md#getv1compensationscompensationid) - Get a compensation
+* [getV1EmployeesEmployeeIdJobs](docs/jobsandcompensations/README.md#getv1employeesemployeeidjobs) - Get jobs for an employee
+* [getV1JobsJobId](docs/jobsandcompensations/README.md#getv1jobsjobid) - Get a job
+* [getV1JobsJobIdCompensations](docs/jobsandcompensations/README.md#getv1jobsjobidcompensations) - Get compensations for a job
+* [postV1JobsJobId](docs/jobsandcompensations/README.md#postv1jobsjobid) - Create a job
+* [putV1CompensationsCompensationId](docs/jobsandcompensations/README.md#putv1compensationscompensationid) - Update a compensation
+* [putV1JobsJobId](docs/jobsandcompensations/README.md#putv1jobsjobid) - Update a job
 
-### locations
+### [locations](docs/locations/README.md)
 
-* `getV1CompaniesCompanyIdLocations` - Get company locations
-* `getV1LocationsLocationId` - Get a location
-* `getV1LocationsLocationUuidMinimumWages` - Get minimum wages for a location
-* `postV1CompaniesCompanyIdLocationsJson` - Create a company location
-* `postV1CompaniesCompanyIdLocationsRaw` - Create a company location
-* `putV1LocationsLocationId` - Update a location
+* [getV1CompaniesCompanyIdLocations](docs/locations/README.md#getv1companiescompanyidlocations) - Get company locations
+* [getV1LocationsLocationId](docs/locations/README.md#getv1locationslocationid) - Get a location
+* [getV1LocationsLocationUuidMinimumWages](docs/locations/README.md#getv1locationslocationuuidminimumwages) - Get minimum wages for a location
+* [postV1CompaniesCompanyIdLocationsJson](docs/locations/README.md#postv1companiescompanyidlocationsjson) - Create a company location
+* [postV1CompaniesCompanyIdLocationsRaw](docs/locations/README.md#postv1companiescompanyidlocationsraw) - Create a company location
+* [putV1LocationsLocationId](docs/locations/README.md#putv1locationslocationid) - Update a location
 
-### paySchedules
+### [paySchedules](docs/payschedules/README.md)
 
-* `getV1CompaniesCompanyIdPayPeriods` - Get pay periods for a company
-* `getV1CompaniesCompanyIdPaySchedules` - Get the pay schedules for a company
-* `getV1CompaniesCompanyIdPaySchedulesPayScheduleId` - Get a pay schedule
-* `postV1CompaniesCompanyIdPaySchedules` - Create a new single pay schedule
-* `putV1CompaniesCompanyIdPaySchedulesPayScheduleId` - Update a pay schedule
+* [getV1CompaniesCompanyIdPayPeriods](docs/payschedules/README.md#getv1companiescompanyidpayperiods) - Get pay periods for a company
+* [getV1CompaniesCompanyIdPaySchedules](docs/payschedules/README.md#getv1companiescompanyidpayschedules) - Get the pay schedules for a company
+* [getV1CompaniesCompanyIdPaySchedulesPayScheduleId](docs/payschedules/README.md#getv1companiescompanyidpayschedulespayscheduleid) - Get a pay schedule
+* [postV1CompaniesCompanyIdPaySchedules](docs/payschedules/README.md#postv1companiescompanyidpayschedules) - Create a new single pay schedule
+* [putV1CompaniesCompanyIdPaySchedulesPayScheduleId](docs/payschedules/README.md#putv1companiescompanyidpayschedulespayscheduleid) - Update a pay schedule
 
-### paymentConfigs
+### [paymentConfigs](docs/paymentconfigs/README.md)
 
-* `getV1CompanyPaymentConfigs` - Get a company's payment configs
-* `putV1CompanyPaymentConfigs` - Update a company's payment configs
+* [getV1CompanyPaymentConfigs](docs/paymentconfigs/README.md#getv1companypaymentconfigs) - Get a company's payment configs
+* [putV1CompanyPaymentConfigs](docs/paymentconfigs/README.md#putv1companypaymentconfigs) - Update a company's payment configs
 
-### payrolls
+### [payrolls](docs/payrolls/README.md)
 
-* `getV1CompaniesCompanyIdPayrollReversals` - Get approved payroll reversals
-* `getV1CompaniesCompanyIdPayrolls` - Get all payrolls for a company
-* `getV1CompaniesCompanyIdPayrollsPayrollId` - Get a single payroll
-* `getV1CompaniesPayrollBlockersCompanyUuid` - Get all payroll blockers for a company
-* `getV1PaymentReceiptsPayrollsPayrollUuid` - Get a single payroll receipt
-* `getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub` - Get an employee pay stub (pdf)
-* `postV1CompaniesCompanyIdPayrolls` - Create an off-cycle payroll
-* `postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks` - Generate payroll printable checks (pdf)
-* `putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel` - Cancel a payroll
-* `putV1CompaniesCompanyIdPayrolls` - Update a payroll by ID
-* `putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate` - Update a payroll
-* `putV1CompaniesCompanyIdPayrollsPayrollIdCalculate` - Calculate a payroll
-* `putV1CompaniesCompanyIdPayrollsPayrollIdSubmit` - Submit payroll
+* [getV1CompaniesCompanyIdPayrollReversals](docs/payrolls/README.md#getv1companiescompanyidpayrollreversals) - Get approved payroll reversals
+* [getV1CompaniesCompanyIdPayrolls](docs/payrolls/README.md#getv1companiescompanyidpayrolls) - Get all payrolls for a company
+* [getV1CompaniesCompanyIdPayrollsPayrollId](docs/payrolls/README.md#getv1companiescompanyidpayrollspayrollid) - Get a single payroll
+* [getV1CompaniesPayrollBlockersCompanyUuid](docs/payrolls/README.md#getv1companiespayrollblockerscompanyuuid) - Get all payroll blockers for a company
+* [getV1PaymentReceiptsPayrollsPayrollUuid](docs/payrolls/README.md#getv1paymentreceiptspayrollspayrolluuid) - Get a single payroll receipt
+* [getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub](docs/payrolls/README.md#getv1payrollspayrolluuidemployeesemployeeuuidpaystub) - Get an employee pay stub (pdf)
+* [postV1CompaniesCompanyIdPayrolls](docs/payrolls/README.md#postv1companiescompanyidpayrolls) - Create an off-cycle payroll
+* [postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks](docs/payrolls/README.md#postv1payrollspayrolluuidgenerateddocumentsprintablepayrollchecks) - Generate payroll printable checks (pdf)
+* [putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel](docs/payrolls/README.md#putapiv1companiescompanyidpayrollspayrollidcancel) - Cancel a payroll
+* [putV1CompaniesCompanyIdPayrolls](docs/payrolls/README.md#putv1companiescompanyidpayrolls) - Update a payroll by ID
+* [putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate](docs/payrolls/README.md#putv1companiescompanyidpayrollspayperiodstartdatepayperiodenddate) - Update a payroll
+* [putV1CompaniesCompanyIdPayrollsPayrollIdCalculate](docs/payrolls/README.md#putv1companiescompanyidpayrollspayrollidcalculate) - Calculate a payroll
+* [putV1CompaniesCompanyIdPayrollsPayrollIdSubmit](docs/payrolls/README.md#putv1companiescompanyidpayrollspayrollidsubmit) - Submit payroll
 
-### signatories
+### [signatories](docs/signatories/README.md)
 
-* `deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid` - Delete a signatory
-* `getV1CompaniesCompanyUuidSignatories` - Get all company signatories
-* `postV1CompaniesCompanyUuidSignatoriesInvite` - Invite a signatory
-* `postV1CompanySignatories` - Create a signatory
-* `putV1CompaniesCompanyUuidSignatoriesSignatoryUuid` - Update a signatory
+* [deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid](docs/signatories/README.md#deletev1companiescompanyuuidsignatoriessignatoryuuid) - Delete a signatory
+* [getV1CompaniesCompanyUuidSignatories](docs/signatories/README.md#getv1companiescompanyuuidsignatories) - Get all company signatories
+* [postV1CompaniesCompanyUuidSignatoriesInvite](docs/signatories/README.md#postv1companiescompanyuuidsignatoriesinvite) - Invite a signatory
+* [postV1CompanySignatories](docs/signatories/README.md#postv1companysignatories) - Create a signatory
+* [putV1CompaniesCompanyUuidSignatoriesSignatoryUuid](docs/signatories/README.md#putv1companiescompanyuuidsignatoriessignatoryuuid) - Update a signatory
 
-### taxLiabilities
+### [taxLiabilities](docs/taxliabilities/README.md)
 
-* `getV1TaxLiabilities` - Get tax liabilities
-* `putV1TaxLiabilities` - Update tax liabilities
-* `putV1TaxLiabilitiesFinish` - Finalize tax liabilities options and convert into processed payrolls
+* [getV1TaxLiabilities](docs/taxliabilities/README.md#getv1taxliabilities) - Get tax liabilities
+* [putV1TaxLiabilities](docs/taxliabilities/README.md#putv1taxliabilities) - Update tax liabilities
+* [putV1TaxLiabilitiesFinish](docs/taxliabilities/README.md#putv1taxliabilitiesfinish) - Finalize tax liabilities options and convert into processed payrolls
 
-### taxRequirements
+### [taxRequirements](docs/taxrequirements/README.md)
 
-* `getV1CompaniesCompanyUuidTaxRequirements` - Get All Tax Requirement States
-* `getV1CompaniesCompanyUuidTaxRequirementsState` - Get State Tax Requirements
-* `putV1CompaniesCompanyUuidTaxRequirementsState` - Update State Tax Requirements
+* [getV1CompaniesCompanyUuidTaxRequirements](docs/taxrequirements/README.md#getv1companiescompanyuuidtaxrequirements) - Get All Tax Requirement States
+* [getV1CompaniesCompanyUuidTaxRequirementsState](docs/taxrequirements/README.md#getv1companiescompanyuuidtaxrequirementsstate) - Get State Tax Requirements
+* [putV1CompaniesCompanyUuidTaxRequirementsState](docs/taxrequirements/README.md#putv1companiescompanyuuidtaxrequirementsstate) - Update State Tax Requirements
 
-### timeOffPolicies
+### [timeOffPolicies](docs/timeoffpolicies/README.md)
 
-* `getCompaniesCompanyUuidTimeOffPolicies` - Get all time off policies
-* `getTimeOffPoliciesTimeOffPolicyUuid` - Get a time off policy
-* `postCompaniesCompanyUuidTimeOffPolicies` - Create a time off policy
-* `postV1PayrollsPayrollIdCalculateAccruingTimeOffHours` - Calculate accruing time off hours
-* `putTimeOffPoliciesTimeOffPolicyUuid` - Update a time off policy
-* `putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate` - Deactivate a time off policy
-* `putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees` - Remove employees from a time off policy
-* `putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees` - Add employees to a time off policy
-* `putVersionTimeOffPoliciesTimeOffPolicyUuidBalance` - Update employee time off hour balances
+* [getCompaniesCompanyUuidTimeOffPolicies](docs/timeoffpolicies/README.md#getcompaniescompanyuuidtimeoffpolicies) - Get all time off policies
+* [getTimeOffPoliciesTimeOffPolicyUuid](docs/timeoffpolicies/README.md#gettimeoffpoliciestimeoffpolicyuuid) - Get a time off policy
+* [postCompaniesCompanyUuidTimeOffPolicies](docs/timeoffpolicies/README.md#postcompaniescompanyuuidtimeoffpolicies) - Create a time off policy
+* [postV1PayrollsPayrollIdCalculateAccruingTimeOffHours](docs/timeoffpolicies/README.md#postv1payrollspayrollidcalculateaccruingtimeoffhours) - Calculate accruing time off hours
+* [putTimeOffPoliciesTimeOffPolicyUuid](docs/timeoffpolicies/README.md#puttimeoffpoliciestimeoffpolicyuuid) - Update a time off policy
+* [putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate](docs/timeoffpolicies/README.md#putv1timeoffpoliciestimeoffpolicyuuiddeactivate) - Deactivate a time off policy
+* [putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees](docs/timeoffpolicies/README.md#putv1timeoffpoliciestimeoffpolicyuuidremoveemployees) - Remove employees from a time off policy
+* [putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees](docs/timeoffpolicies/README.md#putversiontimeoffpoliciestimeoffpolicyuuidaddemployees) - Add employees to a time off policy
+* [putVersionTimeOffPoliciesTimeOffPolicyUuidBalance](docs/timeoffpolicies/README.md#putversiontimeoffpoliciestimeoffpolicyuuidbalance) - Update employee time off hour balances
 
-### user
+### [user](docs/user/README.md)
 
-* `getV1Me` - Get the current user
+* [getV1Me](docs/user/README.md#getv1me) - Get the current user
 
-### webhookSubscriptions
+### [webhookSubscriptions](docs/webhooksubscriptions/README.md)
 
-* `deleteV1WebhookSubscriptionUuid` - Delete a webhook subscription
-* `getV1WebhookSubscriptionUuid` - Get a webhook subscription
-* `getV1WebhookSubscriptionVerificationTokenUuid` - Request the webhook subscription verification_token
-* `getV1WebhookSubscriptions` - List webhook subscriptions
-* `postV1WebhookSubscription` - Create a Webhook Subscription
-* `putV1VerifyWebhookSubscriptionUuid` - Verify the webhook subscription
-* `putV1WebhookSubscriptionUuid` - Update a webhook subscription
+* [deleteV1WebhookSubscriptionUuid](docs/webhooksubscriptions/README.md#deletev1webhooksubscriptionuuid) - Delete a webhook subscription
+* [getV1WebhookSubscriptionUuid](docs/webhooksubscriptions/README.md#getv1webhooksubscriptionuuid) - Get a webhook subscription
+* [getV1WebhookSubscriptionVerificationTokenUuid](docs/webhooksubscriptions/README.md#getv1webhooksubscriptionverificationtokenuuid) - Request the webhook subscription verification_token
+* [getV1WebhookSubscriptions](docs/webhooksubscriptions/README.md#getv1webhooksubscriptions) - List webhook subscriptions
+* [postV1WebhookSubscription](docs/webhooksubscriptions/README.md#postv1webhooksubscription) - Create a Webhook Subscription
+* [putV1VerifyWebhookSubscriptionUuid](docs/webhooksubscriptions/README.md#putv1verifywebhooksubscriptionuuid) - Verify the webhook subscription
+* [putV1WebhookSubscriptionUuid](docs/webhooksubscriptions/README.md#putv1webhooksubscriptionuuid) - Update a webhook subscription
 <!-- End SDK Available Operations -->
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)
