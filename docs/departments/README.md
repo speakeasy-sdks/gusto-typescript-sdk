@@ -21,8 +21,7 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteDepartmentRequest, DeleteDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -30,12 +29,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteDepartmentRequest = {
+sdk.departments.deleteDepartment({
   departmentUuid: "eum",
-};
-
-sdk.departments.deleteDepartment(req).then((res: DeleteDepartmentResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteDepartmentResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -51,8 +48,7 @@ scope: `departments:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetCompaniesDepartmentsRequest, GetCompaniesDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetCompaniesDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -60,12 +56,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetCompaniesDepartmentsRequest = {
+sdk.departments.getCompaniesDepartments({
   companyUuid: "dolor",
-};
-
-sdk.departments.getCompaniesDepartments(req).then((res: GetCompaniesDepartmentsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetCompaniesDepartmentsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -82,8 +76,7 @@ scope: `departments:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetDepartmentRequest, GetDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -91,12 +84,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetDepartmentRequest = {
+sdk.departments.getDepartment({
   departmentUuid: "necessitatibus",
-};
-
-sdk.departments.getDepartment(req).then((res: GetDepartmentResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetDepartmentResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -112,8 +103,7 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostDepartmentsRequest, PostDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -121,15 +111,13 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostDepartmentsRequest = {
+sdk.departments.postDepartments({
   requestBody: {
     title: "Mr.",
   },
   companyUuid: "nemo",
-};
-
-sdk.departments.postDepartments(req).then((res: PostDepartmentsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostDepartmentsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -146,8 +134,7 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutAddPeopleToDepartmentRequest, PutAddPeopleToDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutAddPeopleToDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -155,7 +142,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutAddPeopleToDepartmentRequest = {
+sdk.departments.putAddPeopleToDepartment({
   requestBody: {
     contractors: [
       {
@@ -170,10 +157,8 @@ const req: PutAddPeopleToDepartmentRequest = {
     version: "dolores",
   },
   departmentUuid: "minus",
-};
-
-sdk.departments.putAddPeopleToDepartment(req).then((res: PutAddPeopleToDepartmentResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutAddPeopleToDepartmentResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -189,8 +174,7 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutDepartmentsRequest, PutDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -198,16 +182,14 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutDepartmentsRequest = {
+sdk.departments.putDepartments({
   requestBody: {
     title: "Ms.",
     version: "dolor",
   },
   departmentUuid: "vero",
-};
-
-sdk.departments.putDepartments(req).then((res: PutDepartmentsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutDepartmentsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -224,8 +206,7 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutRemovePeopleFromDepartmentRequest, PutRemovePeopleFromDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutRemovePeopleFromDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -233,7 +214,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutRemovePeopleFromDepartmentRequest = {
+sdk.departments.putRemovePeopleFromDepartment({
   requestBody: {
     contractors: [
       {
@@ -257,10 +238,8 @@ const req: PutRemovePeopleFromDepartmentRequest = {
     version: "ipsum",
   },
   departmentUuid: "veritatis",
-};
-
-sdk.departments.putRemovePeopleFromDepartment(req).then((res: PutRemovePeopleFromDepartmentResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutRemovePeopleFromDepartmentResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

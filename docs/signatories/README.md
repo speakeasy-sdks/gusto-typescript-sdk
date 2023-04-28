@@ -16,11 +16,7 @@ Delete a company signatory.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
-  DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -28,13 +24,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest = {
+sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid({
   companyUuid: "nemo",
   signatoryUuid: "recusandae",
-};
-
-sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(req).then((res: DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -48,12 +42,8 @@ Returns company signatories. Currently we only support a single signatory per co
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyUuidSignatoriesRequest,
-  GetV1CompaniesCompanyUuidSignatoriesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyUuidSignatoriesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { SignatoryIdentityVerificationStatusEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -61,12 +51,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyUuidSignatoriesRequest = {
+sdk.signatories.getV1CompaniesCompanyUuidSignatories({
   companyUuid: "esse",
-};
-
-sdk.signatories.getV1CompaniesCompanyUuidSignatories(req).then((res: GetV1CompaniesCompanyUuidSignatoriesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyUuidSignatoriesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -80,12 +68,8 @@ Create a signatory with minimal information. This signatory can be invited to pr
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1CompaniesCompanyUuidSignatoriesInviteRequest,
-  PostV1CompaniesCompanyUuidSignatoriesInviteResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1CompaniesCompanyUuidSignatoriesInviteResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { SignatoryIdentityVerificationStatusEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -93,7 +77,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1CompaniesCompanyUuidSignatoriesInviteRequest = {
+sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite({
   requestBody: {
     email: "Eudora_Kemmer13@yahoo.com",
     firstName: "Filiberto",
@@ -101,10 +85,8 @@ const req: PostV1CompaniesCompanyUuidSignatoriesInviteRequest = {
     title: "Miss",
   },
   companyUuid: "nostrum",
-};
-
-sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite(req).then((res: PostV1CompaniesCompanyUuidSignatoriesInviteResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1CompaniesCompanyUuidSignatoriesInviteResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -118,9 +100,8 @@ Create a company signatory with complete information. A signatory can legally si
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1CompanySignatoriesRequest, PostV1CompanySignatoriesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1CompanySignatoriesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { SignatoryIdentityVerificationStatusEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -128,7 +109,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1CompanySignatoriesRequest = {
+sdk.signatories.postV1CompanySignatories({
   requestBody: {
     birthday: "mollitia",
     email: "Reina.Okuneva@yahoo.com",
@@ -147,10 +128,8 @@ const req: PostV1CompanySignatoriesRequest = {
     title: "Mr.",
   },
   companyUuid: "eum",
-};
-
-sdk.signatories.postV1CompanySignatories(req).then((res: PostV1CompanySignatoriesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1CompanySignatoriesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -164,12 +143,8 @@ Update a signatory that has been either invited or created. If the signatory has
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
-  PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { SignatoryIdentityVerificationStatusEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -177,7 +152,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest = {
+sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid({
   requestBody: {
     birthday: "eius",
     firstName: "Joy",
@@ -197,10 +172,8 @@ const req: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest = {
   },
   companyUuid: "ratione",
   signatoryUuid: "animi",
-};
-
-sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(req).then((res: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

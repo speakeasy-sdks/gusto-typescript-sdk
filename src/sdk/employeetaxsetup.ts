@@ -37,7 +37,7 @@ export class EmployeeTaxSetup {
    * @remarks
    * Get attributes relevant for an employee's federal taxes.
    */
-  getV1EmployeesEmployeeIdFederalTaxes(
+  async getV1EmployeesEmployeeIdFederalTaxes(
     req: operations.GetV1EmployeesEmployeeIdFederalTaxesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1EmployeesEmployeeIdFederalTaxesResponse> {
@@ -54,38 +54,39 @@ export class EmployeeTaxSetup {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1EmployeesEmployeeIdFederalTaxesResponse =
-        new operations.GetV1EmployeesEmployeeIdFederalTaxesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeFederalTax = utils.objectToClass(
-              httpRes?.data,
-              shared.EmployeeFederalTax
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1EmployeesEmployeeIdFederalTaxesResponse =
+      new operations.GetV1EmployeesEmployeeIdFederalTaxesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.employeeFederalTax = utils.objectToClass(
+            httpRes?.data,
+            shared.EmployeeFederalTax
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -106,7 +107,7 @@ export class EmployeeTaxSetup {
    * - that employee's work state requires filing a new hire report
    *
    */
-  getV1EmployeesEmployeeIdStateTaxes(
+  async getV1EmployeesEmployeeIdStateTaxes(
     req: operations.GetV1EmployeesEmployeeIdStateTaxesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1EmployeesEmployeeIdStateTaxesResponse> {
@@ -123,41 +124,42 @@ export class EmployeeTaxSetup {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1EmployeesEmployeeIdStateTaxesResponse =
-        new operations.GetV1EmployeesEmployeeIdStateTaxesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeStateTaxes = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.employeeStateTaxes = utils.objectToClass(
-              httpRes?.data,
-              shared.EmployeeStateTax,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1EmployeesEmployeeIdStateTaxesResponse =
+      new operations.GetV1EmployeesEmployeeIdStateTaxesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.employeeStateTaxes = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.employeeStateTaxes = utils.objectToClass(
+            httpRes?.data,
+            shared.EmployeeStateTax,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -166,7 +168,7 @@ export class EmployeeTaxSetup {
    * @remarks
    * Update attributes relevant for an employee's federal taxes.
    */
-  putV1EmployeesEmployeeIdFederalTaxes(
+  async putV1EmployeesEmployeeIdFederalTaxes(
     req: operations.PutV1EmployeesEmployeeIdFederalTaxesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1EmployeesEmployeeIdFederalTaxesResponse> {
@@ -199,7 +201,8 @@ export class EmployeeTaxSetup {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -207,40 +210,40 @@ export class EmployeeTaxSetup {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1EmployeesEmployeeIdFederalTaxesResponse =
-        new operations.PutV1EmployeesEmployeeIdFederalTaxesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeFederalTax = utils.objectToClass(
-              httpRes?.data,
-              shared.EmployeeFederalTax
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1EmployeesEmployeeIdFederalTaxesResponse =
+      new operations.PutV1EmployeesEmployeeIdFederalTaxesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.employeeFederalTax = utils.objectToClass(
+            httpRes?.data,
+            shared.EmployeeFederalTax
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -251,7 +254,7 @@ export class EmployeeTaxSetup {
    *
    * As described for the GET endpoint, the answers must be supplied in the effective-dated format, but currently only a single answer will be accepted - `valid_from` and `valid_up_to` must be `"2010-01-01"` and `null` respectively.
    */
-  putV1EmployeesEmployeeIdStateTaxes(
+  async putV1EmployeesEmployeeIdStateTaxes(
     req: operations.PutV1EmployeesEmployeeIdStateTaxesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1EmployeesEmployeeIdStateTaxesResponse> {
@@ -284,7 +287,8 @@ export class EmployeeTaxSetup {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -292,47 +296,46 @@ export class EmployeeTaxSetup {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1EmployeesEmployeeIdStateTaxesResponse =
-        new operations.PutV1EmployeesEmployeeIdStateTaxesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.employeeStateTaxes = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.employeeStateTaxes = utils.objectToClass(
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
+
+    const res: operations.PutV1EmployeesEmployeeIdStateTaxesResponse =
+      new operations.PutV1EmployeesEmployeeIdStateTaxesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.employeeStateTaxes = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.employeeStateTaxes = utils.objectToClass(
+            httpRes?.data,
+            shared.EmployeeStateTax,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects =
+            utils.objectToClass(
               httpRes?.data,
-              shared.EmployeeStateTax,
+              operations.PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON,
               resFieldDepth
             );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects =
-              [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects =
-              utils.objectToClass(
-                httpRes?.data,
-                operations.PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON,
-                resFieldDepth
-              );
-          }
-          break;
-      }
+        }
+        break;
+    }
 
-      return res;
-    });
+    return res;
   }
 }

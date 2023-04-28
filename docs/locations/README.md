@@ -21,11 +21,7 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdLocationsRequest,
-  GetV1CompaniesCompanyIdLocationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompaniesCompanyIdLocationsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -33,14 +29,12 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdLocationsRequest = {
+sdk.locations.getV1CompaniesCompanyIdLocations({
   companyId: "architecto",
   page: 3828.08,
   per: 9602.57,
-};
-
-sdk.locations.getV1CompaniesCompanyIdLocations(req).then((res: GetV1CompaniesCompanyIdLocationsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdLocationsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -56,8 +50,7 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1LocationsLocationIdRequest, GetV1LocationsLocationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1LocationsLocationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -65,12 +58,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1LocationsLocationIdRequest = {
+sdk.locations.getV1LocationsLocationId({
   locationId: "debitis",
-};
-
-sdk.locations.getV1LocationsLocationId(req).then((res: GetV1LocationsLocationIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1LocationsLocationIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -86,12 +77,8 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1LocationsLocationUuidMinimumWagesRequest,
-  GetV1LocationsLocationUuidMinimumWagesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1LocationsLocationUuidMinimumWagesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -99,13 +86,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1LocationsLocationUuidMinimumWagesRequest = {
+sdk.locations.getV1LocationsLocationUuidMinimumWages({
   effectiveDate: "2020-01-31",
   locationUuid: "illo",
-};
-
-sdk.locations.getV1LocationsLocationUuidMinimumWages(req).then((res: GetV1LocationsLocationUuidMinimumWagesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1LocationsLocationUuidMinimumWagesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -123,11 +108,7 @@ scope: `companies.write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1CompaniesCompanyIdLocationsJsonRequest,
-  PostV1CompaniesCompanyIdLocationsJsonResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostV1CompaniesCompanyIdLocationsJsonResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -135,7 +116,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1CompaniesCompanyIdLocationsJsonRequest = {
+sdk.locations.postV1CompaniesCompanyIdLocationsJson({
   requestBody: {
     city: "Ames",
     country: "Malta",
@@ -148,10 +129,8 @@ const req: PostV1CompaniesCompanyIdLocationsJsonRequest = {
     zip: "eius",
   },
   companyId: "necessitatibus",
-};
-
-sdk.locations.postV1CompaniesCompanyIdLocationsJson(req).then((res: PostV1CompaniesCompanyIdLocationsJsonResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1CompaniesCompanyIdLocationsJsonResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -169,11 +148,7 @@ scope: `companies.write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1CompaniesCompanyIdLocationsRawRequest,
-  PostV1CompaniesCompanyIdLocationsRawResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostV1CompaniesCompanyIdLocationsRawResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -181,13 +156,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1CompaniesCompanyIdLocationsRawRequest = {
+sdk.locations.postV1CompaniesCompanyIdLocationsRaw({
   requestBody: "ipsum".encode(),
   companyId: "ea",
-};
-
-sdk.locations.postV1CompaniesCompanyIdLocationsRaw(req).then((res: PostV1CompaniesCompanyIdLocationsRawResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1CompaniesCompanyIdLocationsRawResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -203,8 +176,7 @@ scope: `companies.write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1LocationsLocationIdRequest, PutV1LocationsLocationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1LocationsLocationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -212,7 +184,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1LocationsLocationIdRequest = {
+sdk.locations.putV1LocationsLocationId({
   requestBody: {
     city: "Katrinaworth",
     country: "Ethiopia",
@@ -226,10 +198,8 @@ const req: PutV1LocationsLocationIdRequest = {
     zip: "non",
   },
   locationId: "officiis",
-};
-
-sdk.locations.putV1LocationsLocationId(req).then((res: PutV1LocationsLocationIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1LocationsLocationIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

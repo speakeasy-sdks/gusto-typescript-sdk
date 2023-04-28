@@ -15,8 +15,7 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1TaxLiabilitiesRequest, GetV1TaxLiabilitiesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1TaxLiabilitiesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -24,12 +23,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1TaxLiabilitiesRequest = {
+sdk.taxLiabilities.getV1TaxLiabilities({
   companyUuid: "necessitatibus",
-};
-
-sdk.taxLiabilities.getV1TaxLiabilities(req).then((res: GetV1TaxLiabilitiesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1TaxLiabilitiesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -44,8 +41,7 @@ Update tax liabilities for a company.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1TaxLiabilitiesRequest, PutV1TaxLiabilitiesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1TaxLiabilitiesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -53,7 +49,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1TaxLiabilitiesRequest = {
+sdk.taxLiabilities.putV1TaxLiabilities({
   requestBody: {
     liabilitySelections: [
       {
@@ -79,10 +75,8 @@ const req: PutV1TaxLiabilitiesRequest = {
     ],
   },
   companyUuid: "necessitatibus",
-};
-
-sdk.taxLiabilities.putV1TaxLiabilities(req).then((res: PutV1TaxLiabilitiesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1TaxLiabilitiesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -97,8 +91,7 @@ Finalizes tax liabilities for a company. All external payrolls edit action will 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1TaxLiabilitiesFinishRequest, PutV1TaxLiabilitiesFinishResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1TaxLiabilitiesFinishResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -106,12 +99,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1TaxLiabilitiesFinishRequest = {
+sdk.taxLiabilities.putV1TaxLiabilitiesFinish({
   companyUuid: "ipsa",
-};
-
-sdk.taxLiabilities.putV1TaxLiabilitiesFinish(req).then((res: PutV1TaxLiabilitiesFinishResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1TaxLiabilitiesFinishResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

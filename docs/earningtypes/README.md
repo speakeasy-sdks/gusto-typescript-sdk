@@ -17,11 +17,7 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
-  DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -29,13 +25,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest = {
+sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid({
   companyId: "nobis",
   earningTypeUuid: "quos",
-};
-
-sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(req).then((res: DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -57,11 +51,7 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdEarningTypesRequest,
-  GetV1CompaniesCompanyIdEarningTypesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompaniesCompanyIdEarningTypesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -69,12 +59,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdEarningTypesRequest = {
+sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes({
   companyId: "tempore",
-};
-
-sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(req).then((res: GetV1CompaniesCompanyIdEarningTypesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdEarningTypesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -92,11 +80,7 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1CompaniesCompanyIdEarningTypesRequest,
-  PostV1CompaniesCompanyIdEarningTypesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostV1CompaniesCompanyIdEarningTypesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -104,15 +88,13 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1CompaniesCompanyIdEarningTypesRequest = {
+sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes({
   requestBody: {
     name: "Kevin Willms",
   },
   companyId: "labore",
-};
-
-sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes(req).then((res: PostV1CompaniesCompanyIdEarningTypesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1CompaniesCompanyIdEarningTypesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -128,11 +110,7 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
-  PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -140,16 +118,14 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest = {
+sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid({
   requestBody: {
     name: "Mr. Sonya Bradtke",
   },
   companyId: "itaque",
   earningTypeUuid: "consequatur",
-};
-
-sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(req).then((res: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

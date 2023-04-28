@@ -15,8 +15,7 @@ Get a company form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyFormRequest, GetV1CompanyFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompanyFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -24,12 +23,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompanyFormRequest = {
+sdk.companyForms.getV1CompanyForm({
   formId: "modi",
-};
-
-sdk.companyForms.getV1CompanyForm(req).then((res: GetV1CompanyFormResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompanyFormResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -43,8 +40,7 @@ Get the link to the form PDF
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyFormPdfRequest, GetV1CompanyFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompanyFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -52,12 +48,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompanyFormPdfRequest = {
+sdk.companyForms.getV1CompanyFormPdf({
   formId: "qui",
-};
-
-sdk.companyForms.getV1CompanyFormPdf(req).then((res: GetV1CompanyFormPdfResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompanyFormPdfResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -71,8 +65,7 @@ Get a list of all company's forms
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyFormsRequest, GetV1CompanyFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompanyFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -80,12 +73,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompanyFormsRequest = {
+sdk.companyForms.getV1CompanyForms({
   companyId: "aliquid",
-};
-
-sdk.companyForms.getV1CompanyForms(req).then((res: GetV1CompanyFormsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompanyFormsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -99,8 +90,7 @@ Sign a company form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompanyFormSignRequest, PutV1CompanyFormSignResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1CompanyFormSignResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -108,17 +98,15 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompanyFormSignRequest = {
+sdk.companyForms.putV1CompanyFormSign({
   requestBody: {
     agree: false,
     signatureText: "cupiditate",
     signedByIpAddress: "quos",
   },
   formId: "perferendis",
-};
-
-sdk.companyForms.putV1CompanyFormSign(req).then((res: PutV1CompanyFormSignResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompanyFormSignResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

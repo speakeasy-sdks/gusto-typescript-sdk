@@ -42,7 +42,7 @@ export class Companies {
    *
    * scope: `companies:read`
    */
-  getV1Companies(
+  async getV1Companies(
     req: operations.GetV1CompaniesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesResponse> {
@@ -59,35 +59,36 @@ export class Companies {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesResponse =
-        new operations.GetV1CompaniesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.company = utils.objectToClass(httpRes?.data, shared.Company);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesResponse =
+      new operations.GetV1CompaniesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.company = utils.objectToClass(httpRes?.data, shared.Company);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -96,7 +97,7 @@ export class Companies {
    * @remarks
    * Returns a list of all the admins at a company
    */
-  getV1CompaniesCompanyIdAdmins(
+  async getV1CompaniesCompanyIdAdmins(
     req: operations.GetV1CompaniesCompanyIdAdminsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdAdminsResponse> {
@@ -115,41 +116,42 @@ export class Companies {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdAdminsResponse =
-        new operations.GetV1CompaniesCompanyIdAdminsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.admins = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.admins = utils.objectToClass(
-              httpRes?.data,
-              shared.Admin,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdAdminsResponse =
+      new operations.GetV1CompaniesCompanyIdAdminsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.admins = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.admins = utils.objectToClass(
+            httpRes?.data,
+            shared.Admin,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -160,7 +162,7 @@ export class Companies {
    *
    * scope: `companies:read`
    */
-  getV1CompaniesCompanyIdCustomFields(
+  async getV1CompaniesCompanyIdCustomFields(
     req: operations.GetV1CompaniesCompanyIdCustomFieldsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdCustomFieldsResponse> {
@@ -179,39 +181,40 @@ export class Companies {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdCustomFieldsResponse =
-        new operations.GetV1CompaniesCompanyIdCustomFieldsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.getV1CompaniesCompanyIdCustomFields200ApplicationJSONObject =
-              utils.objectToClass(
-                httpRes?.data,
-                operations.GetV1CompaniesCompanyIdCustomFields200ApplicationJSON
-              );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdCustomFieldsResponse =
+      new operations.GetV1CompaniesCompanyIdCustomFieldsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.getV1CompaniesCompanyIdCustomFields200ApplicationJSONObject =
+            utils.objectToClass(
+              httpRes?.data,
+              operations.GetV1CompaniesCompanyIdCustomFields200ApplicationJSON
+            );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -231,7 +234,7 @@ export class Companies {
    * # Response: Company object, with company_status: 'Approved'
    * ```
    */
-  getV1CompanyFinishOnboarding(
+  async getV1CompanyFinishOnboarding(
     req: operations.GetV1CompanyFinishOnboardingRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompanyFinishOnboardingResponse> {
@@ -248,46 +251,47 @@ export class Companies {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompanyFinishOnboardingResponse =
-        new operations.GetV1CompanyFinishOnboardingResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyOnboardingStatus = utils.objectToClass(
-              httpRes?.data,
-              shared.CompanyOnboardingStatus
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompanyFinishOnboardingResponse =
+      new operations.GetV1CompanyFinishOnboardingResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.companyOnboardingStatus = utils.objectToClass(
+            httpRes?.data,
+            shared.CompanyOnboardingStatus
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -296,7 +300,7 @@ export class Companies {
    * @remarks
    * Get company's onboarding status. The data returned helps inform the required onboarding steps and respective completion status.
    */
-  getV1CompanyOnboardingStatus(
+  async getV1CompanyOnboardingStatus(
     req: operations.GetV1CompanyOnboardingStatusRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompanyOnboardingStatusResponse> {
@@ -313,38 +317,39 @@ export class Companies {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompanyOnboardingStatusResponse =
-        new operations.GetV1CompanyOnboardingStatusResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyOnboardingStatus = utils.objectToClass(
-              httpRes?.data,
-              shared.CompanyOnboardingStatus
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompanyOnboardingStatusResponse =
+      new operations.GetV1CompanyOnboardingStatusResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.companyOnboardingStatus = utils.objectToClass(
+            httpRes?.data,
+            shared.CompanyOnboardingStatus
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -353,7 +358,7 @@ export class Companies {
    * @remarks
    * Accept the Gusto Embedded Payroll's [Terms of Service](https://flows.gusto.com/terms). The user must have a role in the company in order to accept the Terms of Service.
    */
-  postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService(
+  async postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService(
     req: operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse> {
@@ -389,7 +394,8 @@ export class Companies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -397,43 +403,43 @@ export class Companies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse =
-        new operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService200ApplicationJSONObject =
-              utils.objectToClass(
-                httpRes?.data,
-                operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfService200ApplicationJSON
-              );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
+
+    const res: operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse =
+      new operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService200ApplicationJSONObject =
+            utils.objectToClass(
               httpRes?.data,
-              shared.UnprocessableEntityErrorObject
+              operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfService200ApplicationJSON
             );
-          }
-          break;
-      }
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
 
-      return res;
-    });
+    return res;
   }
 
   /**
@@ -442,7 +448,7 @@ export class Companies {
    * @remarks
    * Retrieve the user acceptance status of the Gusto Embedded Payroll's [Terms of Service](https://flows.gusto.com/terms).
    */
-  postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService(
+  async postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService(
     req: operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse> {
@@ -478,7 +484,8 @@ export class Companies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -486,43 +493,43 @@ export class Companies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse =
-        new operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSONObject =
-              utils.objectToClass(
-                httpRes?.data,
-                operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSON
-              );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
+
+    const res: operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse =
+      new operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSONObject =
+            utils.objectToClass(
               httpRes?.data,
-              shared.UnprocessableEntityErrorObject
+              operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSON
             );
-          }
-          break;
-      }
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
 
-      return res;
-    });
+    return res;
   }
 
   /**
@@ -531,7 +538,7 @@ export class Companies {
    * @remarks
    * Creates a new admin for a company. If the email matches an existing user, this will create an admin account for the current user. Otherwise, this will create a new user.
    */
-  postV1CompaniesCompanyIdAdmins(
+  async postV1CompaniesCompanyIdAdmins(
     req: operations.PostV1CompaniesCompanyIdAdminsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1CompaniesCompanyIdAdminsResponse> {
@@ -564,7 +571,8 @@ export class Companies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -572,37 +580,37 @@ export class Companies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1CompaniesCompanyIdAdminsResponse =
-        new operations.PostV1CompaniesCompanyIdAdminsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.admin = utils.objectToClass(httpRes?.data, shared.Admin);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1CompaniesCompanyIdAdminsResponse =
+      new operations.PostV1CompaniesCompanyIdAdminsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.admin = utils.objectToClass(httpRes?.data, shared.Admin);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -611,7 +619,7 @@ export class Companies {
    * @remarks
    * Create a new partner managed company
    */
-  postV1PartnerManagedCompanies(
+  async postV1PartnerManagedCompanies(
     req: operations.PostV1PartnerManagedCompaniesRequestBody,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1PartnerManagedCompaniesResponse> {
@@ -641,7 +649,8 @@ export class Companies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -649,41 +658,41 @@ export class Companies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1PartnerManagedCompaniesResponse =
-        new operations.PostV1PartnerManagedCompaniesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.postV1PartnerManagedCompanies200ApplicationJSONObject =
-              utils.objectToClass(
-                httpRes?.data,
-                operations.PostV1PartnerManagedCompanies200ApplicationJSON
-              );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
+
+    const res: operations.PostV1PartnerManagedCompaniesResponse =
+      new operations.PostV1PartnerManagedCompaniesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.postV1PartnerManagedCompanies200ApplicationJSONObject =
+            utils.objectToClass(
               httpRes?.data,
-              shared.UnprocessableEntityErrorObject
+              operations.PostV1PartnerManagedCompanies200ApplicationJSON
             );
-          }
-          break;
-      }
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
 
-      return res;
-    });
+    return res;
   }
 
   /**
@@ -704,7 +713,7 @@ export class Companies {
    * Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
    * ```
    */
-  postV1Provision(
+  async postV1Provision(
     req: operations.PostV1ProvisionRequestBody,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1ProvisionResponse> {
@@ -733,7 +742,8 @@ export class Companies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -741,40 +751,40 @@ export class Companies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1ProvisionResponse =
-        new operations.PostV1ProvisionResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.postV1Provision200ApplicationJSONObject = utils.objectToClass(
-              httpRes?.data,
-              operations.PostV1Provision200ApplicationJSON
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1ProvisionResponse =
+      new operations.PostV1ProvisionResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.postV1Provision200ApplicationJSONObject = utils.objectToClass(
+            httpRes?.data,
+            operations.PostV1Provision200ApplicationJSON
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -783,7 +793,7 @@ export class Companies {
    * @remarks
    * Migrate an existing Gusto customer to your embedded payroll product. To use this endpoint, the customer will need to connect their Gusto account to your application using [OAuth2](https://docs.gusto.com/embedded-payroll/docs/oauth2) then view and [accept the Embedded Payroll Terms of Service](https://docs.gusto.com/embedded-payroll/reference/post-partner-managed-companies-company_uuid-accept_terms_of_service).
    */
-  putV1PartnerManagedCompaniesCompanyUuidMigrate(
+  async putV1PartnerManagedCompaniesCompanyUuidMigrate(
     req: operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse> {
@@ -819,7 +829,8 @@ export class Companies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -827,40 +838,40 @@ export class Companies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse =
-        new operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.putV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSONObject =
-              utils.objectToClass(
-                httpRes?.data,
-                operations.PutV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSON
-              );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
+
+    const res: operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse =
+      new operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.putV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSONObject =
+            utils.objectToClass(
               httpRes?.data,
-              shared.UnprocessableEntityErrorObject
+              operations.PutV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSON
             );
-          }
-          break;
-      }
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
 
-      return res;
-    });
+    return res;
   }
 }

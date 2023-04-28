@@ -26,11 +26,7 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdPayrollReversalsRequest,
-  GetV1CompaniesCompanyIdPayrollReversalsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompaniesCompanyIdPayrollReversalsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -38,14 +34,12 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdPayrollReversalsRequest = {
+sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals({
   companyId: "saepe",
   page: 2536.42,
   per: 3299.35,
-};
-
-sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(req).then((res: GetV1CompaniesCompanyIdPayrollReversalsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdPayrollReversalsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -69,7 +63,6 @@ scope: `payrolls:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   GetV1CompaniesCompanyIdPayrollsIncludeEnum,
-  GetV1CompaniesCompanyIdPayrollsRequest,
   GetV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
@@ -77,7 +70,6 @@ import {
   PayrollOffCycleReasonEnum,
   PayrollWithholdingPayPeriodEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -85,7 +77,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdPayrollsRequest = {
+sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
   companyId: "in",
   endDate: "officiis",
   include: [
@@ -94,10 +86,8 @@ const req: GetV1CompaniesCompanyIdPayrollsRequest = {
   includeOffCycle: false,
   processed: false,
   startDate: "exercitationem",
-};
-
-sdk.payrolls.getV1CompaniesCompanyIdPayrolls(req).then((res: GetV1CompaniesCompanyIdPayrollsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdPayrollsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -121,7 +111,6 @@ scope: `payrolls:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   GetV1CompaniesCompanyIdPayrollsPayrollIdIncludeEnum,
-  GetV1CompaniesCompanyIdPayrollsPayrollIdRequest,
   GetV1CompaniesCompanyIdPayrollsPayrollIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
@@ -129,7 +118,6 @@ import {
   PayrollOffCycleReasonEnum,
   PayrollWithholdingPayPeriodEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -137,15 +125,13 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdPayrollsPayrollIdRequest = {
+sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId({
   companyId: "praesentium",
   include: GetV1CompaniesCompanyIdPayrollsPayrollIdIncludeEnum.PayrollStatusMeta,
   payrollId: "laboriosam",
   showCalculation: "dolorum",
-};
-
-sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(req).then((res: GetV1CompaniesCompanyIdPayrollsPayrollIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdPayrollsPayrollIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -163,11 +149,7 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesPayrollBlockersCompanyUuidRequest,
-  GetV1CompaniesPayrollBlockersCompanyUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompaniesPayrollBlockersCompanyUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -175,12 +157,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesPayrollBlockersCompanyUuidRequest = {
+sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid({
   companyUuid: "voluptatum",
-};
-
-sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(req).then((res: GetV1CompaniesPayrollBlockersCompanyUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesPayrollBlockersCompanyUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -201,11 +181,7 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1PaymentReceiptsPayrollsPayrollUuidRequest,
-  GetV1PaymentReceiptsPayrollsPayrollUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1PaymentReceiptsPayrollsPayrollUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -213,12 +189,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1PaymentReceiptsPayrollsPayrollUuidRequest = {
+sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid({
   payrollUuid: "error",
-};
-
-sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(req).then((res: GetV1PaymentReceiptsPayrollsPayrollUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1PaymentReceiptsPayrollsPayrollUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -234,11 +208,7 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest,
-  GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -246,13 +216,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest = {
+sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub({
   employeeId: "hic",
   payrollId: "expedita",
-};
-
-sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(req).then((res: GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -271,7 +239,6 @@ Creates a new, unprocessed, off-cycle payroll.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdPayrollsRequest,
   PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReasonEnum,
   PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriodEnum,
   PostV1CompaniesCompanyIdPayrollsResponse,
@@ -281,7 +248,6 @@ import {
   PayrollOffCycleReasonEnum,
   PayrollWithholdingPayPeriodEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -289,7 +255,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1CompaniesCompanyIdPayrollsRequest = {
+sdk.payrolls.postV1CompaniesCompanyIdPayrolls({
   requestBody: {
     checkDate: "debitis",
     employeeUuids: [
@@ -304,10 +270,8 @@ const req: PostV1CompaniesCompanyIdPayrollsRequest = {
     withholdingPayPeriod: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriodEnum.Monthly,
   },
   companyId: "accusamus",
-};
-
-sdk.payrolls.postV1CompaniesCompanyIdPayrolls(req).then((res: PostV1CompaniesCompanyIdPayrollsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1CompaniesCompanyIdPayrollsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -323,11 +287,7 @@ scope: `generated_documents:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequest,
-  PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -335,16 +295,14 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequest = {
+sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks({
   requestBody: {
     printingFormat: "tempora",
     startingCheckNumber: 543678,
   },
   payrollId: "fugit",
-};
-
-sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(req).then((res: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -361,16 +319,12 @@ Transitions a `processed` payroll back to the `unprocessed` state. A payroll can
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest,
-  PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
   PayrollEmployeeCompensationsPaymentMethodEnum,
   PayrollOffCycleReasonEnum,
   PayrollWithholdingPayPeriodEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -378,13 +332,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest = {
+sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel({
   companyId: "ut",
   payrollId: "fugiat",
-};
-
-sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(req).then((res: PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -401,7 +353,6 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1CompaniesCompanyIdPayrollsRequest,
   PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethodEnum,
   PutV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -410,7 +361,6 @@ import {
   PayrollOffCycleReasonEnum,
   PayrollWithholdingPayPeriodEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -418,7 +368,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompaniesCompanyIdPayrollsRequest = {
+sdk.payrolls.putV1CompaniesCompanyIdPayrolls({
   requestBody: {
     employeeCompensations: [
       {
@@ -485,10 +435,8 @@ const req: PutV1CompaniesCompanyIdPayrollsRequest = {
   },
   companyId: "natus",
   payrollId: "minima",
-};
-
-sdk.payrolls.putV1CompaniesCompanyIdPayrolls(req).then((res: PutV1CompaniesCompanyIdPayrollsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompaniesCompanyIdPayrollsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -507,7 +455,6 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequest,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethodEnum,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -516,7 +463,6 @@ import {
   PayrollOffCycleReasonEnum,
   PayrollWithholdingPayPeriodEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -524,7 +470,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequest = {
+sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate({
   requestBody: {
     employeeCompensations: [
       {
@@ -599,10 +545,8 @@ const req: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequ
   companyId: "ex",
   payPeriodEndDate: "ut",
   payPeriodStartDate: "culpa",
-};
-
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(req).then((res: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -620,11 +564,7 @@ If the company is blocked from running payroll due to issues like incomplete set
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest,
-  PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -632,13 +572,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest = {
+sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate({
   companyId: "adipisci",
   payrollId: "debitis",
-};
-
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(req).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -654,11 +592,7 @@ If the company is blocked from running payroll due to issues like incomplete set
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest,
-  PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -666,13 +600,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest = {
+sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit({
   companyId: "laudantium",
   payrollId: "eum",
-};
-
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(req).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

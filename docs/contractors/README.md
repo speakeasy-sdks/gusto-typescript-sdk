@@ -20,8 +20,7 @@ A contractor can only be deleted when there are no contractor payments.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1ContractorsContractorIdRequest, DeleteV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -29,12 +28,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1ContractorsContractorIdRequest = {
+sdk.contractors.deleteV1ContractorsContractorId({
   contractorId: "facere",
-};
-
-sdk.contractors.deleteV1ContractorsContractorId(req).then((res: DeleteV1ContractorsContractorIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1ContractorsContractorIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -50,12 +47,8 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdContractorsRequest,
-  GetV1CompaniesCompanyIdContractorsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdContractorsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -63,14 +56,12 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdContractorsRequest = {
+sdk.contractors.getV1CompaniesCompanyIdContractors({
   companyId: "ea",
   page: 3965.06,
   per: 6754.39,
-};
-
-sdk.contractors.getV1CompaniesCompanyIdContractors(req).then((res: GetV1CompaniesCompanyIdContractorsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdContractorsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -86,9 +77,8 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorsContractorIdRequest, GetV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -96,12 +86,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ContractorsContractorIdRequest = {
+sdk.contractors.getV1ContractorsContractorId({
   contractorId: "accusamus",
-};
-
-sdk.contractors.getV1ContractorsContractorId(req).then((res: GetV1ContractorsContractorIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ContractorsContractorIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -117,11 +105,7 @@ scope: `contractors:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorsContractorUuidAddressRequest,
-  GetV1ContractorsContractorUuidAddressResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1ContractorsContractorUuidAddressResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -129,12 +113,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ContractorsContractorUuidAddressRequest = {
+sdk.contractors.getV1ContractorsContractorUuidAddress({
   contractorUuid: "non",
-};
-
-sdk.contractors.getV1ContractorsContractorUuidAddress(req).then((res: GetV1ContractorsContractorUuidAddressResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ContractorsContractorUuidAddressResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -181,12 +163,8 @@ scope: `contractors.read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorsContractorUuidOnboardingStatusRequest,
-  GetV1ContractorsContractorUuidOnboardingStatusResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorUuidOnboardingStatusResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { ContractorOnboardingStatusOnboardingStatusEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -194,12 +172,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ContractorsContractorUuidOnboardingStatusRequest = {
+sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus({
   contractorUuid: "occaecati",
-};
-
-sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(req).then((res: GetV1ContractorsContractorUuidOnboardingStatusResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ContractorsContractorUuidOnboardingStatusResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -216,13 +192,11 @@ scope: `employees:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdContractorsRequest,
   PostV1CompaniesCompanyIdContractorsRequestBodyTypeEnum,
   PostV1CompaniesCompanyIdContractorsRequestBodyWageTypeEnum,
   PostV1CompaniesCompanyIdContractorsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -230,7 +204,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1CompaniesCompanyIdContractorsRequest = {
+sdk.contractors.postV1CompaniesCompanyIdContractors({
   requestBody: {
     businessName: "enim",
     ein: "accusamus",
@@ -249,10 +223,8 @@ const req: PostV1CompaniesCompanyIdContractorsRequest = {
     workState: "natus",
   },
   companyId: "omnis",
-};
-
-sdk.contractors.postV1CompaniesCompanyIdContractors(req).then((res: PostV1CompaniesCompanyIdContractorsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1CompaniesCompanyIdContractorsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -273,13 +245,11 @@ Update a contractor.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1ContractorsContractorIdRequest,
   PutV1ContractorsContractorIdRequestBodyTypeEnum,
   PutV1ContractorsContractorIdRequestBodyWageTypeEnum,
   PutV1ContractorsContractorIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -287,7 +257,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1ContractorsContractorIdRequest = {
+sdk.contractors.putV1ContractorsContractorId({
   requestBody: {
     businessName: "molestiae",
     ein: "perferendis",
@@ -307,10 +277,8 @@ const req: PutV1ContractorsContractorIdRequest = {
     workState: "architecto",
   },
   contractorId: "magnam",
-};
-
-sdk.contractors.putV1ContractorsContractorId(req).then((res: PutV1ContractorsContractorIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1ContractorsContractorIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -326,11 +294,7 @@ scope: `contractors:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1ContractorsContractorUuidAddressRequest,
-  PutV1ContractorsContractorUuidAddressResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1ContractorsContractorUuidAddressResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -338,7 +302,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1ContractorsContractorUuidAddressRequest = {
+sdk.contractors.putV1ContractorsContractorUuidAddress({
   requestBody: {
     city: "New Fernestead",
     state: "quos",
@@ -348,10 +312,8 @@ const req: PutV1ContractorsContractorUuidAddressRequest = {
     zip: "reiciendis",
   },
   contractorUuid: "mollitia",
-};
-
-sdk.contractors.putV1ContractorsContractorUuidAddress(req).then((res: PutV1ContractorsContractorUuidAddressResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1ContractorsContractorUuidAddressResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -377,12 +339,10 @@ Below is a list of valid onboarding status changes depending on the intended act
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1ContractorsContractorUuidOnboardingStatusRequest,
   PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatusEnum,
   PutV1ContractorsContractorUuidOnboardingStatusResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { ContractorOnboardingStatusOnboardingStatusEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -390,15 +350,13 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1ContractorsContractorUuidOnboardingStatusRequest = {
+sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus({
   requestBody: {
     onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatusEnum.OnboardingCompleted,
   },
   contractorUuid: "ad",
-};
-
-sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus(req).then((res: PutV1ContractorsContractorUuidOnboardingStatusResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1ContractorsContractorUuidOnboardingStatusResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

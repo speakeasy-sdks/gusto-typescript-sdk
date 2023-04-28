@@ -41,7 +41,7 @@ export class PaySchedules {
    *
    * scope: `payrolls:read`
    */
-  getV1CompaniesCompanyIdPayPeriods(
+  async getV1CompaniesCompanyIdPayPeriods(
     req: operations.GetV1CompaniesCompanyIdPayPeriodsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdPayPeriodsResponse> {
@@ -60,41 +60,42 @@ export class PaySchedules {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdPayPeriodsResponse =
-        new operations.GetV1CompaniesCompanyIdPayPeriodsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.payPeriods = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.payPeriods = utils.objectToClass(
-              httpRes?.data,
-              shared.PayPeriod,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdPayPeriodsResponse =
+      new operations.GetV1CompaniesCompanyIdPayPeriodsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.payPeriods = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.payPeriods = utils.objectToClass(
+            httpRes?.data,
+            shared.PayPeriod,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -105,7 +106,7 @@ export class PaySchedules {
    *
    * scope: `payrolls:read`
    */
-  getV1CompaniesCompanyIdPaySchedules(
+  async getV1CompaniesCompanyIdPaySchedules(
     req: operations.GetV1CompaniesCompanyIdPaySchedulesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdPaySchedulesResponse> {
@@ -124,41 +125,42 @@ export class PaySchedules {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdPaySchedulesResponse =
-        new operations.GetV1CompaniesCompanyIdPaySchedulesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.paySchedules = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.paySchedules = utils.objectToClass(
-              httpRes?.data,
-              shared.PaySchedule,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdPaySchedulesResponse =
+      new operations.GetV1CompaniesCompanyIdPaySchedulesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.paySchedules = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.paySchedules = utils.objectToClass(
+            httpRes?.data,
+            shared.PaySchedule,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -169,7 +171,7 @@ export class PaySchedules {
    *
    * scope: `payrolls:read`
    */
-  getV1CompaniesCompanyIdPaySchedulesPayScheduleId(
+  async getV1CompaniesCompanyIdPaySchedulesPayScheduleId(
     req: operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse> {
@@ -189,40 +191,39 @@ export class PaySchedules {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse =
-        new operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.paySchedule = utils.objectToClass(
-              httpRes?.data,
-              shared.PaySchedule
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse =
+      new operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.paySchedule = utils.objectToClass(
+            httpRes?.data,
+            shared.PaySchedule
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -235,7 +236,7 @@ export class PaySchedules {
    *
    * Be sure to **[check state laws](https://www.dol.gov/agencies/whd/state/payday)** to know what schedule is right for your customers.
    */
-  postV1CompaniesCompanyIdPaySchedules(
+  async postV1CompaniesCompanyIdPaySchedules(
     req: operations.PostV1CompaniesCompanyIdPaySchedulesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1CompaniesCompanyIdPaySchedulesResponse> {
@@ -268,7 +269,8 @@ export class PaySchedules {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -276,40 +278,40 @@ export class PaySchedules {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1CompaniesCompanyIdPaySchedulesResponse =
-        new operations.PostV1CompaniesCompanyIdPaySchedulesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.paySchedule = utils.objectToClass(
-              httpRes?.data,
-              shared.PaySchedule
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1CompaniesCompanyIdPaySchedulesResponse =
+      new operations.PostV1CompaniesCompanyIdPaySchedulesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.paySchedule = utils.objectToClass(
+            httpRes?.data,
+            shared.PaySchedule
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -318,7 +320,7 @@ export class PaySchedules {
    * @remarks
    * Updates a pay schedule.
    */
-  putV1CompaniesCompanyIdPaySchedulesPayScheduleId(
+  async putV1CompaniesCompanyIdPaySchedulesPayScheduleId(
     req: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse> {
@@ -354,7 +356,8 @@ export class PaySchedules {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -362,41 +365,39 @@ export class PaySchedules {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse =
-        new operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.paySchedule = utils.objectToClass(
-              httpRes?.data,
-              shared.PaySchedule
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse =
+      new operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.paySchedule = utils.objectToClass(
+            httpRes?.data,
+            shared.PaySchedule
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

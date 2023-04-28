@@ -15,11 +15,7 @@ Deletes an employee bank account. To update an employee's bank account details, 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest,
-  DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -27,13 +23,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest = {
+sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId({
   bankAccountUuid: "ea",
   employeeId: "aspernatur",
-};
-
-sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(req).then((res: DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -47,12 +41,8 @@ Fetches an employee's payment method. An employee payment method describes how t
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdPaymentMethodRequest,
-  GetV1EmployeesEmployeeIdPaymentMethodResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdPaymentMethodResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { EmployeePaymentMethodSplitByEnum, EmployeePaymentMethodTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -60,12 +50,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesEmployeeIdPaymentMethodRequest = {
+sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod({
   employeeId: "vel",
-};
-
-sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(req).then((res: GetV1EmployeesEmployeeIdPaymentMethodResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesEmployeeIdPaymentMethodResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -80,12 +68,10 @@ Creates an employee bank account. An employee can have multiple bank accounts. N
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1EmployeesEmployeeIdBankAccountsRequest,
   PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountTypeEnum,
   PostV1EmployeesEmployeeIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { EmployeeBankAccountAccountTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -93,7 +79,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1EmployeesEmployeeIdBankAccountsRequest = {
+sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts({
   requestBody: {
     accountNumber: "possimus",
     accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountTypeEnum.Checking,
@@ -101,10 +87,8 @@ const req: PostV1EmployeesEmployeeIdBankAccountsRequest = {
     routingNumber: "quasi",
   },
   employeeId: "ex",
-};
-
-sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(req).then((res: PostV1EmployeesEmployeeIdBankAccountsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1EmployeesEmployeeIdBankAccountsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -119,13 +103,11 @@ Updates an employee's payment method. Note that creating an employee bank accoun
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1EmployeesEmployeeIdPaymentMethodRequest,
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitByEnum,
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodyTypeEnum,
   PutV1EmployeesEmployeeIdPaymentMethodResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { EmployeePaymentMethodSplitByEnum, EmployeePaymentMethodTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -133,7 +115,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1EmployeesEmployeeIdPaymentMethodRequest = {
+sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod({
   requestBody: {
     splitBy: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitByEnum.Percentage,
     splits: [
@@ -160,10 +142,8 @@ const req: PutV1EmployeesEmployeeIdPaymentMethodRequest = {
     version: "atque",
   },
   employeeId: "explicabo",
-};
-
-sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(req).then((res: PutV1EmployeesEmployeeIdPaymentMethodResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1EmployeesEmployeeIdPaymentMethodResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

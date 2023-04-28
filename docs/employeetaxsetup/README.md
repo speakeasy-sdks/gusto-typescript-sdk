@@ -15,12 +15,8 @@ Get attributes relevant for an employee's federal taxes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdFederalTaxesRequest,
-  GetV1EmployeesEmployeeIdFederalTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdFederalTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { EmployeeFederalTaxW4DataTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -28,12 +24,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesEmployeeIdFederalTaxesRequest = {
+sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes({
   employeeUuid: "minima",
-};
-
-sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(req).then((res: GetV1EmployeesEmployeeIdFederalTaxesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesEmployeeIdFederalTaxesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -59,11 +53,7 @@ Payroll Admins are responsible for filing a new hire report for each Employee. T
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdStateTaxesRequest,
-  GetV1EmployeesEmployeeIdStateTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1EmployeesEmployeeIdStateTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -71,12 +61,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesEmployeeIdStateTaxesRequest = {
+sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes({
   employeeUuid: "nisi",
-};
-
-sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(req).then((res: GetV1EmployeesEmployeeIdStateTaxesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesEmployeeIdStateTaxesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -90,12 +78,8 @@ Update attributes relevant for an employee's federal taxes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1EmployeesEmployeeIdFederalTaxesRequest,
-  PutV1EmployeesEmployeeIdFederalTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1EmployeesEmployeeIdFederalTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { EmployeeFederalTaxW4DataTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -103,7 +87,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1EmployeesEmployeeIdFederalTaxesRequest = {
+sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes({
   requestBody: {
     deductions: "fugit",
     dependentsAmount: "sapiente",
@@ -115,10 +99,8 @@ const req: PutV1EmployeesEmployeeIdFederalTaxesRequest = {
     w4DataType: "occaecati",
   },
   employeeUuid: "atque",
-};
-
-sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(req).then((res: PutV1EmployeesEmployeeIdFederalTaxesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1EmployeesEmployeeIdFederalTaxesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -134,11 +116,7 @@ As described for the GET endpoint, the answers must be supplied in the effective
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1EmployeesEmployeeIdStateTaxesRequest,
-  PutV1EmployeesEmployeeIdStateTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1EmployeesEmployeeIdStateTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -146,7 +124,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1EmployeesEmployeeIdStateTaxesRequest = {
+sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes({
   requestBody: {
     employeeId: "et",
     states: [
@@ -278,10 +256,8 @@ const req: PutV1EmployeesEmployeeIdStateTaxesRequest = {
     ],
   },
   employeeUuid: "reprehenderit",
-};
-
-sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes(req).then((res: PutV1EmployeesEmployeeIdStateTaxesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1EmployeesEmployeeIdStateTaxesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

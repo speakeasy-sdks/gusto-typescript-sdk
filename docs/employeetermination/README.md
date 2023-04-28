@@ -16,11 +16,7 @@ Delete an employee termination. To update an employee's termination, delete the 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1EmployeesEmployeeIdTerminationsRequest,
-  DeleteV1EmployeesEmployeeIdTerminationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1EmployeesEmployeeIdTerminationsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -28,12 +24,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1EmployeesEmployeeIdTerminationsRequest = {
+sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations({
   employeeId: "ullam",
-};
-
-sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(req).then((res: DeleteV1EmployeesEmployeeIdTerminationsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1EmployeesEmployeeIdTerminationsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -49,11 +43,7 @@ This endpoint returns the unprocessed pay periods for past and future terminated
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest,
-  GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -61,12 +51,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest = {
+sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods({
   companyId: "nisi",
-};
-
-sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(req).then((res: GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -84,11 +72,7 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdTerminationsRequest,
-  GetV1EmployeesEmployeeIdTerminationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1EmployeesEmployeeIdTerminationsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -96,12 +80,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesEmployeeIdTerminationsRequest = {
+sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations({
   employeeId: "aut",
-};
-
-sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(req).then((res: GetV1EmployeesEmployeeIdTerminationsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesEmployeeIdTerminationsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -119,11 +101,7 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1EmployeesEmployeeIdTerminationsRequest,
-  PostV1EmployeesEmployeeIdTerminationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostV1EmployeesEmployeeIdTerminationsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -131,16 +109,14 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1EmployeesEmployeeIdTerminationsRequest = {
+sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations({
   requestBody: {
     effectiveDate: "voluptatum",
     runTerminationPayroll: false,
   },
   employeeId: "qui",
-};
-
-sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations(req).then((res: PostV1EmployeesEmployeeIdTerminationsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1EmployeesEmployeeIdTerminationsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -158,8 +134,7 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1TerminationsEmployeeIdRequest, PutV1TerminationsEmployeeIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1TerminationsEmployeeIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -167,17 +142,15 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1TerminationsEmployeeIdRequest = {
+sdk.employeeTermination.putV1TerminationsEmployeeId({
   requestBody: {
     effectiveDate: "quibusdam",
     runTerminationPayroll: false,
     version: "ex",
   },
   employeeId: "deleniti",
-};
-
-sdk.employeeTermination.putV1TerminationsEmployeeId(req).then((res: PutV1TerminationsEmployeeIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1TerminationsEmployeeIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

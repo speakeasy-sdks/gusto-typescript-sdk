@@ -37,7 +37,7 @@ export class Signatories {
    * @remarks
    * Delete a company signatory.
    */
-  deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(
+  async deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(
     req: operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse> {
@@ -57,32 +57,33 @@ export class Signatories {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "delete",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse =
-        new operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case [204, 404].includes(httpRes?.status):
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse =
+      new operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case [204, 404].includes(httpRes?.status):
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -91,7 +92,7 @@ export class Signatories {
    * @remarks
    * Returns company signatories. Currently we only support a single signatory per company.
    */
-  getV1CompaniesCompanyUuidSignatories(
+  async getV1CompaniesCompanyUuidSignatories(
     req: operations.GetV1CompaniesCompanyUuidSignatoriesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyUuidSignatoriesResponse> {
@@ -108,41 +109,42 @@ export class Signatories {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyUuidSignatoriesResponse =
-        new operations.GetV1CompaniesCompanyUuidSignatoriesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.signatories = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.signatories = utils.objectToClass(
-              httpRes?.data,
-              shared.Signatory,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyUuidSignatoriesResponse =
+      new operations.GetV1CompaniesCompanyUuidSignatoriesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.signatories = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.signatories = utils.objectToClass(
+            httpRes?.data,
+            shared.Signatory,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -151,7 +153,7 @@ export class Signatories {
    * @remarks
    * Create a signatory with minimal information. This signatory can be invited to provide more information through the `PUT /v1/companies/{company_uuid}/signatories/{signatory_uuid}` endpoint. This will start the identity verification process and allow the signatory to be verified to sign documents.
    */
-  postV1CompaniesCompanyUuidSignatoriesInvite(
+  async postV1CompaniesCompanyUuidSignatoriesInvite(
     req: operations.PostV1CompaniesCompanyUuidSignatoriesInviteRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1CompaniesCompanyUuidSignatoriesInviteResponse> {
@@ -186,7 +188,8 @@ export class Signatories {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -194,40 +197,37 @@ export class Signatories {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1CompaniesCompanyUuidSignatoriesInviteResponse =
-        new operations.PostV1CompaniesCompanyUuidSignatoriesInviteResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.signatory = utils.objectToClass(
-              httpRes?.data,
-              shared.Signatory
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1CompaniesCompanyUuidSignatoriesInviteResponse =
+      new operations.PostV1CompaniesCompanyUuidSignatoriesInviteResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.signatory = utils.objectToClass(httpRes?.data, shared.Signatory);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -236,7 +236,7 @@ export class Signatories {
    * @remarks
    * Create a company signatory with complete information. A signatory can legally sign forms once the identity verification process is successful.
    */
-  postV1CompanySignatories(
+  async postV1CompanySignatories(
     req: operations.PostV1CompanySignatoriesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1CompanySignatoriesResponse> {
@@ -269,7 +269,8 @@ export class Signatories {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -277,40 +278,37 @@ export class Signatories {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1CompanySignatoriesResponse =
-        new operations.PostV1CompanySignatoriesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.signatory = utils.objectToClass(
-              httpRes?.data,
-              shared.Signatory
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1CompanySignatoriesResponse =
+      new operations.PostV1CompanySignatoriesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.signatory = utils.objectToClass(httpRes?.data, shared.Signatory);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -319,7 +317,7 @@ export class Signatories {
    * @remarks
    * Update a signatory that has been either invited or created. If the signatory has been created with minimal information through the `POST /v1/companies/{company_uuid}/signatories/invite` endpoint, then the first update must contain all attributes specified in the request body in order to start the identity verification process.
    */
-  putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(
+  async putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(
     req: operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse> {
@@ -355,7 +353,8 @@ export class Signatories {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -363,41 +362,36 @@ export class Signatories {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse =
-        new operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.signatory = utils.objectToClass(
-              httpRes?.data,
-              shared.Signatory
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse =
+      new operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.signatory = utils.objectToClass(httpRes?.data, shared.Signatory);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

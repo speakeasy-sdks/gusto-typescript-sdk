@@ -15,12 +15,8 @@ Returns all contractor bank accounts.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorsContractorUuidBankAccountsRequest,
-  GetV1ContractorsContractorUuidBankAccountsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorUuidBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { ContractorBankAccountAccountTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -28,12 +24,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ContractorsContractorUuidBankAccountsRequest = {
+sdk.contractorPaymentMethod.getV1ContractorsContractorUuidBankAccounts({
   contractorUuid: "tempora",
-};
-
-sdk.contractorPaymentMethod.getV1ContractorsContractorUuidBankAccounts(req).then((res: GetV1ContractorsContractorUuidBankAccountsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ContractorsContractorUuidBankAccountsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -47,12 +41,8 @@ Fetches a contractor's payment method. A contractor payment method describes how
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorsContractorUuidPaymentMethodRequest,
-  GetV1ContractorsContractorUuidPaymentMethodResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorUuidPaymentMethodResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { ContractorPaymentMethodSplitByEnum, ContractorPaymentMethodTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -60,12 +50,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ContractorsContractorUuidPaymentMethodRequest = {
+sdk.contractorPaymentMethod.getV1ContractorsContractorUuidPaymentMethod({
   contractorUuid: "facilis",
-};
-
-sdk.contractorPaymentMethod.getV1ContractorsContractorUuidPaymentMethod(req).then((res: GetV1ContractorsContractorUuidPaymentMethodResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ContractorsContractorUuidPaymentMethodResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -83,12 +71,10 @@ has a bank account will just replace it.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1ContractorsContractorUuidBankAccountsRequest,
   PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountTypeEnum,
   PostV1ContractorsContractorUuidBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { ContractorBankAccountAccountTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -96,7 +82,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1ContractorsContractorUuidBankAccountsRequest = {
+sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts({
   requestBody: {
     accountNumber: "tempore",
     accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountTypeEnum.Checking,
@@ -104,10 +90,8 @@ const req: PostV1ContractorsContractorUuidBankAccountsRequest = {
     routingNumber: "aliquid",
   },
   contractorUuid: "provident",
-};
-
-sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts(req).then((res: PostV1ContractorsContractorUuidBankAccountsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1ContractorsContractorUuidBankAccountsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -122,12 +106,10 @@ Updates a contractor's payment method. Note that creating a contractor bank acco
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1ContractorsContractorIdPaymentMethodRequest,
   PutV1ContractorsContractorIdPaymentMethodRequestBodyTypeEnum,
   PutV1ContractorsContractorIdPaymentMethodResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { ContractorPaymentMethodSplitByEnum, ContractorPaymentMethodTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -135,16 +117,14 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1ContractorsContractorIdPaymentMethodRequest = {
+sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod({
   requestBody: {
     type: PutV1ContractorsContractorIdPaymentMethodRequestBodyTypeEnum.Check,
     version: "sint",
   },
   contractorUuid: "officia",
-};
-
-sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod(req).then((res: PutV1ContractorsContractorIdPaymentMethodResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1ContractorsContractorIdPaymentMethodResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

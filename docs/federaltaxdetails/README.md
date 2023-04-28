@@ -13,20 +13,14 @@ Fetches attributes relevant for a company's federal taxes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdFederalTaxDetailsRequest,
-  GetV1CompaniesCompanyIdFederalTaxDetailsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompaniesCompanyIdFederalTaxDetailsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto();
 
-const req: GetV1CompaniesCompanyIdFederalTaxDetailsRequest = {
+sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails({
   companyId: "cum",
-};
-
-sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails(req).then((res: GetV1CompaniesCompanyIdFederalTaxDetailsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -40,11 +34,7 @@ Updates attributes relevant for a company's federal taxes. This information is r
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyIdFederalTaxDetailsRequest,
-  PutV1CompaniesCompanyIdFederalTaxDetailsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1CompaniesCompanyIdFederalTaxDetailsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -52,7 +42,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompaniesCompanyIdFederalTaxDetailsRequest = {
+sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails({
   requestBody: {
     ein: "commodi",
     filingForm: "in",
@@ -62,10 +52,8 @@ const req: PutV1CompaniesCompanyIdFederalTaxDetailsRequest = {
     version: "assumenda",
   },
   companyId: "nemo",
-};
-
-sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails(req).then((res: PutV1CompaniesCompanyIdFederalTaxDetailsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

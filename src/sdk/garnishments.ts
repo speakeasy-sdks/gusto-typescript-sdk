@@ -39,7 +39,7 @@ export class Garnishments {
    *
    * scope: `employees:read`
    */
-  getV1EmployeesEmployeeIdGarnishments(
+  async getV1EmployeesEmployeeIdGarnishments(
     req: operations.GetV1EmployeesEmployeeIdGarnishmentsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1EmployeesEmployeeIdGarnishmentsResponse> {
@@ -58,41 +58,42 @@ export class Garnishments {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1EmployeesEmployeeIdGarnishmentsResponse =
-        new operations.GetV1EmployeesEmployeeIdGarnishmentsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.garnishments = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.garnishments = utils.objectToClass(
-              httpRes?.data,
-              shared.Garnishment,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1EmployeesEmployeeIdGarnishmentsResponse =
+      new operations.GetV1EmployeesEmployeeIdGarnishmentsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.garnishments = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.garnishments = utils.objectToClass(
+            httpRes?.data,
+            shared.Garnishment,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -103,7 +104,7 @@ export class Garnishments {
    *
    * scope: `employees:read`
    */
-  getV1GarnishmentsGarnishmentId(
+  async getV1GarnishmentsGarnishmentId(
     req: operations.GetV1GarnishmentsGarnishmentIdRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1GarnishmentsGarnishmentIdResponse> {
@@ -120,38 +121,39 @@ export class Garnishments {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1GarnishmentsGarnishmentIdResponse =
-        new operations.GetV1GarnishmentsGarnishmentIdResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.garnishment = utils.objectToClass(
-              httpRes?.data,
-              shared.Garnishment
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1GarnishmentsGarnishmentIdResponse =
+      new operations.GetV1GarnishmentsGarnishmentIdResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.garnishment = utils.objectToClass(
+            httpRes?.data,
+            shared.Garnishment
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -162,7 +164,7 @@ export class Garnishments {
    *
    * scope: `employees:write`
    */
-  postV1EmployeesEmployeeIdGarnishments(
+  async postV1EmployeesEmployeeIdGarnishments(
     req: operations.PostV1EmployeesEmployeeIdGarnishmentsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1EmployeesEmployeeIdGarnishmentsResponse> {
@@ -195,7 +197,8 @@ export class Garnishments {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -203,40 +206,40 @@ export class Garnishments {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1EmployeesEmployeeIdGarnishmentsResponse =
-        new operations.PostV1EmployeesEmployeeIdGarnishmentsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.garnishment = utils.objectToClass(
-              httpRes?.data,
-              shared.Garnishment
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1EmployeesEmployeeIdGarnishmentsResponse =
+      new operations.PostV1EmployeesEmployeeIdGarnishmentsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.garnishment = utils.objectToClass(
+            httpRes?.data,
+            shared.Garnishment
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -247,7 +250,7 @@ export class Garnishments {
    *
    * scope: `employees:write`
    */
-  putV1GarnishmentsGarnishmentId(
+  async putV1GarnishmentsGarnishmentId(
     req: operations.PutV1GarnishmentsGarnishmentIdRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1GarnishmentsGarnishmentIdResponse> {
@@ -280,7 +283,8 @@ export class Garnishments {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -288,39 +292,39 @@ export class Garnishments {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1GarnishmentsGarnishmentIdResponse =
-        new operations.PutV1GarnishmentsGarnishmentIdResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.garnishment = utils.objectToClass(
-              httpRes?.data,
-              shared.Garnishment
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1GarnishmentsGarnishmentIdResponse =
+      new operations.PutV1GarnishmentsGarnishmentIdResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.garnishment = utils.objectToClass(
+            httpRes?.data,
+            shared.Garnishment
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

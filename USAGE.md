@@ -1,17 +1,13 @@
 <!-- Start SDK Example Usage -->
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdBankAccountsRequest,
-  GetV1CompaniesCompanyIdBankAccountsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
   CompanyBankAccountAccountTypeEnum,
   CompanyBankAccountPlaidStatusEnum,
   CompanyBankAccountVerificationStatusEnum,
   CompanyBankAccountVerificationTypeEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -19,12 +15,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdBankAccountsRequest = {
+sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts({
   companyId: "corrupti",
-};
-
-sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(req).then((res: GetV1CompaniesCompanyIdBankAccountsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

@@ -18,8 +18,7 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1ExternalPayrollRequest, DeleteV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -27,13 +26,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1ExternalPayrollRequest = {
+sdk.externalPayrolls.deleteV1ExternalPayroll({
   companyUuid: "officia",
   externalPayrollId: "maxime",
-};
-
-sdk.externalPayrolls.deleteV1ExternalPayroll(req).then((res: DeleteV1ExternalPayrollResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1ExternalPayrollResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -48,8 +45,7 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyExternalPayrollsRequest, GetV1CompanyExternalPayrollsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompanyExternalPayrollsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -57,12 +53,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompanyExternalPayrollsRequest = {
+sdk.externalPayrolls.getV1CompanyExternalPayrolls({
   companyUuid: "dignissimos",
-};
-
-sdk.externalPayrolls.getV1CompanyExternalPayrolls(req).then((res: GetV1CompanyExternalPayrollsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompanyExternalPayrollsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -77,8 +71,7 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ExternalPayrollRequest, GetV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -86,13 +79,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ExternalPayrollRequest = {
+sdk.externalPayrolls.getV1ExternalPayroll({
   companyUuid: "officia",
   externalPayrollId: "asperiores",
-};
-
-sdk.externalPayrolls.getV1ExternalPayroll(req).then((res: GetV1ExternalPayrollResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ExternalPayrollResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -106,11 +97,7 @@ Get tax suggestions for an external payroll. Earnings and/or benefits data must 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ExternalPayrollCalculateTaxesRequest,
-  GetV1ExternalPayrollCalculateTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1ExternalPayrollCalculateTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -118,13 +105,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ExternalPayrollCalculateTaxesRequest = {
+sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes({
   companyUuid: "nemo",
   externalPayrollId: "quae",
-};
-
-sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes(req).then((res: GetV1ExternalPayrollCalculateTaxesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ExternalPayrollCalculateTaxesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -139,8 +124,7 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1ExternalPayrollRequest, PostV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -148,17 +132,15 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1ExternalPayrollRequest = {
+sdk.externalPayrolls.postV1ExternalPayroll({
   requestBody: {
     checkDate: "quaerat",
     paymentPeriodEndDate: "porro",
     paymentPeriodStartDate: "quod",
   },
   companyUuid: "labore",
-};
-
-sdk.externalPayrolls.postV1ExternalPayroll(req).then((res: PostV1ExternalPayrollResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1ExternalPayrollResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -174,11 +156,9 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1ExternalPayrollRequest,
   PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningTypeEnum,
   PutV1ExternalPayrollResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -186,7 +166,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1ExternalPayrollRequest = {
+sdk.externalPayrolls.putV1ExternalPayroll({
   requestBody: {
     externalPayrollItems: [
       {
@@ -222,10 +202,8 @@ const req: PutV1ExternalPayrollRequest = {
   },
   companyUuid: "possimus",
   externalPayrollId: "facilis",
-};
-
-sdk.externalPayrolls.putV1ExternalPayroll(req).then((res: PutV1ExternalPayrollResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1ExternalPayrollResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

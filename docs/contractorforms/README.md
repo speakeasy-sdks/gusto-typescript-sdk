@@ -15,8 +15,7 @@ Get a contractor form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormRequest, GetV1ContractorFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1ContractorFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -24,13 +23,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ContractorFormRequest = {
+sdk.contractorForms.getV1ContractorForm({
   contractorUuid: "magni",
   formId: "assumenda",
-};
-
-sdk.contractorForms.getV1ContractorForm(req).then((res: GetV1ContractorFormResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ContractorFormResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -44,8 +41,7 @@ Get the link to the form PDF
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormPdfRequest, GetV1ContractorFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1ContractorFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -53,13 +49,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ContractorFormPdfRequest = {
+sdk.contractorForms.getV1ContractorFormPdf({
   contractorUuid: "ipsam",
   formId: "alias",
-};
-
-sdk.contractorForms.getV1ContractorFormPdf(req).then((res: GetV1ContractorFormPdfResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ContractorFormPdfResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -73,8 +67,7 @@ Get a list of all contractor's forms
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormsRequest, GetV1ContractorFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1ContractorFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -82,12 +75,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ContractorFormsRequest = {
+sdk.contractorForms.getV1ContractorForms({
   contractorUuid: "fugit",
-};
-
-sdk.contractorForms.getV1ContractorForms(req).then((res: GetV1ContractorFormsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ContractorFormsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -108,8 +99,7 @@ Generates a 1099 document for testing purposes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1SandboxGenerate1099RequestBody, PostV1SandboxGenerate1099Response } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostV1SandboxGenerate1099Response } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -117,13 +107,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1SandboxGenerate1099RequestBody = {
+sdk.contractorForms.postV1SandboxGenerate1099({
   contractorId: "dolorum",
   year: 569618,
-};
-
-sdk.contractorForms.postV1SandboxGenerate1099(req).then((res: PostV1SandboxGenerate1099Response | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1SandboxGenerate1099Response) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

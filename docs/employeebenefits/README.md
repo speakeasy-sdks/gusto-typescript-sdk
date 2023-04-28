@@ -19,11 +19,7 @@ scope: `employee_benefits:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest,
-  DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -31,12 +27,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest = {
+sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId({
   employeeBenefitId: "est",
-};
-
-sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId(req).then((res: DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -52,12 +46,8 @@ scope: `employee_benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeeBenefitsEmployeeBenefitIdRequest,
-  GetV1EmployeeBenefitsEmployeeBenefitIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeeBenefitsEmployeeBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { EmployeeBenefitDeductionReducesTaxableIncomeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -65,12 +55,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeeBenefitsEmployeeBenefitIdRequest = {
+sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId({
   employeeBenefitId: "repellendus",
-};
-
-sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId(req).then((res: GetV1EmployeeBenefitsEmployeeBenefitIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -88,12 +76,8 @@ scope: `employee_benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdEmployeeBenefitsRequest,
-  GetV1EmployeesEmployeeIdEmployeeBenefitsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdEmployeeBenefitsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { EmployeeBenefitDeductionReducesTaxableIncomeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -101,14 +85,12 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesEmployeeIdEmployeeBenefitsRequest = {
+sdk.employeeBenefits.getV1EmployeesEmployeeIdEmployeeBenefits({
   employeeId: "porro",
   page: 9843.3,
   per: 2817.3,
-};
-
-sdk.employeeBenefits.getV1EmployeesEmployeeIdEmployeeBenefits(req).then((res: GetV1EmployeesEmployeeIdEmployeeBenefitsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesEmployeeIdEmployeeBenefitsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -124,11 +106,7 @@ scope: `employee_benefits:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest,
-  PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -136,7 +114,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest = {
+sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany({
   requestBody: {
     benefitType: 7034.95,
     taxYear: 5864.1,
@@ -144,10 +122,8 @@ const req: PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest = {
     ytdEmployeeDeductionAmount: "quae",
   },
   employeeId: "laudantium",
-};
-
-sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany(req).then((res: PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -164,13 +140,11 @@ scope: `employee_benefits:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1EmployeesEmployeeIdEmployeeBenefitsRequest,
   PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionTypeEnum,
   PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncomeEnum,
   PostV1EmployeesEmployeeIdEmployeeBenefitsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { EmployeeBenefitDeductionReducesTaxableIncomeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -178,7 +152,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1EmployeesEmployeeIdEmployeeBenefitsRequest = {
+sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits({
   requestBody: {
     active: false,
     catchUp: false,
@@ -213,10 +187,8 @@ const req: PostV1EmployeesEmployeeIdEmployeeBenefitsRequest = {
     limitOption: "odio",
   },
   employeeId: "similique",
-};
-
-sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits(req).then((res: PostV1EmployeesEmployeeIdEmployeeBenefitsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1EmployeesEmployeeIdEmployeeBenefitsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -233,13 +205,11 @@ scope: `employee_benefits:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1EmployeeBenefitsEmployeeBenefitIdRequest,
   PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionTypeEnum,
   PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncomeEnum,
   PutV1EmployeeBenefitsEmployeeBenefitIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { EmployeeBenefitDeductionReducesTaxableIncomeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -247,7 +217,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1EmployeeBenefitsEmployeeBenefitIdRequest = {
+sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId({
   requestBody: {
     active: false,
     catchUp: false,
@@ -269,10 +239,8 @@ const req: PutV1EmployeeBenefitsEmployeeBenefitIdRequest = {
     version: "exercitationem",
   },
   employeeBenefitId: "nulla",
-};
-
-sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId(req).then((res: PutV1EmployeeBenefitsEmployeeBenefitIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

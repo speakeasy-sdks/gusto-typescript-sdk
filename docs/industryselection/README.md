@@ -13,8 +13,7 @@ Get industry selection for the company.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyIndustryRequest, GetV1CompanyIndustryResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompanyIndustryResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -22,12 +21,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompanyIndustryRequest = {
+sdk.industrySelection.getV1CompanyIndustry({
   companyId: "dignissimos",
-};
-
-sdk.industrySelection.getV1CompanyIndustry(req).then((res: GetV1CompanyIndustryResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompanyIndustryResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -41,8 +38,7 @@ Update the company industry selection by passing in industry classification code
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompanyIndustryRequest, PutV1CompanyIndustryResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1CompanyIndustryResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -50,7 +46,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompanyIndustryRequest = {
+sdk.industrySelection.putV1CompanyIndustry({
   requestBody: {
     naicsCode: "a",
     sicCodes: [
@@ -62,10 +58,8 @@ const req: PutV1CompanyIndustryRequest = {
     title: "Mr.",
   },
   companyId: "voluptates",
-};
-
-sdk.industrySelection.putV1CompanyIndustry(req).then((res: PutV1CompanyIndustryResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompanyIndustryResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

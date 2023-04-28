@@ -41,7 +41,7 @@ export class Locations {
    *
    * scope: `companies:read`
    */
-  getV1CompaniesCompanyIdLocations(
+  async getV1CompaniesCompanyIdLocations(
     req: operations.GetV1CompaniesCompanyIdLocationsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdLocationsResponse> {
@@ -60,41 +60,42 @@ export class Locations {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdLocationsResponse =
-        new operations.GetV1CompaniesCompanyIdLocationsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.locations = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.locations = utils.objectToClass(
-              httpRes?.data,
-              shared.Location,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdLocationsResponse =
+      new operations.GetV1CompaniesCompanyIdLocationsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.locations = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.locations = utils.objectToClass(
+            httpRes?.data,
+            shared.Location,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -105,7 +106,7 @@ export class Locations {
    *
    * scope: `companies:read`
    */
-  getV1LocationsLocationId(
+  async getV1LocationsLocationId(
     req: operations.GetV1LocationsLocationIdRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1LocationsLocationIdResponse> {
@@ -122,35 +123,36 @@ export class Locations {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1LocationsLocationIdResponse =
-        new operations.GetV1LocationsLocationIdResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.location = utils.objectToClass(httpRes?.data, shared.Location);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1LocationsLocationIdResponse =
+      new operations.GetV1LocationsLocationIdResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.location = utils.objectToClass(httpRes?.data, shared.Location);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -161,7 +163,7 @@ export class Locations {
    *
    * scope: `companies:read`
    */
-  getV1LocationsLocationUuidMinimumWages(
+  async getV1LocationsLocationUuidMinimumWages(
     req: operations.GetV1LocationsLocationUuidMinimumWagesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1LocationsLocationUuidMinimumWagesResponse> {
@@ -180,41 +182,42 @@ export class Locations {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1LocationsLocationUuidMinimumWagesResponse =
-        new operations.GetV1LocationsLocationUuidMinimumWagesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.minimumWages = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.minimumWages = utils.objectToClass(
-              httpRes?.data,
-              shared.MinimumWage,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1LocationsLocationUuidMinimumWagesResponse =
+      new operations.GetV1LocationsLocationUuidMinimumWagesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.minimumWages = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.minimumWages = utils.objectToClass(
+            httpRes?.data,
+            shared.MinimumWage,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -227,7 +230,7 @@ export class Locations {
    *
    * scope: `companies.write`
    */
-  postV1CompaniesCompanyIdLocationsJson(
+  async postV1CompaniesCompanyIdLocationsJson(
     req: operations.PostV1CompaniesCompanyIdLocationsJsonRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1CompaniesCompanyIdLocationsJsonResponse> {
@@ -260,7 +263,8 @@ export class Locations {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -268,37 +272,37 @@ export class Locations {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1CompaniesCompanyIdLocationsJsonResponse =
-        new operations.PostV1CompaniesCompanyIdLocationsJsonResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.location = utils.objectToClass(httpRes?.data, shared.Location);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1CompaniesCompanyIdLocationsJsonResponse =
+      new operations.PostV1CompaniesCompanyIdLocationsJsonResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.location = utils.objectToClass(httpRes?.data, shared.Location);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -311,7 +315,7 @@ export class Locations {
    *
    * scope: `companies.write`
    */
-  postV1CompaniesCompanyIdLocationsRaw(
+  async postV1CompaniesCompanyIdLocationsRaw(
     req: operations.PostV1CompaniesCompanyIdLocationsRawRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1CompaniesCompanyIdLocationsRawResponse> {
@@ -344,7 +348,8 @@ export class Locations {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -352,37 +357,37 @@ export class Locations {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1CompaniesCompanyIdLocationsRawResponse =
-        new operations.PostV1CompaniesCompanyIdLocationsRawResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.location = utils.objectToClass(httpRes?.data, shared.Location);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1CompaniesCompanyIdLocationsRawResponse =
+      new operations.PostV1CompaniesCompanyIdLocationsRawResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.location = utils.objectToClass(httpRes?.data, shared.Location);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -393,7 +398,7 @@ export class Locations {
    *
    * scope: `companies.write`
    */
-  putV1LocationsLocationId(
+  async putV1LocationsLocationId(
     req: operations.PutV1LocationsLocationIdRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1LocationsLocationIdResponse> {
@@ -426,7 +431,8 @@ export class Locations {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -434,36 +440,36 @@ export class Locations {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1LocationsLocationIdResponse =
-        new operations.PutV1LocationsLocationIdResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.location = utils.objectToClass(httpRes?.data, shared.Location);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1LocationsLocationIdResponse =
+      new operations.PutV1LocationsLocationIdResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.location = utils.objectToClass(httpRes?.data, shared.Location);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

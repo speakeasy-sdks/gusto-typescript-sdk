@@ -18,11 +18,7 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest,
-  DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -30,13 +26,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest = {
+sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment({
   companyId: "dolor",
   contractorPaymentId: "debitis",
-};
-
-sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(req).then((res: DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -52,16 +46,12 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest,
-  GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
   ContractorPaymentPaymentMethodEnum,
   ContractorPaymentStatusEnum,
   ContractorPaymentWageTypeEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -69,13 +59,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest = {
+sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment({
   companyId: "a",
   contractorPaymentId: "dolorum",
-};
-
-sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment(req).then((res: GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -91,11 +79,7 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdContractorPaymentsRequest,
-  GetV1CompaniesCompanyIdContractorPaymentsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompaniesCompanyIdContractorPaymentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -103,7 +87,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdContractorPaymentsRequest = {
+sdk.contractorPayments.getV1CompaniesCompanyIdContractorPayments({
   companyId: "in",
   contractorUuid: "in",
   endDate: "2020-12-31",
@@ -111,10 +95,8 @@ const req: GetV1CompaniesCompanyIdContractorPaymentsRequest = {
   page: 8464.09,
   per: 9785.71,
   startDate: "2020-01-01",
-};
-
-sdk.contractorPayments.getV1CompaniesCompanyIdContractorPayments(req).then((res: GetV1CompaniesCompanyIdContractorPaymentsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdContractorPaymentsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -137,12 +119,8 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest,
-  GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -150,12 +128,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest = {
+sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt({
   contractorPaymentUuid: "rerum",
-};
-
-sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt(req).then((res: GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -172,7 +148,6 @@ scope: `payrolls:run`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdContractorPaymentsRequest,
   PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethodEnum,
   PostV1CompaniesCompanyIdContractorPaymentsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -182,7 +157,6 @@ import {
   ContractorPaymentWageTypeEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -190,7 +164,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1CompaniesCompanyIdContractorPaymentsRequest = {
+sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments({
   requestBody: {
     bonus: 500,
     contractorUuid: "dicta",
@@ -201,10 +175,8 @@ const req: PostV1CompaniesCompanyIdContractorPaymentsRequest = {
     wage: 5000,
   },
   companyId: "cumque",
-};
-
-sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments(req).then((res: PostV1CompaniesCompanyIdContractorPaymentsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1CompaniesCompanyIdContractorPaymentsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

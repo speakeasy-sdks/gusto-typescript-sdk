@@ -37,7 +37,7 @@ export class BankAccounts {
    * @remarks
    * Returns company bank accounts. Currently we only support a single default bank account per company.
    */
-  getV1CompaniesCompanyIdBankAccounts(
+  async getV1CompaniesCompanyIdBankAccounts(
     req: operations.GetV1CompaniesCompanyIdBankAccountsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdBankAccountsResponse> {
@@ -54,41 +54,42 @@ export class BankAccounts {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdBankAccountsResponse =
-        new operations.GetV1CompaniesCompanyIdBankAccountsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBankAccounts = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.companyBankAccounts = utils.objectToClass(
-              httpRes?.data,
-              shared.CompanyBankAccount,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdBankAccountsResponse =
+      new operations.GetV1CompaniesCompanyIdBankAccountsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.companyBankAccounts = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.companyBankAccounts = utils.objectToClass(
+            httpRes?.data,
+            shared.CompanyBankAccount,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -106,7 +107,7 @@ export class BankAccounts {
    * >
    * > If a default bank account exists, it will be disabled and the new bank account will replace it as the company's default funding method.
    */
-  postV1CompaniesCompanyIdBankAccounts(
+  async postV1CompaniesCompanyIdBankAccounts(
     req: operations.PostV1CompaniesCompanyIdBankAccountsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1CompaniesCompanyIdBankAccountsResponse> {
@@ -139,7 +140,8 @@ export class BankAccounts {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -147,40 +149,40 @@ export class BankAccounts {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1CompaniesCompanyIdBankAccountsResponse =
-        new operations.PostV1CompaniesCompanyIdBankAccountsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBankAccount = utils.objectToClass(
-              httpRes?.data,
-              shared.CompanyBankAccount
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1CompaniesCompanyIdBankAccountsResponse =
+      new operations.PostV1CompaniesCompanyIdBankAccountsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.companyBankAccount = utils.objectToClass(
+            httpRes?.data,
+            shared.CompanyBankAccount
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -198,7 +200,7 @@ export class BankAccounts {
    * >
    * > If a default company bank account exists, it will be disabled and the new bank account will replace it as the company's default funding method.
    */
-  postV1PlaidProcessorToken(
+  async postV1PlaidProcessorToken(
     req: operations.PostV1PlaidProcessorTokenRequestBody,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1PlaidProcessorTokenResponse> {
@@ -228,7 +230,8 @@ export class BankAccounts {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -236,38 +239,37 @@ export class BankAccounts {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1PlaidProcessorTokenResponse =
-        new operations.PostV1PlaidProcessorTokenResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.postV1PlaidProcessorToken201ApplicationJSONOneOf =
-              httpRes?.data;
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1PlaidProcessorTokenResponse =
+      new operations.PostV1PlaidProcessorTokenResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.postV1PlaidProcessorToken201ApplicationJSONOneOf = httpRes?.data;
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -289,7 +291,7 @@ export class BankAccounts {
    *   }
    * ```
    */
-  putV1CompaniesCompanyIdBankAccountsVerify(
+  async putV1CompaniesCompanyIdBankAccountsVerify(
     req: operations.PutV1CompaniesCompanyIdBankAccountsVerifyRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1CompaniesCompanyIdBankAccountsVerifyResponse> {
@@ -324,7 +326,8 @@ export class BankAccounts {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -332,39 +335,39 @@ export class BankAccounts {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1CompaniesCompanyIdBankAccountsVerifyResponse =
-        new operations.PutV1CompaniesCompanyIdBankAccountsVerifyResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBankAccount = utils.objectToClass(
-              httpRes?.data,
-              shared.CompanyBankAccount
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1CompaniesCompanyIdBankAccountsVerifyResponse =
+      new operations.PutV1CompaniesCompanyIdBankAccountsVerifyResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.companyBankAccount = utils.objectToClass(
+            httpRes?.data,
+            shared.CompanyBankAccount
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

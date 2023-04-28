@@ -15,17 +15,13 @@ Returns company bank accounts. Currently we only support a single default bank a
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdBankAccountsRequest,
-  GetV1CompaniesCompanyIdBankAccountsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
   CompanyBankAccountAccountTypeEnum,
   CompanyBankAccountPlaidStatusEnum,
   CompanyBankAccountVerificationStatusEnum,
   CompanyBankAccountVerificationTypeEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -33,12 +29,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdBankAccountsRequest = {
+sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts({
   companyId: "provident",
-};
-
-sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(req).then((res: GetV1CompaniesCompanyIdBankAccountsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -62,7 +56,6 @@ After successful verification, the bank account's verification_status is 'verifi
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdBankAccountsRequest,
   PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountTypeEnum,
   PostV1CompaniesCompanyIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -72,7 +65,6 @@ import {
   CompanyBankAccountVerificationStatusEnum,
   CompanyBankAccountVerificationTypeEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -80,17 +72,15 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1CompaniesCompanyIdBankAccountsRequest = {
+sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts({
   requestBody: {
     accountNumber: "distinctio",
     accountType: PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountTypeEnum.Savings,
     routingNumber: "unde",
   },
   companyId: "nulla",
-};
-
-sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(req).then((res: PostV1CompaniesCompanyIdBankAccountsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1CompaniesCompanyIdBankAccountsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -114,11 +104,9 @@ This endpoint creates a new **verified** bank account by using a plaid processor
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1PlaidProcessorTokenRequestBody,
   PostV1PlaidProcessorTokenRequestBodyOwnerTypeEnum,
   PostV1PlaidProcessorTokenResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -126,14 +114,12 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1PlaidProcessorTokenRequestBody = {
+sdk.bankAccounts.postV1PlaidProcessorToken({
   ownerId: "corrupti",
   ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerTypeEnum.Company,
   processorToken: "illum",
-};
-
-sdk.bankAccounts.postV1PlaidProcessorToken(req).then((res: PostV1PlaidProcessorTokenResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1PlaidProcessorTokenResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -160,17 +146,13 @@ We provide the endpoint `POST '/v1/companies/{company_id}/bank_accounts/{bank_ac
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyIdBankAccountsVerifyRequest,
-  PutV1CompaniesCompanyIdBankAccountsVerifyResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1CompaniesCompanyIdBankAccountsVerifyResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
   CompanyBankAccountAccountTypeEnum,
   CompanyBankAccountPlaidStatusEnum,
   CompanyBankAccountVerificationStatusEnum,
   CompanyBankAccountVerificationTypeEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -178,17 +160,15 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompaniesCompanyIdBankAccountsVerifyRequest = {
+sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify({
   requestBody: {
     deposit1: 4236.55,
     deposit2: 6235.64,
   },
   bankAccountUuid: "deserunt",
   companyId: "suscipit",
-};
-
-sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(req).then((res: PutV1CompaniesCompanyIdBankAccountsVerifyResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompaniesCompanyIdBankAccountsVerifyResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

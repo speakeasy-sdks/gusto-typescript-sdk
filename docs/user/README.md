@@ -17,7 +17,6 @@ The employees:read scope is required to return non-work locations.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1MeResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -25,8 +24,8 @@ const sdk = new Gusto({
   },
 });
 
-sdk.user.getV1Me().then((res: GetV1MeResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+sdk.user.getV1Me().then((res: GetV1MeResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

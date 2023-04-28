@@ -16,8 +16,7 @@ Get an employee form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeeFormRequest, GetV1EmployeeFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1EmployeeFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -25,13 +24,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeeFormRequest = {
+sdk.employeeForms.getV1EmployeeForm({
   employeeId: "fugit",
   formId: "porro",
-};
-
-sdk.employeeForms.getV1EmployeeForm(req).then((res: GetV1EmployeeFormResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeeFormResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -45,8 +42,7 @@ Get the link to the form PDF
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeeFormPdfRequest, GetV1EmployeeFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1EmployeeFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -54,13 +50,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeeFormPdfRequest = {
+sdk.employeeForms.getV1EmployeeFormPdf({
   employeeId: "maiores",
   formId: "doloribus",
-};
-
-sdk.employeeForms.getV1EmployeeFormPdf(req).then((res: GetV1EmployeeFormPdfResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeeFormPdfResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -74,8 +68,7 @@ Get a list of all employee's forms
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeeFormsRequest, GetV1EmployeeFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1EmployeeFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -83,12 +76,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeeFormsRequest = {
+sdk.employeeForms.getV1EmployeeForms({
   employeeId: "iusto",
-};
-
-sdk.employeeForms.getV1EmployeeForms(req).then((res: GetV1EmployeeFormsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeeFormsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -109,8 +100,7 @@ Generates a W2 document for testing purposes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1SandboxGenerateW2RequestBody, PostV1SandboxGenerateW2Response } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostV1SandboxGenerateW2Response } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -118,13 +108,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1SandboxGenerateW2RequestBody = {
+sdk.employeeForms.postV1SandboxGenerateW2({
   employeeId: "eligendi",
   year: 497391,
-};
-
-sdk.employeeForms.postV1SandboxGenerateW2(req).then((res: PostV1SandboxGenerateW2Response | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1SandboxGenerateW2Response) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -138,8 +126,7 @@ Sign a company form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1EmployeeFormSignRequest, PutV1EmployeeFormSignResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1EmployeeFormSignResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -147,7 +134,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1EmployeeFormSignRequest = {
+sdk.employeeForms.putV1EmployeeFormSign({
   requestBody: {
     agree: false,
     signatureText: "alias",
@@ -155,10 +142,8 @@ const req: PutV1EmployeeFormSignRequest = {
   },
   employeeId: "tempora",
   formId: "ipsam",
-};
-
-sdk.employeeForms.putV1EmployeeFormSign(req).then((res: PutV1EmployeeFormSignResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1EmployeeFormSignResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

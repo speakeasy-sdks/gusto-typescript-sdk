@@ -23,11 +23,7 @@ The following must be true in order to delete a company benefit
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1CompanyBenefitsCompanyBenefitIdRequest,
-  DeleteV1CompanyBenefitsCompanyBenefitIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1CompanyBenefitsCompanyBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -35,12 +31,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1CompanyBenefitsCompanyBenefitIdRequest = {
+sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId({
   companyBenefitId: "veritatis",
-};
-
-sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(req).then((res: DeleteV1CompanyBenefitsCompanyBenefitIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1CompanyBenefitsCompanyBenefitIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -59,7 +53,6 @@ scope: `benefits:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1BenefitsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -67,8 +60,8 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyBenefits.getV1Benefits().then((res: GetV1BenefitsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+sdk.companyBenefits.getV1Benefits().then((res: GetV1BenefitsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -86,8 +79,7 @@ scope: `benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1BenefitsBenefitIdRequest, GetV1BenefitsBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1BenefitsBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -95,12 +87,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1BenefitsBenefitIdRequest = {
+sdk.companyBenefits.getV1BenefitsBenefitId({
   benefitId: "itaque",
-};
-
-sdk.companyBenefits.getV1BenefitsBenefitId(req).then((res: GetV1BenefitsBenefitIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1BenefitsBenefitIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -116,11 +106,7 @@ scope: `benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1BenefitsBenefitsIdRequirementsRequest,
-  GetV1BenefitsBenefitsIdRequirementsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1BenefitsBenefitsIdRequirementsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -128,12 +114,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1BenefitsBenefitsIdRequirementsRequest = {
+sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements({
   benefitId: "incidunt",
-};
-
-sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements(req).then((res: GetV1BenefitsBenefitsIdRequirementsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1BenefitsBenefitsIdRequirementsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -149,11 +133,7 @@ scope: `benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1BenefitsCompanyBenefitIdSummaryRequest,
-  GetV1BenefitsCompanyBenefitIdSummaryResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1BenefitsCompanyBenefitIdSummaryResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -161,15 +141,13 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1BenefitsCompanyBenefitIdSummaryRequest = {
+sdk.companyBenefits.getV1BenefitsCompanyBenefitIdSummary({
   companyBenefitId: "enim",
   detailed: false,
   endDate: "2022-12-31",
   startDate: "2022-01-01",
-};
-
-sdk.companyBenefits.getV1BenefitsCompanyBenefitIdSummary(req).then((res: GetV1BenefitsCompanyBenefitIdSummaryResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1BenefitsCompanyBenefitIdSummaryResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -187,11 +165,7 @@ scope: `company_benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdCompanyBenefitsRequest,
-  GetV1CompaniesCompanyIdCompanyBenefitsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompaniesCompanyIdCompanyBenefitsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -199,13 +173,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyIdCompanyBenefitsRequest = {
+sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits({
   companyId: "consequatur",
   enrollmentCount: false,
-};
-
-sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits(req).then((res: GetV1CompaniesCompanyIdCompanyBenefitsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyIdCompanyBenefitsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -225,11 +197,7 @@ scope: `company_benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompanyBenefitsCompanyBenefitIdRequest,
-  GetV1CompanyBenefitsCompanyBenefitIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompanyBenefitsCompanyBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -237,13 +205,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompanyBenefitsCompanyBenefitIdRequest = {
+sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId({
   companyBenefitId: "est",
   withEmployeeBenefits: false,
-};
-
-sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId(req).then((res: GetV1CompanyBenefitsCompanyBenefitIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompanyBenefitsCompanyBenefitIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -261,11 +227,7 @@ scope: `company_benefits:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1CompaniesCompanyIdCompanyBenefitsRequest,
-  PostV1CompaniesCompanyIdCompanyBenefitsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostV1CompaniesCompanyIdCompanyBenefitsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -273,7 +235,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1CompaniesCompanyIdCompanyBenefitsRequest = {
+sdk.companyBenefits.postV1CompaniesCompanyIdCompanyBenefits({
   requestBody: {
     active: false,
     benefitType: 8423.42,
@@ -282,10 +244,8 @@ const req: PostV1CompaniesCompanyIdCompanyBenefitsRequest = {
     responsibleForEmployerTaxes: false,
   },
   companyId: "deserunt",
-};
-
-sdk.companyBenefits.postV1CompaniesCompanyIdCompanyBenefits(req).then((res: PostV1CompaniesCompanyIdCompanyBenefitsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1CompaniesCompanyIdCompanyBenefitsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -303,11 +263,7 @@ scope: `company_benefits:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompanyBenefitsCompanyBenefitIdRequest,
-  PutV1CompanyBenefitsCompanyBenefitIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1CompanyBenefitsCompanyBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -315,17 +271,15 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompanyBenefitsCompanyBenefitIdRequest = {
+sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId({
   requestBody: {
     active: false,
     description: "distinctio",
     version: "quibusdam",
   },
   companyBenefitId: "labore",
-};
-
-sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId(req).then((res: PutV1CompanyBenefitsCompanyBenefitIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompanyBenefitsCompanyBenefitIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

@@ -13,8 +13,7 @@ Get payment speed for the company and fast payment limit (only applicable for 2-
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyPaymentConfigsRequest, GetV1CompanyPaymentConfigsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompanyPaymentConfigsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -22,12 +21,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompanyPaymentConfigsRequest = {
+sdk.paymentConfigs.getV1CompanyPaymentConfigs({
   companyUuid: "reiciendis",
-};
-
-sdk.paymentConfigs.getV1CompanyPaymentConfigs(req).then((res: GetV1CompanyPaymentConfigsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompanyPaymentConfigsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -42,11 +39,9 @@ Update payment speed for the company and fast payment limit (only applicable for
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1CompanyPaymentConfigsRequest,
   PutV1CompanyPaymentConfigsRequestBodyPaymentSpeedEnum,
   PutV1CompanyPaymentConfigsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -54,16 +49,14 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompanyPaymentConfigsRequest = {
+sdk.paymentConfigs.putV1CompanyPaymentConfigs({
   requestBody: {
     fastPaymentLimit: "nulla",
     paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeedEnum.TwoDay,
   },
   companyUuid: "aperiam",
-};
-
-sdk.paymentConfigs.putV1CompanyPaymentConfigs(req).then((res: PutV1CompanyPaymentConfigsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompanyPaymentConfigsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

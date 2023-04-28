@@ -21,8 +21,7 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1JobsJobIdRequest, DeleteV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -30,12 +29,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1JobsJobIdRequest = {
+sdk.jobsAndCompensations.deleteV1JobsJobId({
   jobId: "libero",
-};
-
-sdk.jobsAndCompensations.deleteV1JobsJobId(req).then((res: DeleteV1JobsJobIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1JobsJobIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -54,12 +51,8 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompensationsCompensationIdRequest,
-  GetV1CompensationsCompensationIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompensationsCompensationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -67,12 +60,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompensationsCompensationIdRequest = {
+sdk.jobsAndCompensations.getV1CompensationsCompensationId({
   compensationId: "vitae",
-};
-
-sdk.jobsAndCompensations.getV1CompensationsCompensationId(req).then((res: GetV1CompensationsCompensationIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompensationsCompensationIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -88,13 +79,8 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdJobsIncludeEnum,
-  GetV1EmployeesEmployeeIdJobsRequest,
-  GetV1EmployeesEmployeeIdJobsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdJobsIncludeEnum, GetV1EmployeesEmployeeIdJobsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -102,15 +88,13 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesEmployeeIdJobsRequest = {
+sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs({
   employeeId: "accusamus",
   include: GetV1EmployeesEmployeeIdJobsIncludeEnum.AllCompensations,
   page: 6311.26,
   per: 2724.37,
-};
-
-sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(req).then((res: GetV1EmployeesEmployeeIdJobsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesEmployeeIdJobsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -126,9 +110,8 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1JobsJobIdIncludeEnum, GetV1JobsJobIdRequest, GetV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1JobsJobIdIncludeEnum, GetV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -136,13 +119,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1JobsJobIdRequest = {
+sdk.jobsAndCompensations.getV1JobsJobId({
   include: GetV1JobsJobIdIncludeEnum.AllCompensations,
   jobId: "aspernatur",
-};
-
-sdk.jobsAndCompensations.getV1JobsJobId(req).then((res: GetV1JobsJobIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1JobsJobIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -162,13 +143,8 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1JobsJobIdCompensationsIncludeEnum,
-  GetV1JobsJobIdCompensationsRequest,
-  GetV1JobsJobIdCompensationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1JobsJobIdCompensationsIncludeEnum, GetV1JobsJobIdCompensationsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -176,15 +152,13 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1JobsJobIdCompensationsRequest = {
+sdk.jobsAndCompensations.getV1JobsJobIdCompensations({
   include: GetV1JobsJobIdCompensationsIncludeEnum.AllCompensations,
   jobId: "voluptas",
   page: 3742.44,
   per: 3742.96,
-};
-
-sdk.jobsAndCompensations.getV1JobsJobIdCompensations(req).then((res: GetV1JobsJobIdCompensationsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1JobsJobIdCompensationsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -200,9 +174,8 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1JobsJobIdRequest, PostV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -210,17 +183,15 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1JobsJobIdRequest = {
+sdk.jobsAndCompensations.postV1JobsJobId({
   requestBody: {
     hireDate: "minima",
     locationUuid: "nobis",
     title: "Miss",
   },
   employeeId: "adipisci",
-};
-
-sdk.jobsAndCompensations.postV1JobsJobId(req).then((res: PostV1JobsJobIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1JobsJobIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -239,13 +210,11 @@ scope: `jobs:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1CompensationsCompensationIdRequest,
   PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum,
   PutV1CompensationsCompensationIdRequestBodyPaymentUnitEnum,
   PutV1CompensationsCompensationIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -253,7 +222,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompensationsCompensationIdRequest = {
+sdk.jobsAndCompensations.putV1CompensationsCompensationId({
   requestBody: {
     adjustForMinimumWage: false,
     flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum.CommissionOnlyNonexempt,
@@ -267,10 +236,8 @@ const req: PutV1CompensationsCompensationIdRequest = {
     version: "sed",
   },
   compensationId: "in",
-};
-
-sdk.jobsAndCompensations.putV1CompensationsCompensationId(req).then((res: PutV1CompensationsCompensationIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompensationsCompensationIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -286,9 +253,8 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1JobsJobIdRequest, PutV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -296,7 +262,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1JobsJobIdRequest = {
+sdk.jobsAndCompensations.putV1JobsJobId({
   requestBody: {
     hireDate: "commodi",
     locationUuid: "quidem",
@@ -304,10 +270,8 @@ const req: PutV1JobsJobIdRequest = {
     version: "voluptas",
   },
   jobId: "unde",
-};
-
-sdk.jobsAndCompensations.putV1JobsJobId(req).then((res: PutV1JobsJobIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1JobsJobIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

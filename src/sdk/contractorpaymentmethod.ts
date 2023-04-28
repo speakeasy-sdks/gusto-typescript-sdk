@@ -37,7 +37,7 @@ export class ContractorPaymentMethod {
    * @remarks
    * Returns all contractor bank accounts.
    */
-  getV1ContractorsContractorUuidBankAccounts(
+  async getV1ContractorsContractorUuidBankAccounts(
     req: operations.GetV1ContractorsContractorUuidBankAccountsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1ContractorsContractorUuidBankAccountsResponse> {
@@ -56,41 +56,42 @@ export class ContractorPaymentMethod {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1ContractorsContractorUuidBankAccountsResponse =
-        new operations.GetV1ContractorsContractorUuidBankAccountsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorBankAccounts = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.contractorBankAccounts = utils.objectToClass(
-              httpRes?.data,
-              shared.ContractorBankAccount,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1ContractorsContractorUuidBankAccountsResponse =
+      new operations.GetV1ContractorsContractorUuidBankAccountsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.contractorBankAccounts = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.contractorBankAccounts = utils.objectToClass(
+            httpRes?.data,
+            shared.ContractorBankAccount,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -99,7 +100,7 @@ export class ContractorPaymentMethod {
    * @remarks
    * Fetches a contractor's payment method. A contractor payment method describes how the payment should be split across the contractor's associated bank accounts.
    */
-  getV1ContractorsContractorUuidPaymentMethod(
+  async getV1ContractorsContractorUuidPaymentMethod(
     req: operations.GetV1ContractorsContractorUuidPaymentMethodRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1ContractorsContractorUuidPaymentMethodResponse> {
@@ -118,38 +119,39 @@ export class ContractorPaymentMethod {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1ContractorsContractorUuidPaymentMethodResponse =
-        new operations.GetV1ContractorsContractorUuidPaymentMethodResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorPaymentMethod = utils.objectToClass(
-              httpRes?.data,
-              shared.ContractorPaymentMethod
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1ContractorsContractorUuidPaymentMethodResponse =
+      new operations.GetV1ContractorsContractorUuidPaymentMethodResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.contractorPaymentMethod = utils.objectToClass(
+            httpRes?.data,
+            shared.ContractorPaymentMethod
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -161,7 +163,7 @@ export class ContractorPaymentMethod {
    * Note: We currently only support one bank account per contractor. Using this endpoint on a contractor who has already
    * has a bank account will just replace it.
    */
-  postV1ContractorsContractorUuidBankAccounts(
+  async postV1ContractorsContractorUuidBankAccounts(
     req: operations.PostV1ContractorsContractorUuidBankAccountsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1ContractorsContractorUuidBankAccountsResponse> {
@@ -196,7 +198,8 @@ export class ContractorPaymentMethod {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -204,47 +207,47 @@ export class ContractorPaymentMethod {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1ContractorsContractorUuidBankAccountsResponse =
-        new operations.PostV1ContractorsContractorUuidBankAccountsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorBankAccount = utils.objectToClass(
-              httpRes?.data,
-              shared.ContractorBankAccount
-            );
-          }
-          if (utils.matchContentType(contentType, `application/xml`)) {
-            const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-            const out: Uint8Array = new Uint8Array(resBody.length);
-            for (let i = 0; i < resBody.length; i++)
-              out[i] = resBody.charCodeAt(i);
-            res.body = out;
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1ContractorsContractorUuidBankAccountsResponse =
+      new operations.PostV1ContractorsContractorUuidBankAccountsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.contractorBankAccount = utils.objectToClass(
+            httpRes?.data,
+            shared.ContractorBankAccount
+          );
+        }
+        if (utils.matchContentType(contentType, `application/xml`)) {
+          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+          const out: Uint8Array = new Uint8Array(resBody.length);
+          for (let i = 0; i < resBody.length; i++)
+            out[i] = resBody.charCodeAt(i);
+          res.body = out;
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -253,7 +256,7 @@ export class ContractorPaymentMethod {
    * @remarks
    * Updates a contractor's payment method. Note that creating a contractor bank account will also update the contractor's payment method.
    */
-  putV1ContractorsContractorIdPaymentMethod(
+  async putV1ContractorsContractorIdPaymentMethod(
     req: operations.PutV1ContractorsContractorIdPaymentMethodRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1ContractorsContractorIdPaymentMethodResponse> {
@@ -288,7 +291,8 @@ export class ContractorPaymentMethod {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -296,39 +300,39 @@ export class ContractorPaymentMethod {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1ContractorsContractorIdPaymentMethodResponse =
-        new operations.PutV1ContractorsContractorIdPaymentMethodResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorPaymentMethod = utils.objectToClass(
-              httpRes?.data,
-              shared.ContractorPaymentMethod
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1ContractorsContractorIdPaymentMethodResponse =
+      new operations.PutV1ContractorsContractorIdPaymentMethodResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.contractorPaymentMethod = utils.objectToClass(
+            httpRes?.data,
+            shared.ContractorPaymentMethod
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

@@ -26,8 +26,7 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1WebhookSubscriptionUuidRequest, DeleteV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -35,12 +34,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1WebhookSubscriptionUuidRequest = {
+sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid({
   webhookSubscriptionUuid: "veritatis",
-};
-
-sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(req).then((res: DeleteV1WebhookSubscriptionUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1WebhookSubscriptionUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -62,9 +59,8 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1WebhookSubscriptionUuidRequest, GetV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { WebhookSubscriptionStatusEnum, WebhookSubscriptionSubscriptionTypesEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -72,12 +68,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1WebhookSubscriptionUuidRequest = {
+sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid({
   webhookSubscriptionUuid: "vero",
-};
-
-sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(req).then((res: GetV1WebhookSubscriptionUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1WebhookSubscriptionUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -99,11 +93,7 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1WebhookSubscriptionVerificationTokenUuidRequest,
-  GetV1WebhookSubscriptionVerificationTokenUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1WebhookSubscriptionVerificationTokenUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -111,12 +101,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1WebhookSubscriptionVerificationTokenUuidRequest = {
+sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid({
   webhookSubscriptionUuid: "consectetur",
-};
-
-sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(req).then((res: GetV1WebhookSubscriptionVerificationTokenUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1WebhookSubscriptionVerificationTokenUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -139,7 +127,6 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1WebhookSubscriptionsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { WebhookSubscriptionStatusEnum, WebhookSubscriptionSubscriptionTypesEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -147,8 +134,8 @@ const sdk = new Gusto({
   },
 });
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptions().then((res: GetV1WebhookSubscriptionsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+sdk.webhookSubscriptions.getV1WebhookSubscriptions().then((res: GetV1WebhookSubscriptionsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -171,12 +158,10 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1WebhookSubscriptionRequestBody,
   PostV1WebhookSubscriptionRequestBodySubscriptionTypesEnum,
   PostV1WebhookSubscriptionResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { WebhookSubscriptionStatusEnum, WebhookSubscriptionSubscriptionTypesEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -184,15 +169,13 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1WebhookSubscriptionRequestBody = {
+sdk.webhookSubscriptions.postV1WebhookSubscription({
   subscriptionTypes: [
     PostV1WebhookSubscriptionRequestBodySubscriptionTypesEnum.Company,
   ],
   url: "dolorem",
-};
-
-sdk.webhookSubscriptions.postV1WebhookSubscription(req).then((res: PostV1WebhookSubscriptionResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1WebhookSubscriptionResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -217,12 +200,8 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1VerifyWebhookSubscriptionUuidRequest,
-  PutV1VerifyWebhookSubscriptionUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1VerifyWebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { WebhookSubscriptionStatusEnum, WebhookSubscriptionSubscriptionTypesEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -230,15 +209,13 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1VerifyWebhookSubscriptionUuidRequest = {
+sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid({
   requestBody: {
     verificationToken: "ad",
   },
   webhookSubscriptionUuid: "qui",
-};
-
-sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(req).then((res: PutV1VerifyWebhookSubscriptionUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1VerifyWebhookSubscriptionUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -261,12 +238,10 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1WebhookSubscriptionUuidRequest,
   PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypesEnum,
   PutV1WebhookSubscriptionUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { WebhookSubscriptionStatusEnum, WebhookSubscriptionSubscriptionTypesEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -274,7 +249,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1WebhookSubscriptionUuidRequest = {
+sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid({
   requestBody: {
     subscriptionTypes: [
       PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypesEnum.Employee,
@@ -283,10 +258,8 @@ const req: PutV1WebhookSubscriptionUuidRequest = {
     ],
   },
   webhookSubscriptionUuid: "libero",
-};
-
-sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid(req).then((res: PutV1WebhookSubscriptionUuidResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1WebhookSubscriptionUuidResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

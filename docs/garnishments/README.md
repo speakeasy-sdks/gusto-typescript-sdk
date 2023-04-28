@@ -17,11 +17,7 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdGarnishmentsRequest,
-  GetV1EmployeesEmployeeIdGarnishmentsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1EmployeesEmployeeIdGarnishmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -29,14 +25,12 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesEmployeeIdGarnishmentsRequest = {
+sdk.garnishments.getV1EmployeesEmployeeIdGarnishments({
   employeeId: "consectetur",
   page: 4490.83,
   per: 3485.19,
-};
-
-sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(req).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -52,8 +46,7 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1GarnishmentsGarnishmentIdRequest, GetV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -61,12 +54,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1GarnishmentsGarnishmentIdRequest = {
+sdk.garnishments.getV1GarnishmentsGarnishmentId({
   garnishmentId: "earum",
-};
-
-sdk.garnishments.getV1GarnishmentsGarnishmentId(req).then((res: GetV1GarnishmentsGarnishmentIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1GarnishmentsGarnishmentIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -82,11 +73,7 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1EmployeesEmployeeIdGarnishmentsRequest,
-  PostV1EmployeesEmployeeIdGarnishmentsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PostV1EmployeesEmployeeIdGarnishmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -94,7 +81,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1EmployeesEmployeeIdGarnishmentsRequest = {
+sdk.garnishments.postV1EmployeesEmployeeIdGarnishments({
   requestBody: {
     active: false,
     amount: "facere",
@@ -107,10 +94,8 @@ const req: PostV1EmployeesEmployeeIdGarnishmentsRequest = {
     times: 968972,
   },
   employeeId: "quidem",
-};
-
-sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(req).then((res: PostV1EmployeesEmployeeIdGarnishmentsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1EmployeesEmployeeIdGarnishmentsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -126,8 +111,7 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1GarnishmentsGarnishmentIdRequest, PutV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -135,7 +119,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1GarnishmentsGarnishmentIdRequest = {
+sdk.garnishments.putV1GarnishmentsGarnishmentId({
   requestBody: {
     active: false,
     amount: "saepe",
@@ -149,10 +133,8 @@ const req: PutV1GarnishmentsGarnishmentIdRequest = {
     version: "adipisci",
   },
   garnishmentId: "non",
-};
-
-sdk.garnishments.putV1GarnishmentsGarnishmentId(req).then((res: PutV1GarnishmentsGarnishmentIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1GarnishmentsGarnishmentIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

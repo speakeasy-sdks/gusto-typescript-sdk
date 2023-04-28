@@ -22,8 +22,7 @@ Use this endpoint to delete an employee who is in onboarding. Deleting an onboar
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1EmployeeRequest, DeleteV1EmployeeResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeleteV1EmployeeResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -31,12 +30,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: DeleteV1EmployeeRequest = {
+sdk.employees.deleteV1Employee({
   employeeId: "itaque",
-};
-
-sdk.employees.deleteV1Employee(req).then((res: DeleteV1EmployeeResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeleteV1EmployeeResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -53,7 +50,7 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesIncludeEnum, GetV1EmployeesRequest, GetV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesIncludeEnum, GetV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
   CompensationFlsaStatusEnum,
   CompensationPaymentUnitEnum,
@@ -61,7 +58,6 @@ import {
   EmployeeCurrentEmploymentStatusEnum,
   EmployeePaymentMethodEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -69,13 +65,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesRequest = {
+sdk.employees.getV1Employees({
   employeeId: "dolorum",
   include: GetV1EmployeesIncludeEnum.AllCompensations,
-};
-
-sdk.employees.getV1Employees(req).then((res: GetV1EmployeesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -91,12 +85,8 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdCustomFieldsRequest,
-  GetV1EmployeesEmployeeIdCustomFieldsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdCustomFieldsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { CustomFieldTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -104,14 +94,12 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesEmployeeIdCustomFieldsRequest = {
+sdk.employees.getV1EmployeesEmployeeIdCustomFields({
   employeeId: "omnis",
   page: 9453.02,
   per: 984.78,
-};
-
-sdk.employees.getV1EmployeesEmployeeIdCustomFields(req).then((res: GetV1EmployeesEmployeeIdCustomFieldsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesEmployeeIdCustomFieldsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -127,11 +115,7 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdHomeAddressRequest,
-  GetV1EmployeesEmployeeIdHomeAddressResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1EmployeesEmployeeIdHomeAddressResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -139,12 +123,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesEmployeeIdHomeAddressRequest = {
+sdk.employees.getV1EmployeesEmployeeIdHomeAddress({
   employeeId: "at",
-};
-
-sdk.employees.getV1EmployeesEmployeeIdHomeAddress(req).then((res: GetV1EmployeesEmployeeIdHomeAddressResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesEmployeeIdHomeAddressResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -195,11 +177,7 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdOnboardingStatusRequest,
-  GetV1EmployeesEmployeeIdOnboardingStatusResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1EmployeesEmployeeIdOnboardingStatusResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -207,12 +185,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1EmployeesEmployeeIdOnboardingStatusRequest = {
+sdk.employees.getV1EmployeesEmployeeIdOnboardingStatus({
   employeeId: "et",
-};
-
-sdk.employees.getV1EmployeesEmployeeIdOnboardingStatus(req).then((res: GetV1EmployeesEmployeeIdOnboardingStatusResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1EmployeesEmployeeIdOnboardingStatusResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -228,11 +204,7 @@ scope: `employee_time_off_activities:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetVersionEmployeesTimeOffActivitiesRequest,
-  GetVersionEmployeesTimeOffActivitiesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetVersionEmployeesTimeOffActivitiesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -240,13 +212,11 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetVersionEmployeesTimeOffActivitiesRequest = {
+sdk.employees.getVersionEmployeesTimeOffActivities({
   employeeUuid: "voluptate",
   timeOffType: "ipsa",
-};
-
-sdk.employees.getVersionEmployeesTimeOffActivities(req).then((res: GetVersionEmployeesTimeOffActivitiesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetVersionEmployeesTimeOffActivitiesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -262,7 +232,7 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1EmployeesRequest, PostV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
   CompensationFlsaStatusEnum,
   CompensationPaymentUnitEnum,
@@ -270,7 +240,6 @@ import {
   EmployeeCurrentEmploymentStatusEnum,
   EmployeePaymentMethodEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -278,7 +247,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PostV1EmployeesRequest = {
+sdk.employees.postV1Employees({
   requestBody: {
     dateOfBirth: "minima",
     email: "Darlene_Ferry@gmail.com",
@@ -289,10 +258,8 @@ const req: PostV1EmployeesRequest = {
     ssn: "laudantium",
   },
   companyId: "eum",
-};
-
-sdk.employees.postV1Employees(req).then((res: PostV1EmployeesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PostV1EmployeesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -308,7 +275,7 @@ Call this endpoint as the very last step of employee onboarding to complete thei
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1EmployeeFinishOnboardingRequest, PutV1EmployeeFinishOnboardingResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1EmployeeFinishOnboardingResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
   CompensationFlsaStatusEnum,
   CompensationPaymentUnitEnum,
@@ -316,7 +283,6 @@ import {
   EmployeeCurrentEmploymentStatusEnum,
   EmployeePaymentMethodEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -324,12 +290,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1EmployeeFinishOnboardingRequest = {
+sdk.employees.putV1EmployeeFinishOnboarding({
   employeeId: "mollitia",
-};
-
-sdk.employees.putV1EmployeeFinishOnboarding(req).then((res: PutV1EmployeeFinishOnboardingResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1EmployeeFinishOnboardingResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -345,7 +309,7 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1EmployeesRequest, PutV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
   CompensationFlsaStatusEnum,
   CompensationPaymentUnitEnum,
@@ -353,7 +317,6 @@ import {
   EmployeeCurrentEmploymentStatusEnum,
   EmployeePaymentMethodEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -361,7 +324,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1EmployeesRequest = {
+sdk.employees.putV1Employees({
   requestBody: {
     dateOfBirth: "ab",
     email: "Demond58@yahoo.com",
@@ -373,10 +336,8 @@ const req: PutV1EmployeesRequest = {
     version: "aut",
   },
   employeeId: "dignissimos",
-};
-
-sdk.employees.putV1Employees(req).then((res: PutV1EmployeesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1EmployeesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -392,11 +353,7 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1EmployeesEmployeeIdHomeAddressRequest,
-  PutV1EmployeesEmployeeIdHomeAddressResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1EmployeesEmployeeIdHomeAddressResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -404,7 +361,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1EmployeesEmployeeIdHomeAddressRequest = {
+sdk.employees.putV1EmployeesEmployeeIdHomeAddress({
   requestBody: {
     city: "Fort Libbieburgh",
     state: "voluptatibus",
@@ -414,10 +371,8 @@ const req: PutV1EmployeesEmployeeIdHomeAddressRequest = {
     zip: "ea",
   },
   employeeId: "quaerat",
-};
-
-sdk.employees.putV1EmployeesEmployeeIdHomeAddress(req).then((res: PutV1EmployeesEmployeeIdHomeAddressResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1EmployeesEmployeeIdHomeAddressResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -442,11 +397,7 @@ Below is a list of valid onboarding status changes depending on the intended act
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1EmployeesEmployeeIdOnboardingStatusRequest,
-  PutV1EmployeesEmployeeIdOnboardingStatusResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1EmployeesEmployeeIdOnboardingStatusResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -454,15 +405,13 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1EmployeesEmployeeIdOnboardingStatusRequest = {
+sdk.employees.putV1EmployeesEmployeeIdOnboardingStatus({
   requestBody: {
     onboardingStatus: "consequuntur",
   },
   employeeId: "repellendus",
-};
-
-sdk.employees.putV1EmployeesEmployeeIdOnboardingStatus(req).then((res: PutV1EmployeesEmployeeIdOnboardingStatusResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1EmployeesEmployeeIdOnboardingStatusResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

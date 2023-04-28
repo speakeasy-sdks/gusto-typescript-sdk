@@ -14,11 +14,7 @@ Returns objects describing the states that have tax requirements for the company
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyUuidTaxRequirementsRequest,
-  GetV1CompaniesCompanyUuidTaxRequirementsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { GetV1CompaniesCompanyUuidTaxRequirementsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -26,12 +22,10 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyUuidTaxRequirementsRequest = {
+sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements({
   companyUuid: "tempora",
-};
-
-sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(req).then((res: GetV1CompaniesCompanyUuidTaxRequirementsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyUuidTaxRequirementsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -85,16 +79,12 @@ Get all tax requirements for a given state.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyUuidTaxRequirementsStateRequest,
-  GetV1CompaniesCompanyUuidTaxRequirementsStateResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyUuidTaxRequirementsStateResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
   TaxRequirementMetadataRateTypeEnum,
   TaxRequirementMetadataTypeEnum,
   TaxRequirementMetadataValidationTypeEnum,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
-import { AxiosError } from "axios";
 
 const sdk = new Gusto({
   security: {
@@ -102,14 +92,12 @@ const sdk = new Gusto({
   },
 });
 
-const req: GetV1CompaniesCompanyUuidTaxRequirementsStateRequest = {
+sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState({
   companyUuid: "nihil",
   scheduling: false,
   state: "molestiae",
-};
-
-sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(req).then((res: GetV1CompaniesCompanyUuidTaxRequirementsStateResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: GetV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -123,11 +111,7 @@ Update State Tax Requirements
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyUuidTaxRequirementsStateRequest,
-  PutV1CompaniesCompanyUuidTaxRequirementsStateResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { PutV1CompaniesCompanyUuidTaxRequirementsStateResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -135,7 +119,7 @@ const sdk = new Gusto({
   },
 });
 
-const req: PutV1CompaniesCompanyUuidTaxRequirementsStateRequest = {
+sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState({
   requestBody: {
     requirementSets: [
       {
@@ -161,10 +145,8 @@ const req: PutV1CompaniesCompanyUuidTaxRequirementsStateRequest = {
   },
   companyUuid: "odio",
   state: "tempora",
-};
-
-sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState(req).then((res: PutV1CompaniesCompanyUuidTaxRequirementsStateResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: PutV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
