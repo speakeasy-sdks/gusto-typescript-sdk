@@ -2,13 +2,13 @@ configVersion: 1.0.0
 management:
   docChecksum: b3be58d6a42b3f6b9a53f2e76d05f1a8
   docVersion: "2023-03-01"
-  speakeasyVersion: 1.26.3
-  generationVersion: 2.23.3
+  speakeasyVersion: 1.26.4
+  generationVersion: 2.23.4
 generation:
   telemetryEnabled: false
   sdkClassName: gusto
   singleTagPerOp: false
 typescript:
-  version: 0.15.1
+  version: 0.15.2
   author: gusto
   packageName: '@speakeasy-sdks/gusto'
