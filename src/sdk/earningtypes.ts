@@ -39,7 +39,7 @@ export class EarningTypes {
    *
    * scope: `payrolls:write`
    */
-  deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(
+  async deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(
     req: operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse> {
@@ -59,32 +59,33 @@ export class EarningTypes {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "delete",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse =
-        new operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case [204, 404].includes(httpRes?.status):
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse =
+      new operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case [204, 404].includes(httpRes?.status):
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -101,7 +102,7 @@ export class EarningTypes {
    *
    * scope: `payrolls:read`
    */
-  getV1CompaniesCompanyIdEarningTypes(
+  async getV1CompaniesCompanyIdEarningTypes(
     req: operations.GetV1CompaniesCompanyIdEarningTypesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdEarningTypesResponse> {
@@ -118,39 +119,40 @@ export class EarningTypes {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdEarningTypesResponse =
-        new operations.GetV1CompaniesCompanyIdEarningTypesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.getV1CompaniesCompanyIdEarningTypes200ApplicationJSONObject =
-              utils.objectToClass(
-                httpRes?.data,
-                operations.GetV1CompaniesCompanyIdEarningTypes200ApplicationJSON
-              );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdEarningTypesResponse =
+      new operations.GetV1CompaniesCompanyIdEarningTypesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.getV1CompaniesCompanyIdEarningTypes200ApplicationJSONObject =
+            utils.objectToClass(
+              httpRes?.data,
+              operations.GetV1CompaniesCompanyIdEarningTypes200ApplicationJSON
+            );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -163,7 +165,7 @@ export class EarningTypes {
    *
    * scope: `payrolls:write`
    */
-  postV1CompaniesCompanyIdEarningTypes(
+  async postV1CompaniesCompanyIdEarningTypes(
     req: operations.PostV1CompaniesCompanyIdEarningTypesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1CompaniesCompanyIdEarningTypesResponse> {
@@ -196,7 +198,8 @@ export class EarningTypes {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -204,40 +207,40 @@ export class EarningTypes {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1CompaniesCompanyIdEarningTypesResponse =
-        new operations.PostV1CompaniesCompanyIdEarningTypesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.earningType = utils.objectToClass(
-              httpRes?.data,
-              shared.EarningType
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1CompaniesCompanyIdEarningTypesResponse =
+      new operations.PostV1CompaniesCompanyIdEarningTypesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.earningType = utils.objectToClass(
+            httpRes?.data,
+            shared.EarningType
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -248,7 +251,7 @@ export class EarningTypes {
    *
    * scope: `payrolls:write`
    */
-  putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(
+  async putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(
     req: operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse> {
@@ -284,7 +287,8 @@ export class EarningTypes {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -292,41 +296,41 @@ export class EarningTypes {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse =
-        new operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.earningType = utils.objectToClass(
-              httpRes?.data,
-              shared.EarningType
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse =
+      new operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.earningType = utils.objectToClass(
+            httpRes?.data,
+            shared.EarningType
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

@@ -37,7 +37,7 @@ export class TaxRequirements {
    * @remarks
    * Returns objects describing the states that have tax requirements for the company
    */
-  getV1CompaniesCompanyUuidTaxRequirements(
+  async getV1CompaniesCompanyUuidTaxRequirements(
     req: operations.GetV1CompaniesCompanyUuidTaxRequirementsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse> {
@@ -54,43 +54,44 @@ export class TaxRequirements {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse =
-        new operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects =
-              [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects =
-              utils.objectToClass(
-                httpRes?.data,
-                operations.GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON,
-                resFieldDepth
-              );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse =
+      new operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects =
+            [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects =
+            utils.objectToClass(
+              httpRes?.data,
+              operations.GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON,
+              resFieldDepth
+            );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -139,7 +140,7 @@ export class TaxRequirements {
    * ```
    *
    */
-  getV1CompaniesCompanyUuidTaxRequirementsState(
+  async getV1CompaniesCompanyUuidTaxRequirementsState(
     req: operations.GetV1CompaniesCompanyUuidTaxRequirementsStateRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse> {
@@ -160,38 +161,39 @@ export class TaxRequirements {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse =
-        new operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.taxRequirementsState = utils.objectToClass(
-              httpRes?.data,
-              shared.TaxRequirementsState
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse =
+      new operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.taxRequirementsState = utils.objectToClass(
+            httpRes?.data,
+            shared.TaxRequirementsState
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -200,7 +202,7 @@ export class TaxRequirements {
    * @remarks
    * Update State Tax Requirements
    */
-  putV1CompaniesCompanyUuidTaxRequirementsState(
+  async putV1CompaniesCompanyUuidTaxRequirementsState(
     req: operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse> {
@@ -235,7 +237,8 @@ export class TaxRequirements {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -243,31 +246,31 @@ export class TaxRequirements {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse =
-        new operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case [200, 404].includes(httpRes?.status):
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse =
+      new operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case [200, 404].includes(httpRes?.status):
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

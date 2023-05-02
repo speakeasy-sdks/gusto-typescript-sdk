@@ -41,40 +41,43 @@ export class User {
    * The companies:read scope is required to return tier and work locations.
    * The employees:read scope is required to return non-work locations.
    */
-  getV1Me(config?: AxiosRequestConfig): Promise<operations.GetV1MeResponse> {
+  async getV1Me(
+    config?: AxiosRequestConfig
+  ): Promise<operations.GetV1MeResponse> {
     const baseURL: string = this._serverURL;
     const url: string = baseURL.replace(/\/$/, "") + "/v1/me";
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1MeResponse = new operations.GetV1MeResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.currentUser = utils.objectToClass(
-              httpRes?.data,
-              shared.CurrentUser
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
+    const res: operations.GetV1MeResponse = new operations.GetV1MeResponse({
+      statusCode: httpRes.status,
+      contentType: contentType,
+      rawResponse: httpRes,
     });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.currentUser = utils.objectToClass(
+            httpRes?.data,
+            shared.CurrentUser
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

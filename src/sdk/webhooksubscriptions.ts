@@ -45,7 +45,7 @@ export class WebhookSubscriptions {
    * ```
    *
    */
-  deleteV1WebhookSubscriptionUuid(
+  async deleteV1WebhookSubscriptionUuid(
     req: operations.DeleteV1WebhookSubscriptionUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.DeleteV1WebhookSubscriptionUuidResponse> {
@@ -62,30 +62,31 @@ export class WebhookSubscriptions {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "delete",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.DeleteV1WebhookSubscriptionUuidResponse =
-        new operations.DeleteV1WebhookSubscriptionUuidResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case [204, 404].includes(httpRes?.status):
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.DeleteV1WebhookSubscriptionUuidResponse =
+      new operations.DeleteV1WebhookSubscriptionUuidResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case [204, 404].includes(httpRes?.status):
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -102,7 +103,7 @@ export class WebhookSubscriptions {
    * ```
    *
    */
-  getV1WebhookSubscriptionUuid(
+  async getV1WebhookSubscriptionUuid(
     req: operations.GetV1WebhookSubscriptionUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1WebhookSubscriptionUuidResponse> {
@@ -119,38 +120,39 @@ export class WebhookSubscriptions {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1WebhookSubscriptionUuidResponse =
-        new operations.GetV1WebhookSubscriptionUuidResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.webhookSubscription = utils.objectToClass(
-              httpRes?.data,
-              shared.WebhookSubscription
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1WebhookSubscriptionUuidResponse =
+      new operations.GetV1WebhookSubscriptionUuidResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.webhookSubscription = utils.objectToClass(
+            httpRes?.data,
+            shared.WebhookSubscription
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -167,7 +169,7 @@ export class WebhookSubscriptions {
    * ```
    *
    */
-  getV1WebhookSubscriptionVerificationTokenUuid(
+  async getV1WebhookSubscriptionVerificationTokenUuid(
     req: operations.GetV1WebhookSubscriptionVerificationTokenUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse> {
@@ -186,30 +188,31 @@ export class WebhookSubscriptions {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse =
-        new operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case [200, 404].includes(httpRes?.status):
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse =
+      new operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case [200, 404].includes(httpRes?.status):
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -225,7 +228,7 @@ export class WebhookSubscriptions {
    * Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
    * ```
    */
-  getV1WebhookSubscriptions(
+  async getV1WebhookSubscriptions(
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1WebhookSubscriptionsResponse> {
     const baseURL: string = this._serverURL;
@@ -234,41 +237,42 @@ export class WebhookSubscriptions {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1WebhookSubscriptionsResponse =
-        new operations.GetV1WebhookSubscriptionsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.webhookSubscriptions = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.webhookSubscriptions = utils.objectToClass(
-              httpRes?.data,
-              shared.WebhookSubscription,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1WebhookSubscriptionsResponse =
+      new operations.GetV1WebhookSubscriptionsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.webhookSubscriptions = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.webhookSubscriptions = utils.objectToClass(
+            httpRes?.data,
+            shared.WebhookSubscription,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -285,7 +289,7 @@ export class WebhookSubscriptions {
    * Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
    * ```
    */
-  postV1WebhookSubscription(
+  async postV1WebhookSubscription(
     req: operations.PostV1WebhookSubscriptionRequestBody,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1WebhookSubscriptionResponse> {
@@ -315,7 +319,8 @@ export class WebhookSubscriptions {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -323,40 +328,40 @@ export class WebhookSubscriptions {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1WebhookSubscriptionResponse =
-        new operations.PostV1WebhookSubscriptionResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.webhookSubscription = utils.objectToClass(
-              httpRes?.data,
-              shared.WebhookSubscription
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1WebhookSubscriptionResponse =
+      new operations.PostV1WebhookSubscriptionResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.webhookSubscription = utils.objectToClass(
+            httpRes?.data,
+            shared.WebhookSubscription
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -376,7 +381,7 @@ export class WebhookSubscriptions {
    * ```
    *
    */
-  putV1VerifyWebhookSubscriptionUuid(
+  async putV1VerifyWebhookSubscriptionUuid(
     req: operations.PutV1VerifyWebhookSubscriptionUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1VerifyWebhookSubscriptionUuidResponse> {
@@ -409,7 +414,8 @@ export class WebhookSubscriptions {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -417,40 +423,40 @@ export class WebhookSubscriptions {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1VerifyWebhookSubscriptionUuidResponse =
-        new operations.PutV1VerifyWebhookSubscriptionUuidResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.webhookSubscription = utils.objectToClass(
-              httpRes?.data,
-              shared.WebhookSubscription
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1VerifyWebhookSubscriptionUuidResponse =
+      new operations.PutV1VerifyWebhookSubscriptionUuidResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.webhookSubscription = utils.objectToClass(
+            httpRes?.data,
+            shared.WebhookSubscription
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -467,7 +473,7 @@ export class WebhookSubscriptions {
    * ```
    *
    */
-  putV1WebhookSubscriptionUuid(
+  async putV1WebhookSubscriptionUuid(
     req: operations.PutV1WebhookSubscriptionUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1WebhookSubscriptionUuidResponse> {
@@ -500,7 +506,8 @@ export class WebhookSubscriptions {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -508,39 +515,39 @@ export class WebhookSubscriptions {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1WebhookSubscriptionUuidResponse =
-        new operations.PutV1WebhookSubscriptionUuidResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.webhookSubscription = utils.objectToClass(
-              httpRes?.data,
-              shared.WebhookSubscription
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1WebhookSubscriptionUuidResponse =
+      new operations.PutV1WebhookSubscriptionUuidResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.webhookSubscription = utils.objectToClass(
+            httpRes?.data,
+            shared.WebhookSubscription
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

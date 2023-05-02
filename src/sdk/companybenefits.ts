@@ -40,7 +40,7 @@ export class CompanyBenefits {
    *   - There are no payroll items associated with the company benefit
    *   - The benefit is not managed by a Partner or by Gusto (type must be 'External')
    */
-  deleteV1CompanyBenefitsCompanyBenefitId(
+  async deleteV1CompanyBenefitsCompanyBenefitId(
     req: operations.DeleteV1CompanyBenefitsCompanyBenefitIdRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.DeleteV1CompanyBenefitsCompanyBenefitIdResponse> {
@@ -57,39 +57,40 @@ export class CompanyBenefits {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "delete",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.DeleteV1CompanyBenefitsCompanyBenefitIdResponse =
-        new operations.DeleteV1CompanyBenefitsCompanyBenefitIdResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case [204, 404].includes(httpRes?.status):
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject =
-              utils.objectToClass(
-                httpRes?.data,
-                operations.DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON
-              );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.DeleteV1CompanyBenefitsCompanyBenefitIdResponse =
+      new operations.DeleteV1CompanyBenefitsCompanyBenefitIdResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case [204, 404].includes(httpRes?.status):
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject =
+            utils.objectToClass(
+              httpRes?.data,
+              operations.DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON
+            );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -102,7 +103,7 @@ export class CompanyBenefits {
    *
    * scope: `benefits:read`
    */
-  getV1Benefits(
+  async getV1Benefits(
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1BenefitsResponse> {
     const baseURL: string = this._serverURL;
@@ -110,41 +111,42 @@ export class CompanyBenefits {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1BenefitsResponse =
-        new operations.GetV1BenefitsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.supportedBenefits = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.supportedBenefits = utils.objectToClass(
-              httpRes?.data,
-              shared.SupportedBenefit,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1BenefitsResponse =
+      new operations.GetV1BenefitsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.supportedBenefits = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.supportedBenefits = utils.objectToClass(
+            httpRes?.data,
+            shared.SupportedBenefit,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -157,7 +159,7 @@ export class CompanyBenefits {
    *
    * scope: `benefits:read`
    */
-  getV1BenefitsBenefitId(
+  async getV1BenefitsBenefitId(
     req: operations.GetV1BenefitsBenefitIdRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1BenefitsBenefitIdResponse> {
@@ -174,38 +176,39 @@ export class CompanyBenefits {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1BenefitsBenefitIdResponse =
-        new operations.GetV1BenefitsBenefitIdResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.supportedBenefit = utils.objectToClass(
-              httpRes?.data,
-              shared.SupportedBenefit
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1BenefitsBenefitIdResponse =
+      new operations.GetV1BenefitsBenefitIdResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.supportedBenefit = utils.objectToClass(
+            httpRes?.data,
+            shared.SupportedBenefit
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -216,7 +219,7 @@ export class CompanyBenefits {
    *
    * scope: `benefits:read`
    */
-  getV1BenefitsBenefitsIdRequirements(
+  async getV1BenefitsBenefitsIdRequirements(
     req: operations.GetV1BenefitsBenefitsIdRequirementsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1BenefitsBenefitsIdRequirementsResponse> {
@@ -233,38 +236,39 @@ export class CompanyBenefits {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1BenefitsBenefitsIdRequirementsResponse =
-        new operations.GetV1BenefitsBenefitsIdRequirementsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.benefitTypeRequirements = utils.objectToClass(
-              httpRes?.data,
-              shared.BenefitTypeRequirements
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1BenefitsBenefitsIdRequirementsResponse =
+      new operations.GetV1BenefitsBenefitsIdRequirementsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.benefitTypeRequirements = utils.objectToClass(
+            httpRes?.data,
+            shared.BenefitTypeRequirements
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -275,7 +279,7 @@ export class CompanyBenefits {
    *
    * scope: `benefits:read`
    */
-  getV1BenefitsCompanyBenefitIdSummary(
+  async getV1BenefitsCompanyBenefitIdSummary(
     req: operations.GetV1BenefitsCompanyBenefitIdSummaryRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1BenefitsCompanyBenefitIdSummaryResponse> {
@@ -294,38 +298,39 @@ export class CompanyBenefits {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1BenefitsCompanyBenefitIdSummaryResponse =
-        new operations.GetV1BenefitsCompanyBenefitIdSummaryResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.benefitSummary = utils.objectToClass(
-              httpRes?.data,
-              shared.BenefitSummary
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1BenefitsCompanyBenefitIdSummaryResponse =
+      new operations.GetV1BenefitsCompanyBenefitIdSummaryResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.benefitSummary = utils.objectToClass(
+            httpRes?.data,
+            shared.BenefitSummary
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -338,7 +343,7 @@ export class CompanyBenefits {
    *
    * scope: `company_benefits:read`
    */
-  getV1CompaniesCompanyIdCompanyBenefits(
+  async getV1CompaniesCompanyIdCompanyBenefits(
     req: operations.GetV1CompaniesCompanyIdCompanyBenefitsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdCompanyBenefitsResponse> {
@@ -357,41 +362,42 @@ export class CompanyBenefits {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdCompanyBenefitsResponse =
-        new operations.GetV1CompaniesCompanyIdCompanyBenefitsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBenefits = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.companyBenefits = utils.objectToClass(
-              httpRes?.data,
-              shared.CompanyBenefit,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdCompanyBenefitsResponse =
+      new operations.GetV1CompaniesCompanyIdCompanyBenefitsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.companyBenefits = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.companyBenefits = utils.objectToClass(
+            httpRes?.data,
+            shared.CompanyBenefit,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -406,7 +412,7 @@ export class CompanyBenefits {
    *
    * scope: `company_benefits:read`
    */
-  getV1CompanyBenefitsCompanyBenefitId(
+  async getV1CompanyBenefitsCompanyBenefitId(
     req: operations.GetV1CompanyBenefitsCompanyBenefitIdRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompanyBenefitsCompanyBenefitIdResponse> {
@@ -425,38 +431,39 @@ export class CompanyBenefits {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompanyBenefitsCompanyBenefitIdResponse =
-        new operations.GetV1CompanyBenefitsCompanyBenefitIdResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBenefit = utils.objectToClass(
-              httpRes?.data,
-              shared.CompanyBenefit
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompanyBenefitsCompanyBenefitIdResponse =
+      new operations.GetV1CompanyBenefitsCompanyBenefitIdResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.companyBenefit = utils.objectToClass(
+            httpRes?.data,
+            shared.CompanyBenefit
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -469,7 +476,7 @@ export class CompanyBenefits {
    *
    * scope: `company_benefits:write`
    */
-  postV1CompaniesCompanyIdCompanyBenefits(
+  async postV1CompaniesCompanyIdCompanyBenefits(
     req: operations.PostV1CompaniesCompanyIdCompanyBenefitsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1CompaniesCompanyIdCompanyBenefitsResponse> {
@@ -502,7 +509,8 @@ export class CompanyBenefits {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -510,40 +518,40 @@ export class CompanyBenefits {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1CompaniesCompanyIdCompanyBenefitsResponse =
-        new operations.PostV1CompaniesCompanyIdCompanyBenefitsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBenefit = utils.objectToClass(
-              httpRes?.data,
-              shared.CompanyBenefit
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1CompaniesCompanyIdCompanyBenefitsResponse =
+      new operations.PostV1CompaniesCompanyIdCompanyBenefitsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.companyBenefit = utils.objectToClass(
+            httpRes?.data,
+            shared.CompanyBenefit
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -556,7 +564,7 @@ export class CompanyBenefits {
    *
    * scope: `company_benefits:write`
    */
-  putV1CompanyBenefitsCompanyBenefitId(
+  async putV1CompanyBenefitsCompanyBenefitId(
     req: operations.PutV1CompanyBenefitsCompanyBenefitIdRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1CompanyBenefitsCompanyBenefitIdResponse> {
@@ -589,7 +597,8 @@ export class CompanyBenefits {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -597,39 +606,39 @@ export class CompanyBenefits {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1CompanyBenefitsCompanyBenefitIdResponse =
-        new operations.PutV1CompanyBenefitsCompanyBenefitIdResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.companyBenefit = utils.objectToClass(
-              httpRes?.data,
-              shared.CompanyBenefit
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1CompanyBenefitsCompanyBenefitIdResponse =
+      new operations.PutV1CompanyBenefitsCompanyBenefitIdResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.companyBenefit = utils.objectToClass(
+            httpRes?.data,
+            shared.CompanyBenefit
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

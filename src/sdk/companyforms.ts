@@ -37,7 +37,7 @@ export class CompanyForms {
    * @remarks
    * Get a company form
    */
-  getV1CompanyForm(
+  async getV1CompanyForm(
     req: operations.GetV1CompanyFormRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompanyFormResponse> {
@@ -50,35 +50,36 @@ export class CompanyForms {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompanyFormResponse =
-        new operations.GetV1CompanyFormResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.objectToClass(httpRes?.data, shared.Form);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompanyFormResponse =
+      new operations.GetV1CompanyFormResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.form = utils.objectToClass(httpRes?.data, shared.Form);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -87,7 +88,7 @@ export class CompanyForms {
    * @remarks
    * Get the link to the form PDF
    */
-  getV1CompanyFormPdf(
+  async getV1CompanyFormPdf(
     req: operations.GetV1CompanyFormPdfRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompanyFormPdfResponse> {
@@ -104,35 +105,36 @@ export class CompanyForms {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompanyFormPdfResponse =
-        new operations.GetV1CompanyFormPdfResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompanyFormPdfResponse =
+      new operations.GetV1CompanyFormPdfResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -141,7 +143,7 @@ export class CompanyForms {
    * @remarks
    * Get a list of all company's forms
    */
-  getV1CompanyForms(
+  async getV1CompanyForms(
     req: operations.GetV1CompanyFormsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompanyFormsResponse> {
@@ -158,41 +160,42 @@ export class CompanyForms {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompanyFormsResponse =
-        new operations.GetV1CompanyFormsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.forms = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.forms = utils.objectToClass(
-              httpRes?.data,
-              shared.Form,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompanyFormsResponse =
+      new operations.GetV1CompanyFormsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.forms = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.forms = utils.objectToClass(
+            httpRes?.data,
+            shared.Form,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -201,7 +204,7 @@ export class CompanyForms {
    * @remarks
    * Sign a company form
    */
-  putV1CompanyFormSign(
+  async putV1CompanyFormSign(
     req: operations.PutV1CompanyFormSignRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1CompanyFormSignResponse> {
@@ -234,7 +237,8 @@ export class CompanyForms {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -242,36 +246,36 @@ export class CompanyForms {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1CompanyFormSignResponse =
-        new operations.PutV1CompanyFormSignResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.objectToClass(httpRes?.data, shared.Form);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1CompanyFormSignResponse =
+      new operations.PutV1CompanyFormSignResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.form = utils.objectToClass(httpRes?.data, shared.Form);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

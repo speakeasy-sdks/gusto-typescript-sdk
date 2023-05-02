@@ -1,6 +1,6 @@
 {
   "name": "@speakeasy-sdks/gusto",
-  "version": "0.10.0",
+  "version": "0.15.3",
   "author": "gusto",
   "scripts": {
     "prepare": "tsc --build"
@@ -22,5 +22,10 @@
   "files": [
     "dist",
     "README.md"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speakeasy-sdks/gusto-typescript-sdk.git",
+    "directory": "."
+  }
 }

@@ -38,7 +38,7 @@ export class TimeOffPolicies {
    * Get all time off policies for a company
    * scope: `time_off_policies:read`
    */
-  getCompaniesCompanyUuidTimeOffPolicies(
+  async getCompaniesCompanyUuidTimeOffPolicies(
     req: operations.GetCompaniesCompanyUuidTimeOffPoliciesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse> {
@@ -55,41 +55,42 @@ export class TimeOffPolicies {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse =
-        new operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicies = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.timeOffPolicies = utils.objectToClass(
-              httpRes?.data,
-              shared.TimeOffPolicy,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse =
+      new operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.timeOffPolicies = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.timeOffPolicies = utils.objectToClass(
+            httpRes?.data,
+            shared.TimeOffPolicy,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -99,7 +100,7 @@ export class TimeOffPolicies {
    * Get a time off policy
    * scope: `time_off_policies:read`
    */
-  getTimeOffPoliciesTimeOffPolicyUuid(
+  async getTimeOffPoliciesTimeOffPolicyUuid(
     req: operations.GetTimeOffPoliciesTimeOffPolicyUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse> {
@@ -116,38 +117,39 @@ export class TimeOffPolicies {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse =
-        new operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.objectToClass(
-              httpRes?.data,
-              shared.TimeOffPolicy
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse =
+      new operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.timeOffPolicy = utils.objectToClass(
+            httpRes?.data,
+            shared.TimeOffPolicy
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -157,7 +159,7 @@ export class TimeOffPolicies {
    * Create a Time Off Policy
    * scope: `time_off_policies:write`
    */
-  postCompaniesCompanyUuidTimeOffPolicies(
+  async postCompaniesCompanyUuidTimeOffPolicies(
     req: operations.PostCompaniesCompanyUuidTimeOffPoliciesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse> {
@@ -190,7 +192,8 @@ export class TimeOffPolicies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -198,40 +201,40 @@ export class TimeOffPolicies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse =
-        new operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 201:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.objectToClass(
-              httpRes?.data,
-              shared.TimeOffPolicy
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse =
+      new operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 201:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.timeOffPolicy = utils.objectToClass(
+            httpRes?.data,
+            shared.TimeOffPolicy
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -248,7 +251,7 @@ export class TimeOffPolicies {
    *
    * If none of the parameters is passed in, the accrued time off hour will be 0.
    */
-  postV1PayrollsPayrollIdCalculateAccruingTimeOffHours(
+  async postV1PayrollsPayrollIdCalculateAccruingTimeOffHours(
     req: operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse> {
@@ -284,7 +287,8 @@ export class TimeOffPolicies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -292,43 +296,43 @@ export class TimeOffPolicies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse =
-        new operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.accruingTimeOffHours = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.accruingTimeOffHours = utils.objectToClass(
-              httpRes?.data,
-              shared.AccruingTimeOffHour,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse =
+      new operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.accruingTimeOffHours = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.accruingTimeOffHours = utils.objectToClass(
+            httpRes?.data,
+            shared.AccruingTimeOffHour,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -338,7 +342,7 @@ export class TimeOffPolicies {
    * Update a Time Off Policy
    * scope: `time_off_policies:write`
    */
-  putTimeOffPoliciesTimeOffPolicyUuid(
+  async putTimeOffPoliciesTimeOffPolicyUuid(
     req: operations.PutTimeOffPoliciesTimeOffPolicyUuidRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse> {
@@ -371,7 +375,8 @@ export class TimeOffPolicies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -379,40 +384,40 @@ export class TimeOffPolicies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse =
-        new operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.objectToClass(
-              httpRes?.data,
-              shared.TimeOffPolicy
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse =
+      new operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.timeOffPolicy = utils.objectToClass(
+            httpRes?.data,
+            shared.TimeOffPolicy
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -421,7 +426,7 @@ export class TimeOffPolicies {
    * @remarks
    * Deactivate a time off policy
    */
-  putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate(
+  async putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate(
     req: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse> {
@@ -441,46 +446,47 @@ export class TimeOffPolicies {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse =
-        new operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.objectToClass(
-              httpRes?.data,
-              shared.TimeOffPolicy
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse =
+      new operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.timeOffPolicy = utils.objectToClass(
+            httpRes?.data,
+            shared.TimeOffPolicy
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -490,7 +496,7 @@ export class TimeOffPolicies {
    * Remove employees from a time off policy
    * scope: `time_off_policies:write`
    */
-  putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees(
+  async putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees(
     req: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse> {
@@ -526,7 +532,8 @@ export class TimeOffPolicies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -534,42 +541,42 @@ export class TimeOffPolicies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse =
-        new operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.objectToClass(
-              httpRes?.data,
-              shared.TimeOffPolicy
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse =
+      new operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.timeOffPolicy = utils.objectToClass(
+            httpRes?.data,
+            shared.TimeOffPolicy
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -579,7 +586,7 @@ export class TimeOffPolicies {
    * Add employees to a time off policy. Employees are required to have at least one job to be added to a time off policy. Accepts starting balances for non-unlimited policies
    * scope: `time_off_policies:write`
    */
-  putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees(
+  async putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees(
     req: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse> {
@@ -615,7 +622,8 @@ export class TimeOffPolicies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -623,42 +631,42 @@ export class TimeOffPolicies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse =
-        new operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.objectToClass(
-              httpRes?.data,
-              shared.TimeOffPolicy
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse =
+      new operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.timeOffPolicy = utils.objectToClass(
+            httpRes?.data,
+            shared.TimeOffPolicy
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -668,7 +676,7 @@ export class TimeOffPolicies {
    * Updates time off hours balances for employees for a time off policy
    * scope: `time_off_policies:write`
    */
-  putVersionTimeOffPoliciesTimeOffPolicyUuidBalance(
+  async putVersionTimeOffPoliciesTimeOffPolicyUuidBalance(
     req: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse> {
@@ -704,7 +712,8 @@ export class TimeOffPolicies {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -712,41 +721,39 @@ export class TimeOffPolicies {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse =
-        new operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.timeOffPolicy = utils.objectToClass(
-              httpRes?.data,
-              shared.TimeOffPolicy
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse =
+      new operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.timeOffPolicy = utils.objectToClass(
+            httpRes?.data,
+            shared.TimeOffPolicy
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

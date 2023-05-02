@@ -39,7 +39,7 @@ export class ContractorPayments {
    *
    * scope: `payrolls:run`
    */
-  deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(
+  async deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(
     req: operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse> {
@@ -59,32 +59,33 @@ export class ContractorPayments {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "delete",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse =
-        new operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case [204, 404].includes(httpRes?.status):
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse =
+      new operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case [204, 404].includes(httpRes?.status):
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -95,7 +96,7 @@ export class ContractorPayments {
    *
    * scope: `payrolls:read`
    */
-  getV1CompaniesCompanyIdContractorPaymentContractorPayment(
+  async getV1CompaniesCompanyIdContractorPaymentContractorPayment(
     req: operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse> {
@@ -115,40 +116,41 @@ export class ContractorPayments {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse =
-        new operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorPayment = utils.objectToClass(
-              httpRes?.data,
-              shared.ContractorPayment
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse =
+      new operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.contractorPayment = utils.objectToClass(
+            httpRes?.data,
+            shared.ContractorPayment
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -159,7 +161,7 @@ export class ContractorPayments {
    *
    * scope: `payrolls:read`
    */
-  getV1CompaniesCompanyIdContractorPayments(
+  async getV1CompaniesCompanyIdContractorPayments(
     req: operations.GetV1CompaniesCompanyIdContractorPaymentsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1CompaniesCompanyIdContractorPaymentsResponse> {
@@ -180,36 +182,37 @@ export class ContractorPayments {
 
     const queryParams: string = utils.serializeQueryParams(req);
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url + queryParams,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1CompaniesCompanyIdContractorPaymentsResponse =
-        new operations.GetV1CompaniesCompanyIdContractorPaymentsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.getV1CompaniesCompanyIdContractorPayments200ApplicationJSONOneOf =
-              httpRes?.data;
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1CompaniesCompanyIdContractorPaymentsResponse =
+      new operations.GetV1CompaniesCompanyIdContractorPaymentsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.getV1CompaniesCompanyIdContractorPayments200ApplicationJSONOneOf =
+            httpRes?.data;
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -227,7 +230,7 @@ export class ContractorPayments {
    *
    * scope: `payrolls:read`
    */
-  getV1ContractorPaymentsContractorPaymentUuidReceipt(
+  async getV1ContractorPaymentsContractorPaymentUuidReceipt(
     req: operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse> {
@@ -247,40 +250,41 @@ export class ContractorPayments {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse =
-        new operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse(
-          {
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-          }
-        );
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorPaymentReceipt = utils.objectToClass(
-              httpRes?.data,
-              shared.ContractorPaymentReceipt
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse =
+      new operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse(
+        {
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        }
+      );
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.contractorPaymentReceipt = utils.objectToClass(
+            httpRes?.data,
+            shared.ContractorPaymentReceipt
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -291,7 +295,7 @@ export class ContractorPayments {
    *
    * scope: `payrolls:run`
    */
-  postV1CompaniesCompanyIdContractorPayments(
+  async postV1CompaniesCompanyIdContractorPayments(
     req: operations.PostV1CompaniesCompanyIdContractorPaymentsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1CompaniesCompanyIdContractorPaymentsResponse> {
@@ -326,7 +330,8 @@ export class ContractorPayments {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -334,39 +339,39 @@ export class ContractorPayments {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1CompaniesCompanyIdContractorPaymentsResponse =
-        new operations.PostV1CompaniesCompanyIdContractorPaymentsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.contractorPayment = utils.objectToClass(
-              httpRes?.data,
-              shared.ContractorPayment
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1CompaniesCompanyIdContractorPaymentsResponse =
+      new operations.PostV1CompaniesCompanyIdContractorPaymentsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.contractorPayment = utils.objectToClass(
+            httpRes?.data,
+            shared.ContractorPayment
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }

@@ -37,7 +37,7 @@ export class EmployeeForms {
    * @remarks
    * Get an employee form
    */
-  getV1EmployeeForm(
+  async getV1EmployeeForm(
     req: operations.GetV1EmployeeFormRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1EmployeeFormResponse> {
@@ -54,35 +54,36 @@ export class EmployeeForms {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1EmployeeFormResponse =
-        new operations.GetV1EmployeeFormResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.objectToClass(httpRes?.data, shared.Form);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1EmployeeFormResponse =
+      new operations.GetV1EmployeeFormResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.form = utils.objectToClass(httpRes?.data, shared.Form);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -91,7 +92,7 @@ export class EmployeeForms {
    * @remarks
    * Get the link to the form PDF
    */
-  getV1EmployeeFormPdf(
+  async getV1EmployeeFormPdf(
     req: operations.GetV1EmployeeFormPdfRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1EmployeeFormPdfResponse> {
@@ -108,35 +109,36 @@ export class EmployeeForms {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1EmployeeFormPdfResponse =
-        new operations.GetV1EmployeeFormPdfResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1EmployeeFormPdfResponse =
+      new operations.GetV1EmployeeFormPdfResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -145,7 +147,7 @@ export class EmployeeForms {
    * @remarks
    * Get a list of all employee's forms
    */
-  getV1EmployeeForms(
+  async getV1EmployeeForms(
     req: operations.GetV1EmployeeFormsRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.GetV1EmployeeFormsResponse> {
@@ -162,41 +164,42 @@ export class EmployeeForms {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "get",
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.GetV1EmployeeFormsResponse =
-        new operations.GetV1EmployeeFormsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.forms = [];
-            const resFieldDepth: number = utils.getResFieldDepth(res);
-            res.forms = utils.objectToClass(
-              httpRes?.data,
-              shared.Form,
-              resFieldDepth
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.GetV1EmployeeFormsResponse =
+      new operations.GetV1EmployeeFormsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.forms = [];
+          const resFieldDepth: number = utils.getResFieldDepth(res);
+          res.forms = utils.objectToClass(
+            httpRes?.data,
+            shared.Form,
+            resFieldDepth
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -212,7 +215,7 @@ export class EmployeeForms {
    * `scope: employees:write`
    *
    */
-  postV1SandboxGenerateW2(
+  async postV1SandboxGenerateW2(
     req: operations.PostV1SandboxGenerateW2RequestBody,
     config?: AxiosRequestConfig
   ): Promise<operations.PostV1SandboxGenerateW2Response> {
@@ -241,7 +244,8 @@ export class EmployeeForms {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -249,40 +253,40 @@ export class EmployeeForms {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PostV1SandboxGenerateW2Response =
-        new operations.PostV1SandboxGenerateW2Response({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.objectToClass(
-              httpRes?.data,
-              operations.PostV1SandboxGenerateW2Form
-            );
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PostV1SandboxGenerateW2Response =
+      new operations.PostV1SandboxGenerateW2Response({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.form = utils.objectToClass(
+            httpRes?.data,
+            operations.PostV1SandboxGenerateW2Form
+          );
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 
   /**
@@ -291,7 +295,7 @@ export class EmployeeForms {
    * @remarks
    * Sign a company form
    */
-  putV1EmployeeFormSign(
+  async putV1EmployeeFormSign(
     req: operations.PutV1EmployeeFormSignRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.PutV1EmployeeFormSignResponse> {
@@ -324,7 +328,8 @@ export class EmployeeForms {
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "put",
       headers: headers,
@@ -332,36 +337,36 @@ export class EmployeeForms {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.PutV1EmployeeFormSignResponse =
-        new operations.PutV1EmployeeFormSignResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.form = utils.objectToClass(httpRes?.data, shared.Form);
-          }
-          break;
-        case httpRes?.status == 404:
-          break;
-        case httpRes?.status == 422:
-          if (utils.matchContentType(contentType, `application/json`)) {
-            res.unprocessableEntityErrorObject = utils.objectToClass(
-              httpRes?.data,
-              shared.UnprocessableEntityErrorObject
-            );
-          }
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
-    });
+    const res: operations.PutV1EmployeeFormSignResponse =
+      new operations.PutV1EmployeeFormSignResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.form = utils.objectToClass(httpRes?.data, shared.Form);
+        }
+        break;
+      case httpRes?.status == 404:
+        break;
+      case httpRes?.status == 422:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.unprocessableEntityErrorObject = utils.objectToClass(
+            httpRes?.data,
+            shared.UnprocessableEntityErrorObject
+          );
+        }
+        break;
+    }
+
+    return res;
   }
 }
