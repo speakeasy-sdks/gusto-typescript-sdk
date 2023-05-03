@@ -19,6 +19,8 @@ const sdk = new Gusto();
 
 sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails({
   companyId: "cum",
+}, {
+  authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
 }).then((res: GetV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
   if (res.statusCode == 200) {
     // handle response
