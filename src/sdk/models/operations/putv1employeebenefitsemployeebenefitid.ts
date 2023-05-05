@@ -87,7 +87,7 @@ export enum PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTax
   Unset = "unset",
   ReducesTaxableIncome = "reduces_taxable_income",
   DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
-  Unknown = "",
+  LessThanNilGreaterThan = "<nil>",
 }
 
 export class PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody extends SpeakeasyBase {

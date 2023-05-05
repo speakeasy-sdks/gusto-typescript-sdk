@@ -180,7 +180,7 @@ sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits({
     coverageAmount: "tenetur",
     coverageSalaryMultiplier: "dignissimos",
     deductAsPercentage: false,
-    deductionReducesTaxableIncome: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncomeEnum.Unknown,
+    deductionReducesTaxableIncome: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncomeEnum.LessThanNilGreaterThan,
     elective: false,
     employeeDeduction: "distinctio",
     employeeDeductionAnnualMaximum: "quod",
