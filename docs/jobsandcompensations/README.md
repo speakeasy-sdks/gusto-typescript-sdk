@@ -25,7 +25,7 @@ import { DeleteV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -56,7 +56,7 @@ import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speake
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -84,7 +84,7 @@ import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speake
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -115,7 +115,7 @@ import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speake
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -148,7 +148,7 @@ import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speake
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -179,7 +179,7 @@ import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speake
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -218,7 +218,7 @@ import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speake
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -258,7 +258,7 @@ import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speake
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

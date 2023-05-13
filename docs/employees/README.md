@@ -26,7 +26,7 @@ import { DeleteV1EmployeeResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -61,7 +61,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -90,7 +90,7 @@ import { CustomFieldTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/share
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -119,7 +119,7 @@ import { GetV1EmployeesEmployeeIdHomeAddressResponse } from "@speakeasy-sdks/gus
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -181,7 +181,7 @@ import { GetV1EmployeesEmployeeIdOnboardingStatusResponse } from "@speakeasy-sdk
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -208,7 +208,7 @@ import { GetVersionEmployeesTimeOffActivitiesResponse } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -243,7 +243,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -286,7 +286,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -320,7 +320,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -357,7 +357,7 @@ import { PutV1EmployeesEmployeeIdHomeAddressResponse } from "@speakeasy-sdks/gus
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -401,7 +401,7 @@ import { PutV1EmployeesEmployeeIdOnboardingStatusResponse } from "@speakeasy-sdk
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

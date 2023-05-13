@@ -20,7 +20,7 @@ import { DeleteV1EmployeesEmployeeIdTerminationsResponse } from "@speakeasy-sdks
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -47,7 +47,7 @@ import { GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse } from 
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -76,7 +76,7 @@ import { GetV1EmployeesEmployeeIdTerminationsResponse } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -105,7 +105,7 @@ import { PostV1EmployeesEmployeeIdTerminationsResponse } from "@speakeasy-sdks/g
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -138,7 +138,7 @@ import { PutV1TerminationsEmployeeIdResponse } from "@speakeasy-sdks/gusto/dist/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

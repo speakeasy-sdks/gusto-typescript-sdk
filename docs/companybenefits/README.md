@@ -27,7 +27,7 @@ import { DeleteV1CompanyBenefitsCompanyBenefitIdResponse } from "@speakeasy-sdks
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -56,7 +56,7 @@ import { GetV1BenefitsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/ope
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -83,7 +83,7 @@ import { GetV1BenefitsBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/m
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -110,7 +110,7 @@ import { GetV1BenefitsBenefitsIdRequirementsResponse } from "@speakeasy-sdks/gus
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -137,7 +137,7 @@ import { GetV1BenefitsCompanyBenefitIdSummaryResponse } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -169,7 +169,7 @@ import { GetV1CompaniesCompanyIdCompanyBenefitsResponse } from "@speakeasy-sdks/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -201,7 +201,7 @@ import { GetV1CompanyBenefitsCompanyBenefitIdResponse } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -231,7 +231,7 @@ import { PostV1CompaniesCompanyIdCompanyBenefitsResponse } from "@speakeasy-sdks
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -267,7 +267,7 @@ import { PutV1CompanyBenefitsCompanyBenefitIdResponse } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

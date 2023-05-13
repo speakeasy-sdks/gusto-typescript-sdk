@@ -19,7 +19,7 @@ import { GetV1ContractorFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/mode
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -45,7 +45,7 @@ import { GetV1ContractorFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/m
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -71,7 +71,7 @@ import { GetV1ContractorFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/mod
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -103,7 +103,7 @@ import { PostV1SandboxGenerate1099Response } from "@speakeasy-sdks/gusto/dist/sd
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

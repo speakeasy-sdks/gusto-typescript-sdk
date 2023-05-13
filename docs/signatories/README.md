@@ -20,7 +20,7 @@ import { DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse } from "@s
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -47,7 +47,7 @@ import { SignatoryIdentityVerificationStatusEnum } from "@speakeasy-sdks/gusto/d
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -73,7 +73,7 @@ import { SignatoryIdentityVerificationStatusEnum } from "@speakeasy-sdks/gusto/d
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -105,7 +105,7 @@ import { SignatoryIdentityVerificationStatusEnum } from "@speakeasy-sdks/gusto/d
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -148,7 +148,7 @@ import { SignatoryIdentityVerificationStatusEnum } from "@speakeasy-sdks/gusto/d
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

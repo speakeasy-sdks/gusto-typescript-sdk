@@ -22,7 +22,7 @@ import { DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse } 
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -55,7 +55,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -83,7 +83,7 @@ import { GetV1CompaniesCompanyIdContractorPaymentsResponse } from "@speakeasy-sd
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -124,7 +124,7 @@ import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -160,7 +160,7 @@ import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

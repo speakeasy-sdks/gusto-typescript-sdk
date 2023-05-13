@@ -32,7 +32,7 @@ import { CompanyCompanyStatusEnum, CompanyEntityTypeEnum, CompanyTierEnum } from
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -57,7 +57,7 @@ import { GetV1CompaniesCompanyIdAdminsResponse } from "@speakeasy-sdks/gusto/dis
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -87,7 +87,7 @@ import { CustomFieldTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/share
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -125,7 +125,7 @@ import { GetV1CompanyFinishOnboardingResponse } from "@speakeasy-sdks/gusto/dist
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -150,7 +150,7 @@ import { GetV1CompanyOnboardingStatusResponse } from "@speakeasy-sdks/gusto/dist
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -175,7 +175,7 @@ import { PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse } fr
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -205,7 +205,7 @@ import { PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse } 
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -233,7 +233,7 @@ import { PostV1CompaniesCompanyIdAdminsResponse } from "@speakeasy-sdks/gusto/di
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -263,7 +263,7 @@ import { PostV1PartnerManagedCompaniesResponse } from "@speakeasy-sdks/gusto/dis
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -310,7 +310,7 @@ import { PostV1ProvisionResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/o
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -379,7 +379,7 @@ import { PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse } from "@speakea
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

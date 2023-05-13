@@ -25,7 +25,7 @@ import { DeleteDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -52,7 +52,7 @@ import { GetCompaniesDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -80,7 +80,7 @@ import { GetDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/ope
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -107,7 +107,7 @@ import { PostDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/o
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -138,7 +138,7 @@ import { PutAddPeopleToDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -178,7 +178,7 @@ import { PutDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/op
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -210,7 +210,7 @@ import { PutRemovePeopleFromDepartmentResponse } from "@speakeasy-sdks/gusto/dis
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

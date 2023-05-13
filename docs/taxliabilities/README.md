@@ -19,7 +19,7 @@ import { GetV1TaxLiabilitiesResponse } from "@speakeasy-sdks/gusto/dist/sdk/mode
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -45,7 +45,7 @@ import { PutV1TaxLiabilitiesResponse } from "@speakeasy-sdks/gusto/dist/sdk/mode
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -95,7 +95,7 @@ import { PutV1TaxLiabilitiesFinishResponse } from "@speakeasy-sdks/gusto/dist/sd
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

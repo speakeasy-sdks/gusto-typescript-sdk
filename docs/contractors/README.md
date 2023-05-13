@@ -24,7 +24,7 @@ import { DeleteV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/d
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -52,7 +52,7 @@ import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeE
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -82,7 +82,7 @@ import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeE
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -109,7 +109,7 @@ import { GetV1ContractorsContractorUuidAddressResponse } from "@speakeasy-sdks/g
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -168,7 +168,7 @@ import { ContractorOnboardingStatusOnboardingStatusEnum } from "@speakeasy-sdks/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -200,7 +200,7 @@ import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeE
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -253,7 +253,7 @@ import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeE
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -298,7 +298,7 @@ import { PutV1ContractorsContractorUuidAddressResponse } from "@speakeasy-sdks/g
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -346,7 +346,7 @@ import { ContractorOnboardingStatusOnboardingStatusEnum } from "@speakeasy-sdks/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

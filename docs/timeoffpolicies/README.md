@@ -25,7 +25,7 @@ import { GetCompaniesCompanyUuidTimeOffPoliciesResponse } from "@speakeasy-sdks/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -51,7 +51,7 @@ import { GetTimeOffPoliciesTimeOffPolicyUuidResponse } from "@speakeasy-sdks/gus
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -80,7 +80,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -125,7 +125,7 @@ import { PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse } from "@s
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -162,7 +162,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -198,7 +198,7 @@ import { PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse } from "@speake
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -224,7 +224,7 @@ import { PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse } from "@s
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -257,7 +257,7 @@ import { PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse } from "
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -303,7 +303,7 @@ import { PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse } from "@spea
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

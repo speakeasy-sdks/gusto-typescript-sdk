@@ -21,7 +21,7 @@ import { DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse } from "@
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -55,7 +55,7 @@ import { GetV1CompaniesCompanyIdEarningTypesResponse } from "@speakeasy-sdks/gus
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -84,7 +84,7 @@ import { PostV1CompaniesCompanyIdEarningTypesResponse } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -114,7 +114,7 @@ import { PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse } from "@spe
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

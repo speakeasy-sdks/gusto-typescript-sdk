@@ -22,7 +22,7 @@ import { DeleteV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -49,7 +49,7 @@ import { GetV1CompanyExternalPayrollsResponse } from "@speakeasy-sdks/gusto/dist
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -75,7 +75,7 @@ import { GetV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/mod
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -101,7 +101,7 @@ import { GetV1ExternalPayrollCalculateTaxesResponse } from "@speakeasy-sdks/gust
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -128,7 +128,7 @@ import { PostV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/mo
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -162,7 +162,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

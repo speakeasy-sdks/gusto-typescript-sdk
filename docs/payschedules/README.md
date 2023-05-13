@@ -24,7 +24,7 @@ import { GetV1CompaniesCompanyIdPayPeriodsResponse } from "@speakeasy-sdks/gusto
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -54,7 +54,7 @@ import { PayScheduleFrequencyEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -84,7 +84,7 @@ import { PayScheduleFrequencyEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -118,7 +118,7 @@ import { PayScheduleFrequencyEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -151,7 +151,7 @@ import { PayScheduleFrequencyEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

@@ -20,7 +20,7 @@ import { GetV1MeResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operation
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 

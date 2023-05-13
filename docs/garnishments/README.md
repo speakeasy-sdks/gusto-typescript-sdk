@@ -21,7 +21,7 @@ import { GetV1EmployeesEmployeeIdGarnishmentsResponse } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -50,7 +50,7 @@ import { GetV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/di
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -77,7 +77,7 @@ import { PostV1EmployeesEmployeeIdGarnishmentsResponse } from "@speakeasy-sdks/g
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -115,7 +115,7 @@ import { PutV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/di
 
 const sdk = new Gusto({
   security: {
-    authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
+    authorization: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
