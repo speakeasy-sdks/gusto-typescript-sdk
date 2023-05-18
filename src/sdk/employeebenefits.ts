@@ -58,10 +58,16 @@ export class EmployeeBenefits {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
+    const headers = { ...config?.headers };
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
       url: url,
       method: "delete",
+      headers: headers,
       ...config,
     });
 
@@ -110,10 +116,16 @@ export class EmployeeBenefits {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
+    const headers = { ...config?.headers };
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
       url: url,
       method: "get",
+      headers: headers,
       ...config,
     });
 
@@ -172,12 +184,17 @@ export class EmployeeBenefits {
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
+    const headers = { ...config?.headers };
     const queryParams: string = utils.serializeQueryParams(req);
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
       url: url + queryParams,
       method: "get",
+      headers: headers,
       ...config,
     });
 
@@ -255,6 +272,9 @@ export class EmployeeBenefits {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
@@ -335,6 +355,9 @@ export class EmployeeBenefits {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
@@ -421,6 +444,9 @@ export class EmployeeBenefits {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
