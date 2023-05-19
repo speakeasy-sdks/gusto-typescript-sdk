@@ -85,7 +85,7 @@ export class EmployeeBenefitContribution extends SpeakeasyBase {
 /**
  * Whether the employee deduction reduces taxable income or not. Only valid for Group Term Life benefits. Note: when the value is not "unset", coverage amount and coverage salary multiplier are ignored.
  */
-export enum EmployeeBenefitDeductionReducesTaxableIncomeEnum {
+export enum EmployeeBenefitDeductionReducesTaxableIncome {
   Unset = "unset",
   ReducesTaxableIncome = "reduces_taxable_income",
   DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
@@ -172,7 +172,7 @@ export class EmployeeBenefit extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "deduction_reduces_taxable_income" })
-  deductionReducesTaxableIncome?: EmployeeBenefitDeductionReducesTaxableIncomeEnum;
+  deductionReducesTaxableIncome?: EmployeeBenefitDeductionReducesTaxableIncome;
 
   /**
    * Whether the company contribution is elective (aka matching). For "tiered" contribution types, this is always true.

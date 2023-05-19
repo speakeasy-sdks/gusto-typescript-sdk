@@ -61,14 +61,11 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
+import { GetV1CompaniesCompanyIdPayrollsInclude, GetV1CompaniesCompanyIdPayrollsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  GetV1CompaniesCompanyIdPayrollsIncludeEnum,
-  GetV1CompaniesCompanyIdPayrollsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethodEnum,
-  PayrollOffCycleReasonEnum,
-  PayrollWithholdingPayPeriodEnum,
+  PayrollEmployeeCompensationsPaymentMethod,
+  PayrollOffCycleReason,
+  PayrollWithholdingPayPeriod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -81,7 +78,7 @@ sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
   companyId: "in",
   endDate: "officiis",
   include: [
-    GetV1CompaniesCompanyIdPayrollsIncludeEnum.PayrollStatusMeta,
+    GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
   ],
   includeOffCycle: false,
   processed: false,
@@ -110,13 +107,13 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  GetV1CompaniesCompanyIdPayrollsPayrollIdIncludeEnum,
+  GetV1CompaniesCompanyIdPayrollsPayrollIdInclude,
   GetV1CompaniesCompanyIdPayrollsPayrollIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  PayrollEmployeeCompensationsPaymentMethodEnum,
-  PayrollOffCycleReasonEnum,
-  PayrollWithholdingPayPeriodEnum,
+  PayrollEmployeeCompensationsPaymentMethod,
+  PayrollOffCycleReason,
+  PayrollWithholdingPayPeriod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -127,7 +124,7 @@ const sdk = new Gusto({
 
 sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId({
   companyId: "praesentium",
-  include: GetV1CompaniesCompanyIdPayrollsPayrollIdIncludeEnum.PayrollStatusMeta,
+  include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.PayrollStatusMeta,
   payrollId: "laboriosam",
   showCalculation: "dolorum",
 }).then((res: GetV1CompaniesCompanyIdPayrollsPayrollIdResponse) => {
@@ -239,14 +236,14 @@ Creates a new, unprocessed, off-cycle payroll.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReasonEnum,
-  PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriodEnum,
+  PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason,
+  PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod,
   PostV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  PayrollEmployeeCompensationsPaymentMethodEnum,
-  PayrollOffCycleReasonEnum,
-  PayrollWithholdingPayPeriodEnum,
+  PayrollEmployeeCompensationsPaymentMethod,
+  PayrollOffCycleReason,
+  PayrollWithholdingPayPeriod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -264,10 +261,10 @@ sdk.payrolls.postV1CompaniesCompanyIdPayrolls({
     endDate: "nostrum",
     fixedWithholdingRate: false,
     offCycle: false,
-    offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReasonEnum.Correction,
+    offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason.Correction,
     skipRegularDeductions: false,
     startDate: "dolorum",
-    withholdingPayPeriod: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriodEnum.Monthly,
+    withholdingPayPeriod: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod.Monthly,
   },
   companyId: "accusamus",
 }).then((res: PostV1CompaniesCompanyIdPayrollsResponse) => {
@@ -321,9 +318,9 @@ Transitions a `processed` payroll back to the `unprocessed` state. A payroll can
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  PayrollEmployeeCompensationsPaymentMethodEnum,
-  PayrollOffCycleReasonEnum,
-  PayrollWithholdingPayPeriodEnum,
+  PayrollEmployeeCompensationsPaymentMethod,
+  PayrollOffCycleReason,
+  PayrollWithholdingPayPeriod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -353,13 +350,13 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethodEnum,
+  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod,
   PutV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  PayrollEmployeeCompensationsPaymentMethodEnum,
-  PayrollOffCycleReasonEnum,
-  PayrollWithholdingPayPeriodEnum,
+  PayrollEmployeeCompensationsPaymentMethod,
+  PayrollOffCycleReason,
+  PayrollWithholdingPayPeriod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -428,7 +425,7 @@ sdk.payrolls.putV1CompaniesCompanyIdPayrolls({
             policyUuid: "officiis",
           },
         ],
-        paymentMethod: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethodEnum.Check,
+        paymentMethod: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod.Check,
       },
     ],
     version: "accusamus",
@@ -455,13 +452,13 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethodEnum,
+  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  PayrollEmployeeCompensationsPaymentMethodEnum,
-  PayrollOffCycleReasonEnum,
-  PayrollWithholdingPayPeriodEnum,
+  PayrollEmployeeCompensationsPaymentMethod,
+  PayrollOffCycleReason,
+  PayrollWithholdingPayPeriod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -537,7 +534,7 @@ sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate({
             policyUuid: "omnis",
           },
         ],
-        paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethodEnum.DirectDeposit,
+        paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
       },
     ],
     version: "molestiae",

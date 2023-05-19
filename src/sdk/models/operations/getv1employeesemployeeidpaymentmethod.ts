@@ -24,7 +24,7 @@ export class GetV1EmployeesEmployeeIdPaymentMethodResponse extends SpeakeasyBase
    * Example response
    */
   @SpeakeasyMetadata()
-  employeePaymentMethod?: shared.EmployeePaymentMethod;
+  employeePaymentMethod?: shared.EmployeePaymentMethod1;
 
   @SpeakeasyMetadata()
   statusCode: number;

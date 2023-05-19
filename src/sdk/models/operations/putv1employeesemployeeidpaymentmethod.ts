@@ -10,7 +10,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * Describes how the payment will be split. If split_by is Percentage, then the split amounts must add up to exactly 100. If split_by is Amount, then the last split amount must be nil to capture the remainder.
  */
-export enum PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitByEnum {
+export enum PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy {
   Amount = "Amount",
   Percentage = "Percentage",
 }
@@ -51,7 +51,7 @@ export class PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits extends Spea
 /**
  * The payment method type. If type is Check, then split_by and splits do not need to be populated. If type is Direct Deposit, split_by and splits are required.
  */
-export enum PutV1EmployeesEmployeeIdPaymentMethodRequestBodyTypeEnum {
+export enum PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType {
   DirectDeposit = "Direct Deposit",
   Check = "Check",
 }
@@ -62,7 +62,7 @@ export class PutV1EmployeesEmployeeIdPaymentMethodRequestBody extends SpeakeasyB
    */
   @SpeakeasyMetadata()
   @Expose({ name: "split_by" })
-  splitBy?: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitByEnum;
+  splitBy?: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy;
 
   @SpeakeasyMetadata({
     elemType: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits,
@@ -76,7 +76,7 @@ export class PutV1EmployeesEmployeeIdPaymentMethodRequestBody extends SpeakeasyB
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyTypeEnum;
+  type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType;
 
   /**
    * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
@@ -107,7 +107,7 @@ export class PutV1EmployeesEmployeeIdPaymentMethodResponse extends SpeakeasyBase
    * Example response
    */
   @SpeakeasyMetadata()
-  employeePaymentMethod?: shared.EmployeePaymentMethod;
+  employeePaymentMethod?: shared.EmployeePaymentMethod1;
 
   @SpeakeasyMetadata()
   statusCode: number;

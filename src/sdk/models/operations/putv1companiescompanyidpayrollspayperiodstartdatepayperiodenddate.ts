@@ -85,7 +85,7 @@ export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRe
 /**
  * The employee's compensation payment method. Invalid values will be ignored.
  */
-export enum PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethodEnum {
+export enum PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod {
   DirectDeposit = "Direct Deposit",
   Check = "Check",
 }
@@ -146,7 +146,7 @@ export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRe
    */
   @SpeakeasyMetadata()
   @Expose({ name: "payment_method" })
-  paymentMethod?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethodEnum;
+  paymentMethod?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody extends SpeakeasyBase {

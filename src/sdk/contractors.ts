@@ -55,6 +55,7 @@ export class Contractors {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...config?.headers };
+    headers["Accept"] = "*/*";
     headers[
       "user-agent"
     ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
@@ -114,6 +115,7 @@ export class Contractors {
 
     const headers = { ...config?.headers };
     const queryParams: string = utils.serializeQueryParams(req);
+    headers["Accept"] = "application/json";
     headers[
       "user-agent"
     ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
@@ -183,6 +185,7 @@ export class Contractors {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...config?.headers };
+    headers["Accept"] = "application/json";
     headers[
       "user-agent"
     ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
@@ -249,6 +252,7 @@ export class Contractors {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...config?.headers };
+    headers["Accept"] = "application/json";
     headers[
       "user-agent"
     ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
@@ -349,6 +353,7 @@ export class Contractors {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...config?.headers };
+    headers["Accept"] = "application/json;q=1, application/xml;q=0";
     headers[
       "user-agent"
     ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
@@ -378,7 +383,7 @@ export class Contractors {
         if (utils.matchContentType(contentType, `application/json`)) {
           res.contractorOnboardingStatus = utils.objectToClass(
             httpRes?.data,
-            shared.ContractorOnboardingStatus
+            shared.ContractorOnboardingStatus1
           );
         }
         if (utils.matchContentType(contentType, `application/xml`)) {
@@ -436,6 +441,7 @@ export class Contractors {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
+    headers["Accept"] = "application/json;q=1, application/json;q=0";
     headers[
       "user-agent"
     ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
@@ -529,6 +535,7 @@ export class Contractors {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
+    headers["Accept"] = "application/json;q=1, application/json;q=0";
     headers[
       "user-agent"
     ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
@@ -618,6 +625,7 @@ export class Contractors {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
+    headers["Accept"] = "application/json;q=1, application/json;q=0";
     headers[
       "user-agent"
     ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
@@ -719,6 +727,8 @@ export class Contractors {
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
+    headers["Accept"] =
+      "application/json;q=1, application/json;q=0.7, application/xml;q=0";
     headers[
       "user-agent"
     ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
@@ -749,7 +759,7 @@ export class Contractors {
         if (utils.matchContentType(contentType, `application/json`)) {
           res.contractorOnboardingStatus = utils.objectToClass(
             httpRes?.data,
-            shared.ContractorOnboardingStatus
+            shared.ContractorOnboardingStatus1
           );
         }
         if (utils.matchContentType(contentType, `application/xml`)) {

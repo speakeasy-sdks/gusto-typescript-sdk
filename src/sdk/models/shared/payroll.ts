@@ -112,7 +112,7 @@ export class PayrollEmployeeCompensationsPaidTimeOff extends SpeakeasyBase {
 /**
  * The employee's compensation payment method.
  */
-export enum PayrollEmployeeCompensationsPaymentMethodEnum {
+export enum PayrollEmployeeCompensationsPaymentMethod {
   Check = "Check",
   DirectDeposit = "Direct Deposit",
 }
@@ -209,7 +209,7 @@ export class PayrollEmployeeCompensations extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "payment_method" })
-  paymentMethod?: PayrollEmployeeCompensationsPaymentMethodEnum;
+  paymentMethod?: PayrollEmployeeCompensationsPaymentMethod;
 
   /**
    * An array of employer and employee taxes for the pay period. Taxes are only included for processed payroll when the include parameter is present.
@@ -223,7 +223,7 @@ export class PayrollEmployeeCompensations extends SpeakeasyBase {
 /**
  * The off-cycle reason
  */
-export enum PayrollOffCycleReasonEnum {
+export enum PayrollOffCycleReason {
   BenefitReversal = "Benefit reversal",
   Bonus = "Bonus",
   Correction = "Correction",
@@ -491,7 +491,7 @@ export class PayrollTotals extends SpeakeasyBase {
 /**
  * The payment schedule tax rate the payroll is based on
  */
-export enum PayrollWithholdingPayPeriodEnum {
+export enum PayrollWithholdingPayPeriod {
   EveryWeek = "Every week",
   EveryOtherWeek = "Every other week",
   TwicePerMonth = "Twice per month",
@@ -557,7 +557,7 @@ export class Payroll extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "off_cycle_reason" })
-  offCycleReason?: PayrollOffCycleReasonEnum;
+  offCycleReason?: PayrollOffCycleReason;
 
   @SpeakeasyMetadata()
   @Expose({ name: "pay_period" })
@@ -635,5 +635,5 @@ export class Payroll extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "withholding_pay_period" })
-  withholdingPayPeriod?: PayrollWithholdingPayPeriodEnum;
+  withholdingPayPeriod?: PayrollWithholdingPayPeriod;
 }

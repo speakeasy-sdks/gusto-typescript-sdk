@@ -36,7 +36,7 @@ export class PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits extends
 /**
  * The earning type for the compensation.
  */
-export enum PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningTypeEnum {
+export enum PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType {
   CompanyPayType = "CompanyPayType",
   CompanyEarningType = "CompanyEarningType",
 }
@@ -64,7 +64,7 @@ export class PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings extends
    */
   @SpeakeasyMetadata()
   @Expose({ name: "earning_type" })
-  earningType?: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningTypeEnum;
+  earningType?: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType;
 
   /**
    * The hour of the compensation for the pay period.

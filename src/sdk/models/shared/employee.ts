@@ -14,7 +14,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * The current employment status of the employee. Full-time employees work 30+ hours per week. Part-time employees are split into two groups: those that work 20-29 hours a week, and those that work under 20 hours a week. Variable employees have hours that vary each week. Seasonal employees are hired for 6 months of the year or less.
  */
-export enum EmployeeCurrentEmploymentStatusEnum {
+export enum EmployeeCurrentEmploymentStatus {
   FullTime = "full_time",
   PartTimeUnderTwentyHours = "part_time_under_twenty_hours",
   PartTimeTwentyPlusHours = "part_time_twenty_plus_hours",
@@ -25,7 +25,7 @@ export enum EmployeeCurrentEmploymentStatusEnum {
 /**
  * The employee's payment method
  */
-export enum EmployeePaymentMethodEnum {
+export enum EmployeePaymentMethod {
   DirectDeposit = "Direct Deposit",
   Check = "Check",
 }
@@ -46,7 +46,7 @@ export class Employee extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "current_employment_status" })
-  currentEmploymentStatus?: EmployeeCurrentEmploymentStatusEnum;
+  currentEmploymentStatus?: EmployeeCurrentEmploymentStatus;
 
   /**
    * Custom fields are only included for the employee if the include param has the custom_fields value set
@@ -132,7 +132,7 @@ export class Employee extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "payment_method" })
-  paymentMethod?: EmployeePaymentMethodEnum;
+  paymentMethod?: EmployeePaymentMethod;
 
   @SpeakeasyMetadata()
   @Expose({ name: "phone" })

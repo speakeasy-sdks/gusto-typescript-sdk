@@ -18,7 +18,7 @@ import { Expose, Type } from "class-transformer";
  *
  * `tiered`: The size of the company contribution corresponds to the size of the employee deduction relative to a tiered matching scheme.
  */
-export enum PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionTypeEnum {
+export enum PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType {
   Tiered = "tiered",
   Percentage = "percentage",
   Amount = "amount",
@@ -66,7 +66,7 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution ex
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionTypeEnum;
+  type?: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType;
 
   /**
    * For the `amount` and `percentage` contribution types, the value of the corresponding amount or percentage.
@@ -83,7 +83,7 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution ex
 /**
  * Whether the employee deduction reduces taxable income or not. Only valid for Group Term Life benefits. Note: when the value is not "unset", coverage amount and coverage salary multiplier are ignored.
  */
-export enum PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncomeEnum {
+export enum PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome {
   Unset = "unset",
   ReducesTaxableIncome = "reduces_taxable_income",
   DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
@@ -167,7 +167,7 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody extends Speake
    */
   @SpeakeasyMetadata()
   @Expose({ name: "deduction_reduces_taxable_income" })
-  deductionReducesTaxableIncome?: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncomeEnum;
+  deductionReducesTaxableIncome?: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome;
 
   /**
    * Whether the company contribution is elective (aka "matching"). For `tiered`, `elective_amount`, and `elective_percentage` contribution types this is ignored and assumed to be `true`.

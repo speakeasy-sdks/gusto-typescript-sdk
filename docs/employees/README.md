@@ -50,13 +50,13 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesIncludeEnum, GetV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesInclude, GetV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  CompensationFlsaStatusEnum,
-  CompensationPaymentUnitEnum,
-  CustomFieldTypeEnum,
-  EmployeeCurrentEmploymentStatusEnum,
-  EmployeePaymentMethodEnum,
+  CompensationFlsaStatus,
+  CompensationPaymentUnit,
+  CustomFieldType,
+  EmployeeCurrentEmploymentStatus,
+  EmployeePaymentMethod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -67,7 +67,7 @@ const sdk = new Gusto({
 
 sdk.employees.getV1Employees({
   employeeId: "dolorum",
-  include: GetV1EmployeesIncludeEnum.AllCompensations,
+  include: GetV1EmployeesInclude.AllCompensations,
 }).then((res: GetV1EmployeesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -86,7 +86,7 @@ scope: `employees:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdCustomFieldsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CustomFieldTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { CustomFieldType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -234,11 +234,11 @@ scope: `employees:write`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PostV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  CompensationFlsaStatusEnum,
-  CompensationPaymentUnitEnum,
-  CustomFieldTypeEnum,
-  EmployeeCurrentEmploymentStatusEnum,
-  EmployeePaymentMethodEnum,
+  CompensationFlsaStatus,
+  CompensationPaymentUnit,
+  CustomFieldType,
+  EmployeeCurrentEmploymentStatus,
+  EmployeePaymentMethod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -277,11 +277,11 @@ Call this endpoint as the very last step of employee onboarding to complete thei
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1EmployeeFinishOnboardingResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  CompensationFlsaStatusEnum,
-  CompensationPaymentUnitEnum,
-  CustomFieldTypeEnum,
-  EmployeeCurrentEmploymentStatusEnum,
-  EmployeePaymentMethodEnum,
+  CompensationFlsaStatus,
+  CompensationPaymentUnit,
+  CustomFieldType,
+  EmployeeCurrentEmploymentStatus,
+  EmployeePaymentMethod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -311,11 +311,11 @@ scope: `employees:write`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  CompensationFlsaStatusEnum,
-  CompensationPaymentUnitEnum,
-  CustomFieldTypeEnum,
-  EmployeeCurrentEmploymentStatusEnum,
-  EmployeePaymentMethodEnum,
+  CompensationFlsaStatus,
+  CompensationPaymentUnit,
+  CustomFieldType,
+  EmployeeCurrentEmploymentStatus,
+  EmployeePaymentMethod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({

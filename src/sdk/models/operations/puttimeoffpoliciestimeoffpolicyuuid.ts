@@ -10,7 +10,7 @@ import { Expose } from "class-transformer";
 /**
  * Accrual method of the time off policy
  */
-export enum PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethodEnum {
+export enum PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod {
   Unlimited = "unlimited",
   PerPayPeriod = "per_pay_period",
   PerCalendarYear = "per_calendar_year",
@@ -30,7 +30,7 @@ export class PutTimeOffPoliciesTimeOffPolicyUuidRequestBody extends SpeakeasyBas
    */
   @SpeakeasyMetadata()
   @Expose({ name: "accrual_method" })
-  accrualMethod?: PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethodEnum;
+  accrualMethod?: PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod;
 
   /**
    * The rate at which the time off hours will accrue for an employee on the policy. Represented as a float, e.g. "40.0".

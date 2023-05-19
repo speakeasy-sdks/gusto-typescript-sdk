@@ -10,7 +10,7 @@ import { Expose } from "class-transformer";
 /**
  * The payment speed
  */
-export enum PutV1CompanyPaymentConfigsRequestBodyPaymentSpeedEnum {
+export enum PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed {
   TwoDay = "2-day",
   FourDay = "4-day",
 }
@@ -28,7 +28,7 @@ export class PutV1CompanyPaymentConfigsRequestBody extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "payment_speed" })
-  paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeedEnum;
+  paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed;
 }
 
 export class PutV1CompanyPaymentConfigsRequest extends SpeakeasyBase {

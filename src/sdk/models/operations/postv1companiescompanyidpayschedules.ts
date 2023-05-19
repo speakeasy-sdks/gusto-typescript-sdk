@@ -10,7 +10,7 @@ import { Expose } from "class-transformer";
 /**
  * The frequency that employees on this pay schedule are paid with Gusto.
  */
-export enum PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequencyEnum {
+export enum PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency {
   EveryWeek = "Every week",
   EveryOtherWeek = "Every other week",
   TwicePerMonth = "Twice per month",
@@ -51,7 +51,7 @@ export class PostV1CompaniesCompanyIdPaySchedulesRequestBody extends SpeakeasyBa
    */
   @SpeakeasyMetadata()
   @Expose({ name: "frequency" })
-  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequencyEnum;
+  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency;
 }
 
 export class PostV1CompaniesCompanyIdPaySchedulesRequest extends SpeakeasyBase {

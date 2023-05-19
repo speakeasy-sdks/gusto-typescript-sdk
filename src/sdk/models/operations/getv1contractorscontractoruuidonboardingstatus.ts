@@ -27,7 +27,7 @@ export class GetV1ContractorsContractorUuidOnboardingStatusResponse extends Spea
    * Example response.
    */
   @SpeakeasyMetadata()
-  contractorOnboardingStatus?: shared.ContractorOnboardingStatus;
+  contractorOnboardingStatus?: shared.ContractorOnboardingStatus1;
 
   @SpeakeasyMetadata()
   statusCode: number;

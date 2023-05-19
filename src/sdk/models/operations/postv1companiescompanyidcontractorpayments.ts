@@ -8,7 +8,7 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Transform } from "class-transformer";
 
-export enum PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethodEnum {
+export enum PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod {
   DirectDeposit = "Direct Deposit",
   Check = "Check",
   HistoricalPayment = "Historical Payment",
@@ -46,7 +46,7 @@ export class PostV1CompaniesCompanyIdContractorPaymentsRequestBody extends Speak
 
   @SpeakeasyMetadata()
   @Expose({ name: "payment_method" })
-  paymentMethod?: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethodEnum;
+  paymentMethod?: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod;
 
   /**
    * Reimbursed wages for the contractor

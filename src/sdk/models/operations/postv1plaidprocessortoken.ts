@@ -10,7 +10,7 @@ import { Expose } from "class-transformer";
 /**
  * The owner type of the bank account
  */
-export enum PostV1PlaidProcessorTokenRequestBodyOwnerTypeEnum {
+export enum PostV1PlaidProcessorTokenRequestBodyOwnerType {
   Company = "Company",
 }
 
@@ -27,7 +27,7 @@ export class PostV1PlaidProcessorTokenRequestBody extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "owner_type" })
-  ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerTypeEnum;
+  ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType;
 
   /**
    * The Plaid processor token

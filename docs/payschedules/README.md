@@ -50,7 +50,7 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdPaySchedulesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { PayScheduleFrequencyEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -80,7 +80,7 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { PayScheduleFrequencyEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -111,10 +111,10 @@ Be sure to **[check state laws](https://www.dol.gov/agencies/whd/state/payday)**
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequencyEnum,
+  PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency,
   PostV1CompaniesCompanyIdPaySchedulesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { PayScheduleFrequencyEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -128,7 +128,7 @@ sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules({
     anchorPayDate: "2020-05-15",
     day1: 524970,
     day2: 26522,
-    frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequencyEnum.Monthly,
+    frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.Monthly,
   },
   companyId: "error",
 }).then((res: PostV1CompaniesCompanyIdPaySchedulesResponse) => {
@@ -147,7 +147,7 @@ Updates a pay schedule.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { PayScheduleFrequencyEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

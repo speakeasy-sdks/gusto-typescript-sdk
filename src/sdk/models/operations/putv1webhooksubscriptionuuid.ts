@@ -7,7 +7,7 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypesEnum {
+export enum PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes {
   BankAccount = "BankAccount",
   Company = "Company",
   CompanyBenefit = "CompanyBenefit",
@@ -27,7 +27,7 @@ export enum PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypesEnum {
 export class PutV1WebhookSubscriptionUuidRequestBody extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "subscription_types" })
-  subscriptionTypes: PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypesEnum[];
+  subscriptionTypes: PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes[];
 }
 
 export class PutV1WebhookSubscriptionUuidRequest extends SpeakeasyBase {

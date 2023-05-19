@@ -10,7 +10,7 @@ import { Expose } from "class-transformer";
 /**
  * The bank account type
  */
-export enum PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountTypeEnum {
+export enum PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType {
   Checking = "Checking",
   Savings = "Savings",
 }
@@ -28,7 +28,7 @@ export class PostV1CompaniesCompanyIdBankAccountsRequestBody extends SpeakeasyBa
    */
   @SpeakeasyMetadata()
   @Expose({ name: "account_type" })
-  accountType?: PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountTypeEnum;
+  accountType?: PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType;
 
   /**
    * The bank routing number

@@ -10,7 +10,7 @@ import { Expose } from "class-transformer";
 /**
  * The contractor type.
  */
-export enum PostV1CompaniesCompanyIdContractorsRequestBodyTypeEnum {
+export enum PostV1CompaniesCompanyIdContractorsRequestBodyType {
   Individual = "Individual",
   Business = "Business",
 }
@@ -21,7 +21,7 @@ export enum PostV1CompaniesCompanyIdContractorsRequestBodyTypeEnum {
  * @remarks
  *
  */
-export enum PostV1CompaniesCompanyIdContractorsRequestBodyWageTypeEnum {
+export enum PostV1CompaniesCompanyIdContractorsRequestBodyWageType {
   Fixed = "Fixed",
   Hourly = "Hourly",
 }
@@ -144,7 +144,7 @@ export class PostV1CompaniesCompanyIdContractorsRequestBody extends SpeakeasyBas
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type: PostV1CompaniesCompanyIdContractorsRequestBodyTypeEnum;
+  type: PostV1CompaniesCompanyIdContractorsRequestBodyType;
 
   /**
    * The contractor’s wage type.
@@ -154,7 +154,7 @@ export class PostV1CompaniesCompanyIdContractorsRequestBody extends SpeakeasyBas
    */
   @SpeakeasyMetadata()
   @Expose({ name: "wage_type" })
-  wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageTypeEnum;
+  wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType;
 
   /**
    * State where the contractor will be conducting the majority of their work for the company.

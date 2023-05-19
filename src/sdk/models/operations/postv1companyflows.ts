@@ -10,7 +10,7 @@ import { Expose } from "class-transformer";
 /**
  * the type of target entity applicable to the flow. This field is optional for company flows, please refer to the flow_types table above for more details.
  */
-export enum PostV1CompanyFlowsRequestBodyEntityTypeEnum {
+export enum PostV1CompanyFlowsRequestBodyEntityType {
   Company = "Company",
   Employee = "Employee",
 }
@@ -21,7 +21,7 @@ export class PostV1CompanyFlowsRequestBody extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "entity_type" })
-  entityType?: PostV1CompanyFlowsRequestBodyEntityTypeEnum;
+  entityType?: PostV1CompanyFlowsRequestBodyEntityType;
 
   /**
    * UUID of the target entity applicable to the flow. This field is optional for company flows, please refer to the flow_types table above for more details.

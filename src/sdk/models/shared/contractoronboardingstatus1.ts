@@ -8,7 +8,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * One of the "onboarding_status" enum values.
  */
-export enum ContractorOnboardingStatusOnboardingStatusEnum {
+export enum ContractorOnboardingStatusOnboardingStatus {
   OnboardingCompleted = "onboarding_completed",
   AdminOnboardingReview = "admin_onboarding_review",
   AdminOnboardingIncomplete = "admin_onboarding_incomplete",
@@ -54,13 +54,13 @@ export class ContractorOnboardingStatusOnboardingStep extends SpeakeasyBase {
 /**
  * The representation of an contractor's onboarding status.
  */
-export class ContractorOnboardingStatus extends SpeakeasyBase {
+export class ContractorOnboardingStatus1 extends SpeakeasyBase {
   /**
    * One of the "onboarding_status" enum values.
    */
   @SpeakeasyMetadata()
   @Expose({ name: "onboarding_status" })
-  onboardingStatus?: ContractorOnboardingStatusOnboardingStatusEnum;
+  onboardingStatus?: ContractorOnboardingStatusOnboardingStatus;
 
   /**
    * List of steps required to onboard a contractor.

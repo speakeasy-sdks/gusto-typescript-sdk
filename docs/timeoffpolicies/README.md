@@ -74,7 +74,7 @@ scope: `time_off_policies:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethodEnum,
+  PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod,
   PostCompaniesCompanyUuidTimeOffPoliciesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
@@ -86,7 +86,7 @@ const sdk = new Gusto({
 
 sdk.timeOffPolicies.postCompaniesCompanyUuidTimeOffPolicies({
   requestBody: {
-    accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethodEnum.PerPayPeriod,
+    accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod.PerPayPeriod,
     accrualRate: "aliquid",
     accrualRateUnit: "ipsa",
     accrualWaitingPeriodDays: 671384,
@@ -156,7 +156,7 @@ scope: `time_off_policies:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethodEnum,
+  PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod,
   PutTimeOffPoliciesTimeOffPolicyUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
@@ -168,7 +168,7 @@ const sdk = new Gusto({
 
 sdk.timeOffPolicies.putTimeOffPoliciesTimeOffPolicyUuid({
   requestBody: {
-    accrualMethod: PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethodEnum.PerHourWorkedNoOvertime,
+    accrualMethod: PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod.PerHourWorkedNoOvertime,
     accrualRate: "laborum",
     accrualRateUnit: "libero",
     accrualWaitingPeriodDays: 324083,

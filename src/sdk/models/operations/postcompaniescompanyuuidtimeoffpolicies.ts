@@ -10,7 +10,7 @@ import { Expose } from "class-transformer";
 /**
  * Accrual method of the time off policy
  */
-export enum PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethodEnum {
+export enum PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod {
   Unlimited = "unlimited",
   PerPayPeriod = "per_pay_period",
   PerCalendarYear = "per_calendar_year",
@@ -30,7 +30,7 @@ export class PostCompaniesCompanyUuidTimeOffPoliciesRequestBody extends Speakeas
    */
   @SpeakeasyMetadata()
   @Expose({ name: "accrual_method" })
-  accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethodEnum;
+  accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod;
 
   /**
    * The rate at which the time off hours will accrue for an employee on the policy. Represented as a float, e.g. "40.0".

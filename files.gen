@@ -231,7 +231,7 @@ src/sdk/models/shared/company.ts
 src/sdk/models/shared/companyaddress.ts
 src/sdk/models/shared/admin.ts
 src/sdk/models/shared/companycustomfield.ts
-src/sdk/models/shared/customfieldtypeenum.ts
+src/sdk/models/shared/customfieldtype.ts
 src/sdk/models/shared/companyonboardingstatus.ts
 src/sdk/models/shared/supportedbenefit.ts
 src/sdk/models/shared/benefittyperequirements.ts
@@ -248,11 +248,11 @@ src/sdk/models/shared/contractorpaymentsummarybydates.ts
 src/sdk/models/shared/contractorpaymentreceipt.ts
 src/sdk/models/shared/contractor.ts
 src/sdk/models/shared/contractoraddress1.ts
-src/sdk/models/shared/contractoronboardingstatus.ts
+src/sdk/models/shared/contractoronboardingstatus1.ts
 src/sdk/models/shared/department.ts
 src/sdk/models/shared/earningtype.ts
 src/sdk/models/shared/employeebenefit.ts
-src/sdk/models/shared/employeepaymentmethod.ts
+src/sdk/models/shared/employeepaymentmethod1.ts
 src/sdk/models/shared/employeebankaccount.ts
 src/sdk/models/shared/employeefederaltax.ts
 src/sdk/models/shared/employeestatetax.ts

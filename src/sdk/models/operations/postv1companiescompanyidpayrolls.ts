@@ -7,7 +7,7 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReasonEnum {
+export enum PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason {
   Bonus = "Bonus",
   Correction = "Correction",
   DismissedEmployee = "Dismissed employee",
@@ -16,7 +16,7 @@ export enum PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReasonEnum {
 /**
  * The payment schedule tax rate the payroll is based on
  */
-export enum PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriodEnum {
+export enum PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod {
   EveryWeek = "Every week",
   EveryOtherWeek = "Every other week",
   TwicePerMonth = "Twice per month",
@@ -55,7 +55,7 @@ export class PostV1CompaniesCompanyIdPayrollsRequestBody extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "off_cycle_reason" })
-  offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReasonEnum;
+  offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason;
 
   /**
    * Block regular deductions and contributions for this payroll.
@@ -73,7 +73,7 @@ export class PostV1CompaniesCompanyIdPayrollsRequestBody extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "withholding_pay_period" })
-  withholdingPayPeriod?: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriodEnum;
+  withholdingPayPeriod?: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod;
 }
 
 export class PostV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {

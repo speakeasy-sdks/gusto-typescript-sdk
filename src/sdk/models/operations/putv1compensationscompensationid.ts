@@ -10,7 +10,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * The FLSA status for this compensation. Salaried ('Exempt') employees are paid a fixed salary every pay period. Salaried with overtime ('Salaried Nonexempt') employees are paid a fixed salary every pay period, and receive overtime pay when applicable. Hourly ('Nonexempt') employees are paid for the hours they work, and receive overtime pay when applicable. Commissioned employees ('Commission Only Exempt') earn wages based only on commission. Commissioned with overtime ('Commission Only Nonexempt') earn wages based on commission, and receive overtime pay when applicable. Owners ('Owner') are employees that own at least twenty percent of the company.
  */
-export enum PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum {
+export enum PutV1CompensationsCompensationIdRequestBodyFlsaStatus {
   Exempt = "Exempt",
   SalariedNonexempt = "Salaried Nonexempt",
   Nonexempt = "Nonexempt",
@@ -34,7 +34,7 @@ export class PutV1CompensationsCompensationIdRequestBodyMinimumWages extends Spe
 /**
  * The unit accompanying the compensation rate. If the employee is an owner, rate should be 'Paycheck'.
  */
-export enum PutV1CompensationsCompensationIdRequestBodyPaymentUnitEnum {
+export enum PutV1CompensationsCompensationIdRequestBodyPaymentUnit {
   Hour = "Hour",
   Week = "Week",
   Month = "Month",
@@ -55,7 +55,7 @@ export class PutV1CompensationsCompensationIdRequestBody extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "flsa_status" })
-  flsaStatus?: PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum;
+  flsaStatus?: PutV1CompensationsCompensationIdRequestBodyFlsaStatus;
 
   @SpeakeasyMetadata({
     elemType: PutV1CompensationsCompensationIdRequestBodyMinimumWages,
@@ -69,7 +69,7 @@ export class PutV1CompensationsCompensationIdRequestBody extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "payment_unit" })
-  paymentUnit?: PutV1CompensationsCompensationIdRequestBodyPaymentUnitEnum;
+  paymentUnit?: PutV1CompensationsCompensationIdRequestBodyPaymentUnit;
 
   /**
    * The dollar amount paid per payment unit.

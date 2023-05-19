@@ -42,7 +42,7 @@ Fetches an employee's payment method. An employee payment method describes how t
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdPaymentMethodResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeePaymentMethodSplitByEnum, EmployeePaymentMethodTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { EmployeePaymentMethodSplitBy, EmployeePaymentMethodType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -68,10 +68,10 @@ Creates an employee bank account. An employee can have multiple bank accounts. N
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountTypeEnum,
+  PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType,
   PostV1EmployeesEmployeeIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeBankAccountAccountTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { EmployeeBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -82,7 +82,7 @@ const sdk = new Gusto({
 sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts({
   requestBody: {
     accountNumber: "possimus",
-    accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountTypeEnum.Checking,
+    accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Checking,
     name: "Mrs. Vicki Langosh",
     routingNumber: "quasi",
   },
@@ -103,11 +103,11 @@ Updates an employee's payment method. Note that creating an employee bank accoun
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitByEnum,
-  PutV1EmployeesEmployeeIdPaymentMethodRequestBodyTypeEnum,
+  PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy,
+  PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType,
   PutV1EmployeesEmployeeIdPaymentMethodResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeePaymentMethodSplitByEnum, EmployeePaymentMethodTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { EmployeePaymentMethodSplitBy, EmployeePaymentMethodType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -117,7 +117,7 @@ const sdk = new Gusto({
 
 sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod({
   requestBody: {
-    splitBy: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitByEnum.Percentage,
+    splitBy: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy.Percentage,
     splits: [
       {
         name: "Gordon Willms",
@@ -138,7 +138,7 @@ sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod({
         uuid: "23c7e0bc-7178-4e47-96f2-a70c688282aa",
       },
     ],
-    type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyTypeEnum.DirectDeposit,
+    type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.DirectDeposit,
     version: "atque",
   },
   employeeId: "explicabo",

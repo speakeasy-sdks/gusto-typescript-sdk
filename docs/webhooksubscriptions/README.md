@@ -60,7 +60,7 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatusEnum, WebhookSubscriptionSubscriptionTypesEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -126,7 +126,7 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1WebhookSubscriptionsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatusEnum, WebhookSubscriptionSubscriptionTypesEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -158,10 +158,10 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1WebhookSubscriptionRequestBodySubscriptionTypesEnum,
+  PostV1WebhookSubscriptionRequestBodySubscriptionTypes,
   PostV1WebhookSubscriptionResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatusEnum, WebhookSubscriptionSubscriptionTypesEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -171,7 +171,7 @@ const sdk = new Gusto({
 
 sdk.webhookSubscriptions.postV1WebhookSubscription({
   subscriptionTypes: [
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypesEnum.Company,
+    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Company,
   ],
   url: "dolorem",
 }).then((res: PostV1WebhookSubscriptionResponse) => {
@@ -201,7 +201,7 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1VerifyWebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatusEnum, WebhookSubscriptionSubscriptionTypesEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -238,10 +238,10 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypesEnum,
+  PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes,
   PutV1WebhookSubscriptionUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatusEnum, WebhookSubscriptionSubscriptionTypesEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -252,9 +252,9 @@ const sdk = new Gusto({
 sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid({
   requestBody: {
     subscriptionTypes: [
-      PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypesEnum.Employee,
-      PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypesEnum.Employee,
-      PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypesEnum.Location,
+      PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Employee,
+      PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Employee,
+      PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Location,
     ],
   },
   webhookSubscriptionUuid: "libero",

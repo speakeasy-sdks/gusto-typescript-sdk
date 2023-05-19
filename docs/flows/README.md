@@ -12,7 +12,7 @@ Generate a link to access a pre-built workflow in Gusto white-label UI. For secu
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1CompanyFlowsRequestBodyEntityTypeEnum, PostV1CompanyFlowsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1CompanyFlowsRequestBodyEntityType, PostV1CompanyFlowsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -22,7 +22,7 @@ const sdk = new Gusto({
 
 sdk.flows.postV1CompanyFlows({
   requestBody: {
-    entityType: PostV1CompanyFlowsRequestBodyEntityTypeEnum.Employee,
+    entityType: PostV1CompanyFlowsRequestBodyEntityType.Employee,
     entityUuid: "aliquid",
     flowType: "aperiam",
   },

@@ -37,7 +37,7 @@ export class ContractorAddress extends SpeakeasyBase {
 /**
  * One of the "onboarding_status" enum values.
  */
-export enum ContractorOnboardingStatusEnum {
+export enum ContractorOnboardingStatus {
   OnboardingCompleted = "onboarding_completed",
   AdminOnboardingReview = "admin_onboarding_review",
   AdminOnboardingIncomplete = "admin_onboarding_incomplete",
@@ -46,7 +46,7 @@ export enum ContractorOnboardingStatusEnum {
 /**
  * The contractor's type, either "Individual" or "Business".
  */
-export enum ContractorTypeEnum {
+export enum ContractorType {
   Individual = "Individual",
   Business = "Business",
 }
@@ -54,7 +54,7 @@ export enum ContractorTypeEnum {
 /**
  * The contractor's wage type, either "Fixed" or "Hourly".
  */
-export enum ContractorWageTypeEnum {
+export enum ContractorWageType {
   Fixed = "Fixed",
   Hourly = "Hourly",
 }
@@ -160,7 +160,7 @@ export class Contractor extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "onboarding_status" })
-  onboardingStatus?: ContractorOnboardingStatusEnum;
+  onboardingStatus?: ContractorOnboardingStatus;
 
   /**
    * The contractor's start date.
@@ -174,7 +174,7 @@ export class Contractor extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: ContractorTypeEnum;
+  type?: ContractorType;
 
   /**
    * The UUID of the contractor in Gusto.
@@ -195,7 +195,7 @@ export class Contractor extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "wage_type" })
-  wageType?: ContractorWageTypeEnum;
+  wageType?: ContractorWageType;
 
   /**
    * State where the contractor will be conducting the majority of their work for the company.

@@ -17,10 +17,10 @@ Returns company bank accounts. Currently we only support a single default bank a
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  CompanyBankAccountAccountTypeEnum,
-  CompanyBankAccountPlaidStatusEnum,
-  CompanyBankAccountVerificationStatusEnum,
-  CompanyBankAccountVerificationTypeEnum,
+  CompanyBankAccountAccountType,
+  CompanyBankAccountPlaidStatus,
+  CompanyBankAccountVerificationStatus,
+  CompanyBankAccountVerificationType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -56,14 +56,14 @@ After successful verification, the bank account's verification_status is 'verifi
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountTypeEnum,
+  PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType,
   PostV1CompaniesCompanyIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  CompanyBankAccountAccountTypeEnum,
-  CompanyBankAccountPlaidStatusEnum,
-  CompanyBankAccountVerificationStatusEnum,
-  CompanyBankAccountVerificationTypeEnum,
+  CompanyBankAccountAccountType,
+  CompanyBankAccountPlaidStatus,
+  CompanyBankAccountVerificationStatus,
+  CompanyBankAccountVerificationType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -75,7 +75,7 @@ const sdk = new Gusto({
 sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts({
   requestBody: {
     accountNumber: "distinctio",
-    accountType: PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountTypeEnum.Savings,
+    accountType: PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType.Savings,
     routingNumber: "unde",
   },
   companyId: "nulla",
@@ -103,10 +103,7 @@ This endpoint creates a new **verified** bank account by using a plaid processor
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1PlaidProcessorTokenRequestBodyOwnerTypeEnum,
-  PostV1PlaidProcessorTokenResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1PlaidProcessorTokenRequestBodyOwnerType, PostV1PlaidProcessorTokenResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
@@ -116,7 +113,7 @@ const sdk = new Gusto({
 
 sdk.bankAccounts.postV1PlaidProcessorToken({
   ownerId: "corrupti",
-  ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerTypeEnum.Company,
+  ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType.Company,
   processorToken: "illum",
 }).then((res: PostV1PlaidProcessorTokenResponse) => {
   if (res.statusCode == 200) {
@@ -148,10 +145,10 @@ We provide the endpoint `POST '/v1/companies/{company_id}/bank_accounts/{bank_ac
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1CompaniesCompanyIdBankAccountsVerifyResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  CompanyBankAccountAccountTypeEnum,
-  CompanyBankAccountPlaidStatusEnum,
-  CompanyBankAccountVerificationStatusEnum,
-  CompanyBankAccountVerificationTypeEnum,
+  CompanyBankAccountAccountType,
+  CompanyBankAccountPlaidStatus,
+  CompanyBankAccountVerificationStatus,
+  CompanyBankAccountVerificationType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({

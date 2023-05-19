@@ -10,7 +10,7 @@ import { Expose } from "class-transformer";
 /**
  * The contractor type.
  */
-export enum PutV1ContractorsContractorIdRequestBodyTypeEnum {
+export enum PutV1ContractorsContractorIdRequestBodyType {
   Individual = "Individual",
   Business = "Business",
 }
@@ -21,7 +21,7 @@ export enum PutV1ContractorsContractorIdRequestBodyTypeEnum {
  * @remarks
  *
  */
-export enum PutV1ContractorsContractorIdRequestBodyWageTypeEnum {
+export enum PutV1ContractorsContractorIdRequestBodyWageType {
   Fixed = "Fixed",
   Hourly = "Hourly",
 }
@@ -141,7 +141,7 @@ export class PutV1ContractorsContractorIdRequestBody extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: PutV1ContractorsContractorIdRequestBodyTypeEnum;
+  type?: PutV1ContractorsContractorIdRequestBodyType;
 
   /**
    * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
@@ -158,7 +158,7 @@ export class PutV1ContractorsContractorIdRequestBody extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "wage_type" })
-  wageType?: PutV1ContractorsContractorIdRequestBodyWageTypeEnum;
+  wageType?: PutV1ContractorsContractorIdRequestBodyWageType;
 
   /**
    * State where the contractor will be conducting the majority of their work for the company.

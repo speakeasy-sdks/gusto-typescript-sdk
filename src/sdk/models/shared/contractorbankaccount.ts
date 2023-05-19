@@ -8,7 +8,7 @@ import { Expose } from "class-transformer";
 /**
  * Bank account type
  */
-export enum ContractorBankAccountAccountTypeEnum {
+export enum ContractorBankAccountAccountType {
   Checking = "Checking",
   Savings = "Savings",
 }
@@ -22,7 +22,7 @@ export class ContractorBankAccount extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "account_type" })
-  accountType?: ContractorBankAccountAccountTypeEnum;
+  accountType?: ContractorBankAccountAccountType;
 
   /**
    * UUID of the employee

@@ -9,7 +9,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * The status of the company in Gusto. "Approved" companies may run payroll with Gusto. "Not Approved" companies may not yet run payroll with Gusto. In order to run payroll, the company may need to complete onboarding or contact support. "Suspended" companies may not run payroll with Gusto. In order to unsuspend their account, the company must contact support.
  */
-export enum CompanyCompanyStatusEnum {
+export enum CompanyCompanyStatus {
   Approved = "Approved",
   NotApproved = "Not Approved",
   Suspended = "Suspended",
@@ -81,7 +81,7 @@ export class CompanyCompensations extends SpeakeasyBase {
 /**
  * The tax payer type of the company.
  */
-export enum CompanyEntityTypeEnum {
+export enum CompanyEntityType {
   CCorporation = "C-Corporation",
   SCorporation = "S-Corporation",
   SoleProprietor = "Sole proprietor",
@@ -176,7 +176,7 @@ export class CompanyPrimarySignatory extends SpeakeasyBase {
 /**
  * The Gusto product tier of the company (not applicable to Embedded partner managed companies).
  */
-export enum CompanyTierEnum {
+export enum CompanyTier {
   Simple = "simple",
   Plus = "plus",
   Premium = "premium",
@@ -196,7 +196,7 @@ export class Company extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "company_status" })
-  companyStatus?: CompanyCompanyStatusEnum;
+  companyStatus?: CompanyCompanyStatus;
 
   /**
    * The available company-wide compensation rates for the company.
@@ -218,7 +218,7 @@ export class Company extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "entity_type" })
-  entityType?: CompanyEntityTypeEnum;
+  entityType?: CompanyEntityType;
 
   /**
    * Whether the company is fully managed by a partner via the API
@@ -270,7 +270,7 @@ export class Company extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "tier" })
-  tier?: CompanyTierEnum;
+  tier?: CompanyTier;
 
   /**
    * The trade name of the company.

@@ -10,7 +10,7 @@ import { Expose } from "class-transformer";
 /**
  * The updated onboarding status for the employee
  */
-export enum PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatusEnum {
+export enum PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus {
   OnboardingCompleted = "onboarding_completed",
 }
 
@@ -20,7 +20,7 @@ export class PutV1ContractorsContractorUuidOnboardingStatusRequestBody extends S
    */
   @SpeakeasyMetadata()
   @Expose({ name: "onboarding_status" })
-  onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatusEnum;
+  onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus;
 }
 
 export class PutV1ContractorsContractorUuidOnboardingStatusRequest extends SpeakeasyBase {
@@ -47,7 +47,7 @@ export class PutV1ContractorsContractorUuidOnboardingStatusResponse extends Spea
    * Example response.
    */
   @SpeakeasyMetadata()
-  contractorOnboardingStatus?: shared.ContractorOnboardingStatus;
+  contractorOnboardingStatus?: shared.ContractorOnboardingStatus1;
 
   @SpeakeasyMetadata()
   statusCode: number;

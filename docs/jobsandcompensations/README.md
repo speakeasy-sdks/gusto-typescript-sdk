@@ -52,7 +52,7 @@ scope: `jobs:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompensationsCompensationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -79,8 +79,8 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesEmployeeIdJobsIncludeEnum, GetV1EmployeesEmployeeIdJobsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { GetV1EmployeesEmployeeIdJobsInclude, GetV1EmployeesEmployeeIdJobsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -90,7 +90,7 @@ const sdk = new Gusto({
 
 sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs({
   employeeId: "accusamus",
-  include: GetV1EmployeesEmployeeIdJobsIncludeEnum.AllCompensations,
+  include: GetV1EmployeesEmployeeIdJobsInclude.AllCompensations,
   page: 6311.26,
   per: 2724.37,
 }).then((res: GetV1EmployeesEmployeeIdJobsResponse) => {
@@ -110,8 +110,8 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1JobsJobIdIncludeEnum, GetV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { GetV1JobsJobIdInclude, GetV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -120,7 +120,7 @@ const sdk = new Gusto({
 });
 
 sdk.jobsAndCompensations.getV1JobsJobId({
-  include: GetV1JobsJobIdIncludeEnum.AllCompensations,
+  include: GetV1JobsJobIdInclude.AllCompensations,
   jobId: "aspernatur",
 }).then((res: GetV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
@@ -143,8 +143,8 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1JobsJobIdCompensationsIncludeEnum, GetV1JobsJobIdCompensationsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { GetV1JobsJobIdCompensationsInclude, GetV1JobsJobIdCompensationsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -153,7 +153,7 @@ const sdk = new Gusto({
 });
 
 sdk.jobsAndCompensations.getV1JobsJobIdCompensations({
-  include: GetV1JobsJobIdCompensationsIncludeEnum.AllCompensations,
+  include: GetV1JobsJobIdCompensationsInclude.AllCompensations,
   jobId: "voluptas",
   page: 3742.44,
   per: 3742.96,
@@ -175,7 +175,7 @@ scope: `jobs:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PostV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -210,11 +210,11 @@ scope: `jobs:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum,
-  PutV1CompensationsCompensationIdRequestBodyPaymentUnitEnum,
+  PutV1CompensationsCompensationIdRequestBodyFlsaStatus,
+  PutV1CompensationsCompensationIdRequestBodyPaymentUnit,
   PutV1CompensationsCompensationIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -225,13 +225,13 @@ const sdk = new Gusto({
 sdk.jobsAndCompensations.putV1CompensationsCompensationId({
   requestBody: {
     adjustForMinimumWage: false,
-    flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum.CommissionOnlyNonexempt,
+    flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatus.CommissionOnlyNonexempt,
     minimumWages: [
       {
         uuid: "8744ed53-b88f-43a8-98f5-c0b2f2fb7b19",
       },
     ],
-    paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnitEnum.Week,
+    paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnit.Week,
     rate: "laborum",
     version: "sed",
   },
@@ -254,7 +254,7 @@ scope: `jobs:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatusEnum, CompensationPaymentUnitEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

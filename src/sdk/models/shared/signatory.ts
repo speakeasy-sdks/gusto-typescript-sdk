@@ -42,7 +42,7 @@ export class SignatoryHomeAddress extends SpeakeasyBase {
  * | Skipped | Signatory cannot sign Form 8655 until the form is manually uploaded as wet-signed |
  * | null | Identity verification process has not been completed |
  */
-export enum SignatoryIdentityVerificationStatusEnum {
+export enum SignatoryIdentityVerificationStatus {
   Pass = "Pass",
   Fail = "Fail",
   Skipped = "Skipped",
@@ -89,7 +89,7 @@ export class Signatory extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "identity_verification_status" })
-  identityVerificationStatus?: SignatoryIdentityVerificationStatusEnum;
+  identityVerificationStatus?: SignatoryIdentityVerificationStatus;
 
   /**
    * Whether or not the signatory is also the payroll admin of the company.

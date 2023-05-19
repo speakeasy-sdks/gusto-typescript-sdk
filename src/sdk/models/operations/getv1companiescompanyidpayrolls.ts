@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export enum GetV1CompaniesCompanyIdPayrollsIncludeEnum {
+export enum GetV1CompaniesCompanyIdPayrollsInclude {
   Benefits = "benefits",
   Deductions = "deductions",
   PayrollStatusMeta = "payroll_status_meta",
@@ -36,7 +36,7 @@ export class GetV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "queryParam, style=form;explode=true;name=include",
   })
-  include?: GetV1CompaniesCompanyIdPayrollsIncludeEnum[];
+  include?: GetV1CompaniesCompanyIdPayrollsInclude[];
 
   /**
    * Whether to include off cycle payrolls in the response

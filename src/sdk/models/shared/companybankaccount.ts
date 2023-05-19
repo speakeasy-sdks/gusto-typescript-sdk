@@ -8,7 +8,7 @@ import { Expose } from "class-transformer";
 /**
  * Bank account type
  */
-export enum CompanyBankAccountAccountTypeEnum {
+export enum CompanyBankAccountAccountType {
   Checking = "Checking",
   Savings = "Savings",
 }
@@ -16,7 +16,7 @@ export enum CompanyBankAccountAccountTypeEnum {
 /**
  * The Plaid connection status of the bank account. Only applies when verification type is Plaid.
  */
-export enum CompanyBankAccountPlaidStatusEnum {
+export enum CompanyBankAccountPlaidStatus {
   Connected = "connected",
   Disconnected = "disconnected",
 }
@@ -30,7 +30,7 @@ export enum CompanyBankAccountPlaidStatusEnum {
  * 'ready_for_verification' means the micro-deposits are completed and the verification process can begin by using the verify endpoint.
  * 'verified' means the bank account is verified.
  */
-export enum CompanyBankAccountVerificationStatusEnum {
+export enum CompanyBankAccountVerificationStatus {
   AwaitingDeposits = "awaiting_deposits",
   ReadyForVerification = "ready_for_verification",
   Verified = "verified",
@@ -44,7 +44,7 @@ export enum CompanyBankAccountVerificationStatusEnum {
  * 'bank_deposits' means the bank account is connected by entering routing and accounting numbers and verifying through micro-deposits.
  * 'plaid' means the bank account is connected through Plaid.
  */
-export enum CompanyBankAccountVerificationTypeEnum {
+export enum CompanyBankAccountVerificationType {
   BankDeposits = "bank_deposits",
   Plaid = "plaid",
   PlaidExternal = "plaid_external",
@@ -59,7 +59,7 @@ export class CompanyBankAccount extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "account_type" })
-  accountType?: CompanyBankAccountAccountTypeEnum;
+  accountType?: CompanyBankAccountAccountType;
 
   /**
    * The balance fetch date associated with the last_cached_balance. Only applies when verification type is Plaid.
@@ -94,7 +94,7 @@ export class CompanyBankAccount extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "plaid_status" })
-  plaidStatus?: CompanyBankAccountPlaidStatusEnum;
+  plaidStatus?: CompanyBankAccountPlaidStatus;
 
   /**
    * The bank account's routing number
@@ -121,7 +121,7 @@ export class CompanyBankAccount extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "verification_status" })
-  verificationStatus?: CompanyBankAccountVerificationStatusEnum;
+  verificationStatus?: CompanyBankAccountVerificationStatus;
 
   /**
    * The verification type of the bank account.
@@ -133,5 +133,5 @@ export class CompanyBankAccount extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "verification_type" })
-  verificationType?: CompanyBankAccountVerificationTypeEnum;
+  verificationType?: CompanyBankAccountVerificationType;
 }

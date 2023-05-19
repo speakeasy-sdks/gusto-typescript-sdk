@@ -13,7 +13,7 @@ import { Expose } from "class-transformer";
  * @remarks
  * see [Bank account endpoint](./post-v1-contractors-contractor_uuid-bank_accounts)
  */
-export enum PutV1ContractorsContractorIdPaymentMethodRequestBodyTypeEnum {
+export enum PutV1ContractorsContractorIdPaymentMethodRequestBodyType {
   DirectDeposit = "Direct Deposit",
   Check = "Check",
 }
@@ -27,7 +27,7 @@ export class PutV1ContractorsContractorIdPaymentMethodRequestBody extends Speake
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type: PutV1ContractorsContractorIdPaymentMethodRequestBodyTypeEnum;
+  type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType;
 
   /**
    * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.

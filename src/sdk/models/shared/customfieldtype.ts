@@ -5,7 +5,7 @@
 /**
  * Input type for the custom field.
  */
-export enum CustomFieldTypeEnum {
+export enum CustomFieldType {
   Text = "text",
   Currency = "currency",
   Number = "number",

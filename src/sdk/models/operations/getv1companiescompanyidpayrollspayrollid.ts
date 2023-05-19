@@ -9,7 +9,7 @@ import { AxiosResponse } from "axios";
 /**
  * Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`
  */
-export enum GetV1CompaniesCompanyIdPayrollsPayrollIdIncludeEnum {
+export enum GetV1CompaniesCompanyIdPayrollsPayrollIdInclude {
   Benefits = "benefits",
   Deductions = "deductions",
   PayrollStatusMeta = "payroll_status_meta",
@@ -31,7 +31,7 @@ export class GetV1CompaniesCompanyIdPayrollsPayrollIdRequest extends SpeakeasyBa
   @SpeakeasyMetadata({
     data: "queryParam, style=form;explode=true;name=include",
   })
-  include?: GetV1CompaniesCompanyIdPayrollsPayrollIdIncludeEnum;
+  include?: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude;
 
   /**
    * The UUID of the payroll

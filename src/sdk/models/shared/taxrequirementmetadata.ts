@@ -36,7 +36,7 @@ export class TaxRequirementMetadataOptions extends SpeakeasyBase {
  *  - `currency_per_hour`: A dollar amount per hour, e.g. `3.24` for $3.24/hr
  *
  */
-export enum TaxRequirementMetadataRateTypeEnum {
+export enum TaxRequirementMetadataRateType {
   Percent = "percent",
   CurrencyPerHour = "currency_per_hour",
 }
@@ -56,7 +56,7 @@ export enum TaxRequirementMetadataRateTypeEnum {
  * - `workers_compensation_rate`: A decimal value representing a percentage, see `risk_class_code`, `risk_class_description`, and `rate_type`
  *
  */
-export enum TaxRequirementMetadataTypeEnum {
+export enum TaxRequirementMetadataType {
   Text = "text",
   Currency = "currency",
   Radio = "radio",
@@ -70,7 +70,7 @@ export enum TaxRequirementMetadataTypeEnum {
 /**
  * Describes the type of tax_rate validation rule
  */
-export enum TaxRequirementMetadataValidationTypeEnum {
+export enum TaxRequirementMetadataValidationType {
   OneOf = "one_of",
   MinMax = "min_max",
 }
@@ -109,7 +109,7 @@ export class TaxRequirementMetadataValidation extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type: TaxRequirementMetadataValidationTypeEnum;
+  type: TaxRequirementMetadataValidationType;
 }
 
 export class TaxRequirementMetadata extends SpeakeasyBase {
@@ -159,7 +159,7 @@ export class TaxRequirementMetadata extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "rate_type" })
-  rateType?: TaxRequirementMetadataRateTypeEnum;
+  rateType?: TaxRequirementMetadataRateType;
 
   /**
    * [for `workers_compensation_rate`] The industry risk class code for the rate being requested
@@ -192,7 +192,7 @@ export class TaxRequirementMetadata extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type: TaxRequirementMetadataTypeEnum;
+  type: TaxRequirementMetadataType;
 
   /**
    * [for `tax_rate`] Describes the validation required for the tax rate

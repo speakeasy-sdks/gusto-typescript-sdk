@@ -48,7 +48,7 @@ scope: `employees:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdContractorsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -78,7 +78,7 @@ scope: `employees:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -164,7 +164,7 @@ scope: `contractors.read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1ContractorsContractorUuidOnboardingStatusResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatusOnboardingStatusEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { ContractorOnboardingStatusOnboardingStatus } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -192,11 +192,11 @@ scope: `employees:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdContractorsRequestBodyTypeEnum,
-  PostV1CompaniesCompanyIdContractorsRequestBodyWageTypeEnum,
+  PostV1CompaniesCompanyIdContractorsRequestBodyType,
+  PostV1CompaniesCompanyIdContractorsRequestBodyWageType,
   PostV1CompaniesCompanyIdContractorsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -218,8 +218,8 @@ sdk.contractors.postV1CompaniesCompanyIdContractors({
     selfOnboarding: false,
     ssn: "deserunt",
     startDate: "2020-01-11",
-    type: PostV1CompaniesCompanyIdContractorsRequestBodyTypeEnum.Individual,
-    wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageTypeEnum.Fixed,
+    type: PostV1CompaniesCompanyIdContractorsRequestBodyType.Individual,
+    wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType.Fixed,
     workState: "natus",
   },
   companyId: "omnis",
@@ -245,11 +245,11 @@ Update a contractor.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1ContractorsContractorIdRequestBodyTypeEnum,
-  PutV1ContractorsContractorIdRequestBodyWageTypeEnum,
+  PutV1ContractorsContractorIdRequestBodyType,
+  PutV1ContractorsContractorIdRequestBodyWageType,
   PutV1ContractorsContractorIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatusEnum, ContractorTypeEnum, ContractorWageTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -271,9 +271,9 @@ sdk.contractors.putV1ContractorsContractorId({
     selfOnboarding: false,
     ssn: "nobis",
     startDate: "2020-01-11",
-    type: PutV1ContractorsContractorIdRequestBodyTypeEnum.Individual,
+    type: PutV1ContractorsContractorIdRequestBodyType.Individual,
     version: "vero",
-    wageType: PutV1ContractorsContractorIdRequestBodyWageTypeEnum.Fixed,
+    wageType: PutV1ContractorsContractorIdRequestBodyWageType.Fixed,
     workState: "architecto",
   },
   contractorId: "magnam",
@@ -339,10 +339,10 @@ Below is a list of valid onboarding status changes depending on the intended act
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatusEnum,
+  PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus,
   PutV1ContractorsContractorUuidOnboardingStatusResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatusOnboardingStatusEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { ContractorOnboardingStatusOnboardingStatus } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -352,7 +352,7 @@ const sdk = new Gusto({
 
 sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus({
   requestBody: {
-    onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatusEnum.OnboardingCompleted,
+    onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus.OnboardingCompleted,
   },
   contractorUuid: "ad",
 }).then((res: PutV1ContractorsContractorUuidOnboardingStatusResponse) => {

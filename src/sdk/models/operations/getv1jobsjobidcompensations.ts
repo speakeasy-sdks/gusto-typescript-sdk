@@ -12,7 +12,7 @@ import { AxiosResponse } from "axios";
  * @remarks
  * - all_compensations: Include all effective dated compensations for each job instead of only the current compensation
  */
-export enum GetV1JobsJobIdCompensationsIncludeEnum {
+export enum GetV1JobsJobIdCompensationsInclude {
   AllCompensations = "all_compensations",
 }
 
@@ -26,7 +26,7 @@ export class GetV1JobsJobIdCompensationsRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({
     data: "queryParam, style=form;explode=true;name=include",
   })
-  include?: GetV1JobsJobIdCompensationsIncludeEnum;
+  include?: GetV1JobsJobIdCompensationsInclude;
 
   /**
    * The UUID of the job

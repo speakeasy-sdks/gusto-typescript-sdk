@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { CustomFieldTypeEnum } from "./customfieldtypeenum";
+import { CustomFieldType } from "./customfieldtype";
 import { Expose } from "class-transformer";
 
 /**
@@ -41,7 +41,7 @@ export class EmployeeCustomField extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type: CustomFieldTypeEnum;
+  type: CustomFieldType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "value" })

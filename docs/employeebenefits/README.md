@@ -47,7 +47,7 @@ scope: `employee_benefits:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeeBenefitsEmployeeBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeBenefitDeductionReducesTaxableIncomeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -77,7 +77,7 @@ scope: `employee_benefits:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdEmployeeBenefitsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeBenefitDeductionReducesTaxableIncomeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -140,11 +140,11 @@ scope: `employee_benefits:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionTypeEnum,
-  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncomeEnum,
+  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType,
+  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome,
   PostV1EmployeesEmployeeIdEmployeeBenefitsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeBenefitDeductionReducesTaxableIncomeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -161,7 +161,7 @@ sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits({
     companyContributionAnnualMaximum: "voluptatibus",
     contributeAsPercentage: false,
     contribution: {
-      type: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionTypeEnum.Amount,
+      type: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType.Amount,
       value: [
         {
           rate: "quis",
@@ -180,7 +180,7 @@ sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits({
     coverageAmount: "tenetur",
     coverageSalaryMultiplier: "dignissimos",
     deductAsPercentage: false,
-    deductionReducesTaxableIncome: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncomeEnum.LessThanNilGreaterThan,
+    deductionReducesTaxableIncome: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome.LessThanNilGreaterThan,
     elective: false,
     employeeDeduction: "distinctio",
     employeeDeductionAnnualMaximum: "quod",
@@ -205,11 +205,11 @@ scope: `employee_benefits:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionTypeEnum,
-  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncomeEnum,
+  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionType,
+  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncome,
   PutV1EmployeeBenefitsEmployeeBenefitIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeBenefitDeductionReducesTaxableIncomeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -225,13 +225,13 @@ sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId({
     companyContributionAnnualMaximum: "vero",
     contributeAsPercentage: false,
     contribution: {
-      type: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionTypeEnum.Percentage,
+      type: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionType.Percentage,
       value: "quibusdam",
     },
     coverageAmount: "illum",
     coverageSalaryMultiplier: "sequi",
     deductAsPercentage: false,
-    deductionReducesTaxableIncome: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncomeEnum.DoesNotReduceTaxableIncome,
+    deductionReducesTaxableIncome: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncome.DoesNotReduceTaxableIncome,
     elective: false,
     employeeDeduction: "impedit",
     employeeDeductionAnnualMaximum: "aut",

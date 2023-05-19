@@ -45,10 +45,10 @@ Once you have your API Token, `client_id`, `secret`, and a demo company, you’r
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  CompanyBankAccountAccountTypeEnum,
-  CompanyBankAccountPlaidStatusEnum,
-  CompanyBankAccountVerificationStatusEnum,
-  CompanyBankAccountVerificationTypeEnum,
+  CompanyBankAccountAccountType,
+  CompanyBankAccountPlaidStatus,
+  CompanyBankAccountVerificationStatus,
+  CompanyBankAccountVerificationType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({

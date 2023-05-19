@@ -39,7 +39,7 @@ Update payment speed for the company and fast payment limit (only applicable for
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1CompanyPaymentConfigsRequestBodyPaymentSpeedEnum,
+  PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed,
   PutV1CompanyPaymentConfigsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
@@ -52,7 +52,7 @@ const sdk = new Gusto({
 sdk.paymentConfigs.putV1CompanyPaymentConfigs({
   requestBody: {
     fastPaymentLimit: "nulla",
-    paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeedEnum.TwoDay,
+    paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.TwoDay,
   },
   companyUuid: "aperiam",
 }).then((res: PutV1CompanyPaymentConfigsResponse) => {

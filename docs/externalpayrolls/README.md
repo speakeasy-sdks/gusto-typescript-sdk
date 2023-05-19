@@ -156,7 +156,7 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningTypeEnum,
+  PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType,
   PutV1ExternalPayrollResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
@@ -181,7 +181,7 @@ sdk.externalPayrolls.putV1ExternalPayroll({
           {
             amount: "culpa",
             earningId: 665859,
-            earningType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningTypeEnum.CompanyEarningType,
+            earningType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType.CompanyEarningType,
             hours: "totam",
           },
         ],

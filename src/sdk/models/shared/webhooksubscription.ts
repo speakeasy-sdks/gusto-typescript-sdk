@@ -8,13 +8,13 @@ import { Expose } from "class-transformer";
 /**
  * The status of the webhook subscription.
  */
-export enum WebhookSubscriptionStatusEnum {
+export enum WebhookSubscriptionStatus {
   Pending = "pending",
   Verified = "verified",
   Removed = "removed",
 }
 
-export enum WebhookSubscriptionSubscriptionTypesEnum {
+export enum WebhookSubscriptionSubscriptionTypes {
   BankAccount = "BankAccount",
   Company = "Company",
   CompanyBenefit = "CompanyBenefit",
@@ -40,14 +40,14 @@ export class WebhookSubscription extends SpeakeasyBase {
    */
   @SpeakeasyMetadata()
   @Expose({ name: "status" })
-  status?: WebhookSubscriptionStatusEnum;
+  status?: WebhookSubscriptionStatus;
 
   /**
    * Receive updates for these types.
    */
   @SpeakeasyMetadata()
   @Expose({ name: "subscription_types" })
-  subscriptionTypes?: WebhookSubscriptionSubscriptionTypesEnum[];
+  subscriptionTypes?: WebhookSubscriptionSubscriptionTypes[];
 
   /**
    * The webhook subscriber URL. Updates will be POSTed to this URL.

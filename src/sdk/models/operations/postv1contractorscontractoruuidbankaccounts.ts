@@ -7,7 +7,7 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountTypeEnum {
+export enum PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType {
   Checking = "Checking",
   Savings = "Savings",
 }
@@ -19,7 +19,7 @@ export class PostV1ContractorsContractorUuidBankAccountsRequestBody extends Spea
 
   @SpeakeasyMetadata()
   @Expose({ name: "account_type" })
-  accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountTypeEnum;
+  accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType;
 
   @SpeakeasyMetadata()
   @Expose({ name: "name" })

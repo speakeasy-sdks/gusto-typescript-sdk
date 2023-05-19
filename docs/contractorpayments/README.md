@@ -48,9 +48,9 @@ scope: `payrolls:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  ContractorPaymentPaymentMethodEnum,
-  ContractorPaymentStatusEnum,
-  ContractorPaymentWageTypeEnum,
+  ContractorPaymentPaymentMethod,
+  ContractorPaymentStatus,
+  ContractorPaymentWageType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
@@ -148,13 +148,13 @@ scope: `payrolls:run`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethodEnum,
+  PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod,
   PostV1CompaniesCompanyIdContractorPaymentsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  ContractorPaymentPaymentMethodEnum,
-  ContractorPaymentStatusEnum,
-  ContractorPaymentWageTypeEnum,
+  ContractorPaymentPaymentMethod,
+  ContractorPaymentStatus,
+  ContractorPaymentWageType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
 
@@ -170,7 +170,7 @@ sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments({
     contractorUuid: "dicta",
     date: new RFCDate("2020-01-01"),
     hours: 40,
-    paymentMethod: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethodEnum.DirectDeposit,
+    paymentMethod: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod.DirectDeposit,
     reimbursement: 20,
     wage: 5000,
   },

@@ -16,7 +16,7 @@ Returns all contractor bank accounts.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1ContractorsContractorUuidBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorBankAccountAccountTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { ContractorBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -42,7 +42,7 @@ Fetches a contractor's payment method. A contractor payment method describes how
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1ContractorsContractorUuidPaymentMethodResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorPaymentMethodSplitByEnum, ContractorPaymentMethodTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { ContractorPaymentMethodSplitBy, ContractorPaymentMethodType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -71,10 +71,10 @@ has a bank account will just replace it.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountTypeEnum,
+  PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType,
   PostV1ContractorsContractorUuidBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorBankAccountAccountTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { ContractorBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -85,7 +85,7 @@ const sdk = new Gusto({
 sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts({
   requestBody: {
     accountNumber: "tempore",
-    accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountTypeEnum.Checking,
+    accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType.Checking,
     name: "Andre Franey",
     routingNumber: "aliquid",
   },
@@ -106,10 +106,10 @@ Updates a contractor's payment method. Note that creating a contractor bank acco
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PutV1ContractorsContractorIdPaymentMethodRequestBodyTypeEnum,
+  PutV1ContractorsContractorIdPaymentMethodRequestBodyType,
   PutV1ContractorsContractorIdPaymentMethodResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorPaymentMethodSplitByEnum, ContractorPaymentMethodTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { ContractorPaymentMethodSplitBy, ContractorPaymentMethodType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -119,7 +119,7 @@ const sdk = new Gusto({
 
 sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod({
   requestBody: {
-    type: PutV1ContractorsContractorIdPaymentMethodRequestBodyTypeEnum.Check,
+    type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType.Check,
     version: "sint",
   },
   contractorUuid: "officia",

@@ -16,7 +16,7 @@ Get attributes relevant for an employee's federal taxes.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdFederalTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeFederalTaxW4DataTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { EmployeeFederalTaxW4DataType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -79,7 +79,7 @@ Update attributes relevant for an employee's federal taxes.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1EmployeesEmployeeIdFederalTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeFederalTaxW4DataTypeEnum } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { EmployeeFederalTaxW4DataType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
