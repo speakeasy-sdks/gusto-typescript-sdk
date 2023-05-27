@@ -14,66 +14,64 @@ import { Expose } from "class-transformer";
  * see [Bank account endpoint](./post-v1-contractors-contractor_uuid-bank_accounts)
  */
 export enum PutV1ContractorsContractorIdPaymentMethodRequestBodyType {
-  DirectDeposit = "Direct Deposit",
-  Check = "Check",
+    DirectDeposit = "Direct Deposit",
+    Check = "Check",
 }
 
 export class PutV1ContractorsContractorIdPaymentMethodRequestBody extends SpeakeasyBase {
-  /**
-   * The payment method type. If type is Direct Deposit, the contractor is required to have a bank account.
-   *
-   * @remarks
-   * see [Bank account endpoint](./post-v1-contractors-contractor_uuid-bank_accounts)
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType;
+    /**
+     * The payment method type. If type is Direct Deposit, the contractor is required to have a bank account.
+     *
+     * @remarks
+     * see [Bank account endpoint](./post-v1-contractors-contractor_uuid-bank_accounts)
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version: string;
 }
 
 export class PutV1ContractorsContractorIdPaymentMethodRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1ContractorsContractorIdPaymentMethodRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1ContractorsContractorIdPaymentMethodRequestBody;
 
-  /**
-   * The UUID of the contractor
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=contractor_uuid",
-  })
-  contractorUuid: string;
+    /**
+     * The UUID of the contractor
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=contractor_uuid" })
+    contractorUuid: string;
 }
 
 export class PutV1ContractorsContractorIdPaymentMethodResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  contractorPaymentMethod?: shared.ContractorPaymentMethod;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    contractorPaymentMethod?: shared.ContractorPaymentMethod;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

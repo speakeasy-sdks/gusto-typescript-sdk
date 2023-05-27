@@ -11,86 +11,84 @@ import { Expose } from "class-transformer";
  * The frequency that employees on this pay schedule are paid with Gusto.
  */
 export enum PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency {
-  EveryWeek = "Every week",
-  EveryOtherWeek = "Every other week",
-  TwicePerMonth = "Twice per month",
-  Monthly = "Monthly",
+    EveryWeek = "Every week",
+    EveryOtherWeek = "Every other week",
+    TwicePerMonth = "Twice per month",
+    Monthly = "Monthly",
 }
 
 export class PostV1CompaniesCompanyIdPaySchedulesRequestBody extends SpeakeasyBase {
-  /**
-   * The last date of the first pay period. This can be the same date as the anchor pay date.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "anchor_end_of_pay_period" })
-  anchorEndOfPayPeriod: string;
+    /**
+     * The last date of the first pay period. This can be the same date as the anchor pay date.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "anchor_end_of_pay_period" })
+    anchorEndOfPayPeriod: string;
 
-  /**
-   * The first date that employees on this pay schedule are paid with Gusto.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "anchor_pay_date" })
-  anchorPayDate: string;
+    /**
+     * The first date that employees on this pay schedule are paid with Gusto.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "anchor_pay_date" })
+    anchorPayDate: string;
 
-  /**
-   * An integer between 1 and 31 indicating the first day of the month that employees are paid. This field is only relevant for pay schedules with the “Twice per month” and “Monthly” frequencies. It will be null for pay schedules with other frequencies.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "day_1" })
-  day1?: number;
+    /**
+     * An integer between 1 and 31 indicating the first day of the month that employees are paid. This field is only relevant for pay schedules with the “Twice per month” and “Monthly” frequencies. It will be null for pay schedules with other frequencies.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "day_1" })
+    day1?: number;
 
-  /**
-   * An integer between 1 and 31 indicating the second day of the month that employees are paid. This field is the second pay date for pay schedules with the “Twice per month” frequency. It will be null for pay schedules with other frequencies.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "day_2" })
-  day2?: number;
+    /**
+     * An integer between 1 and 31 indicating the second day of the month that employees are paid. This field is the second pay date for pay schedules with the “Twice per month” frequency. It will be null for pay schedules with other frequencies.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "day_2" })
+    day2?: number;
 
-  /**
-   * The frequency that employees on this pay schedule are paid with Gusto.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "frequency" })
-  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency;
+    /**
+     * The frequency that employees on this pay schedule are paid with Gusto.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "frequency" })
+    frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency;
 }
 
 export class PostV1CompaniesCompanyIdPaySchedulesRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostV1CompaniesCompanyIdPaySchedulesRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1CompaniesCompanyIdPaySchedulesRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 }
 
 export class PostV1CompaniesCompanyIdPaySchedulesResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  paySchedule?: shared.PaySchedule;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    paySchedule?: shared.PaySchedule;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

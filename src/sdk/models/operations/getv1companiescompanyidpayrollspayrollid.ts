@@ -10,62 +10,54 @@ import { AxiosResponse } from "axios";
  * Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`
  */
 export enum GetV1CompaniesCompanyIdPayrollsPayrollIdInclude {
-  Benefits = "benefits",
-  Deductions = "deductions",
-  PayrollStatusMeta = "payroll_status_meta",
-  Taxes = "taxes",
+    Benefits = "benefits",
+    Deductions = "deductions",
+    PayrollStatusMeta = "payroll_status_meta",
+    Taxes = "taxes",
 }
 
 export class GetV1CompaniesCompanyIdPayrollsPayrollIdRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 
-  /**
-   * Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=include",
-  })
-  include?: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude;
+    /**
+     * Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
+    include?: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude;
 
-  /**
-   * The UUID of the payroll
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=payroll_id",
-  })
-  payrollId: string;
+    /**
+     * The UUID of the payroll
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
+    payrollId: string;
 
-  /**
-   * With show_calculation = true, the calculated values specified by the include parameter will be shown if the payroll is in an unprocessed, but calculated state.
-   *
-   * @remarks
-   * If a payroll is in an unprocessed, but calculated state and a call is made to this endpoint without show_calculation = true, the calculation will be “cleared.”
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=show_calculation",
-  })
-  showCalculation?: string;
+    /**
+     * With show_calculation = true, the calculated values specified by the include parameter will be shown if the payroll is in an unprocessed, but calculated state.
+     *
+     * @remarks
+     * If a payroll is in an unprocessed, but calculated state and a call is made to this endpoint without show_calculation = true, the calculation will be “cleared.”
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=show_calculation" })
+    showCalculation?: string;
 }
 
 export class GetV1CompaniesCompanyIdPayrollsPayrollIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  payroll?: shared.Payroll;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    payroll?: shared.Payroll;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

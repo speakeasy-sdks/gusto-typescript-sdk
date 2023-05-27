@@ -6,30 +6,26 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
 export class GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+    employeeId: string;
 
-  /**
-   * The UUID of the payroll
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=payroll_id",
-  })
-  payrollId: string;
+    /**
+     * The UUID of the payroll
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
+    payrollId: string;
 }
 
 export class GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

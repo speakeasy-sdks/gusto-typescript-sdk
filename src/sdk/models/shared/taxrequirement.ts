@@ -7,60 +7,60 @@ import { TaxRequirementMetadata } from "./taxrequirementmetadata";
 import { Expose, Type } from "class-transformer";
 
 export class TaxRequirementApplicableIf extends SpeakeasyBase {
-  /**
-   * An identifier for an individual requirement. Uniqueness is guaranteed within a requirement set.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "key" })
-  key?: string;
+    /**
+     * An identifier for an individual requirement. Uniqueness is guaranteed within a requirement set.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "key" })
+    key?: string;
 
-  /**
-   * The required value of the requirement identified by `key`
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "value" })
-  value?: any;
+    /**
+     * The required value of the requirement identified by `key`
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "value" })
+    value?: any;
 }
 
 export class TaxRequirement extends SpeakeasyBase {
-  /**
-   * An array of references to other requirements within the requirement set. This requirement is only applicable if all referenced requirements have values matching the corresponding `value`. The primary use-case is dynamically hiding and showing requirements as values change. E.g. Show Requirement-B when Requirement-A has been answered with `false`. To be explicit, an empty array means the requirement is applicable.
-   */
-  @SpeakeasyMetadata({ elemType: TaxRequirementApplicableIf })
-  @Expose({ name: "applicable_if" })
-  @Type(() => TaxRequirementApplicableIf)
-  applicableIf?: TaxRequirementApplicableIf[];
+    /**
+     * An array of references to other requirements within the requirement set. This requirement is only applicable if all referenced requirements have values matching the corresponding `value`. The primary use-case is dynamically hiding and showing requirements as values change. E.g. Show Requirement-B when Requirement-A has been answered with `false`. To be explicit, an empty array means the requirement is applicable.
+     */
+    @SpeakeasyMetadata({ elemType: TaxRequirementApplicableIf })
+    @Expose({ name: "applicable_if" })
+    @Type(() => TaxRequirementApplicableIf)
+    applicableIf?: TaxRequirementApplicableIf[];
 
-  /**
-   * A more detailed customer facing description of the requirement
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "description" })
-  description?: string;
+    /**
+     * A more detailed customer facing description of the requirement
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description?: string;
 
-  /**
-   * An identifier for an individual requirement. Uniqueness is guaranteed within a requirement set.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "key" })
-  key?: string;
+    /**
+     * An identifier for an individual requirement. Uniqueness is guaranteed within a requirement set.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "key" })
+    key?: string;
 
-  /**
-   * A customer facing description of the requirement
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "label" })
-  label?: string;
+    /**
+     * A customer facing description of the requirement
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "label" })
+    label?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "metadata" })
-  @Type(() => TaxRequirementMetadata)
-  metadata?: TaxRequirementMetadata;
+    @SpeakeasyMetadata()
+    @Expose({ name: "metadata" })
+    @Type(() => TaxRequirementMetadata)
+    metadata?: TaxRequirementMetadata;
 
-  /**
-   * The "answer"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "value" })
-  value?: string;
+    /**
+     * The "answer"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "value" })
+    value?: string;
 }

@@ -8,67 +8,61 @@ import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 export class PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }
 
 /**
  * A list of employee objects containing the employee uuid
  */
 export class PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    elemType:
-      PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees,
-  })
-  @Expose({ name: "employees" })
-  @Type(
-    () =>
-      PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees
-  )
-  employees?: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees[];
+    @SpeakeasyMetadata({
+        elemType: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees,
+    })
+    @Expose({ name: "employees" })
+    @Type(() => PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees)
+    employees?: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees[];
 }
 
 export class PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequest extends SpeakeasyBase {
-  /**
-   * A list of employee objects containing the employee uuid
-   */
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody;
+    /**
+     * A list of employee objects containing the employee uuid
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody;
 
-  /**
-   * The UUID of the company time off policy
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid",
-  })
-  timeOffPolicyUuid: string;
+    /**
+     * The UUID of the company time off policy
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid" })
+    timeOffPolicyUuid: string;
 }
 
 export class PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * OK
-   */
-  @SpeakeasyMetadata()
-  timeOffPolicy?: shared.TimeOffPolicy;
+    /**
+     * OK
+     */
+    @SpeakeasyMetadata()
+    timeOffPolicy?: shared.TimeOffPolicy;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

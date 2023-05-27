@@ -9,53 +9,53 @@ import { Expose } from "class-transformer";
  * Bank account type
  */
 export enum EmployeeBankAccountAccountType {
-  Checking = "Checking",
-  Savings = "Savings",
+    Checking = "Checking",
+    Savings = "Savings",
 }
 
 /**
  * Example response
  */
 export class EmployeeBankAccount extends SpeakeasyBase {
-  /**
-   * Bank account type
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "account_type" })
-  accountType?: EmployeeBankAccountAccountType;
+    /**
+     * Bank account type
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "account_type" })
+    accountType?: EmployeeBankAccountAccountType;
 
-  /**
-   * UUID of the employee
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_uuid" })
-  employeeUuid?: string;
+    /**
+     * UUID of the employee
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_uuid" })
+    employeeUuid?: string;
 
-  /**
-   * Masked bank account number
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "hidden_account_number" })
-  hiddenAccountNumber?: string;
+    /**
+     * Masked bank account number
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "hidden_account_number" })
+    hiddenAccountNumber?: string;
 
-  /**
-   * Name for the bank account
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    /**
+     * Name for the bank account
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  /**
-   * The bank account's routing number
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "routing_number" })
-  routingNumber?: string;
+    /**
+     * The bank account's routing number
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "routing_number" })
+    routingNumber?: string;
 
-  /**
-   * UUID of the bank account
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * UUID of the bank account
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }

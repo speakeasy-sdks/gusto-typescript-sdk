@@ -7,36 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetVersionEmployeesTimeOffActivitiesRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_uuid",
-  })
-  employeeUuid: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_uuid" })
+    employeeUuid: string;
 
-  /**
-   * The time off type name you want to query data for. ex: 'sick' or 'vacation'
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=time_off_type",
-  })
-  timeOffType?: string;
+    /**
+     * The time off type name you want to query data for. ex: 'sick' or 'vacation'
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=time_off_type" })
+    timeOffType?: string;
 }
 
 export class GetVersionEmployeesTimeOffActivitiesResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  timeOffActivity?: shared.TimeOffActivity;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    timeOffActivity?: shared.TimeOffActivity;
 }

@@ -8,72 +8,66 @@ import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 export class PutRemovePeopleFromDepartmentRequestBodyContractors extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }
 
 export class PutRemovePeopleFromDepartmentRequestBodyEmployees extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }
 
 export class PutRemovePeopleFromDepartmentRequestBody extends SpeakeasyBase {
-  /**
-   * Array of contractors to remove from a department
-   */
-  @SpeakeasyMetadata({
-    elemType: PutRemovePeopleFromDepartmentRequestBodyContractors,
-  })
-  @Expose({ name: "contractors" })
-  @Type(() => PutRemovePeopleFromDepartmentRequestBodyContractors)
-  contractors?: PutRemovePeopleFromDepartmentRequestBodyContractors[];
+    /**
+     * Array of contractors to remove from a department
+     */
+    @SpeakeasyMetadata({ elemType: PutRemovePeopleFromDepartmentRequestBodyContractors })
+    @Expose({ name: "contractors" })
+    @Type(() => PutRemovePeopleFromDepartmentRequestBodyContractors)
+    contractors?: PutRemovePeopleFromDepartmentRequestBodyContractors[];
 
-  /**
-   * Array of employees to remove from a department
-   */
-  @SpeakeasyMetadata({
-    elemType: PutRemovePeopleFromDepartmentRequestBodyEmployees,
-  })
-  @Expose({ name: "employees" })
-  @Type(() => PutRemovePeopleFromDepartmentRequestBodyEmployees)
-  employees?: PutRemovePeopleFromDepartmentRequestBodyEmployees[];
+    /**
+     * Array of employees to remove from a department
+     */
+    @SpeakeasyMetadata({ elemType: PutRemovePeopleFromDepartmentRequestBodyEmployees })
+    @Expose({ name: "employees" })
+    @Type(() => PutRemovePeopleFromDepartmentRequestBodyEmployees)
+    employees?: PutRemovePeopleFromDepartmentRequestBodyEmployees[];
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version?: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version?: string;
 }
 
 export class PutRemovePeopleFromDepartmentRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutRemovePeopleFromDepartmentRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutRemovePeopleFromDepartmentRequestBody;
 
-  /**
-   * The UUID of the department
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=department_uuid",
-  })
-  departmentUuid: string;
+    /**
+     * The UUID of the department
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=department_uuid" })
+    departmentUuid: string;
 }
 
 export class PutRemovePeopleFromDepartmentResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Department Object Example
-   */
-  @SpeakeasyMetadata()
-  department?: shared.Department;
+    /**
+     * Department Object Example
+     */
+    @SpeakeasyMetadata()
+    department?: shared.Department;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

@@ -7,64 +7,59 @@ import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 export class DeleteV1CompanyBenefitsCompanyBenefitIdRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company benefit
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_benefit_id",
-  })
-  companyBenefitId: string;
+    /**
+     * The UUID of the company benefit
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_benefit_id" })
+    companyBenefitId: string;
 }
 
 export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "full_message" })
-  fullMessage?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "full_message" })
+    fullMessage?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "message" })
-  message?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "message" })
+    message?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: string;
 }
 
 export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrors extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    elemType:
-      DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase,
-  })
-  @Expose({ name: "base" })
-  @Type(
-    () => DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase
-  )
-  base?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase[];
+    @SpeakeasyMetadata({
+        elemType: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase,
+    })
+    @Expose({ name: "base" })
+    @Type(() => DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase)
+    base?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase[];
 }
 
 /**
  * Unprocessable Entity
  */
 export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "errors" })
-  @Type(() => DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrors)
-  errors?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrors;
+    @SpeakeasyMetadata()
+    @Expose({ name: "errors" })
+    @Type(() => DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrors)
+    errors?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrors;
 }
 
 export class DeleteV1CompanyBenefitsCompanyBenefitIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   */
-  @SpeakeasyMetadata()
-  deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON;
+    /**
+     * Unprocessable Entity
+     */
+    @SpeakeasyMetadata()
+    deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON;
 }

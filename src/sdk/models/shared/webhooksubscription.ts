@@ -9,57 +9,57 @@ import { Expose } from "class-transformer";
  * The status of the webhook subscription.
  */
 export enum WebhookSubscriptionStatus {
-  Pending = "pending",
-  Verified = "verified",
-  Removed = "removed",
+    Pending = "pending",
+    Verified = "verified",
+    Removed = "removed",
 }
 
 export enum WebhookSubscriptionSubscriptionTypes {
-  BankAccount = "BankAccount",
-  Company = "Company",
-  CompanyBenefit = "CompanyBenefit",
-  Contractor = "Contractor",
-  ContractorPayment = "ContractorPayment",
-  Employee = "Employee",
-  EmployeeBenefit = "EmployeeBenefit",
-  EmployeeJobCompensation = "EmployeeJobCompensation",
-  ExternalPayroll = "ExternalPayroll",
-  Form = "Form",
-  Location = "Location",
-  Payroll = "Payroll",
-  PaySchedule = "PaySchedule",
-  Signatory = "Signatory",
+    BankAccount = "BankAccount",
+    Company = "Company",
+    CompanyBenefit = "CompanyBenefit",
+    Contractor = "Contractor",
+    ContractorPayment = "ContractorPayment",
+    Employee = "Employee",
+    EmployeeBenefit = "EmployeeBenefit",
+    EmployeeJobCompensation = "EmployeeJobCompensation",
+    ExternalPayroll = "ExternalPayroll",
+    Form = "Form",
+    Location = "Location",
+    Payroll = "Payroll",
+    PaySchedule = "PaySchedule",
+    Signatory = "Signatory",
 }
 
 /**
  * The representation of webhook subscription.
  */
 export class WebhookSubscription extends SpeakeasyBase {
-  /**
-   * The status of the webhook subscription.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "status" })
-  status?: WebhookSubscriptionStatus;
+    /**
+     * The status of the webhook subscription.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "status" })
+    status?: WebhookSubscriptionStatus;
 
-  /**
-   * Receive updates for these types.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "subscription_types" })
-  subscriptionTypes?: WebhookSubscriptionSubscriptionTypes[];
+    /**
+     * Receive updates for these types.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "subscription_types" })
+    subscriptionTypes?: WebhookSubscriptionSubscriptionTypes[];
 
-  /**
-   * The webhook subscriber URL. Updates will be POSTed to this URL.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "url" })
-  url?: string;
+    /**
+     * The webhook subscriber URL. Updates will be POSTed to this URL.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "url" })
+    url?: string;
 
-  /**
-   * The UUID of the webhook subscription.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the webhook subscription.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }

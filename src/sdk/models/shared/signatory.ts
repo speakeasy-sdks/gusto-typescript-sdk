@@ -6,29 +6,29 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
 export class SignatoryHomeAddress extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "city" })
-  city?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "city" })
+    city?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "country" })
-  country?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "country" })
+    country?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "street_1" })
-  street1?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "street_1" })
+    street1?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "street_2" })
-  street2?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "street_2" })
+    street2?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "zip" })
-  zip?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "zip" })
+    zip?: string;
 }
 
 /**
@@ -43,81 +43,81 @@ export class SignatoryHomeAddress extends SpeakeasyBase {
  * | null | Identity verification process has not been completed |
  */
 export enum SignatoryIdentityVerificationStatus {
-  Pass = "Pass",
-  Fail = "Fail",
-  Skipped = "Skipped",
+    Pass = "Pass",
+    Fail = "Fail",
+    Skipped = "Skipped",
 }
 
 /**
  * The representation of a company's signatory
  */
 export class Signatory extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "birthday" })
-  birthday?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "birthday" })
+    birthday?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "first_name" })
-  firstName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "first_name" })
+    firstName?: string;
 
-  /**
-   * Indicates whether the signatory has an SSN in Gusto.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "has_ssn" })
-  hasSsn?: boolean;
+    /**
+     * Indicates whether the signatory has an SSN in Gusto.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "has_ssn" })
+    hasSsn?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "home_address" })
-  @Type(() => SignatoryHomeAddress)
-  homeAddress?: SignatoryHomeAddress;
+    @SpeakeasyMetadata()
+    @Expose({ name: "home_address" })
+    @Type(() => SignatoryHomeAddress)
+    homeAddress?: SignatoryHomeAddress;
 
-  /**
-   * |   |   |
-   *
-   * @remarks
-   * |---|---|
-   * |__Status__| __Description__ |
-   * | Pass | Signatory can sign all forms |
-   * | Fail | Signatory cannot sign forms |
-   * | Skipped | Signatory cannot sign Form 8655 until the form is manually uploaded as wet-signed |
-   * | null | Identity verification process has not been completed |
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "identity_verification_status" })
-  identityVerificationStatus?: SignatoryIdentityVerificationStatus;
+    /**
+     * |   |   |
+     *
+     * @remarks
+     * |---|---|
+     * |__Status__| __Description__ |
+     * | Pass | Signatory can sign all forms |
+     * | Fail | Signatory cannot sign forms |
+     * | Skipped | Signatory cannot sign Form 8655 until the form is manually uploaded as wet-signed |
+     * | null | Identity verification process has not been completed |
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "identity_verification_status" })
+    identityVerificationStatus?: SignatoryIdentityVerificationStatus;
 
-  /**
-   * Whether or not the signatory is also the payroll admin of the company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "is_admin" })
-  isAdmin?: boolean;
+    /**
+     * Whether or not the signatory is also the payroll admin of the company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "is_admin" })
+    isAdmin?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "last_name" })
-  lastName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "last_name" })
+    lastName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "phone" })
-  phone?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "phone" })
+    phone?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "title" })
-  title?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "title" })
+    title?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 
-  /**
-   * The current version of the signatory. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version?: string;
+    /**
+     * The current version of the signatory. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version?: string;
 }

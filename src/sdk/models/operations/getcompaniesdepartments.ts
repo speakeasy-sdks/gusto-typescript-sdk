@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetCompaniesDepartmentsRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+    companyUuid: string;
 }
 
 export class GetCompaniesDepartmentsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * List of departments
-   */
-  @SpeakeasyMetadata({ elemType: shared.Department })
-  departments?: shared.Department[];
+    /**
+     * List of departments
+     */
+    @SpeakeasyMetadata({ elemType: shared.Department })
+    departments?: shared.Department[];
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

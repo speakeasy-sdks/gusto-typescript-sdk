@@ -8,66 +8,62 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody extends SpeakeasyBase {
-  /**
-   * With Autopilot® enabled, payroll will run automatically one day before your payroll deadlines.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "auto_pilot" })
-  autoPilot?: boolean;
+    /**
+     * With Autopilot® enabled, payroll will run automatically one day before your payroll deadlines.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "auto_pilot" })
+    autoPilot?: boolean;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version: string;
 }
 
 export class PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 
-  /**
-   * The UUID of the pay schedule
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=pay_schedule_id",
-  })
-  payScheduleId: string;
+    /**
+     * The UUID of the pay schedule
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=pay_schedule_id" })
+    payScheduleId: string;
 }
 
 export class PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  paySchedule?: shared.PaySchedule;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    paySchedule?: shared.PaySchedule;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

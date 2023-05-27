@@ -7,30 +7,30 @@ import { EmployeeStateTaxQuestion } from "./employeestatetaxquestion";
 import { Expose, Type } from "class-transformer";
 
 export class EmployeeStateTax extends SpeakeasyBase {
-  /**
-   * The employee's uuid
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_uuid" })
-  employeeUuid: string;
+    /**
+     * The employee's uuid
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_uuid" })
+    employeeUuid: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "file_new_hire_report" })
-  fileNewHireReport?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "file_new_hire_report" })
+    fileNewHireReport?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "is_work_state" })
-  isWorkState?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "is_work_state" })
+    isWorkState?: boolean;
 
-  @SpeakeasyMetadata({ elemType: EmployeeStateTaxQuestion })
-  @Expose({ name: "questions" })
-  @Type(() => EmployeeStateTaxQuestion)
-  questions: EmployeeStateTaxQuestion[];
+    @SpeakeasyMetadata({ elemType: EmployeeStateTaxQuestion })
+    @Expose({ name: "questions" })
+    @Type(() => EmployeeStateTaxQuestion)
+    questions: EmployeeStateTaxQuestion[];
 
-  /**
-   * Two letter US state abbreviation
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state: string;
+    /**
+     * Two letter US state abbreviation
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state: string;
 }

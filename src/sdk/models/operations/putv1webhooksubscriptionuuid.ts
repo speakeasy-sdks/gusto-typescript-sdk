@@ -8,65 +8,65 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export enum PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes {
-  BankAccount = "BankAccount",
-  Company = "Company",
-  CompanyBenefit = "CompanyBenefit",
-  Contractor = "Contractor",
-  ContractorPayment = "ContractorPayment",
-  Employee = "Employee",
-  EmployeeBenefit = "EmployeeBenefit",
-  EmployeeJobCompensation = "EmployeeJobCompensation",
-  ExternalPayroll = "ExternalPayroll",
-  Form = "Form",
-  Location = "Location",
-  Payroll = "Payroll",
-  PaySchedule = "PaySchedule",
-  Signatory = "Signatory",
+    BankAccount = "BankAccount",
+    Company = "Company",
+    CompanyBenefit = "CompanyBenefit",
+    Contractor = "Contractor",
+    ContractorPayment = "ContractorPayment",
+    Employee = "Employee",
+    EmployeeBenefit = "EmployeeBenefit",
+    EmployeeJobCompensation = "EmployeeJobCompensation",
+    ExternalPayroll = "ExternalPayroll",
+    Form = "Form",
+    Location = "Location",
+    Payroll = "Payroll",
+    PaySchedule = "PaySchedule",
+    Signatory = "Signatory",
 }
 
 export class PutV1WebhookSubscriptionUuidRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "subscription_types" })
-  subscriptionTypes: PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "subscription_types" })
+    subscriptionTypes: PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes[];
 }
 
 export class PutV1WebhookSubscriptionUuidRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1WebhookSubscriptionUuidRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1WebhookSubscriptionUuidRequestBody;
 
-  /**
-   * The webhook subscription UUID.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid",
-  })
-  webhookSubscriptionUuid: string;
+    /**
+     * The webhook subscription UUID.
+     */
+    @SpeakeasyMetadata({
+        data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid",
+    })
+    webhookSubscriptionUuid: string;
 }
 
 export class PutV1WebhookSubscriptionUuidResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  webhookSubscription?: shared.WebhookSubscription;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    webhookSubscription?: shared.WebhookSubscription;
 }

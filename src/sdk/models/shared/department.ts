@@ -6,62 +6,62 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
 export class DepartmentContractors extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }
 
 export class DepartmentEmployees extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }
 
 /**
  * Department Object Example
  */
 export class Department extends SpeakeasyBase {
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_uuid" })
-  companyUuid?: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_uuid" })
+    companyUuid?: string;
 
-  /**
-   * Array of contractors assigned to the department.
-   */
-  @SpeakeasyMetadata({ elemType: DepartmentContractors })
-  @Expose({ name: "contractors" })
-  @Type(() => DepartmentContractors)
-  contractors?: DepartmentContractors[];
+    /**
+     * Array of contractors assigned to the department.
+     */
+    @SpeakeasyMetadata({ elemType: DepartmentContractors })
+    @Expose({ name: "contractors" })
+    @Type(() => DepartmentContractors)
+    contractors?: DepartmentContractors[];
 
-  /**
-   * Array of employees assigned to the department.
-   */
-  @SpeakeasyMetadata({ elemType: DepartmentEmployees })
-  @Expose({ name: "employees" })
-  @Type(() => DepartmentEmployees)
-  employees?: DepartmentEmployees[];
+    /**
+     * Array of employees assigned to the department.
+     */
+    @SpeakeasyMetadata({ elemType: DepartmentEmployees })
+    @Expose({ name: "employees" })
+    @Type(() => DepartmentEmployees)
+    employees?: DepartmentEmployees[];
 
-  /**
-   * Name of the department
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "title" })
-  title?: string;
+    /**
+     * Name of the department
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "title" })
+    title?: string;
 
-  /**
-   * The UUID of the department
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the department
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version: string;
 }

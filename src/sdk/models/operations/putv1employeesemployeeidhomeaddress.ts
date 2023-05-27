@@ -8,71 +8,69 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class PutV1EmployeesEmployeeIdHomeAddressRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "city" })
-  city?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "city" })
+    city?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "street_1" })
-  street1?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "street_1" })
+    street1?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "street_2" })
-  street2?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "street_2" })
+    street2?: string;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "zip" })
-  zip?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "zip" })
+    zip?: string;
 }
 
 export class PutV1EmployeesEmployeeIdHomeAddressRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1EmployeesEmployeeIdHomeAddressRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1EmployeesEmployeeIdHomeAddressRequestBody;
 
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+    employeeId: string;
 }
 
 export class PutV1EmployeesEmployeeIdHomeAddressResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  employeeAddress?: shared.EmployeeAddress;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    employeeAddress?: shared.EmployeeAddress;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

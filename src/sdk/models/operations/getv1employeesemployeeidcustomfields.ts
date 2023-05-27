@@ -8,50 +8,48 @@ import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 export class GetV1EmployeesEmployeeIdCustomFieldsRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+    employeeId: string;
 
-  /**
-   * The page that is requested. When unspecified, will load all objects.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
-  page?: number;
+    /**
+     * The page that is requested. When unspecified, will load all objects.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
+    page?: number;
 
-  /**
-   * Number of objects per page. When unspecified, will default to 25
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
-  per?: number;
+    /**
+     * Number of objects per page. When unspecified, will default to 25
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
+    per?: number;
 }
 
 /**
  * OK
  */
 export class GetV1EmployeesEmployeeIdCustomFields200ApplicationJSON extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: shared.EmployeeCustomField })
-  @Expose({ name: "custom_fields" })
-  @Type(() => shared.EmployeeCustomField)
-  customFields?: shared.EmployeeCustomField[];
+    @SpeakeasyMetadata({ elemType: shared.EmployeeCustomField })
+    @Expose({ name: "custom_fields" })
+    @Type(() => shared.EmployeeCustomField)
+    customFields?: shared.EmployeeCustomField[];
 }
 
 export class GetV1EmployeesEmployeeIdCustomFieldsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * OK
-   */
-  @SpeakeasyMetadata()
-  getV1EmployeesEmployeeIdCustomFields200ApplicationJSONObject?: GetV1EmployeesEmployeeIdCustomFields200ApplicationJSON;
+    /**
+     * OK
+     */
+    @SpeakeasyMetadata()
+    getV1EmployeesEmployeeIdCustomFields200ApplicationJSONObject?: GetV1EmployeesEmployeeIdCustomFields200ApplicationJSON;
 }

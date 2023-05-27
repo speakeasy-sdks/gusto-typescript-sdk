@@ -8,73 +8,69 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class PutV1EmployeeFormSignRequestBody extends SpeakeasyBase {
-  /**
-   * whether you agree to sign electronically
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "agree" })
-  agree: boolean;
+    /**
+     * whether you agree to sign electronically
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "agree" })
+    agree: boolean;
 
-  /**
-   * The signature
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "signature_text" })
-  signatureText: string;
+    /**
+     * The signature
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "signature_text" })
+    signatureText: string;
 
-  /**
-   * The IP address of the signatory who signed the form.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "signed_by_ip_address" })
-  signedByIpAddress: string;
+    /**
+     * The IP address of the signatory who signed the form.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "signed_by_ip_address" })
+    signedByIpAddress: string;
 }
 
 export class PutV1EmployeeFormSignRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1EmployeeFormSignRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1EmployeeFormSignRequestBody;
 
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+    employeeId: string;
 
-  /**
-   * The ID or UUID of the form
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=form_id",
-  })
-  formId: string;
+    /**
+     * The ID or UUID of the form
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=form_id" })
+    formId: string;
 }
 
 export class PutV1EmployeeFormSignResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  form?: shared.Form;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    form?: shared.Form;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

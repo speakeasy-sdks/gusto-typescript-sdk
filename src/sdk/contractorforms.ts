@@ -8,313 +8,308 @@ import * as shared from "./models/shared";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 export class ContractorForms {
-  _defaultClient: AxiosInstance;
-  _securityClient: AxiosInstance;
-  _serverURL: string;
-  _language: string;
-  _sdkVersion: string;
-  _genVersion: string;
+    _defaultClient: AxiosInstance;
+    _securityClient: AxiosInstance;
+    _serverURL: string;
+    _language: string;
+    _sdkVersion: string;
+    _genVersion: string;
 
-  constructor(
-    defaultClient: AxiosInstance,
-    securityClient: AxiosInstance,
-    serverURL: string,
-    language: string,
-    sdkVersion: string,
-    genVersion: string
-  ) {
-    this._defaultClient = defaultClient;
-    this._securityClient = securityClient;
-    this._serverURL = serverURL;
-    this._language = language;
-    this._sdkVersion = sdkVersion;
-    this._genVersion = genVersion;
-  }
-
-  /**
-   * Get a contractor form
-   *
-   * @remarks
-   * Get a contractor form
-   */
-  async getV1ContractorForm(
-    req: operations.GetV1ContractorFormRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1ContractorFormResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1ContractorFormRequest(req);
+    constructor(
+        defaultClient: AxiosInstance,
+        securityClient: AxiosInstance,
+        serverURL: string,
+        language: string,
+        sdkVersion: string,
+        genVersion: string
+    ) {
+        this._defaultClient = defaultClient;
+        this._securityClient = securityClient;
+        this._serverURL = serverURL;
+        this._language = language;
+        this._sdkVersion = sdkVersion;
+        this._genVersion = genVersion;
     }
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/contractors/{contractor_uuid}/forms/{form_id}",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...config?.headers };
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1ContractorFormResponse =
-      new operations.GetV1ContractorFormResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.form = utils.objectToClass(
-            httpRes?.data,
-            operations.GetV1ContractorFormForm
-          );
+    /**
+     * Get a contractor form
+     *
+     * @remarks
+     * Get a contractor form
+     */
+    async getV1ContractorForm(
+        req: operations.GetV1ContractorFormRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1ContractorFormResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1ContractorFormRequest(req);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
 
-    return res;
-  }
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/contractors/{contractor_uuid}/forms/{form_id}",
+            req
+        );
 
-  /**
-   * Get the contractor form pdf
-   *
-   * @remarks
-   * Get the link to the form PDF
-   */
-  async getV1ContractorFormPdf(
-    req: operations.GetV1ContractorFormPdfRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1ContractorFormPdfResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1ContractorFormPdfRequest(req);
-    }
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/contractors/{contractor_uuid}/forms/{form_id}/pdf",
-      req
-    );
+        const headers = { ...config?.headers };
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
 
-    const headers = { ...config?.headers };
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1ContractorFormPdfResponse =
-      new operations.GetV1ContractorFormPdfResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
 
-    return res;
-  }
-
-  /**
-   * Get all contractor forms
-   *
-   * @remarks
-   * Get a list of all contractor's forms
-   */
-  async getV1ContractorForms(
-    req: operations.GetV1ContractorFormsRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1ContractorFormsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1ContractorFormsRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/contractors/{contractor_uuid}/forms",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...config?.headers };
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1ContractorFormsResponse =
-      new operations.GetV1ContractorFormsResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.getV1ContractorFormsFormAnies = [];
-          const resFieldDepth: number = utils.getResFieldDepth(res);
-          res.getV1ContractorFormsFormAnies = utils.objectToClass(
-            httpRes?.data,
-            operations.GetV1ContractorFormsForm,
-            resFieldDepth
-          );
+        const res: operations.GetV1ContractorFormResponse =
+            new operations.GetV1ContractorFormResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.form = utils.objectToClass(
+                        httpRes?.data,
+                        operations.GetV1ContractorFormForm
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
         }
-        break;
-      case httpRes?.status == 404:
-        break;
+
+        return res;
     }
 
-    return res;
-  }
-
-  /**
-   * Generate a 1099 form [SANDBOX]
-   *
-   * @remarks
-   * Generates a 1099 document for testing purposes.
-   *
-   * > 📘
-   * >
-   * > This endpoint can only be used in the Sandbox environments.
-   *
-   * `scope: contractors:write`
-   *
-   */
-  async postV1SandboxGenerate1099(
-    req: operations.PostV1SandboxGenerate1099RequestBody,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PostV1SandboxGenerate1099Response> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1SandboxGenerate1099RequestBody(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string =
-      baseURL.replace(/\/$/, "") + "/v1/sandbox/generate_1099";
-
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
-
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "request",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-    headers["Accept"] = "application/json;q=1, application/json;q=0";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "post",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PostV1SandboxGenerate1099Response =
-      new operations.PostV1SandboxGenerate1099Response({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.form = utils.objectToClass(
-            httpRes?.data,
-            operations.PostV1SandboxGenerate1099Form
-          );
+    /**
+     * Get the contractor form pdf
+     *
+     * @remarks
+     * Get the link to the form PDF
+     */
+    async getV1ContractorFormPdf(
+        req: operations.GetV1ContractorFormPdfRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1ContractorFormPdfResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1ContractorFormPdfRequest(req);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/contractors/{contractor_uuid}/forms/{form_id}/pdf",
+            req
+        );
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...config?.headers };
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
+
+        const res: operations.GetV1ContractorFormPdfResponse =
+            new operations.GetV1ContractorFormPdfResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+        }
+
+        return res;
     }
 
-    return res;
-  }
+    /**
+     * Get all contractor forms
+     *
+     * @remarks
+     * Get a list of all contractor's forms
+     */
+    async getV1ContractorForms(
+        req: operations.GetV1ContractorFormsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1ContractorFormsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1ContractorFormsRequest(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/contractors/{contractor_uuid}/forms",
+            req
+        );
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...config?.headers };
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.GetV1ContractorFormsResponse =
+            new operations.GetV1ContractorFormsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.getV1ContractorFormsFormAnies = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.getV1ContractorFormsFormAnies = utils.objectToClass(
+                        httpRes?.data,
+                        operations.GetV1ContractorFormsForm,
+                        resFieldDepth
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Generate a 1099 form [SANDBOX]
+     *
+     * @remarks
+     * Generates a 1099 document for testing purposes.
+     *
+     * > 📘
+     * >
+     * > This endpoint can only be used in the Sandbox environments.
+     *
+     * `scope: contractors:write`
+     *
+     */
+    async postV1SandboxGenerate1099(
+        req: operations.PostV1SandboxGenerate1099RequestBody,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PostV1SandboxGenerate1099Response> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PostV1SandboxGenerate1099RequestBody(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = baseURL.replace(/\/$/, "") + "/v1/sandbox/generate_1099";
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PostV1SandboxGenerate1099Response =
+            new operations.PostV1SandboxGenerate1099Response({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.form = utils.objectToClass(
+                        httpRes?.data,
+                        operations.PostV1SandboxGenerate1099Form
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        httpRes?.data,
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
 }

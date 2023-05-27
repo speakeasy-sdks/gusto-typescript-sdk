@@ -8,104 +8,93 @@ import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements extends SpeakeasyBase {
-  /**
-   * An identifier for an individual requirement. Uniqueness is guaranteed within a requirement set.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "key" })
-  key?: string;
+    /**
+     * An identifier for an individual requirement. Uniqueness is guaranteed within a requirement set.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "key" })
+    key?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "value" })
-  value?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "value" })
+    value?: string;
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets extends SpeakeasyBase {
-  /**
-   * An ISO 8601 formatted date representing the date values became effective. Some requirement sets are effective dated, while others are not. Multiple requirement sets for the same state/key can/will exist with unique effective dates. If a requirement set is has an `effective_from` value, all requirement sets with the same key will also have an `effective_from` value.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "effective_from" })
-  effectiveFrom?: string;
+    /**
+     * An ISO 8601 formatted date representing the date values became effective. Some requirement sets are effective dated, while others are not. Multiple requirement sets for the same state/key can/will exist with unique effective dates. If a requirement set is has an `effective_from` value, all requirement sets with the same key will also have an `effective_from` value.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "effective_from" })
+    effectiveFrom?: string;
 
-  /**
-   * An identifier for a set of requirements. A list of requirement sets can contain multiple sets with the same `key` and different `effective_from` values.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "key" })
-  key?: string;
+    /**
+     * An identifier for a set of requirements. A list of requirement sets can contain multiple sets with the same `key` and different `effective_from` values.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "key" })
+    key?: string;
 
-  @SpeakeasyMetadata({
-    elemType:
-      PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements,
-  })
-  @Expose({ name: "requirements" })
-  @Type(
-    () =>
-      PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements
-  )
-  requirements?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements[];
+    @SpeakeasyMetadata({
+        elemType:
+            PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements,
+    })
+    @Expose({ name: "requirements" })
+    @Type(() => PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements)
+    requirements?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements[];
 
-  /**
-   * One of the two-letter state abbreviations for the fifty United States and the District of Columbia (DC)
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: string;
+    /**
+     * One of the two-letter state abbreviations for the fifty United States and the District of Columbia (DC)
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: string;
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    elemType:
-      PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets,
-  })
-  @Expose({ name: "requirement_sets" })
-  @Type(
-    () =>
-      PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets
-  )
-  requirementSets?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets[];
+    @SpeakeasyMetadata({
+        elemType: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets,
+    })
+    @Expose({ name: "requirement_sets" })
+    @Type(() => PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets)
+    requirementSets?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets[];
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+    companyUuid: string;
 
-  /**
-   * 2-letter US state abbreviation
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=state",
-  })
-  state: string;
+    /**
+     * 2-letter US state abbreviation
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=state" })
+    state: string;
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

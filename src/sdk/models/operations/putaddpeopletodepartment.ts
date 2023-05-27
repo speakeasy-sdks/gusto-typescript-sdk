@@ -8,70 +8,66 @@ import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 export class PutAddPeopleToDepartmentRequestBodyContractors extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }
 
 export class PutAddPeopleToDepartmentRequestBodyEmployees extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }
 
 export class PutAddPeopleToDepartmentRequestBody extends SpeakeasyBase {
-  /**
-   * Array of contractors to add to the department
-   */
-  @SpeakeasyMetadata({
-    elemType: PutAddPeopleToDepartmentRequestBodyContractors,
-  })
-  @Expose({ name: "contractors" })
-  @Type(() => PutAddPeopleToDepartmentRequestBodyContractors)
-  contractors?: PutAddPeopleToDepartmentRequestBodyContractors[];
+    /**
+     * Array of contractors to add to the department
+     */
+    @SpeakeasyMetadata({ elemType: PutAddPeopleToDepartmentRequestBodyContractors })
+    @Expose({ name: "contractors" })
+    @Type(() => PutAddPeopleToDepartmentRequestBodyContractors)
+    contractors?: PutAddPeopleToDepartmentRequestBodyContractors[];
 
-  /**
-   * Array of employees to add to the department
-   */
-  @SpeakeasyMetadata({ elemType: PutAddPeopleToDepartmentRequestBodyEmployees })
-  @Expose({ name: "employees" })
-  @Type(() => PutAddPeopleToDepartmentRequestBodyEmployees)
-  employees?: PutAddPeopleToDepartmentRequestBodyEmployees[];
+    /**
+     * Array of employees to add to the department
+     */
+    @SpeakeasyMetadata({ elemType: PutAddPeopleToDepartmentRequestBodyEmployees })
+    @Expose({ name: "employees" })
+    @Type(() => PutAddPeopleToDepartmentRequestBodyEmployees)
+    employees?: PutAddPeopleToDepartmentRequestBodyEmployees[];
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version?: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version?: string;
 }
 
 export class PutAddPeopleToDepartmentRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutAddPeopleToDepartmentRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutAddPeopleToDepartmentRequestBody;
 
-  /**
-   * The UUID of the department
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=department_uuid",
-  })
-  departmentUuid: string;
+    /**
+     * The UUID of the department
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=department_uuid" })
+    departmentUuid: string;
 }
 
 export class PutAddPeopleToDepartmentResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Department Object Example
-   */
-  @SpeakeasyMetadata()
-  department?: shared.Department;
+    /**
+     * Department Object Example
+     */
+    @SpeakeasyMetadata()
+    department?: shared.Department;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

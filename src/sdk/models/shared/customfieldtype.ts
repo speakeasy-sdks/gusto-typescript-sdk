@@ -6,9 +6,9 @@
  * Input type for the custom field.
  */
 export enum CustomFieldType {
-  Text = "text",
-  Currency = "currency",
-  Number = "number",
-  Date = "date",
-  Radio = "radio",
+    Text = "text",
+    Currency = "currency",
+    Number = "number",
+    Date = "date",
+    Radio = "radio",
 }

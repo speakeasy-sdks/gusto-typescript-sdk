@@ -10,38 +10,38 @@ import { Expose } from "class-transformer";
  * A custom field on a company
  */
 export class CompanyCustomField extends SpeakeasyBase {
-  /**
-   * Description of the company custom field
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "description" })
-  description?: string;
+    /**
+     * Description of the company custom field
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description?: string;
 
-  /**
-   * Name of the company custom field
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name: string;
+    /**
+     * Name of the company custom field
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name: string;
 
-  /**
-   * An array of options for fields of type radio. Otherwise, null.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "selection_options" })
-  selectionOptions?: string[];
+    /**
+     * An array of options for fields of type radio. Otherwise, null.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "selection_options" })
+    selectionOptions?: string[];
 
-  /**
-   * Input type for the custom field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type: CustomFieldType;
+    /**
+     * Input type for the custom field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type: CustomFieldType;
 
-  /**
-   * UUID of the company custom field
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid: string;
+    /**
+     * UUID of the company custom field
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid: string;
 }

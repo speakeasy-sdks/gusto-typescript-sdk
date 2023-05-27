@@ -7,36 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1GeneratedDocumentsDocumentTypeRequestUuidRequest extends SpeakeasyBase {
-  /**
-   * the type of document being generated
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=document_type",
-  })
-  documentType: string;
+    /**
+     * the type of document being generated
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=document_type" })
+    documentType: string;
 
-  /**
-   * The UUID of the Generated Document Request
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=request_uuid",
-  })
-  requestUuid: string;
+    /**
+     * The UUID of the Generated Document Request
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=request_uuid" })
+    requestUuid: string;
 }
 
 export class GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  generatedDocument?: shared.GeneratedDocument;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    generatedDocument?: shared.GeneratedDocument;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

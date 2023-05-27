@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * The representation of a flow in Gusto white-label UI.
  */
 export class Flow extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "expires_at" })
-  expiresAt?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "expires_at" })
+    expiresAt?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "url" })
-  url?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "url" })
+    url?: string;
 }

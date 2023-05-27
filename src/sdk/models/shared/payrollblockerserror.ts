@@ -6,40 +6,40 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
 export class PayrollBlockersErrorErrorsMetadata extends SpeakeasyBase {
-  /**
-   * A categorization of the payroll blocker, e.g. "geocode_error"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "key" })
-  key?: string;
+    /**
+     * A categorization of the payroll blocker, e.g. "geocode_error"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "key" })
+    key?: string;
 }
 
 export class PayrollBlockersErrorErrors extends SpeakeasyBase {
-  /**
-   * The string "payroll_blocker"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "category" })
-  category?: string;
+    /**
+     * The string "payroll_blocker"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "category" })
+    category?: string;
 
-  /**
-   * The string "base"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "error_key" })
-  errorKey?: string;
+    /**
+     * The string "base"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "error_key" })
+    errorKey?: string;
 
-  /**
-   * Human readable description of the payroll blocker
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "message" })
-  message?: string;
+    /**
+     * Human readable description of the payroll blocker
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "message" })
+    message?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "metadata" })
-  @Type(() => PayrollBlockersErrorErrorsMetadata)
-  metadata?: PayrollBlockersErrorErrorsMetadata;
+    @SpeakeasyMetadata()
+    @Expose({ name: "metadata" })
+    @Type(() => PayrollBlockersErrorErrorsMetadata)
+    metadata?: PayrollBlockersErrorErrorsMetadata;
 }
 
 /**
@@ -50,8 +50,8 @@ export class PayrollBlockersErrorErrors extends SpeakeasyBase {
  * For detailed information, see the [Payroll Blockers guide](https://docs.gusto.com/embedded-payroll/docs/payroll-blockers)
  */
 export class PayrollBlockersError extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: PayrollBlockersErrorErrors })
-  @Expose({ name: "errors" })
-  @Type(() => PayrollBlockersErrorErrors)
-  errors?: PayrollBlockersErrorErrors[];
+    @SpeakeasyMetadata({ elemType: PayrollBlockersErrorErrors })
+    @Expose({ name: "errors" })
+    @Type(() => PayrollBlockersErrorErrors)
+    errors?: PayrollBlockersErrorErrors[];
 }

@@ -8,60 +8,58 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "first_name" })
-  firstName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "first_name" })
+    firstName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "last_name" })
-  lastName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "last_name" })
+    lastName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "title" })
-  title?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "title" })
+    title?: string;
 }
 
 export class PostV1CompaniesCompanyUuidSignatoriesInviteRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+    companyUuid: string;
 }
 
 export class PostV1CompaniesCompanyUuidSignatoriesInviteResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  signatory?: shared.Signatory;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    signatory?: shared.Signatory;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

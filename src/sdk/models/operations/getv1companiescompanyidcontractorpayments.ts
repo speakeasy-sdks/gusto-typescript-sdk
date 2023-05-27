@@ -6,72 +6,62 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompaniesCompanyIdContractorPaymentsRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 
-  /**
-   * The UUID of the contractor. When specified, will load all payments for that contractor.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=contractor_uuid",
-  })
-  contractorUuid?: string;
+    /**
+     * The UUID of the contractor. When specified, will load all payments for that contractor.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=contractor_uuid" })
+    contractorUuid?: string;
 
-  /**
-   * The time period for which to retrieve contractor payments
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=end_date",
-  })
-  endDate: string;
+    /**
+     * The time period for which to retrieve contractor payments
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=end_date" })
+    endDate: string;
 
-  /**
-   * Display contractor payments results group by check date if set to true.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=group_by_date",
-  })
-  groupByDate?: boolean;
+    /**
+     * Display contractor payments results group by check date if set to true.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=group_by_date" })
+    groupByDate?: boolean;
 
-  /**
-   * The page that is requested. When unspecified, will load all objects.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
-  page?: number;
+    /**
+     * The page that is requested. When unspecified, will load all objects.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
+    page?: number;
 
-  /**
-   * Number of objects per page. When unspecified, will default to 25
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
-  per?: number;
+    /**
+     * Number of objects per page. When unspecified, will default to 25
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
+    per?: number;
 
-  /**
-   * The time period for which to retrieve contractor payments
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=start_date",
-  })
-  startDate: string;
+    /**
+     * The time period for which to retrieve contractor payments
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=start_date" })
+    startDate: string;
 }
 
 export class GetV1CompaniesCompanyIdContractorPaymentsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * A JSON object containing contractor payments information
-   */
-  @SpeakeasyMetadata()
-  getV1CompaniesCompanyIdContractorPayments200ApplicationJSONOneOf?: any;
+    /**
+     * A JSON object containing contractor payments information
+     */
+    @SpeakeasyMetadata()
+    getV1CompaniesCompanyIdContractorPayments200ApplicationJSONOneOf?: any;
 }

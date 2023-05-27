@@ -8,65 +8,63 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class PostV1ExternalPayrollRequestBody extends SpeakeasyBase {
-  /**
-   * External payroll's check date.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "check_date" })
-  checkDate: string;
+    /**
+     * External payroll's check date.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "check_date" })
+    checkDate: string;
 
-  /**
-   * External payroll's pay period end date.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_period_end_date" })
-  paymentPeriodEndDate: string;
+    /**
+     * External payroll's pay period end date.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_period_end_date" })
+    paymentPeriodEndDate: string;
 
-  /**
-   * External payroll's pay period start date.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_period_start_date" })
-  paymentPeriodStartDate: string;
+    /**
+     * External payroll's pay period start date.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_period_start_date" })
+    paymentPeriodStartDate: string;
 }
 
 export class PostV1ExternalPayrollRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostV1ExternalPayrollRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1ExternalPayrollRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+    companyUuid: string;
 }
 
 export class PostV1ExternalPayrollResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  externalPayroll?: shared.ExternalPayroll;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    externalPayroll?: shared.ExternalPayroll;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

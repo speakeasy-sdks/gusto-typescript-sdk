@@ -6,36 +6,32 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
 export class PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 
-  /**
-   * The UUID of the payroll
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=payroll_id",
-  })
-  payrollId: string;
+    /**
+     * The UUID of the payroll
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
+    payrollId: string;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   */
-  @SpeakeasyMetadata()
-  putV1CompaniesCompanyIdPayrollsPayrollIdSubmit422ApplicationJSONOneOf?: any;
+    /**
+     * Unprocessable Entity
+     */
+    @SpeakeasyMetadata()
+    putV1CompaniesCompanyIdPayrollsPayrollIdSubmit422ApplicationJSONOneOf?: any;
 }

@@ -11,106 +11,104 @@ import { Expose, Type } from "class-transformer";
  * The signatory's home address
  */
 export class PostV1CompanySignatoriesRequestBodyHomeAddress extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "city" })
-  city: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "city" })
+    city: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "street_1" })
-  street1: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "street_1" })
+    street1: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "street_2" })
-  street2?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "street_2" })
+    street2?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "zip" })
-  zip: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "zip" })
+    zip: string;
 }
 
 export class PostV1CompanySignatoriesRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "birthday" })
-  birthday: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "birthday" })
+    birthday: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "first_name" })
-  firstName: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "first_name" })
+    firstName: string;
 
-  /**
-   * The signatory's home address
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "home_address" })
-  @Type(() => PostV1CompanySignatoriesRequestBodyHomeAddress)
-  homeAddress: PostV1CompanySignatoriesRequestBodyHomeAddress;
+    /**
+     * The signatory's home address
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "home_address" })
+    @Type(() => PostV1CompanySignatoriesRequestBodyHomeAddress)
+    homeAddress: PostV1CompanySignatoriesRequestBodyHomeAddress;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "last_name" })
-  lastName: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "last_name" })
+    lastName: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "middle_initial" })
-  middleInitial?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "middle_initial" })
+    middleInitial?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "phone" })
-  phone?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "phone" })
+    phone?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "ssn" })
-  ssn: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "ssn" })
+    ssn: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "title" })
-  title: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "title" })
+    title: string;
 }
 
 export class PostV1CompanySignatoriesRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostV1CompanySignatoriesRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1CompanySignatoriesRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+    companyUuid: string;
 }
 
 export class PostV1CompanySignatoriesResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  signatory?: shared.Signatory;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    signatory?: shared.Signatory;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

@@ -9,38 +9,38 @@ import { Expose } from "class-transformer";
  * Example response
  */
 export class PayrollCheck extends SpeakeasyBase {
-  /**
-   * A unique identifier of the payroll.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payroll_uuid" })
-  payrollUuid?: string;
+    /**
+     * A unique identifier of the payroll.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payroll_uuid" })
+    payrollUuid?: string;
 
-  /**
-   * The format the checks will be printed.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "printing_format" })
-  printingFormat?: string;
+    /**
+     * The format the checks will be printed.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "printing_format" })
+    printingFormat?: string;
 
-  /**
-   * A unique identifier of the Generated Document request
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "request_uuid" })
-  requestUuid?: string;
+    /**
+     * A unique identifier of the Generated Document request
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "request_uuid" })
+    requestUuid?: string;
 
-  /**
-   * The starting check number for the checks being printed.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "starting_check_number" })
-  startingCheckNumber?: string;
+    /**
+     * The starting check number for the checks being printed.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "starting_check_number" })
+    startingCheckNumber?: string;
 
-  /**
-   * Current status of the Generated Document
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "status" })
-  status?: string;
+    /**
+     * Current status of the Generated Document
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "status" })
+    status?: string;
 }

@@ -7,36 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1EmployeeFormRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+    employeeId: string;
 
-  /**
-   * The ID or UUID of the form
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=form_id",
-  })
-  formId: string;
+    /**
+     * The ID or UUID of the form
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=form_id" })
+    formId: string;
 }
 
 export class GetV1EmployeeFormResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  form?: shared.Form;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    form?: shared.Form;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

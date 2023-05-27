@@ -9,82 +9,82 @@ import { Expose } from "class-transformer";
  * The FLSA status for this compensation. Salaried ('Exempt') employees are paid a fixed salary every pay period. Salaried with overtime ('Salaried Nonexempt') employees are paid a fixed salary every pay period, and receive overtime pay when applicable. Hourly ('Nonexempt') employees are paid for the hours they work, and receive overtime pay when applicable. Commissioned employees ('Commission Only Exempt') earn wages based only on commission. Commissioned with overtime ('Commission Only Nonexempt') earn wages based on commission, and receive overtime pay when applicable. Owners ('Owner') are employees that own at least twenty percent of the company.
  */
 export enum CompensationFlsaStatus {
-  Exempt = "Exempt",
-  SalariedNonexempt = "Salaried Nonexempt",
-  Nonexempt = "Nonexempt",
-  CommissionOnlyExempt = "Commission Only Exempt",
-  CommissionOnlyNonexempt = "Commission Only Nonexempt",
-  Owner = "Owner",
+    Exempt = "Exempt",
+    SalariedNonexempt = "Salaried Nonexempt",
+    Nonexempt = "Nonexempt",
+    CommissionOnlyExempt = "Commission Only Exempt",
+    CommissionOnlyNonexempt = "Commission Only Nonexempt",
+    Owner = "Owner",
 }
 
 /**
  * The unit accompanying the compensation rate. If the employee is an owner, rate should be 'Paycheck'.
  */
 export enum CompensationPaymentUnit {
-  Hour = "Hour",
-  Week = "Week",
-  Month = "Month",
-  Year = "Year",
-  Paycheck = "Paycheck",
+    Hour = "Hour",
+    Week = "Week",
+    Month = "Month",
+    Year = "Year",
+    Paycheck = "Paycheck",
 }
 
 /**
  * The representation of compensation in Gusto.
  */
 export class Compensation extends SpeakeasyBase {
-  /**
-   * Indicates if the compensation could be adjusted to minimum wage during payroll calculation.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "adjust_for_minimum_wage" })
-  adjustForMinimumWage?: boolean;
+    /**
+     * Indicates if the compensation could be adjusted to minimum wage during payroll calculation.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "adjust_for_minimum_wage" })
+    adjustForMinimumWage?: boolean;
 
-  /**
-   * The effective date for this compensation. For the first compensation, this defaults to the job's hire date.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "effective_date" })
-  effectiveDate?: string;
+    /**
+     * The effective date for this compensation. For the first compensation, this defaults to the job's hire date.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "effective_date" })
+    effectiveDate?: string;
 
-  /**
-   * The FLSA status for this compensation. Salaried ('Exempt') employees are paid a fixed salary every pay period. Salaried with overtime ('Salaried Nonexempt') employees are paid a fixed salary every pay period, and receive overtime pay when applicable. Hourly ('Nonexempt') employees are paid for the hours they work, and receive overtime pay when applicable. Commissioned employees ('Commission Only Exempt') earn wages based only on commission. Commissioned with overtime ('Commission Only Nonexempt') earn wages based on commission, and receive overtime pay when applicable. Owners ('Owner') are employees that own at least twenty percent of the company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "flsa_status" })
-  flsaStatus?: CompensationFlsaStatus;
+    /**
+     * The FLSA status for this compensation. Salaried ('Exempt') employees are paid a fixed salary every pay period. Salaried with overtime ('Salaried Nonexempt') employees are paid a fixed salary every pay period, and receive overtime pay when applicable. Hourly ('Nonexempt') employees are paid for the hours they work, and receive overtime pay when applicable. Commissioned employees ('Commission Only Exempt') earn wages based only on commission. Commissioned with overtime ('Commission Only Nonexempt') earn wages based on commission, and receive overtime pay when applicable. Owners ('Owner') are employees that own at least twenty percent of the company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "flsa_status" })
+    flsaStatus?: CompensationFlsaStatus;
 
-  /**
-   * The UUID of the job to which the compensation belongs.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "job_uuid" })
-  jobUuid?: string;
+    /**
+     * The UUID of the job to which the compensation belongs.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "job_uuid" })
+    jobUuid?: string;
 
-  /**
-   * The unit accompanying the compensation rate. If the employee is an owner, rate should be 'Paycheck'.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_unit" })
-  paymentUnit?: CompensationPaymentUnit;
+    /**
+     * The unit accompanying the compensation rate. If the employee is an owner, rate should be 'Paycheck'.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_unit" })
+    paymentUnit?: CompensationPaymentUnit;
 
-  /**
-   * The dollar amount paid per payment unit.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "rate" })
-  rate?: string;
+    /**
+     * The dollar amount paid per payment unit.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "rate" })
+    rate?: string;
 
-  /**
-   * The UUID of the compensation in Gusto.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the compensation in Gusto.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version?: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version?: string;
 }

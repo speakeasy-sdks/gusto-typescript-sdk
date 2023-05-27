@@ -6,33 +6,33 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
 export class UnprocessableEntityErrorObjectErrors extends SpeakeasyBase {
-  /**
-   * Specifies the type of error. The category provides error groupings and can be used to build custom error handling in your integration.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "category" })
-  category?: string;
+    /**
+     * Specifies the type of error. The category provides error groupings and can be used to build custom error handling in your integration.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "category" })
+    category?: string;
 
-  /**
-   * Specifies where the error occurs. Typically this key identifies the attribute/parameter related to the error.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "error_key" })
-  errorKey?: string;
+    /**
+     * Specifies where the error occurs. Typically this key identifies the attribute/parameter related to the error.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "error_key" })
+    errorKey?: string;
 
-  /**
-   * Provides details about the error - generally this message can be surfaced to an end user.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "message" })
-  message?: string;
+    /**
+     * Provides details about the error - generally this message can be surfaced to an end user.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "message" })
+    message?: string;
 
-  /**
-   * Contains relevant data to identify the resource in question when applicable. For example, to identify an entity `entity_type` and `entity_uuid` will be provided.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "metadata" })
-  metadata?: Record<string, any>;
+    /**
+     * Contains relevant data to identify the resource in question when applicable. For example, to identify an entity `entity_type` and `entity_uuid` will be provided.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "metadata" })
+    metadata?: Record<string, any>;
 }
 
 /**
@@ -44,8 +44,8 @@ export class UnprocessableEntityErrorObjectErrors extends SpeakeasyBase {
  *
  */
 export class UnprocessableEntityErrorObject extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: UnprocessableEntityErrorObjectErrors })
-  @Expose({ name: "errors" })
-  @Type(() => UnprocessableEntityErrorObjectErrors)
-  errors?: UnprocessableEntityErrorObjectErrors[];
+    @SpeakeasyMetadata({ elemType: UnprocessableEntityErrorObjectErrors })
+    @Expose({ name: "errors" })
+    @Type(() => UnprocessableEntityErrorObjectErrors)
+    errors?: UnprocessableEntityErrorObjectErrors[];
 }

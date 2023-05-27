@@ -8,423 +8,400 @@ import * as shared from "./models/shared";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 export class PaySchedules {
-  _defaultClient: AxiosInstance;
-  _securityClient: AxiosInstance;
-  _serverURL: string;
-  _language: string;
-  _sdkVersion: string;
-  _genVersion: string;
+    _defaultClient: AxiosInstance;
+    _securityClient: AxiosInstance;
+    _serverURL: string;
+    _language: string;
+    _sdkVersion: string;
+    _genVersion: string;
 
-  constructor(
-    defaultClient: AxiosInstance,
-    securityClient: AxiosInstance,
-    serverURL: string,
-    language: string,
-    sdkVersion: string,
-    genVersion: string
-  ) {
-    this._defaultClient = defaultClient;
-    this._securityClient = securityClient;
-    this._serverURL = serverURL;
-    this._language = language;
-    this._sdkVersion = sdkVersion;
-    this._genVersion = genVersion;
-  }
-
-  /**
-   * Get pay periods for a company
-   *
-   * @remarks
-   * Pay periods are the foundation of payroll. Compensation, time & attendance, taxes, and expense reports all rely on when they happened. To begin submitting information for a given payroll, we need to agree on the time period.
-   *
-   * By default, this endpoint returns every current and past pay period for a company. Since companies can process payroll as often as every week, there can be up to 53 pay periods a year. If a company has been running payroll with Gusto for five years, this endpoint could return up to 265 pay periods. Use the `start_date` and `end_date` parameters to reduce the scope of the response.
-   *
-   * scope: `payrolls:read`
-   */
-  async getV1CompaniesCompanyIdPayPeriods(
-    req: operations.GetV1CompaniesCompanyIdPayPeriodsRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1CompaniesCompanyIdPayPeriodsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1CompaniesCompanyIdPayPeriodsRequest(req);
+    constructor(
+        defaultClient: AxiosInstance,
+        securityClient: AxiosInstance,
+        serverURL: string,
+        language: string,
+        sdkVersion: string,
+        genVersion: string
+    ) {
+        this._defaultClient = defaultClient;
+        this._securityClient = securityClient;
+        this._serverURL = serverURL;
+        this._language = language;
+        this._sdkVersion = sdkVersion;
+        this._genVersion = genVersion;
     }
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/companies/{company_id}/pay_periods",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...config?.headers };
-    const queryParams: string = utils.serializeQueryParams(req);
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url + queryParams,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1CompaniesCompanyIdPayPeriodsResponse =
-      new operations.GetV1CompaniesCompanyIdPayPeriodsResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.payPeriods = [];
-          const resFieldDepth: number = utils.getResFieldDepth(res);
-          res.payPeriods = utils.objectToClass(
-            httpRes?.data,
-            shared.PayPeriod,
-            resFieldDepth
-          );
+    /**
+     * Get pay periods for a company
+     *
+     * @remarks
+     * Pay periods are the foundation of payroll. Compensation, time & attendance, taxes, and expense reports all rely on when they happened. To begin submitting information for a given payroll, we need to agree on the time period.
+     *
+     * By default, this endpoint returns every current and past pay period for a company. Since companies can process payroll as often as every week, there can be up to 53 pay periods a year. If a company has been running payroll with Gusto for five years, this endpoint could return up to 265 pay periods. Use the `start_date` and `end_date` parameters to reduce the scope of the response.
+     *
+     * scope: `payrolls:read`
+     */
+    async getV1CompaniesCompanyIdPayPeriods(
+        req: operations.GetV1CompaniesCompanyIdPayPeriodsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1CompaniesCompanyIdPayPeriodsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1CompaniesCompanyIdPayPeriodsRequest(req);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
 
-    return res;
-  }
-
-  /**
-   * Get the pay schedules for a company
-   *
-   * @remarks
-   * The pay schedule object in Gusto captures the details of when employees work and when they should be paid. A company can have multiple pay schedules.
-   *
-   * scope: `payrolls:read`
-   */
-  async getV1CompaniesCompanyIdPaySchedules(
-    req: operations.GetV1CompaniesCompanyIdPaySchedulesRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1CompaniesCompanyIdPaySchedulesResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1CompaniesCompanyIdPaySchedulesRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/companies/{company_id}/pay_schedules",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...config?.headers };
-    const queryParams: string = utils.serializeQueryParams(req);
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url + queryParams,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1CompaniesCompanyIdPaySchedulesResponse =
-      new operations.GetV1CompaniesCompanyIdPaySchedulesResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.paySchedules = [];
-          const resFieldDepth: number = utils.getResFieldDepth(res);
-          res.paySchedules = utils.objectToClass(
-            httpRes?.data,
-            shared.PaySchedule,
-            resFieldDepth
-          );
-        }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
-
-    return res;
-  }
-
-  /**
-   * Get a pay schedule
-   *
-   * @remarks
-   * The pay schedule object in Gusto captures the details of when employees work and when they should be paid. A company can have multiple pay schedules.
-   *
-   * scope: `payrolls:read`
-   */
-  async getV1CompaniesCompanyIdPaySchedulesPayScheduleId(
-    req: operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req =
-        new operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest(
-          req
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/companies/{company_id}/pay_periods",
+            req
         );
-    }
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/companies/{company_id}/pay_schedules/{pay_schedule_id}",
-      req
-    );
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
+        const headers = { ...config?.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
-    const headers = { ...config?.headers };
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
 
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse =
-      new operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.paySchedule = utils.objectToClass(
-            httpRes?.data,
-            shared.PaySchedule
-          );
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
 
-    return res;
-  }
-
-  /**
-   * Create a new single pay schedule
-   *
-   * @remarks
-   * Creates a new single default pay schedule for the company.
-   *
-   * This creates one pay schedule during company onboarding and cannot be used if the company has processed a payroll. Creating multiple pay schedules at this time is not supported. To change a pay schedule, the end user will need to login to Gusto to edit their pay schedule.
-   *
-   * Be sure to **[check state laws](https://www.dol.gov/agencies/whd/state/payday)** to know what schedule is right for your customers.
-   */
-  async postV1CompaniesCompanyIdPaySchedules(
-    req: operations.PostV1CompaniesCompanyIdPaySchedulesRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PostV1CompaniesCompanyIdPaySchedulesResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1CompaniesCompanyIdPaySchedulesRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/companies/{company_id}/pay_schedules",
-      req
-    );
-
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
-
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-    headers["Accept"] = "application/json;q=1, application/json;q=0";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "post",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PostV1CompaniesCompanyIdPaySchedulesResponse =
-      new operations.PostV1CompaniesCompanyIdPaySchedulesResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.paySchedule = utils.objectToClass(
-            httpRes?.data,
-            shared.PaySchedule
-          );
+        const res: operations.GetV1CompaniesCompanyIdPayPeriodsResponse =
+            new operations.GetV1CompaniesCompanyIdPayPeriodsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.payPeriods = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.payPeriods = utils.objectToClass(
+                        httpRes?.data,
+                        shared.PayPeriod,
+                        resFieldDepth
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
-        }
-        break;
+
+        return res;
     }
 
-    return res;
-  }
+    /**
+     * Get the pay schedules for a company
+     *
+     * @remarks
+     * The pay schedule object in Gusto captures the details of when employees work and when they should be paid. A company can have multiple pay schedules.
+     *
+     * scope: `payrolls:read`
+     */
+    async getV1CompaniesCompanyIdPaySchedules(
+        req: operations.GetV1CompaniesCompanyIdPaySchedulesRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1CompaniesCompanyIdPaySchedulesResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1CompaniesCompanyIdPaySchedulesRequest(req);
+        }
 
-  /**
-   * Update a pay schedule
-   *
-   * @remarks
-   * Updates a pay schedule.
-   */
-  async putV1CompaniesCompanyIdPaySchedulesPayScheduleId(
-    req: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req =
-        new operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest(
-          req
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/companies/{company_id}/pay_schedules",
+            req
         );
-    }
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/companies/{company_id}/pay_schedules/{pay_schedule_id}",
-      req
-    );
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        const headers = { ...config?.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-    headers["Accept"] = "application/json;q=1, application/json;q=0";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "put",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse =
-      new operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.paySchedule = utils.objectToClass(
-            httpRes?.data,
-            shared.PaySchedule
-          );
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
+
+        const res: operations.GetV1CompaniesCompanyIdPaySchedulesResponse =
+            new operations.GetV1CompaniesCompanyIdPaySchedulesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.paySchedules = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.paySchedules = utils.objectToClass(
+                        httpRes?.data,
+                        shared.PaySchedule,
+                        resFieldDepth
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
         }
-        break;
+
+        return res;
     }
 
-    return res;
-  }
+    /**
+     * Get a pay schedule
+     *
+     * @remarks
+     * The pay schedule object in Gusto captures the details of when employees work and when they should be paid. A company can have multiple pay schedules.
+     *
+     * scope: `payrolls:read`
+     */
+    async getV1CompaniesCompanyIdPaySchedulesPayScheduleId(
+        req: operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/companies/{company_id}/pay_schedules/{pay_schedule_id}",
+            req
+        );
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...config?.headers };
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse =
+            new operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.paySchedule = utils.objectToClass(httpRes?.data, shared.PaySchedule);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Create a new single pay schedule
+     *
+     * @remarks
+     * Creates a new single default pay schedule for the company.
+     *
+     * This creates one pay schedule during company onboarding and cannot be used if the company has processed a payroll. Creating multiple pay schedules at this time is not supported. To change a pay schedule, the end user will need to login to Gusto to edit their pay schedule.
+     *
+     * Be sure to **[check state laws](https://www.dol.gov/agencies/whd/state/payday)** to know what schedule is right for your customers.
+     */
+    async postV1CompaniesCompanyIdPaySchedules(
+        req: operations.PostV1CompaniesCompanyIdPaySchedulesRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PostV1CompaniesCompanyIdPaySchedulesResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PostV1CompaniesCompanyIdPaySchedulesRequest(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/companies/{company_id}/pay_schedules",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PostV1CompaniesCompanyIdPaySchedulesResponse =
+            new operations.PostV1CompaniesCompanyIdPaySchedulesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.paySchedule = utils.objectToClass(httpRes?.data, shared.PaySchedule);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        httpRes?.data,
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Update a pay schedule
+     *
+     * @remarks
+     * Updates a pay schedule.
+     */
+    async putV1CompaniesCompanyIdPaySchedulesPayScheduleId(
+        req: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/companies/{company_id}/pay_schedules/{pay_schedule_id}",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "put",
+            headers: headers,
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse =
+            new operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.paySchedule = utils.objectToClass(httpRes?.data, shared.PaySchedule);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        httpRes?.data,
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
 }

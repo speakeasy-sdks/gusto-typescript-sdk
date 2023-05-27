@@ -9,58 +9,58 @@ import { Expose, Type } from "class-transformer";
  * Possible tax liabilities selections.
  */
 export class TaxLiabilitiesSelectionsPossibleLiabilities extends SpeakeasyBase {
-  /**
-   * The UUID of the external payroll.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "external_payroll_uuid" })
-  externalPayrollUuid?: string;
+    /**
+     * The UUID of the external payroll.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "external_payroll_uuid" })
+    externalPayrollUuid?: string;
 
-  /**
-   * Liability amount.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "liability_amount" })
-  liabilityAmount?: string;
+    /**
+     * Liability amount.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "liability_amount" })
+    liabilityAmount?: string;
 
-  /**
-   * The external payroll check date.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payroll_check_date" })
-  payrollCheckDate?: string;
+    /**
+     * The external payroll check date.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payroll_check_date" })
+    payrollCheckDate?: string;
 }
 
 /**
  * The representation of tax liabilities selections.
  */
 export class TaxLiabilitiesSelections extends SpeakeasyBase {
-  /**
-   * The UUID of last unpaid external payroll.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "last_unpaid_external_payroll_uuid" })
-  lastUnpaidExternalPayrollUuid?: string;
+    /**
+     * The UUID of last unpaid external payroll.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "last_unpaid_external_payroll_uuid" })
+    lastUnpaidExternalPayrollUuid?: string;
 
-  /**
-   * Possible tax liabilities selections.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "possible_liabilities" })
-  @Type(() => TaxLiabilitiesSelectionsPossibleLiabilities)
-  possibleLiabilities?: TaxLiabilitiesSelectionsPossibleLiabilities;
+    /**
+     * Possible tax liabilities selections.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "possible_liabilities" })
+    @Type(() => TaxLiabilitiesSelectionsPossibleLiabilities)
+    possibleLiabilities?: TaxLiabilitiesSelectionsPossibleLiabilities;
 
-  /**
-   * The ID of the tax.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "tax_id" })
-  taxId?: number;
+    /**
+     * The ID of the tax.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "tax_id" })
+    taxId?: number;
 
-  /**
-   * The name of the tax.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "tax_name" })
-  taxName?: string;
+    /**
+     * The name of the tax.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "tax_name" })
+    taxName?: string;
 }

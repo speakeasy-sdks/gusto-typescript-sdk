@@ -9,45 +9,45 @@ import { Expose } from "class-transformer";
  * Example response
  */
 export class PayrollReversal extends SpeakeasyBase {
-  /**
-   * Timestamp of when the reversal was approved.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "approved_at" })
-  approvedAt?: string;
+    /**
+     * Timestamp of when the reversal was approved.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "approved_at" })
+    approvedAt?: string;
 
-  /**
-   * Category chosen by the admin who requested the reversal.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "category" })
-  category?: string;
+    /**
+     * Category chosen by the admin who requested the reversal.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "category" })
+    category?: string;
 
-  /**
-   * A reason provided by the admin who created the reversal.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "reason" })
-  reason?: string;
+    /**
+     * A reason provided by the admin who created the reversal.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "reason" })
+    reason?: string;
 
-  /**
-   * The UUID of the payroll where the reversal was applied.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "reversal_payroll_uuid" })
-  reversalPayrollUuid?: string;
+    /**
+     * The UUID of the payroll where the reversal was applied.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "reversal_payroll_uuid" })
+    reversalPayrollUuid?: string;
 
-  /**
-   * Array of affected employee UUIDs.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "reversed_employee_uuids" })
-  reversedEmployeeUuids?: string[];
+    /**
+     * Array of affected employee UUIDs.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "reversed_employee_uuids" })
+    reversedEmployeeUuids?: string[];
 
-  /**
-   * The UUID for the payroll run being reversed.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "reversed_payroll_uuid" })
-  reversedPayrollUuid?: string;
+    /**
+     * The UUID for the payroll run being reversed.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "reversed_payroll_uuid" })
+    reversedPayrollUuid?: string;
 }

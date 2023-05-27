@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1PaymentReceiptsPayrollsPayrollUuidRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the payroll
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=payroll_uuid",
-  })
-  payrollUuid: string;
+    /**
+     * The UUID of the payroll
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_uuid" })
+    payrollUuid: string;
 }
 
 export class GetV1PaymentReceiptsPayrollsPayrollUuidResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  payrollReceipt?: shared.PayrollReceipt;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    payrollReceipt?: shared.PayrollReceipt;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

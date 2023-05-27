@@ -7,28 +7,28 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1WebhookSubscriptionUuidRequest extends SpeakeasyBase {
-  /**
-   * The webhook subscription UUID.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid",
-  })
-  webhookSubscriptionUuid: string;
+    /**
+     * The webhook subscription UUID.
+     */
+    @SpeakeasyMetadata({
+        data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid",
+    })
+    webhookSubscriptionUuid: string;
 }
 
 export class GetV1WebhookSubscriptionUuidResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  webhookSubscription?: shared.WebhookSubscription;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    webhookSubscription?: shared.WebhookSubscription;
 }

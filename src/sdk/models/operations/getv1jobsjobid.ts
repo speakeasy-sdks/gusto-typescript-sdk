@@ -13,43 +13,39 @@ import { AxiosResponse } from "axios";
  * - all_compensations: Include all effective dated compensations for the job instead of only the current compensation
  */
 export enum GetV1JobsJobIdInclude {
-  AllCompensations = "all_compensations",
+    AllCompensations = "all_compensations",
 }
 
 export class GetV1JobsJobIdRequest extends SpeakeasyBase {
-  /**
-   * Available options:
-   *
-   * @remarks
-   * - all_compensations: Include all effective dated compensations for the job instead of only the current compensation
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=include",
-  })
-  include?: GetV1JobsJobIdInclude;
+    /**
+     * Available options:
+     *
+     * @remarks
+     * - all_compensations: Include all effective dated compensations for the job instead of only the current compensation
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
+    include?: GetV1JobsJobIdInclude;
 
-  /**
-   * The UUID of the job
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=job_id",
-  })
-  jobId: string;
+    /**
+     * The UUID of the job
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=job_id" })
+    jobId: string;
 }
 
 export class GetV1JobsJobIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  job?: shared.Job;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    job?: shared.Job;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

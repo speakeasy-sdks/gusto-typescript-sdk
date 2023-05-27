@@ -11,85 +11,83 @@ import { Expose } from "class-transformer";
  * Update an employee.
  */
 export class PutV1EmployeesRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "date_of_birth" })
-  dateOfBirth?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "date_of_birth" })
+    dateOfBirth?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "first_name" })
-  firstName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "first_name" })
+    firstName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "last_name" })
-  lastName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "last_name" })
+    lastName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "middle_initial" })
-  middleInitial?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "middle_initial" })
+    middleInitial?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "ssn" })
-  ssn?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "ssn" })
+    ssn?: string;
 
-  /**
-   * Whether the employee is a two percent shareholder of the company. This field only applies to companies with an S-Corp entity type.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "two_percent_shareholder" })
-  twoPercentShareholder?: boolean;
+    /**
+     * Whether the employee is a two percent shareholder of the company. This field only applies to companies with an S-Corp entity type.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "two_percent_shareholder" })
+    twoPercentShareholder?: boolean;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version: string;
 }
 
 export class PutV1EmployeesRequest extends SpeakeasyBase {
-  /**
-   * Update an employee.
-   */
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1EmployeesRequestBody;
+    /**
+     * Update an employee.
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1EmployeesRequestBody;
 
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+    employeeId: string;
 }
 
 export class PutV1EmployeesResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  employee?: shared.Employee;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    employee?: shared.Employee;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

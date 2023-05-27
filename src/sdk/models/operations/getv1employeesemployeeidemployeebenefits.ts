@@ -7,40 +7,38 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1EmployeesEmployeeIdEmployeeBenefitsRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+    employeeId: string;
 
-  /**
-   * The page that is requested. When unspecified, will load all objects.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
-  page?: number;
+    /**
+     * The page that is requested. When unspecified, will load all objects.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
+    page?: number;
 
-  /**
-   * Number of objects per page. When unspecified, will default to 25
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
-  per?: number;
+    /**
+     * Number of objects per page. When unspecified, will default to 25
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
+    per?: number;
 }
 
 export class GetV1EmployeesEmployeeIdEmployeeBenefitsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata({ elemType: shared.EmployeeBenefit })
-  employeeBenefits?: shared.EmployeeBenefit[];
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.EmployeeBenefit })
+    employeeBenefits?: shared.EmployeeBenefit[];
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

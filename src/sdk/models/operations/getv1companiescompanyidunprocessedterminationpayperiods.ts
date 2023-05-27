@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 }
 
 export class GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata({ elemType: shared.UnprocessedTerminationPayPeriod })
-  unprocessedTerminationPayPeriods?: shared.UnprocessedTerminationPayPeriod[];
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.UnprocessedTerminationPayPeriod })
+    unprocessedTerminationPayPeriods?: shared.UnprocessedTerminationPayPeriod[];
 }

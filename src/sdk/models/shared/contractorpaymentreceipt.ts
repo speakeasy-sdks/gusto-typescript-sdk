@@ -7,226 +7,226 @@ import { RFCDate } from "../../types";
 import { Expose, Transform, Type } from "class-transformer";
 
 export class ContractorPaymentReceiptContractorPayments extends SpeakeasyBase {
-  /**
-   * The bonus amount in the payment.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "bonus" })
-  bonus?: string;
+    /**
+     * The bonus amount in the payment.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "bonus" })
+    bonus?: string;
 
-  /**
-   * The business name of the employee. Applies when `contractor_type` is `Business`.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "contractor_business_name" })
-  contractorBusinessName?: string;
+    /**
+     * The business name of the employee. Applies when `contractor_type` is `Business`.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "contractor_business_name" })
+    contractorBusinessName?: string;
 
-  /**
-   * The first name of the contractor. Applies when `contractor_type` is `Individual`.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "contractor_first_name" })
-  contractorFirstName?: string;
+    /**
+     * The first name of the contractor. Applies when `contractor_type` is `Individual`.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "contractor_first_name" })
+    contractorFirstName?: string;
 
-  /**
-   * The last name of the contractor.  Applies when `contractor_type` is `Individual`.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "contractor_last_name" })
-  contractorLastName?: string;
+    /**
+     * The last name of the contractor.  Applies when `contractor_type` is `Individual`.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "contractor_last_name" })
+    contractorLastName?: string;
 
-  /**
-   * The type of contractor.
-   *
-   * @remarks
-   *
-   * `Individual` `Business`
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "contractor_type" })
-  contractorType?: string;
+    /**
+     * The type of contractor.
+     *
+     * @remarks
+     *
+     * `Individual` `Business`
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "contractor_type" })
+    contractorType?: string;
 
-  /**
-   * The UUID of the contractor.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "contractor_uuid" })
-  contractorUuid?: string;
+    /**
+     * The UUID of the contractor.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "contractor_uuid" })
+    contractorUuid?: string;
 
-  /**
-   * The payment method.
-   *
-   * @remarks
-   *
-   * `Direct Deposit` `Check` `Historical Payment` `Correction Payment`
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_method" })
-  paymentMethod?: string;
+    /**
+     * The payment method.
+     *
+     * @remarks
+     *
+     * `Direct Deposit` `Check` `Historical Payment` `Correction Payment`
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_method" })
+    paymentMethod?: string;
 
-  /**
-   * The reimbursement amount in the payment.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "reimbursement" })
-  reimbursement?: string;
+    /**
+     * The reimbursement amount in the payment.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "reimbursement" })
+    reimbursement?: string;
 
-  /**
-   * The fixed wage of the payment, regardless of hours worked.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "wage" })
-  wage?: string;
+    /**
+     * The fixed wage of the payment, regardless of hours worked.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "wage" })
+    wage?: string;
 }
 
 /**
  * The licensed payroll processor
  */
 export class ContractorPaymentReceiptLicensee extends SpeakeasyBase {
-  /**
-   * Always the fixed string "525 20th St"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "address" })
-  address?: string;
+    /**
+     * Always the fixed string "525 20th St"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "address" })
+    address?: string;
 
-  /**
-   * Always the fixed string "San Francisco"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "city" })
-  city?: string;
+    /**
+     * Always the fixed string "San Francisco"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "city" })
+    city?: string;
 
-  /**
-   * Always the fixed string "Gusto, Zenpayroll Inc."
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    /**
+     * Always the fixed string "Gusto, Zenpayroll Inc."
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  /**
-   * Always the fixed string "4157778888"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "phone_number" })
-  phoneNumber?: string;
+    /**
+     * Always the fixed string "4157778888"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "phone_number" })
+    phoneNumber?: string;
 
-  /**
-   * Always the fixed string "94107"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "postal_code" })
-  postalCode?: string;
+    /**
+     * Always the fixed string "94107"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "postal_code" })
+    postalCode?: string;
 
-  /**
-   * Always the fixed string "CA"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: string;
+    /**
+     * Always the fixed string "CA"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: string;
 }
 
 /**
  * The subtotals for the contractor payment.
  */
 export class ContractorPaymentReceiptTotals extends SpeakeasyBase {
-  /**
-   * The total company debit for the contractor payment.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_debit" })
-  companyDebit?: string;
+    /**
+     * The total company debit for the contractor payment.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_debit" })
+    companyDebit?: string;
 }
 
 /**
  * Example response
  */
 export class ContractorPaymentReceipt extends SpeakeasyBase {
-  /**
-   * A unique identifier of the company making the contractor payment.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_uuid" })
-  companyUuid?: string;
+    /**
+     * A unique identifier of the company making the contractor payment.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_uuid" })
+    companyUuid?: string;
 
-  /**
-   * A unique identifier of the contractor payment receipt.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "contractor_payment_uuid" })
-  contractorPaymentUuid?: string;
+    /**
+     * A unique identifier of the contractor payment receipt.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "contractor_payment_uuid" })
+    contractorPaymentUuid?: string;
 
-  /**
-   * An array of contractor payments for this contractor payment.
-   */
-  @SpeakeasyMetadata({ elemType: ContractorPaymentReceiptContractorPayments })
-  @Expose({ name: "contractor_payments" })
-  @Type(() => ContractorPaymentReceiptContractorPayments)
-  contractorPayments?: ContractorPaymentReceiptContractorPayments[];
+    /**
+     * An array of contractor payments for this contractor payment.
+     */
+    @SpeakeasyMetadata({ elemType: ContractorPaymentReceiptContractorPayments })
+    @Expose({ name: "contractor_payments" })
+    @Type(() => ContractorPaymentReceiptContractorPayments)
+    contractorPayments?: ContractorPaymentReceiptContractorPayments[];
 
-  /**
-   * The debit date for the contractor payment.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "debit_date" })
-  @Transform(({ value }) => new RFCDate(value), { toClassOnly: true })
-  debitDate?: RFCDate;
+    /**
+     * The debit date for the contractor payment.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "debit_date" })
+    @Transform(({ value }) => new RFCDate(value), { toClassOnly: true })
+    debitDate?: RFCDate;
 
-  /**
-   * URL for information related to right to liability of licensee. Always the fixed string "https://gusto.com/about/licenses"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "liability_of_licensee" })
-  liabilityOfLicensee?: string;
+    /**
+     * URL for information related to right to liability of licensee. Always the fixed string "https://gusto.com/about/licenses"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "liability_of_licensee" })
+    liabilityOfLicensee?: string;
 
-  /**
-   * Always the fixed string "ZenPayroll, Inc., dba Gusto is a licensed money transmitter. For more about Gusto’s licenses and your state-specific rights to request information, submit complaints, dispute errors, or cancel transactions, visit our license page."
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "license" })
-  license?: string;
+    /**
+     * Always the fixed string "ZenPayroll, Inc., dba Gusto is a licensed money transmitter. For more about Gusto’s licenses and your state-specific rights to request information, submit complaints, dispute errors, or cancel transactions, visit our license page."
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "license" })
+    license?: string;
 
-  /**
-   * URL for the license information for the licensed payroll processor. Always the fixed string "https://gusto.com/about/licenses"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "license_uri" })
-  licenseUri?: string;
+    /**
+     * URL for the license information for the licensed payroll processor. Always the fixed string "https://gusto.com/about/licenses"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "license_uri" })
+    licenseUri?: string;
 
-  /**
-   * The licensed payroll processor
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "licensee" })
-  @Type(() => ContractorPaymentReceiptLicensee)
-  licensee?: ContractorPaymentReceiptLicensee;
+    /**
+     * The licensed payroll processor
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "licensee" })
+    @Type(() => ContractorPaymentReceiptLicensee)
+    licensee?: ContractorPaymentReceiptLicensee;
 
-  /**
-   * The individual or company name of the contractor receiving payment.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name_of_recipient" })
-  nameOfRecipient?: string;
+    /**
+     * The individual or company name of the contractor receiving payment.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name_of_recipient" })
+    nameOfRecipient?: string;
 
-  /**
-   * The name of the company making the contractor payment.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name_of_sender" })
-  nameOfSender?: string;
+    /**
+     * The name of the company making the contractor payment.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name_of_sender" })
+    nameOfSender?: string;
 
-  /**
-   * URL for information related to right to refund. Always the fixed string "https://gusto.com/about/licenses"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "right_to_refund" })
-  rightToRefund?: string;
+    /**
+     * URL for information related to right to refund. Always the fixed string "https://gusto.com/about/licenses"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "right_to_refund" })
+    rightToRefund?: string;
 
-  /**
-   * The subtotals for the contractor payment.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "totals" })
-  @Type(() => ContractorPaymentReceiptTotals)
-  totals?: ContractorPaymentReceiptTotals;
+    /**
+     * The subtotals for the contractor payment.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "totals" })
+    @Type(() => ContractorPaymentReceiptTotals)
+    totals?: ContractorPaymentReceiptTotals;
 }

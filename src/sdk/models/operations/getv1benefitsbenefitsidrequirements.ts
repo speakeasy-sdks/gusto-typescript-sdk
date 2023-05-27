@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1BenefitsBenefitsIdRequirementsRequest extends SpeakeasyBase {
-  /**
-   * The benefit type in Gusto.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=benefit_id",
-  })
-  benefitId: string;
+    /**
+     * The benefit type in Gusto.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=benefit_id" })
+    benefitId: string;
 }
 
 export class GetV1BenefitsBenefitsIdRequirementsResponse extends SpeakeasyBase {
-  /**
-   * Benefit type requirements response
-   */
-  @SpeakeasyMetadata()
-  benefitTypeRequirements?: shared.BenefitTypeRequirements;
+    /**
+     * Benefit type requirements response
+     */
+    @SpeakeasyMetadata()
+    benefitTypeRequirements?: shared.BenefitTypeRequirements;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

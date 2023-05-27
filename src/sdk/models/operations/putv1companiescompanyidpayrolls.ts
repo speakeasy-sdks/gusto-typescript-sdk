@@ -11,212 +11,197 @@ import { Expose, Type } from "class-transformer";
  * An array of fixed compensations for the employee. Fixed compensations include tips, bonuses, and one time reimbursements.
  */
 export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations extends SpeakeasyBase {
-  /**
-   * The amount of the compensation for the pay period.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "amount" })
-  amount?: string;
+    /**
+     * The amount of the compensation for the pay period.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "amount" })
+    amount?: string;
 
-  /**
-   * The UUID of the job for the compensation.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "job_uuid" })
-  jobUuid?: number;
+    /**
+     * The UUID of the job for the compensation.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "job_uuid" })
+    jobUuid?: number;
 
-  /**
-   * The name of the compensation. This also serves as the unique, immutable identifier for this compensation.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    /**
+     * The name of the compensation. This also serves as the unique, immutable identifier for this compensation.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 }
 
 /**
  * An array of hourly compensations for the employee. Hourly compensations include regular, overtime, and double overtime hours.
  */
 export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations extends SpeakeasyBase {
-  /**
-   * The number of hours to be compensated for this pay period.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "hours" })
-  hours?: string;
+    /**
+     * The number of hours to be compensated for this pay period.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "hours" })
+    hours?: string;
 
-  /**
-   * The UUIDs of the job for the compensation.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "job_uuid" })
-  jobUuid?: number;
+    /**
+     * The UUIDs of the job for the compensation.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "job_uuid" })
+    jobUuid?: number;
 
-  /**
-   * The name of the compensation. This also serves as the unique, immutable identifier for this compensation.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    /**
+     * The name of the compensation. This also serves as the unique, immutable identifier for this compensation.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff extends SpeakeasyBase {
-  /**
-   * The outstanding hours paid upon termination. This field is only applicable for termination payrolls.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "final_payout_unused_hours_input" })
-  finalPayoutUnusedHoursInput?: string;
+    /**
+     * The outstanding hours paid upon termination. This field is only applicable for termination payrolls.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "final_payout_unused_hours_input" })
+    finalPayoutUnusedHoursInput?: string;
 
-  /**
-   * The hours of this PTO taken during the pay period.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "hours" })
-  hours?: string;
+    /**
+     * The hours of this PTO taken during the pay period.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "hours" })
+    hours?: string;
 
-  /**
-   * The name of the PTO. This also serves as the unique, immutable identifier for the PTO. Must pass in name or policy_uuid but not both.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    /**
+     * The name of the PTO. This also serves as the unique, immutable identifier for the PTO. Must pass in name or policy_uuid but not both.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  /**
-   * The uuid of the PTO policy. Must pass in name or policy_uuid but not both.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "policy_uuid" })
-  policyUuid?: string;
+    /**
+     * The uuid of the PTO policy. Must pass in name or policy_uuid but not both.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "policy_uuid" })
+    policyUuid?: string;
 }
 
 /**
  * The employee's compensation payment method. Invalid values will be ignored.
  */
 export enum PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod {
-  DirectDeposit = "Direct Deposit",
-  Check = "Check",
+    DirectDeposit = "Direct Deposit",
+    Check = "Check",
 }
 
 export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations extends SpeakeasyBase {
-  /**
-   * The UUID of the employee.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_uuid" })
-  employeeUuid?: string;
+    /**
+     * The UUID of the employee.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_uuid" })
+    employeeUuid?: string;
 
-  /**
-   * This employee will be excluded from payroll calculation and will not be paid for the payroll.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "excluded" })
-  excluded?: boolean;
+    /**
+     * This employee will be excluded from payroll calculation and will not be paid for the payroll.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "excluded" })
+    excluded?: boolean;
 
-  @SpeakeasyMetadata({
-    elemType:
-      PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations,
-  })
-  @Expose({ name: "fixed_compensations" })
-  @Type(
-    () =>
-      PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations
-  )
-  fixedCompensations?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations[];
+    @SpeakeasyMetadata({
+        elemType: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations,
+    })
+    @Expose({ name: "fixed_compensations" })
+    @Type(() => PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations)
+    fixedCompensations?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations[];
 
-  @SpeakeasyMetadata({
-    elemType:
-      PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations,
-  })
-  @Expose({ name: "hourly_compensations" })
-  @Type(
-    () =>
-      PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations
-  )
-  hourlyCompensations?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations[];
+    @SpeakeasyMetadata({
+        elemType:
+            PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations,
+    })
+    @Expose({ name: "hourly_compensations" })
+    @Type(() => PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations)
+    hourlyCompensations?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations[];
 
-  /**
-   * An array of all paid time off the employee is eligible for this pay period. Each paid time off object can be the name or the specific policy_uuid.
-   */
-  @SpeakeasyMetadata({
-    elemType:
-      PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff,
-  })
-  @Expose({ name: "paid_time_off" })
-  @Type(
-    () =>
-      PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff
-  )
-  paidTimeOff?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff[];
+    /**
+     * An array of all paid time off the employee is eligible for this pay period. Each paid time off object can be the name or the specific policy_uuid.
+     */
+    @SpeakeasyMetadata({
+        elemType: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff,
+    })
+    @Expose({ name: "paid_time_off" })
+    @Type(() => PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff)
+    paidTimeOff?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff[];
 
-  /**
-   * The employee's compensation payment method. Invalid values will be ignored.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_method" })
-  paymentMethod?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod;
+    /**
+     * The employee's compensation payment method. Invalid values will be ignored.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_method" })
+    paymentMethod?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    elemType: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations,
-  })
-  @Expose({ name: "employee_compensations" })
-  @Type(() => PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations)
-  employeeCompensations: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations[];
+    @SpeakeasyMetadata({
+        elemType: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations,
+    })
+    @Expose({ name: "employee_compensations" })
+    @Type(() => PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations)
+    employeeCompensations: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations[];
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version: string;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1CompaniesCompanyIdPayrollsRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompaniesCompanyIdPayrollsRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 
-  /**
-   * The UUID of the payroll
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=payroll_id",
-  })
-  payrollId: string;
+    /**
+     * The UUID of the payroll
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
+    payrollId: string;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  payroll?: shared.Payroll;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    payroll?: shared.Payroll;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

@@ -8,65 +8,63 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export enum PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType {
-  Checking = "Checking",
-  Savings = "Savings",
+    Checking = "Checking",
+    Savings = "Savings",
 }
 
 export class PostV1EmployeesEmployeeIdBankAccountsRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "account_number" })
-  accountNumber: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "account_number" })
+    accountNumber: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "account_type" })
-  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType;
+    @SpeakeasyMetadata()
+    @Expose({ name: "account_type" })
+    accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "routing_number" })
-  routingNumber: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "routing_number" })
+    routingNumber: string;
 }
 
 export class PostV1EmployeesEmployeeIdBankAccountsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostV1EmployeesEmployeeIdBankAccountsRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1EmployeesEmployeeIdBankAccountsRequestBody;
 
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+    employeeId: string;
 }
 
 export class PostV1EmployeesEmployeeIdBankAccountsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  employeeBankAccount?: shared.EmployeeBankAccount;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    employeeBankAccount?: shared.EmployeeBankAccount;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

@@ -10,19 +10,19 @@ import { Expose, Type } from "class-transformer";
  * OK
  */
 export class TaxRequirementsState extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_uuid" })
-  companyUuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_uuid" })
+    companyUuid?: string;
 
-  @SpeakeasyMetadata({ elemType: TaxRequirementSet })
-  @Expose({ name: "requirement_sets" })
-  @Type(() => TaxRequirementSet)
-  requirementSets?: TaxRequirementSet[];
+    @SpeakeasyMetadata({ elemType: TaxRequirementSet })
+    @Expose({ name: "requirement_sets" })
+    @Type(() => TaxRequirementSet)
+    requirementSets?: TaxRequirementSet[];
 
-  /**
-   * One of the two-letter state abbreviations for the fifty United States and the District of Columbia (DC)
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: string;
+    /**
+     * One of the two-letter state abbreviations for the fifty United States and the District of Columbia (DC)
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: string;
 }

@@ -10,40 +10,40 @@ import { Expose } from "class-transformer";
  * A custom field of an employee
  */
 export class EmployeeCustomField extends SpeakeasyBase {
-  /**
-   * This is the id of the response object from when you get the company custom fields
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_custom_field_id" })
-  companyCustomFieldId: string;
+    /**
+     * This is the id of the response object from when you get the company custom fields
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_custom_field_id" })
+    companyCustomFieldId: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "description" })
-  description?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name: string;
 
-  /**
-   * An array of options for fields of type radio. Otherwise, null.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "selection_options" })
-  selectionOptions?: string[];
+    /**
+     * An array of options for fields of type radio. Otherwise, null.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "selection_options" })
+    selectionOptions?: string[];
 
-  /**
-   * Input type for the custom field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type: CustomFieldType;
+    /**
+     * Input type for the custom field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type: CustomFieldType;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "value" })
-  value: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "value" })
+    value: string;
 }

@@ -8,65 +8,63 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class PutV1CompanyIndustryRequestBody extends SpeakeasyBase {
-  /**
-   * North American Industry Classification System (NAICS) is used to classify businesses with a six digit number based on the primary type of work the business performs
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "naics_code" })
-  naicsCode: string;
+    /**
+     * North American Industry Classification System (NAICS) is used to classify businesses with a six digit number based on the primary type of work the business performs
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "naics_code" })
+    naicsCode: string;
 
-  /**
-   * A list of Standard Industrial Classification (SIC) codes, which are four digit number that categorize the industries that companies belong to based on their business activities.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "sic_codes" })
-  sicCodes: string[];
+    /**
+     * A list of Standard Industrial Classification (SIC) codes, which are four digit number that categorize the industries that companies belong to based on their business activities.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "sic_codes" })
+    sicCodes: string[];
 
-  /**
-   * Industry title
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "title" })
-  title: string;
+    /**
+     * Industry title
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "title" })
+    title: string;
 }
 
 export class PutV1CompanyIndustryRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1CompanyIndustryRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompanyIndustryRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 }
 
 export class PutV1CompanyIndustryResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  industry?: shared.Industry;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    industry?: shared.Industry;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

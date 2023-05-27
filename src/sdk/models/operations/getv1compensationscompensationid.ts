@@ -7,31 +7,29 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompensationsCompensationIdRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the compensation
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=compensation_id",
-  })
-  compensationId: string;
+    /**
+     * The UUID of the compensation
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=compensation_id" })
+    compensationId: string;
 }
 
 export class GetV1CompensationsCompensationIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  body?: Uint8Array;
+    @SpeakeasyMetadata()
+    body?: Uint8Array;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  compensation?: shared.Compensation;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    compensation?: shared.Compensation;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

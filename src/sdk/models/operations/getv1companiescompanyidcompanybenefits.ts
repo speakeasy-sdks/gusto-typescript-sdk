@@ -7,36 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompaniesCompanyIdCompanyBenefitsRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 
-  /**
-   * Whether to return employee enrollment count
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=enrollment_count",
-  })
-  enrollmentCount?: boolean;
+    /**
+     * Whether to return employee enrollment count
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=enrollment_count" })
+    enrollmentCount?: boolean;
 }
 
 export class GetV1CompaniesCompanyIdCompanyBenefitsResponse extends SpeakeasyBase {
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata({ elemType: shared.CompanyBenefit })
-  companyBenefits?: shared.CompanyBenefit[];
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.CompanyBenefit })
+    companyBenefits?: shared.CompanyBenefit[];
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

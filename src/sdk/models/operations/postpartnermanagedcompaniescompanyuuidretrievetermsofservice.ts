@@ -8,63 +8,61 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody extends SpeakeasyBase {
-  /**
-   * The user's email address on Gusto. You can retrieve the user's email via company's `/admins`, `/employees`, `/signatories`, and `/contractors` endpoints.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email: string;
+    /**
+     * The user's email address on Gusto. You can retrieve the user's email via company's `/admins`, `/employees`, `/signatories`, and `/contractors` endpoints.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email: string;
 }
 
 export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+    companyUuid: string;
 }
 
 /**
  * Example response
  */
 export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSON extends SpeakeasyBase {
-  /**
-   * Whether the latest terms have been accepted by the user.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "latest_terms_accepted" })
-  latestTermsAccepted?: boolean;
+    /**
+     * Whether the latest terms have been accepted by the user.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "latest_terms_accepted" })
+    latestTermsAccepted?: boolean;
 }
 
 export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSONObject?: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSON;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSONObject?: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSON;
 }

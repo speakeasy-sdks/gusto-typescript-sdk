@@ -8,635 +8,586 @@ import * as shared from "./models/shared";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 export class JobsAndCompensations {
-  _defaultClient: AxiosInstance;
-  _securityClient: AxiosInstance;
-  _serverURL: string;
-  _language: string;
-  _sdkVersion: string;
-  _genVersion: string;
+    _defaultClient: AxiosInstance;
+    _securityClient: AxiosInstance;
+    _serverURL: string;
+    _language: string;
+    _sdkVersion: string;
+    _genVersion: string;
 
-  constructor(
-    defaultClient: AxiosInstance,
-    securityClient: AxiosInstance,
-    serverURL: string,
-    language: string,
-    sdkVersion: string,
-    genVersion: string
-  ) {
-    this._defaultClient = defaultClient;
-    this._securityClient = securityClient;
-    this._serverURL = serverURL;
-    this._language = language;
-    this._sdkVersion = sdkVersion;
-    this._genVersion = genVersion;
-  }
-
-  /**
-   * Delete an individual job
-   *
-   * @remarks
-   * Deletes a specific job that an employee holds.
-   *
-   * scope: `jobs:write`
-   */
-  async deleteV1JobsJobId(
-    req: operations.DeleteV1JobsJobIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.DeleteV1JobsJobIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.DeleteV1JobsJobIdRequest(req);
+    constructor(
+        defaultClient: AxiosInstance,
+        securityClient: AxiosInstance,
+        serverURL: string,
+        language: string,
+        sdkVersion: string,
+        genVersion: string
+    ) {
+        this._defaultClient = defaultClient;
+        this._securityClient = securityClient;
+        this._serverURL = serverURL;
+        this._language = language;
+        this._sdkVersion = sdkVersion;
+        this._genVersion = genVersion;
     }
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...config?.headers };
-    headers["Accept"] = "*/*";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "delete",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.DeleteV1JobsJobIdResponse =
-      new operations.DeleteV1JobsJobIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case [204, 404].includes(httpRes?.status):
-        break;
-    }
-
-    return res;
-  }
-
-  /**
-   * Get a compensation
-   *
-   * @remarks
-   * Compensations contain information on how much is paid out for a job. Jobs may have many compensations, but only one that is active. The current compensation is the one with the most recent `effective_date`.
-   *
-   * Note: Currently, jobs are arbitrarily limited to a single compensation as multiple compensations per job are not yet available in Gusto. The API is architected as if multiple compensations may exist, so integrations should integrate under the same assumption. The only exception is that creating a compensation with the same `job_uuid` as another will fail with a relevant error.
-   *
-   * scope: `jobs:read`
-   *
-   */
-  async getV1CompensationsCompensationId(
-    req: operations.GetV1CompensationsCompensationIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1CompensationsCompensationIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1CompensationsCompensationIdRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/compensations/{compensation_id}",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...config?.headers };
-    headers["Accept"] = "application/json;q=1, application/xml;q=0";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1CompensationsCompensationIdResponse =
-      new operations.GetV1CompensationsCompensationIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.compensation = utils.objectToClass(
-            httpRes?.data,
-            shared.Compensation
-          );
+    /**
+     * Delete an individual job
+     *
+     * @remarks
+     * Deletes a specific job that an employee holds.
+     *
+     * scope: `jobs:write`
+     */
+    async deleteV1JobsJobId(
+        req: operations.DeleteV1JobsJobIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.DeleteV1JobsJobIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.DeleteV1JobsJobIdRequest(req);
         }
-        if (utils.matchContentType(contentType, `application/xml`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...config?.headers };
+        headers["Accept"] = "*/*";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "delete",
+            headers: headers,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
 
-    return res;
-  }
-
-  /**
-   * Get jobs for an employee
-   *
-   * @remarks
-   * Get all of the jobs that an employee holds.
-   *
-   * scope: `jobs:read`
-   */
-  async getV1EmployeesEmployeeIdJobs(
-    req: operations.GetV1EmployeesEmployeeIdJobsRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1EmployeesEmployeeIdJobsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1EmployeesEmployeeIdJobsRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/employees/{employee_id}/jobs",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...config?.headers };
-    const queryParams: string = utils.serializeQueryParams(req);
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url + queryParams,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1EmployeesEmployeeIdJobsResponse =
-      new operations.GetV1EmployeesEmployeeIdJobsResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.jobs = [];
-          const resFieldDepth: number = utils.getResFieldDepth(res);
-          res.jobs = utils.objectToClass(
-            httpRes?.data,
-            shared.Job,
-            resFieldDepth
-          );
+        const res: operations.DeleteV1JobsJobIdResponse = new operations.DeleteV1JobsJobIdResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        switch (true) {
+            case [204, 404].includes(httpRes?.status):
+                break;
         }
-        break;
-      case httpRes?.status == 404:
-        break;
+
+        return res;
     }
 
-    return res;
-  }
-
-  /**
-   * Get a job
-   *
-   * @remarks
-   * Get a job.
-   *
-   * scope: `jobs:read`
-   */
-  async getV1JobsJobId(
-    req: operations.GetV1JobsJobIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1JobsJobIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1JobsJobIdRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...config?.headers };
-    const queryParams: string = utils.serializeQueryParams(req);
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url + queryParams,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1JobsJobIdResponse =
-      new operations.GetV1JobsJobIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.job = utils.objectToClass(httpRes?.data, shared.Job);
+    /**
+     * Get a compensation
+     *
+     * @remarks
+     * Compensations contain information on how much is paid out for a job. Jobs may have many compensations, but only one that is active. The current compensation is the one with the most recent `effective_date`.
+     *
+     * Note: Currently, jobs are arbitrarily limited to a single compensation as multiple compensations per job are not yet available in Gusto. The API is architected as if multiple compensations may exist, so integrations should integrate under the same assumption. The only exception is that creating a compensation with the same `job_uuid` as another will fail with a relevant error.
+     *
+     * scope: `jobs:read`
+     *
+     */
+    async getV1CompensationsCompensationId(
+        req: operations.GetV1CompensationsCompensationIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1CompensationsCompensationIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1CompensationsCompensationIdRequest(req);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
 
-    return res;
-  }
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/v1/compensations/{compensation_id}", req);
 
-  /**
-   * Get compensations for a job
-   *
-   * @remarks
-   * Compensations contain information on how much is paid out for a job. Jobs may have many compensations, but only one that is active. The current compensation is the one with the most recent `effective_date`. By default the API returns only the current compensation - see the `include` query parameter for retrieving all compensations.
-   *
-   * Note: Currently the API does not support creating multiple compensations per job - creating a compensation with the same `job_uuid` as another will fail with a relevant error.
-   *
-   * Use `flsa_status` to determine if an employee is eligible for overtime.
-   *
-   * scope: `jobs:read`
-   */
-  async getV1JobsJobIdCompensations(
-    req: operations.GetV1JobsJobIdCompensationsRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1JobsJobIdCompensationsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1JobsJobIdCompensationsRequest(req);
-    }
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/jobs/{job_id}/compensations",
-      req
-    );
+        const headers = { ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/xml;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
 
-    const headers = { ...config?.headers };
-    const queryParams: string = utils.serializeQueryParams(req);
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url + queryParams,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1JobsJobIdCompensationsResponse =
-      new operations.GetV1JobsJobIdCompensationsResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.compensations = [];
-          const resFieldDepth: number = utils.getResFieldDepth(res);
-          res.compensations = utils.objectToClass(
-            httpRes?.data,
-            shared.Compensation,
-            resFieldDepth
-          );
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
 
-    return res;
-  }
-
-  /**
-   * Create a job
-   *
-   * @remarks
-   * Create a job.
-   *
-   * scope: `jobs:write`
-   */
-  async postV1JobsJobId(
-    req: operations.PostV1JobsJobIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PostV1JobsJobIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1JobsJobIdRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/employees/{employee_id}/jobs",
-      req
-    );
-
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
-
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-    headers["Accept"] = "application/json;q=1, application/json;q=0";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "post",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PostV1JobsJobIdResponse =
-      new operations.PostV1JobsJobIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 201:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.job = utils.objectToClass(httpRes?.data, shared.Job);
+        const res: operations.GetV1CompensationsCompensationIdResponse =
+            new operations.GetV1CompensationsCompensationIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.compensation = utils.objectToClass(httpRes?.data, shared.Compensation);
+                }
+                if (utils.matchContentType(contentType, `application/xml`)) {
+                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+                    const out: Uint8Array = new Uint8Array(resBody.length);
+                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
+                    res.body = out;
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
+
+        return res;
+    }
+
+    /**
+     * Get jobs for an employee
+     *
+     * @remarks
+     * Get all of the jobs that an employee holds.
+     *
+     * scope: `jobs:read`
+     */
+    async getV1EmployeesEmployeeIdJobs(
+        req: operations.GetV1EmployeesEmployeeIdJobsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1EmployeesEmployeeIdJobsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1EmployeesEmployeeIdJobsRequest(req);
         }
-        break;
-    }
 
-    return res;
-  }
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/v1/employees/{employee_id}/jobs", req);
 
-  /**
-   * Update a compensation
-   *
-   * @remarks
-   * Compensations contain information on how much is paid out for a job. Jobs may have many compensations, but only one that is active. The current compensation is the one with the most recent `effective_date`.
-   *
-   * Note: Currently, jobs are arbitrarily limited to a single compensation as multiple compensations per job are not yet available in Gusto. The API is architected as if multiple compensations may exist, so integrations should integrate under the same assumption. The only exception is that creating a compensation with the same `job_uuid` as another will fail with a relevant error
-   *
-   * scope: `jobs:write`
-   */
-  async putV1CompensationsCompensationId(
-    req: operations.PutV1CompensationsCompensationIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PutV1CompensationsCompensationIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PutV1CompensationsCompensationIdRequest(req);
-    }
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/compensations/{compensation_id}",
-      req
-    );
+        const headers = { ...config?.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
 
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-    headers["Accept"] =
-      "application/json;q=1, application/json;q=0.7, application/xml;q=0";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "put",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PutV1CompensationsCompensationIdResponse =
-      new operations.PutV1CompensationsCompensationIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.compensation = utils.objectToClass(
-            httpRes?.data,
-            shared.Compensation
-          );
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        if (utils.matchContentType(contentType, `application/xml`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+
+        const res: operations.GetV1EmployeesEmployeeIdJobsResponse =
+            new operations.GetV1EmployeesEmployeeIdJobsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.jobs = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.jobs = utils.objectToClass(httpRes?.data, shared.Job, resFieldDepth);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
+
+        return res;
+    }
+
+    /**
+     * Get a job
+     *
+     * @remarks
+     * Get a job.
+     *
+     * scope: `jobs:read`
+     */
+    async getV1JobsJobId(
+        req: operations.GetV1JobsJobIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1JobsJobIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1JobsJobIdRequest(req);
         }
-        break;
-    }
 
-    return res;
-  }
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
 
-  /**
-   * Update a job
-   *
-   * @remarks
-   * Update a job.
-   *
-   * scope: `jobs:write`
-   */
-  async putV1JobsJobId(
-    req: operations.PutV1JobsJobIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PutV1JobsJobIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PutV1JobsJobIdRequest(req);
-    }
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
+        const headers = { ...config?.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
 
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-    headers["Accept"] = "application/json;q=1, application/json;q=0";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "put",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PutV1JobsJobIdResponse =
-      new operations.PutV1JobsJobIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.job = utils.objectToClass(httpRes?.data, shared.Job);
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
+
+        const res: operations.GetV1JobsJobIdResponse = new operations.GetV1JobsJobIdResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.job = utils.objectToClass(httpRes?.data, shared.Job);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
         }
-        break;
+
+        return res;
     }
 
-    return res;
-  }
+    /**
+     * Get compensations for a job
+     *
+     * @remarks
+     * Compensations contain information on how much is paid out for a job. Jobs may have many compensations, but only one that is active. The current compensation is the one with the most recent `effective_date`. By default the API returns only the current compensation - see the `include` query parameter for retrieving all compensations.
+     *
+     * Note: Currently the API does not support creating multiple compensations per job - creating a compensation with the same `job_uuid` as another will fail with a relevant error.
+     *
+     * Use `flsa_status` to determine if an employee is eligible for overtime.
+     *
+     * scope: `jobs:read`
+     */
+    async getV1JobsJobIdCompensations(
+        req: operations.GetV1JobsJobIdCompensationsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1JobsJobIdCompensationsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1JobsJobIdCompensationsRequest(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}/compensations", req);
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...config?.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.GetV1JobsJobIdCompensationsResponse =
+            new operations.GetV1JobsJobIdCompensationsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.compensations = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.compensations = utils.objectToClass(
+                        httpRes?.data,
+                        shared.Compensation,
+                        resFieldDepth
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Create a job
+     *
+     * @remarks
+     * Create a job.
+     *
+     * scope: `jobs:write`
+     */
+    async postV1JobsJobId(
+        req: operations.PostV1JobsJobIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PostV1JobsJobIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PostV1JobsJobIdRequest(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/v1/employees/{employee_id}/jobs", req);
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PostV1JobsJobIdResponse = new operations.PostV1JobsJobIdResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        switch (true) {
+            case httpRes?.status == 201:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.job = utils.objectToClass(httpRes?.data, shared.Job);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        httpRes?.data,
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Update a compensation
+     *
+     * @remarks
+     * Compensations contain information on how much is paid out for a job. Jobs may have many compensations, but only one that is active. The current compensation is the one with the most recent `effective_date`.
+     *
+     * Note: Currently, jobs are arbitrarily limited to a single compensation as multiple compensations per job are not yet available in Gusto. The API is architected as if multiple compensations may exist, so integrations should integrate under the same assumption. The only exception is that creating a compensation with the same `job_uuid` as another will fail with a relevant error
+     *
+     * scope: `jobs:write`
+     */
+    async putV1CompensationsCompensationId(
+        req: operations.PutV1CompensationsCompensationIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PutV1CompensationsCompensationIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PutV1CompensationsCompensationIdRequest(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/v1/compensations/{compensation_id}", req);
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0.7, application/xml;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "put",
+            headers: headers,
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PutV1CompensationsCompensationIdResponse =
+            new operations.PutV1CompensationsCompensationIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.compensation = utils.objectToClass(httpRes?.data, shared.Compensation);
+                }
+                if (utils.matchContentType(contentType, `application/xml`)) {
+                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+                    const out: Uint8Array = new Uint8Array(resBody.length);
+                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
+                    res.body = out;
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        httpRes?.data,
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Update a job
+     *
+     * @remarks
+     * Update a job.
+     *
+     * scope: `jobs:write`
+     */
+    async putV1JobsJobId(
+        req: operations.PutV1JobsJobIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PutV1JobsJobIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PutV1JobsJobIdRequest(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "put",
+            headers: headers,
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PutV1JobsJobIdResponse = new operations.PutV1JobsJobIdResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.job = utils.objectToClass(httpRes?.data, shared.Job);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        httpRes?.data,
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
 }

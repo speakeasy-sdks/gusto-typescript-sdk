@@ -8,84 +8,82 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody extends SpeakeasyBase {
-  /**
-   * Email of the company signatory who is authorized to accept our [Terms of Service](https://flows.gusto.com/terms) and migration decision. You can retrieve the signatory email from the `GET /v/1/companies/{company_id}/signatories` endpoint.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email: string;
+    /**
+     * Email of the company signatory who is authorized to accept our [Terms of Service](https://flows.gusto.com/terms) and migration decision. You can retrieve the signatory email from the `GET /v/1/companies/{company_id}/signatories` endpoint.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email: string;
 
-  /**
-   * The signatory's user ID on your platform.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "external_user_id" })
-  externalUserId: string;
+    /**
+     * The signatory's user ID on your platform.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "external_user_id" })
+    externalUserId: string;
 
-  /**
-   * The IP address of the signatory who viewed and accepted the Terms of Service.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "ip_address" })
-  ipAddress: string;
+    /**
+     * The IP address of the signatory who viewed and accepted the Terms of Service.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "ip_address" })
+    ipAddress: string;
 }
 
 export class PutV1PartnerManagedCompaniesCompanyUuidMigrateRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+    companyUuid: string;
 }
 
 /**
  * Example response
  */
 export class PutV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSON extends SpeakeasyBase {
-  /**
-   * The company UUID
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_uuid" })
-  companyUuid?: string;
+    /**
+     * The company UUID
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_uuid" })
+    companyUuid?: string;
 
-  /**
-   * The migration status
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "migration_status" })
-  migrationStatus?: string;
+    /**
+     * The migration status
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "migration_status" })
+    migrationStatus?: string;
 }
 
 export class PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  putV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSONObject?: PutV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSON;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    putV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSONObject?: PutV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSON;
 }
