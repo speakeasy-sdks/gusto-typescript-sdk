@@ -30,7 +30,7 @@ import { DeleteV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/d
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -64,7 +64,7 @@ import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from 
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -97,7 +97,7 @@ import { GetV1WebhookSubscriptionVerificationTokenUuidResponse } from "@speakeas
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -130,7 +130,7 @@ import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from 
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -165,7 +165,7 @@ import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from 
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -205,7 +205,7 @@ import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from 
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -245,7 +245,7 @@ import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from 
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

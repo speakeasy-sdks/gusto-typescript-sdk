@@ -18,7 +18,7 @@ import { GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse } from "@speakea
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

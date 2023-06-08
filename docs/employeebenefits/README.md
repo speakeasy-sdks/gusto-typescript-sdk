@@ -23,7 +23,7 @@ import { DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse } from "@speakeasy-sd
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -51,7 +51,7 @@ import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -81,7 +81,7 @@ import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -110,7 +110,7 @@ import { PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse } from "@spea
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -148,7 +148,7 @@ import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -213,7 +213,7 @@ import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

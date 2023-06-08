@@ -30,7 +30,7 @@ import { GetV1CompaniesCompanyIdPayrollReversalsResponse } from "@speakeasy-sdks
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -70,7 +70,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -118,7 +118,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -150,7 +150,7 @@ import { GetV1CompaniesPayrollBlockersCompanyUuidResponse } from "@speakeasy-sdk
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -182,7 +182,7 @@ import { GetV1PaymentReceiptsPayrollsPayrollUuidResponse } from "@speakeasy-sdks
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -209,7 +209,7 @@ import { GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse } from "@s
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -248,7 +248,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -288,7 +288,7 @@ import { PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRespon
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -325,7 +325,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -361,7 +361,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -463,7 +463,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -565,7 +565,7 @@ import { PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse } from "@spea
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -593,7 +593,7 @@ import { PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse } from "@speakea
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

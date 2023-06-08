@@ -24,7 +24,7 @@ import { GetV1CompaniesCompanyIdPayPeriodsResponse } from "@speakeasy-sdks/gusto
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -54,7 +54,7 @@ import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shar
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -84,7 +84,7 @@ import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shar
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -118,7 +118,7 @@ import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shar
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -151,7 +151,7 @@ import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shar
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

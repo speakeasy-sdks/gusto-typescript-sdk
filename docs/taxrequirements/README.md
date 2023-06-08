@@ -18,7 +18,7 @@ import { GetV1CompaniesCompanyUuidTaxRequirementsResponse } from "@speakeasy-sdk
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -88,7 +88,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -115,7 +115,7 @@ import { PutV1CompaniesCompanyUuidTaxRequirementsStateResponse } from "@speakeas
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

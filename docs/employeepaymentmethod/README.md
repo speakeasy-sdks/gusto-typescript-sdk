@@ -19,7 +19,7 @@ import { DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse } from "@s
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -46,7 +46,7 @@ import { EmployeePaymentMethodSplitBy, EmployeePaymentMethodType } from "@speake
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -75,7 +75,7 @@ import { EmployeeBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk/m
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -111,7 +111,7 @@ import { EmployeePaymentMethodSplitBy, EmployeePaymentMethodType } from "@speake
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

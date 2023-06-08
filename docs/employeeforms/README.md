@@ -20,7 +20,7 @@ import { GetV1EmployeeFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -46,7 +46,7 @@ import { GetV1EmployeeFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/mod
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -72,7 +72,7 @@ import { GetV1EmployeeFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/model
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -104,7 +104,7 @@ import { PostV1SandboxGenerateW2Response } from "@speakeasy-sdks/gusto/dist/sdk/
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -130,7 +130,7 @@ import { PutV1EmployeeFormSignResponse } from "@speakeasy-sdks/gusto/dist/sdk/mo
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

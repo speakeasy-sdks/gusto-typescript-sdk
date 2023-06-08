@@ -16,7 +16,7 @@ import { PostV1CompanyFlowsRequestBodyEntityType, PostV1CompanyFlowsResponse } f
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

@@ -17,7 +17,7 @@ import { GetV1CompanyPaymentConfigsResponse } from "@speakeasy-sdks/gusto/dist/s
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -45,7 +45,7 @@ import {
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

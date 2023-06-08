@@ -20,7 +20,7 @@ import { ContractorBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -46,7 +46,7 @@ import { ContractorPaymentMethodSplitBy, ContractorPaymentMethodType } from "@sp
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -78,7 +78,7 @@ import { ContractorBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -113,7 +113,7 @@ import { ContractorPaymentMethodSplitBy, ContractorPaymentMethodType } from "@sp
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

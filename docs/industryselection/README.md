@@ -17,7 +17,7 @@ import { GetV1CompanyIndustryResponse } from "@speakeasy-sdks/gusto/dist/sdk/mod
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -42,7 +42,7 @@ import { PutV1CompanyIndustryResponse } from "@speakeasy-sdks/gusto/dist/sdk/mod
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

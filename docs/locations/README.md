@@ -25,7 +25,7 @@ import { GetV1CompaniesCompanyIdLocationsResponse } from "@speakeasy-sdks/gusto/
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -54,7 +54,7 @@ import { GetV1LocationsLocationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -82,7 +82,7 @@ import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -112,7 +112,7 @@ import { PostV1CompaniesCompanyIdLocationsJsonResponse } from "@speakeasy-sdks/g
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -152,7 +152,7 @@ import { PostV1CompaniesCompanyIdLocationsRawResponse } from "@speakeasy-sdks/gu
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -180,7 +180,7 @@ import { PutV1LocationsLocationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

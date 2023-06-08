@@ -20,7 +20,7 @@ import { EmployeeFederalTaxW4DataType } from "@speakeasy-sdks/gusto/dist/sdk/mod
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -57,7 +57,7 @@ import { GetV1EmployeesEmployeeIdStateTaxesResponse } from "@speakeasy-sdks/gust
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -83,7 +83,7 @@ import { EmployeeFederalTaxW4DataType } from "@speakeasy-sdks/gusto/dist/sdk/mod
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -120,7 +120,7 @@ import { PutV1EmployeesEmployeeIdStateTaxesResponse } from "@speakeasy-sdks/gust
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 

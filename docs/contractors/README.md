@@ -24,7 +24,7 @@ import { DeleteV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/d
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -52,7 +52,7 @@ import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -82,7 +82,7 @@ import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -109,7 +109,7 @@ import { GetV1ContractorsContractorUuidAddressResponse } from "@speakeasy-sdks/g
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -168,7 +168,7 @@ import { ContractorOnboardingStatusOnboardingStatus } from "@speakeasy-sdks/gust
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -200,7 +200,7 @@ import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -253,7 +253,7 @@ import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -298,7 +298,7 @@ import { PutV1ContractorsContractorUuidAddressResponse } from "@speakeasy-sdks/g
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
@@ -346,7 +346,7 @@ import { ContractorOnboardingStatusOnboardingStatus } from "@speakeasy-sdks/gust
 
 const sdk = new Gusto({
   security: {
-    authorization: "YOUR_BEARER_TOKEN_HERE",
+    authorization: "",
   },
 });
 
