@@ -14,6 +14,11 @@ export class GetV1ContractorsContractorUuidOnboardingStatusRequest extends Speak
     contractorUuid: string;
 }
 
+/**
+ * Example response.
+ */
+export class GetV1ContractorsContractorUuidOnboardingStatus200ApplicationXML extends SpeakeasyBase {}
+
 export class GetV1ContractorsContractorUuidOnboardingStatusResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     body?: Uint8Array;

@@ -1,0 +1,9 @@
+# PostV1ExternalPayrollRequest
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `requestBody`                                                                                   | [PostV1ExternalPayrollRequestBody](../../models/operations/postv1externalpayrollrequestbody.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `companyUuid`                                                                                   | *string*                                                                                        | :heavy_check_mark:                                                                              | The UUID of the company                                                                         |

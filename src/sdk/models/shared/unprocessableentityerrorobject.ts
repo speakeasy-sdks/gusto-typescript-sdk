@@ -5,6 +5,11 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
+/**
+ * Contains relevant data to identify the resource in question when applicable. For example, to identify an entity `entity_type` and `entity_uuid` will be provided.
+ */
+export class UnprocessableEntityErrorObjectErrorsMetadata extends SpeakeasyBase {}
+
 export class UnprocessableEntityErrorObjectErrors extends SpeakeasyBase {
     /**
      * Specifies the type of error. The category provides error groupings and can be used to build custom error handling in your integration.
@@ -32,7 +37,8 @@ export class UnprocessableEntityErrorObjectErrors extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: Record<string, any>;
+    @Type(() => UnprocessableEntityErrorObjectErrorsMetadata)
+    metadata?: UnprocessableEntityErrorObjectErrorsMetadata;
 }
 
 /**

@@ -95,6 +95,11 @@ export class PutV1CompensationsCompensationIdRequest extends SpeakeasyBase {
     compensationId: string;
 }
 
+/**
+ * Example response
+ */
+export class PutV1CompensationsCompensationId200ApplicationXML extends SpeakeasyBase {}
+
 export class PutV1CompensationsCompensationIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     body?: Uint8Array;

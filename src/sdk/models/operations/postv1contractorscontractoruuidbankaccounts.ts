@@ -41,6 +41,11 @@ export class PostV1ContractorsContractorUuidBankAccountsRequest extends Speakeas
     contractorUuid: string;
 }
 
+/**
+ * Example response
+ */
+export class PostV1ContractorsContractorUuidBankAccounts201ApplicationXML extends SpeakeasyBase {}
+
 export class PostV1ContractorsContractorUuidBankAccountsResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     body?: Uint8Array;

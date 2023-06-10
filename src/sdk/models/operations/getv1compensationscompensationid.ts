@@ -14,6 +14,11 @@ export class GetV1CompensationsCompensationIdRequest extends SpeakeasyBase {
     compensationId: string;
 }
 
+/**
+ * Example response
+ */
+export class GetV1CompensationsCompensationId200ApplicationXML extends SpeakeasyBase {}
+
 export class GetV1CompensationsCompensationIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     body?: Uint8Array;

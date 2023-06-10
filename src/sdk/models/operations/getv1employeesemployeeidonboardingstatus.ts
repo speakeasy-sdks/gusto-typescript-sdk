@@ -14,6 +14,11 @@ export class GetV1EmployeesEmployeeIdOnboardingStatusRequest extends SpeakeasyBa
     employeeId: string;
 }
 
+/**
+ * Example response.
+ */
+export class GetV1EmployeesEmployeeIdOnboardingStatus200ApplicationXML extends SpeakeasyBase {}
+
 export class GetV1EmployeesEmployeeIdOnboardingStatusResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     body?: Uint8Array;
