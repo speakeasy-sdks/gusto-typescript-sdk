@@ -49,6 +49,7 @@ export class Contractors {
             url: url,
             method: "delete",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -113,6 +114,7 @@ export class Contractors {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -128,13 +130,14 @@ export class Contractors {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractors = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.contractors = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.Contractor,
                         resFieldDepth
                     );
@@ -183,6 +186,7 @@ export class Contractors {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -198,10 +202,11 @@ export class Contractors {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.contractor = utils.objectToClass(httpRes?.data, shared.Contractor);
+                    res.contractor = utils.objectToClass(JSON.parse(decodedRes), shared.Contractor);
                 }
                 break;
             case httpRes?.status == 404:
@@ -251,6 +256,7 @@ export class Contractors {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -266,11 +272,12 @@ export class Contractors {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractorAddress = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.ContractorAddress1
                     );
                 }
@@ -353,6 +360,7 @@ export class Contractors {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -368,19 +376,17 @@ export class Contractors {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractorOnboardingStatus = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.ContractorOnboardingStatus1
                     );
                 }
                 if (utils.matchContentType(contentType, `application/xml`)) {
-                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-                    const out: Uint8Array = new Uint8Array(resBody.length);
-                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
-                    res.body = out;
+                    res.body = httpRes?.data;
                 }
                 break;
             case httpRes?.status == 404:
@@ -440,6 +446,7 @@ export class Contractors {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -456,10 +463,11 @@ export class Contractors {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.contractor = utils.objectToClass(httpRes?.data, shared.Contractor);
+                    res.contractor = utils.objectToClass(JSON.parse(decodedRes), shared.Contractor);
                 }
                 break;
             case httpRes?.status == 404:
@@ -467,7 +475,7 @@ export class Contractors {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -527,6 +535,7 @@ export class Contractors {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -543,10 +552,11 @@ export class Contractors {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.contractor = utils.objectToClass(httpRes?.data, shared.Contractor);
+                    res.contractor = utils.objectToClass(JSON.parse(decodedRes), shared.Contractor);
                 }
                 break;
             case httpRes?.status == 404:
@@ -554,7 +564,7 @@ export class Contractors {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -614,6 +624,7 @@ export class Contractors {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -630,11 +641,12 @@ export class Contractors {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractorAddress = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.ContractorAddress1
                     );
                 }
@@ -644,7 +656,7 @@ export class Contractors {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -713,6 +725,7 @@ export class Contractors {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -729,19 +742,17 @@ export class Contractors {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractorOnboardingStatus = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.ContractorOnboardingStatus1
                     );
                 }
                 if (utils.matchContentType(contentType, `application/xml`)) {
-                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-                    const out: Uint8Array = new Uint8Array(resBody.length);
-                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
-                    res.body = out;
+                    res.body = httpRes?.data;
                 }
                 break;
             case httpRes?.status == 404:
@@ -749,7 +760,7 @@ export class Contractors {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

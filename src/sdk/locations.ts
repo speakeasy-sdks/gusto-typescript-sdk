@@ -54,6 +54,7 @@ export class Locations {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -69,13 +70,14 @@ export class Locations {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.locations = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.locations = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.Location,
                         resFieldDepth
                     );
@@ -124,6 +126,7 @@ export class Locations {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -139,10 +142,11 @@ export class Locations {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.location = utils.objectToClass(httpRes?.data, shared.Location);
+                    res.location = utils.objectToClass(JSON.parse(decodedRes), shared.Location);
                 }
                 break;
             case httpRes?.status == 404:
@@ -193,6 +197,7 @@ export class Locations {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -208,13 +213,14 @@ export class Locations {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.minimumWages = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.minimumWages = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.MinimumWage,
                         resFieldDepth
                     );
@@ -275,6 +281,7 @@ export class Locations {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -291,10 +298,11 @@ export class Locations {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.location = utils.objectToClass(httpRes?.data, shared.Location);
+                    res.location = utils.objectToClass(JSON.parse(decodedRes), shared.Location);
                 }
                 break;
             case httpRes?.status == 404:
@@ -302,7 +310,7 @@ export class Locations {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -360,6 +368,7 @@ export class Locations {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -376,10 +385,11 @@ export class Locations {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.location = utils.objectToClass(httpRes?.data, shared.Location);
+                    res.location = utils.objectToClass(JSON.parse(decodedRes), shared.Location);
                 }
                 break;
             case httpRes?.status == 404:
@@ -387,7 +397,7 @@ export class Locations {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -443,6 +453,7 @@ export class Locations {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -459,10 +470,11 @@ export class Locations {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.location = utils.objectToClass(httpRes?.data, shared.Location);
+                    res.location = utils.objectToClass(JSON.parse(decodedRes), shared.Location);
                 }
                 break;
             case httpRes?.status == 404:
@@ -470,7 +482,7 @@ export class Locations {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

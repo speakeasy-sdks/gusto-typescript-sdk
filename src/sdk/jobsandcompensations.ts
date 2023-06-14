@@ -51,6 +51,7 @@ export class JobsAndCompensations {
             url: url,
             method: "delete",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -112,6 +113,7 @@ export class JobsAndCompensations {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -127,16 +129,17 @@ export class JobsAndCompensations {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.compensation = utils.objectToClass(httpRes?.data, shared.Compensation);
+                    res.compensation = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Compensation
+                    );
                 }
                 if (utils.matchContentType(contentType, `application/xml`)) {
-                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-                    const out: Uint8Array = new Uint8Array(resBody.length);
-                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
-                    res.body = out;
+                    res.body = httpRes?.data;
                 }
                 break;
             case httpRes?.status == 404:
@@ -183,6 +186,7 @@ export class JobsAndCompensations {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -198,12 +202,17 @@ export class JobsAndCompensations {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.jobs = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.jobs = utils.objectToClass(httpRes?.data, shared.Job, resFieldDepth);
+                    res.jobs = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Job,
+                        resFieldDepth
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -250,6 +259,7 @@ export class JobsAndCompensations {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -264,10 +274,11 @@ export class JobsAndCompensations {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.job = utils.objectToClass(httpRes?.data, shared.Job);
+                    res.job = utils.objectToClass(JSON.parse(decodedRes), shared.Job);
                 }
                 break;
             case httpRes?.status == 404:
@@ -318,6 +329,7 @@ export class JobsAndCompensations {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -333,13 +345,14 @@ export class JobsAndCompensations {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.compensations = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.compensations = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.Compensation,
                         resFieldDepth
                     );
@@ -398,6 +411,7 @@ export class JobsAndCompensations {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -413,10 +427,11 @@ export class JobsAndCompensations {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.job = utils.objectToClass(httpRes?.data, shared.Job);
+                    res.job = utils.objectToClass(JSON.parse(decodedRes), shared.Job);
                 }
                 break;
             case httpRes?.status == 404:
@@ -424,7 +439,7 @@ export class JobsAndCompensations {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -482,6 +497,7 @@ export class JobsAndCompensations {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -498,16 +514,17 @@ export class JobsAndCompensations {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.compensation = utils.objectToClass(httpRes?.data, shared.Compensation);
+                    res.compensation = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Compensation
+                    );
                 }
                 if (utils.matchContentType(contentType, `application/xml`)) {
-                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-                    const out: Uint8Array = new Uint8Array(resBody.length);
-                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
-                    res.body = out;
+                    res.body = httpRes?.data;
                 }
                 break;
             case httpRes?.status == 404:
@@ -515,7 +532,7 @@ export class JobsAndCompensations {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -571,6 +588,7 @@ export class JobsAndCompensations {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -586,10 +604,11 @@ export class JobsAndCompensations {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.job = utils.objectToClass(httpRes?.data, shared.Job);
+                    res.job = utils.objectToClass(JSON.parse(decodedRes), shared.Job);
                 }
                 break;
             case httpRes?.status == 404:
@@ -597,7 +616,7 @@ export class JobsAndCompensations {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

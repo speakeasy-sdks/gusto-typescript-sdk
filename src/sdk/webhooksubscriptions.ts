@@ -61,6 +61,7 @@ export class WebhookSubscriptions {
             url: url,
             method: "delete",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -130,6 +131,7 @@ export class WebhookSubscriptions {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -145,11 +147,12 @@ export class WebhookSubscriptions {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.webhookSubscription = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.WebhookSubscription
                     );
                 }
@@ -207,6 +210,7 @@ export class WebhookSubscriptions {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -266,6 +270,7 @@ export class WebhookSubscriptions {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -281,13 +286,14 @@ export class WebhookSubscriptions {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.webhookSubscriptions = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.webhookSubscriptions = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.WebhookSubscription,
                         resFieldDepth
                     );
@@ -352,6 +358,7 @@ export class WebhookSubscriptions {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -368,11 +375,12 @@ export class WebhookSubscriptions {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.webhookSubscription = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.WebhookSubscription
                     );
                 }
@@ -382,7 +390,7 @@ export class WebhookSubscriptions {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -451,6 +459,7 @@ export class WebhookSubscriptions {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -467,11 +476,12 @@ export class WebhookSubscriptions {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.webhookSubscription = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.WebhookSubscription
                     );
                 }
@@ -481,7 +491,7 @@ export class WebhookSubscriptions {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -547,6 +557,7 @@ export class WebhookSubscriptions {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -563,11 +574,12 @@ export class WebhookSubscriptions {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.webhookSubscription = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.WebhookSubscription
                     );
                 }
@@ -577,7 +589,7 @@ export class WebhookSubscriptions {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

@@ -49,6 +49,7 @@ export class Employees {
             url: url,
             method: "delete",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -109,6 +110,7 @@ export class Employees {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -123,10 +125,11 @@ export class Employees {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.employee = utils.objectToClass(httpRes?.data, shared.Employee);
+                    res.employee = utils.objectToClass(JSON.parse(decodedRes), shared.Employee);
                 }
                 break;
             case httpRes?.status == 404:
@@ -177,6 +180,7 @@ export class Employees {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -192,12 +196,13 @@ export class Employees {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.getV1EmployeesEmployeeIdCustomFields200ApplicationJSONObject =
                         utils.objectToClass(
-                            httpRes?.data,
+                            JSON.parse(decodedRes),
                             operations.GetV1EmployeesEmployeeIdCustomFields200ApplicationJSON
                         );
                 }
@@ -249,6 +254,7 @@ export class Employees {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -264,11 +270,12 @@ export class Employees {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.employeeAddress = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.EmployeeAddress
                     );
                 }
@@ -355,6 +362,7 @@ export class Employees {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -370,19 +378,17 @@ export class Employees {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.employeeOnboardingStatus = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.EmployeeOnboardingStatus
                     );
                 }
                 if (utils.matchContentType(contentType, `application/xml`)) {
-                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-                    const out: Uint8Array = new Uint8Array(resBody.length);
-                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
-                    res.body = out;
+                    res.body = httpRes?.data;
                 }
                 break;
             case httpRes?.status == 404:
@@ -433,6 +439,7 @@ export class Employees {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -448,11 +455,12 @@ export class Employees {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.timeOffActivity = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.TimeOffActivity
                     );
                 }
@@ -510,6 +518,7 @@ export class Employees {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -525,10 +534,11 @@ export class Employees {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.employee = utils.objectToClass(httpRes?.data, shared.Employee);
+                    res.employee = utils.objectToClass(JSON.parse(decodedRes), shared.Employee);
                 }
                 break;
             case httpRes?.status == 404:
@@ -536,7 +546,7 @@ export class Employees {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -586,6 +596,7 @@ export class Employees {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -601,10 +612,11 @@ export class Employees {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.employee = utils.objectToClass(httpRes?.data, shared.Employee);
+                    res.employee = utils.objectToClass(JSON.parse(decodedRes), shared.Employee);
                 }
                 break;
         }
@@ -658,6 +670,7 @@ export class Employees {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -673,10 +686,11 @@ export class Employees {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.employee = utils.objectToClass(httpRes?.data, shared.Employee);
+                    res.employee = utils.objectToClass(JSON.parse(decodedRes), shared.Employee);
                 }
                 break;
             case httpRes?.status == 404:
@@ -684,7 +698,7 @@ export class Employees {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -744,6 +758,7 @@ export class Employees {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -760,11 +775,12 @@ export class Employees {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.employeeAddress = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.EmployeeAddress
                     );
                 }
@@ -774,7 +790,7 @@ export class Employees {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -843,6 +859,7 @@ export class Employees {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -859,19 +876,17 @@ export class Employees {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.employeeOnboardingStatus = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.EmployeeOnboardingStatus
                     );
                 }
                 if (utils.matchContentType(contentType, `application/xml`)) {
-                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-                    const out: Uint8Array = new Uint8Array(resBody.length);
-                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
-                    res.body = out;
+                    res.body = httpRes?.data;
                 }
                 break;
             case httpRes?.status == 404:
@@ -879,7 +894,7 @@ export class Employees {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

@@ -52,6 +52,7 @@ export class Departments {
             url: url,
             method: "delete",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -66,13 +67,14 @@ export class Departments {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case [204, 404].includes(httpRes?.status):
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -122,6 +124,7 @@ export class Departments {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -137,13 +140,14 @@ export class Departments {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.departments = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.departments = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.Department,
                         resFieldDepth
                     );
@@ -193,6 +197,7 @@ export class Departments {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -207,10 +212,11 @@ export class Departments {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.department = utils.objectToClass(httpRes?.data, shared.Department);
+                    res.department = utils.objectToClass(JSON.parse(decodedRes), shared.Department);
                 }
                 break;
             case httpRes?.status == 404:
@@ -270,6 +276,7 @@ export class Departments {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -285,10 +292,11 @@ export class Departments {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.department = utils.objectToClass(httpRes?.data, shared.Department);
+                    res.department = utils.objectToClass(JSON.parse(decodedRes), shared.Department);
                 }
                 break;
             case httpRes?.status == 404:
@@ -296,7 +304,7 @@ export class Departments {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -357,6 +365,7 @@ export class Departments {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -373,10 +382,11 @@ export class Departments {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.department = utils.objectToClass(httpRes?.data, shared.Department);
+                    res.department = utils.objectToClass(JSON.parse(decodedRes), shared.Department);
                 }
                 break;
             case httpRes?.status == 404:
@@ -432,6 +442,7 @@ export class Departments {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -447,10 +458,11 @@ export class Departments {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.department = utils.objectToClass(httpRes?.data, shared.Department);
+                    res.department = utils.objectToClass(JSON.parse(decodedRes), shared.Department);
                 }
                 break;
             case httpRes?.status == 404:
@@ -458,7 +470,7 @@ export class Departments {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -519,6 +531,7 @@ export class Departments {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -535,10 +548,11 @@ export class Departments {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.department = utils.objectToClass(httpRes?.data, shared.Department);
+                    res.department = utils.objectToClass(JSON.parse(decodedRes), shared.Department);
                 }
                 break;
             case httpRes?.status == 404:

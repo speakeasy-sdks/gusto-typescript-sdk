@@ -54,6 +54,7 @@ export class TimeOffPolicies {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -69,13 +70,14 @@ export class TimeOffPolicies {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.timeOffPolicies = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.timeOffPolicies = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.TimeOffPolicy,
                         resFieldDepth
                     );
@@ -127,6 +129,7 @@ export class TimeOffPolicies {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -142,10 +145,14 @@ export class TimeOffPolicies {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.timeOffPolicy = utils.objectToClass(httpRes?.data, shared.TimeOffPolicy);
+                    res.timeOffPolicy = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.TimeOffPolicy
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -204,6 +211,7 @@ export class TimeOffPolicies {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -220,10 +228,14 @@ export class TimeOffPolicies {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.timeOffPolicy = utils.objectToClass(httpRes?.data, shared.TimeOffPolicy);
+                    res.timeOffPolicy = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.TimeOffPolicy
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -231,7 +243,7 @@ export class TimeOffPolicies {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -297,6 +309,7 @@ export class TimeOffPolicies {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -313,13 +326,14 @@ export class TimeOffPolicies {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.accruingTimeOffHours = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.accruingTimeOffHours = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.AccruingTimeOffHour,
                         resFieldDepth
                     );
@@ -328,7 +342,7 @@ export class TimeOffPolicies {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -387,6 +401,7 @@ export class TimeOffPolicies {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -403,10 +418,14 @@ export class TimeOffPolicies {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.timeOffPolicy = utils.objectToClass(httpRes?.data, shared.TimeOffPolicy);
+                    res.timeOffPolicy = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.TimeOffPolicy
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -414,7 +433,7 @@ export class TimeOffPolicies {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -462,6 +481,7 @@ export class TimeOffPolicies {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -477,10 +497,14 @@ export class TimeOffPolicies {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.timeOffPolicy = utils.objectToClass(httpRes?.data, shared.TimeOffPolicy);
+                    res.timeOffPolicy = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.TimeOffPolicy
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -488,7 +512,7 @@ export class TimeOffPolicies {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -547,6 +571,7 @@ export class TimeOffPolicies {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -563,10 +588,14 @@ export class TimeOffPolicies {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.timeOffPolicy = utils.objectToClass(httpRes?.data, shared.TimeOffPolicy);
+                    res.timeOffPolicy = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.TimeOffPolicy
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -574,7 +603,7 @@ export class TimeOffPolicies {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -633,6 +662,7 @@ export class TimeOffPolicies {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -649,10 +679,14 @@ export class TimeOffPolicies {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.timeOffPolicy = utils.objectToClass(httpRes?.data, shared.TimeOffPolicy);
+                    res.timeOffPolicy = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.TimeOffPolicy
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -660,7 +694,7 @@ export class TimeOffPolicies {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -719,6 +753,7 @@ export class TimeOffPolicies {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -735,10 +770,14 @@ export class TimeOffPolicies {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.timeOffPolicy = utils.objectToClass(httpRes?.data, shared.TimeOffPolicy);
+                    res.timeOffPolicy = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.TimeOffPolicy
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -746,7 +785,7 @@ export class TimeOffPolicies {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

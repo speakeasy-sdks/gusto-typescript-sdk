@@ -58,6 +58,7 @@ export class PaySchedules {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -73,13 +74,14 @@ export class PaySchedules {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.payPeriods = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.payPeriods = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.PayPeriod,
                         resFieldDepth
                     );
@@ -133,6 +135,7 @@ export class PaySchedules {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -148,13 +151,14 @@ export class PaySchedules {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.paySchedules = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.paySchedules = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.PaySchedule,
                         resFieldDepth
                     );
@@ -207,6 +211,7 @@ export class PaySchedules {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -222,10 +227,14 @@ export class PaySchedules {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.paySchedule = utils.objectToClass(httpRes?.data, shared.PaySchedule);
+                    res.paySchedule = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.PaySchedule
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -287,6 +296,7 @@ export class PaySchedules {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -303,10 +313,14 @@ export class PaySchedules {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.paySchedule = utils.objectToClass(httpRes?.data, shared.PaySchedule);
+                    res.paySchedule = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.PaySchedule
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -314,7 +328,7 @@ export class PaySchedules {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -372,6 +386,7 @@ export class PaySchedules {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -388,10 +403,14 @@ export class PaySchedules {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.paySchedule = utils.objectToClass(httpRes?.data, shared.PaySchedule);
+                    res.paySchedule = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.PaySchedule
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -399,7 +418,7 @@ export class PaySchedules {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

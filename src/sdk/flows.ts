@@ -59,6 +59,7 @@ export class Flows {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -75,10 +76,11 @@ export class Flows {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.flow = utils.objectToClass(httpRes?.data, shared.Flow);
+                    res.flow = utils.objectToClass(JSON.parse(decodedRes), shared.Flow);
                 }
                 break;
             case httpRes?.status == 404:
@@ -86,7 +88,7 @@ export class Flows {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

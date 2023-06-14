@@ -114,6 +114,8 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody extends Speake
 
     /**
      * The amount to be paid, per pay period, by the company.
+     *
+     * @deprecated this field will be removed in a future release, please migrate away from it as soon as possible
      */
     @SpeakeasyMetadata()
     @Expose({ name: "company_contribution" })
@@ -128,6 +130,8 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody extends Speake
 
     /**
      * Whether the company contribution amount should be treated as a percentage to be deducted from each payroll.
+     *
+     * @deprecated this field will be removed in a future release, please migrate away from it as soon as possible
      */
     @SpeakeasyMetadata()
     @Expose({ name: "contribute_as_percentage" })

@@ -53,6 +53,7 @@ export class TaxRequirements {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -68,6 +69,7 @@ export class TaxRequirements {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
@@ -75,7 +77,7 @@ export class TaxRequirements {
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects =
                         utils.objectToClass(
-                            httpRes?.data,
+                            JSON.parse(decodedRes),
                             operations.GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON,
                             resFieldDepth
                         );
@@ -167,6 +169,7 @@ export class TaxRequirements {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -182,11 +185,12 @@ export class TaxRequirements {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.taxRequirementsState = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.TaxRequirementsState
                     );
                 }
@@ -246,6 +250,7 @@ export class TaxRequirements {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -262,13 +267,14 @@ export class TaxRequirements {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case [200, 404].includes(httpRes?.status):
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

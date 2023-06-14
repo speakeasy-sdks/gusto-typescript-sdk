@@ -56,6 +56,7 @@ export class Payrolls {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -71,11 +72,12 @@ export class Payrolls {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.payrollReversal = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.PayrollReversal
                     );
                 }
@@ -130,6 +132,7 @@ export class Payrolls {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -145,13 +148,14 @@ export class Payrolls {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.payrolls = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.payrolls = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.Payroll,
                         resFieldDepth
                     );
@@ -211,6 +215,7 @@ export class Payrolls {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -226,10 +231,11 @@ export class Payrolls {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.payroll = utils.objectToClass(httpRes?.data, shared.Payroll);
+                    res.payroll = utils.objectToClass(JSON.parse(decodedRes), shared.Payroll);
                 }
                 break;
             case httpRes?.status == 404:
@@ -281,6 +287,7 @@ export class Payrolls {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -296,13 +303,14 @@ export class Payrolls {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.payrollBlockers = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.payrollBlockers = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.PayrollBlocker,
                         resFieldDepth
                     );
@@ -356,6 +364,7 @@ export class Payrolls {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -371,10 +380,14 @@ export class Payrolls {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.payrollReceipt = utils.objectToClass(httpRes?.data, shared.PayrollReceipt);
+                    res.payrollReceipt = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.PayrollReceipt
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -424,6 +437,7 @@ export class Payrolls {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -495,6 +509,7 @@ export class Payrolls {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -511,10 +526,11 @@ export class Payrolls {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.payroll = utils.objectToClass(httpRes?.data, shared.Payroll);
+                    res.payroll = utils.objectToClass(JSON.parse(decodedRes), shared.Payroll);
                 }
                 break;
             case httpRes?.status == 404:
@@ -522,7 +538,7 @@ export class Payrolls {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -585,6 +601,7 @@ export class Payrolls {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -603,10 +620,14 @@ export class Payrolls {
                     rawResponse: httpRes,
                 }
             );
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.payrollCheck = utils.objectToClass(httpRes?.data, shared.PayrollCheck);
+                    res.payrollCheck = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.PayrollCheck
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -614,7 +635,7 @@ export class Payrolls {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -665,6 +686,7 @@ export class Payrolls {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -680,10 +702,11 @@ export class Payrolls {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.payroll = utils.objectToClass(httpRes?.data, shared.Payroll);
+                    res.payroll = utils.objectToClass(JSON.parse(decodedRes), shared.Payroll);
                 }
                 break;
             case httpRes?.status == 404:
@@ -691,7 +714,7 @@ export class Payrolls {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -751,6 +774,7 @@ export class Payrolls {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -767,10 +791,11 @@ export class Payrolls {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.payroll = utils.objectToClass(httpRes?.data, shared.Payroll);
+                    res.payroll = utils.objectToClass(JSON.parse(decodedRes), shared.Payroll);
                 }
                 break;
             case httpRes?.status == 404:
@@ -778,7 +803,7 @@ export class Payrolls {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -843,6 +868,7 @@ export class Payrolls {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -861,10 +887,11 @@ export class Payrolls {
                     rawResponse: httpRes,
                 }
             );
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.payroll = utils.objectToClass(httpRes?.data, shared.Payroll);
+                    res.payroll = utils.objectToClass(JSON.parse(decodedRes), shared.Payroll);
                 }
                 break;
             case httpRes?.status == 404:
@@ -872,7 +899,7 @@ export class Payrolls {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -924,6 +951,7 @@ export class Payrolls {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -939,13 +967,14 @@ export class Payrolls {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case [202, 404].includes(httpRes?.status):
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate422ApplicationJSONOneOf =
-                        httpRes?.data;
+                        JSON.parse(decodedRes);
                 }
                 break;
         }
@@ -993,6 +1022,7 @@ export class Payrolls {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -1008,13 +1038,14 @@ export class Payrolls {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case [202, 404].includes(httpRes?.status):
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit422ApplicationJSONOneOf =
-                        httpRes?.data;
+                        JSON.parse(decodedRes);
                 }
                 break;
         }

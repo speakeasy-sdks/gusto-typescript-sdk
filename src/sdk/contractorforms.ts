@@ -53,6 +53,7 @@ export class ContractorForms {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -68,11 +69,12 @@ export class ContractorForms {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.form = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         operations.GetV1ContractorFormForm
                     );
                 }
@@ -122,6 +124,7 @@ export class ContractorForms {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -137,10 +140,11 @@ export class ContractorForms {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
+                    res.formPdf = utils.objectToClass(JSON.parse(decodedRes), shared.FormPdf);
                 }
                 break;
             case httpRes?.status == 404:
@@ -188,6 +192,7 @@ export class ContractorForms {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -203,13 +208,14 @@ export class ContractorForms {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.getV1ContractorFormsFormAnies = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.getV1ContractorFormsFormAnies = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         operations.GetV1ContractorFormsForm,
                         resFieldDepth
                     );
@@ -273,6 +279,7 @@ export class ContractorForms {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -289,11 +296,12 @@ export class ContractorForms {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.form = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         operations.PostV1SandboxGenerate1099Form
                     );
                 }
@@ -303,7 +311,7 @@ export class ContractorForms {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

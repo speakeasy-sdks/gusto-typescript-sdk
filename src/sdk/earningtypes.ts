@@ -55,6 +55,7 @@ export class EarningTypes {
             url: url,
             method: "delete",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -124,6 +125,7 @@ export class EarningTypes {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -139,12 +141,13 @@ export class EarningTypes {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.getV1CompaniesCompanyIdEarningTypes200ApplicationJSONObject =
                         utils.objectToClass(
-                            httpRes?.data,
+                            JSON.parse(decodedRes),
                             operations.GetV1CompaniesCompanyIdEarningTypes200ApplicationJSON
                         );
                 }
@@ -208,6 +211,7 @@ export class EarningTypes {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -224,10 +228,14 @@ export class EarningTypes {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.earningType = utils.objectToClass(httpRes?.data, shared.EarningType);
+                    res.earningType = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.EarningType
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -235,7 +243,7 @@ export class EarningTypes {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -295,6 +303,7 @@ export class EarningTypes {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -311,10 +320,14 @@ export class EarningTypes {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.earningType = utils.objectToClass(httpRes?.data, shared.EarningType);
+                    res.earningType = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.EarningType
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -322,7 +335,7 @@ export class EarningTypes {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

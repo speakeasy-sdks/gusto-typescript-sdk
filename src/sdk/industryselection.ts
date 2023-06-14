@@ -53,6 +53,7 @@ export class IndustrySelection {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -68,10 +69,11 @@ export class IndustrySelection {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.industry = utils.objectToClass(httpRes?.data, shared.Industry);
+                    res.industry = utils.objectToClass(JSON.parse(decodedRes), shared.Industry);
                 }
                 break;
             case httpRes?.status == 404:
@@ -129,6 +131,7 @@ export class IndustrySelection {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -145,10 +148,11 @@ export class IndustrySelection {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.industry = utils.objectToClass(httpRes?.data, shared.Industry);
+                    res.industry = utils.objectToClass(JSON.parse(decodedRes), shared.Industry);
                 }
                 break;
             case httpRes?.status == 404:
@@ -156,7 +160,7 @@ export class IndustrySelection {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

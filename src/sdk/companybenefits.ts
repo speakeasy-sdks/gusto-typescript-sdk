@@ -56,6 +56,7 @@ export class CompanyBenefits {
             url: url,
             method: "delete",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -71,6 +72,7 @@ export class CompanyBenefits {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case [204, 404].includes(httpRes?.status):
                 break;
@@ -78,7 +80,7 @@ export class CompanyBenefits {
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject =
                         utils.objectToClass(
-                            httpRes?.data,
+                            JSON.parse(decodedRes),
                             operations.DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON
                         );
                 }
@@ -119,6 +121,7 @@ export class CompanyBenefits {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -133,13 +136,14 @@ export class CompanyBenefits {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.supportedBenefits = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.supportedBenefits = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.SupportedBenefit,
                         resFieldDepth
                     );
@@ -190,6 +194,7 @@ export class CompanyBenefits {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -205,11 +210,12 @@ export class CompanyBenefits {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.supportedBenefit = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.SupportedBenefit
                     );
                 }
@@ -261,6 +267,7 @@ export class CompanyBenefits {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -276,11 +283,12 @@ export class CompanyBenefits {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.benefitTypeRequirements = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.BenefitTypeRequirements
                     );
                 }
@@ -333,6 +341,7 @@ export class CompanyBenefits {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -348,10 +357,14 @@ export class CompanyBenefits {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.benefitSummary = utils.objectToClass(httpRes?.data, shared.BenefitSummary);
+                    res.benefitSummary = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.BenefitSummary
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -404,6 +417,7 @@ export class CompanyBenefits {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -419,13 +433,14 @@ export class CompanyBenefits {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.companyBenefits = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.companyBenefits = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.CompanyBenefit,
                         resFieldDepth
                     );
@@ -483,6 +498,7 @@ export class CompanyBenefits {
             url: url + queryParams,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -498,10 +514,14 @@ export class CompanyBenefits {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.companyBenefit = utils.objectToClass(httpRes?.data, shared.CompanyBenefit);
+                    res.companyBenefit = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.CompanyBenefit
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -563,6 +583,7 @@ export class CompanyBenefits {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -579,10 +600,14 @@ export class CompanyBenefits {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.companyBenefit = utils.objectToClass(httpRes?.data, shared.CompanyBenefit);
+                    res.companyBenefit = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.CompanyBenefit
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -590,7 +615,7 @@ export class CompanyBenefits {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -652,6 +677,7 @@ export class CompanyBenefits {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -668,10 +694,14 @@ export class CompanyBenefits {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.companyBenefit = utils.objectToClass(httpRes?.data, shared.CompanyBenefit);
+                    res.companyBenefit = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.CompanyBenefit
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -679,7 +709,7 @@ export class CompanyBenefits {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

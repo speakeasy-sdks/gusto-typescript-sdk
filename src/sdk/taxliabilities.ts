@@ -54,6 +54,7 @@ export class TaxLiabilities {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -69,13 +70,14 @@ export class TaxLiabilities {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.taxLiabilitiesSelections = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.taxLiabilitiesSelections = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.TaxLiabilitiesSelections,
                         resFieldDepth
                     );
@@ -137,6 +139,7 @@ export class TaxLiabilities {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -153,13 +156,14 @@ export class TaxLiabilities {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.taxLiabilitiesSelections = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.taxLiabilitiesSelections = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.TaxLiabilitiesSelections,
                         resFieldDepth
                     );
@@ -170,7 +174,7 @@ export class TaxLiabilities {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -219,6 +223,7 @@ export class TaxLiabilities {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -234,13 +239,14 @@ export class TaxLiabilities {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case [202, 404].includes(httpRes?.status):
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

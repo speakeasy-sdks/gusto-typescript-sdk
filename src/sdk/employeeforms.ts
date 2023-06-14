@@ -53,6 +53,7 @@ export class EmployeeForms {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -67,10 +68,11 @@ export class EmployeeForms {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.form = utils.objectToClass(httpRes?.data, shared.Form);
+                    res.form = utils.objectToClass(JSON.parse(decodedRes), shared.Form);
                 }
                 break;
             case httpRes?.status == 404:
@@ -118,6 +120,7 @@ export class EmployeeForms {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -133,10 +136,11 @@ export class EmployeeForms {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.formPdf = utils.objectToClass(httpRes?.data, shared.FormPdf);
+                    res.formPdf = utils.objectToClass(JSON.parse(decodedRes), shared.FormPdf);
                 }
                 break;
             case httpRes?.status == 404:
@@ -180,6 +184,7 @@ export class EmployeeForms {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -195,12 +200,17 @@ export class EmployeeForms {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.forms = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.forms = utils.objectToClass(httpRes?.data, shared.Form, resFieldDepth);
+                    res.forms = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Form,
+                        resFieldDepth
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -261,6 +271,7 @@ export class EmployeeForms {
             url: url,
             method: "post",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -277,11 +288,12 @@ export class EmployeeForms {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.form = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         operations.PostV1SandboxGenerateW2Form
                     );
                 }
@@ -291,7 +303,7 @@ export class EmployeeForms {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }
@@ -349,6 +361,7 @@ export class EmployeeForms {
             url: url,
             method: "put",
             headers: headers,
+            responseType: "arraybuffer",
             data: reqBody,
             ...config,
         });
@@ -365,10 +378,11 @@ export class EmployeeForms {
                 contentType: contentType,
                 rawResponse: httpRes,
             });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.form = utils.objectToClass(httpRes?.data, shared.Form);
+                    res.form = utils.objectToClass(JSON.parse(decodedRes), shared.Form);
                 }
                 break;
             case httpRes?.status == 404:
@@ -376,7 +390,7 @@ export class EmployeeForms {
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
-                        httpRes?.data,
+                        JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
                     );
                 }

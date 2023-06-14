@@ -46,6 +46,7 @@ export class User {
             url: url,
             method: "get",
             headers: headers,
+            responseType: "arraybuffer",
             ...config,
         });
 
@@ -60,10 +61,14 @@ export class User {
             contentType: contentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.currentUser = utils.objectToClass(httpRes?.data, shared.CurrentUser);
+                    res.currentUser = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.CurrentUser
+                    );
                 }
                 break;
         }
