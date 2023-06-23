@@ -23,13 +23,12 @@ export class TaxLiabilities {
      * scope: `payrolls:read`
      */
     async getV1TaxLiabilities(
-        req: operations.GetV1TaxLiabilitiesRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1TaxLiabilitiesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1TaxLiabilitiesRequest(req);
-        }
-
+        const req = new operations.GetV1TaxLiabilitiesRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -98,13 +97,14 @@ export class TaxLiabilities {
      *   scope: `payrolls:write`
      */
     async putV1TaxLiabilities(
-        req: operations.PutV1TaxLiabilitiesRequest,
+        companyUuid: string,
+        requestBody?: operations.PutV1TaxLiabilitiesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1TaxLiabilitiesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1TaxLiabilitiesRequest(req);
-        }
-
+        const req = new operations.PutV1TaxLiabilitiesRequest({
+            companyUuid: companyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -192,13 +192,12 @@ export class TaxLiabilities {
      *   scope: `payrolls:write`
      */
     async putV1TaxLiabilitiesFinish(
-        req: operations.PutV1TaxLiabilitiesFinishRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1TaxLiabilitiesFinishResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1TaxLiabilitiesFinishRequest(req);
-        }
-
+        const req = new operations.PutV1TaxLiabilitiesFinishRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

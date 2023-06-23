@@ -22,13 +22,12 @@ export class TaxRequirements {
      * Returns objects describing the states that have tax requirements for the company
      */
     async getV1CompaniesCompanyUuidTaxRequirements(
-        req: operations.GetV1CompaniesCompanyUuidTaxRequirementsRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyUuidTaxRequirementsRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyUuidTaxRequirementsRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -137,13 +136,16 @@ export class TaxRequirements {
      *
      */
     async getV1CompaniesCompanyUuidTaxRequirementsState(
-        req: operations.GetV1CompaniesCompanyUuidTaxRequirementsStateRequest,
+        companyUuid: string,
+        state: string,
+        scheduling?: boolean,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyUuidTaxRequirementsStateRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyUuidTaxRequirementsStateRequest({
+            companyUuid: companyUuid,
+            state: state,
+            scheduling: scheduling,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -209,13 +211,16 @@ export class TaxRequirements {
      * Update State Tax Requirements
      */
     async putV1CompaniesCompanyUuidTaxRequirementsState(
-        req: operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequest,
+        companyUuid: string,
+        state: string,
+        requestBody?: operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequest(req);
-        }
-
+        const req = new operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequest({
+            companyUuid: companyUuid,
+            state: state,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

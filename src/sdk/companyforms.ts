@@ -22,13 +22,12 @@ export class CompanyForms {
      * Get a company form
      */
     async getV1CompanyForm(
-        req: operations.GetV1CompanyFormRequest,
+        formId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompanyFormResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompanyFormRequest(req);
-        }
-
+        const req = new operations.GetV1CompanyFormRequest({
+            formId: formId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -85,13 +84,12 @@ export class CompanyForms {
      * Get the link to the form PDF
      */
     async getV1CompanyFormPdf(
-        req: operations.GetV1CompanyFormPdfRequest,
+        formId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompanyFormPdfResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompanyFormPdfRequest(req);
-        }
-
+        const req = new operations.GetV1CompanyFormPdfRequest({
+            formId: formId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -149,13 +147,12 @@ export class CompanyForms {
      * Get a list of all company's forms
      */
     async getV1CompanyForms(
-        req: operations.GetV1CompanyFormsRequest,
+        companyId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompanyFormsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompanyFormsRequest(req);
-        }
-
+        const req = new operations.GetV1CompanyFormsRequest({
+            companyId: companyId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -218,13 +215,14 @@ export class CompanyForms {
      * Sign a company form
      */
     async putV1CompanyFormSign(
-        req: operations.PutV1CompanyFormSignRequest,
+        formId: string,
+        requestBody?: operations.PutV1CompanyFormSignRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompanyFormSignResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompanyFormSignRequest(req);
-        }
-
+        const req = new operations.PutV1CompanyFormSignRequest({
+            formId: formId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

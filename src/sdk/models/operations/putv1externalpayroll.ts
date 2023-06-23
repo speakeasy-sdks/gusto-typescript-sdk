@@ -135,9 +135,6 @@ export class PutV1ExternalPayrollRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1ExternalPayrollRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1ExternalPayrollRequestBody;
-
     /**
      * The UUID of the company
      */
@@ -149,6 +146,9 @@ export class PutV1ExternalPayrollRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=external_payroll_id" })
     externalPayrollId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1ExternalPayrollRequestBody;
 }
 
 export class PutV1ExternalPayrollResponse extends SpeakeasyBase {

@@ -22,13 +22,14 @@ export class EmployeePaymentMethod {
      * Deletes an employee bank account. To update an employee's bank account details, delete the bank account first and create a new one.
      */
     async deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(
-        req: operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest,
+        bankAccountUuid: string,
+        employeeId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest(req);
-        }
-
+        const req = new operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest({
+            bankAccountUuid: bankAccountUuid,
+            employeeId: employeeId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -84,13 +85,12 @@ export class EmployeePaymentMethod {
      * Fetches an employee's payment method. An employee payment method describes how the payment should be split across the employee's associated bank accounts.
      */
     async getV1EmployeesEmployeeIdPaymentMethod(
-        req: operations.GetV1EmployeesEmployeeIdPaymentMethodRequest,
+        employeeId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesEmployeeIdPaymentMethodResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesEmployeeIdPaymentMethodRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesEmployeeIdPaymentMethodRequest({
+            employeeId: employeeId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -155,13 +155,14 @@ export class EmployeePaymentMethod {
      * Creates an employee bank account. An employee can have multiple bank accounts. Note that creating an employee bank account will also update the employee's payment method.
      */
     async postV1EmployeesEmployeeIdBankAccounts(
-        req: operations.PostV1EmployeesEmployeeIdBankAccountsRequest,
+        employeeId: string,
+        requestBody?: operations.PostV1EmployeesEmployeeIdBankAccountsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1EmployeesEmployeeIdBankAccountsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1EmployeesEmployeeIdBankAccountsRequest(req);
-        }
-
+        const req = new operations.PostV1EmployeesEmployeeIdBankAccountsRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -245,13 +246,14 @@ export class EmployeePaymentMethod {
      * Updates an employee's payment method. Note that creating an employee bank account will also update the employee's payment method.
      */
     async putV1EmployeesEmployeeIdPaymentMethod(
-        req: operations.PutV1EmployeesEmployeeIdPaymentMethodRequest,
+        employeeId: string,
+        requestBody?: operations.PutV1EmployeesEmployeeIdPaymentMethodRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1EmployeesEmployeeIdPaymentMethodResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1EmployeesEmployeeIdPaymentMethodRequest(req);
-        }
-
+        const req = new operations.PutV1EmployeesEmployeeIdPaymentMethodRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

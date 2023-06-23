@@ -23,13 +23,12 @@ export class TimeOffPolicies {
      * scope: `time_off_policies:read`
      */
     async getCompaniesCompanyUuidTimeOffPolicies(
-        req: operations.GetCompaniesCompanyUuidTimeOffPoliciesRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetCompaniesCompanyUuidTimeOffPoliciesRequest(req);
-        }
-
+        const req = new operations.GetCompaniesCompanyUuidTimeOffPoliciesRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -98,13 +97,12 @@ export class TimeOffPolicies {
      * scope: `time_off_policies:read`
      */
     async getTimeOffPoliciesTimeOffPolicyUuid(
-        req: operations.GetTimeOffPoliciesTimeOffPolicyUuidRequest,
+        timeOffPolicyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetTimeOffPoliciesTimeOffPolicyUuidRequest(req);
-        }
-
+        const req = new operations.GetTimeOffPoliciesTimeOffPolicyUuidRequest({
+            timeOffPolicyUuid: timeOffPolicyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -170,13 +168,14 @@ export class TimeOffPolicies {
      * scope: `time_off_policies:write`
      */
     async postCompaniesCompanyUuidTimeOffPolicies(
-        req: operations.PostCompaniesCompanyUuidTimeOffPoliciesRequest,
+        companyUuid: string,
+        requestBody?: operations.PostCompaniesCompanyUuidTimeOffPoliciesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostCompaniesCompanyUuidTimeOffPoliciesRequest(req);
-        }
-
+        const req = new operations.PostCompaniesCompanyUuidTimeOffPoliciesRequest({
+            companyUuid: companyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -268,13 +267,16 @@ export class TimeOffPolicies {
      * If none of the parameters is passed in, the accrued time off hour will be 0.
      */
     async postV1PayrollsPayrollIdCalculateAccruingTimeOffHours(
-        req: operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequest,
+        employeeId: string,
+        payrollId: string,
+        requestBody?: operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequest(req);
-        }
-
+        const req = new operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequest({
+            employeeId: employeeId,
+            payrollId: payrollId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -360,13 +362,14 @@ export class TimeOffPolicies {
      * scope: `time_off_policies:write`
      */
     async putTimeOffPoliciesTimeOffPolicyUuid(
-        req: operations.PutTimeOffPoliciesTimeOffPolicyUuidRequest,
+        timeOffPolicyUuid: string,
+        requestBody?: operations.PutTimeOffPoliciesTimeOffPolicyUuidRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutTimeOffPoliciesTimeOffPolicyUuidRequest(req);
-        }
-
+        const req = new operations.PutTimeOffPoliciesTimeOffPolicyUuidRequest({
+            timeOffPolicyUuid: timeOffPolicyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -450,13 +453,12 @@ export class TimeOffPolicies {
      * Deactivate a time off policy
      */
     async putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate(
-        req: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateRequest,
+        timeOffPolicyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateRequest(req);
-        }
-
+        const req = new operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateRequest({
+            timeOffPolicyUuid: timeOffPolicyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -530,13 +532,14 @@ export class TimeOffPolicies {
      * scope: `time_off_policies:write`
      */
     async putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees(
-        req: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequest,
+        timeOffPolicyUuid: string,
+        requestBody?: operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequest(req);
-        }
-
+        const req = new operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequest({
+            timeOffPolicyUuid: timeOffPolicyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -621,13 +624,14 @@ export class TimeOffPolicies {
      * scope: `time_off_policies:write`
      */
     async putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees(
-        req: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest,
+        timeOffPolicyUuid: string,
+        requestBody?: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest(req);
-        }
-
+        const req = new operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest({
+            timeOffPolicyUuid: timeOffPolicyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -712,13 +716,14 @@ export class TimeOffPolicies {
      * scope: `time_off_policies:write`
      */
     async putVersionTimeOffPoliciesTimeOffPolicyUuidBalance(
-        req: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequest,
+        timeOffPolicyUuid: string,
+        requestBody?: operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequest(req);
-        }
-
+        const req = new operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequest({
+            timeOffPolicyUuid: timeOffPolicyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

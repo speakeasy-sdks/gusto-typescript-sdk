@@ -26,10 +26,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment({
-  companyId: "dolor",
-  contractorPaymentId: "debitis",
-}).then((res: DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
+sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment("debitis", "a").then((res: DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,10 +35,11 @@ sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPaym
 
 ### Parameters
 
-| Parameter                                                                                                                                                                        | Type                                                                                                                                                                             | Required                                                                                                                                                                         | Description                                                                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                                                        | [operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest](../../models/operations/deletev1companiescompanyidcontractorpaymentcontractorpaymentrequest.md) | :heavy_check_mark:                                                                                                                                                               | The request object to use for the request.                                                                                                                                       |
-| `config`                                                                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                     | :heavy_minus_sign:                                                                                                                                                               | Available config options for making requests.                                                                                                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `contractorPaymentId`                                        | *string*                                                     | :heavy_check_mark:                                           | The UUID of the contractor payment                           |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -72,10 +70,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment({
-  companyId: "a",
-  contractorPaymentId: "dolorum",
-}).then((res: GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
+sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment("dolorum", "in").then((res: GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -84,10 +79,11 @@ sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment
 
 ### Parameters
 
-| Parameter                                                                                                                                                                  | Type                                                                                                                                                                       | Required                                                                                                                                                                   | Description                                                                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                                                  | [operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest](../../models/operations/getv1companiescompanyidcontractorpaymentcontractorpaymentrequest.md) | :heavy_check_mark:                                                                                                                                                         | The request object to use for the request.                                                                                                                                 |
-| `config`                                                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                               | :heavy_minus_sign:                                                                                                                                                         | Available config options for making requests.                                                                                                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `contractorPaymentId`                                        | *string*                                                     | :heavy_check_mark:                                           | The UUID of the contractor payment                           |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -115,11 +111,11 @@ const sdk = new Gusto({
 
 sdk.contractorPayments.getV1CompaniesCompanyIdContractorPayments({
   companyId: "in",
-  contractorUuid: "in",
+  contractorUuid: "illum",
   endDate: "2020-12-31",
   groupByDate: false,
-  page: 8464.09,
-  per: 9785.71,
+  page: 9785.71,
+  per: 6994.79,
   startDate: "2020-01-01",
 }).then((res: GetV1CompaniesCompanyIdContractorPaymentsResponse) => {
   if (res.statusCode == 200) {
@@ -167,9 +163,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt({
-  contractorPaymentUuid: "rerum",
-}).then((res: GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse) => {
+sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt("dicta").then((res: GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -178,10 +172,10 @@ sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt({
 
 ### Parameters
 
-| Parameter                                                                                                                                                      | Type                                                                                                                                                           | Required                                                                                                                                                       | Description                                                                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                                      | [operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest](../../models/operations/getv1contractorpaymentscontractorpaymentuuidreceiptrequest.md) | :heavy_check_mark:                                                                                                                                             | The request object to use for the request.                                                                                                                     |
-| `config`                                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                   | :heavy_minus_sign:                                                                                                                                             | Available config options for making requests.                                                                                                                  |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `contractorPaymentUuid`                                      | *string*                                                     | :heavy_check_mark:                                           | The UUID of the contractor payment                           |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -216,17 +210,14 @@ const sdk = new Gusto({
   },
 });
 
-sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments({
-  requestBody: {
-    bonus: 500,
-    contractorUuid: "dicta",
-    date: new RFCDate("2020-01-01"),
-    hours: 40,
-    paymentMethod: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod.DirectDeposit,
-    reimbursement: 20,
-    wage: 5000,
-  },
-  companyId: "cumque",
+sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments("magnam", {
+  bonus: 500,
+  contractorUuid: "cumque",
+  date: new RFCDate("2020-01-01"),
+  hours: 40,
+  paymentMethod: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod.HistoricalPayment,
+  reimbursement: 20,
+  wage: 5000,
 }).then((res: PostV1CompaniesCompanyIdContractorPaymentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -236,10 +227,11 @@ sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments({
 
 ### Parameters
 
-| Parameter                                                                                                                                    | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
-| -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                    | [operations.PostV1CompaniesCompanyIdContractorPaymentsRequest](../../models/operations/postv1companiescompanyidcontractorpaymentsrequest.md) | :heavy_check_mark:                                                                                                                           | The request object to use for the request.                                                                                                   |
-| `config`                                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                 | :heavy_minus_sign:                                                                                                                           | Available config options for making requests.                                                                                                |
+| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                          | *string*                                                                                                                                             | :heavy_check_mark:                                                                                                                                   | The UUID of the company                                                                                                                              |
+| `requestBody`                                                                                                                                        | [operations.PostV1CompaniesCompanyIdContractorPaymentsRequestBody](../../models/operations/postv1companiescompanyidcontractorpaymentsrequestbody.md) | :heavy_minus_sign:                                                                                                                                   | N/A                                                                                                                                                  |
+| `config`                                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                         | :heavy_minus_sign:                                                                                                                                   | Available config options for making requests.                                                                                                        |
 
 
 ### Response

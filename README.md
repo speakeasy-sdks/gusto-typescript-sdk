@@ -57,9 +57,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts({
-  companyId: "corrupti",
-}).then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
+sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts("corrupti").then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

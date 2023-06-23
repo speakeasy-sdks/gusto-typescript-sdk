@@ -45,16 +45,16 @@ export class PostV1EmployeesRequestBody extends SpeakeasyBase {
 
 export class PostV1EmployeesRequest extends SpeakeasyBase {
     /**
-     * Create an employee.
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1EmployeesRequestBody;
-
-    /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
     companyId: string;
+
+    /**
+     * Create an employee.
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1EmployeesRequestBody;
 }
 
 export class PostV1EmployeesResponse extends SpeakeasyBase {

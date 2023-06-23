@@ -31,14 +31,14 @@ export class PostV1ContractorsContractorUuidBankAccountsRequestBody extends Spea
 }
 
 export class PostV1ContractorsContractorUuidBankAccountsRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1ContractorsContractorUuidBankAccountsRequestBody;
-
     /**
      * The UUID of the contractor
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=contractor_uuid" })
     contractorUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1ContractorsContractorUuidBankAccountsRequestBody;
 }
 
 /**

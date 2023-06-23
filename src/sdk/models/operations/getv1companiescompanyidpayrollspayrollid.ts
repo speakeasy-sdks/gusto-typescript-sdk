@@ -24,16 +24,16 @@ export class GetV1CompaniesCompanyIdPayrollsPayrollIdRequest extends SpeakeasyBa
     companyId: string;
 
     /**
-     * Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
-    include?: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude;
-
-    /**
      * The UUID of the payroll
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
     payrollId: string;
+
+    /**
+     * Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
+    include?: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude;
 
     /**
      * With show_calculation = true, the calculated values specified by the include parameter will be shown if the payroll is in an unprocessed, but calculated state.

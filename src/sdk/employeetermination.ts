@@ -22,13 +22,12 @@ export class EmployeeTermination {
      * Delete an employee termination. To update an employee's termination, delete the termination first and create a new one.
      */
     async deleteV1EmployeesEmployeeIdTerminations(
-        req: operations.DeleteV1EmployeesEmployeeIdTerminationsRequest,
+        employeeId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1EmployeesEmployeeIdTerminationsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1EmployeesEmployeeIdTerminationsRequest(req);
-        }
-
+        const req = new operations.DeleteV1EmployeesEmployeeIdTerminationsRequest({
+            employeeId: employeeId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -86,15 +85,12 @@ export class EmployeeTermination {
      * This endpoint returns the unprocessed pay periods for past and future terminated employees in a given company.
      */
     async getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(
-        req: operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest,
+        companyId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest(
-                req
-            );
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest({
+            companyId: companyId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -166,13 +162,12 @@ export class EmployeeTermination {
      * scope: `employees:read`
      */
     async getV1EmployeesEmployeeIdTerminations(
-        req: operations.GetV1EmployeesEmployeeIdTerminationsRequest,
+        employeeId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesEmployeeIdTerminationsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesEmployeeIdTerminationsRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesEmployeeIdTerminationsRequest({
+            employeeId: employeeId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -244,13 +239,14 @@ export class EmployeeTermination {
      * scope: `employees:write`
      */
     async postV1EmployeesEmployeeIdTerminations(
-        req: operations.PostV1EmployeesEmployeeIdTerminationsRequest,
+        employeeId: string,
+        requestBody?: operations.PostV1EmployeesEmployeeIdTerminationsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1EmployeesEmployeeIdTerminationsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1EmployeesEmployeeIdTerminationsRequest(req);
-        }
-
+        const req = new operations.PostV1EmployeesEmployeeIdTerminationsRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -338,13 +334,14 @@ export class EmployeeTermination {
      * scope: `employees:write`
      */
     async putV1TerminationsEmployeeId(
-        req: operations.PutV1TerminationsEmployeeIdRequest,
+        employeeId: string,
+        requestBody?: operations.PutV1TerminationsEmployeeIdRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1TerminationsEmployeeIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1TerminationsEmployeeIdRequest(req);
-        }
-
+        const req = new operations.PutV1TerminationsEmployeeIdRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

@@ -26,13 +26,16 @@ export class PaySchedules {
      * scope: `payrolls:read`
      */
     async getV1CompaniesCompanyIdPayPeriods(
-        req: operations.GetV1CompaniesCompanyIdPayPeriodsRequest,
+        companyId: string,
+        endDate?: string,
+        startDate?: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdPayPeriodsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdPayPeriodsRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdPayPeriodsRequest({
+            companyId: companyId,
+            endDate: endDate,
+            startDate: startDate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -103,13 +106,16 @@ export class PaySchedules {
      * scope: `payrolls:read`
      */
     async getV1CompaniesCompanyIdPaySchedules(
-        req: operations.GetV1CompaniesCompanyIdPaySchedulesRequest,
+        companyId: string,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdPaySchedulesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdPaySchedulesRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdPaySchedulesRequest({
+            companyId: companyId,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -180,13 +186,14 @@ export class PaySchedules {
      * scope: `payrolls:read`
      */
     async getV1CompaniesCompanyIdPaySchedulesPayScheduleId(
-        req: operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
+        companyId: string,
+        payScheduleId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest({
+            companyId: companyId,
+            payScheduleId: payScheduleId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -255,13 +262,14 @@ export class PaySchedules {
      * Be sure to **[check state laws](https://www.dol.gov/agencies/whd/state/payday)** to know what schedule is right for your customers.
      */
     async postV1CompaniesCompanyIdPaySchedules(
-        req: operations.PostV1CompaniesCompanyIdPaySchedulesRequest,
+        companyId: string,
+        requestBody?: operations.PostV1CompaniesCompanyIdPaySchedulesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdPaySchedulesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyIdPaySchedulesRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyIdPaySchedulesRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -345,13 +353,16 @@ export class PaySchedules {
      * Updates a pay schedule.
      */
     async putV1CompaniesCompanyIdPaySchedulesPayScheduleId(
-        req: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
+        companyId: string,
+        payScheduleId: string,
+        requestBody?: operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest(req);
-        }
-
+        const req = new operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest({
+            companyId: companyId,
+            payScheduleId: payScheduleId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

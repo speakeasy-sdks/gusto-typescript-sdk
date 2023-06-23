@@ -22,14 +22,13 @@ export class FederalTaxDetails {
      * Fetches attributes relevant for a company's federal taxes.
      */
     async getV1CompaniesCompanyIdFederalTaxDetails(
-        req: operations.GetV1CompaniesCompanyIdFederalTaxDetailsRequest,
         security: operations.GetV1CompaniesCompanyIdFederalTaxDetailsSecurity,
+        companyId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdFederalTaxDetailsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdFederalTaxDetailsRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdFederalTaxDetailsRequest({
+            companyId: companyId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -99,13 +98,14 @@ export class FederalTaxDetails {
      * Updates attributes relevant for a company's federal taxes. This information is required is to onboard a company for use with Gusto Embedded Payroll.
      */
     async putV1CompaniesCompanyIdFederalTaxDetails(
-        req: operations.PutV1CompaniesCompanyIdFederalTaxDetailsRequest,
+        companyId: string,
+        requestBody?: operations.PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompaniesCompanyIdFederalTaxDetailsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompaniesCompanyIdFederalTaxDetailsRequest(req);
-        }
-
+        const req = new operations.PutV1CompaniesCompanyIdFederalTaxDetailsRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

@@ -21,9 +21,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.industrySelection.getV1CompanyIndustry({
-  companyId: "dignissimos",
-}).then((res: GetV1CompanyIndustryResponse) => {
+sdk.industrySelection.getV1CompanyIndustry("tempora").then((res: GetV1CompanyIndustryResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -32,10 +30,10 @@ sdk.industrySelection.getV1CompanyIndustry({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.GetV1CompanyIndustryRequest](../../models/operations/getv1companyindustryrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -59,18 +57,13 @@ const sdk = new Gusto({
   },
 });
 
-sdk.industrySelection.putV1CompanyIndustry({
-  requestBody: {
-    naicsCode: "a",
-    sicCodes: [
-      "consectetur",
-      "corporis",
-      "harum",
-      "laboriosam",
-    ],
-    title: "Mr.",
-  },
-  companyId: "voluptates",
+sdk.industrySelection.putV1CompanyIndustry("aspernatur", {
+  naicsCode: "voluptas",
+  sicCodes: [
+    "voluptas",
+    "minima",
+  ],
+  title: "Miss",
 }).then((res: PutV1CompanyIndustryResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -80,10 +73,11 @@ sdk.industrySelection.putV1CompanyIndustry({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.PutV1CompanyIndustryRequest](../../models/operations/putv1companyindustryrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                              | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The UUID of the company                                                                                  |
+| `requestBody`                                                                                            | [operations.PutV1CompanyIndustryRequestBody](../../models/operations/putv1companyindustryrequestbody.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response

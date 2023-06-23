@@ -38,14 +38,14 @@ export class PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody extend
 }
 
 export class PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody;
-
     /**
      * The UUID of the employee
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
     employeeId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody;
 }
 
 export class PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse extends SpeakeasyBase {

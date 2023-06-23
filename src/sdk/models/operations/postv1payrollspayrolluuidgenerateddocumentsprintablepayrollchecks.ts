@@ -24,14 +24,14 @@ export class PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRe
 }
 
 export class PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody;
-
     /**
      * The UUID of the payroll
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
     payrollId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody;
 }
 
 export class PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse extends SpeakeasyBase {

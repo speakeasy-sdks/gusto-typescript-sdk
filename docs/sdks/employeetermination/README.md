@@ -24,9 +24,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations({
-  employeeId: "ullam",
-}).then((res: DeleteV1EmployeesEmployeeIdTerminationsResponse) => {
+sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations("reprehenderit").then((res: DeleteV1EmployeesEmployeeIdTerminationsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,10 +33,10 @@ sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations({
 
 ### Parameters
 
-| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                              | [operations.DeleteV1EmployeesEmployeeIdTerminationsRequest](../../models/operations/deletev1employeesemployeeidterminationsrequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
-| `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `employeeId`                                                 | *string*                                                     | :heavy_check_mark:                                           | The UUID of the employee                                     |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -64,9 +62,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods({
-  companyId: "nisi",
-}).then((res: GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse) => {
+sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods("ullam").then((res: GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -75,10 +71,10 @@ sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(
 
 ### Parameters
 
-| Parameter                                                                                                                                                              | Type                                                                                                                                                                   | Required                                                                                                                                                               | Description                                                                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                                              | [operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest](../../models/operations/getv1companiescompanyidunprocessedterminationpayperiodsrequest.md) | :heavy_check_mark:                                                                                                                                                     | The request object to use for the request.                                                                                                                             |
-| `config`                                                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                           | :heavy_minus_sign:                                                                                                                                                     | Available config options for making requests.                                                                                                                          |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -106,9 +102,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations({
-  employeeId: "aut",
-}).then((res: GetV1EmployeesEmployeeIdTerminationsResponse) => {
+sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations("nisi").then((res: GetV1EmployeesEmployeeIdTerminationsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -117,10 +111,10 @@ sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations({
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.GetV1EmployeesEmployeeIdTerminationsRequest](../../models/operations/getv1employeesemployeeidterminationsrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `employeeId`                                                 | *string*                                                     | :heavy_check_mark:                                           | The UUID of the employee                                     |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -148,12 +142,9 @@ const sdk = new Gusto({
   },
 });
 
-sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations({
-  requestBody: {
-    effectiveDate: "voluptatum",
-    runTerminationPayroll: false,
-  },
-  employeeId: "qui",
+sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations("aut", {
+  effectiveDate: "voluptatum",
+  runTerminationPayroll: false,
 }).then((res: PostV1EmployeesEmployeeIdTerminationsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -163,10 +154,11 @@ sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations({
 
 ### Parameters
 
-| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                          | [operations.PostV1EmployeesEmployeeIdTerminationsRequest](../../models/operations/postv1employeesemployeeidterminationsrequest.md) | :heavy_check_mark:                                                                                                                 | The request object to use for the request.                                                                                         |
-| `config`                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                       | :heavy_minus_sign:                                                                                                                 | Available config options for making requests.                                                                                      |
+| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `employeeId`                                                                                                                               | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the employee                                                                                                                   |
+| `requestBody`                                                                                                                              | [operations.PostV1EmployeesEmployeeIdTerminationsRequestBody](../../models/operations/postv1employeesemployeeidterminationsrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
+| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
 
 
 ### Response
@@ -194,13 +186,10 @@ const sdk = new Gusto({
   },
 });
 
-sdk.employeeTermination.putV1TerminationsEmployeeId({
-  requestBody: {
-    effectiveDate: "quibusdam",
-    runTerminationPayroll: false,
-    version: "ex",
-  },
-  employeeId: "deleniti",
+sdk.employeeTermination.putV1TerminationsEmployeeId("qui", {
+  effectiveDate: "quibusdam",
+  runTerminationPayroll: false,
+  version: "ex",
 }).then((res: PutV1TerminationsEmployeeIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -210,10 +199,11 @@ sdk.employeeTermination.putV1TerminationsEmployeeId({
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.PutV1TerminationsEmployeeIdRequest](../../models/operations/putv1terminationsemployeeidrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                           | *string*                                                                                                               | :heavy_check_mark:                                                                                                     | The UUID of the employee                                                                                               |
+| `requestBody`                                                                                                          | [operations.PutV1TerminationsEmployeeIdRequestBody](../../models/operations/putv1terminationsemployeeidrequestbody.md) | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
+| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
 
 
 ### Response

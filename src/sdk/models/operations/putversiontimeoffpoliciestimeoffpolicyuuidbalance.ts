@@ -31,16 +31,16 @@ export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody extend
 
 export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequest extends SpeakeasyBase {
     /**
-     * A list of employee objects containing the employee uuid and time off hours balance
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody;
-
-    /**
      * The UUID of the company time off policy
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid" })
     timeOffPolicyUuid: string;
+
+    /**
+     * A list of employee objects containing the employee uuid and time off hours balance
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody;
 }
 
 export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse extends SpeakeasyBase {

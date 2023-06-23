@@ -38,14 +38,14 @@ export class PutV1ContractorsContractorIdPaymentMethodRequestBody extends Speake
 }
 
 export class PutV1ContractorsContractorIdPaymentMethodRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1ContractorsContractorIdPaymentMethodRequestBody;
-
     /**
      * The UUID of the contractor
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=contractor_uuid" })
     contractorUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1ContractorsContractorIdPaymentMethodRequestBody;
 }
 
 export class PutV1ContractorsContractorIdPaymentMethodResponse extends SpeakeasyBase {

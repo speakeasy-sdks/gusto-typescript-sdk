@@ -22,13 +22,12 @@ export class PaymentConfigs {
      * Get payment speed for the company and fast payment limit (only applicable for 2-day payroll).
      */
     async getV1CompanyPaymentConfigs(
-        req: operations.GetV1CompanyPaymentConfigsRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompanyPaymentConfigsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompanyPaymentConfigsRequest(req);
-        }
-
+        const req = new operations.GetV1CompanyPaymentConfigsRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -93,13 +92,14 @@ export class PaymentConfigs {
      * Update payment speed for the company and fast payment limit (only applicable for 2-day payroll)
      */
     async putV1CompanyPaymentConfigs(
-        req: operations.PutV1CompanyPaymentConfigsRequest,
+        companyUuid: string,
+        requestBody?: operations.PutV1CompanyPaymentConfigsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompanyPaymentConfigsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompanyPaymentConfigsRequest(req);
-        }
-
+        const req = new operations.PutV1CompanyPaymentConfigsRequest({
+            companyUuid: companyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

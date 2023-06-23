@@ -38,14 +38,14 @@ export class PutV1TaxLiabilitiesRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1TaxLiabilitiesRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1TaxLiabilitiesRequestBody;
-
     /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
     companyUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1TaxLiabilitiesRequestBody;
 }
 
 export class PutV1TaxLiabilitiesResponse extends SpeakeasyBase {

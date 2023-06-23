@@ -20,13 +20,10 @@ const sdk = new Gusto({
   },
 });
 
-sdk.flows.postV1CompanyFlows({
-  requestBody: {
-    entityType: PostV1CompanyFlowsRequestBodyEntityType.Employee,
-    entityUuid: "aliquid",
-    flowType: "aperiam",
-  },
-  companyUuid: "cum",
+sdk.flows.postV1CompanyFlows("quidem", {
+  entityType: PostV1CompanyFlowsRequestBodyEntityType.Employee,
+  entityUuid: "necessitatibus",
+  flowType: "dolore",
 }).then((res: PostV1CompanyFlowsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -36,10 +33,11 @@ sdk.flows.postV1CompanyFlows({
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.PostV1CompanyFlowsRequest](../../models/operations/postv1companyflowsrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                        | *string*                                                                                             | :heavy_check_mark:                                                                                   | The UUID of the company                                                                              |
+| `requestBody`                                                                                        | [operations.PostV1CompanyFlowsRequestBody](../../models/operations/postv1companyflowsrequestbody.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response

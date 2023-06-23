@@ -22,13 +22,12 @@ export class EmployeeTaxSetup {
      * Get attributes relevant for an employee's federal taxes.
      */
     async getV1EmployeesEmployeeIdFederalTaxes(
-        req: operations.GetV1EmployeesEmployeeIdFederalTaxesRequest,
+        employeeUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesEmployeeIdFederalTaxesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesEmployeeIdFederalTaxesRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesEmployeeIdFederalTaxesRequest({
+            employeeUuid: employeeUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -105,13 +104,12 @@ export class EmployeeTaxSetup {
      *
      */
     async getV1EmployeesEmployeeIdStateTaxes(
-        req: operations.GetV1EmployeesEmployeeIdStateTaxesRequest,
+        employeeUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesEmployeeIdStateTaxesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesEmployeeIdStateTaxesRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesEmployeeIdStateTaxesRequest({
+            employeeUuid: employeeUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -179,13 +177,14 @@ export class EmployeeTaxSetup {
      * Update attributes relevant for an employee's federal taxes.
      */
     async putV1EmployeesEmployeeIdFederalTaxes(
-        req: operations.PutV1EmployeesEmployeeIdFederalTaxesRequest,
+        employeeUuid: string,
+        requestBody?: operations.PutV1EmployeesEmployeeIdFederalTaxesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1EmployeesEmployeeIdFederalTaxesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1EmployeesEmployeeIdFederalTaxesRequest(req);
-        }
-
+        const req = new operations.PutV1EmployeesEmployeeIdFederalTaxesRequest({
+            employeeUuid: employeeUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -271,13 +270,14 @@ export class EmployeeTaxSetup {
      * As described for the GET endpoint, the answers must be supplied in the effective-dated format, but currently only a single answer will be accepted - `valid_from` and `valid_up_to` must be `"2010-01-01"` and `null` respectively.
      */
     async putV1EmployeesEmployeeIdStateTaxes(
-        req: operations.PutV1EmployeesEmployeeIdStateTaxesRequest,
+        employeeUuid: string,
+        requestBody?: operations.PutV1EmployeesEmployeeIdStateTaxesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1EmployeesEmployeeIdStateTaxesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1EmployeesEmployeeIdStateTaxesRequest(req);
-        }
-
+        const req = new operations.PutV1EmployeesEmployeeIdStateTaxesRequest({
+            employeeUuid: employeeUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

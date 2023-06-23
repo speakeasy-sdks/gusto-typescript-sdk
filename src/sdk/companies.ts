@@ -27,13 +27,12 @@ export class Companies {
      * scope: `companies:read`
      */
     async getV1Companies(
-        req: operations.GetV1CompaniesRequest,
+        companyId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesRequest({
+            companyId: companyId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -90,13 +89,16 @@ export class Companies {
      * Returns a list of all the admins at a company
      */
     async getV1CompaniesCompanyIdAdmins(
-        req: operations.GetV1CompaniesCompanyIdAdminsRequest,
+        companyId: string,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdAdminsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdAdminsRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdAdminsRequest({
+            companyId: companyId,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -163,13 +165,16 @@ export class Companies {
      * scope: `companies:read`
      */
     async getV1CompaniesCompanyIdCustomFields(
-        req: operations.GetV1CompaniesCompanyIdCustomFieldsRequest,
+        companyId: string,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdCustomFieldsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdCustomFieldsRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdCustomFieldsRequest({
+            companyId: companyId,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -247,13 +252,12 @@ export class Companies {
      * ```
      */
     async getV1CompanyFinishOnboarding(
-        req: operations.GetV1CompanyFinishOnboardingRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompanyFinishOnboardingResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompanyFinishOnboardingRequest(req);
-        }
-
+        const req = new operations.GetV1CompanyFinishOnboardingRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -326,13 +330,12 @@ export class Companies {
      * Get company's onboarding status. The data returned helps inform the required onboarding steps and respective completion status.
      */
     async getV1CompanyOnboardingStatus(
-        req: operations.GetV1CompanyOnboardingStatusRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompanyOnboardingStatusResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompanyOnboardingStatusRequest(req);
-        }
-
+        const req = new operations.GetV1CompanyOnboardingStatusRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -397,15 +400,15 @@ export class Companies {
      * Accept the Gusto Embedded Payroll's [Terms of Service](https://flows.gusto.com/terms). The user must have a role in the company in order to accept the Terms of Service.
      */
     async postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService(
-        req: operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequest,
+        companyUuid: string,
+        requestBody?: operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequest(
-                req
-            );
-        }
-
+        const req =
+            new operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequest({
+                companyUuid: companyUuid,
+                requestBody: requestBody,
+            });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -490,16 +493,15 @@ export class Companies {
      * Retrieve the user acceptance status of the Gusto Embedded Payroll's [Terms of Service](https://flows.gusto.com/terms).
      */
     async postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService(
-        req: operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequest,
+        companyUuid: string,
+        requestBody?: operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req =
-                new operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequest(
-                    req
-                );
-        }
-
+        const req =
+            new operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequest({
+                companyUuid: companyUuid,
+                requestBody: requestBody,
+            });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -584,13 +586,14 @@ export class Companies {
      * Creates a new admin for a company. If the email matches an existing user, this will create an admin account for the current user. Otherwise, this will create a new user.
      */
     async postV1CompaniesCompanyIdAdmins(
-        req: operations.PostV1CompaniesCompanyIdAdminsRequest,
+        companyId: string,
+        requestBody?: operations.PostV1CompaniesCompanyIdAdminsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdAdminsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyIdAdminsRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyIdAdminsRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -850,13 +853,14 @@ export class Companies {
      * Migrate an existing Gusto customer to your embedded payroll product. To use this endpoint, the customer will need to connect their Gusto account to your application using [OAuth2](https://docs.gusto.com/embedded-payroll/docs/oauth2) then view and [accept the Embedded Payroll Terms of Service](https://docs.gusto.com/embedded-payroll/reference/post-partner-managed-companies-company_uuid-accept_terms_of_service).
      */
     async putV1PartnerManagedCompaniesCompanyUuidMigrate(
-        req: operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateRequest,
+        companyUuid: string,
+        requestBody?: operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateRequest(req);
-        }
-
+        const req = new operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateRequest({
+            companyUuid: companyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

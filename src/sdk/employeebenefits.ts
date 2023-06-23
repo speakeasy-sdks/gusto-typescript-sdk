@@ -24,13 +24,12 @@ export class EmployeeBenefits {
      * scope: `employee_benefits:write`
      */
     async deleteV1EmployeeBenefitsEmployeeBenefitId(
-        req: operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest,
+        employeeBenefitId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest(req);
-        }
-
+        const req = new operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest({
+            employeeBenefitId: employeeBenefitId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -88,13 +87,12 @@ export class EmployeeBenefits {
      * scope: `employee_benefits:read`
      */
     async getV1EmployeeBenefitsEmployeeBenefitId(
-        req: operations.GetV1EmployeeBenefitsEmployeeBenefitIdRequest,
+        employeeBenefitId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeeBenefitsEmployeeBenefitIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeeBenefitsEmployeeBenefitIdRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeeBenefitsEmployeeBenefitIdRequest({
+            employeeBenefitId: employeeBenefitId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -163,13 +161,16 @@ export class EmployeeBenefits {
      * scope: `employee_benefits:read`
      */
     async getV1EmployeesEmployeeIdEmployeeBenefits(
-        req: operations.GetV1EmployeesEmployeeIdEmployeeBenefitsRequest,
+        employeeId: string,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesEmployeeIdEmployeeBenefitsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesEmployeeIdEmployeeBenefitsRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesEmployeeIdEmployeeBenefitsRequest({
+            employeeId: employeeId,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -240,13 +241,14 @@ export class EmployeeBenefits {
      * scope: `employee_benefits:write`
      */
     async postEmployeeYtdBenefitAmountsFromDifferentCompany(
-        req: operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest,
+        employeeId: string,
+        requestBody?: operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest(req);
-        }
-
+        const req = new operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -324,13 +326,14 @@ export class EmployeeBenefits {
      * scope: `employee_benefits:write`
      */
     async postV1EmployeesEmployeeIdEmployeeBenefits(
-        req: operations.PostV1EmployeesEmployeeIdEmployeeBenefitsRequest,
+        employeeId: string,
+        requestBody?: operations.PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1EmployeesEmployeeIdEmployeeBenefitsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1EmployeesEmployeeIdEmployeeBenefitsRequest(req);
-        }
-
+        const req = new operations.PostV1EmployeesEmployeeIdEmployeeBenefitsRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -416,13 +419,14 @@ export class EmployeeBenefits {
      * scope: `employee_benefits:write`
      */
     async putV1EmployeeBenefitsEmployeeBenefitId(
-        req: operations.PutV1EmployeeBenefitsEmployeeBenefitIdRequest,
+        employeeBenefitId: string,
+        requestBody?: operations.PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1EmployeeBenefitsEmployeeBenefitIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1EmployeeBenefitsEmployeeBenefitIdRequest(req);
-        }
-
+        const req = new operations.PutV1EmployeeBenefitsEmployeeBenefitIdRequest({
+            employeeBenefitId: employeeBenefitId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

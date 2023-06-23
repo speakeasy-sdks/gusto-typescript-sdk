@@ -23,9 +23,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyForms.getV1CompanyForm({
-  formId: "modi",
-}).then((res: GetV1CompanyFormResponse) => {
+sdk.companyForms.getV1CompanyForm("qui").then((res: GetV1CompanyFormResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -34,10 +32,10 @@ sdk.companyForms.getV1CompanyForm({
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.GetV1CompanyFormRequest](../../models/operations/getv1companyformrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `formId`                                                     | *string*                                                     | :heavy_check_mark:                                           | The ID or UUID of the form                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -61,9 +59,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyForms.getV1CompanyFormPdf({
-  formId: "qui",
-}).then((res: GetV1CompanyFormPdfResponse) => {
+sdk.companyForms.getV1CompanyFormPdf("aliquid").then((res: GetV1CompanyFormPdfResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -72,10 +68,10 @@ sdk.companyForms.getV1CompanyFormPdf({
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetV1CompanyFormPdfRequest](../../models/operations/getv1companyformpdfrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `formId`                                                     | *string*                                                     | :heavy_check_mark:                                           | The ID or UUID of the form                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -99,9 +95,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyForms.getV1CompanyForms({
-  companyId: "aliquid",
-}).then((res: GetV1CompanyFormsResponse) => {
+sdk.companyForms.getV1CompanyForms("cupiditate").then((res: GetV1CompanyFormsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -110,10 +104,10 @@ sdk.companyForms.getV1CompanyForms({
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.GetV1CompanyFormsRequest](../../models/operations/getv1companyformsrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -137,13 +131,10 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyForms.putV1CompanyFormSign({
-  requestBody: {
-    agree: false,
-    signatureText: "cupiditate",
-    signedByIpAddress: "quos",
-  },
-  formId: "perferendis",
+sdk.companyForms.putV1CompanyFormSign("quos", {
+  agree: false,
+  signatureText: "perferendis",
+  signedByIpAddress: "magni",
 }).then((res: PutV1CompanyFormSignResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -153,10 +144,11 @@ sdk.companyForms.putV1CompanyFormSign({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.PutV1CompanyFormSignRequest](../../models/operations/putv1companyformsignrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `formId`                                                                                                 | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The ID or UUID of the form                                                                               |
+| `requestBody`                                                                                            | [operations.PutV1CompanyFormSignRequestBody](../../models/operations/putv1companyformsignrequestbody.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response

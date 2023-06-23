@@ -17,9 +17,6 @@ export class PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody exten
 }
 
 export class PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody;
-
     /**
      * The UUID of the company
      */
@@ -31,6 +28,9 @@ export class PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest extends S
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=earning_type_uuid" })
     earningTypeUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody;
 }
 
 export class PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse extends SpeakeasyBase {

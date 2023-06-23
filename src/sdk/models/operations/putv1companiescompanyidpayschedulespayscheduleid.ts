@@ -24,9 +24,6 @@ export class PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody extends
 }
 
 export class PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody;
-
     /**
      * The UUID of the company
      */
@@ -38,6 +35,9 @@ export class PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest extends Spe
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=pay_schedule_id" })
     payScheduleId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody;
 }
 
 export class PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse extends SpeakeasyBase {

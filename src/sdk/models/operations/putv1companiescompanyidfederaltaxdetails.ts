@@ -60,16 +60,16 @@ export class PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody extends Speakea
 
 export class PutV1CompaniesCompanyIdFederalTaxDetailsRequest extends SpeakeasyBase {
     /**
-     * Attributes related to federal tax details that can be updated via this endpoint include:
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody;
-
-    /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
     companyId: string;
+
+    /**
+     * Attributes related to federal tax details that can be updated via this endpoint include:
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody;
 }
 
 export class PutV1CompaniesCompanyIdFederalTaxDetailsResponse extends SpeakeasyBase {

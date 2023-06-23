@@ -85,14 +85,14 @@ export class PutV1CompensationsCompensationIdRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1CompensationsCompensationIdRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1CompensationsCompensationIdRequestBody;
-
     /**
      * The UUID of the compensation
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=compensation_id" })
     compensationId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompensationsCompensationIdRequestBody;
 }
 
 /**

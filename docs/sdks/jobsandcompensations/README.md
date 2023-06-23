@@ -29,9 +29,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.jobsAndCompensations.deleteV1JobsJobId({
-  jobId: "libero",
-}).then((res: DeleteV1JobsJobIdResponse) => {
+sdk.jobsAndCompensations.deleteV1JobsJobId("dolorum").then((res: DeleteV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -40,10 +38,10 @@ sdk.jobsAndCompensations.deleteV1JobsJobId({
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.DeleteV1JobsJobIdRequest](../../models/operations/deletev1jobsjobidrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `jobId`                                                      | *string*                                                     | :heavy_check_mark:                                           | The UUID of the job                                          |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -73,9 +71,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.jobsAndCompensations.getV1CompensationsCompensationId({
-  compensationId: "vitae",
-}).then((res: GetV1CompensationsCompensationIdResponse) => {
+sdk.jobsAndCompensations.getV1CompensationsCompensationId("adipisci").then((res: GetV1CompensationsCompensationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -84,10 +80,10 @@ sdk.jobsAndCompensations.getV1CompensationsCompensationId({
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.GetV1CompensationsCompensationIdRequest](../../models/operations/getv1compensationscompensationidrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `compensationId`                                             | *string*                                                     | :heavy_check_mark:                                           | The UUID of the compensation                                 |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -114,12 +110,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs({
-  employeeId: "accusamus",
-  include: GetV1EmployeesEmployeeIdJobsInclude.AllCompensations,
-  page: 6311.26,
-  per: 2724.37,
-}).then((res: GetV1EmployeesEmployeeIdJobsResponse) => {
+sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs("minus", GetV1EmployeesEmployeeIdJobsInclude.AllCompensations, 1718.53, 5039.34).then((res: GetV1EmployeesEmployeeIdJobsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -128,10 +119,13 @@ sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs({
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.GetV1EmployeesEmployeeIdJobsRequest](../../models/operations/getv1employeesemployeeidjobsrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                                                               | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                            | *string*                                                                                                                                | :heavy_check_mark:                                                                                                                      | The UUID of the employee                                                                                                                |
+| `include`                                                                                                                               | [operations.GetV1EmployeesEmployeeIdJobsInclude](../../models/operations/getv1employeesemployeeidjobsinclude.md)                        | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
+| `page`                                                                                                                                  | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | The page that is requested. When unspecified, will load all objects.                                                                    |
+| `per`                                                                                                                                   | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | Number of objects per page. When unspecified, will default to 25                                                                        |
+| `config`                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                            | :heavy_minus_sign:                                                                                                                      | Available config options for making requests.                                                                                           |
 
 
 ### Response
@@ -158,10 +152,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.jobsAndCompensations.getV1JobsJobId({
-  include: GetV1JobsJobIdInclude.AllCompensations,
-  jobId: "aspernatur",
-}).then((res: GetV1JobsJobIdResponse) => {
+sdk.jobsAndCompensations.getV1JobsJobId("in", GetV1JobsJobIdInclude.AllCompensations).then((res: GetV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -170,10 +161,11 @@ sdk.jobsAndCompensations.getV1JobsJobId({
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.GetV1JobsJobIdRequest](../../models/operations/getv1jobsjobidrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `jobId`                                                                                                                                | *string*                                                                                                                               | :heavy_check_mark:                                                                                                                     | The UUID of the job                                                                                                                    |
+| `include`                                                                                                                              | [operations.GetV1JobsJobIdInclude](../../models/operations/getv1jobsjobidinclude.md)                                                   | :heavy_minus_sign:                                                                                                                     | Available options:<br/>- all_compensations: Include all effective dated compensations for the job instead of only the current compensation |
+| `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
 
 
 ### Response
@@ -204,12 +196,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.jobsAndCompensations.getV1JobsJobIdCompensations({
-  include: GetV1JobsJobIdCompensationsInclude.AllCompensations,
-  jobId: "voluptas",
-  page: 3742.44,
-  per: 3742.96,
-}).then((res: GetV1JobsJobIdCompensationsResponse) => {
+sdk.jobsAndCompensations.getV1JobsJobIdCompensations("dolore", GetV1JobsJobIdCompensationsInclude.AllCompensations, 3044.68, 8859.63).then((res: GetV1JobsJobIdCompensationsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -218,10 +205,13 @@ sdk.jobsAndCompensations.getV1JobsJobIdCompensations({
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetV1JobsJobIdCompensationsRequest](../../models/operations/getv1jobsjobidcompensationsrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
+| Parameter                                                                                                                               | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `jobId`                                                                                                                                 | *string*                                                                                                                                | :heavy_check_mark:                                                                                                                      | The UUID of the job                                                                                                                     |
+| `include`                                                                                                                               | [operations.GetV1JobsJobIdCompensationsInclude](../../models/operations/getv1jobsjobidcompensationsinclude.md)                          | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
+| `page`                                                                                                                                  | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | The page that is requested. When unspecified, will load all objects.                                                                    |
+| `per`                                                                                                                                   | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | Number of objects per page. When unspecified, will default to 25                                                                        |
+| `config`                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                            | :heavy_minus_sign:                                                                                                                      | Available config options for making requests.                                                                                           |
 
 
 ### Response
@@ -248,13 +238,10 @@ const sdk = new Gusto({
   },
 });
 
-sdk.jobsAndCompensations.postV1JobsJobId({
-  requestBody: {
-    hireDate: "minima",
-    locationUuid: "nobis",
-    title: "Miss",
-  },
-  employeeId: "adipisci",
+sdk.jobsAndCompensations.postV1JobsJobId("temporibus", {
+  hireDate: "ullam",
+  locationUuid: "adipisci",
+  title: "Miss",
 }).then((res: PostV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -264,10 +251,11 @@ sdk.jobsAndCompensations.postV1JobsJobId({
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.PostV1JobsJobIdRequest](../../models/operations/postv1jobsjobidrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | The UUID of the employee                                                                       |
+| `requestBody`                                                                                  | [operations.PostV1JobsJobIdRequestBody](../../models/operations/postv1jobsjobidrequestbody.md) | :heavy_minus_sign:                                                                             | Create a job.                                                                                  |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
@@ -300,20 +288,26 @@ const sdk = new Gusto({
   },
 });
 
-sdk.jobsAndCompensations.putV1CompensationsCompensationId({
-  requestBody: {
-    adjustForMinimumWage: false,
-    flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatus.CommissionOnlyNonexempt,
-    minimumWages: [
-      {
-        uuid: "8744ed53-b88f-43a8-98f5-c0b2f2fb7b19",
-      },
-    ],
-    paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnit.Week,
-    rate: "laborum",
-    version: "sed",
-  },
-  compensationId: "in",
+sdk.jobsAndCompensations.putV1CompensationsCompensationId("blanditiis", {
+  adjustForMinimumWage: false,
+  flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatus.CommissionOnlyExempt,
+  minimumWages: [
+    {
+      uuid: "3a8d8f5c-0b2f-42fb-bb19-4a276b26916f",
+    },
+    {
+      uuid: "e1f08f42-94e3-4698-b447-f603e8b445e8",
+    },
+    {
+      uuid: "0ca55efd-20e4-457e-9858-b6a89fbe3a5a",
+    },
+    {
+      uuid: "a8e4824d-0ab4-4075-888e-51862065e904",
+    },
+  ],
+  paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnit.Paycheck,
+  rate: "dolorem",
+  version: "harum",
 }).then((res: PutV1CompensationsCompensationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -323,10 +317,11 @@ sdk.jobsAndCompensations.putV1CompensationsCompensationId({
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.PutV1CompensationsCompensationIdRequest](../../models/operations/putv1compensationscompensationidrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `compensationId`                                                                                                                 | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | The UUID of the compensation                                                                                                     |
+| `requestBody`                                                                                                                    | [operations.PutV1CompensationsCompensationIdRequestBody](../../models/operations/putv1compensationscompensationidrequestbody.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
+| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
 
 
 ### Response
@@ -353,14 +348,11 @@ const sdk = new Gusto({
   },
 });
 
-sdk.jobsAndCompensations.putV1JobsJobId({
-  requestBody: {
-    hireDate: "commodi",
-    locationUuid: "quidem",
-    title: "Mr.",
-    version: "voluptas",
-  },
-  jobId: "unde",
+sdk.jobsAndCompensations.putV1JobsJobId("dicta", {
+  hireDate: "architecto",
+  locationUuid: "occaecati",
+  title: "Mrs.",
+  version: "quidem",
 }).then((res: PutV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -370,10 +362,11 @@ sdk.jobsAndCompensations.putV1JobsJobId({
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.PutV1JobsJobIdRequest](../../models/operations/putv1jobsjobidrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `jobId`                                                                                      | *string*                                                                                     | :heavy_check_mark:                                                                           | The UUID of the job                                                                          |
+| `requestBody`                                                                                | [operations.PutV1JobsJobIdRequestBody](../../models/operations/putv1jobsjobidrequestbody.md) | :heavy_minus_sign:                                                                           | Update a job.                                                                                |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response

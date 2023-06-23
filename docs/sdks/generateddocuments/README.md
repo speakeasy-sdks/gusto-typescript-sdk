@@ -22,10 +22,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid({
-  documentType: "amet",
-  requestUuid: "beatae",
-}).then((res: GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse) => {
+sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid("accusamus", "similique").then((res: GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -34,10 +31,11 @@ sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid({
 
 ### Parameters
 
-| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                            | [operations.GetV1GeneratedDocumentsDocumentTypeRequestUuidRequest](../../models/operations/getv1generateddocumentsdocumenttyperequestuuidrequest.md) | :heavy_check_mark:                                                                                                                                   | The request object to use for the request.                                                                                                           |
-| `config`                                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                         | :heavy_minus_sign:                                                                                                                                   | Available config options for making requests.                                                                                                        |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `documentType`                                               | *string*                                                     | :heavy_check_mark:                                           | the type of document being generated                         |
+| `requestUuid`                                                | *string*                                                     | :heavy_check_mark:                                           | The UUID of the Generated Document Request                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

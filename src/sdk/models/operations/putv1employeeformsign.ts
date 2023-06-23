@@ -31,9 +31,6 @@ export class PutV1EmployeeFormSignRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1EmployeeFormSignRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1EmployeeFormSignRequestBody;
-
     /**
      * The UUID of the employee
      */
@@ -45,6 +42,9 @@ export class PutV1EmployeeFormSignRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=form_id" })
     formId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1EmployeeFormSignRequestBody;
 }
 
 export class PutV1EmployeeFormSignResponse extends SpeakeasyBase {

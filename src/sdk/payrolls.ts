@@ -24,13 +24,16 @@ export class Payrolls {
      * scope: `payrolls:read`
      */
     async getV1CompaniesCompanyIdPayrollReversals(
-        req: operations.GetV1CompaniesCompanyIdPayrollReversalsRequest,
+        companyId: string,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdPayrollReversalsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdPayrollReversalsRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdPayrollReversalsRequest({
+            companyId: companyId,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -183,13 +186,18 @@ export class Payrolls {
      * scope: `payrolls:read`
      */
     async getV1CompaniesCompanyIdPayrollsPayrollId(
-        req: operations.GetV1CompaniesCompanyIdPayrollsPayrollIdRequest,
+        companyId: string,
+        payrollId: string,
+        include?: operations.GetV1CompaniesCompanyIdPayrollsPayrollIdInclude,
+        showCalculation?: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdPayrollsPayrollIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdPayrollsPayrollIdRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdPayrollsPayrollIdRequest({
+            companyId: companyId,
+            payrollId: payrollId,
+            include: include,
+            showCalculation: showCalculation,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -256,13 +264,12 @@ export class Payrolls {
      * scope: `payrolls:run`
      */
     async getV1CompaniesPayrollBlockersCompanyUuid(
-        req: operations.GetV1CompaniesPayrollBlockersCompanyUuidRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesPayrollBlockersCompanyUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesPayrollBlockersCompanyUuidRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesPayrollBlockersCompanyUuidRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -337,13 +344,12 @@ export class Payrolls {
      * scope: `payrolls:read`
      */
     async getV1PaymentReceiptsPayrollsPayrollUuid(
-        req: operations.GetV1PaymentReceiptsPayrollsPayrollUuidRequest,
+        payrollUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1PaymentReceiptsPayrollsPayrollUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1PaymentReceiptsPayrollsPayrollUuidRequest(req);
-        }
-
+        const req = new operations.GetV1PaymentReceiptsPayrollsPayrollUuidRequest({
+            payrollUuid: payrollUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -406,13 +412,14 @@ export class Payrolls {
      * scope: `payrolls:run`
      */
     async getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(
-        req: operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest,
+        employeeId: string,
+        payrollId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest(req);
-        }
-
+        const req = new operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest({
+            employeeId: employeeId,
+            payrollId: payrollId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -472,13 +479,14 @@ export class Payrolls {
      * - All benefits and deductions are blocked when the `off_cycle_reason` is set to `Bonus`.
      */
     async postV1CompaniesCompanyIdPayrolls(
-        req: operations.PostV1CompaniesCompanyIdPayrollsRequest,
+        companyId: string,
+        requestBody?: operations.PostV1CompaniesCompanyIdPayrollsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdPayrollsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyIdPayrollsRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyIdPayrollsRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -557,16 +565,17 @@ export class Payrolls {
      * scope: `generated_documents:write`
      */
     async postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(
-        req: operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequest,
+        payrollId: string,
+        requestBody?: operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req =
-                new operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequest(
-                    req
-                );
-        }
-
+        const req =
+            new operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequest(
+                {
+                    payrollId: payrollId,
+                    requestBody: requestBody,
+                }
+            );
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -655,13 +664,14 @@ export class Payrolls {
      *
      */
     async putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(
-        req: operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest,
+        companyId: string,
+        payrollId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest(req);
-        }
-
+        const req = new operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest({
+            companyId: companyId,
+            payrollId: payrollId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -733,13 +743,16 @@ export class Payrolls {
      * scope: `payrolls:write`
      */
     async putV1CompaniesCompanyIdPayrolls(
-        req: operations.PutV1CompaniesCompanyIdPayrollsRequest,
+        companyId: string,
+        payrollId: string,
+        requestBody?: operations.PutV1CompaniesCompanyIdPayrollsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompaniesCompanyIdPayrollsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompaniesCompanyIdPayrollsRequest(req);
-        }
-
+        const req = new operations.PutV1CompaniesCompanyIdPayrollsRequest({
+            companyId: companyId,
+            payrollId: payrollId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -824,16 +837,21 @@ export class Payrolls {
      * scope: `payrolls:write`
      */
     async putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(
-        req: operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequest,
+        companyId: string,
+        payPeriodEndDate: string,
+        payPeriodStartDate: string,
+        requestBody?: operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req =
-                new operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequest(
-                    req
-                );
-        }
-
+        const req =
+            new operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequest(
+                {
+                    companyId: companyId,
+                    payPeriodEndDate: payPeriodEndDate,
+                    payPeriodStartDate: payPeriodStartDate,
+                    requestBody: requestBody,
+                }
+            );
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -920,13 +938,14 @@ export class Payrolls {
      * If the company is blocked from running payroll due to issues like incomplete setup, missing information or other compliance issues, the response will be 422 Unprocessable Entity with a categorization of the blockers as described in the error responses.
      */
     async putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(
-        req: operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest,
+        companyId: string,
+        payrollId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest(req);
-        }
-
+        const req = new operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest({
+            companyId: companyId,
+            payrollId: payrollId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -991,13 +1010,14 @@ export class Payrolls {
      * If the company is blocked from running payroll due to issues like incomplete setup, missing information or other compliance issues, the response will be 422 Unprocessable Entity with a categorization of the blockers as described in the error responses.
      */
     async putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(
-        req: operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest,
+        companyId: string,
+        payrollId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest(req);
-        }
-
+        const req = new operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest({
+            companyId: companyId,
+            payrollId: payrollId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

@@ -23,9 +23,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.taxLiabilities.getV1TaxLiabilities({
-  companyUuid: "necessitatibus",
-}).then((res: GetV1TaxLiabilitiesResponse) => {
+sdk.taxLiabilities.getV1TaxLiabilities("nemo").then((res: GetV1TaxLiabilitiesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -34,10 +32,10 @@ sdk.taxLiabilities.getV1TaxLiabilities({
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetV1TaxLiabilitiesRequest](../../models/operations/getv1taxliabilitiesrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyUuid`                                                | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -62,32 +60,24 @@ const sdk = new Gusto({
   },
 });
 
-sdk.taxLiabilities.putV1TaxLiabilities({
-  requestBody: {
-    liabilitySelections: [
-      {
-        lastUnpaidExternalPayrollUuid: "consequatur",
-        taxId: 97258,
-        unpaidLiabilityAmount: 902.33,
-      },
-      {
-        lastUnpaidExternalPayrollUuid: "ducimus",
-        taxId: 619183,
-        unpaidLiabilityAmount: 5810.82,
-      },
-      {
-        lastUnpaidExternalPayrollUuid: "suscipit",
-        taxId: 241557,
-        unpaidLiabilityAmount: 965.62,
-      },
-      {
-        lastUnpaidExternalPayrollUuid: "magni",
-        taxId: 984934,
-        unpaidLiabilityAmount: 8595.81,
-      },
-    ],
-  },
-  companyUuid: "necessitatibus",
+sdk.taxLiabilities.putV1TaxLiabilities("soluta", {
+  liabilitySelections: [
+    {
+      lastUnpaidExternalPayrollUuid: "rem",
+      taxId: 678060,
+      unpaidLiabilityAmount: 4876.76,
+    },
+    {
+      lastUnpaidExternalPayrollUuid: "fugit",
+      taxId: 545,
+      unpaidLiabilityAmount: 1680.42,
+    },
+    {
+      lastUnpaidExternalPayrollUuid: "vel",
+      taxId: 64435,
+      unpaidLiabilityAmount: 635.53,
+    },
+  ],
 }).then((res: PutV1TaxLiabilitiesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -97,10 +87,11 @@ sdk.taxLiabilities.putV1TaxLiabilities({
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.PutV1TaxLiabilitiesRequest](../../models/operations/putv1taxliabilitiesrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `companyUuid`                                                                                          | *string*                                                                                               | :heavy_check_mark:                                                                                     | The UUID of the company                                                                                |
+| `requestBody`                                                                                          | [operations.PutV1TaxLiabilitiesRequestBody](../../models/operations/putv1taxliabilitiesrequestbody.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
 
 
 ### Response
@@ -125,9 +116,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.taxLiabilities.putV1TaxLiabilitiesFinish({
-  companyUuid: "ipsa",
-}).then((res: PutV1TaxLiabilitiesFinishResponse) => {
+sdk.taxLiabilities.putV1TaxLiabilitiesFinish("modi").then((res: PutV1TaxLiabilitiesFinishResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -136,10 +125,10 @@ sdk.taxLiabilities.putV1TaxLiabilitiesFinish({
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PutV1TaxLiabilitiesFinishRequest](../../models/operations/putv1taxliabilitiesfinishrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyUuid`                                                | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

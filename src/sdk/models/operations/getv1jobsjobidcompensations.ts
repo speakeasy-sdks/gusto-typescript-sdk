@@ -18,6 +18,12 @@ export enum GetV1JobsJobIdCompensationsInclude {
 
 export class GetV1JobsJobIdCompensationsRequest extends SpeakeasyBase {
     /**
+     * The UUID of the job
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=job_id" })
+    jobId: string;
+
+    /**
      * Available options:
      *
      * @remarks
@@ -25,12 +31,6 @@ export class GetV1JobsJobIdCompensationsRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
     include?: GetV1JobsJobIdCompensationsInclude;
-
-    /**
-     * The UUID of the job
-     */
-    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=job_id" })
-    jobId: string;
 
     /**
      * The page that is requested. When unspecified, will load all objects.

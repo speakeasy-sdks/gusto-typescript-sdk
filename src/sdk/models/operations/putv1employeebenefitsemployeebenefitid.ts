@@ -203,14 +203,14 @@ export class PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody extends Speakeasy
 }
 
 export class PutV1EmployeeBenefitsEmployeeBenefitIdRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody;
-
     /**
      * The UUID of the employee benefit.
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_benefit_id" })
     employeeBenefitId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody;
 }
 
 export class PutV1EmployeeBenefitsEmployeeBenefitIdResponse extends SpeakeasyBase {

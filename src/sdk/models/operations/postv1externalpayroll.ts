@@ -31,14 +31,14 @@ export class PostV1ExternalPayrollRequestBody extends SpeakeasyBase {
 }
 
 export class PostV1ExternalPayrollRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1ExternalPayrollRequestBody;
-
     /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
     companyUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1ExternalPayrollRequestBody;
 }
 
 export class PostV1ExternalPayrollResponse extends SpeakeasyBase {

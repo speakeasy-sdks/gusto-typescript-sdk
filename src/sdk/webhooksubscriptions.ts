@@ -30,13 +30,12 @@ export class WebhookSubscriptions {
      *
      */
     async deleteV1WebhookSubscriptionUuid(
-        req: operations.DeleteV1WebhookSubscriptionUuidRequest,
+        webhookSubscriptionUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1WebhookSubscriptionUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1WebhookSubscriptionUuidRequest(req);
-        }
-
+        const req = new operations.DeleteV1WebhookSubscriptionUuidRequest({
+            webhookSubscriptionUuid: webhookSubscriptionUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -100,13 +99,12 @@ export class WebhookSubscriptions {
      *
      */
     async getV1WebhookSubscriptionUuid(
-        req: operations.GetV1WebhookSubscriptionUuidRequest,
+        webhookSubscriptionUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1WebhookSubscriptionUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1WebhookSubscriptionUuidRequest(req);
-        }
-
+        const req = new operations.GetV1WebhookSubscriptionUuidRequest({
+            webhookSubscriptionUuid: webhookSubscriptionUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -179,13 +177,12 @@ export class WebhookSubscriptions {
      *
      */
     async getV1WebhookSubscriptionVerificationTokenUuid(
-        req: operations.GetV1WebhookSubscriptionVerificationTokenUuidRequest,
+        webhookSubscriptionUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1WebhookSubscriptionVerificationTokenUuidRequest(req);
-        }
-
+        const req = new operations.GetV1WebhookSubscriptionVerificationTokenUuidRequest({
+            webhookSubscriptionUuid: webhookSubscriptionUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -418,13 +415,14 @@ export class WebhookSubscriptions {
      *
      */
     async putV1VerifyWebhookSubscriptionUuid(
-        req: operations.PutV1VerifyWebhookSubscriptionUuidRequest,
+        webhookSubscriptionUuid: string,
+        requestBody?: operations.PutV1VerifyWebhookSubscriptionUuidRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1VerifyWebhookSubscriptionUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1VerifyWebhookSubscriptionUuidRequest(req);
-        }
-
+        const req = new operations.PutV1VerifyWebhookSubscriptionUuidRequest({
+            webhookSubscriptionUuid: webhookSubscriptionUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -516,13 +514,14 @@ export class WebhookSubscriptions {
      *
      */
     async putV1WebhookSubscriptionUuid(
-        req: operations.PutV1WebhookSubscriptionUuidRequest,
+        webhookSubscriptionUuid: string,
+        requestBody?: operations.PutV1WebhookSubscriptionUuidRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1WebhookSubscriptionUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1WebhookSubscriptionUuidRequest(req);
-        }
-
+        const req = new operations.PutV1WebhookSubscriptionUuidRequest({
+            webhookSubscriptionUuid: webhookSubscriptionUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

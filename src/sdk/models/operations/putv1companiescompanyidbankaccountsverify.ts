@@ -24,9 +24,6 @@ export class PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody extends Speake
 }
 
 export class PutV1CompaniesCompanyIdBankAccountsVerifyRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody;
-
     /**
      * The UUID of the bank account
      */
@@ -38,6 +35,9 @@ export class PutV1CompaniesCompanyIdBankAccountsVerifyRequest extends SpeakeasyB
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
     companyId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody;
 }
 
 export class PutV1CompaniesCompanyIdBankAccountsVerifyResponse extends SpeakeasyBase {

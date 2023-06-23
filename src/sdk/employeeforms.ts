@@ -22,13 +22,14 @@ export class EmployeeForms {
      * Get an employee form
      */
     async getV1EmployeeForm(
-        req: operations.GetV1EmployeeFormRequest,
+        employeeId: string,
+        formId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeeFormResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeeFormRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeeFormRequest({
+            employeeId: employeeId,
+            formId: formId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -89,13 +90,14 @@ export class EmployeeForms {
      * Get the link to the form PDF
      */
     async getV1EmployeeFormPdf(
-        req: operations.GetV1EmployeeFormPdfRequest,
+        employeeId: string,
+        formId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeeFormPdfResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeeFormPdfRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeeFormPdfRequest({
+            employeeId: employeeId,
+            formId: formId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -157,13 +159,12 @@ export class EmployeeForms {
      * Get a list of all employee's forms
      */
     async getV1EmployeeForms(
-        req: operations.GetV1EmployeeFormsRequest,
+        employeeId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeeFormsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeeFormsRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeeFormsRequest({
+            employeeId: employeeId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -320,13 +321,16 @@ export class EmployeeForms {
      * Sign a company form
      */
     async putV1EmployeeFormSign(
-        req: operations.PutV1EmployeeFormSignRequest,
+        employeeId: string,
+        formId: string,
+        requestBody?: operations.PutV1EmployeeFormSignRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1EmployeeFormSignResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1EmployeeFormSignRequest(req);
-        }
-
+        const req = new operations.PutV1EmployeeFormSignRequest({
+            employeeId: employeeId,
+            formId: formId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

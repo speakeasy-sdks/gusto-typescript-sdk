@@ -22,13 +22,12 @@ export class Employees {
      * Use this endpoint to delete an employee who is in onboarding. Deleting an onboarded employee is not allowed. Please check out the Terminations api if you need to terminate an onboarded employee.
      */
     async deleteV1Employee(
-        req: operations.DeleteV1EmployeeRequest,
+        employeeId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1EmployeeResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1EmployeeRequest(req);
-        }
-
+        const req = new operations.DeleteV1EmployeeRequest({
+            employeeId: employeeId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -82,13 +81,14 @@ export class Employees {
      *
      */
     async getV1Employees(
-        req: operations.GetV1EmployeesRequest,
+        employeeId: string,
+        include?: operations.GetV1EmployeesInclude,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesRequest({
+            employeeId: employeeId,
+            include: include,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -148,13 +148,16 @@ export class Employees {
      * scope: `employees:read`
      */
     async getV1EmployeesEmployeeIdCustomFields(
-        req: operations.GetV1EmployeesEmployeeIdCustomFieldsRequest,
+        employeeId: string,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesEmployeeIdCustomFieldsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesEmployeeIdCustomFieldsRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesEmployeeIdCustomFieldsRequest({
+            employeeId: employeeId,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -223,13 +226,12 @@ export class Employees {
      * scope: `employees:read`
      */
     async getV1EmployeesEmployeeIdHomeAddress(
-        req: operations.GetV1EmployeesEmployeeIdHomeAddressRequest,
+        employeeId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesEmployeeIdHomeAddressResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesEmployeeIdHomeAddressRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesEmployeeIdHomeAddressRequest({
+            employeeId: employeeId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -331,13 +333,12 @@ export class Employees {
      * | `admin_review` | Admin reviews & confirms employee details (only required for Employee self-onboarding) |
      */
     async getV1EmployeesEmployeeIdOnboardingStatus(
-        req: operations.GetV1EmployeesEmployeeIdOnboardingStatusRequest,
+        employeeId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesEmployeeIdOnboardingStatusResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesEmployeeIdOnboardingStatusRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesEmployeeIdOnboardingStatusRequest({
+            employeeId: employeeId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -407,13 +408,14 @@ export class Employees {
      * scope: `employee_time_off_activities:read`
      */
     async getVersionEmployeesTimeOffActivities(
-        req: operations.GetVersionEmployeesTimeOffActivitiesRequest,
+        employeeUuid: string,
+        timeOffType?: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetVersionEmployeesTimeOffActivitiesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetVersionEmployeesTimeOffActivitiesRequest(req);
-        }
-
+        const req = new operations.GetVersionEmployeesTimeOffActivitiesRequest({
+            employeeUuid: employeeUuid,
+            timeOffType: timeOffType,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -481,13 +483,14 @@ export class Employees {
      * scope: `employees:write`
      */
     async postV1Employees(
-        req: operations.PostV1EmployeesRequest,
+        companyId: string,
+        requestBody?: operations.PostV1EmployeesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1EmployeesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1EmployeesRequest(req);
-        }
-
+        const req = new operations.PostV1EmployeesRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -565,13 +568,12 @@ export class Employees {
      * Call this endpoint as the very last step of employee onboarding to complete their onboarding. When successful, the employee's `onboarded` attribute will be updated to true, indicating that they can be included in company's payrolls.
      */
     async putV1EmployeeFinishOnboarding(
-        req: operations.PutV1EmployeeFinishOnboardingRequest,
+        employeeId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1EmployeeFinishOnboardingResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1EmployeeFinishOnboardingRequest(req);
-        }
-
+        const req = new operations.PutV1EmployeeFinishOnboardingRequest({
+            employeeId: employeeId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -633,13 +635,14 @@ export class Employees {
      * scope: `employees:write`
      */
     async putV1Employees(
-        req: operations.PutV1EmployeesRequest,
+        employeeId: string,
+        requestBody?: operations.PutV1EmployeesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1EmployeesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1EmployeesRequest(req);
-        }
-
+        const req = new operations.PutV1EmployeesRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -717,13 +720,14 @@ export class Employees {
      * scope: `employees:write`
      */
     async putV1EmployeesEmployeeIdHomeAddress(
-        req: operations.PutV1EmployeesEmployeeIdHomeAddressRequest,
+        employeeId: string,
+        requestBody?: operations.PutV1EmployeesEmployeeIdHomeAddressRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1EmployeesEmployeeIdHomeAddressResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1EmployeesEmployeeIdHomeAddressRequest(req);
-        }
-
+        const req = new operations.PutV1EmployeesEmployeeIdHomeAddressRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -818,13 +822,14 @@ export class Employees {
      * | Finish an employee's onboarding | `admin_onboarding_incomplete` or `self_onboarding_awaiting_admin_review` | `onboarding_completed` |
      */
     async putV1EmployeesEmployeeIdOnboardingStatus(
-        req: operations.PutV1EmployeesEmployeeIdOnboardingStatusRequest,
+        employeeId: string,
+        requestBody?: operations.PutV1EmployeesEmployeeIdOnboardingStatusRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1EmployeesEmployeeIdOnboardingStatusResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1EmployeesEmployeeIdOnboardingStatusRequest(req);
-        }
-
+        const req = new operations.PutV1EmployeesEmployeeIdOnboardingStatusRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

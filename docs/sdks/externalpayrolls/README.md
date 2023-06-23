@@ -26,10 +26,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.externalPayrolls.deleteV1ExternalPayroll({
-  companyUuid: "officia",
-  externalPayrollId: "maxime",
-}).then((res: DeleteV1ExternalPayrollResponse) => {
+sdk.externalPayrolls.deleteV1ExternalPayroll("repellendus", "officia").then((res: DeleteV1ExternalPayrollResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,10 +35,11 @@ sdk.externalPayrolls.deleteV1ExternalPayroll({
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.DeleteV1ExternalPayrollRequest](../../models/operations/deletev1externalpayrollrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyUuid`                                                | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `externalPayrollId`                                          | *string*                                                     | :heavy_check_mark:                                           | The UUID of the external payroll                             |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -66,9 +64,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.externalPayrolls.getV1CompanyExternalPayrolls({
-  companyUuid: "dignissimos",
-}).then((res: GetV1CompanyExternalPayrollsResponse) => {
+sdk.externalPayrolls.getV1CompanyExternalPayrolls("maxime").then((res: GetV1CompanyExternalPayrollsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -77,10 +73,10 @@ sdk.externalPayrolls.getV1CompanyExternalPayrolls({
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.GetV1CompanyExternalPayrollsRequest](../../models/operations/getv1companyexternalpayrollsrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyUuid`                                                | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -105,10 +101,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.externalPayrolls.getV1ExternalPayroll({
-  companyUuid: "officia",
-  externalPayrollId: "asperiores",
-}).then((res: GetV1ExternalPayrollResponse) => {
+sdk.externalPayrolls.getV1ExternalPayroll("dignissimos", "officia").then((res: GetV1ExternalPayrollResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -117,10 +110,11 @@ sdk.externalPayrolls.getV1ExternalPayroll({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.GetV1ExternalPayrollRequest](../../models/operations/getv1externalpayrollrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyUuid`                                                | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `externalPayrollId`                                          | *string*                                                     | :heavy_check_mark:                                           | The UUID of the external payroll                             |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -144,10 +138,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes({
-  companyUuid: "nemo",
-  externalPayrollId: "quae",
-}).then((res: GetV1ExternalPayrollCalculateTaxesResponse) => {
+sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes("asperiores", "nemo").then((res: GetV1ExternalPayrollCalculateTaxesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -156,10 +147,11 @@ sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes({
 
 ### Parameters
 
-| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                    | [operations.GetV1ExternalPayrollCalculateTaxesRequest](../../models/operations/getv1externalpayrollcalculatetaxesrequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
-| `config`                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                 | :heavy_minus_sign:                                                                                                           | Available config options for making requests.                                                                                |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyUuid`                                                | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `externalPayrollId`                                          | *string*                                                     | :heavy_check_mark:                                           | The UUID of the external payroll                             |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -184,13 +176,10 @@ const sdk = new Gusto({
   },
 });
 
-sdk.externalPayrolls.postV1ExternalPayroll({
-  requestBody: {
-    checkDate: "quaerat",
-    paymentPeriodEndDate: "porro",
-    paymentPeriodStartDate: "quod",
-  },
-  companyUuid: "labore",
+sdk.externalPayrolls.postV1ExternalPayroll("quae", {
+  checkDate: "quaerat",
+  paymentPeriodEndDate: "porro",
+  paymentPeriodStartDate: "quod",
 }).then((res: PostV1ExternalPayrollResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -200,10 +189,11 @@ sdk.externalPayrolls.postV1ExternalPayroll({
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.PostV1ExternalPayrollRequest](../../models/operations/postv1externalpayrollrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                              | *string*                                                                                                   | :heavy_check_mark:                                                                                         | The UUID of the company                                                                                    |
+| `requestBody`                                                                                              | [operations.PostV1ExternalPayrollRequestBody](../../models/operations/postv1externalpayrollrequestbody.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -231,42 +221,62 @@ const sdk = new Gusto({
   },
 });
 
-sdk.externalPayrolls.putV1ExternalPayroll({
-  requestBody: {
-    externalPayrollItems: [
-      {
-        benefits: [
-          {
-            benefitId: 683573,
-            companyContributionAmount: "id",
-            employeeDeductionAmount: "suscipit",
-          },
-        ],
-        earnings: [
-          {
-            amount: "culpa",
-            earningId: 665859,
-            earningType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType.CompanyEarningType,
-            hours: "totam",
-          },
-        ],
-        employeeUuid: "fugiat",
-        taxes: [
-          {
-            amount: "ducimus",
-            taxId: 554688,
-          },
-          {
-            amount: "vel",
-            taxId: 287051,
-          },
-        ],
-      },
-    ],
-    replaceFields: false,
-  },
-  companyUuid: "possimus",
-  externalPayrollId: "facilis",
+sdk.externalPayrolls.putV1ExternalPayroll("labore", "ab", {
+  externalPayrollItems: [
+    {
+      benefits: [
+        {
+          benefitId: 662505,
+          companyContributionAmount: "suscipit",
+          employeeDeductionAmount: "velit",
+        },
+        {
+          benefitId: 633931,
+          companyContributionAmount: "est",
+          employeeDeductionAmount: "recusandae",
+        },
+        {
+          benefitId: 517309,
+          companyContributionAmount: "fugiat",
+          employeeDeductionAmount: "vel",
+        },
+      ],
+      earnings: [
+        {
+          amount: "quos",
+          earningId: 427834,
+          earningType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType.CompanyPayType,
+          hours: "possimus",
+        },
+        {
+          amount: "facilis",
+          earningId: 738227,
+          earningType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType.CompanyPayType,
+          hours: "in",
+        },
+      ],
+      employeeUuid: "corporis",
+      taxes: [
+        {
+          amount: "assumenda",
+          taxId: 363161,
+        },
+        {
+          amount: "recusandae",
+          taxId: 397533,
+        },
+        {
+          amount: "aperiam",
+          taxId: 738683,
+        },
+        {
+          amount: "consectetur",
+          taxId: 449083,
+        },
+      ],
+    },
+  ],
+  replaceFields: false,
 }).then((res: PutV1ExternalPayrollResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -276,10 +286,12 @@ sdk.externalPayrolls.putV1ExternalPayroll({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.PutV1ExternalPayrollRequest](../../models/operations/putv1externalpayrollrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                            | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The UUID of the company                                                                                  |
+| `externalPayrollId`                                                                                      | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The UUID of the external payroll                                                                         |
+| `requestBody`                                                                                            | [operations.PutV1ExternalPayrollRequestBody](../../models/operations/putv1externalpayrollrequestbody.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response

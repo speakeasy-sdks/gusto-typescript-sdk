@@ -34,9 +34,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid({
-  webhookSubscriptionUuid: "veritatis",
-}).then((res: DeleteV1WebhookSubscriptionUuidResponse) => {
+sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid("quae").then((res: DeleteV1WebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -45,10 +43,10 @@ sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid({
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.DeleteV1WebhookSubscriptionUuidRequest](../../models/operations/deletev1webhooksubscriptionuuidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `webhookSubscriptionUuid`                                    | *string*                                                     | :heavy_check_mark:                                           | The webhook subscription UUID.                               |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -81,9 +79,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid({
-  webhookSubscriptionUuid: "vero",
-}).then((res: GetV1WebhookSubscriptionUuidResponse) => {
+sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid("amet").then((res: GetV1WebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -92,10 +88,10 @@ sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid({
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.GetV1WebhookSubscriptionUuidRequest](../../models/operations/getv1webhooksubscriptionuuidrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `webhookSubscriptionUuid`                                    | *string*                                                     | :heavy_check_mark:                                           | The webhook subscription UUID.                               |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -127,9 +123,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid({
-  webhookSubscriptionUuid: "consectetur",
-}).then((res: GetV1WebhookSubscriptionVerificationTokenUuidResponse) => {
+sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid("illum").then((res: GetV1WebhookSubscriptionVerificationTokenUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -138,10 +132,10 @@ sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid({
 
 ### Parameters
 
-| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                          | [operations.GetV1WebhookSubscriptionVerificationTokenUuidRequest](../../models/operations/getv1webhooksubscriptionverificationtokenuuidrequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
-| `config`                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                       | :heavy_minus_sign:                                                                                                                                 | Available config options for making requests.                                                                                                      |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `webhookSubscriptionUuid`                                    | *string*                                                     | :heavy_check_mark:                                           | The webhook subscription UUID.                               |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -222,9 +216,11 @@ const sdk = new Gusto({
 
 sdk.webhookSubscriptions.postV1WebhookSubscription({
   subscriptionTypes: [
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Company,
+    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Form,
+    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Location,
+    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Contractor,
   ],
-  url: "dolorem",
+  url: "quasi",
 }).then((res: PostV1WebhookSubscriptionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -273,11 +269,8 @@ const sdk = new Gusto({
   },
 });
 
-sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid({
-  requestBody: {
-    verificationToken: "ad",
-  },
-  webhookSubscriptionUuid: "qui",
+sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid("dicta", {
+  verificationToken: "laudantium",
 }).then((res: PutV1VerifyWebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -287,10 +280,11 @@ sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid({
 
 ### Parameters
 
-| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                    | [operations.PutV1VerifyWebhookSubscriptionUuidRequest](../../models/operations/putv1verifywebhooksubscriptionuuidrequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
-| `config`                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                 | :heavy_minus_sign:                                                                                                           | Available config options for making requests.                                                                                |
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `webhookSubscriptionUuid`                                                                                                            | *string*                                                                                                                             | :heavy_check_mark:                                                                                                                   | The webhook subscription UUID.                                                                                                       |
+| `requestBody`                                                                                                                        | [operations.PutV1VerifyWebhookSubscriptionUuidRequestBody](../../models/operations/putv1verifywebhooksubscriptionuuidrequestbody.md) | :heavy_minus_sign:                                                                                                                   | N/A                                                                                                                                  |
+| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
 
 
 ### Response
@@ -326,15 +320,13 @@ const sdk = new Gusto({
   },
 });
 
-sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid({
-  requestBody: {
-    subscriptionTypes: [
-      PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Employee,
-      PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Employee,
-      PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Location,
-    ],
-  },
-  webhookSubscriptionUuid: "libero",
+sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid("doloremque", {
+  subscriptionTypes: [
+    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.EmployeeBenefit,
+    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Contractor,
+    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.ExternalPayroll,
+    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Form,
+  ],
 }).then((res: PutV1WebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -344,10 +336,11 @@ sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid({
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PutV1WebhookSubscriptionUuidRequest](../../models/operations/putv1webhooksubscriptionuuidrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `webhookSubscriptionUuid`                                                                                                | *string*                                                                                                                 | :heavy_check_mark:                                                                                                       | The webhook subscription UUID.                                                                                           |
+| `requestBody`                                                                                                            | [operations.PutV1WebhookSubscriptionUuidRequestBody](../../models/operations/putv1webhooksubscriptionuuidrequestbody.md) | :heavy_minus_sign:                                                                                                       | N/A                                                                                                                      |
+| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
 
 
 ### Response

@@ -22,13 +22,14 @@ export class Signatories {
      * Delete a company signatory.
      */
     async deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(
-        req: operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
+        companyUuid: string,
+        signatoryUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest(req);
-        }
-
+        const req = new operations.DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest({
+            companyUuid: companyUuid,
+            signatoryUuid: signatoryUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -84,13 +85,12 @@ export class Signatories {
      * Returns company signatories. Currently we only support a single signatory per company.
      */
     async getV1CompaniesCompanyUuidSignatories(
-        req: operations.GetV1CompaniesCompanyUuidSignatoriesRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyUuidSignatoriesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyUuidSignatoriesRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyUuidSignatoriesRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -158,13 +158,14 @@ export class Signatories {
      * Create a signatory with minimal information. This signatory can be invited to provide more information through the `PUT /v1/companies/{company_uuid}/signatories/{signatory_uuid}` endpoint. This will start the identity verification process and allow the signatory to be verified to sign documents.
      */
     async postV1CompaniesCompanyUuidSignatoriesInvite(
-        req: operations.PostV1CompaniesCompanyUuidSignatoriesInviteRequest,
+        companyUuid: string,
+        requestBody?: operations.PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyUuidSignatoriesInviteResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyUuidSignatoriesInviteRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyUuidSignatoriesInviteRequest({
+            companyUuid: companyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -245,13 +246,14 @@ export class Signatories {
      * Create a company signatory with complete information. A signatory can legally sign forms once the identity verification process is successful.
      */
     async postV1CompanySignatories(
-        req: operations.PostV1CompanySignatoriesRequest,
+        companyUuid: string,
+        requestBody?: operations.PostV1CompanySignatoriesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompanySignatoriesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompanySignatoriesRequest(req);
-        }
-
+        const req = new operations.PostV1CompanySignatoriesRequest({
+            companyUuid: companyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -332,13 +334,16 @@ export class Signatories {
      * Update a signatory that has been either invited or created. If the signatory has been created with minimal information through the `POST /v1/companies/{company_uuid}/signatories/invite` endpoint, then the first update must contain all attributes specified in the request body in order to start the identity verification process.
      */
     async putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(
-        req: operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
+        companyUuid: string,
+        signatoryUuid: string,
+        requestBody?: operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest(req);
-        }
-
+        const req = new operations.PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest({
+            companyUuid: companyUuid,
+            signatoryUuid: signatoryUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
