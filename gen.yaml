@@ -11,5 +11,5 @@ generation:
 typescript:
   version: 0.30.0
   author: gusto
-  maxMethodParams: 0
+  maxMethodParams: 4
   packageName: '@speakeasy-sdks/gusto'
