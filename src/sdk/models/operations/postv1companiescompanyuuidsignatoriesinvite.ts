@@ -26,14 +26,14 @@ export class PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody extends Spea
 }
 
 export class PostV1CompaniesCompanyUuidSignatoriesInviteRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody;
-
     /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
     companyUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody;
 }
 
 export class PostV1CompaniesCompanyUuidSignatoriesInviteResponse extends SpeakeasyBase {

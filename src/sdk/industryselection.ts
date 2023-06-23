@@ -22,13 +22,12 @@ export class IndustrySelection {
      * Get industry selection for the company.
      */
     async getV1CompanyIndustry(
-        req: operations.GetV1CompanyIndustryRequest,
+        companyId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompanyIndustryResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompanyIndustryRequest(req);
-        }
-
+        const req = new operations.GetV1CompanyIndustryRequest({
+            companyId: companyId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -90,13 +89,14 @@ export class IndustrySelection {
      * Update the company industry selection by passing in industry classification codes: [NAICS code](https://www.naics.com), [SICS code](https://siccode.com/) and industry title. Our UI is leveraging [Middesk API](https://docs.middesk.com/reference/introduction) to determine industry classification codes.
      */
     async putV1CompanyIndustry(
-        req: operations.PutV1CompanyIndustryRequest,
+        companyId: string,
+        requestBody?: operations.PutV1CompanyIndustryRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompanyIndustryResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompanyIndustryRequest(req);
-        }
-
+        const req = new operations.PutV1CompanyIndustryRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

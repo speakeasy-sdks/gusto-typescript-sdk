@@ -61,9 +61,6 @@ export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody extends Sp
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody;
-
     /**
      * The UUID of the company
      */
@@ -75,6 +72,9 @@ export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequest extends Speake
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=state" })
     state: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody;
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateResponse extends SpeakeasyBase {

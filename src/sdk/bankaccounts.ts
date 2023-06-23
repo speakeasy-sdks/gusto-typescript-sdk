@@ -22,13 +22,12 @@ export class BankAccounts {
      * Returns company bank accounts. Currently we only support a single default bank account per company.
      */
     async getV1CompaniesCompanyIdBankAccounts(
-        req: operations.GetV1CompaniesCompanyIdBankAccountsRequest,
+        companyId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdBankAccountsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdBankAccountsRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdBankAccountsRequest({
+            companyId: companyId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -105,13 +104,14 @@ export class BankAccounts {
      * > If a default bank account exists, it will be disabled and the new bank account will replace it as the company's default funding method.
      */
     async postV1CompaniesCompanyIdBankAccounts(
-        req: operations.PostV1CompaniesCompanyIdBankAccountsRequest,
+        companyId: string,
+        requestBody?: operations.PostV1CompaniesCompanyIdBankAccountsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdBankAccountsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyIdBankAccountsRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyIdBankAccountsRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -300,13 +300,16 @@ export class BankAccounts {
      * ```
      */
     async putV1CompaniesCompanyIdBankAccountsVerify(
-        req: operations.PutV1CompaniesCompanyIdBankAccountsVerifyRequest,
+        bankAccountUuid: string,
+        companyId: string,
+        requestBody?: operations.PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompaniesCompanyIdBankAccountsVerifyResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompaniesCompanyIdBankAccountsVerifyRequest(req);
-        }
-
+        const req = new operations.PutV1CompaniesCompanyIdBankAccountsVerifyRequest({
+            bankAccountUuid: bankAccountUuid,
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

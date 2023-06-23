@@ -31,9 +31,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId({
-  companyBenefitId: "veritatis",
-}).then((res: DeleteV1CompanyBenefitsCompanyBenefitIdResponse) => {
+sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId("itaque").then((res: DeleteV1CompanyBenefitsCompanyBenefitIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -42,10 +40,10 @@ sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId({
 
 ### Parameters
 
-| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                              | [operations.DeleteV1CompanyBenefitsCompanyBenefitIdRequest](../../models/operations/deletev1companybenefitscompanybenefitidrequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
-| `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyBenefitId`                                           | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company benefit                              |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -112,9 +110,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyBenefits.getV1BenefitsBenefitId({
-  benefitId: "itaque",
-}).then((res: GetV1BenefitsBenefitIdResponse) => {
+sdk.companyBenefits.getV1BenefitsBenefitId("incidunt").then((res: GetV1BenefitsBenefitIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -123,10 +119,10 @@ sdk.companyBenefits.getV1BenefitsBenefitId({
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetV1BenefitsBenefitIdRequest](../../models/operations/getv1benefitsbenefitidrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `benefitId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The benefit type in Gusto.                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -152,9 +148,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements({
-  benefitId: "incidunt",
-}).then((res: GetV1BenefitsBenefitsIdRequirementsResponse) => {
+sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements("enim").then((res: GetV1BenefitsBenefitsIdRequirementsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -163,10 +157,10 @@ sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements({
 
 ### Parameters
 
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                      | [operations.GetV1BenefitsBenefitsIdRequirementsRequest](../../models/operations/getv1benefitsbenefitsidrequirementsrequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
-| `config`                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                   | :heavy_minus_sign:                                                                                                             | Available config options for making requests.                                                                                  |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `benefitId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The benefit type in Gusto.                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -192,12 +186,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyBenefits.getV1BenefitsCompanyBenefitIdSummary({
-  companyBenefitId: "enim",
-  detailed: false,
-  endDate: "2022-12-31",
-  startDate: "2022-01-01",
-}).then((res: GetV1BenefitsCompanyBenefitIdSummaryResponse) => {
+sdk.companyBenefits.getV1BenefitsCompanyBenefitIdSummary("consequatur", false, "2022-12-31", "2022-01-01").then((res: GetV1BenefitsCompanyBenefitIdSummaryResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -206,10 +195,13 @@ sdk.companyBenefits.getV1BenefitsCompanyBenefitIdSummary({
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.GetV1BenefitsCompanyBenefitIdSummaryRequest](../../models/operations/getv1benefitscompanybenefitidsummaryrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyBenefitId`                                           | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company benefit                              |                                                              |
+| `detailed`                                                   | *boolean*                                                    | :heavy_minus_sign:                                           | Display employee payroll item summary                        |                                                              |
+| `endDate`                                                    | *string*                                                     | :heavy_minus_sign:                                           | The end date for which to retrieve company benefit summary   | 2022-12-31                                                   |
+| `startDate`                                                  | *string*                                                     | :heavy_minus_sign:                                           | The start date for which to retrieve company benefit summary | 2022-01-01                                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |                                                              |
 
 
 ### Response
@@ -237,10 +229,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits({
-  companyId: "consequatur",
-  enrollmentCount: false,
-}).then((res: GetV1CompaniesCompanyIdCompanyBenefitsResponse) => {
+sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits("est", false).then((res: GetV1CompaniesCompanyIdCompanyBenefitsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -249,10 +238,11 @@ sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits({
 
 ### Parameters
 
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                            | [operations.GetV1CompaniesCompanyIdCompanyBenefitsRequest](../../models/operations/getv1companiescompanyidcompanybenefitsrequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
-| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `enrollmentCount`                                            | *boolean*                                                    | :heavy_minus_sign:                                           | Whether to return employee enrollment count                  |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -282,10 +272,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId({
-  companyBenefitId: "est",
-  withEmployeeBenefits: false,
-}).then((res: GetV1CompanyBenefitsCompanyBenefitIdResponse) => {
+sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId("quibusdam", false).then((res: GetV1CompanyBenefitsCompanyBenefitIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -294,10 +281,11 @@ sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId({
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.GetV1CompanyBenefitsCompanyBenefitIdRequest](../../models/operations/getv1companybenefitscompanybenefitidrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `companyBenefitId`                                              | *string*                                                        | :heavy_check_mark:                                              | The UUID of the company benefit                                 |
+| `withEmployeeBenefits`                                          | *boolean*                                                       | :heavy_minus_sign:                                              | Whether to return employee benefits associated with the benefit |
+| `config`                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)    | :heavy_minus_sign:                                              | Available config options for making requests.                   |
 
 
 ### Response
@@ -325,15 +313,12 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyBenefits.postV1CompaniesCompanyIdCompanyBenefits({
-  requestBody: {
-    active: false,
-    benefitType: 8423.42,
-    description: "explicabo",
-    responsibleForEmployeeW2: false,
-    responsibleForEmployerTaxes: false,
-  },
-  companyId: "deserunt",
+sdk.companyBenefits.postV1CompaniesCompanyIdCompanyBenefits("explicabo", {
+  active: false,
+  benefitType: 6471.74,
+  description: "distinctio",
+  responsibleForEmployeeW2: false,
+  responsibleForEmployerTaxes: false,
 }).then((res: PostV1CompaniesCompanyIdCompanyBenefitsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -343,10 +328,11 @@ sdk.companyBenefits.postV1CompaniesCompanyIdCompanyBenefits({
 
 ### Parameters
 
-| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                              | [operations.PostV1CompaniesCompanyIdCompanyBenefitsRequest](../../models/operations/postv1companiescompanyidcompanybenefitsrequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
-| `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                    | *string*                                                                                                                                       | :heavy_check_mark:                                                                                                                             | The UUID of the company                                                                                                                        |
+| `requestBody`                                                                                                                                  | [operations.PostV1CompaniesCompanyIdCompanyBenefitsRequestBody](../../models/operations/postv1companiescompanyidcompanybenefitsrequestbody.md) | :heavy_minus_sign:                                                                                                                             | N/A                                                                                                                                            |
+| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
 
 
 ### Response
@@ -374,13 +360,10 @@ const sdk = new Gusto({
   },
 });
 
-sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId({
-  requestBody: {
-    active: false,
-    description: "distinctio",
-    version: "quibusdam",
-  },
-  companyBenefitId: "labore",
+sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId("quibusdam", {
+  active: false,
+  description: "labore",
+  version: "modi",
 }).then((res: PutV1CompanyBenefitsCompanyBenefitIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -390,10 +373,11 @@ sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId({
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.PutV1CompanyBenefitsCompanyBenefitIdRequest](../../models/operations/putv1companybenefitscompanybenefitidrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyBenefitId`                                                                                                                       | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The UUID of the company benefit                                                                                                          |
+| `requestBody`                                                                                                                            | [operations.PutV1CompanyBenefitsCompanyBenefitIdRequestBody](../../models/operations/putv1companybenefitscompanybenefitidrequestbody.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
+| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
 
 
 ### Response

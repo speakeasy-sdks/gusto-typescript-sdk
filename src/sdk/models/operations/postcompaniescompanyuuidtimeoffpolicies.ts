@@ -98,16 +98,16 @@ export class PostCompaniesCompanyUuidTimeOffPoliciesRequestBody extends Speakeas
 
 export class PostCompaniesCompanyUuidTimeOffPoliciesRequest extends SpeakeasyBase {
     /**
-     * Requires a policy name, a policy_type, and an accrual_method
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody;
-
-    /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
     companyUuid: string;
+
+    /**
+     * Requires a policy name, a policy_type, and an accrual_method
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody;
 }
 
 export class PostCompaniesCompanyUuidTimeOffPoliciesResponse extends SpeakeasyBase {

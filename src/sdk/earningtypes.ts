@@ -24,13 +24,14 @@ export class EarningTypes {
      * scope: `payrolls:write`
      */
     async deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(
-        req: operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
+        companyId: string,
+        earningTypeUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest(req);
-        }
-
+        const req = new operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest({
+            companyId: companyId,
+            earningTypeUuid: earningTypeUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -94,13 +95,12 @@ export class EarningTypes {
      * scope: `payrolls:read`
      */
     async getV1CompaniesCompanyIdEarningTypes(
-        req: operations.GetV1CompaniesCompanyIdEarningTypesRequest,
+        companyId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdEarningTypesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdEarningTypesRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdEarningTypesRequest({
+            companyId: companyId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -170,13 +170,14 @@ export class EarningTypes {
      * scope: `payrolls:write`
      */
     async postV1CompaniesCompanyIdEarningTypes(
-        req: operations.PostV1CompaniesCompanyIdEarningTypesRequest,
+        companyId: string,
+        requestBody?: operations.PostV1CompaniesCompanyIdEarningTypesRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdEarningTypesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyIdEarningTypesRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyIdEarningTypesRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -262,13 +263,16 @@ export class EarningTypes {
      * scope: `payrolls:write`
      */
     async putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(
-        req: operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
+        companyId: string,
+        earningTypeUuid: string,
+        requestBody?: operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest(req);
-        }
-
+        const req = new operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest({
+            companyId: companyId,
+            earningTypeUuid: earningTypeUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

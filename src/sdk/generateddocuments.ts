@@ -24,13 +24,14 @@ export class GeneratedDocuments {
      * scope: `generated_documents:read`
      */
     async getV1GeneratedDocumentsDocumentTypeRequestUuid(
-        req: operations.GetV1GeneratedDocumentsDocumentTypeRequestUuidRequest,
+        documentType: string,
+        requestUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1GeneratedDocumentsDocumentTypeRequestUuidRequest(req);
-        }
-
+        const req = new operations.GetV1GeneratedDocumentsDocumentTypeRequestUuidRequest({
+            documentType: documentType,
+            requestUuid: requestUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

@@ -37,14 +37,14 @@ export class PutV1EmployeesEmployeeIdHomeAddressRequestBody extends SpeakeasyBas
 }
 
 export class PutV1EmployeesEmployeeIdHomeAddressRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1EmployeesEmployeeIdHomeAddressRequestBody;
-
     /**
      * The UUID of the employee
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
     employeeId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1EmployeesEmployeeIdHomeAddressRequestBody;
 }
 
 export class PutV1EmployeesEmployeeIdHomeAddressResponse extends SpeakeasyBase {

@@ -170,16 +170,16 @@ export class PostV1CompaniesCompanyIdContractorsRequestBody extends SpeakeasyBas
 
 export class PostV1CompaniesCompanyIdContractorsRequest extends SpeakeasyBase {
     /**
-     * Create an individual or business contractor.
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1CompaniesCompanyIdContractorsRequestBody;
-
-    /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
     companyId: string;
+
+    /**
+     * Create an individual or business contractor.
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1CompaniesCompanyIdContractorsRequestBody;
 }
 
 export class PostV1CompaniesCompanyIdContractorsResponse extends SpeakeasyBase {

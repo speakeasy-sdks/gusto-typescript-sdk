@@ -23,10 +23,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.contractorForms.getV1ContractorForm({
-  contractorUuid: "magni",
-  formId: "assumenda",
-}).then((res: GetV1ContractorFormResponse) => {
+sdk.contractorForms.getV1ContractorForm("assumenda", "ipsam").then((res: GetV1ContractorFormResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,10 +32,11 @@ sdk.contractorForms.getV1ContractorForm({
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetV1ContractorFormRequest](../../models/operations/getv1contractorformrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `contractorUuid`                                             | *string*                                                     | :heavy_check_mark:                                           | The UUID of the contractor                                   |
+| `formId`                                                     | *string*                                                     | :heavy_check_mark:                                           | The ID or UUID of the form                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -62,10 +60,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.contractorForms.getV1ContractorFormPdf({
-  contractorUuid: "ipsam",
-  formId: "alias",
-}).then((res: GetV1ContractorFormPdfResponse) => {
+sdk.contractorForms.getV1ContractorFormPdf("alias", "fugit").then((res: GetV1ContractorFormPdfResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -74,10 +69,11 @@ sdk.contractorForms.getV1ContractorFormPdf({
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetV1ContractorFormPdfRequest](../../models/operations/getv1contractorformpdfrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `contractorUuid`                                             | *string*                                                     | :heavy_check_mark:                                           | The UUID of the contractor                                   |
+| `formId`                                                     | *string*                                                     | :heavy_check_mark:                                           | The ID or UUID of the form                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -101,9 +97,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.contractorForms.getV1ContractorForms({
-  contractorUuid: "fugit",
-}).then((res: GetV1ContractorFormsResponse) => {
+sdk.contractorForms.getV1ContractorForms("dolorum").then((res: GetV1ContractorFormsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -112,10 +106,10 @@ sdk.contractorForms.getV1ContractorForms({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.GetV1ContractorFormsRequest](../../models/operations/getv1contractorformsrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `contractorUuid`                                             | *string*                                                     | :heavy_check_mark:                                           | The UUID of the contractor                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -147,8 +141,8 @@ const sdk = new Gusto({
 });
 
 sdk.contractorForms.postV1SandboxGenerate1099({
-  contractorId: "dolorum",
-  year: 569618,
+  contractorId: "excepturi",
+  year: 270008,
 }).then((res: PostV1SandboxGenerate1099Response) => {
   if (res.statusCode == 200) {
     // handle response

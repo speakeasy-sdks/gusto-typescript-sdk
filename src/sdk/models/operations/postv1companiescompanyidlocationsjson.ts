@@ -56,16 +56,16 @@ export class PostV1CompaniesCompanyIdLocationsApplicationJSON extends SpeakeasyB
 
 export class PostV1CompaniesCompanyIdLocationsJsonRequest extends SpeakeasyBase {
     /**
-     * Create a company location.
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1CompaniesCompanyIdLocationsApplicationJSON;
-
-    /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
     companyId: string;
+
+    /**
+     * Create a company location.
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1CompaniesCompanyIdLocationsApplicationJSON;
 }
 
 export class PostV1CompaniesCompanyIdLocationsJsonResponse extends SpeakeasyBase {

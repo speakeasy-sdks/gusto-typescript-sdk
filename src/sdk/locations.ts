@@ -26,13 +26,16 @@ export class Locations {
      * scope: `companies:read`
      */
     async getV1CompaniesCompanyIdLocations(
-        req: operations.GetV1CompaniesCompanyIdLocationsRequest,
+        companyId: string,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdLocationsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdLocationsRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdLocationsRequest({
+            companyId: companyId,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -99,13 +102,12 @@ export class Locations {
      * scope: `companies:read`
      */
     async getV1LocationsLocationId(
-        req: operations.GetV1LocationsLocationIdRequest,
+        locationId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1LocationsLocationIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1LocationsLocationIdRequest(req);
-        }
-
+        const req = new operations.GetV1LocationsLocationIdRequest({
+            locationId: locationId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -165,13 +167,14 @@ export class Locations {
      * scope: `companies:read`
      */
     async getV1LocationsLocationUuidMinimumWages(
-        req: operations.GetV1LocationsLocationUuidMinimumWagesRequest,
+        locationUuid: string,
+        effectiveDate?: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1LocationsLocationUuidMinimumWagesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1LocationsLocationUuidMinimumWagesRequest(req);
-        }
-
+        const req = new operations.GetV1LocationsLocationUuidMinimumWagesRequest({
+            locationUuid: locationUuid,
+            effectiveDate: effectiveDate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -244,13 +247,14 @@ export class Locations {
      * scope: `companies.write`
      */
     async postV1CompaniesCompanyIdLocationsJson(
-        req: operations.PostV1CompaniesCompanyIdLocationsJsonRequest,
+        companyId: string,
+        requestBody?: operations.PostV1CompaniesCompanyIdLocationsApplicationJSON,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdLocationsJsonResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyIdLocationsJsonRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyIdLocationsJsonRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -331,13 +335,14 @@ export class Locations {
      * scope: `companies.write`
      */
     async postV1CompaniesCompanyIdLocationsRaw(
-        req: operations.PostV1CompaniesCompanyIdLocationsRawRequest,
+        companyId: string,
+        requestBody?: Uint8Array,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdLocationsRawResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyIdLocationsRawRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyIdLocationsRawRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -416,13 +421,14 @@ export class Locations {
      * scope: `companies.write`
      */
     async putV1LocationsLocationId(
-        req: operations.PutV1LocationsLocationIdRequest,
+        locationId: string,
+        requestBody?: operations.PutV1LocationsLocationIdRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1LocationsLocationIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1LocationsLocationIdRequest(req);
-        }
-
+        const req = new operations.PutV1LocationsLocationIdRequest({
+            locationId: locationId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

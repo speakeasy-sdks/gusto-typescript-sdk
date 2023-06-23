@@ -170,9 +170,6 @@ export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRe
 }
 
 export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody;
-
     /**
      * The UUID of the company
      */
@@ -190,6 +187,9 @@ export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRe
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=pay_period_start_date" })
     payPeriodStartDate: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse extends SpeakeasyBase {

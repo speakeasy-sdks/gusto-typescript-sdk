@@ -22,13 +22,12 @@ export class ContractorPaymentMethod {
      * Returns all contractor bank accounts.
      */
     async getV1ContractorsContractorUuidBankAccounts(
-        req: operations.GetV1ContractorsContractorUuidBankAccountsRequest,
+        contractorUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ContractorsContractorUuidBankAccountsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ContractorsContractorUuidBankAccountsRequest(req);
-        }
-
+        const req = new operations.GetV1ContractorsContractorUuidBankAccountsRequest({
+            contractorUuid: contractorUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -96,13 +95,12 @@ export class ContractorPaymentMethod {
      * Fetches a contractor's payment method. A contractor payment method describes how the payment should be split across the contractor's associated bank accounts.
      */
     async getV1ContractorsContractorUuidPaymentMethod(
-        req: operations.GetV1ContractorsContractorUuidPaymentMethodRequest,
+        contractorUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ContractorsContractorUuidPaymentMethodResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ContractorsContractorUuidPaymentMethodRequest(req);
-        }
-
+        const req = new operations.GetV1ContractorsContractorUuidPaymentMethodRequest({
+            contractorUuid: contractorUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -170,13 +168,14 @@ export class ContractorPaymentMethod {
      * has a bank account will just replace it.
      */
     async postV1ContractorsContractorUuidBankAccounts(
-        req: operations.PostV1ContractorsContractorUuidBankAccountsRequest,
+        contractorUuid: string,
+        requestBody?: operations.PostV1ContractorsContractorUuidBankAccountsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1ContractorsContractorUuidBankAccountsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1ContractorsContractorUuidBankAccountsRequest(req);
-        }
-
+        const req = new operations.PostV1ContractorsContractorUuidBankAccountsRequest({
+            contractorUuid: contractorUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -263,13 +262,14 @@ export class ContractorPaymentMethod {
      * Updates a contractor's payment method. Note that creating a contractor bank account will also update the contractor's payment method.
      */
     async putV1ContractorsContractorIdPaymentMethod(
-        req: operations.PutV1ContractorsContractorIdPaymentMethodRequest,
+        contractorUuid: string,
+        requestBody?: operations.PutV1ContractorsContractorIdPaymentMethodRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1ContractorsContractorIdPaymentMethodResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1ContractorsContractorIdPaymentMethodRequest(req);
-        }
-
+        const req = new operations.PutV1ContractorsContractorIdPaymentMethodRequest({
+            contractorUuid: contractorUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

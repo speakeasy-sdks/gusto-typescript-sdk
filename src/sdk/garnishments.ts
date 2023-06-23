@@ -24,13 +24,16 @@ export class Garnishments {
      * scope: `employees:read`
      */
     async getV1EmployeesEmployeeIdGarnishments(
-        req: operations.GetV1EmployeesEmployeeIdGarnishmentsRequest,
+        employeeId: string,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesEmployeeIdGarnishmentsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesEmployeeIdGarnishmentsRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesEmployeeIdGarnishmentsRequest({
+            employeeId: employeeId,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -101,13 +104,12 @@ export class Garnishments {
      * scope: `employees:read`
      */
     async getV1GarnishmentsGarnishmentId(
-        req: operations.GetV1GarnishmentsGarnishmentIdRequest,
+        garnishmentId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1GarnishmentsGarnishmentIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1GarnishmentsGarnishmentIdRequest(req);
-        }
-
+        const req = new operations.GetV1GarnishmentsGarnishmentIdRequest({
+            garnishmentId: garnishmentId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -170,13 +172,14 @@ export class Garnishments {
      * scope: `employees:write`
      */
     async postV1EmployeesEmployeeIdGarnishments(
-        req: operations.PostV1EmployeesEmployeeIdGarnishmentsRequest,
+        employeeId: string,
+        requestBody?: operations.PostV1EmployeesEmployeeIdGarnishmentsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1EmployeesEmployeeIdGarnishmentsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1EmployeesEmployeeIdGarnishmentsRequest(req);
-        }
-
+        const req = new operations.PostV1EmployeesEmployeeIdGarnishmentsRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -262,13 +265,14 @@ export class Garnishments {
      * scope: `employees:write`
      */
     async putV1GarnishmentsGarnishmentId(
-        req: operations.PutV1GarnishmentsGarnishmentIdRequest,
+        garnishmentId: string,
+        requestBody?: operations.PutV1GarnishmentsGarnishmentIdRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1GarnishmentsGarnishmentIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1GarnishmentsGarnishmentIdRequest(req);
-        }
-
+        const req = new operations.PutV1GarnishmentsGarnishmentIdRequest({
+            garnishmentId: garnishmentId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

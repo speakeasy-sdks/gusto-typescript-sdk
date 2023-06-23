@@ -31,9 +31,6 @@ export class PutV1WebhookSubscriptionUuidRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1WebhookSubscriptionUuidRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1WebhookSubscriptionUuidRequestBody;
-
     /**
      * The webhook subscription UUID.
      */
@@ -41,6 +38,9 @@ export class PutV1WebhookSubscriptionUuidRequest extends SpeakeasyBase {
         data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid",
     })
     webhookSubscriptionUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1WebhookSubscriptionUuidRequestBody;
 }
 
 export class PutV1WebhookSubscriptionUuidResponse extends SpeakeasyBase {

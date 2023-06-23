@@ -85,14 +85,14 @@ export class PutV1EmployeesEmployeeIdPaymentMethodRequestBody extends SpeakeasyB
 }
 
 export class PutV1EmployeesEmployeeIdPaymentMethodRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1EmployeesEmployeeIdPaymentMethodRequestBody;
-
     /**
      * The UUID of the employee
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
     employeeId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1EmployeesEmployeeIdPaymentMethodRequestBody;
 }
 
 export class PutV1EmployeesEmployeeIdPaymentMethodResponse extends SpeakeasyBase {

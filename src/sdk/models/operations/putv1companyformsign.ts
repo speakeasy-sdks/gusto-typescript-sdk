@@ -31,14 +31,14 @@ export class PutV1CompanyFormSignRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1CompanyFormSignRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1CompanyFormSignRequestBody;
-
     /**
      * The ID or UUID of the form
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=form_id" })
     formId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompanyFormSignRequestBody;
 }
 
 export class PutV1CompanyFormSignResponse extends SpeakeasyBase {

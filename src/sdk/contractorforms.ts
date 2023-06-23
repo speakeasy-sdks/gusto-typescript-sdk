@@ -22,13 +22,14 @@ export class ContractorForms {
      * Get a contractor form
      */
     async getV1ContractorForm(
-        req: operations.GetV1ContractorFormRequest,
+        contractorUuid: string,
+        formId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ContractorFormResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ContractorFormRequest(req);
-        }
-
+        const req = new operations.GetV1ContractorFormRequest({
+            contractorUuid: contractorUuid,
+            formId: formId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -93,13 +94,14 @@ export class ContractorForms {
      * Get the link to the form PDF
      */
     async getV1ContractorFormPdf(
-        req: operations.GetV1ContractorFormPdfRequest,
+        contractorUuid: string,
+        formId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ContractorFormPdfResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ContractorFormPdfRequest(req);
-        }
-
+        const req = new operations.GetV1ContractorFormPdfRequest({
+            contractorUuid: contractorUuid,
+            formId: formId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -161,13 +163,12 @@ export class ContractorForms {
      * Get a list of all contractor's forms
      */
     async getV1ContractorForms(
-        req: operations.GetV1ContractorFormsRequest,
+        contractorUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ContractorFormsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ContractorFormsRequest(req);
-        }
-
+        const req = new operations.GetV1ContractorFormsRequest({
+            contractorUuid: contractorUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

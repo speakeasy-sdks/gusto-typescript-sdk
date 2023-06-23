@@ -31,16 +31,16 @@ export class PostV1CompaniesCompanyIdLocationsApplicationXML extends SpeakeasyBa
 
 export class PostV1CompaniesCompanyIdLocationsRawRequest extends SpeakeasyBase {
     /**
-     * Create a company location.
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/xml" })
-    requestBody?: Uint8Array;
-
-    /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
     companyId: string;
+
+    /**
+     * Create a company location.
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/xml" })
+    requestBody?: Uint8Array;
 }
 
 export class PostV1CompaniesCompanyIdLocationsRawResponse extends SpeakeasyBase {

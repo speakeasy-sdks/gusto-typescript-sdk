@@ -29,16 +29,16 @@ export class PostV1JobsJobIdRequestBody extends SpeakeasyBase {
 
 export class PostV1JobsJobIdRequest extends SpeakeasyBase {
     /**
-     * Create a job.
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1JobsJobIdRequestBody;
-
-    /**
      * The UUID of the employee
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
     employeeId: string;
+
+    /**
+     * Create a job.
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1JobsJobIdRequestBody;
 }
 
 export class PostV1JobsJobIdResponse extends SpeakeasyBase {

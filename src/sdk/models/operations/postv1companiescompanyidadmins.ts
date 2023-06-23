@@ -31,14 +31,14 @@ export class PostV1CompaniesCompanyIdAdminsRequestBody extends SpeakeasyBase {
 }
 
 export class PostV1CompaniesCompanyIdAdminsRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1CompaniesCompanyIdAdminsRequestBody;
-
     /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
     companyId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1CompaniesCompanyIdAdminsRequestBody;
 }
 
 export class PostV1CompaniesCompanyIdAdminsResponse extends SpeakeasyBase {

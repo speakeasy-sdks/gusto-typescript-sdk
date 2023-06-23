@@ -73,14 +73,14 @@ export class PostV1EmployeesEmployeeIdGarnishmentsRequestBody extends SpeakeasyB
 }
 
 export class PostV1EmployeesEmployeeIdGarnishmentsRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1EmployeesEmployeeIdGarnishmentsRequestBody;
-
     /**
      * The UUID of the employee
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
     employeeId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1EmployeesEmployeeIdGarnishmentsRequestBody;
 }
 
 export class PostV1EmployeesEmployeeIdGarnishmentsResponse extends SpeakeasyBase {

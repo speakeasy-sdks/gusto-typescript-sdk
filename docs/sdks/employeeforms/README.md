@@ -24,10 +24,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.employeeForms.getV1EmployeeForm({
-  employeeId: "fugit",
-  formId: "porro",
-}).then((res: GetV1EmployeeFormResponse) => {
+sdk.employeeForms.getV1EmployeeForm("nulla", "fugit").then((res: GetV1EmployeeFormResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -36,10 +33,11 @@ sdk.employeeForms.getV1EmployeeForm({
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.GetV1EmployeeFormRequest](../../models/operations/getv1employeeformrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `employeeId`                                                 | *string*                                                     | :heavy_check_mark:                                           | The UUID of the employee                                     |
+| `formId`                                                     | *string*                                                     | :heavy_check_mark:                                           | The ID or UUID of the form                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -63,10 +61,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.employeeForms.getV1EmployeeFormPdf({
-  employeeId: "maiores",
-  formId: "doloribus",
-}).then((res: GetV1EmployeeFormPdfResponse) => {
+sdk.employeeForms.getV1EmployeeFormPdf("porro", "maiores").then((res: GetV1EmployeeFormPdfResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -75,10 +70,11 @@ sdk.employeeForms.getV1EmployeeFormPdf({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.GetV1EmployeeFormPdfRequest](../../models/operations/getv1employeeformpdfrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `employeeId`                                                 | *string*                                                     | :heavy_check_mark:                                           | The UUID of the employee                                     |
+| `formId`                                                     | *string*                                                     | :heavy_check_mark:                                           | The ID or UUID of the form                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -102,9 +98,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.employeeForms.getV1EmployeeForms({
-  employeeId: "iusto",
-}).then((res: GetV1EmployeeFormsResponse) => {
+sdk.employeeForms.getV1EmployeeForms("doloribus").then((res: GetV1EmployeeFormsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -113,10 +107,10 @@ sdk.employeeForms.getV1EmployeeForms({
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.GetV1EmployeeFormsRequest](../../models/operations/getv1employeeformsrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `employeeId`                                                 | *string*                                                     | :heavy_check_mark:                                           | The UUID of the employee                                     |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -148,8 +142,8 @@ const sdk = new Gusto({
 });
 
 sdk.employeeForms.postV1SandboxGenerateW2({
-  employeeId: "eligendi",
-  year: 497391,
+  employeeId: "iusto",
+  year: 753570,
 }).then((res: PostV1SandboxGenerateW2Response) => {
   if (res.statusCode == 200) {
     // handle response
@@ -186,14 +180,10 @@ const sdk = new Gusto({
   },
 });
 
-sdk.employeeForms.putV1EmployeeFormSign({
-  requestBody: {
-    agree: false,
-    signatureText: "alias",
-    signedByIpAddress: "officia",
-  },
-  employeeId: "tempora",
-  formId: "ipsam",
+sdk.employeeForms.putV1EmployeeFormSign("ducimus", "alias", {
+  agree: false,
+  signatureText: "officia",
+  signedByIpAddress: "tempora",
 }).then((res: PutV1EmployeeFormSignResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -203,10 +193,12 @@ sdk.employeeForms.putV1EmployeeFormSign({
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.PutV1EmployeeFormSignRequest](../../models/operations/putv1employeeformsignrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                               | *string*                                                                                                   | :heavy_check_mark:                                                                                         | The UUID of the employee                                                                                   |
+| `formId`                                                                                                   | *string*                                                                                                   | :heavy_check_mark:                                                                                         | The ID or UUID of the form                                                                                 |
+| `requestBody`                                                                                              | [operations.PutV1EmployeeFormSignRequestBody](../../models/operations/putv1employeeformsignrequestbody.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response

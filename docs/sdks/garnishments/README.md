@@ -25,11 +25,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.garnishments.getV1EmployeesEmployeeIdGarnishments({
-  employeeId: "consectetur",
-  page: 4490.83,
-  per: 3485.19,
-}).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse) => {
+sdk.garnishments.getV1EmployeesEmployeeIdGarnishments("sunt", 9920.12, 2415.45).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,10 +34,12 @@ sdk.garnishments.getV1EmployeesEmployeeIdGarnishments({
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.GetV1EmployeesEmployeeIdGarnishmentsRequest](../../models/operations/getv1employeesemployeeidgarnishmentsrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `employeeId`                                                         | *string*                                                             | :heavy_check_mark:                                                   | The UUID of the employee                                             |
+| `page`                                                               | *number*                                                             | :heavy_minus_sign:                                                   | The page that is requested. When unspecified, will load all objects. |
+| `per`                                                                | *number*                                                             | :heavy_minus_sign:                                                   | Number of objects per page. When unspecified, will default to 25     |
+| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
 
 
 ### Response
@@ -67,9 +65,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.garnishments.getV1GarnishmentsGarnishmentId({
-  garnishmentId: "earum",
-}).then((res: GetV1GarnishmentsGarnishmentIdResponse) => {
+sdk.garnishments.getV1GarnishmentsGarnishmentId("non").then((res: GetV1GarnishmentsGarnishmentIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -78,10 +74,10 @@ sdk.garnishments.getV1GarnishmentsGarnishmentId({
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.GetV1GarnishmentsGarnishmentIdRequest](../../models/operations/getv1garnishmentsgarnishmentidrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `garnishmentId`                                              | *string*                                                     | :heavy_check_mark:                                           | The UUID of the garnishment                                  |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -107,19 +103,16 @@ const sdk = new Gusto({
   },
 });
 
-sdk.garnishments.postV1EmployeesEmployeeIdGarnishments({
-  requestBody: {
-    active: false,
-    amount: "facere",
-    annualMaximum: "numquam",
-    courtOrdered: false,
-    deductAsPercentage: false,
-    description: "doloribus",
-    payPeriodMaximum: "suscipit",
-    recurring: false,
-    times: 968972,
-  },
-  employeeId: "quidem",
+sdk.garnishments.postV1EmployeesEmployeeIdGarnishments("amet", {
+  active: false,
+  amount: "beatae",
+  annualMaximum: "dignissimos",
+  courtOrdered: false,
+  deductAsPercentage: false,
+  description: "a",
+  payPeriodMaximum: "debitis",
+  recurring: false,
+  times: 233420,
 }).then((res: PostV1EmployeesEmployeeIdGarnishmentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -129,10 +122,11 @@ sdk.garnishments.postV1EmployeesEmployeeIdGarnishments({
 
 ### Parameters
 
-| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                          | [operations.PostV1EmployeesEmployeeIdGarnishmentsRequest](../../models/operations/postv1employeesemployeeidgarnishmentsrequest.md) | :heavy_check_mark:                                                                                                                 | The request object to use for the request.                                                                                         |
-| `config`                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                       | :heavy_minus_sign:                                                                                                                 | Available config options for making requests.                                                                                      |
+| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `employeeId`                                                                                                                               | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the employee                                                                                                                   |
+| `requestBody`                                                                                                                              | [operations.PostV1EmployeesEmployeeIdGarnishmentsRequestBody](../../models/operations/postv1employeesemployeeidgarnishmentsrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
+| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
 
 
 ### Response
@@ -158,20 +152,17 @@ const sdk = new Gusto({
   },
 });
 
-sdk.garnishments.putV1GarnishmentsGarnishmentId({
-  requestBody: {
-    active: false,
-    amount: "saepe",
-    annualMaximum: "necessitatibus",
-    courtOrdered: false,
-    deductAsPercentage: false,
-    description: "dolore",
-    payPeriodMaximum: "sunt",
-    recurring: false,
-    times: 992012,
-    version: "adipisci",
-  },
-  garnishmentId: "non",
+sdk.garnishments.putV1GarnishmentsGarnishmentId("corporis", {
+  active: false,
+  amount: "harum",
+  annualMaximum: "laboriosam",
+  courtOrdered: false,
+  deductAsPercentage: false,
+  description: "ipsa",
+  payPeriodMaximum: "voluptates",
+  recurring: false,
+  times: 730709,
+  version: "vitae",
 }).then((res: PutV1GarnishmentsGarnishmentIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -181,10 +172,11 @@ sdk.garnishments.putV1GarnishmentsGarnishmentId({
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.PutV1GarnishmentsGarnishmentIdRequest](../../models/operations/putv1garnishmentsgarnishmentidrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `garnishmentId`                                                                                                              | *string*                                                                                                                     | :heavy_check_mark:                                                                                                           | The UUID of the garnishment                                                                                                  |
+| `requestBody`                                                                                                                | [operations.PutV1GarnishmentsGarnishmentIdRequestBody](../../models/operations/putv1garnishmentsgarnishmentidrequestbody.md) | :heavy_minus_sign:                                                                                                           | N/A                                                                                                                          |
+| `config`                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                 | :heavy_minus_sign:                                                                                                           | Available config options for making requests.                                                                                |
 
 
 ### Response

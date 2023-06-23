@@ -45,9 +45,6 @@ export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody ext
 }
 
 export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody;
-
     /**
      * The UUID of the employee
      */
@@ -59,6 +56,9 @@ export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequest extends
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=payroll_id" })
     payrollId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody;
 }
 
 export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse extends SpeakeasyBase {

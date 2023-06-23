@@ -72,9 +72,6 @@ export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody extend
 }
 
 export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody;
-
     /**
      * The UUID of the company
      */
@@ -86,6 +83,9 @@ export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest extends Sp
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=signatory_uuid" })
     signatoryUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody;
 }
 
 export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse extends SpeakeasyBase {

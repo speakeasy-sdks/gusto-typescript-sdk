@@ -24,13 +24,12 @@ export class JobsAndCompensations {
      * scope: `jobs:write`
      */
     async deleteV1JobsJobId(
-        req: operations.DeleteV1JobsJobIdRequest,
+        jobId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1JobsJobIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1JobsJobIdRequest(req);
-        }
-
+        const req = new operations.DeleteV1JobsJobIdRequest({
+            jobId: jobId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -86,13 +85,12 @@ export class JobsAndCompensations {
      *
      */
     async getV1CompensationsCompensationId(
-        req: operations.GetV1CompensationsCompensationIdRequest,
+        compensationId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompensationsCompensationIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompensationsCompensationIdRequest(req);
-        }
-
+        const req = new operations.GetV1CompensationsCompensationIdRequest({
+            compensationId: compensationId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -158,13 +156,18 @@ export class JobsAndCompensations {
      * scope: `jobs:read`
      */
     async getV1EmployeesEmployeeIdJobs(
-        req: operations.GetV1EmployeesEmployeeIdJobsRequest,
+        employeeId: string,
+        include?: operations.GetV1EmployeesEmployeeIdJobsInclude,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesEmployeeIdJobsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1EmployeesEmployeeIdJobsRequest(req);
-        }
-
+        const req = new operations.GetV1EmployeesEmployeeIdJobsRequest({
+            employeeId: employeeId,
+            include: include,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -231,13 +234,14 @@ export class JobsAndCompensations {
      * scope: `jobs:read`
      */
     async getV1JobsJobId(
-        req: operations.GetV1JobsJobIdRequest,
+        jobId: string,
+        include?: operations.GetV1JobsJobIdInclude,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1JobsJobIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1JobsJobIdRequest(req);
-        }
-
+        const req = new operations.GetV1JobsJobIdRequest({
+            jobId: jobId,
+            include: include,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -301,13 +305,18 @@ export class JobsAndCompensations {
      * scope: `jobs:read`
      */
     async getV1JobsJobIdCompensations(
-        req: operations.GetV1JobsJobIdCompensationsRequest,
+        jobId: string,
+        include?: operations.GetV1JobsJobIdCompensationsInclude,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1JobsJobIdCompensationsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1JobsJobIdCompensationsRequest(req);
-        }
-
+        const req = new operations.GetV1JobsJobIdCompensationsRequest({
+            jobId: jobId,
+            include: include,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -374,13 +383,14 @@ export class JobsAndCompensations {
      * scope: `jobs:write`
      */
     async postV1JobsJobId(
-        req: operations.PostV1JobsJobIdRequest,
+        employeeId: string,
+        requestBody?: operations.PostV1JobsJobIdRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1JobsJobIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1JobsJobIdRequest(req);
-        }
-
+        const req = new operations.PostV1JobsJobIdRequest({
+            employeeId: employeeId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -460,13 +470,14 @@ export class JobsAndCompensations {
      * scope: `jobs:write`
      */
     async putV1CompensationsCompensationId(
-        req: operations.PutV1CompensationsCompensationIdRequest,
+        compensationId: string,
+        requestBody?: operations.PutV1CompensationsCompensationIdRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompensationsCompensationIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompensationsCompensationIdRequest(req);
-        }
-
+        const req = new operations.PutV1CompensationsCompensationIdRequest({
+            compensationId: compensationId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -551,13 +562,14 @@ export class JobsAndCompensations {
      * scope: `jobs:write`
      */
     async putV1JobsJobId(
-        req: operations.PutV1JobsJobIdRequest,
+        jobId: string,
+        requestBody?: operations.PutV1JobsJobIdRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1JobsJobIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1JobsJobIdRequest(req);
-        }
-
+        const req = new operations.PutV1JobsJobIdRequest({
+            jobId: jobId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

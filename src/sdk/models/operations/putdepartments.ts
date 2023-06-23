@@ -21,14 +21,14 @@ export class PutDepartmentsRequestBody extends SpeakeasyBase {
 }
 
 export class PutDepartmentsRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutDepartmentsRequestBody;
-
     /**
      * The UUID of the department
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=department_uuid" })
     departmentUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutDepartmentsRequestBody;
 }
 
 export class PutDepartmentsResponse extends SpeakeasyBase {

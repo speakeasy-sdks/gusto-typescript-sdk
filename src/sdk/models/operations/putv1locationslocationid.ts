@@ -63,16 +63,16 @@ export class PutV1LocationsLocationIdRequestBody extends SpeakeasyBase {
 
 export class PutV1LocationsLocationIdRequest extends SpeakeasyBase {
     /**
-     * Update a location
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1LocationsLocationIdRequestBody;
-
-    /**
      * The UUID of the location
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=location_id" })
     locationId: string;
+
+    /**
+     * Update a location
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1LocationsLocationIdRequestBody;
 }
 
 export class PutV1LocationsLocationIdResponse extends SpeakeasyBase {

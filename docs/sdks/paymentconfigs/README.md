@@ -21,9 +21,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.paymentConfigs.getV1CompanyPaymentConfigs({
-  companyUuid: "reiciendis",
-}).then((res: GetV1CompanyPaymentConfigsResponse) => {
+sdk.paymentConfigs.getV1CompanyPaymentConfigs("error").then((res: GetV1CompanyPaymentConfigsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -32,10 +30,10 @@ sdk.paymentConfigs.getV1CompanyPaymentConfigs({
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.GetV1CompanyPaymentConfigsRequest](../../models/operations/getv1companypaymentconfigsrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyUuid`                                                | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -62,12 +60,9 @@ const sdk = new Gusto({
   },
 });
 
-sdk.paymentConfigs.putV1CompanyPaymentConfigs({
-  requestBody: {
-    fastPaymentLimit: "nulla",
-    paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.TwoDay,
-  },
-  companyUuid: "aperiam",
+sdk.paymentConfigs.putV1CompanyPaymentConfigs("officiis", {
+  fastPaymentLimit: "officiis",
+  paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.FourDay,
 }).then((res: PutV1CompanyPaymentConfigsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -77,10 +72,11 @@ sdk.paymentConfigs.putV1CompanyPaymentConfigs({
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.PutV1CompanyPaymentConfigsRequest](../../models/operations/putv1companypaymentconfigsrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                        | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | The UUID of the company                                                                                              |
+| `requestBody`                                                                                                        | [operations.PutV1CompanyPaymentConfigsRequestBody](../../models/operations/putv1companypaymentconfigsrequestbody.md) | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
 
 
 ### Response

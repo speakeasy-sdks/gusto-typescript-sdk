@@ -25,13 +25,12 @@ export class CompanyBenefits {
      *   - The benefit is not managed by a Partner or by Gusto (type must be 'External')
      */
     async deleteV1CompanyBenefitsCompanyBenefitId(
-        req: operations.DeleteV1CompanyBenefitsCompanyBenefitIdRequest,
+        companyBenefitId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1CompanyBenefitsCompanyBenefitIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1CompanyBenefitsCompanyBenefitIdRequest(req);
-        }
-
+        const req = new operations.DeleteV1CompanyBenefitsCompanyBenefitIdRequest({
+            companyBenefitId: companyBenefitId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -167,13 +166,12 @@ export class CompanyBenefits {
      * scope: `benefits:read`
      */
     async getV1BenefitsBenefitId(
-        req: operations.GetV1BenefitsBenefitIdRequest,
+        benefitId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1BenefitsBenefitIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1BenefitsBenefitIdRequest(req);
-        }
-
+        const req = new operations.GetV1BenefitsBenefitIdRequest({
+            benefitId: benefitId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -236,13 +234,12 @@ export class CompanyBenefits {
      * scope: `benefits:read`
      */
     async getV1BenefitsBenefitsIdRequirements(
-        req: operations.GetV1BenefitsBenefitsIdRequirementsRequest,
+        benefitId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1BenefitsBenefitsIdRequirementsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1BenefitsBenefitsIdRequirementsRequest(req);
-        }
-
+        const req = new operations.GetV1BenefitsBenefitsIdRequirementsRequest({
+            benefitId: benefitId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -309,13 +306,18 @@ export class CompanyBenefits {
      * scope: `benefits:read`
      */
     async getV1BenefitsCompanyBenefitIdSummary(
-        req: operations.GetV1BenefitsCompanyBenefitIdSummaryRequest,
+        companyBenefitId: string,
+        detailed?: boolean,
+        endDate?: string,
+        startDate?: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1BenefitsCompanyBenefitIdSummaryResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1BenefitsCompanyBenefitIdSummaryRequest(req);
-        }
-
+        const req = new operations.GetV1BenefitsCompanyBenefitIdSummaryRequest({
+            companyBenefitId: companyBenefitId,
+            detailed: detailed,
+            endDate: endDate,
+            startDate: startDate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -385,13 +387,14 @@ export class CompanyBenefits {
      * scope: `company_benefits:read`
      */
     async getV1CompaniesCompanyIdCompanyBenefits(
-        req: operations.GetV1CompaniesCompanyIdCompanyBenefitsRequest,
+        companyId: string,
+        enrollmentCount?: boolean,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdCompanyBenefitsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdCompanyBenefitsRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdCompanyBenefitsRequest({
+            companyId: companyId,
+            enrollmentCount: enrollmentCount,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -466,13 +469,14 @@ export class CompanyBenefits {
      * scope: `company_benefits:read`
      */
     async getV1CompanyBenefitsCompanyBenefitId(
-        req: operations.GetV1CompanyBenefitsCompanyBenefitIdRequest,
+        companyBenefitId: string,
+        withEmployeeBenefits?: boolean,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompanyBenefitsCompanyBenefitIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompanyBenefitsCompanyBenefitIdRequest(req);
-        }
-
+        const req = new operations.GetV1CompanyBenefitsCompanyBenefitIdRequest({
+            companyBenefitId: companyBenefitId,
+            withEmployeeBenefits: withEmployeeBenefits,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -542,13 +546,14 @@ export class CompanyBenefits {
      * scope: `company_benefits:write`
      */
     async postV1CompaniesCompanyIdCompanyBenefits(
-        req: operations.PostV1CompaniesCompanyIdCompanyBenefitsRequest,
+        companyId: string,
+        requestBody?: operations.PostV1CompaniesCompanyIdCompanyBenefitsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdCompanyBenefitsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyIdCompanyBenefitsRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyIdCompanyBenefitsRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -636,13 +641,14 @@ export class CompanyBenefits {
      * scope: `company_benefits:write`
      */
     async putV1CompanyBenefitsCompanyBenefitId(
-        req: operations.PutV1CompanyBenefitsCompanyBenefitIdRequest,
+        companyBenefitId: string,
+        requestBody?: operations.PutV1CompanyBenefitsCompanyBenefitIdRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1CompanyBenefitsCompanyBenefitIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1CompanyBenefitsCompanyBenefitIdRequest(req);
-        }
-
+        const req = new operations.PutV1CompanyBenefitsCompanyBenefitIdRequest({
+            companyBenefitId: companyBenefitId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

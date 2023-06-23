@@ -18,10 +18,8 @@ import { GetV1CompaniesCompanyIdFederalTaxDetailsResponse } from "@speakeasy-sdk
 const sdk = new Gusto();
 
 sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails({
-  companyId: "cum",
-}, {
   authorization: "",
-}).then((res: GetV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
+}, "exercitationem").then((res: GetV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -32,8 +30,8 @@ sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails({
 
 | Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
 | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                  | [operations.GetV1CompaniesCompanyIdFederalTaxDetailsRequest](../../models/operations/getv1companiescompanyidfederaltaxdetailsrequest.md)   | :heavy_check_mark:                                                                                                                         | The request object to use for the request.                                                                                                 |
 | `security`                                                                                                                                 | [operations.GetV1CompaniesCompanyIdFederalTaxDetailsSecurity](../../models/operations/getv1companiescompanyidfederaltaxdetailssecurity.md) | :heavy_check_mark:                                                                                                                         | The security requirements to use for the request.                                                                                          |
+| `companyId`                                                                                                                                | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the company                                                                                                                    |
 | `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
 
 
@@ -58,16 +56,13 @@ const sdk = new Gusto({
   },
 });
 
-sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails({
-  requestBody: {
-    ein: "commodi",
-    filingForm: "in",
-    legalName: "corporis",
-    taxPayerType: "reiciendis",
-    taxableAsScorp: false,
-    version: "assumenda",
-  },
-  companyId: "nemo",
+sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails("earum", {
+  ein: "facere",
+  filingForm: "numquam",
+  legalName: "doloribus",
+  taxPayerType: "suscipit",
+  taxableAsScorp: false,
+  version: "reiciendis",
 }).then((res: PutV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -77,10 +72,11 @@ sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails({
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                | [operations.PutV1CompaniesCompanyIdFederalTaxDetailsRequest](../../models/operations/putv1companiescompanyidfederaltaxdetailsrequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
-| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `companyId`                                                                                                                                      | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | The UUID of the company                                                                                                                          |
+| `requestBody`                                                                                                                                    | [operations.PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody](../../models/operations/putv1companiescompanyidfederaltaxdetailsrequestbody.md) | :heavy_minus_sign:                                                                                                                               | Attributes related to federal tax details that can be updated via this endpoint include:                                                         |
+| `config`                                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                     | :heavy_minus_sign:                                                                                                                               | Available config options for making requests.                                                                                                    |
 
 
 ### Response

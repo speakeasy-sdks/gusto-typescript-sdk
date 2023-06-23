@@ -24,16 +24,15 @@ export class ContractorPayments {
      * scope: `payrolls:run`
      */
     async deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(
-        req: operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest,
+        companyId: string,
+        contractorPaymentId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req =
-                new operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest(
-                    req
-                );
-        }
-
+        const req =
+            new operations.DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest({
+                companyId: companyId,
+                contractorPaymentId: contractorPaymentId,
+            });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -91,15 +90,16 @@ export class ContractorPayments {
      * scope: `payrolls:read`
      */
     async getV1CompaniesCompanyIdContractorPaymentContractorPayment(
-        req: operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest,
+        companyId: string,
+        contractorPaymentId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest(
-                req
-            );
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest(
+            {
+                companyId: companyId,
+                contractorPaymentId: contractorPaymentId,
+            }
+        );
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -245,13 +245,12 @@ export class ContractorPayments {
      * scope: `payrolls:read`
      */
     async getV1ContractorPaymentsContractorPaymentUuidReceipt(
-        req: operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest,
+        contractorPaymentUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest(req);
-        }
-
+        const req = new operations.GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest({
+            contractorPaymentUuid: contractorPaymentUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -318,13 +317,14 @@ export class ContractorPayments {
      * scope: `payrolls:run`
      */
     async postV1CompaniesCompanyIdContractorPayments(
-        req: operations.PostV1CompaniesCompanyIdContractorPaymentsRequest,
+        companyId: string,
+        requestBody?: operations.PostV1CompaniesCompanyIdContractorPaymentsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdContractorPaymentsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyIdContractorPaymentsRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyIdContractorPaymentsRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

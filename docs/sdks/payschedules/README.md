@@ -28,11 +28,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.paySchedules.getV1CompaniesCompanyIdPayPeriods({
-  companyId: "praesentium",
-  endDate: "2020-01-31",
-  startDate: "2020-01-01",
-}).then((res: GetV1CompaniesCompanyIdPayPeriodsResponse) => {
+sdk.paySchedules.getV1CompaniesCompanyIdPayPeriods("atque", "2020-01-31", "2020-01-01").then((res: GetV1CompaniesCompanyIdPayPeriodsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -41,10 +37,12 @@ sdk.paySchedules.getV1CompaniesCompanyIdPayPeriods({
 
 ### Parameters
 
-| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                  | [operations.GetV1CompaniesCompanyIdPayPeriodsRequest](../../models/operations/getv1companiescompanyidpayperiodsrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
-| `config`                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                               | :heavy_minus_sign:                                                                                                         | Available config options for making requests.                                                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |                                                              |
+| `endDate`                                                    | *string*                                                     | :heavy_minus_sign:                                           | N/A                                                          | 2020-01-31                                                   |
+| `startDate`                                                  | *string*                                                     | :heavy_minus_sign:                                           | N/A                                                          | 2020-01-01                                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |                                                              |
 
 
 ### Response
@@ -71,11 +69,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules({
-  companyId: "facilis",
-  page: 3103.81,
-  per: 2777.73,
-}).then((res: GetV1CompaniesCompanyIdPaySchedulesResponse) => {
+sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules("reprehenderit", 9911.42, 5199.52).then((res: GetV1CompaniesCompanyIdPaySchedulesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -84,10 +78,12 @@ sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules({
 
 ### Parameters
 
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                      | [operations.GetV1CompaniesCompanyIdPaySchedulesRequest](../../models/operations/getv1companiescompanyidpayschedulesrequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
-| `config`                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                   | :heavy_minus_sign:                                                                                                             | Available config options for making requests.                                                                                  |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `companyId`                                                          | *string*                                                             | :heavy_check_mark:                                                   | The UUID of the company                                              |
+| `page`                                                               | *number*                                                             | :heavy_minus_sign:                                                   | The page that is requested. When unspecified, will load all objects. |
+| `per`                                                                | *number*                                                             | :heavy_minus_sign:                                                   | Number of objects per page. When unspecified, will default to 25     |
+| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
 
 
 ### Response
@@ -114,10 +110,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId({
-  companyId: "ipsam",
-  payScheduleId: "debitis",
-}).then((res: GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
+sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId("suscipit", "quidem").then((res: GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -126,10 +119,11 @@ sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId({
 
 ### Parameters
 
-| Parameter                                                                                                                                                | Type                                                                                                                                                     | Required                                                                                                                                                 | Description                                                                                                                                              |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                                | [operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest](../../models/operations/getv1companiescompanyidpayschedulespayscheduleidrequest.md) | :heavy_check_mark:                                                                                                                                       | The request object to use for the request.                                                                                                               |
-| `config`                                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                             | :heavy_minus_sign:                                                                                                                                       | Available config options for making requests.                                                                                                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `payScheduleId`                                              | *string*                                                     | :heavy_check_mark:                                           | The UUID of the pay schedule                                 |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -161,15 +155,12 @@ const sdk = new Gusto({
   },
 });
 
-sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules({
-  requestBody: {
-    anchorEndOfPayPeriod: "2020-05-08",
-    anchorPayDate: "2020-05-15",
-    day1: 524970,
-    day2: 26522,
-    frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.Monthly,
-  },
-  companyId: "error",
+sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules("maxime", {
+  anchorEndOfPayPeriod: "2020-05-08",
+  anchorPayDate: "2020-05-15",
+  day1: 90885,
+  day2: 461007,
+  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.EveryWeek,
 }).then((res: PostV1CompaniesCompanyIdPaySchedulesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -179,10 +170,11 @@ sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules({
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.PostV1CompaniesCompanyIdPaySchedulesRequest](../../models/operations/postv1companiescompanyidpayschedulesrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                              | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The UUID of the company                                                                                                                  |
+| `requestBody`                                                                                                                            | [operations.PostV1CompaniesCompanyIdPaySchedulesRequestBody](../../models/operations/postv1companiescompanyidpayschedulesrequestbody.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
+| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
 
 
 ### Response
@@ -207,13 +199,9 @@ const sdk = new Gusto({
   },
 });
 
-sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId({
-  requestBody: {
-    autoPilot: false,
-    version: "veniam",
-  },
-  companyId: "minima",
-  payScheduleId: "recusandae",
+sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId("assumenda", "ea", {
+  autoPilot: false,
+  version: "atque",
 }).then((res: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -223,10 +211,12 @@ sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId({
 
 ### Parameters
 
-| Parameter                                                                                                                                                | Type                                                                                                                                                     | Required                                                                                                                                                 | Description                                                                                                                                              |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                                | [operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest](../../models/operations/putv1companiescompanyidpayschedulespayscheduleidrequest.md) | :heavy_check_mark:                                                                                                                                       | The request object to use for the request.                                                                                                               |
-| `config`                                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                             | :heavy_minus_sign:                                                                                                                                       | Available config options for making requests.                                                                                                            |
+| Parameter                                                                                                                                                        | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                                      | *string*                                                                                                                                                         | :heavy_check_mark:                                                                                                                                               | The UUID of the company                                                                                                                                          |
+| `payScheduleId`                                                                                                                                                  | *string*                                                                                                                                                         | :heavy_check_mark:                                                                                                                                               | The UUID of the pay schedule                                                                                                                                     |
+| `requestBody`                                                                                                                                                    | [operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody](../../models/operations/putv1companiescompanyidpayschedulespayscheduleidrequestbody.md) | :heavy_minus_sign:                                                                                                                                               | N/A                                                                                                                                                              |
+| `config`                                                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                     | :heavy_minus_sign:                                                                                                                                               | Available config options for making requests.                                                                                                                    |
 
 
 ### Response

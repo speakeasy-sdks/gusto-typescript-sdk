@@ -23,13 +23,14 @@ export class ExternalPayrolls {
      * scope: `payrolls:write`
      */
     async deleteV1ExternalPayroll(
-        req: operations.DeleteV1ExternalPayrollRequest,
+        companyUuid: string,
+        externalPayrollId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1ExternalPayrollResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1ExternalPayrollRequest(req);
-        }
-
+        const req = new operations.DeleteV1ExternalPayrollRequest({
+            companyUuid: companyUuid,
+            externalPayrollId: externalPayrollId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -86,13 +87,12 @@ export class ExternalPayrolls {
      * scope: `payrolls:read`
      */
     async getV1CompanyExternalPayrolls(
-        req: operations.GetV1CompanyExternalPayrollsRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompanyExternalPayrollsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompanyExternalPayrollsRequest(req);
-        }
-
+        const req = new operations.GetV1CompanyExternalPayrollsRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -161,13 +161,14 @@ export class ExternalPayrolls {
      * scope: `payrolls:read`
      */
     async getV1ExternalPayroll(
-        req: operations.GetV1ExternalPayrollRequest,
+        companyUuid: string,
+        externalPayrollId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ExternalPayrollResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ExternalPayrollRequest(req);
-        }
-
+        const req = new operations.GetV1ExternalPayrollRequest({
+            companyUuid: companyUuid,
+            externalPayrollId: externalPayrollId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -232,13 +233,14 @@ export class ExternalPayrolls {
      * Get tax suggestions for an external payroll. Earnings and/or benefits data must be saved prior to the calculation in order to retrieve accurate tax calculation.
      */
     async getV1ExternalPayrollCalculateTaxes(
-        req: operations.GetV1ExternalPayrollCalculateTaxesRequest,
+        companyUuid: string,
+        externalPayrollId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ExternalPayrollCalculateTaxesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ExternalPayrollCalculateTaxesRequest(req);
-        }
-
+        const req = new operations.GetV1ExternalPayrollCalculateTaxesRequest({
+            companyUuid: companyUuid,
+            externalPayrollId: externalPayrollId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -307,13 +309,14 @@ export class ExternalPayrolls {
      * scope: `payrolls:write`
      */
     async postV1ExternalPayroll(
-        req: operations.PostV1ExternalPayrollRequest,
+        companyUuid: string,
+        requestBody?: operations.PostV1ExternalPayrollRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1ExternalPayrollResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1ExternalPayrollRequest(req);
-        }
-
+        const req = new operations.PostV1ExternalPayrollRequest({
+            companyUuid: companyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -398,13 +401,16 @@ export class ExternalPayrolls {
      * scope: `payrolls:write`
      */
     async putV1ExternalPayroll(
-        req: operations.PutV1ExternalPayrollRequest,
+        companyUuid: string,
+        externalPayrollId: string,
+        requestBody?: operations.PutV1ExternalPayrollRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1ExternalPayrollResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1ExternalPayrollRequest(req);
-        }
-
+        const req = new operations.PutV1ExternalPayrollRequest({
+            companyUuid: companyUuid,
+            externalPayrollId: externalPayrollId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

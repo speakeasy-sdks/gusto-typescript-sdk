@@ -22,9 +22,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements({
-  companyUuid: "tempora",
-}).then((res: GetV1CompaniesCompanyUuidTaxRequirementsResponse) => {
+sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements("neque").then((res: GetV1CompaniesCompanyUuidTaxRequirementsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -33,10 +31,10 @@ sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements({
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                | [operations.GetV1CompaniesCompanyUuidTaxRequirementsRequest](../../models/operations/getv1companiescompanyuuidtaxrequirementsrequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
-| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyUuid`                                                | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -105,11 +103,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState({
-  companyUuid: "nihil",
-  scheduling: false,
-  state: "molestiae",
-}).then((res: GetV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
+sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState("exercitationem", "itaque", false).then((res: GetV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -118,10 +112,12 @@ sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState({
 
 ### Parameters
 
-| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                          | [operations.GetV1CompaniesCompanyUuidTaxRequirementsStateRequest](../../models/operations/getv1companiescompanyuuidtaxrequirementsstaterequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
-| `config`                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                       | :heavy_minus_sign:                                                                                                                                 | Available config options for making requests.                                                                                                      |
+| Parameter                                                                                                                         | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                                     | *string*                                                                                                                          | :heavy_check_mark:                                                                                                                | The UUID of the company                                                                                                           |
+| `state`                                                                                                                           | *string*                                                                                                                          | :heavy_check_mark:                                                                                                                | 2-letter US state abbreviation                                                                                                    |
+| `scheduling`                                                                                                                      | *boolean*                                                                                                                         | :heavy_minus_sign:                                                                                                                | When true, return "new" requirement sets with valid `effective_from` dates that are available to save new effective dated values. |
+| `config`                                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                      | :heavy_minus_sign:                                                                                                                | Available config options for making requests.                                                                                     |
 
 
 ### Response
@@ -145,32 +141,70 @@ const sdk = new Gusto({
   },
 });
 
-sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState({
-  requestBody: {
-    requirementSets: [
-      {
-        effectiveFrom: "iusto",
-        key: "esse",
-        requirements: [
-          {
-            key: "maiores",
-            value: "reiciendis",
-          },
-          {
-            key: "vel",
-            value: "architecto",
-          },
-          {
-            key: "fugiat",
-            value: "doloremque",
-          },
-        ],
-        state: "dicta",
-      },
-    ],
-  },
-  companyUuid: "odio",
-  state: "tempora",
+sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState("et", "ipsum", {
+  requirementSets: [
+    {
+      effectiveFrom: "nulla",
+      key: "distinctio",
+      requirements: [
+        {
+          key: "quia",
+          value: "quia",
+        },
+        {
+          key: "nostrum",
+          value: "omnis",
+        },
+        {
+          key: "libero",
+          value: "dicta",
+        },
+        {
+          key: "id",
+          value: "libero",
+        },
+      ],
+      state: "fugiat",
+    },
+    {
+      effectiveFrom: "officia",
+      key: "quos",
+      requirements: [
+        {
+          key: "sit",
+          value: "iusto",
+        },
+        {
+          key: "ipsa",
+          value: "voluptates",
+        },
+        {
+          key: "inventore",
+          value: "aperiam",
+        },
+        {
+          key: "totam",
+          value: "dolore",
+        },
+      ],
+      state: "eligendi",
+    },
+    {
+      effectiveFrom: "distinctio",
+      key: "voluptatem",
+      requirements: [
+        {
+          key: "esse",
+          value: "dolores",
+        },
+        {
+          key: "assumenda",
+          value: "beatae",
+        },
+      ],
+      state: "est",
+    },
+  ],
 }).then((res: PutV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -180,10 +214,12 @@ sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState({
 
 ### Parameters
 
-| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                          | [operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequest](../../models/operations/putv1companiescompanyuuidtaxrequirementsstaterequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
-| `config`                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                       | :heavy_minus_sign:                                                                                                                                 | Available config options for making requests.                                                                                                      |
+| Parameter                                                                                                                                                  | Type                                                                                                                                                       | Required                                                                                                                                                   | Description                                                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                                                              | *string*                                                                                                                                                   | :heavy_check_mark:                                                                                                                                         | The UUID of the company                                                                                                                                    |
+| `state`                                                                                                                                                    | *string*                                                                                                                                                   | :heavy_check_mark:                                                                                                                                         | 2-letter US state abbreviation                                                                                                                             |
+| `requestBody`                                                                                                                                              | [operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody](../../models/operations/putv1companiescompanyuuidtaxrequirementsstaterequestbody.md) | :heavy_minus_sign:                                                                                                                                         | N/A                                                                                                                                                        |
+| `config`                                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                               | :heavy_minus_sign:                                                                                                                                         | Available config options for making requests.                                                                                                              |
 
 
 ### Response

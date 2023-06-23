@@ -22,13 +22,12 @@ export class Contractors {
      * A contractor can only be deleted when there are no contractor payments.
      */
     async deleteV1ContractorsContractorId(
-        req: operations.DeleteV1ContractorsContractorIdRequest,
+        contractorId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteV1ContractorsContractorIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteV1ContractorsContractorIdRequest(req);
-        }
-
+        const req = new operations.DeleteV1ContractorsContractorIdRequest({
+            contractorId: contractorId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -82,13 +81,16 @@ export class Contractors {
      * scope: `employees:read`
      */
     async getV1CompaniesCompanyIdContractors(
-        req: operations.GetV1CompaniesCompanyIdContractorsRequest,
+        companyId: string,
+        page?: number,
+        per?: number,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdContractorsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1CompaniesCompanyIdContractorsRequest(req);
-        }
-
+        const req = new operations.GetV1CompaniesCompanyIdContractorsRequest({
+            companyId: companyId,
+            page: page,
+            per: per,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -159,13 +161,12 @@ export class Contractors {
      * scope: `employees:read`
      */
     async getV1ContractorsContractorId(
-        req: operations.GetV1ContractorsContractorIdRequest,
+        contractorId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ContractorsContractorIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ContractorsContractorIdRequest(req);
-        }
-
+        const req = new operations.GetV1ContractorsContractorIdRequest({
+            contractorId: contractorId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -225,13 +226,12 @@ export class Contractors {
      * scope: `contractors:read`
      */
     async getV1ContractorsContractorUuidAddress(
-        req: operations.GetV1ContractorsContractorUuidAddressRequest,
+        contractorUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ContractorsContractorUuidAddressResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ContractorsContractorUuidAddressRequest(req);
-        }
-
+        const req = new operations.GetV1ContractorsContractorUuidAddressRequest({
+            contractorUuid: contractorUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -329,13 +329,12 @@ export class Contractors {
      * | `file_new_hire_report` | Contractor new hire report is generated. |
      */
     async getV1ContractorsContractorUuidOnboardingStatus(
-        req: operations.GetV1ContractorsContractorUuidOnboardingStatusRequest,
+        contractorUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1ContractorsContractorUuidOnboardingStatusResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetV1ContractorsContractorUuidOnboardingStatusRequest(req);
-        }
-
+        const req = new operations.GetV1ContractorsContractorUuidOnboardingStatusRequest({
+            contractorUuid: contractorUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -405,13 +404,14 @@ export class Contractors {
      * scope: `employees:write`
      */
     async postV1CompaniesCompanyIdContractors(
-        req: operations.PostV1CompaniesCompanyIdContractorsRequest,
+        companyId: string,
+        requestBody?: operations.PostV1CompaniesCompanyIdContractorsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdContractorsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompaniesCompanyIdContractorsRequest(req);
-        }
-
+        const req = new operations.PostV1CompaniesCompanyIdContractorsRequest({
+            companyId: companyId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -498,13 +498,14 @@ export class Contractors {
      * > Watch out when changing a contractor's type (when the contractor is finished onboarding). Specifically, changing contractor type can be dangerous since Gusto won’t recognize and file two separate 1099s if they simply change from business to individual
      */
     async putV1ContractorsContractorId(
-        req: operations.PutV1ContractorsContractorIdRequest,
+        contractorId: string,
+        requestBody?: operations.PutV1ContractorsContractorIdRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1ContractorsContractorIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1ContractorsContractorIdRequest(req);
-        }
-
+        const req = new operations.PutV1ContractorsContractorIdRequest({
+            contractorId: contractorId,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -583,13 +584,14 @@ export class Contractors {
      * scope: `contractors:write`
      */
     async putV1ContractorsContractorUuidAddress(
-        req: operations.PutV1ContractorsContractorUuidAddressRequest,
+        contractorUuid: string,
+        requestBody?: operations.PutV1ContractorsContractorUuidAddressRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1ContractorsContractorUuidAddressResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1ContractorsContractorUuidAddressRequest(req);
-        }
-
+        const req = new operations.PutV1ContractorsContractorUuidAddressRequest({
+            contractorUuid: contractorUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -684,13 +686,14 @@ export class Contractors {
      * | Finish an employee's onboarding | `admin_onboarding_incomplete` or `self_onboarding_review` | `onboarding_completed` |
      */
     async putV1ContractorsContractorUuidOnboardingStatus(
-        req: operations.PutV1ContractorsContractorUuidOnboardingStatusRequest,
+        contractorUuid: string,
+        requestBody?: operations.PutV1ContractorsContractorUuidOnboardingStatusRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutV1ContractorsContractorUuidOnboardingStatusResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutV1ContractorsContractorUuidOnboardingStatusRequest(req);
-        }
-
+        const req = new operations.PutV1ContractorsContractorUuidOnboardingStatusRequest({
+            contractorUuid: contractorUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

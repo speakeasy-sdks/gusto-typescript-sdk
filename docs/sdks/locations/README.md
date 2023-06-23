@@ -29,11 +29,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.locations.getV1CompaniesCompanyIdLocations({
-  companyId: "architecto",
-  page: 3828.08,
-  per: 9602.57,
-}).then((res: GetV1CompaniesCompanyIdLocationsResponse) => {
+sdk.locations.getV1CompaniesCompanyIdLocations("atque", 6719.57, 7241.48).then((res: GetV1CompaniesCompanyIdLocationsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -42,10 +38,12 @@ sdk.locations.getV1CompaniesCompanyIdLocations({
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.GetV1CompaniesCompanyIdLocationsRequest](../../models/operations/getv1companiescompanyidlocationsrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `companyId`                                                          | *string*                                                             | :heavy_check_mark:                                                   | The UUID of the company                                              |
+| `page`                                                               | *number*                                                             | :heavy_minus_sign:                                                   | The page that is requested. When unspecified, will load all objects. |
+| `per`                                                                | *number*                                                             | :heavy_minus_sign:                                                   | Number of objects per page. When unspecified, will default to 25     |
+| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
 
 
 ### Response
@@ -71,9 +69,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.locations.getV1LocationsLocationId({
-  locationId: "debitis",
-}).then((res: GetV1LocationsLocationIdResponse) => {
+sdk.locations.getV1LocationsLocationId("tenetur").then((res: GetV1LocationsLocationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -82,10 +78,10 @@ sdk.locations.getV1LocationsLocationId({
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.GetV1LocationsLocationIdRequest](../../models/operations/getv1locationslocationidrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `locationId`                                                 | *string*                                                     | :heavy_check_mark:                                           | The UUID of the location                                     |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -112,10 +108,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.locations.getV1LocationsLocationUuidMinimumWages({
-  effectiveDate: "2020-01-31",
-  locationUuid: "illo",
-}).then((res: GetV1LocationsLocationUuidMinimumWagesResponse) => {
+sdk.locations.getV1LocationsLocationUuidMinimumWages("laboriosam", "2020-01-31").then((res: GetV1LocationsLocationUuidMinimumWagesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -124,10 +117,11 @@ sdk.locations.getV1LocationsLocationUuidMinimumWages({
 
 ### Parameters
 
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                            | [operations.GetV1LocationsLocationUuidMinimumWagesRequest](../../models/operations/getv1locationslocationuuidminimumwagesrequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
-| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `locationUuid`                                               | *string*                                                     | :heavy_check_mark:                                           | The UUID of the location                                     |                                                              |
+| `effectiveDate`                                              | *string*                                                     | :heavy_minus_sign:                                           | N/A                                                          | 2020-01-31                                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |                                                              |
 
 
 ### Response
@@ -155,19 +149,16 @@ const sdk = new Gusto({
   },
 });
 
-sdk.locations.postV1CompaniesCompanyIdLocationsJson({
-  requestBody: {
-    city: "Ames",
-    country: "Malta",
-    filingAddress: false,
-    mailingAddress: false,
-    phoneNumber: "maiores",
-    state: "incidunt",
-    street1: "sed",
-    street2: "provident",
-    zip: "eius",
-  },
-  companyId: "necessitatibus",
+sdk.locations.postV1CompaniesCompanyIdLocationsJson("alias", {
+  city: "Lake Jackeline",
+  country: "Morocco",
+  filingAddress: false,
+  mailingAddress: false,
+  phoneNumber: "reiciendis",
+  state: "provident",
+  street1: "repellendus",
+  street2: "delectus",
+  zip: "voluptates",
 }).then((res: PostV1CompaniesCompanyIdLocationsJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -177,10 +168,11 @@ sdk.locations.postV1CompaniesCompanyIdLocationsJson({
 
 ### Parameters
 
-| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                          | [operations.PostV1CompaniesCompanyIdLocationsJsonRequest](../../models/operations/postv1companiescompanyidlocationsjsonrequest.md) | :heavy_check_mark:                                                                                                                 | The request object to use for the request.                                                                                         |
-| `config`                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                       | :heavy_minus_sign:                                                                                                                 | Available config options for making requests.                                                                                      |
+| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `companyId`                                                                                                                                | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the company                                                                                                                    |
+| `requestBody`                                                                                                                              | [operations.PostV1CompaniesCompanyIdLocationsApplicationJSON](../../models/operations/postv1companiescompanyidlocationsapplicationjson.md) | :heavy_minus_sign:                                                                                                                         | Create a company location.                                                                                                                 |
+| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
 
 
 ### Response
@@ -208,10 +200,7 @@ const sdk = new Gusto({
   },
 });
 
-sdk.locations.postV1CompaniesCompanyIdLocationsRaw({
-  requestBody: "ipsum".encode(),
-  companyId: "ea",
-}).then((res: PostV1CompaniesCompanyIdLocationsRawResponse) => {
+sdk.locations.postV1CompaniesCompanyIdLocationsRaw("perferendis", "est".encode()).then((res: PostV1CompaniesCompanyIdLocationsRawResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -220,10 +209,11 @@ sdk.locations.postV1CompaniesCompanyIdLocationsRaw({
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.PostV1CompaniesCompanyIdLocationsRawRequest](../../models/operations/postv1companiescompanyidlocationsrawrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `requestBody`                                                | *Uint8Array*                                                 | :heavy_minus_sign:                                           | Create a company location.                                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -249,20 +239,17 @@ const sdk = new Gusto({
   },
 });
 
-sdk.locations.putV1LocationsLocationId({
-  requestBody: {
-    city: "Katrinaworth",
-    country: "Ethiopia",
-    filingAddress: false,
-    mailingAddress: false,
-    phoneNumber: "tempora",
-    state: "voluptate",
-    street1: "reiciendis",
-    street2: "ex",
-    version: "sit",
-    zip: "non",
-  },
-  locationId: "officiis",
+sdk.locations.putV1LocationsLocationId("quidem", {
+  city: "Raquelchester",
+  country: "Lithuania",
+  filingAddress: false,
+  mailingAddress: false,
+  phoneNumber: "mollitia",
+  state: "veniam",
+  street1: "voluptatem",
+  street2: "quisquam",
+  version: "repudiandae",
+  zip: "quasi",
 }).then((res: PutV1LocationsLocationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -272,10 +259,11 @@ sdk.locations.putV1LocationsLocationId({
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PutV1LocationsLocationIdRequest](../../models/operations/putv1locationslocationidrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `locationId`                                                                                                     | *string*                                                                                                         | :heavy_check_mark:                                                                                               | The UUID of the location                                                                                         |
+| `requestBody`                                                                                                    | [operations.PutV1LocationsLocationIdRequestBody](../../models/operations/putv1locationslocationidrequestbody.md) | :heavy_minus_sign:                                                                                               | Update a location                                                                                                |
+| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
 
 
 ### Response

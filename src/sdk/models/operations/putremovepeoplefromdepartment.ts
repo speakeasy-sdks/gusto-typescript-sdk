@@ -45,14 +45,14 @@ export class PutRemovePeopleFromDepartmentRequestBody extends SpeakeasyBase {
 }
 
 export class PutRemovePeopleFromDepartmentRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutRemovePeopleFromDepartmentRequestBody;
-
     /**
      * The UUID of the department
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=department_uuid" })
     departmentUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutRemovePeopleFromDepartmentRequestBody;
 }
 
 export class PutRemovePeopleFromDepartmentResponse extends SpeakeasyBase {

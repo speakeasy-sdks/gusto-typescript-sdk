@@ -25,13 +25,12 @@ export class Departments {
      *
      */
     async deleteDepartment(
-        req: operations.DeleteDepartmentRequest,
+        departmentUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteDepartmentResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteDepartmentRequest(req);
-        }
-
+        const req = new operations.DeleteDepartmentRequest({
+            departmentUuid: departmentUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -93,13 +92,12 @@ export class Departments {
      * scope: `departments:read`
      */
     async getCompaniesDepartments(
-        req: operations.GetCompaniesDepartmentsRequest,
+        companyUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCompaniesDepartmentsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetCompaniesDepartmentsRequest(req);
-        }
-
+        const req = new operations.GetCompaniesDepartmentsRequest({
+            companyUuid: companyUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -170,13 +168,12 @@ export class Departments {
      *
      */
     async getDepartment(
-        req: operations.GetDepartmentRequest,
+        departmentUuid: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetDepartmentResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetDepartmentRequest(req);
-        }
-
+        const req = new operations.GetDepartmentRequest({
+            departmentUuid: departmentUuid,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -235,13 +232,14 @@ export class Departments {
      * scope: `departments:write`
      */
     async postDepartments(
-        req: operations.PostDepartmentsRequest,
+        companyUuid: string,
+        requestBody?: operations.PostDepartmentsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostDepartmentsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostDepartmentsRequest(req);
-        }
-
+        const req = new operations.PostDepartmentsRequest({
+            companyUuid: companyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -324,13 +322,14 @@ export class Departments {
      *
      */
     async putAddPeopleToDepartment(
-        req: operations.PutAddPeopleToDepartmentRequest,
+        departmentUuid: string,
+        requestBody?: operations.PutAddPeopleToDepartmentRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutAddPeopleToDepartmentResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutAddPeopleToDepartmentRequest(req);
-        }
-
+        const req = new operations.PutAddPeopleToDepartmentRequest({
+            departmentUuid: departmentUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -405,13 +404,14 @@ export class Departments {
      * scope: `departments:write`
      */
     async putDepartments(
-        req: operations.PutDepartmentsRequest,
+        departmentUuid: string,
+        requestBody?: operations.PutDepartmentsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutDepartmentsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutDepartmentsRequest(req);
-        }
-
+        const req = new operations.PutDepartmentsRequest({
+            departmentUuid: departmentUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -490,13 +490,14 @@ export class Departments {
      *
      */
     async putRemovePeopleFromDepartment(
-        req: operations.PutRemovePeopleFromDepartmentRequest,
+        departmentUuid: string,
+        requestBody?: operations.PutRemovePeopleFromDepartmentRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PutRemovePeopleFromDepartmentResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutRemovePeopleFromDepartmentRequest(req);
-        }
-
+        const req = new operations.PutRemovePeopleFromDepartmentRequest({
+            departmentUuid: departmentUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

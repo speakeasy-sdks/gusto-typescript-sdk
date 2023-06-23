@@ -22,13 +22,14 @@ export class Flows {
      * Generate a link to access a pre-built workflow in Gusto white-label UI. For security, all generated flows will expire within 1 hour of inactivity. Additionally, flows will be deactivated 24 hours from creation time.
      */
     async postV1CompanyFlows(
-        req: operations.PostV1CompanyFlowsRequest,
+        companyUuid: string,
+        requestBody?: operations.PostV1CompanyFlowsRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompanyFlowsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostV1CompanyFlowsRequest(req);
-        }
-
+        const req = new operations.PostV1CompanyFlowsRequest({
+            companyUuid: companyUuid,
+            requestBody: requestBody,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

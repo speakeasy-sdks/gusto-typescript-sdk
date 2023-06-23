@@ -80,14 +80,14 @@ export class PutV1GarnishmentsGarnishmentIdRequestBody extends SpeakeasyBase {
 }
 
 export class PutV1GarnishmentsGarnishmentIdRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1GarnishmentsGarnishmentIdRequestBody;
-
     /**
      * The UUID of the garnishment
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=garnishment_id" })
     garnishmentId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1GarnishmentsGarnishmentIdRequestBody;
 }
 
 export class PutV1GarnishmentsGarnishmentIdResponse extends SpeakeasyBase {

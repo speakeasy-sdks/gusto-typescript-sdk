@@ -31,14 +31,14 @@ export class PostV1EmployeesEmployeeIdBankAccountsRequestBody extends SpeakeasyB
 }
 
 export class PostV1EmployeesEmployeeIdBankAccountsRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1EmployeesEmployeeIdBankAccountsRequestBody;
-
     /**
      * The UUID of the employee
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
     employeeId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1EmployeesEmployeeIdBankAccountsRequestBody;
 }
 
 export class PostV1EmployeesEmployeeIdBankAccountsResponse extends SpeakeasyBase {

@@ -17,14 +17,14 @@ export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequest
 }
 
 export class PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody;
-
     /**
      * The UUID of the company
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
     companyUuid: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody;
 }
 
 /**

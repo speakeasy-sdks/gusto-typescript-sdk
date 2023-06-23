@@ -91,16 +91,16 @@ export class PutTimeOffPoliciesTimeOffPolicyUuidRequestBody extends SpeakeasyBas
 
 export class PutTimeOffPoliciesTimeOffPolicyUuidRequest extends SpeakeasyBase {
     /**
-     * Can update any attributes of the time off policy except policy_type, is_active, complete & employees
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody;
-
-    /**
      * The UUID of the company time off policy
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid" })
     timeOffPolicyUuid: string;
+
+    /**
+     * Can update any attributes of the time off policy except policy_type, is_active, complete & employees
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody;
 }
 
 export class PutTimeOffPoliciesTimeOffPolicyUuidResponse extends SpeakeasyBase {

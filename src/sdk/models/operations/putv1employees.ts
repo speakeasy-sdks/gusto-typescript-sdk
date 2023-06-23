@@ -52,16 +52,16 @@ export class PutV1EmployeesRequestBody extends SpeakeasyBase {
 
 export class PutV1EmployeesRequest extends SpeakeasyBase {
     /**
-     * Update an employee.
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PutV1EmployeesRequestBody;
-
-    /**
      * The UUID of the employee
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
     employeeId: string;
+
+    /**
+     * Update an employee.
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1EmployeesRequestBody;
 }
 
 export class PutV1EmployeesResponse extends SpeakeasyBase {
