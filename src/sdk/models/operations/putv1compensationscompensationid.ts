@@ -10,122 +10,123 @@ import { Expose, Type } from "class-transformer";
 /**
  * The FLSA status for this compensation. Salaried ('Exempt') employees are paid a fixed salary every pay period. Salaried with overtime ('Salaried Nonexempt') employees are paid a fixed salary every pay period, and receive overtime pay when applicable. Hourly ('Nonexempt') employees are paid for the hours they work, and receive overtime pay when applicable. Commissioned employees ('Commission Only Exempt') earn wages based only on commission. Commissioned with overtime ('Commission Only Nonexempt') earn wages based on commission, and receive overtime pay when applicable. Owners ('Owner') are employees that own at least twenty percent of the company.
  */
-export enum PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum {
-  Exempt = "Exempt",
-  SalariedNonexempt = "Salaried Nonexempt",
-  Nonexempt = "Nonexempt",
-  CommissionOnlyExempt = "Commission Only Exempt",
-  CommissionOnlyNonexempt = "Commission Only Nonexempt",
-  Owner = "Owner",
+export enum PutV1CompensationsCompensationIdRequestBodyFlsaStatus {
+    Exempt = "Exempt",
+    SalariedNonexempt = "Salaried Nonexempt",
+    Nonexempt = "Nonexempt",
+    CommissionOnlyExempt = "Commission Only Exempt",
+    CommissionOnlyNonexempt = "Commission Only Nonexempt",
+    Owner = "Owner",
 }
 
 /**
  * The minimum wage record you want to apply to the compensation
  */
 export class PutV1CompensationsCompensationIdRequestBodyMinimumWages extends SpeakeasyBase {
-  /**
-   * The UUID of the minimum wage record. Required if adjust_for_minimum_wage set to true
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the minimum wage record. Required if adjust_for_minimum_wage set to true
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }
 
 /**
  * The unit accompanying the compensation rate. If the employee is an owner, rate should be 'Paycheck'.
  */
-export enum PutV1CompensationsCompensationIdRequestBodyPaymentUnitEnum {
-  Hour = "Hour",
-  Week = "Week",
-  Month = "Month",
-  Year = "Year",
-  Paycheck = "Paycheck",
+export enum PutV1CompensationsCompensationIdRequestBodyPaymentUnit {
+    Hour = "Hour",
+    Week = "Week",
+    Month = "Month",
+    Year = "Year",
+    Paycheck = "Paycheck",
 }
 
 export class PutV1CompensationsCompensationIdRequestBody extends SpeakeasyBase {
-  /**
-   * Determines whether the compensation should be adjusted for minimum wage. Only applies to Nonexempt employees.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "adjust_for_minimum_wage" })
-  adjustForMinimumWage?: boolean;
+    /**
+     * Determines whether the compensation should be adjusted for minimum wage. Only applies to Nonexempt employees.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "adjust_for_minimum_wage" })
+    adjustForMinimumWage?: boolean;
 
-  /**
-   * The FLSA status for this compensation. Salaried ('Exempt') employees are paid a fixed salary every pay period. Salaried with overtime ('Salaried Nonexempt') employees are paid a fixed salary every pay period, and receive overtime pay when applicable. Hourly ('Nonexempt') employees are paid for the hours they work, and receive overtime pay when applicable. Commissioned employees ('Commission Only Exempt') earn wages based only on commission. Commissioned with overtime ('Commission Only Nonexempt') earn wages based on commission, and receive overtime pay when applicable. Owners ('Owner') are employees that own at least twenty percent of the company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "flsa_status" })
-  flsaStatus?: PutV1CompensationsCompensationIdRequestBodyFlsaStatusEnum;
+    /**
+     * The FLSA status for this compensation. Salaried ('Exempt') employees are paid a fixed salary every pay period. Salaried with overtime ('Salaried Nonexempt') employees are paid a fixed salary every pay period, and receive overtime pay when applicable. Hourly ('Nonexempt') employees are paid for the hours they work, and receive overtime pay when applicable. Commissioned employees ('Commission Only Exempt') earn wages based only on commission. Commissioned with overtime ('Commission Only Nonexempt') earn wages based on commission, and receive overtime pay when applicable. Owners ('Owner') are employees that own at least twenty percent of the company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "flsa_status" })
+    flsaStatus?: PutV1CompensationsCompensationIdRequestBodyFlsaStatus;
 
-  @SpeakeasyMetadata({
-    elemType: PutV1CompensationsCompensationIdRequestBodyMinimumWages,
-  })
-  @Expose({ name: "minimum_wages" })
-  @Type(() => PutV1CompensationsCompensationIdRequestBodyMinimumWages)
-  minimumWages?: PutV1CompensationsCompensationIdRequestBodyMinimumWages[];
+    @SpeakeasyMetadata({ elemType: PutV1CompensationsCompensationIdRequestBodyMinimumWages })
+    @Expose({ name: "minimum_wages" })
+    @Type(() => PutV1CompensationsCompensationIdRequestBodyMinimumWages)
+    minimumWages?: PutV1CompensationsCompensationIdRequestBodyMinimumWages[];
 
-  /**
-   * The unit accompanying the compensation rate. If the employee is an owner, rate should be 'Paycheck'.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_unit" })
-  paymentUnit?: PutV1CompensationsCompensationIdRequestBodyPaymentUnitEnum;
+    /**
+     * The unit accompanying the compensation rate. If the employee is an owner, rate should be 'Paycheck'.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_unit" })
+    paymentUnit?: PutV1CompensationsCompensationIdRequestBodyPaymentUnit;
 
-  /**
-   * The dollar amount paid per payment unit.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "rate" })
-  rate?: string;
+    /**
+     * The dollar amount paid per payment unit.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "rate" })
+    rate?: string;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version: string;
 }
 
 export class PutV1CompensationsCompensationIdRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1CompensationsCompensationIdRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompensationsCompensationIdRequestBody;
 
-  /**
-   * The UUID of the compensation
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=compensation_id",
-  })
-  compensationId: string;
+    /**
+     * The UUID of the compensation
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=compensation_id" })
+    compensationId: string;
 }
 
+/**
+ * Example response
+ */
+export class PutV1CompensationsCompensationId200ApplicationXML extends SpeakeasyBase {}
+
 export class PutV1CompensationsCompensationIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  body?: Uint8Array;
+    @SpeakeasyMetadata()
+    body?: Uint8Array;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  compensation?: shared.Compensation;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    compensation?: shared.Compensation;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

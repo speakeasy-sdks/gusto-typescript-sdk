@@ -5,732 +5,768 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
+import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 export class Contractors {
-  _defaultClient: AxiosInstance;
-  _securityClient: AxiosInstance;
-  _serverURL: string;
-  _language: string;
-  _sdkVersion: string;
-  _genVersion: string;
+    private sdkConfiguration: SDKConfiguration;
 
-  constructor(
-    defaultClient: AxiosInstance,
-    securityClient: AxiosInstance,
-    serverURL: string,
-    language: string,
-    sdkVersion: string,
-    genVersion: string
-  ) {
-    this._defaultClient = defaultClient;
-    this._securityClient = securityClient;
-    this._serverURL = serverURL;
-    this._language = language;
-    this._sdkVersion = sdkVersion;
-    this._genVersion = genVersion;
-  }
-
-  /**
-   * Delete a contractor
-   *
-   * @remarks
-   * A contractor can only be deleted when there are no contractor payments.
-   */
-  async deleteV1ContractorsContractorId(
-    req: operations.DeleteV1ContractorsContractorIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.DeleteV1ContractorsContractorIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.DeleteV1ContractorsContractorIdRequest(req);
+    constructor(sdkConfig: SDKConfiguration) {
+        this.sdkConfiguration = sdkConfig;
     }
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/contractors/{contractor_id}",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "delete",
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.DeleteV1ContractorsContractorIdResponse =
-      new operations.DeleteV1ContractorsContractorIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case [204, 404].includes(httpRes?.status):
-        break;
-    }
-
-    return res;
-  }
-
-  /**
-   * Get contractors of a company
-   *
-   * @remarks
-   * Get all contractors, active and inactive, individual and business, for a company.
-   *
-   * scope: `employees:read`
-   */
-  async getV1CompaniesCompanyIdContractors(
-    req: operations.GetV1CompaniesCompanyIdContractorsRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1CompaniesCompanyIdContractorsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1CompaniesCompanyIdContractorsRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/companies/{company_id}/contractors",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const queryParams: string = utils.serializeQueryParams(req);
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url + queryParams,
-      method: "get",
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1CompaniesCompanyIdContractorsResponse =
-      new operations.GetV1CompaniesCompanyIdContractorsResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.contractors = [];
-          const resFieldDepth: number = utils.getResFieldDepth(res);
-          res.contractors = utils.objectToClass(
-            httpRes?.data,
-            shared.Contractor,
-            resFieldDepth
-          );
+    /**
+     * Delete a contractor
+     *
+     * @remarks
+     * A contractor can only be deleted when there are no contractor payments.
+     */
+    async deleteV1ContractorsContractorId(
+        req: operations.DeleteV1ContractorsContractorIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.DeleteV1ContractorsContractorIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.DeleteV1ContractorsContractorIdRequest(req);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
 
-    return res;
-  }
-
-  /**
-   * Get a contractor
-   *
-   * @remarks
-   * Get a contractor.
-   *
-   * scope: `employees:read`
-   */
-  async getV1ContractorsContractorId(
-    req: operations.GetV1ContractorsContractorIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1ContractorsContractorIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1ContractorsContractorIdRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/contractors/{contractor_id}",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1ContractorsContractorIdResponse =
-      new operations.GetV1ContractorsContractorIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.contractor = utils.objectToClass(
-            httpRes?.data,
-            shared.Contractor
-          );
-        }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
-
-    return res;
-  }
-
-  /**
-   * Get a contractor address
-   *
-   * @remarks
-   * The address of a contractor is used to determine certain tax information about them. Addresses are geocoded on create and update to ensure validity.
-   *
-   * scope: `contractors:read`
-   */
-  async getV1ContractorsContractorUuidAddress(
-    req: operations.GetV1ContractorsContractorUuidAddressRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1ContractorsContractorUuidAddressResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1ContractorsContractorUuidAddressRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/contractors/{contractor_uuid}/address",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1ContractorsContractorUuidAddressResponse =
-      new operations.GetV1ContractorsContractorUuidAddressResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.contractorAddress = utils.objectToClass(
-            httpRes?.data,
-            shared.ContractorAddress1
-          );
-        }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
-
-    return res;
-  }
-
-  /**
-   * Get the contractor's onboarding status
-   *
-   * @remarks
-   * Retrieves a contractor's onboarding status. The data returned helps inform the required onboarding steps and respective completion status.
-   *
-   * scope: `contractors.read`
-   *
-   * ## onboarding_status
-   *
-   * ### Admin-facilitated onboarding
-   * | onboarding_status | Description |
-   * |:------------------|------------:|
-   * | `admin_onboarding_incomplete` | Admin needs to enter basic information about the contractor. |
-   * | `admin_onboarding_review` | All information has been completed and admin needs to confirm onboarding. |
-   * | `onboarding_completed` | Contractor has been fully onboarded and verified. |
-   *
-   * ### Contractor self-onboarding
-   *
-   * | onboarding_status | Description |
-   * | --- | ----------- |
-   * | `admin_onboarding_incomplete` | Admin needs to enter basic information about the contractor. |
-   * | `self_onboarding_not_invited` | Admin has the intention to invite the contractor to self-onboard (e.g., marking a checkbox), but the system has not yet sent the invitation. |
-   * | `self_onboarding_invited` | Contractor has been sent an invitation to self-onboard. |
-   * | `self_onboarding_started` | Contractor has started the self-onboarding process. |
-   * | `self_onboarding_review` | Admin needs to review contractors's entered information and confirm onboarding. |
-   * | `onboarding_completed` | Contractor has been fully onboarded and verified. |
-   *
-   * ## onboarding_steps
-   *
-   * | onboarding_steps | Requirement(s) to be completed |
-   * |:-----------------|-------------------------------:|
-   * | `basic_details` | Add individual contractor's first name, last name, social security number or Business name and EIN depending on the contractor type |
-   * | `add_address` | Add contractor address. |
-   * | `compensation_details` | Add contractor compensation. |
-   * | `payment_details` | Set up contractor's direct deposit or set to check. |
-   * | `sign_documents` | Contractor forms (e.g., W9) are generated & signed. |
-   * | `file_new_hire_report` | Contractor new hire report is generated. |
-   */
-  async getV1ContractorsContractorUuidOnboardingStatus(
-    req: operations.GetV1ContractorsContractorUuidOnboardingStatusRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1ContractorsContractorUuidOnboardingStatusResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req =
-        new operations.GetV1ContractorsContractorUuidOnboardingStatusRequest(
-          req
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
         );
-    }
+        const url: string = utils.generateURL(baseURL, "/v1/contractors/{contractor_id}", req);
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/contractors/{contractor_uuid}/onboarding_status",
-      req
-    );
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
+        const headers = { ...config?.headers };
+        headers["Accept"] = "*/*";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
 
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      ...config,
-    });
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "delete",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
 
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1ContractorsContractorUuidOnboardingStatusResponse =
-      new operations.GetV1ContractorsContractorUuidOnboardingStatusResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.contractorOnboardingStatus = utils.objectToClass(
-            httpRes?.data,
-            shared.ContractorOnboardingStatus
-          );
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        if (utils.matchContentType(contentType, `application/xml`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+
+        const res: operations.DeleteV1ContractorsContractorIdResponse =
+            new operations.DeleteV1ContractorsContractorIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case [204, 404].includes(httpRes?.status):
+                break;
         }
-        break;
-      case httpRes?.status == 404:
-        break;
+
+        return res;
     }
 
-    return res;
-  }
-
-  /**
-   * Create a contractor
-   *
-   * @remarks
-   * Create an individual or business contractor.
-   *
-   * scope: `employees:write`
-   */
-  async postV1CompaniesCompanyIdContractors(
-    req: operations.PostV1CompaniesCompanyIdContractorsRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PostV1CompaniesCompanyIdContractorsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1CompaniesCompanyIdContractorsRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/companies/{company_id}/contractors",
-      req
-    );
-
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
-
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "post",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PostV1CompaniesCompanyIdContractorsResponse =
-      new operations.PostV1CompaniesCompanyIdContractorsResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 201:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.contractor = utils.objectToClass(
-            httpRes?.data,
-            shared.Contractor
-          );
+    /**
+     * Get contractors of a company
+     *
+     * @remarks
+     * Get all contractors, active and inactive, individual and business, for a company.
+     *
+     * scope: `employees:read`
+     */
+    async getV1CompaniesCompanyIdContractors(
+        req: operations.GetV1CompaniesCompanyIdContractorsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1CompaniesCompanyIdContractorsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1CompaniesCompanyIdContractorsRequest(req);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
-        }
-        break;
-    }
 
-    return res;
-  }
-
-  /**
-   * Update a contractor
-   *
-   * @remarks
-   * Update a contractor.
-   *
-   * `scope: employees.write`
-   *
-   * > 🚧 Warning
-   * >
-   * > Watch out when changing a contractor's type (when the contractor is finished onboarding). Specifically, changing contractor type can be dangerous since Gusto won’t recognize and file two separate 1099s if they simply change from business to individual
-   */
-  async putV1ContractorsContractorId(
-    req: operations.PutV1ContractorsContractorIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PutV1ContractorsContractorIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PutV1ContractorsContractorIdRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/contractors/{contractor_id}",
-      req
-    );
-
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
-
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "put",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PutV1ContractorsContractorIdResponse =
-      new operations.PutV1ContractorsContractorIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.contractor = utils.objectToClass(
-            httpRes?.data,
-            shared.Contractor
-          );
-        }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
-        }
-        break;
-    }
-
-    return res;
-  }
-
-  /**
-   * Update a contractor's address
-   *
-   * @remarks
-   * The address of a contractor is used to determine certain tax information about them. Addresses are geocoded on create and update to ensure validity.
-   *
-   * scope: `contractors:write`
-   */
-  async putV1ContractorsContractorUuidAddress(
-    req: operations.PutV1ContractorsContractorUuidAddressRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PutV1ContractorsContractorUuidAddressResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PutV1ContractorsContractorUuidAddressRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/contractors/{contractor_uuid}/address",
-      req
-    );
-
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
-
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "put",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PutV1ContractorsContractorUuidAddressResponse =
-      new operations.PutV1ContractorsContractorUuidAddressResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.contractorAddress = utils.objectToClass(
-            httpRes?.data,
-            shared.ContractorAddress1
-          );
-        }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
-        }
-        break;
-    }
-
-    return res;
-  }
-
-  /**
-   * Change the contractor's onboarding status
-   *
-   * @remarks
-   * scope: `contractors:write`
-   *
-   * Updates a contractor's onboarding status.
-   * Below is a list of valid onboarding status changes depending on the intended action to be performed on behalf of the contractor.
-   *
-   * | Action | current onboarding_status | new onboarding_status |
-   * |:------------------|:------------:|----------:|
-   * | Mark a contractor as self-onboarding | `admin_onboarding_incomplete` | `self_onboarding_not_invited` |
-   * | Invite an employee to self-onboard | `admin_onboarding_incomplete` or `self_onboarding_not_invited` | `self_onboarding_invited` |
-   * | Cancel an employee's self-onboarding | `self_onboarding_invited` or `self_onboarding_not_invited` | `admin_onboarding_incomplete` |
-   * | Review an employee's self-onboarded info | `self_onboarding_started` | `self_onboarding_review` |
-   * | Finish an employee's onboarding | `admin_onboarding_incomplete` or `self_onboarding_review` | `onboarding_completed` |
-   */
-  async putV1ContractorsContractorUuidOnboardingStatus(
-    req: operations.PutV1ContractorsContractorUuidOnboardingStatusRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PutV1ContractorsContractorUuidOnboardingStatusResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req =
-        new operations.PutV1ContractorsContractorUuidOnboardingStatusRequest(
-          req
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
         );
-    }
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/companies/{company_id}/contractors",
+            req
+        );
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/contractors/{contractor_uuid}/onboarding_status",
-      req
-    );
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        const headers = { ...config?.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
 
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "put",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PutV1ContractorsContractorUuidOnboardingStatusResponse =
-      new operations.PutV1ContractorsContractorUuidOnboardingStatusResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.contractorOnboardingStatus = utils.objectToClass(
-            httpRes?.data,
-            shared.ContractorOnboardingStatus
-          );
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        if (utils.matchContentType(contentType, `application/xml`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+
+        const res: operations.GetV1CompaniesCompanyIdContractorsResponse =
+            new operations.GetV1CompaniesCompanyIdContractorsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.contractors = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.contractors = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Contractor,
+                        resFieldDepth
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
-        }
-        break;
+
+        return res;
     }
 
-    return res;
-  }
+    /**
+     * Get a contractor
+     *
+     * @remarks
+     * Get a contractor.
+     *
+     * scope: `employees:read`
+     */
+    async getV1ContractorsContractorId(
+        req: operations.GetV1ContractorsContractorIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1ContractorsContractorIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1ContractorsContractorIdRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(baseURL, "/v1/contractors/{contractor_id}", req);
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...config?.headers };
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.GetV1ContractorsContractorIdResponse =
+            new operations.GetV1ContractorsContractorIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.contractor = utils.objectToClass(JSON.parse(decodedRes), shared.Contractor);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Get a contractor address
+     *
+     * @remarks
+     * The address of a contractor is used to determine certain tax information about them. Addresses are geocoded on create and update to ensure validity.
+     *
+     * scope: `contractors:read`
+     */
+    async getV1ContractorsContractorUuidAddress(
+        req: operations.GetV1ContractorsContractorUuidAddressRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1ContractorsContractorUuidAddressResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1ContractorsContractorUuidAddressRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/contractors/{contractor_uuid}/address",
+            req
+        );
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...config?.headers };
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.GetV1ContractorsContractorUuidAddressResponse =
+            new operations.GetV1ContractorsContractorUuidAddressResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.contractorAddress = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.ContractorAddress1
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Get the contractor's onboarding status
+     *
+     * @remarks
+     * Retrieves a contractor's onboarding status. The data returned helps inform the required onboarding steps and respective completion status.
+     *
+     * scope: `contractors.read`
+     *
+     * ## onboarding_status
+     *
+     * ### Admin-facilitated onboarding
+     * | onboarding_status | Description |
+     * |:------------------|------------:|
+     * | `admin_onboarding_incomplete` | Admin needs to enter basic information about the contractor. |
+     * | `admin_onboarding_review` | All information has been completed and admin needs to confirm onboarding. |
+     * | `onboarding_completed` | Contractor has been fully onboarded and verified. |
+     *
+     * ### Contractor self-onboarding
+     *
+     * | onboarding_status | Description |
+     * | --- | ----------- |
+     * | `admin_onboarding_incomplete` | Admin needs to enter basic information about the contractor. |
+     * | `self_onboarding_not_invited` | Admin has the intention to invite the contractor to self-onboard (e.g., marking a checkbox), but the system has not yet sent the invitation. |
+     * | `self_onboarding_invited` | Contractor has been sent an invitation to self-onboard. |
+     * | `self_onboarding_started` | Contractor has started the self-onboarding process. |
+     * | `self_onboarding_review` | Admin needs to review contractors's entered information and confirm onboarding. |
+     * | `onboarding_completed` | Contractor has been fully onboarded and verified. |
+     *
+     * ## onboarding_steps
+     *
+     * | onboarding_steps | Requirement(s) to be completed |
+     * |:-----------------|-------------------------------:|
+     * | `basic_details` | Add individual contractor's first name, last name, social security number or Business name and EIN depending on the contractor type |
+     * | `add_address` | Add contractor address. |
+     * | `compensation_details` | Add contractor compensation. |
+     * | `payment_details` | Set up contractor's direct deposit or set to check. |
+     * | `sign_documents` | Contractor forms (e.g., W9) are generated & signed. |
+     * | `file_new_hire_report` | Contractor new hire report is generated. |
+     */
+    async getV1ContractorsContractorUuidOnboardingStatus(
+        req: operations.GetV1ContractorsContractorUuidOnboardingStatusRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1ContractorsContractorUuidOnboardingStatusResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1ContractorsContractorUuidOnboardingStatusRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/contractors/{contractor_uuid}/onboarding_status",
+            req
+        );
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/xml;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.GetV1ContractorsContractorUuidOnboardingStatusResponse =
+            new operations.GetV1ContractorsContractorUuidOnboardingStatusResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.contractorOnboardingStatus = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.ContractorOnboardingStatus1
+                    );
+                }
+                if (utils.matchContentType(contentType, `application/xml`)) {
+                    res.body = httpRes?.data;
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Create a contractor
+     *
+     * @remarks
+     * Create an individual or business contractor.
+     *
+     * scope: `employees:write`
+     */
+    async postV1CompaniesCompanyIdContractors(
+        req: operations.PostV1CompaniesCompanyIdContractorsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PostV1CompaniesCompanyIdContractorsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PostV1CompaniesCompanyIdContractorsRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/companies/{company_id}/contractors",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PostV1CompaniesCompanyIdContractorsResponse =
+            new operations.PostV1CompaniesCompanyIdContractorsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 201:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.contractor = utils.objectToClass(JSON.parse(decodedRes), shared.Contractor);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Update a contractor
+     *
+     * @remarks
+     * Update a contractor.
+     *
+     * `scope: employees.write`
+     *
+     * > 🚧 Warning
+     * >
+     * > Watch out when changing a contractor's type (when the contractor is finished onboarding). Specifically, changing contractor type can be dangerous since Gusto won’t recognize and file two separate 1099s if they simply change from business to individual
+     */
+    async putV1ContractorsContractorId(
+        req: operations.PutV1ContractorsContractorIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PutV1ContractorsContractorIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PutV1ContractorsContractorIdRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(baseURL, "/v1/contractors/{contractor_id}", req);
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "put",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PutV1ContractorsContractorIdResponse =
+            new operations.PutV1ContractorsContractorIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.contractor = utils.objectToClass(JSON.parse(decodedRes), shared.Contractor);
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Update a contractor's address
+     *
+     * @remarks
+     * The address of a contractor is used to determine certain tax information about them. Addresses are geocoded on create and update to ensure validity.
+     *
+     * scope: `contractors:write`
+     */
+    async putV1ContractorsContractorUuidAddress(
+        req: operations.PutV1ContractorsContractorUuidAddressRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PutV1ContractorsContractorUuidAddressResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PutV1ContractorsContractorUuidAddressRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/contractors/{contractor_uuid}/address",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "put",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PutV1ContractorsContractorUuidAddressResponse =
+            new operations.PutV1ContractorsContractorUuidAddressResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.contractorAddress = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.ContractorAddress1
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Change the contractor's onboarding status
+     *
+     * @remarks
+     * scope: `contractors:write`
+     *
+     * Updates a contractor's onboarding status.
+     * Below is a list of valid onboarding status changes depending on the intended action to be performed on behalf of the contractor.
+     *
+     * | Action | current onboarding_status | new onboarding_status |
+     * |:------------------|:------------:|----------:|
+     * | Mark a contractor as self-onboarding | `admin_onboarding_incomplete` | `self_onboarding_not_invited` |
+     * | Invite an employee to self-onboard | `admin_onboarding_incomplete` or `self_onboarding_not_invited` | `self_onboarding_invited` |
+     * | Cancel an employee's self-onboarding | `self_onboarding_invited` or `self_onboarding_not_invited` | `admin_onboarding_incomplete` |
+     * | Review an employee's self-onboarded info | `self_onboarding_started` | `self_onboarding_review` |
+     * | Finish an employee's onboarding | `admin_onboarding_incomplete` or `self_onboarding_review` | `onboarding_completed` |
+     */
+    async putV1ContractorsContractorUuidOnboardingStatus(
+        req: operations.PutV1ContractorsContractorUuidOnboardingStatusRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PutV1ContractorsContractorUuidOnboardingStatusResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PutV1ContractorsContractorUuidOnboardingStatusRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/contractors/{contractor_uuid}/onboarding_status",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0.7, application/xml;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "put",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PutV1ContractorsContractorUuidOnboardingStatusResponse =
+            new operations.PutV1ContractorsContractorUuidOnboardingStatusResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.contractorOnboardingStatus = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.ContractorOnboardingStatus1
+                    );
+                }
+                if (utils.matchContentType(contentType, `application/xml`)) {
+                    res.body = httpRes?.data;
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
 }

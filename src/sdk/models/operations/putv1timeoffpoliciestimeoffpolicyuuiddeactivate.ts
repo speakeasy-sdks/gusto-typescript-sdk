@@ -7,39 +7,37 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company time off policy
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid",
-  })
-  timeOffPolicyUuid: string;
+    /**
+     * The UUID of the company time off policy
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid" })
+    timeOffPolicyUuid: string;
 }
 
 export class PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * OK
-   */
-  @SpeakeasyMetadata()
-  timeOffPolicy?: shared.TimeOffPolicy;
+    /**
+     * OK
+     */
+    @SpeakeasyMetadata()
+    timeOffPolicy?: shared.TimeOffPolicy;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

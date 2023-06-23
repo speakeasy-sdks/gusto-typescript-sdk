@@ -10,71 +10,69 @@ import { Expose } from "class-transformer";
 /**
  * the type of target entity applicable to the flow. This field is optional for company flows, please refer to the flow_types table above for more details.
  */
-export enum PostV1CompanyFlowsRequestBodyEntityTypeEnum {
-  Company = "Company",
-  Employee = "Employee",
+export enum PostV1CompanyFlowsRequestBodyEntityType {
+    Company = "Company",
+    Employee = "Employee",
 }
 
 export class PostV1CompanyFlowsRequestBody extends SpeakeasyBase {
-  /**
-   * the type of target entity applicable to the flow. This field is optional for company flows, please refer to the flow_types table above for more details.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "entity_type" })
-  entityType?: PostV1CompanyFlowsRequestBodyEntityTypeEnum;
+    /**
+     * the type of target entity applicable to the flow. This field is optional for company flows, please refer to the flow_types table above for more details.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "entity_type" })
+    entityType?: PostV1CompanyFlowsRequestBodyEntityType;
 
-  /**
-   * UUID of the target entity applicable to the flow. This field is optional for company flows, please refer to the flow_types table above for more details.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "entity_uuid" })
-  entityUuid?: string;
+    /**
+     * UUID of the target entity applicable to the flow. This field is optional for company flows, please refer to the flow_types table above for more details.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "entity_uuid" })
+    entityUuid?: string;
 
-  /**
-   * flow type
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "flow_type" })
-  flowType: string;
+    /**
+     * flow type
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "flow_type" })
+    flowType: string;
 }
 
 export class PostV1CompanyFlowsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostV1CompanyFlowsRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1CompanyFlowsRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+    companyUuid: string;
 }
 
 export class PostV1CompanyFlowsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  flow?: shared.Flow;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    flow?: shared.Flow;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

@@ -53,386 +53,146 @@ export const ServerProd = "prod";
  * Contains the list of servers available to the SDK
  */
 export const ServerList: Record<string, string> = {
-  [ServerDemo]: "https://api.gusto-demo.com",
-  [ServerProd]: "https://api.gusto.com",
+    [ServerDemo]: "https://api.gusto-demo.com",
+    [ServerProd]: "https://api.gusto.com",
 } as const;
 
 /**
  * The available configuration options for the SDK
  */
 export type SDKProps = {
-  /**
-   * The security details required to authenticate the SDK
-   */
-  security?: shared.Security;
-  /**
-   * Allows overriding the default axios client used by the SDK
-   */
-  defaultClient?: AxiosInstance;
-  /**
-   * Allows overriding the default server URL used by the SDK
-   */
-  serverURL?: string;
+    /**
+     * The security details required to authenticate the SDK
+     */
+    security?: shared.Security;
+    /**
+     * Allows overriding the default axios client used by the SDK
+     */
+    defaultClient?: AxiosInstance;
+
+    /**
+     * Allows overriding the default server used by the SDK
+     */
+    server?: string;
+
+    /**
+     * Allows overriding the default server URL used by the SDK
+     */
+    serverURL?: string;
 };
 
+export class SDKConfiguration {
+    defaultClient: AxiosInstance;
+    securityClient: AxiosInstance;
+    serverURL: string;
+    serverDefaults: any;
+    language = "typescript";
+    openapiDocVersion = "2023-03-01";
+    sdkVersion = "0.30.0";
+    genVersion = "2.43.2";
+
+    public constructor(init?: Partial<SDKConfiguration>) {
+        Object.assign(this, init);
+    }
+}
+
 /**
- * Welcome to Gusto's Embedded Payroll API documentation!
+ * Gusto API: Welcome to Gusto's Embedded Payroll API documentation!
  */
 export class Gusto {
-  public bankAccounts: BankAccounts;
-  public companies: Companies;
-  public companyBenefits: CompanyBenefits;
-  public companyForms: CompanyForms;
-  public contractorForms: ContractorForms;
-  public contractorPaymentMethod: ContractorPaymentMethod;
-  public contractorPayments: ContractorPayments;
-  public contractors: Contractors;
-  public departments: Departments;
-  public earningTypes: EarningTypes;
-  public employeeBenefits: EmployeeBenefits;
-  public employeeForms: EmployeeForms;
-  public employeePaymentMethod: EmployeePaymentMethod;
-  public employeeTaxSetup: EmployeeTaxSetup;
-  public employeeTermination: EmployeeTermination;
-  public employees: Employees;
-  public externalPayrolls: ExternalPayrolls;
-  public federalTaxDetails: FederalTaxDetails;
-  public flows: Flows;
-  public garnishments: Garnishments;
-  public generatedDocuments: GeneratedDocuments;
-  public industrySelection: IndustrySelection;
-  public jobsAndCompensations: JobsAndCompensations;
-  public locations: Locations;
-  public paySchedules: PaySchedules;
-  public paymentConfigs: PaymentConfigs;
-  public payrolls: Payrolls;
-  public signatories: Signatories;
-  public taxLiabilities: TaxLiabilities;
-  public taxRequirements: TaxRequirements;
-  public timeOffPolicies: TimeOffPolicies;
-  public user: User;
-  public webhookSubscriptions: WebhookSubscriptions;
+    public bankAccounts: BankAccounts;
+    public companies: Companies;
+    public companyBenefits: CompanyBenefits;
+    public companyForms: CompanyForms;
+    public contractorForms: ContractorForms;
+    public contractorPaymentMethod: ContractorPaymentMethod;
+    public contractorPayments: ContractorPayments;
+    public contractors: Contractors;
+    public departments: Departments;
+    public earningTypes: EarningTypes;
+    public employeeBenefits: EmployeeBenefits;
+    public employeeForms: EmployeeForms;
+    public employeePaymentMethod: EmployeePaymentMethod;
+    public employeeTaxSetup: EmployeeTaxSetup;
+    public employeeTermination: EmployeeTermination;
+    public employees: Employees;
+    public externalPayrolls: ExternalPayrolls;
+    public federalTaxDetails: FederalTaxDetails;
+    public flows: Flows;
+    public garnishments: Garnishments;
+    public generatedDocuments: GeneratedDocuments;
+    public industrySelection: IndustrySelection;
+    public jobsAndCompensations: JobsAndCompensations;
+    public locations: Locations;
+    public paySchedules: PaySchedules;
+    public paymentConfigs: PaymentConfigs;
+    public payrolls: Payrolls;
+    public signatories: Signatories;
+    public taxLiabilities: TaxLiabilities;
+    public taxRequirements: TaxRequirements;
+    public timeOffPolicies: TimeOffPolicies;
+    public user: User;
+    public webhookSubscriptions: WebhookSubscriptions;
 
-  public _defaultClient: AxiosInstance;
-  public _securityClient: AxiosInstance;
-  public _serverURL: string;
-  private _language = "typescript";
-  private _sdkVersion = "0.15.3";
-  private _genVersion = "2.23.6";
-  private _globals: any;
+    private sdkConfiguration: SDKConfiguration;
 
-  constructor(props?: SDKProps) {
-    this._serverURL = props?.serverURL ?? ServerList[ServerDemo];
+    constructor(props?: SDKProps) {
+        let serverURL = props?.serverURL;
+        const server = props?.server ?? ServerDemo;
 
-    this._defaultClient =
-      props?.defaultClient ?? axios.create({ baseURL: this._serverURL });
-    if (props?.security) {
-      let security: shared.Security = props.security;
-      if (!(props.security instanceof utils.SpeakeasyBase))
-        security = new shared.Security(props.security);
-      this._securityClient = utils.createSecurityClient(
-        this._defaultClient,
-        security
-      );
-    } else {
-      this._securityClient = this._defaultClient;
+        if (!serverURL) {
+            serverURL = ServerList[server];
+        }
+
+        const defaultClient = props?.defaultClient ?? axios.create({ baseURL: serverURL });
+        let securityClient = defaultClient;
+
+        if (props?.security) {
+            let security: shared.Security = props.security;
+            if (!(props.security instanceof utils.SpeakeasyBase)) {
+                security = new shared.Security(props.security);
+            }
+            securityClient = utils.createSecurityClient(defaultClient, security);
+        }
+
+        this.sdkConfiguration = new SDKConfiguration({
+            defaultClient: defaultClient,
+            securityClient: securityClient,
+            serverURL: serverURL,
+        });
+
+        this.bankAccounts = new BankAccounts(this.sdkConfiguration);
+        this.companies = new Companies(this.sdkConfiguration);
+        this.companyBenefits = new CompanyBenefits(this.sdkConfiguration);
+        this.companyForms = new CompanyForms(this.sdkConfiguration);
+        this.contractorForms = new ContractorForms(this.sdkConfiguration);
+        this.contractorPaymentMethod = new ContractorPaymentMethod(this.sdkConfiguration);
+        this.contractorPayments = new ContractorPayments(this.sdkConfiguration);
+        this.contractors = new Contractors(this.sdkConfiguration);
+        this.departments = new Departments(this.sdkConfiguration);
+        this.earningTypes = new EarningTypes(this.sdkConfiguration);
+        this.employeeBenefits = new EmployeeBenefits(this.sdkConfiguration);
+        this.employeeForms = new EmployeeForms(this.sdkConfiguration);
+        this.employeePaymentMethod = new EmployeePaymentMethod(this.sdkConfiguration);
+        this.employeeTaxSetup = new EmployeeTaxSetup(this.sdkConfiguration);
+        this.employeeTermination = new EmployeeTermination(this.sdkConfiguration);
+        this.employees = new Employees(this.sdkConfiguration);
+        this.externalPayrolls = new ExternalPayrolls(this.sdkConfiguration);
+        this.federalTaxDetails = new FederalTaxDetails(this.sdkConfiguration);
+        this.flows = new Flows(this.sdkConfiguration);
+        this.garnishments = new Garnishments(this.sdkConfiguration);
+        this.generatedDocuments = new GeneratedDocuments(this.sdkConfiguration);
+        this.industrySelection = new IndustrySelection(this.sdkConfiguration);
+        this.jobsAndCompensations = new JobsAndCompensations(this.sdkConfiguration);
+        this.locations = new Locations(this.sdkConfiguration);
+        this.paySchedules = new PaySchedules(this.sdkConfiguration);
+        this.paymentConfigs = new PaymentConfigs(this.sdkConfiguration);
+        this.payrolls = new Payrolls(this.sdkConfiguration);
+        this.signatories = new Signatories(this.sdkConfiguration);
+        this.taxLiabilities = new TaxLiabilities(this.sdkConfiguration);
+        this.taxRequirements = new TaxRequirements(this.sdkConfiguration);
+        this.timeOffPolicies = new TimeOffPolicies(this.sdkConfiguration);
+        this.user = new User(this.sdkConfiguration);
+        this.webhookSubscriptions = new WebhookSubscriptions(this.sdkConfiguration);
     }
-
-    this.bankAccounts = new BankAccounts(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.companies = new Companies(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.companyBenefits = new CompanyBenefits(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.companyForms = new CompanyForms(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.contractorForms = new ContractorForms(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.contractorPaymentMethod = new ContractorPaymentMethod(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.contractorPayments = new ContractorPayments(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.contractors = new Contractors(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.departments = new Departments(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.earningTypes = new EarningTypes(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.employeeBenefits = new EmployeeBenefits(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.employeeForms = new EmployeeForms(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.employeePaymentMethod = new EmployeePaymentMethod(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.employeeTaxSetup = new EmployeeTaxSetup(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.employeeTermination = new EmployeeTermination(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.employees = new Employees(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.externalPayrolls = new ExternalPayrolls(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.federalTaxDetails = new FederalTaxDetails(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.flows = new Flows(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.garnishments = new Garnishments(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.generatedDocuments = new GeneratedDocuments(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.industrySelection = new IndustrySelection(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.jobsAndCompensations = new JobsAndCompensations(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.locations = new Locations(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.paySchedules = new PaySchedules(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.paymentConfigs = new PaymentConfigs(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.payrolls = new Payrolls(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.signatories = new Signatories(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.taxLiabilities = new TaxLiabilities(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.taxRequirements = new TaxRequirements(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.timeOffPolicies = new TimeOffPolicies(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.user = new User(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.webhookSubscriptions = new WebhookSubscriptions(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-  }
 }

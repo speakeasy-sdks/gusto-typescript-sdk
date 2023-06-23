@@ -11,62 +11,60 @@ import { Expose } from "class-transformer";
  * Create a job.
  */
 export class PostV1JobsJobIdRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "hire_date" })
-  hireDate?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "hire_date" })
+    hireDate?: string;
 
-  /**
-   * The UUID of the job's location.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "location_uuid" })
-  locationUuid?: string;
+    /**
+     * The UUID of the job's location.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "location_uuid" })
+    locationUuid?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "title" })
-  title?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "title" })
+    title?: string;
 }
 
 export class PostV1JobsJobIdRequest extends SpeakeasyBase {
-  /**
-   * Create a job.
-   */
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostV1JobsJobIdRequestBody;
+    /**
+     * Create a job.
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1JobsJobIdRequestBody;
 
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+    employeeId: string;
 }
 
 export class PostV1JobsJobIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  job?: shared.Job;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    job?: shared.Job;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

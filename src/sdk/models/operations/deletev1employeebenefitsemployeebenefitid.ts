@@ -6,22 +6,20 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
 export class DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the employee benefit.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_benefit_id",
-  })
-  employeeBenefitId: string;
+    /**
+     * The UUID of the employee benefit.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_benefit_id" })
+    employeeBenefitId: string;
 }
 
 export class DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

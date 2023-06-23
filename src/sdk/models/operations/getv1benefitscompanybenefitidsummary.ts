@@ -7,52 +7,44 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1BenefitsCompanyBenefitIdSummaryRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company benefit
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_benefit_id",
-  })
-  companyBenefitId: string;
+    /**
+     * The UUID of the company benefit
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_benefit_id" })
+    companyBenefitId: string;
 
-  /**
-   * Display employee payroll item summary
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=detailed",
-  })
-  detailed?: boolean;
+    /**
+     * Display employee payroll item summary
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=detailed" })
+    detailed?: boolean;
 
-  /**
-   * The end date for which to retrieve company benefit summary
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=end_date",
-  })
-  endDate?: string;
+    /**
+     * The end date for which to retrieve company benefit summary
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=end_date" })
+    endDate?: string;
 
-  /**
-   * The start date for which to retrieve company benefit summary
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=start_date",
-  })
-  startDate?: string;
+    /**
+     * The start date for which to retrieve company benefit summary
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=start_date" })
+    startDate?: string;
 }
 
 export class GetV1BenefitsCompanyBenefitIdSummaryResponse extends SpeakeasyBase {
-  /**
-   * Benefit summary response
-   */
-  @SpeakeasyMetadata()
-  benefitSummary?: shared.BenefitSummary;
+    /**
+     * Benefit summary response
+     */
+    @SpeakeasyMetadata()
+    benefitSummary?: shared.BenefitSummary;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

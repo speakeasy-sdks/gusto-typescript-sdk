@@ -7,40 +7,38 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompaniesCompanyIdLocationsRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 
-  /**
-   * The page that is requested. When unspecified, will load all objects.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
-  page?: number;
+    /**
+     * The page that is requested. When unspecified, will load all objects.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
+    page?: number;
 
-  /**
-   * Number of objects per page. When unspecified, will default to 25
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
-  per?: number;
+    /**
+     * Number of objects per page. When unspecified, will default to 25
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
+    per?: number;
 }
 
 export class GetV1CompaniesCompanyIdLocationsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata({ elemType: shared.Location })
-  locations?: shared.Location[];
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.Location })
+    locations?: shared.Location[];
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

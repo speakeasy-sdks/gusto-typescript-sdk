@@ -12,56 +12,52 @@ import { AxiosResponse } from "axios";
  * @remarks
  * - all_compensations: Include all effective dated compensations for each job instead of only the current compensation
  */
-export enum GetV1EmployeesEmployeeIdJobsIncludeEnum {
-  AllCompensations = "all_compensations",
+export enum GetV1EmployeesEmployeeIdJobsInclude {
+    AllCompensations = "all_compensations",
 }
 
 export class GetV1EmployeesEmployeeIdJobsRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the employee
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_id",
-  })
-  employeeId: string;
+    /**
+     * The UUID of the employee
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_id" })
+    employeeId: string;
 
-  /**
-   * Available options:
-   *
-   * @remarks
-   * - all_compensations: Include all effective dated compensations for each job instead of only the current compensation
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=include",
-  })
-  include?: GetV1EmployeesEmployeeIdJobsIncludeEnum;
+    /**
+     * Available options:
+     *
+     * @remarks
+     * - all_compensations: Include all effective dated compensations for each job instead of only the current compensation
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
+    include?: GetV1EmployeesEmployeeIdJobsInclude;
 
-  /**
-   * The page that is requested. When unspecified, will load all objects.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
-  page?: number;
+    /**
+     * The page that is requested. When unspecified, will load all objects.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=page" })
+    page?: number;
 
-  /**
-   * Number of objects per page. When unspecified, will default to 25
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
-  per?: number;
+    /**
+     * Number of objects per page. When unspecified, will default to 25
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=per" })
+    per?: number;
 }
 
 export class GetV1EmployeesEmployeeIdJobsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata({ elemType: shared.Job })
-  jobs?: shared.Job[];
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.Job })
+    jobs?: shared.Job[];
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

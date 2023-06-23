@@ -9,59 +9,59 @@ import { Expose } from "class-transformer";
  * Representation of a Time Off Activity
  */
 export class TimeOffActivity extends SpeakeasyBase {
-  /**
-   * The time off balance at the time of the activity
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "balance" })
-  balance?: string;
+    /**
+     * The time off balance at the time of the activity
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "balance" })
+    balance?: string;
 
-  /**
-   * The amount the time off balance changed as a result of the activity
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "balance_change" })
-  balanceChange?: string;
+    /**
+     * The amount the time off balance changed as a result of the activity
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "balance_change" })
+    balanceChange?: string;
 
-  /**
-   * The datetime of the time off activity
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "effective_time" })
-  effectiveTime?: string;
+    /**
+     * The datetime of the time off activity
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "effective_time" })
+    effectiveTime?: string;
 
-  /**
-   * A description for the time off event/activity
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "event_description" })
-  eventDescription?: string;
+    /**
+     * A description for the time off event/activity
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "event_description" })
+    eventDescription?: string;
 
-  /**
-   * The type of the time off event/activity
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "event_type" })
-  eventType?: string;
+    /**
+     * The type of the time off event/activity
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "event_type" })
+    eventType?: string;
 
-  /**
-   * The name of the time off policy for this activity
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "policy_name" })
-  policyName?: string;
+    /**
+     * The name of the time off policy for this activity
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "policy_name" })
+    policyName?: string;
 
-  /**
-   * unique identifier of a time off policy
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "policy_uuid" })
-  policyUuid?: string;
+    /**
+     * unique identifier of a time off policy
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "policy_uuid" })
+    policyUuid?: string;
 
-  /**
-   * Type of the time off activity, i.e. 'sick' or 'vacation'
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "time_off_type" })
-  timeOffType?: string;
+    /**
+     * Type of the time off activity, i.e. 'sick' or 'vacation'
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "time_off_type" })
+    timeOffType?: string;
 }

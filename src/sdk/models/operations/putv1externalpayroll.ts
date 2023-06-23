@@ -11,182 +11,170 @@ import { Expose, Type } from "class-transformer";
  * An array of benefits for the employee. Depends on your company selections, benefits include 401k, health insurance and more.
  */
 export class PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits extends SpeakeasyBase {
-  /**
-   * The ID of the benefit.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "benefit_id" })
-  benefitId?: number;
+    /**
+     * The ID of the benefit.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "benefit_id" })
+    benefitId?: number;
 
-  /**
-   * Company contribution amount towards the benefit
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_contribution_amount" })
-  companyContributionAmount?: string;
+    /**
+     * Company contribution amount towards the benefit
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_contribution_amount" })
+    companyContributionAmount?: string;
 
-  /**
-   * Employee deduction amount towards the benefit
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_deduction_amount" })
-  employeeDeductionAmount?: string;
+    /**
+     * Employee deduction amount towards the benefit
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_deduction_amount" })
+    employeeDeductionAmount?: string;
 }
 
 /**
  * The earning type for the compensation.
  */
-export enum PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningTypeEnum {
-  CompanyPayType = "CompanyPayType",
-  CompanyEarningType = "CompanyEarningType",
+export enum PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType {
+    CompanyPayType = "CompanyPayType",
+    CompanyEarningType = "CompanyEarningType",
 }
 
 /**
  * An array of earnings for the employee. Depends on your company selections, earnings includes wages, hours, bonuses, tips, commission and more.
  */
 export class PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings extends SpeakeasyBase {
-  /**
-   * The amount of the earning.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "amount" })
-  amount?: string;
+    /**
+     * The amount of the earning.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "amount" })
+    amount?: string;
 
-  /**
-   * The ID of the earning.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "earning_id" })
-  earningId?: number;
+    /**
+     * The ID of the earning.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "earning_id" })
+    earningId?: number;
 
-  /**
-   * The earning type for the compensation.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "earning_type" })
-  earningType?: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningTypeEnum;
+    /**
+     * The earning type for the compensation.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "earning_type" })
+    earningType?: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType;
 
-  /**
-   * The hour of the compensation for the pay period.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "hours" })
-  hours?: string;
+    /**
+     * The hour of the compensation for the pay period.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "hours" })
+    hours?: string;
 }
 
 export class PutV1ExternalPayrollRequestBodyExternalPayrollItemsTaxes extends SpeakeasyBase {
-  /**
-   * The amount of the tax.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "amount" })
-  amount?: string;
+    /**
+     * The amount of the tax.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "amount" })
+    amount?: string;
 
-  /**
-   * The ID of the tax.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "tax_id" })
-  taxId?: number;
+    /**
+     * The ID of the tax.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "tax_id" })
+    taxId?: number;
 }
 
 /**
  * Submit wages, benefits, taxes for each employee
  */
 export class PutV1ExternalPayrollRequestBodyExternalPayrollItems extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    elemType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits,
-  })
-  @Expose({ name: "benefits" })
-  @Type(() => PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits)
-  benefits?: PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits[];
+    @SpeakeasyMetadata({ elemType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits })
+    @Expose({ name: "benefits" })
+    @Type(() => PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits)
+    benefits?: PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits[];
 
-  @SpeakeasyMetadata({
-    elemType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings,
-  })
-  @Expose({ name: "earnings" })
-  @Type(() => PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings)
-  earnings?: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings[];
+    @SpeakeasyMetadata({ elemType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings })
+    @Expose({ name: "earnings" })
+    @Type(() => PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings)
+    earnings?: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings[];
 
-  /**
-   * The UUID of the employee.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_uuid" })
-  employeeUuid?: string;
+    /**
+     * The UUID of the employee.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_uuid" })
+    employeeUuid?: string;
 
-  /**
-   * An array of taxes for the employee. Depends on your company selections, taxes include federal income tax, social security, medicare, and more.
-   */
-  @SpeakeasyMetadata({
-    elemType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsTaxes,
-  })
-  @Expose({ name: "taxes" })
-  @Type(() => PutV1ExternalPayrollRequestBodyExternalPayrollItemsTaxes)
-  taxes?: PutV1ExternalPayrollRequestBodyExternalPayrollItemsTaxes[];
+    /**
+     * An array of taxes for the employee. Depends on your company selections, taxes include federal income tax, social security, medicare, and more.
+     */
+    @SpeakeasyMetadata({ elemType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsTaxes })
+    @Expose({ name: "taxes" })
+    @Type(() => PutV1ExternalPayrollRequestBodyExternalPayrollItemsTaxes)
+    taxes?: PutV1ExternalPayrollRequestBodyExternalPayrollItemsTaxes[];
 }
 
 export class PutV1ExternalPayrollRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    elemType: PutV1ExternalPayrollRequestBodyExternalPayrollItems,
-  })
-  @Expose({ name: "external_payroll_items" })
-  @Type(() => PutV1ExternalPayrollRequestBodyExternalPayrollItems)
-  externalPayrollItems?: PutV1ExternalPayrollRequestBodyExternalPayrollItems[];
+    @SpeakeasyMetadata({ elemType: PutV1ExternalPayrollRequestBodyExternalPayrollItems })
+    @Expose({ name: "external_payroll_items" })
+    @Type(() => PutV1ExternalPayrollRequestBodyExternalPayrollItems)
+    externalPayrollItems?: PutV1ExternalPayrollRequestBodyExternalPayrollItems[];
 
-  /**
-   * Patch update external payroll items when set to true, otherwise it will overwrite the previous changes.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "replace_fields" })
-  replaceFields?: boolean;
+    /**
+     * Patch update external payroll items when set to true, otherwise it will overwrite the previous changes.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "replace_fields" })
+    replaceFields?: boolean;
 }
 
 export class PutV1ExternalPayrollRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1ExternalPayrollRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1ExternalPayrollRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+    companyUuid: string;
 
-  /**
-   * The UUID of the external payroll
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=external_payroll_id",
-  })
-  externalPayrollId: string;
+    /**
+     * The UUID of the external payroll
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=external_payroll_id" })
+    externalPayrollId: string;
 }
 
 export class PutV1ExternalPayrollResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  externalPayroll?: shared.ExternalPayroll;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    externalPayroll?: shared.ExternalPayroll;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

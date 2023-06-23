@@ -8,98 +8,96 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Transform } from "class-transformer";
 
-export enum PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethodEnum {
-  DirectDeposit = "Direct Deposit",
-  Check = "Check",
-  HistoricalPayment = "Historical Payment",
+export enum PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod {
+    DirectDeposit = "Direct Deposit",
+    Check = "Check",
+    HistoricalPayment = "Historical Payment",
 }
 
 export class PostV1CompaniesCompanyIdContractorPaymentsRequestBody extends SpeakeasyBase {
-  /**
-   * If the contractor is on an hourly wage, this is the bonus the contractor earned
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "bonus" })
-  bonus?: number;
+    /**
+     * If the contractor is on an hourly wage, this is the bonus the contractor earned
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "bonus" })
+    bonus?: number;
 
-  /**
-   * The contractor receiving the payment
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "contractor_uuid" })
-  contractorUuid: string;
+    /**
+     * The contractor receiving the payment
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "contractor_uuid" })
+    contractorUuid: string;
 
-  /**
-   * The contractor receiving the payment
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "date" })
-  @Transform(({ value }) => new RFCDate(value), { toClassOnly: true })
-  date: RFCDate;
+    /**
+     * The contractor receiving the payment
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "date" })
+    @Transform(({ value }) => new RFCDate(value), { toClassOnly: true })
+    date: RFCDate;
 
-  /**
-   * If the contractor is on an hourly wage, this is the number of hours that the contractor worked for the payment
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "hours" })
-  hours?: number;
+    /**
+     * If the contractor is on an hourly wage, this is the number of hours that the contractor worked for the payment
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "hours" })
+    hours?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_method" })
-  paymentMethod?: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethodEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_method" })
+    paymentMethod?: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod;
 
-  /**
-   * Reimbursed wages for the contractor
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "reimbursement" })
-  reimbursement?: number;
+    /**
+     * Reimbursed wages for the contractor
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "reimbursement" })
+    reimbursement?: number;
 
-  /**
-   * If the contractor is on a fixed wage, this is the fixed wage payment for the contractor, regardless of hours worked
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "wage" })
-  wage?: number;
+    /**
+     * If the contractor is on a fixed wage, this is the fixed wage payment for the contractor, regardless of hours worked
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "wage" })
+    wage?: number;
 }
 
 export class PostV1CompaniesCompanyIdContractorPaymentsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostV1CompaniesCompanyIdContractorPaymentsRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1CompaniesCompanyIdContractorPaymentsRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 }
 
 export class PostV1CompaniesCompanyIdContractorPaymentsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  contractorPayment?: shared.ContractorPayment;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    contractorPayment?: shared.ContractorPayment;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

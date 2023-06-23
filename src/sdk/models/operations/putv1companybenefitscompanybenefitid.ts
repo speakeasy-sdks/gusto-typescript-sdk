@@ -8,65 +8,63 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class PutV1CompanyBenefitsCompanyBenefitIdRequestBody extends SpeakeasyBase {
-  /**
-   * Whether this benefit is active for employee participation. Company benefits may only be deactivated if no employees are actively participating.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "active" })
-  active?: boolean;
+    /**
+     * Whether this benefit is active for employee participation. Company benefits may only be deactivated if no employees are actively participating.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "active" })
+    active?: boolean;
 
-  /**
-   * The description of the company benefit.For example, a company may offer multiple benefits with an ID of 1 (for Medical Insurance). The description would show something more specific like “Kaiser Permanente” or “Blue Cross/ Blue Shield”.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "description" })
-  description?: string;
+    /**
+     * The description of the company benefit.For example, a company may offer multiple benefits with an ID of 1 (for Medical Insurance). The description would show something more specific like “Kaiser Permanente” or “Blue Cross/ Blue Shield”.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description?: string;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version: string;
 }
 
 export class PutV1CompanyBenefitsCompanyBenefitIdRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1CompanyBenefitsCompanyBenefitIdRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1CompanyBenefitsCompanyBenefitIdRequestBody;
 
-  /**
-   * The UUID of the company benefit
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_benefit_id",
-  })
-  companyBenefitId: string;
+    /**
+     * The UUID of the company benefit
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_benefit_id" })
+    companyBenefitId: string;
 }
 
 export class PutV1CompanyBenefitsCompanyBenefitIdResponse extends SpeakeasyBase {
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  companyBenefit?: shared.CompanyBenefit;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    companyBenefit?: shared.CompanyBenefit;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

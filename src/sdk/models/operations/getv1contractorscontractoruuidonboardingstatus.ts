@@ -7,31 +7,34 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1ContractorsContractorUuidOnboardingStatusRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the contractor
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=contractor_uuid",
-  })
-  contractorUuid: string;
+    /**
+     * The UUID of the contractor
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=contractor_uuid" })
+    contractorUuid: string;
 }
 
+/**
+ * Example response.
+ */
+export class GetV1ContractorsContractorUuidOnboardingStatus200ApplicationXML extends SpeakeasyBase {}
+
 export class GetV1ContractorsContractorUuidOnboardingStatusResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  body?: Uint8Array;
+    @SpeakeasyMetadata()
+    body?: Uint8Array;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response.
-   */
-  @SpeakeasyMetadata()
-  contractorOnboardingStatus?: shared.ContractorOnboardingStatus;
+    /**
+     * Example response.
+     */
+    @SpeakeasyMetadata()
+    contractorOnboardingStatus?: shared.ContractorOnboardingStatus1;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

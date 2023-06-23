@@ -6,24 +6,24 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class EmployeeStateTaxAnswer extends SpeakeasyBase {
-  /**
-   * The effective date of the answer - currently always “2010-01-01”.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "valid_from" })
-  validFrom?: string;
+    /**
+     * The effective date of the answer - currently always “2010-01-01”.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "valid_from" })
+    validFrom?: string;
 
-  /**
-   * The effective end date of the answer - currently always null.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "valid_up_to" })
-  validUpTo?: any;
+    /**
+     * The effective end date of the answer - currently always null.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "valid_up_to" })
+    validUpTo?: any;
 
-  /**
-   * The answer to the corresponding question - this may be a string, number, boolean, or null.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "value" })
-  value?: string;
+    /**
+     * The answer to the corresponding question - this may be a string, number, boolean, or null.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "value" })
+    value?: string;
 }

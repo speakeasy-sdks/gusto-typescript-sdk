@@ -7,93 +7,93 @@ import { CompanyAddress } from "./companyaddress";
 import { Expose, Type } from "class-transformer";
 
 export class CurrentUserRolesPayrollAdminCompanies extends SpeakeasyBase {
-  /**
-   * Whether the company is fully managed by a partner via the API
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "is_partner_managed" })
-  isPartnerManaged?: boolean;
+    /**
+     * Whether the company is fully managed by a partner via the API
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "is_partner_managed" })
+    isPartnerManaged?: boolean;
 
-  /**
-   * A list of the company locations.
-   */
-  @SpeakeasyMetadata({ elemType: CompanyAddress })
-  @Expose({ name: "locations" })
-  @Type(() => CompanyAddress)
-  locations?: CompanyAddress[];
+    /**
+     * A list of the company locations.
+     */
+    @SpeakeasyMetadata({ elemType: CompanyAddress })
+    @Expose({ name: "locations" })
+    @Type(() => CompanyAddress)
+    locations?: CompanyAddress[];
 
-  /**
-   * The name of the company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    /**
+     * The name of the company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  /**
-   * The tier of the company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "tier" })
-  tier?: string;
+    /**
+     * The tier of the company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "tier" })
+    tier?: string;
 
-  /**
-   * The trade name of the company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "trade_name" })
-  tradeName?: string;
+    /**
+     * The trade name of the company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "trade_name" })
+    tradeName?: string;
 
-  /**
-   * The UUID of the company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }
 
 export class CurrentUserRolesPayrollAdmin extends SpeakeasyBase {
-  /**
-   * A lists of companies for which the current user has admin permissions. Users (most notably accountants) can have privileges with multiple companies.
-   */
-  @SpeakeasyMetadata({ elemType: CurrentUserRolesPayrollAdminCompanies })
-  @Expose({ name: "companies" })
-  @Type(() => CurrentUserRolesPayrollAdminCompanies)
-  companies?: CurrentUserRolesPayrollAdminCompanies[];
+    /**
+     * A lists of companies for which the current user has admin permissions. Users (most notably accountants) can have privileges with multiple companies.
+     */
+    @SpeakeasyMetadata({ elemType: CurrentUserRolesPayrollAdminCompanies })
+    @Expose({ name: "companies" })
+    @Type(() => CurrentUserRolesPayrollAdminCompanies)
+    companies?: CurrentUserRolesPayrollAdminCompanies[];
 }
 
 /**
  * An object containing each of the user's permissions.
  */
 export class CurrentUserRoles extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "payroll_admin" })
-  @Type(() => CurrentUserRolesPayrollAdmin)
-  payrollAdmin?: CurrentUserRolesPayrollAdmin;
+    @SpeakeasyMetadata()
+    @Expose({ name: "payroll_admin" })
+    @Type(() => CurrentUserRolesPayrollAdmin)
+    payrollAdmin?: CurrentUserRolesPayrollAdmin;
 }
 
 /**
  * Example response
  */
 export class CurrentUser extends SpeakeasyBase {
-  /**
-   * The email address of the authenticated user.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email?: string;
+    /**
+     * The email address of the authenticated user.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email?: string;
 
-  /**
-   * An object containing each of the user's permissions.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "roles" })
-  @Type(() => CurrentUserRoles)
-  roles?: CurrentUserRoles;
+    /**
+     * An object containing each of the user's permissions.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "roles" })
+    @Type(() => CurrentUserRoles)
+    roles?: CurrentUserRoles;
 
-  /**
-   * The UUID of the current user.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the current user.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }

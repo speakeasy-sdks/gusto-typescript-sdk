@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetTimeOffPoliciesTimeOffPolicyUuidRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company time off policy
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid",
-  })
-  timeOffPolicyUuid: string;
+    /**
+     * The UUID of the company time off policy
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=time_off_policy_uuid" })
+    timeOffPolicyUuid: string;
 }
 
 export class GetTimeOffPoliciesTimeOffPolicyUuidResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  timeOffPolicy?: shared.TimeOffPolicy;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    timeOffPolicy?: shared.TimeOffPolicy;
 }

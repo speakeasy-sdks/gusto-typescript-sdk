@@ -6,65 +6,65 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
 export class CompanyOnboardingStatusOnboardingStep extends SpeakeasyBase {
-  /**
-   * The boolean flag indicating whether the step is completed or not.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "completed" })
-  completed?: boolean;
+    /**
+     * The boolean flag indicating whether the step is completed or not.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "completed" })
+    completed?: boolean;
 
-  /**
-   * The string identifier for each onboarding step
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    /**
+     * The string identifier for each onboarding step
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * The boolean flag indicating whether the step is required or optional
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "required" })
-  required?: boolean;
+    /**
+     * The boolean flag indicating whether the step is required or optional
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "required" })
+    required?: boolean;
 
-  /**
-   * A list of onboarding step that are required to be completed in order to proceed with the current onboarding step.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "requirements" })
-  requirements?: string[];
+    /**
+     * A list of onboarding step that are required to be completed in order to proceed with the current onboarding step.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "requirements" })
+    requirements?: string[];
 
-  /**
-   * The display name of the onboarding step
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "title" })
-  title?: string;
+    /**
+     * The display name of the onboarding step
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "title" })
+    title?: string;
 }
 
 /**
  * The representation of a company's onboarding status
  */
 export class CompanyOnboardingStatus extends SpeakeasyBase {
-  /**
-   * a boolean flag for the company's onboarding status
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "onboarding_completed" })
-  onboardingCompleted?: boolean;
+    /**
+     * a boolean flag for the company's onboarding status
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "onboarding_completed" })
+    onboardingCompleted?: boolean;
 
-  /**
-   * a list of company onboarding steps
-   */
-  @SpeakeasyMetadata({ elemType: CompanyOnboardingStatusOnboardingStep })
-  @Expose({ name: "onboarding_steps" })
-  @Type(() => CompanyOnboardingStatusOnboardingStep)
-  onboardingSteps?: CompanyOnboardingStatusOnboardingStep[];
+    /**
+     * a list of company onboarding steps
+     */
+    @SpeakeasyMetadata({ elemType: CompanyOnboardingStatusOnboardingStep })
+    @Expose({ name: "onboarding_steps" })
+    @Type(() => CompanyOnboardingStatusOnboardingStep)
+    onboardingSteps?: CompanyOnboardingStatusOnboardingStep[];
 
-  /**
-   * the UUID of the company
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * the UUID of the company
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }

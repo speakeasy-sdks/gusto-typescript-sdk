@@ -9,76 +9,76 @@ import { Expose } from "class-transformer";
  * The representation of an address in Gusto.
  */
 export class Location extends SpeakeasyBase {
-  /**
-   * The status of the location. Inactive locations have been deleted, but may still have historical data associated with them.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "active" })
-  active?: boolean;
+    /**
+     * The status of the location. Inactive locations have been deleted, but may still have historical data associated with them.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "active" })
+    active?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "city" })
-  city?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "city" })
+    city?: string;
 
-  /**
-   * The UUID for the company to which the location belongs. Only included if the location belongs to a company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_uuid" })
-  companyUuid?: string;
+    /**
+     * The UUID for the company to which the location belongs. Only included if the location belongs to a company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_uuid" })
+    companyUuid?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "country" })
-  country?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "country" })
+    country?: string;
 
-  /**
-   * Specifies if the location is the company's filing address. Only included if the location belongs to a company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "filing_address" })
-  filingAddress?: boolean;
+    /**
+     * Specifies if the location is the company's filing address. Only included if the location belongs to a company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "filing_address" })
+    filingAddress?: boolean;
 
-  /**
-   * Specifies if the location is the company's mailing address. Only included if the location belongs to a company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "mailing_address" })
-  mailingAddress?: boolean;
+    /**
+     * Specifies if the location is the company's mailing address. Only included if the location belongs to a company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "mailing_address" })
+    mailingAddress?: boolean;
 
-  /**
-   * The phone number for the location. Required for company locations. Optional for employee locations.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "phone_number" })
-  phoneNumber?: string;
+    /**
+     * The phone number for the location. Required for company locations. Optional for employee locations.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "phone_number" })
+    phoneNumber?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "street_1" })
-  street1?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "street_1" })
+    street1?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "street_2" })
-  street2?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "street_2" })
+    street2?: string;
 
-  /**
-   * The UUID of the location object.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the location object.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version?: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "zip" })
-  zip?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "zip" })
+    zip?: string;
 }

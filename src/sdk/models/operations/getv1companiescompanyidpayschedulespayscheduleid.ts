@@ -7,36 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 
-  /**
-   * The UUID of the pay schedule
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=pay_schedule_id",
-  })
-  payScheduleId: string;
+    /**
+     * The UUID of the pay schedule
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=pay_schedule_id" })
+    payScheduleId: string;
 }
 
 export class GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  paySchedule?: shared.PaySchedule;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    paySchedule?: shared.PaySchedule;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

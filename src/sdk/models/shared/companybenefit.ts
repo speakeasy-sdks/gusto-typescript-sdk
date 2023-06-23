@@ -9,32 +9,32 @@ import { Expose, Type } from "class-transformer";
  * A single tier of a tiered matching scheme.
  */
 export class CompanyBenefitEmployeeBenefitsContributionValue2Tiers extends SpeakeasyBase {
-  /**
-   * The percentage of employee deduction within this tier the company contribution will match.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "rate" })
-  rate?: string;
+    /**
+     * The percentage of employee deduction within this tier the company contribution will match.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "rate" })
+    rate?: string;
 
-  /**
-   * The percentage threshold at which this tier ends (inclusive).
-   *
-   * @remarks
-   *
-   * For example, a value of "5" means the company contribution will match employee deductions from the previous tier's threshold up to and including 5% of payroll.
-   *
-   * If this is the first tier, a value of "5" means the company contribution will match employee deductions from 0% up to and including 5% of payroll.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "threshold" })
-  threshold?: string;
+    /**
+     * The percentage threshold at which this tier ends (inclusive).
+     *
+     * @remarks
+     *
+     * For example, a value of "5" means the company contribution will match employee deductions from the previous tier's threshold up to and including 5% of payroll.
+     *
+     * If this is the first tier, a value of "5" means the company contribution will match employee deductions from 0% up to and including 5% of payroll.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "threshold" })
+    threshold?: string;
 
-  /**
-   * The step up difference between this tier's threshold and the previous tier's threshold. In the first tier, this is equivalent to threshold.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "threshold_delta" })
-  thresholdDelta?: string;
+    /**
+     * The step up difference between this tier's threshold and the previous tier's threshold. In the first tier, this is equivalent to threshold.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "threshold_delta" })
+    thresholdDelta?: string;
 }
 
 /**
@@ -45,170 +45,168 @@ export class CompanyBenefitEmployeeBenefitsContributionValue2Tiers extends Speak
  * For the `tiered` contribution type, an array of tiers.
  */
 export class CompanyBenefitEmployeeBenefitsContributionValue2 extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    elemType: CompanyBenefitEmployeeBenefitsContributionValue2Tiers,
-  })
-  @Expose({ name: "tiers" })
-  @Type(() => CompanyBenefitEmployeeBenefitsContributionValue2Tiers)
-  tiers?: CompanyBenefitEmployeeBenefitsContributionValue2Tiers[];
+    @SpeakeasyMetadata({ elemType: CompanyBenefitEmployeeBenefitsContributionValue2Tiers })
+    @Expose({ name: "tiers" })
+    @Type(() => CompanyBenefitEmployeeBenefitsContributionValue2Tiers)
+    tiers?: CompanyBenefitEmployeeBenefitsContributionValue2Tiers[];
 }
 
 /**
  * An object representing the type and value of the company contribution.
  */
 export class CompanyBenefitEmployeeBenefitsContribution extends SpeakeasyBase {
-  /**
-   * The company contribution scheme.
-   *
-   * @remarks
-   *
-   * "amount": The company contributes a fixed amount per payroll. If elective is true, the contribution is matching, dollar-for-dollar.
-   *
-   * "percentage": The company contributes a percentage of the payroll amount per payroll period. If elective is true, the contribution is matching, dollar-for-dollar.
-   *
-   * "tiered": The company contribution varies according to the size of the employee deduction.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: string;
+    /**
+     * The company contribution scheme.
+     *
+     * @remarks
+     *
+     * "amount": The company contributes a fixed amount per payroll. If elective is true, the contribution is matching, dollar-for-dollar.
+     *
+     * "percentage": The company contributes a percentage of the payroll amount per payroll period. If elective is true, the contribution is matching, dollar-for-dollar.
+     *
+     * "tiered": The company contribution varies according to the size of the employee deduction.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: string;
 
-  /**
-   * For the `amount` and `percentage` contribution types, the value of the corresponding amount or percentage.
-   *
-   * @remarks
-   *
-   * For the `tiered` contribution type, an array of tiers.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "value" })
-  value?: any;
+    /**
+     * For the `amount` and `percentage` contribution types, the value of the corresponding amount or percentage.
+     *
+     * @remarks
+     *
+     * For the `tiered` contribution type, an array of tiers.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "value" })
+    value?: any;
 }
 
 export class CompanyBenefitEmployeeBenefits extends SpeakeasyBase {
-  /**
-   * Whether the employee benefit is active.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "active" })
-  active?: boolean;
+    /**
+     * Whether the employee benefit is active.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "active" })
+    active?: boolean;
 
-  /**
-   * The UUID of the company to which the benefit belongs.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_benefit_uuid" })
-  companyBenefitUuid?: string;
+    /**
+     * The UUID of the company to which the benefit belongs.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_benefit_uuid" })
+    companyBenefitUuid?: string;
 
-  /**
-   * The value of the company contribution
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_contribution" })
-  companyContribution?: string;
+    /**
+     * The value of the company contribution
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_contribution" })
+    companyContribution?: string;
 
-  /**
-   * An object representing the type and value of the company contribution.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "contribution" })
-  @Type(() => CompanyBenefitEmployeeBenefitsContribution)
-  contribution?: CompanyBenefitEmployeeBenefitsContribution;
+    /**
+     * An object representing the type and value of the company contribution.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "contribution" })
+    @Type(() => CompanyBenefitEmployeeBenefitsContribution)
+    contribution?: CompanyBenefitEmployeeBenefitsContribution;
 
-  /**
-   * Whether the employee deduction amount should be treated as a percentage to be deducted from each payroll.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "deduct_as_percentage" })
-  deductAsPercentage?: boolean;
+    /**
+     * Whether the employee deduction amount should be treated as a percentage to be deducted from each payroll.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "deduct_as_percentage" })
+    deductAsPercentage?: boolean;
 
-  /**
-   * The amount to be deducted, per pay period, from the employee's pay.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_deduction" })
-  employeeDeduction?: string;
+    /**
+     * The amount to be deducted, per pay period, from the employee's pay.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_deduction" })
+    employeeDeduction?: string;
 
-  /**
-   * The UUID of the employee to which the benefit belongs.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_uuid" })
-  employeeUuid?: string;
+    /**
+     * The UUID of the employee to which the benefit belongs.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_uuid" })
+    employeeUuid?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }
 
 /**
  * The representation of a company benefit.
  */
 export class CompanyBenefit extends SpeakeasyBase {
-  /**
-   * Whether this benefit is active for employee participation. Company benefits may only be deactivated if no employees are actively participating.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "active" })
-  active?: boolean;
+    /**
+     * Whether this benefit is active for employee participation. Company benefits may only be deactivated if no employees are actively participating.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "active" })
+    active?: boolean;
 
-  /**
-   * The type of the benefit to which the company benefit belongs.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "benefit_type" })
-  benefitType?: number;
+    /**
+     * The type of the benefit to which the company benefit belongs.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "benefit_type" })
+    benefitType?: number;
 
-  /**
-   * Whether this company benefit can be deleted. Deletable will be set to true if the benefit has not been used in payroll, has no employee benefits associated, and the benefit is not owned by Gusto or a Partner
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "deletable" })
-  deletable?: boolean;
+    /**
+     * Whether this company benefit can be deleted. Deletable will be set to true if the benefit has not been used in payroll, has no employee benefits associated, and the benefit is not owned by Gusto or a Partner
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "deletable" })
+    deletable?: boolean;
 
-  /**
-   * The description of the company benefit.For example, a company may offer multiple benefits with an ID of 1 (for Medical Insurance). The description would show something more specific like “Kaiser Permanente” or “Blue Cross/ Blue Shield”.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "description" })
-  description?: string;
+    /**
+     * The description of the company benefit.For example, a company may offer multiple benefits with an ID of 1 (for Medical Insurance). The description would show something more specific like “Kaiser Permanente” or “Blue Cross/ Blue Shield”.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description?: string;
 
-  @SpeakeasyMetadata({ elemType: CompanyBenefitEmployeeBenefits })
-  @Expose({ name: "employee_benefits" })
-  @Type(() => CompanyBenefitEmployeeBenefits)
-  employeeBenefits?: CompanyBenefitEmployeeBenefits[];
+    @SpeakeasyMetadata({ elemType: CompanyBenefitEmployeeBenefits })
+    @Expose({ name: "employee_benefits" })
+    @Type(() => CompanyBenefitEmployeeBenefits)
+    employeeBenefits?: CompanyBenefitEmployeeBenefits[];
 
-  /**
-   * Whether the employer is subject to file W-2 forms for an employee on leave. Only applicable to third party sick pay benefits.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "responsible_for_employee_w2" })
-  responsibleForEmployeeW2?: boolean;
+    /**
+     * Whether the employer is subject to file W-2 forms for an employee on leave. Only applicable to third party sick pay benefits.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "responsible_for_employee_w2" })
+    responsibleForEmployeeW2?: boolean;
 
-  /**
-   * Whether the employer is subject to pay employer taxes when an employee is on leave. Only applicable to third party sick pay benefits.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "responsible_for_employer_taxes" })
-  responsibleForEmployerTaxes?: boolean;
+    /**
+     * Whether the employer is subject to pay employer taxes when an employee is on leave. Only applicable to third party sick pay benefits.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "responsible_for_employer_taxes" })
+    responsibleForEmployerTaxes?: boolean;
 
-  /**
-   * Whether employee deductions and company contributions can be set as percentages of payroll for an individual employee. This is determined by the type of benefit and is not configurable by the company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "supports_percentage_amounts" })
-  supportsPercentageAmounts?: boolean;
+    /**
+     * Whether employee deductions and company contributions can be set as percentages of payroll for an individual employee. This is determined by the type of benefit and is not configurable by the company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "supports_percentage_amounts" })
+    supportsPercentageAmounts?: boolean;
 
-  /**
-   * The UUID of the company benefit.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the company benefit.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version?: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version?: string;
 }

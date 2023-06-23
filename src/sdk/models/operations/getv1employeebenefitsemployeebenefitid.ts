@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1EmployeeBenefitsEmployeeBenefitIdRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the employee benefit.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=employee_benefit_id",
-  })
-  employeeBenefitId: string;
+    /**
+     * The UUID of the employee benefit.
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=employee_benefit_id" })
+    employeeBenefitId: string;
 }
 
 export class GetV1EmployeeBenefitsEmployeeBenefitIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  employeeBenefit?: shared.EmployeeBenefit;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    employeeBenefit?: shared.EmployeeBenefit;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

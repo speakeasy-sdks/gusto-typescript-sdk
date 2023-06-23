@@ -1,0 +1,9 @@
+# PutV1WebhookSubscriptionUuidRequest
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `requestBody`                                                                                                 | [PutV1WebhookSubscriptionUuidRequestBody](../../models/operations/putv1webhooksubscriptionuuidrequestbody.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |
+| `webhookSubscriptionUuid`                                                                                     | *string*                                                                                                      | :heavy_check_mark:                                                                                            | The webhook subscription UUID.                                                                                |

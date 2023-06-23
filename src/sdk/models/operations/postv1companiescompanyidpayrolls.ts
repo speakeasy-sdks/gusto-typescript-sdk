@@ -7,112 +7,110 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReasonEnum {
-  Bonus = "Bonus",
-  Correction = "Correction",
-  DismissedEmployee = "Dismissed employee",
+export enum PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason {
+    Bonus = "Bonus",
+    Correction = "Correction",
+    DismissedEmployee = "Dismissed employee",
 }
 
 /**
  * The payment schedule tax rate the payroll is based on
  */
-export enum PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriodEnum {
-  EveryWeek = "Every week",
-  EveryOtherWeek = "Every other week",
-  TwicePerMonth = "Twice per month",
-  Monthly = "Monthly",
-  Quarterly = "Quarterly",
-  Semiannually = "Semiannually",
-  Annually = "Annually",
+export enum PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod {
+    EveryWeek = "Every week",
+    EveryOtherWeek = "Every other week",
+    TwicePerMonth = "Twice per month",
+    Monthly = "Monthly",
+    Quarterly = "Quarterly",
+    Semiannually = "Semiannually",
+    Annually = "Annually",
 }
 
 export class PostV1CompaniesCompanyIdPayrollsRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "check_date" })
-  checkDate?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "check_date" })
+    checkDate?: string;
 
-  /**
-   * A list of employee uuids to include on the payroll.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_uuids" })
-  employeeUuids?: string[];
+    /**
+     * A list of employee uuids to include on the payroll.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_uuids" })
+    employeeUuids?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "end_date" })
-  endDate: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "end_date" })
+    endDate: string;
 
-  /**
-   * Enable taxes to be withheld at the IRS's required rate of 22% for federal income taxes. State income taxes will be taxed at the state's supplemental tax rate. Otherwise, we'll sum the entirety of the employee's wages and withhold taxes on the entire amount at the rate for regular wages.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "fixed_withholding_rate" })
-  fixedWithholdingRate?: boolean;
+    /**
+     * Enable taxes to be withheld at the IRS's required rate of 22% for federal income taxes. State income taxes will be taxed at the state's supplemental tax rate. Otherwise, we'll sum the entirety of the employee's wages and withhold taxes on the entire amount at the rate for regular wages.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "fixed_withholding_rate" })
+    fixedWithholdingRate?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "off_cycle" })
-  offCycle: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "off_cycle" })
+    offCycle: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "off_cycle_reason" })
-  offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReasonEnum;
+    @SpeakeasyMetadata()
+    @Expose({ name: "off_cycle_reason" })
+    offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason;
 
-  /**
-   * Block regular deductions and contributions for this payroll.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "skip_regular_deductions" })
-  skipRegularDeductions?: boolean;
+    /**
+     * Block regular deductions and contributions for this payroll.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "skip_regular_deductions" })
+    skipRegularDeductions?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "start_date" })
-  startDate: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "start_date" })
+    startDate: string;
 
-  /**
-   * The payment schedule tax rate the payroll is based on
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "withholding_pay_period" })
-  withholdingPayPeriod?: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriodEnum;
+    /**
+     * The payment schedule tax rate the payroll is based on
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "withholding_pay_period" })
+    withholdingPayPeriod?: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod;
 }
 
 export class PostV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostV1CompaniesCompanyIdPayrollsRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1CompaniesCompanyIdPayrollsRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 }
 
 export class PostV1CompaniesCompanyIdPayrollsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  payroll?: shared.Payroll;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    payroll?: shared.Payroll;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

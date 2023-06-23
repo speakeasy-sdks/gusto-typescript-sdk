@@ -14,178 +14,178 @@ import { Expose, Type } from "class-transformer";
 /**
  * The current employment status of the employee. Full-time employees work 30+ hours per week. Part-time employees are split into two groups: those that work 20-29 hours a week, and those that work under 20 hours a week. Variable employees have hours that vary each week. Seasonal employees are hired for 6 months of the year or less.
  */
-export enum EmployeeCurrentEmploymentStatusEnum {
-  FullTime = "full_time",
-  PartTimeUnderTwentyHours = "part_time_under_twenty_hours",
-  PartTimeTwentyPlusHours = "part_time_twenty_plus_hours",
-  Variable = "variable",
-  Seasonal = "seasonal",
+export enum EmployeeCurrentEmploymentStatus {
+    FullTime = "full_time",
+    PartTimeUnderTwentyHours = "part_time_under_twenty_hours",
+    PartTimeTwentyPlusHours = "part_time_twenty_plus_hours",
+    Variable = "variable",
+    Seasonal = "seasonal",
 }
 
 /**
  * The employee's payment method
  */
-export enum EmployeePaymentMethodEnum {
-  DirectDeposit = "Direct Deposit",
-  Check = "Check",
+export enum EmployeePaymentMethod {
+    DirectDeposit = "Direct Deposit",
+    Check = "Check",
 }
 
 /**
  * The representation of an employee in Gusto.
  */
 export class Employee extends SpeakeasyBase {
-  /**
-   * The UUID of the company the employee is employed by.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_uuid" })
-  companyUuid?: string;
+    /**
+     * The UUID of the company the employee is employed by.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_uuid" })
+    companyUuid?: string;
 
-  /**
-   * The current employment status of the employee. Full-time employees work 30+ hours per week. Part-time employees are split into two groups: those that work 20-29 hours a week, and those that work under 20 hours a week. Variable employees have hours that vary each week. Seasonal employees are hired for 6 months of the year or less.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "current_employment_status" })
-  currentEmploymentStatus?: EmployeeCurrentEmploymentStatusEnum;
+    /**
+     * The current employment status of the employee. Full-time employees work 30+ hours per week. Part-time employees are split into two groups: those that work 20-29 hours a week, and those that work under 20 hours a week. Variable employees have hours that vary each week. Seasonal employees are hired for 6 months of the year or less.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "current_employment_status" })
+    currentEmploymentStatus?: EmployeeCurrentEmploymentStatus;
 
-  /**
-   * Custom fields are only included for the employee if the include param has the custom_fields value set
-   */
-  @SpeakeasyMetadata({ elemType: EmployeeCustomField })
-  @Expose({ name: "custom_fields" })
-  @Type(() => EmployeeCustomField)
-  customFields?: EmployeeCustomField[];
+    /**
+     * Custom fields are only included for the employee if the include param has the custom_fields value set
+     */
+    @SpeakeasyMetadata({ elemType: EmployeeCustomField })
+    @Expose({ name: "custom_fields" })
+    @Type(() => EmployeeCustomField)
+    customFields?: EmployeeCustomField[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "date_of_birth" })
-  dateOfBirth?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "date_of_birth" })
+    dateOfBirth?: string;
 
-  /**
-   * The employee's department in the company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "department" })
-  department?: string;
+    /**
+     * The employee's department in the company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "department" })
+    department?: string;
 
-  @SpeakeasyMetadata({ elemType: PaidTimeOff })
-  @Expose({ name: "eligible_paid_time_off" })
-  @Type(() => PaidTimeOff)
-  eligiblePaidTimeOff?: PaidTimeOff[];
+    @SpeakeasyMetadata({ elemType: PaidTimeOff })
+    @Expose({ name: "eligible_paid_time_off" })
+    @Type(() => PaidTimeOff)
+    eligiblePaidTimeOff?: PaidTimeOff[];
 
-  /**
-   * The email address of the employee. This is provided to support syncing users between our system and yours. You may not use this email address for any other purpose (e.g. marketing).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email?: string;
+    /**
+     * The email address of the employee. This is provided to support syncing users between our system and yours. You may not use this email address for any other purpose (e.g. marketing).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "first_name" })
-  firstName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "first_name" })
+    firstName?: string;
 
-  @SpeakeasyMetadata({ elemType: Garnishment })
-  @Expose({ name: "garnishments" })
-  @Type(() => Garnishment)
-  garnishments?: Garnishment[];
+    @SpeakeasyMetadata({ elemType: Garnishment })
+    @Expose({ name: "garnishments" })
+    @Type(() => Garnishment)
+    garnishments?: Garnishment[];
 
-  /**
-   * Indicates whether the employee has an SSN in Gusto.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "has_ssn" })
-  hasSsn?: boolean;
+    /**
+     * Indicates whether the employee has an SSN in Gusto.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "has_ssn" })
+    hasSsn?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "home_address" })
-  @Type(() => EmployeeAddress)
-  homeAddress?: EmployeeAddress;
+    @SpeakeasyMetadata()
+    @Expose({ name: "home_address" })
+    @Type(() => EmployeeAddress)
+    homeAddress?: EmployeeAddress;
 
-  @SpeakeasyMetadata({ elemType: Job })
-  @Expose({ name: "jobs" })
-  @Type(() => Job)
-  jobs?: Job[];
+    @SpeakeasyMetadata({ elemType: Job })
+    @Expose({ name: "jobs" })
+    @Type(() => Job)
+    jobs?: Job[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "last_name" })
-  lastName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "last_name" })
+    lastName?: string;
 
-  /**
-   * The UUID of the employee's manager.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "manager_uuid" })
-  managerUuid?: string;
+    /**
+     * The UUID of the employee's manager.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "manager_uuid" })
+    managerUuid?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "middle_initial" })
-  middleInitial?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "middle_initial" })
+    middleInitial?: string;
 
-  /**
-   * Whether the employee has completed onboarding.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "onboarded" })
-  onboarded?: boolean;
+    /**
+     * Whether the employee has completed onboarding.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "onboarded" })
+    onboarded?: boolean;
 
-  /**
-   * The employee's payment method
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_method" })
-  paymentMethod?: EmployeePaymentMethodEnum;
+    /**
+     * The employee's payment method
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_method" })
+    paymentMethod?: EmployeePaymentMethod;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "phone" })
-  phone?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "phone" })
+    phone?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "preferred_first_name" })
-  preferredFirstName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "preferred_first_name" })
+    preferredFirstName?: string;
 
-  /**
-   * Deprecated. This field always returns an empty string.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "ssn" })
-  ssn?: string;
+    /**
+     * Deprecated. This field always returns an empty string.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "ssn" })
+    ssn?: string;
 
-  /**
-   * Whether the employee is terminated.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "terminated" })
-  terminated?: boolean;
+    /**
+     * Whether the employee is terminated.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "terminated" })
+    terminated?: boolean;
 
-  @SpeakeasyMetadata({ elemType: Termination })
-  @Expose({ name: "terminations" })
-  @Type(() => Termination)
-  terminations?: Termination[];
+    @SpeakeasyMetadata({ elemType: Termination })
+    @Expose({ name: "terminations" })
+    @Type(() => Termination)
+    terminations?: Termination[];
 
-  /**
-   * Whether the employee is a two percent shareholder of the company. This field only applies to companies with an S-Corp entity type.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "two_percent_shareholder" })
-  twoPercentShareholder?: boolean;
+    /**
+     * Whether the employee is a two percent shareholder of the company. This field only applies to companies with an S-Corp entity type.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "two_percent_shareholder" })
+    twoPercentShareholder?: boolean;
 
-  /**
-   * The UUID of the employee in Gusto.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the employee in Gusto.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 
-  /**
-   * The current version of the employee. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version?: string;
+    /**
+     * The current version of the employee. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version?: string;
 
-  /**
-   * The work email address of the employee. This is provided to support syncing users between our system and yours. You may not use this email address for any other purpose (e.g. marketing).
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "work_email" })
-  workEmail?: string;
+    /**
+     * The work email address of the employee. This is provided to support syncing users between our system and yours. You may not use this email address for any other purpose (e.g. marketing).
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "work_email" })
+    workEmail?: string;
 }

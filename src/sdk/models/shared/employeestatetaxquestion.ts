@@ -8,34 +8,34 @@ import { EmployeeStateTaxInputQuestionFormat } from "./employeestatetaxinputques
 import { Expose, Type } from "class-transformer";
 
 export class EmployeeStateTaxQuestion extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: EmployeeStateTaxAnswer })
-  @Expose({ name: "answers" })
-  @Type(() => EmployeeStateTaxAnswer)
-  answers: EmployeeStateTaxAnswer[];
+    @SpeakeasyMetadata({ elemType: EmployeeStateTaxAnswer })
+    @Expose({ name: "answers" })
+    @Type(() => EmployeeStateTaxAnswer)
+    answers: EmployeeStateTaxAnswer[];
 
-  /**
-   * An explaination of the question - this may contain inline html formatted links.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "description" })
-  description: string;
+    /**
+     * An explaination of the question - this may contain inline html formatted links.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "input_question_format" })
-  @Type(() => EmployeeStateTaxInputQuestionFormat)
-  inputQuestionFormat: EmployeeStateTaxInputQuestionFormat;
+    @SpeakeasyMetadata()
+    @Expose({ name: "input_question_format" })
+    @Type(() => EmployeeStateTaxInputQuestionFormat)
+    inputQuestionFormat: EmployeeStateTaxInputQuestionFormat;
 
-  /**
-   * A unique identifier of the question (for the given state) - used for updating the answer.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "key" })
-  key: string;
+    /**
+     * A unique identifier of the question (for the given state) - used for updating the answer.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "key" })
+    key: string;
 
-  /**
-   * A short title for the question
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "label" })
-  label: string;
+    /**
+     * A short title for the question
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "label" })
+    label: string;
 }

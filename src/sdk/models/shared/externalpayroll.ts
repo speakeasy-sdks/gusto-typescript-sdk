@@ -6,202 +6,202 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
 export class ExternalPayrollApplicableBenefits extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "active" })
-  active?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "active" })
+    active?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "description" })
-  description?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: number;
 }
 
 export class ExternalPayrollApplicableEarnings extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "category" })
-  category?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "category" })
+    category?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "earning_id" })
-  earningId?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "earning_id" })
+    earningId?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "earning_type" })
-  earningType?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "earning_type" })
+    earningType?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "input_type" })
-  inputType?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "input_type" })
+    inputType?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 }
 
 export class ExternalPayrollApplicableTaxes extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 }
 
 export class ExternalPayrollExternalPayrollItemsBenefits extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "benefit_id" })
-  benefitId?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "benefit_id" })
+    benefitId?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_contribution_amount" })
-  companyContributionAmount?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_contribution_amount" })
+    companyContributionAmount?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_deduction_amount" })
-  employeeDeductionAmount?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_deduction_amount" })
+    employeeDeductionAmount?: string;
 }
 
 export class ExternalPayrollExternalPayrollItemsEarnings extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "amount" })
-  amount?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "amount" })
+    amount?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "earning_id" })
-  earningId?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "earning_id" })
+    earningId?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "earning_type" })
-  earningType?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "earning_type" })
+    earningType?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "hours" })
-  hours?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "hours" })
+    hours?: string;
 }
 
 export class ExternalPayrollExternalPayrollItemsTaxes extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "amount" })
-  amount?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "amount" })
+    amount?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "tax_id" })
-  taxId?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "tax_id" })
+    taxId?: number;
 }
 
 export class ExternalPayrollExternalPayrollItems extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItemsBenefits })
-  @Expose({ name: "benefits" })
-  @Type(() => ExternalPayrollExternalPayrollItemsBenefits)
-  benefits?: ExternalPayrollExternalPayrollItemsBenefits[];
+    @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItemsBenefits })
+    @Expose({ name: "benefits" })
+    @Type(() => ExternalPayrollExternalPayrollItemsBenefits)
+    benefits?: ExternalPayrollExternalPayrollItemsBenefits[];
 
-  @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItemsEarnings })
-  @Expose({ name: "earnings" })
-  @Type(() => ExternalPayrollExternalPayrollItemsEarnings)
-  earnings?: ExternalPayrollExternalPayrollItemsEarnings[];
+    @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItemsEarnings })
+    @Expose({ name: "earnings" })
+    @Type(() => ExternalPayrollExternalPayrollItemsEarnings)
+    earnings?: ExternalPayrollExternalPayrollItemsEarnings[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_uuid" })
-  employeeUuid?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_uuid" })
+    employeeUuid?: string;
 
-  @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItemsTaxes })
-  @Expose({ name: "taxes" })
-  @Type(() => ExternalPayrollExternalPayrollItemsTaxes)
-  taxes?: ExternalPayrollExternalPayrollItemsTaxes[];
+    @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItemsTaxes })
+    @Expose({ name: "taxes" })
+    @Type(() => ExternalPayrollExternalPayrollItemsTaxes)
+    taxes?: ExternalPayrollExternalPayrollItemsTaxes[];
 }
 
 /**
  * Stores metadata of the external payroll.
  */
 export class ExternalPayrollMetadata extends SpeakeasyBase {
-  /**
-   * Determines if the external payroll can be deleted.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "deletable" })
-  deletable?: boolean;
+    /**
+     * Determines if the external payroll can be deleted.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "deletable" })
+    deletable?: boolean;
 }
 
 /**
  * The representation of an external payroll.
  */
 export class ExternalPayroll extends SpeakeasyBase {
-  /**
-   * Applicable benefits based on company provisioning.
-   */
-  @SpeakeasyMetadata({ elemType: ExternalPayrollApplicableBenefits })
-  @Expose({ name: "applicable_benefits" })
-  @Type(() => ExternalPayrollApplicableBenefits)
-  applicableBenefits?: ExternalPayrollApplicableBenefits[];
+    /**
+     * Applicable benefits based on company provisioning.
+     */
+    @SpeakeasyMetadata({ elemType: ExternalPayrollApplicableBenefits })
+    @Expose({ name: "applicable_benefits" })
+    @Type(() => ExternalPayrollApplicableBenefits)
+    applicableBenefits?: ExternalPayrollApplicableBenefits[];
 
-  /**
-   * Applicable earnings based on company provisioning.
-   */
-  @SpeakeasyMetadata({ elemType: ExternalPayrollApplicableEarnings })
-  @Expose({ name: "applicable_earnings" })
-  @Type(() => ExternalPayrollApplicableEarnings)
-  applicableEarnings?: ExternalPayrollApplicableEarnings[];
+    /**
+     * Applicable earnings based on company provisioning.
+     */
+    @SpeakeasyMetadata({ elemType: ExternalPayrollApplicableEarnings })
+    @Expose({ name: "applicable_earnings" })
+    @Type(() => ExternalPayrollApplicableEarnings)
+    applicableEarnings?: ExternalPayrollApplicableEarnings[];
 
-  /**
-   * Applicable taxes based on company provisioning.
-   */
-  @SpeakeasyMetadata({ elemType: ExternalPayrollApplicableTaxes })
-  @Expose({ name: "applicable_taxes" })
-  @Type(() => ExternalPayrollApplicableTaxes)
-  applicableTaxes?: ExternalPayrollApplicableTaxes[];
+    /**
+     * Applicable taxes based on company provisioning.
+     */
+    @SpeakeasyMetadata({ elemType: ExternalPayrollApplicableTaxes })
+    @Expose({ name: "applicable_taxes" })
+    @Type(() => ExternalPayrollApplicableTaxes)
+    applicableTaxes?: ExternalPayrollApplicableTaxes[];
 
-  /**
-   * External payroll's check date.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "check_date" })
-  checkDate?: string;
+    /**
+     * External payroll's check date.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "check_date" })
+    checkDate?: string;
 
-  /**
-   * The UUID of the company.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "company_uuid" })
-  companyUuid?: string;
+    /**
+     * The UUID of the company.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_uuid" })
+    companyUuid?: string;
 
-  /**
-   * External payroll items for employees
-   */
-  @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItems })
-  @Expose({ name: "external_payroll_items" })
-  @Type(() => ExternalPayrollExternalPayrollItems)
-  externalPayrollItems?: ExternalPayrollExternalPayrollItems[];
+    /**
+     * External payroll items for employees
+     */
+    @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItems })
+    @Expose({ name: "external_payroll_items" })
+    @Type(() => ExternalPayrollExternalPayrollItems)
+    externalPayrollItems?: ExternalPayrollExternalPayrollItems[];
 
-  /**
-   * Stores metadata of the external payroll.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "metadata" })
-  @Type(() => ExternalPayrollMetadata)
-  metadata?: ExternalPayrollMetadata;
+    /**
+     * Stores metadata of the external payroll.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "metadata" })
+    @Type(() => ExternalPayrollMetadata)
+    metadata?: ExternalPayrollMetadata;
 
-  /**
-   * External payroll's pay period end date.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_period_end_date" })
-  paymentPeriodEndDate?: string;
+    /**
+     * External payroll's pay period end date.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_period_end_date" })
+    paymentPeriodEndDate?: string;
 
-  /**
-   * External payroll's pay period start date.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_period_start_date" })
-  paymentPeriodStartDate?: string;
+    /**
+     * External payroll's pay period start date.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_period_start_date" })
+    paymentPeriodStartDate?: string;
 
-  /**
-   * The UUID of the external payroll.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the external payroll.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }

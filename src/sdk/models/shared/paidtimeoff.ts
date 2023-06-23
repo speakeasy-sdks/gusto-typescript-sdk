@@ -9,59 +9,59 @@ import { Expose } from "class-transformer";
  * The representation of paid time off in Gusto.
  */
 export class PaidTimeOff extends SpeakeasyBase {
-  /**
-   * The number of accrual units accrued.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "accrual_balance" })
-  accrualBalance?: string;
+    /**
+     * The number of accrual units accrued.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "accrual_balance" })
+    accrualBalance?: string;
 
-  /**
-   * The accrual method of the time off policy
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "accrual_method" })
-  accrualMethod?: string;
+    /**
+     * The accrual method of the time off policy
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "accrual_method" })
+    accrualMethod?: string;
 
-  /**
-   * The frequency at which the PTO type is accrued.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "accrual_period" })
-  accrualPeriod?: string;
+    /**
+     * The frequency at which the PTO type is accrued.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "accrual_period" })
+    accrualPeriod?: string;
 
-  /**
-   * The number of accrual units accrued per accrual period.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "accrual_rate" })
-  accrualRate?: string;
+    /**
+     * The number of accrual units accrued per accrual period.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "accrual_rate" })
+    accrualRate?: string;
 
-  /**
-   * The unit the PTO type is accrued in.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "accrual_unit" })
-  accrualUnit?: string;
+    /**
+     * The unit the PTO type is accrued in.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "accrual_unit" })
+    accrualUnit?: string;
 
-  /**
-   * The maximum number of accrual units allowed. A null value signifies no maximum.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "maximum_accrual_balance" })
-  maximumAccrualBalance?: string;
+    /**
+     * The maximum number of accrual units allowed. A null value signifies no maximum.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "maximum_accrual_balance" })
+    maximumAccrualBalance?: string;
 
-  /**
-   * The name of the paid time off type.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    /**
+     * The name of the paid time off type.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  /**
-   * Whether the accrual balance is paid to the employee upon termination.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "paid_at_termination" })
-  paidAtTermination?: boolean;
+    /**
+     * Whether the accrual balance is paid to the employee upon termination.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "paid_at_termination" })
+    paidAtTermination?: boolean;
 }

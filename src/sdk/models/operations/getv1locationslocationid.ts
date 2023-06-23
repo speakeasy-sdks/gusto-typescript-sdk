@@ -7,28 +7,26 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1LocationsLocationIdRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the location
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=location_id",
-  })
-  locationId: string;
+    /**
+     * The UUID of the location
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=location_id" })
+    locationId: string;
 }
 
 export class GetV1LocationsLocationIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  location?: shared.Location;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    location?: shared.Location;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

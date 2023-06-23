@@ -7,50 +7,46 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class GetV1CompaniesCompanyUuidTaxRequirementsRequest extends SpeakeasyBase {
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_uuid",
-  })
-  companyUuid: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_uuid" })
+    companyUuid: string;
 }
 
 export class GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON extends SpeakeasyBase {
-  /**
-   * If all requirements for the state have been satisfied such that the company can complete
-   *
-   * @remarks
-   * onboarding, the company is `setup_complete` in the state. A company must be `setup_complete` in
-   * all relevant states to complete the `state_setup` company onboarding step.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "setup_complete" })
-  setupComplete?: boolean;
+    /**
+     * If all requirements for the state have been satisfied such that the company can complete
+     *
+     * @remarks
+     * onboarding, the company is `setup_complete` in the state. A company must be `setup_complete` in
+     * all relevant states to complete the `state_setup` company onboarding step.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "setup_complete" })
+    setupComplete?: boolean;
 
-  /**
-   * One of the two-letter state abbreviations for the fifty United States and the District of Columbia (DC)
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: string;
+    /**
+     * One of the two-letter state abbreviations for the fifty United States and the District of Columbia (DC)
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: string;
 }
 
 export class GetV1CompaniesCompanyUuidTaxRequirementsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * OK
-   */
-  @SpeakeasyMetadata({
-    elemType: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON,
-  })
-  getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects?: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON[];
+    /**
+     * OK
+     */
+    @SpeakeasyMetadata({ elemType: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON })
+    getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects?: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON[];
 }

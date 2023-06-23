@@ -8,51 +8,51 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class PutV1VerifyWebhookSubscriptionUuidRequestBody extends SpeakeasyBase {
-  /**
-   * The token POSTed to the Subscription URL.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "verification_token" })
-  verificationToken: string;
+    /**
+     * The token POSTed to the Subscription URL.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "verification_token" })
+    verificationToken: string;
 }
 
 export class PutV1VerifyWebhookSubscriptionUuidRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PutV1VerifyWebhookSubscriptionUuidRequestBody;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PutV1VerifyWebhookSubscriptionUuidRequestBody;
 
-  /**
-   * The webhook subscription UUID.
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid",
-  })
-  webhookSubscriptionUuid: string;
+    /**
+     * The webhook subscription UUID.
+     */
+    @SpeakeasyMetadata({
+        data: "pathParam, style=simple;explode=false;name=webhook_subscription_uuid",
+    })
+    webhookSubscriptionUuid: string;
 }
 
 export class PutV1VerifyWebhookSubscriptionUuidResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  webhookSubscription?: shared.WebhookSubscription;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    webhookSubscription?: shared.WebhookSubscription;
 }

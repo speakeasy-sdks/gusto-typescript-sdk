@@ -11,78 +11,76 @@ import { Expose } from "class-transformer";
  * Create an employee.
  */
 export class PostV1EmployeesRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "date_of_birth" })
-  dateOfBirth?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "date_of_birth" })
+    dateOfBirth?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "first_name" })
-  firstName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "first_name" })
+    firstName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "last_name" })
-  lastName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "last_name" })
+    lastName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "middle_initial" })
-  middleInitial?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "middle_initial" })
+    middleInitial?: string;
 
-  /**
-   * If true, employee is expected to self-onboard. If false, payroll admin is expected to enter in the employee's onboarding information
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "self_onboarding" })
-  selfOnboarding?: boolean;
+    /**
+     * If true, employee is expected to self-onboard. If false, payroll admin is expected to enter in the employee's onboarding information
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "self_onboarding" })
+    selfOnboarding?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "ssn" })
-  ssn?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "ssn" })
+    ssn?: string;
 }
 
 export class PostV1EmployeesRequest extends SpeakeasyBase {
-  /**
-   * Create an employee.
-   */
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  requestBody?: PostV1EmployeesRequestBody;
+    /**
+     * Create an employee.
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: PostV1EmployeesRequestBody;
 
-  /**
-   * The UUID of the company
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=company_id",
-  })
-  companyId: string;
+    /**
+     * The UUID of the company
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=company_id" })
+    companyId: string;
 }
 
 export class PostV1EmployeesResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata()
-  employee?: shared.Employee;
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata()
+    employee?: shared.Employee;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Unprocessable Entity
-   *
-   * @remarks
-   *
-   * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
-   *
-   */
-  @SpeakeasyMetadata()
-  unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+    /**
+     * Unprocessable Entity
+     *
+     * @remarks
+     *
+     * This may happen when the body of your request contains errors such as `invalid_attribute_value`, or the request fails due to an `invalid_operation`. See the [Errors Categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) guide for more details.
+     *
+     */
+    @SpeakeasyMetadata()
+    unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
 }

@@ -1,0 +1,9 @@
+# PutV1GarnishmentsGarnishmentIdRequest
+
+
+## Fields
+
+| Field                                                                                                             | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `requestBody`                                                                                                     | [PutV1GarnishmentsGarnishmentIdRequestBody](../../models/operations/putv1garnishmentsgarnishmentidrequestbody.md) | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| `garnishmentId`                                                                                                   | *string*                                                                                                          | :heavy_check_mark:                                                                                                | The UUID of the garnishment                                                                                       |

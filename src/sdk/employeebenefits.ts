@@ -5,465 +5,497 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
+import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 export class EmployeeBenefits {
-  _defaultClient: AxiosInstance;
-  _securityClient: AxiosInstance;
-  _serverURL: string;
-  _language: string;
-  _sdkVersion: string;
-  _genVersion: string;
+    private sdkConfiguration: SDKConfiguration;
 
-  constructor(
-    defaultClient: AxiosInstance,
-    securityClient: AxiosInstance,
-    serverURL: string,
-    language: string,
-    sdkVersion: string,
-    genVersion: string
-  ) {
-    this._defaultClient = defaultClient;
-    this._securityClient = securityClient;
-    this._serverURL = serverURL;
-    this._language = language;
-    this._sdkVersion = sdkVersion;
-    this._genVersion = genVersion;
-  }
-
-  /**
-   * Delete an employee benefit
-   *
-   * @remarks
-   * Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
-   *
-   * scope: `employee_benefits:write`
-   */
-  async deleteV1EmployeeBenefitsEmployeeBenefitId(
-    req: operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest(
-        req
-      );
+    constructor(sdkConfig: SDKConfiguration) {
+        this.sdkConfiguration = sdkConfig;
     }
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/employee_benefits/{employee_benefit_id}",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "delete",
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse =
-      new operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case [204, 404].includes(httpRes?.status):
-        break;
-    }
-
-    return res;
-  }
-
-  /**
-   * Get an employee benefit
-   *
-   * @remarks
-   * Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
-   *
-   * scope: `employee_benefits:read`
-   */
-  async getV1EmployeeBenefitsEmployeeBenefitId(
-    req: operations.GetV1EmployeeBenefitsEmployeeBenefitIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1EmployeeBenefitsEmployeeBenefitIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1EmployeeBenefitsEmployeeBenefitIdRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/employee_benefits/{employee_benefit_id}",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1EmployeeBenefitsEmployeeBenefitIdResponse =
-      new operations.GetV1EmployeeBenefitsEmployeeBenefitIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.employeeBenefit = utils.objectToClass(
-            httpRes?.data,
-            shared.EmployeeBenefit
-          );
+    /**
+     * Delete an employee benefit
+     *
+     * @remarks
+     * Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
+     *
+     * scope: `employee_benefits:write`
+     */
+    async deleteV1EmployeeBenefitsEmployeeBenefitId(
+        req: operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest(req);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
 
-    return res;
-  }
-
-  /**
-   * Get all benefits for an employee
-   *
-   * @remarks
-   * Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
-   *
-   * Returns an array of all employee benefits for this employee
-   *
-   * scope: `employee_benefits:read`
-   */
-  async getV1EmployeesEmployeeIdEmployeeBenefits(
-    req: operations.GetV1EmployeesEmployeeIdEmployeeBenefitsRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetV1EmployeesEmployeeIdEmployeeBenefitsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetV1EmployeesEmployeeIdEmployeeBenefitsRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/employees/{employee_id}/employee_benefits",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const queryParams: string = utils.serializeQueryParams(req);
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url + queryParams,
-      method: "get",
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetV1EmployeesEmployeeIdEmployeeBenefitsResponse =
-      new operations.GetV1EmployeesEmployeeIdEmployeeBenefitsResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.employeeBenefits = [];
-          const resFieldDepth: number = utils.getResFieldDepth(res);
-          res.employeeBenefits = utils.objectToClass(
-            httpRes?.data,
-            shared.EmployeeBenefit,
-            resFieldDepth
-          );
-        }
-        break;
-      case httpRes?.status == 404:
-        break;
-    }
-
-    return res;
-  }
-
-  /**
-   * Create year-to-date benefit amounts from a different company
-   *
-   * @remarks
-   * Year-to-date benefit amounts from a different company represents the amount of money added to an employees plan during a current year, made outside of the current contribution when they were employed at a different company.
-   *
-   * scope: `employee_benefits:write`
-   */
-  async postEmployeeYtdBenefitAmountsFromDifferentCompany(
-    req: operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req =
-        new operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest(
-          req
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
         );
-    }
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/employee_benefits/{employee_benefit_id}",
+            req
+        );
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/employees/{employee_id}/ytd_benefit_amounts_from_different_company",
-      req
-    );
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        const headers = { ...config?.headers };
+        headers["Accept"] = "*/*";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
 
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "delete",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "post",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse =
-      new operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case [204, 404].includes(httpRes?.status):
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-    }
 
-    return res;
-  }
-
-  /**
-   * Create an employee benefit
-   *
-   * @remarks
-   * Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
-   *
-   * scope: `employee_benefits:write`
-   */
-  async postV1EmployeesEmployeeIdEmployeeBenefits(
-    req: operations.PostV1EmployeesEmployeeIdEmployeeBenefitsRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PostV1EmployeesEmployeeIdEmployeeBenefitsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PostV1EmployeesEmployeeIdEmployeeBenefitsRequest(
-        req
-      );
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/employees/{employee_id}/employee_benefits",
-      req
-    );
-
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
-
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "post",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PostV1EmployeesEmployeeIdEmployeeBenefitsResponse =
-      new operations.PostV1EmployeesEmployeeIdEmployeeBenefitsResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 201:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.employeeBenefit = utils.objectToClass(
-            httpRes?.data,
-            shared.EmployeeBenefit
-          );
+        const res: operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse =
+            new operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case [204, 404].includes(httpRes?.status):
+                break;
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
+
+        return res;
+    }
+
+    /**
+     * Get an employee benefit
+     *
+     * @remarks
+     * Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
+     *
+     * scope: `employee_benefits:read`
+     */
+    async getV1EmployeeBenefitsEmployeeBenefitId(
+        req: operations.GetV1EmployeeBenefitsEmployeeBenefitIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1EmployeeBenefitsEmployeeBenefitIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1EmployeeBenefitsEmployeeBenefitIdRequest(req);
         }
-        break;
-    }
 
-    return res;
-  }
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/employee_benefits/{employee_benefit_id}",
+            req
+        );
 
-  /**
-   * Update an employee benefit
-   *
-   * @remarks
-   * Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
-   *
-   * scope: `employee_benefits:write`
-   */
-  async putV1EmployeeBenefitsEmployeeBenefitId(
-    req: operations.PutV1EmployeeBenefitsEmployeeBenefitIdRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.PutV1EmployeeBenefitsEmployeeBenefitIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PutV1EmployeeBenefitsEmployeeBenefitIdRequest(req);
-    }
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/v1/employee_benefits/{employee_benefit_id}",
-      req
-    );
+        const headers = { ...config?.headers };
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
 
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
 
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "requestBody",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "put",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.PutV1EmployeeBenefitsEmployeeBenefitIdResponse =
-      new operations.PutV1EmployeeBenefitsEmployeeBenefitIdResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.employeeBenefit = utils.objectToClass(
-            httpRes?.data,
-            shared.EmployeeBenefit
-          );
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-      case httpRes?.status == 404:
-        break;
-      case httpRes?.status == 422:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.unprocessableEntityErrorObject = utils.objectToClass(
-            httpRes?.data,
-            shared.UnprocessableEntityErrorObject
-          );
+
+        const res: operations.GetV1EmployeeBenefitsEmployeeBenefitIdResponse =
+            new operations.GetV1EmployeeBenefitsEmployeeBenefitIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.employeeBenefit = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.EmployeeBenefit
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
         }
-        break;
+
+        return res;
     }
 
-    return res;
-  }
+    /**
+     * Get all benefits for an employee
+     *
+     * @remarks
+     * Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
+     *
+     * Returns an array of all employee benefits for this employee
+     *
+     * scope: `employee_benefits:read`
+     */
+    async getV1EmployeesEmployeeIdEmployeeBenefits(
+        req: operations.GetV1EmployeesEmployeeIdEmployeeBenefitsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetV1EmployeesEmployeeIdEmployeeBenefitsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetV1EmployeesEmployeeIdEmployeeBenefitsRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/employees/{employee_id}/employee_benefits",
+            req
+        );
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...config?.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.GetV1EmployeesEmployeeIdEmployeeBenefitsResponse =
+            new operations.GetV1EmployeesEmployeeIdEmployeeBenefitsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.employeeBenefits = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.employeeBenefits = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.EmployeeBenefit,
+                        resFieldDepth
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Create year-to-date benefit amounts from a different company
+     *
+     * @remarks
+     * Year-to-date benefit amounts from a different company represents the amount of money added to an employees plan during a current year, made outside of the current contribution when they were employed at a different company.
+     *
+     * scope: `employee_benefits:write`
+     */
+    async postEmployeeYtdBenefitAmountsFromDifferentCompany(
+        req: operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/employees/{employee_id}/ytd_benefit_amounts_from_different_company",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse =
+            new operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case [204, 404].includes(httpRes?.status):
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Create an employee benefit
+     *
+     * @remarks
+     * Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
+     *
+     * scope: `employee_benefits:write`
+     */
+    async postV1EmployeesEmployeeIdEmployeeBenefits(
+        req: operations.PostV1EmployeesEmployeeIdEmployeeBenefitsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PostV1EmployeesEmployeeIdEmployeeBenefitsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PostV1EmployeesEmployeeIdEmployeeBenefitsRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/employees/{employee_id}/employee_benefits",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PostV1EmployeesEmployeeIdEmployeeBenefitsResponse =
+            new operations.PostV1EmployeesEmployeeIdEmployeeBenefitsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 201:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.employeeBenefit = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.EmployeeBenefit
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Update an employee benefit
+     *
+     * @remarks
+     * Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
+     *
+     * scope: `employee_benefits:write`
+     */
+    async putV1EmployeeBenefitsEmployeeBenefitId(
+        req: operations.PutV1EmployeeBenefitsEmployeeBenefitIdRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PutV1EmployeeBenefitsEmployeeBenefitIdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PutV1EmployeeBenefitsEmployeeBenefitIdRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/v1/employee_benefits/{employee_benefit_id}",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance =
+            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "put",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PutV1EmployeeBenefitsEmployeeBenefitIdResponse =
+            new operations.PutV1EmployeeBenefitsEmployeeBenefitIdResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.employeeBenefit = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.EmployeeBenefit
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                break;
+            case httpRes?.status == 422:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.unprocessableEntityErrorObject = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.UnprocessableEntityErrorObject
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
 }

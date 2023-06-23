@@ -9,17 +9,17 @@ import { Expose } from "class-transformer";
  * Example response
  */
 export class FormPdf extends SpeakeasyBase {
-  /**
-   * the URL of the form
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "document_urls" })
-  documentUrls?: string;
+    /**
+     * the URL of the form
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "document_urls" })
+    documentUrls?: string;
 
-  /**
-   * the UUID of the form
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * the UUID of the form
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }

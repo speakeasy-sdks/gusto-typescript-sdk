@@ -9,75 +9,75 @@ import { Expose } from "class-transformer";
  * Example response
  */
 export class FederalTaxDetails extends SpeakeasyBase {
-  /**
-   * Whether the EIN was able to be verified as a valid EIN with the IRS.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "ein_verified" })
-  einVerified?: boolean;
+    /**
+     * Whether the EIN was able to be verified as a valid EIN with the IRS.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "ein_verified" })
+    einVerified?: boolean;
 
-  /**
-   * The form used by the company for federal tax filing. One of:
-   *
-   * @remarks
-   * - 941 (Quarterly federal tax return form)
-   * - 944 (Annual federal tax return form)
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "filing_form" })
-  filingForm?: string;
+    /**
+     * The form used by the company for federal tax filing. One of:
+     *
+     * @remarks
+     * - 941 (Quarterly federal tax return form)
+     * - 944 (Annual federal tax return form)
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "filing_form" })
+    filingForm?: string;
 
-  /**
-   * Whether company's Employer Identification Number (EIN) is present
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "has_ein" })
-  hasEin?: boolean;
+    /**
+     * Whether company's Employer Identification Number (EIN) is present
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "has_ein" })
+    hasEin?: boolean;
 
-  /**
-   * The legal name of the company
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "legal_name" })
-  legalName?: string;
+    /**
+     * The legal name of the company
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "legal_name" })
+    legalName?: string;
 
-  /**
-   * What type of tax entity the company is. One of:
-   *
-   * @remarks
-   * - C-Corporation
-   * - S-Corporation
-   * - Sole proprietor
-   * - LLC
-   * - LLP
-   * - Limited partnership
-   * - Co-ownership
-   * - Association
-   * - Trusteeship
-   * - General partnership
-   * - Joint venture
-   * - Non-Profit
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "tax_payer_type" })
-  taxPayerType?: string;
+    /**
+     * What type of tax entity the company is. One of:
+     *
+     * @remarks
+     * - C-Corporation
+     * - S-Corporation
+     * - Sole proprietor
+     * - LLC
+     * - LLP
+     * - Limited partnership
+     * - Co-ownership
+     * - Association
+     * - Trusteeship
+     * - General partnership
+     * - Joint venture
+     * - Non-Profit
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "tax_payer_type" })
+    taxPayerType?: string;
 
-  /**
-   * Whether the company is taxed as an S-Corporation. Tax payer types that may be taxed as an S-Corporation include:
-   *
-   * @remarks
-   * - S-Corporation
-   * - C-Corporation
-   * - LLC
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "taxable_as_scorp" })
-  taxableAsScorp?: string;
+    /**
+     * Whether the company is taxed as an S-Corporation. Tax payer types that may be taxed as an S-Corporation include:
+     *
+     * @remarks
+     * - S-Corporation
+     * - C-Corporation
+     * - LLC
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "taxable_as_scorp" })
+    taxableAsScorp?: string;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version?: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version?: string;
 }

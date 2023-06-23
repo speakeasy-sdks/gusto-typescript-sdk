@@ -9,38 +9,38 @@ import { Expose } from "class-transformer";
  * Representation of a bank account item
  */
 export class PaymentMethodBankAccount extends SpeakeasyBase {
-  /**
-   * Masked bank account number
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "hidden_account_number" })
-  hiddenAccountNumber?: string;
+    /**
+     * Masked bank account number
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "hidden_account_number" })
+    hiddenAccountNumber?: string;
 
-  /**
-   * The bank account name
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name?: string;
+    /**
+     * The bank account name
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
 
-  /**
-   * The order of priority for each payment split, with priority 1 being the first bank account paid. Priority must be unique and sequential.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "priority" })
-  priority?: number;
+    /**
+     * The order of priority for each payment split, with priority 1 being the first bank account paid. Priority must be unique and sequential.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "priority" })
+    priority?: number;
 
-  /**
-   * The cents amount allocated for each payment split
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "split_amount" })
-  splitAmount?: number;
+    /**
+     * The cents amount allocated for each payment split
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "split_amount" })
+    splitAmount?: number;
 
-  /**
-   * The bank account ID
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The bank account ID
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }

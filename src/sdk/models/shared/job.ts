@@ -7,119 +7,119 @@ import { Compensation } from "./compensation";
 import { Expose, Type } from "class-transformer";
 
 export class JobLocation extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "city" })
-  city?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "city" })
+    city?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "country" })
-  country?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "country" })
+    country?: string;
 
-  /**
-   * Whether the location of the job is active.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "inactive" })
-  inactive?: boolean;
+    /**
+     * Whether the location of the job is active.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "inactive" })
+    inactive?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "street_1" })
-  street1?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "street_1" })
+    street1?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "street_2" })
-  street2?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "street_2" })
+    street2?: string;
 
-  /**
-   * The UUID of the job's work location.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the job's work location.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "zip" })
-  zip?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "zip" })
+    zip?: string;
 }
 
 /**
  * The representation of a job in Gusto.
  */
 export class Job extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: Compensation })
-  @Expose({ name: "compensations" })
-  @Type(() => Compensation)
-  compensations?: Compensation[];
+    @SpeakeasyMetadata({ elemType: Compensation })
+    @Expose({ name: "compensations" })
+    @Type(() => Compensation)
+    compensations?: Compensation[];
 
-  /**
-   * The UUID of the current compensation of the job.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "current_compensation_uuid" })
-  currentCompensationUuid?: string;
+    /**
+     * The UUID of the current compensation of the job.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "current_compensation_uuid" })
+    currentCompensationUuid?: string;
 
-  /**
-   * The UUID of the employee to which the job belongs.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "employee_uuid" })
-  employeeUuid?: string;
+    /**
+     * The UUID of the employee to which the job belongs.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_uuid" })
+    employeeUuid?: string;
 
-  /**
-   * The date when the employee was hired for the job.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "hire_date" })
-  hireDate?: string;
+    /**
+     * The date when the employee was hired for the job.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "hire_date" })
+    hireDate?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "location" })
-  @Type(() => JobLocation)
-  location?: JobLocation;
+    @SpeakeasyMetadata()
+    @Expose({ name: "location" })
+    @Type(() => JobLocation)
+    location?: JobLocation;
 
-  /**
-   * The payment unit of the current compensation for the job.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "payment_unit" })
-  paymentUnit?: string;
+    /**
+     * The payment unit of the current compensation for the job.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_unit" })
+    paymentUnit?: string;
 
-  /**
-   * Whether this is the employee's primary job. The value will be set to true unless an existing job exists for the employee.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "primary" })
-  primary?: boolean;
+    /**
+     * Whether this is the employee's primary job. The value will be set to true unless an existing job exists for the employee.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "primary" })
+    primary?: boolean;
 
-  /**
-   * The current compensation rate of the job.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "rate" })
-  rate?: string;
+    /**
+     * The current compensation rate of the job.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "rate" })
+    rate?: string;
 
-  /**
-   * The title for the job.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "title" })
-  title?: string;
+    /**
+     * The title for the job.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "title" })
+    title?: string;
 
-  /**
-   * The UUID of the job.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * The UUID of the job.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version?: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version?: string;
 }

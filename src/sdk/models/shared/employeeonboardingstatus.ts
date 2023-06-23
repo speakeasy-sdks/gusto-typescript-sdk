@@ -6,40 +6,40 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
 export class EmployeeOnboardingStatusOnboardingStep extends SpeakeasyBase {
-  /**
-   * When true, this step has been completed.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "completed" })
-  completed?: boolean;
+    /**
+     * When true, this step has been completed.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "completed" })
+    completed?: boolean;
 
-  /**
-   * String identifier for the onboarding step.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: string;
+    /**
+     * String identifier for the onboarding step.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
 
-  /**
-   * When true, this step has been completed.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "required" })
-  required?: boolean;
+    /**
+     * When true, this step has been completed.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "required" })
+    required?: boolean;
 
-  /**
-   * A list of onboarding steps required to begin this step.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "requirements" })
-  requirements?: string[];
+    /**
+     * A list of onboarding steps required to begin this step.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "requirements" })
+    requirements?: string[];
 
-  /**
-   * User-friendly description of the onboarding step.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "title" })
-  title?: string;
+    /**
+     * User-friendly description of the onboarding step.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "title" })
+    title?: string;
 }
 
 /**
@@ -77,25 +77,25 @@ export class EmployeeOnboardingStatusOnboardingStep extends SpeakeasyBase {
  * | `admin_review` | (only required for employee self-onboarding) Admin finishes reviewing and confirms employee details. |
  */
 export class EmployeeOnboardingStatus extends SpeakeasyBase {
-  /**
-   * One of the "onboarding_status" enum values.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "onboarding_status" })
-  onboardingStatus?: string;
+    /**
+     * One of the "onboarding_status" enum values.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "onboarding_status" })
+    onboardingStatus?: string;
 
-  /**
-   * List of steps required to onboard an employee.
-   */
-  @SpeakeasyMetadata({ elemType: EmployeeOnboardingStatusOnboardingStep })
-  @Expose({ name: "onboarding_steps" })
-  @Type(() => EmployeeOnboardingStatusOnboardingStep)
-  onboardingSteps?: EmployeeOnboardingStatusOnboardingStep[];
+    /**
+     * List of steps required to onboard an employee.
+     */
+    @SpeakeasyMetadata({ elemType: EmployeeOnboardingStatusOnboardingStep })
+    @Expose({ name: "onboarding_steps" })
+    @Type(() => EmployeeOnboardingStatusOnboardingStep)
+    onboardingSteps?: EmployeeOnboardingStatusOnboardingStep[];
 
-  /**
-   * Unique identifier for this employee.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "uuid" })
-  uuid?: string;
+    /**
+     * Unique identifier for this employee.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "uuid" })
+    uuid?: string;
 }

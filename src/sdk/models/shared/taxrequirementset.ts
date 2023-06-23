@@ -7,36 +7,36 @@ import { TaxRequirement } from "./taxrequirement";
 import { Expose, Type } from "class-transformer";
 
 export class TaxRequirementSet extends SpeakeasyBase {
-  /**
-   * An ISO 8601 formatted date representing the date values became effective. Some requirement sets are effective dated, while others are not. Multiple requirement sets for the same state/key can/will exist with unique effective dates. If a requirement set is has an `effective_from` value, all requirement sets with the same key will also have an `effective_from` value.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "effective_from" })
-  effectiveFrom?: string;
+    /**
+     * An ISO 8601 formatted date representing the date values became effective. Some requirement sets are effective dated, while others are not. Multiple requirement sets for the same state/key can/will exist with unique effective dates. If a requirement set is has an `effective_from` value, all requirement sets with the same key will also have an `effective_from` value.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "effective_from" })
+    effectiveFrom?: string;
 
-  /**
-   * An identifier for a set of requirements. A list of requirement sets can contain multiple sets with the same `key` and different `effective_from` values.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "key" })
-  key?: string;
+    /**
+     * An identifier for a set of requirements. A list of requirement sets can contain multiple sets with the same `key` and different `effective_from` values.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "key" })
+    key?: string;
 
-  /**
-   * Customer facing label for the requirement set, e.g. "Registrations"
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "label" })
-  label?: string;
+    /**
+     * Customer facing label for the requirement set, e.g. "Registrations"
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "label" })
+    label?: string;
 
-  @SpeakeasyMetadata({ elemType: TaxRequirement })
-  @Expose({ name: "requirements" })
-  @Type(() => TaxRequirement)
-  requirements?: TaxRequirement[];
+    @SpeakeasyMetadata({ elemType: TaxRequirement })
+    @Expose({ name: "requirements" })
+    @Type(() => TaxRequirement)
+    requirements?: TaxRequirement[];
 
-  /**
-   * One of the two-letter state abbreviations for the fifty United States and the District of Columbia (DC)
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "state" })
-  state?: string;
+    /**
+     * One of the two-letter state abbreviations for the fifty United States and the District of Columbia (DC)
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "state" })
+    state?: string;
 }

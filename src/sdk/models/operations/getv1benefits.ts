@@ -7,18 +7,18 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1BenefitsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Example response
-   */
-  @SpeakeasyMetadata({ elemType: shared.SupportedBenefit })
-  supportedBenefits?: shared.SupportedBenefit[];
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.SupportedBenefit })
+    supportedBenefits?: shared.SupportedBenefit[];
 }

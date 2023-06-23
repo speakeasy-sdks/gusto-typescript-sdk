@@ -1,0 +1,9 @@
+# PutRemovePeopleFromDepartmentRequest
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `requestBody`                                                                                                   | [PutRemovePeopleFromDepartmentRequestBody](../../models/operations/putremovepeoplefromdepartmentrequestbody.md) | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
+| `departmentUuid`                                                                                                | *string*                                                                                                        | :heavy_check_mark:                                                                                              | The UUID of the department                                                                                      |

@@ -8,90 +8,90 @@ import { Expose } from "class-transformer";
 /**
  * The version of w4 form.
  */
-export enum EmployeeFederalTaxW4DataTypeEnum {
-  Pre2020W4 = "pre_2020_w4",
-  Rev2020W4 = "rev_2020_w4",
+export enum EmployeeFederalTaxW4DataType {
+    Pre2020W4 = "pre_2020_w4",
+    Rev2020W4 = "rev_2020_w4",
 }
 
 /**
  * Example response
  */
 export class EmployeeFederalTax extends SpeakeasyBase {
-  /**
-   * *does not apply to rev_2020_w4 form*
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "additional_withholding" })
-  additionalWithholding?: boolean;
+    /**
+     * *does not apply to rev_2020_w4 form*
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "additional_withholding" })
+    additionalWithholding?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "deductions" })
-  deductions?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "deductions" })
+    deductions?: string;
 
-  /**
-   * A dependent is a person other than the taxpayer or spouse who entitles the taxpayer to claim a dependency exemption.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "dependents_amount" })
-  dependentsAmount?: string;
+    /**
+     * A dependent is a person other than the taxpayer or spouse who entitles the taxpayer to claim a dependency exemption.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "dependents_amount" })
+    dependentsAmount?: string;
 
-  /**
-   * An employee can request an additional amount to be withheld from each paycheck.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "extra_withholding" })
-  extraWithholding?: string;
+    /**
+     * An employee can request an additional amount to be withheld from each paycheck.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "extra_withholding" })
+    extraWithholding?: string;
 
-  /**
-   * *does not apply to rev_2020_w4 form*
-   *
-   * @remarks
-   *
-   * An exemption from paying a certain amount of income tax.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "federal_withholding_allowance" })
-  federalWithholdingAllowance?: string;
+    /**
+     * *does not apply to rev_2020_w4 form*
+     *
+     * @remarks
+     *
+     * An exemption from paying a certain amount of income tax.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "federal_withholding_allowance" })
+    federalWithholdingAllowance?: string;
 
-  /**
-   * It determines which tax return form an individual will use and is an important factor in computing taxable income. One of:
-   *
-   * @remarks
-   * - Single
-   * - Married
-   * - Head of Household
-   * - Exempt from withholding
-   * - Married, but withhold as Single (does not apply to rev_2020_w4 form)
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "filing_status" })
-  filingStatus?: string;
+    /**
+     * It determines which tax return form an individual will use and is an important factor in computing taxable income. One of:
+     *
+     * @remarks
+     * - Single
+     * - Married
+     * - Head of Household
+     * - Exempt from withholding
+     * - Married, but withhold as Single (does not apply to rev_2020_w4 form)
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "filing_status" })
+    filingStatus?: string;
 
-  /**
-   * Other income amount.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "other_income" })
-  otherIncome?: string;
+    /**
+     * Other income amount.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "other_income" })
+    otherIncome?: string;
 
-  /**
-   * If there are only two jobs (i.e., you and your spouse each have a job, or you have two), you can set it to true.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "two_jobs" })
-  twoJobs?: boolean;
+    /**
+     * If there are only two jobs (i.e., you and your spouse each have a job, or you have two), you can set it to true.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "two_jobs" })
+    twoJobs?: boolean;
 
-  /**
-   * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "version" })
-  version?: string;
+    /**
+     * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "version" })
+    version?: string;
 
-  /**
-   * The version of w4 form.
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "w4_data_type" })
-  w4DataType?: EmployeeFederalTaxW4DataTypeEnum;
+    /**
+     * The version of w4 form.
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "w4_data_type" })
+    w4DataType?: EmployeeFederalTaxW4DataType;
 }
