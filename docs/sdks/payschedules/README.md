@@ -61,7 +61,6 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdPaySchedulesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -102,7 +101,6 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -147,7 +145,6 @@ import {
   PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency,
   PostV1CompaniesCompanyIdPaySchedulesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -191,7 +188,6 @@ Updates a pay schedule.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { PayScheduleFrequency } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

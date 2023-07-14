@@ -62,13 +62,6 @@ scope: `employees:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesInclude, GetV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  CompensationFlsaStatus,
-  CompensationPaymentUnit,
-  CustomFieldType,
-  EmployeeCurrentEmploymentStatus,
-  EmployeePaymentMethod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -108,7 +101,6 @@ scope: `employees:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdCustomFieldsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CustomFieldType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -299,13 +291,6 @@ scope: `employees:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PostV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  CompensationFlsaStatus,
-  CompensationPaymentUnit,
-  CustomFieldType,
-  EmployeeCurrentEmploymentStatus,
-  EmployeePaymentMethod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -353,13 +338,6 @@ Call this endpoint as the very last step of employee onboarding to complete thei
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1EmployeeFinishOnboardingResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  CompensationFlsaStatus,
-  CompensationPaymentUnit,
-  CustomFieldType,
-  EmployeeCurrentEmploymentStatus,
-  EmployeePaymentMethod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -398,13 +376,6 @@ scope: `employees:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  CompensationFlsaStatus,
-  CompensationPaymentUnit,
-  CustomFieldType,
-  EmployeeCurrentEmploymentStatus,
-  EmployeePaymentMethod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

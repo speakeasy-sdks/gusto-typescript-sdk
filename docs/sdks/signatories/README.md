@@ -54,7 +54,6 @@ Returns company signatories. Currently we only support a single signatory per co
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyUuidSignatoriesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { SignatoryIdentityVerificationStatus } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -91,7 +90,6 @@ Create a signatory with minimal information. This signatory can be invited to pr
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PostV1CompaniesCompanyUuidSignatoriesInviteResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { SignatoryIdentityVerificationStatus } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -134,7 +132,6 @@ Create a company signatory with complete information. A signatory can legally si
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PostV1CompanySignatoriesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { SignatoryIdentityVerificationStatus } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -188,7 +185,6 @@ Update a signatory that has been either invited or created. If the signatory has
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { SignatoryIdentityVerificationStatus } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

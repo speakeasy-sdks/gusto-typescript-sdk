@@ -16,12 +16,6 @@ Returns company bank accounts. Currently we only support a single default bank a
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  CompanyBankAccountAccountType,
-  CompanyBankAccountPlaidStatus,
-  CompanyBankAccountVerificationStatus,
-  CompanyBankAccountVerificationType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -70,12 +64,6 @@ import {
   PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType,
   PostV1CompaniesCompanyIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  CompanyBankAccountAccountType,
-  CompanyBankAccountPlaidStatus,
-  CompanyBankAccountVerificationStatus,
-  CompanyBankAccountVerificationType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -179,12 +167,6 @@ We provide the endpoint `POST '/v1/companies/{company_id}/bank_accounts/{bank_ac
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1CompaniesCompanyIdBankAccountsVerifyResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  CompanyBankAccountAccountType,
-  CompanyBankAccountPlaidStatus,
-  CompanyBankAccountVerificationStatus,
-  CompanyBankAccountVerificationType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

@@ -58,11 +58,6 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  ContractorPaymentPaymentMethod,
-  ContractorPaymentStatus,
-  ContractorPaymentWageType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -155,7 +150,6 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
 
 const sdk = new Gusto({
   security: {
@@ -197,11 +191,6 @@ import {
   PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod,
   PostV1CompaniesCompanyIdContractorPaymentsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  ContractorPaymentPaymentMethod,
-  ContractorPaymentStatus,
-  ContractorPaymentWageType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
 
 const sdk = new Gusto({

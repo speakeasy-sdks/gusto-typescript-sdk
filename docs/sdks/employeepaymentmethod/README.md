@@ -53,7 +53,6 @@ Fetches an employee's payment method. An employee payment method describes how t
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdPaymentMethodResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeePaymentMethodSplitBy, EmployeePaymentMethodType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -93,7 +92,6 @@ import {
   PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType,
   PostV1EmployeesEmployeeIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -140,7 +138,6 @@ import {
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType,
   PutV1EmployeesEmployeeIdPaymentMethodResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeePaymentMethodSplitBy, EmployeePaymentMethodType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

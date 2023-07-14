@@ -28,7 +28,6 @@ scope: `companies:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompanyCompanyStatus, CompanyEntityType, CompanyTier } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -105,7 +104,6 @@ scope: `companies:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdCustomFieldsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CustomFieldType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

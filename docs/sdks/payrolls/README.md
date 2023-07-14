@@ -73,11 +73,6 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdPayrollsInclude, GetV1CompaniesCompanyIdPayrollsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -136,11 +131,6 @@ import {
   GetV1CompaniesCompanyIdPayrollsPayrollIdInclude,
   GetV1CompaniesCompanyIdPayrollsPayrollIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -310,11 +300,6 @@ import {
   PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod,
   PostV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -412,11 +397,6 @@ Transitions a `processed` payroll back to the `unprocessed` state. A payroll can
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -459,11 +439,6 @@ import {
   PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod,
   PutV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -631,11 +606,6 @@ import {
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

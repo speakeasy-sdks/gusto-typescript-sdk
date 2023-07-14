@@ -16,7 +16,6 @@ Returns all contractor bank accounts.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1ContractorsContractorUuidBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -53,7 +52,6 @@ Fetches a contractor's payment method. A contractor payment method describes how
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1ContractorsContractorUuidPaymentMethodResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorPaymentMethodSplitBy, ContractorPaymentMethodType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -96,7 +94,6 @@ import {
   PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType,
   PostV1ContractorsContractorUuidBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -142,7 +139,6 @@ import {
   PutV1ContractorsContractorIdPaymentMethodRequestBodyType,
   PutV1ContractorsContractorIdPaymentMethodResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorPaymentMethodSplitBy, ContractorPaymentMethodType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

@@ -63,7 +63,6 @@ scope: `jobs:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompensationsCompensationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -102,7 +101,6 @@ scope: `jobs:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdJobsInclude, GetV1EmployeesEmployeeIdJobsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -144,7 +142,6 @@ scope: `jobs:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1JobsJobIdInclude, GetV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -188,7 +185,6 @@ scope: `jobs:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1JobsJobIdCompensationsInclude, GetV1JobsJobIdCompensationsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -230,7 +226,6 @@ scope: `jobs:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PostV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -280,7 +275,6 @@ import {
   PutV1CompensationsCompensationIdRequestBodyPaymentUnit,
   PutV1CompensationsCompensationIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -340,7 +334,6 @@ scope: `jobs:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

@@ -71,7 +71,6 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -159,7 +158,6 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1WebhookSubscriptionsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -206,7 +204,6 @@ import {
   PostV1WebhookSubscriptionRequestBodySubscriptionTypes,
   PostV1WebhookSubscriptionResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -261,7 +258,6 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1VerifyWebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -312,7 +308,6 @@ import {
   PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes,
   PutV1WebhookSubscriptionUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

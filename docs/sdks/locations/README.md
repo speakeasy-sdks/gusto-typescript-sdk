@@ -100,7 +100,6 @@ scope: `companies:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1LocationsLocationUuidMinimumWagesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
 
 const sdk = new Gusto({
   security: {

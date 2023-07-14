@@ -91,11 +91,6 @@ Get all tax requirements for a given state.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyUuidTaxRequirementsStateResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  TaxRequirementMetadataRateType,
-  TaxRequirementMetadataType,
-  TaxRequirementMetadataValidationType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

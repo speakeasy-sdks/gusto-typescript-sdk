@@ -58,7 +58,6 @@ scope: `employee_benefits:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeeBenefitsEmployeeBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -99,7 +98,6 @@ scope: `employee_benefits:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdEmployeeBenefitsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -188,7 +186,6 @@ import {
   PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome,
   PostV1EmployeesEmployeeIdEmployeeBenefitsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -264,7 +261,6 @@ import {
   PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncome,
   PutV1EmployeeBenefitsEmployeeBenefitIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { EmployeeBenefitDeductionReducesTaxableIncome } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {

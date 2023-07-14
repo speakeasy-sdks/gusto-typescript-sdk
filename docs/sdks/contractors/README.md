@@ -59,7 +59,6 @@ scope: `employees:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdContractorsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -100,7 +99,6 @@ scope: `employees:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -208,7 +206,6 @@ scope: `contractors.read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1ContractorsContractorUuidOnboardingStatusResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatusOnboardingStatus } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -251,7 +248,6 @@ import {
   PostV1CompaniesCompanyIdContractorsRequestBodyWageType,
   PostV1CompaniesCompanyIdContractorsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -315,7 +311,6 @@ import {
   PutV1ContractorsContractorIdRequestBodyWageType,
   PutV1ContractorsContractorIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatus, ContractorType, ContractorWageType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -430,7 +425,6 @@ import {
   PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus,
   PutV1ContractorsContractorUuidOnboardingStatusResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorOnboardingStatusOnboardingStatus } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
