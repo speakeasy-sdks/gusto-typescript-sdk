@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
@@ -148,6 +149,13 @@ export class ContractorPayments {
                         JSON.parse(decodedRes),
                         shared.ContractorPayment
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -220,6 +228,13 @@ export class ContractorPayments {
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.getV1CompaniesCompanyIdContractorPayments200ApplicationJSONOneOf =
                         JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -298,6 +313,13 @@ export class ContractorPayments {
                     res.contractorPaymentReceipt = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ContractorPaymentReceipt
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -384,6 +406,13 @@ export class ContractorPayments {
                         JSON.parse(decodedRes),
                         shared.ContractorPayment
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -393,6 +422,13 @@ export class ContractorPayments {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
