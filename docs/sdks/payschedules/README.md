@@ -20,15 +20,21 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdPayPeriodsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1CompaniesCompanyIdPayPeriodsRequest,
+  GetV1CompaniesCompanyIdPayPeriodsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "atque";
+const endDate: string = "2020-01-31";
+const startDate: string = "2020-01-01";
 
-sdk.paySchedules.getV1CompaniesCompanyIdPayPeriods("atque", "2020-01-31", "2020-01-01").then((res: GetV1CompaniesCompanyIdPayPeriodsResponse) => {
+sdk.paySchedules.getV1CompaniesCompanyIdPayPeriods(companyId, endDate, startDate).then((res: GetV1CompaniesCompanyIdPayPeriodsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -60,15 +66,21 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdPaySchedulesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1CompaniesCompanyIdPaySchedulesRequest,
+  GetV1CompaniesCompanyIdPaySchedulesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "reprehenderit";
+const page: number = 9911.42;
+const per: number = 5199.52;
 
-sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules("reprehenderit", 9911.42, 5199.52).then((res: GetV1CompaniesCompanyIdPaySchedulesResponse) => {
+sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules(companyId, page, per).then((res: GetV1CompaniesCompanyIdPaySchedulesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -100,15 +112,20 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
+  GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "suscipit";
+const payScheduleId: string = "quidem";
 
-sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId("suscipit", "quidem").then((res: GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
+sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId).then((res: GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -142,6 +159,8 @@ Be sure to **[check state laws](https://www.dol.gov/agencies/whd/state/payday)**
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostV1CompaniesCompanyIdPaySchedulesRequest,
+  PostV1CompaniesCompanyIdPaySchedulesRequestBody,
   PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency,
   PostV1CompaniesCompanyIdPaySchedulesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -151,14 +170,16 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules("maxime", {
+const companyId: string = "maxime";
+const requestBody: PostV1CompaniesCompanyIdPaySchedulesRequestBody = {
   anchorEndOfPayPeriod: "2020-05-08",
   anchorPayDate: "2020-05-15",
   day1: 90885,
   day2: 461007,
   frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.EveryWeek,
-}).then((res: PostV1CompaniesCompanyIdPaySchedulesResponse) => {
+};
+
+sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules(companyId, requestBody).then((res: PostV1CompaniesCompanyIdPaySchedulesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -187,18 +208,25 @@ Updates a pay schedule.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
+  PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody,
+  PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId("assumenda", "ea", {
+const companyId: string = "assumenda";
+const payScheduleId: string = "ea";
+const requestBody: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody = {
   autoPilot: false,
   version: "atque",
-}).then((res: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
+};
+
+sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId, requestBody).then((res: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

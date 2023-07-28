@@ -16,15 +16,20 @@ Delete a company signatory.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
+  DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "neque";
+const signatoryUuid: string = "quo";
 
-sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid("neque", "quo").then((res: DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
+sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid).then((res: DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -53,15 +58,19 @@ Returns company signatories. Currently we only support a single signatory per co
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyUuidSignatoriesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1CompaniesCompanyUuidSignatoriesRequest,
+  GetV1CompaniesCompanyUuidSignatoriesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "deleniti";
 
-sdk.signatories.getV1CompaniesCompanyUuidSignatories("deleniti").then((res: GetV1CompaniesCompanyUuidSignatoriesResponse) => {
+sdk.signatories.getV1CompaniesCompanyUuidSignatories(companyUuid).then((res: GetV1CompaniesCompanyUuidSignatoriesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -89,20 +98,26 @@ Create a signatory with minimal information. This signatory can be invited to pr
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1CompaniesCompanyUuidSignatoriesInviteResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PostV1CompaniesCompanyUuidSignatoriesInviteRequest,
+  PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody,
+  PostV1CompaniesCompanyUuidSignatoriesInviteResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite("quibusdam", {
+const companyUuid: string = "quibusdam";
+const requestBody: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody = {
   email: "Brock.Wolf@yahoo.com",
   firstName: "Rory",
   lastName: "Block",
   title: "Dr.",
-}).then((res: PostV1CompaniesCompanyUuidSignatoriesInviteResponse) => {
+};
+
+sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite(companyUuid, requestBody).then((res: PostV1CompaniesCompanyUuidSignatoriesInviteResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -131,15 +146,20 @@ Create a company signatory with complete information. A signatory can legally si
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1CompanySignatoriesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PostV1CompanySignatoriesRequest,
+  PostV1CompanySignatoriesRequestBody,
+  PostV1CompanySignatoriesRequestBodyHomeAddress,
+  PostV1CompanySignatoriesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.signatories.postV1CompanySignatories("libero", {
+const companyUuid: string = "libero";
+const requestBody: PostV1CompanySignatoriesRequestBody = {
   birthday: "architecto",
   email: "Carli24@hotmail.com",
   firstName: "Arch",
@@ -155,7 +175,9 @@ sdk.signatories.postV1CompanySignatories("libero", {
   phone: "1-279-690-3926 x22400",
   ssn: "consequatur",
   title: "Miss",
-}).then((res: PostV1CompanySignatoriesResponse) => {
+};
+
+sdk.signatories.postV1CompanySignatories(companyUuid, requestBody).then((res: PostV1CompanySignatoriesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -184,15 +206,21 @@ Update a signatory that has been either invited or created. If the signatory has
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
+  PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody,
+  PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress,
+  PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid("recusandae", "ea", {
+const companyUuid: string = "recusandae";
+const signatoryUuid: string = "ea";
+const requestBody: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody = {
   birthday: "quidem",
   firstName: "Gavin",
   homeAddress: {
@@ -208,7 +236,9 @@ sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid("recusandae", 
   ssn: "qui",
   title: "Miss",
   version: "ex",
-}).then((res: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
+};
+
+sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid, requestBody).then((res: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

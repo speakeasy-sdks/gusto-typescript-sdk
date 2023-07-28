@@ -15,15 +15,17 @@ Get a contractor form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorFormRequest, GetV1ContractorFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const contractorUuid: string = "assumenda";
+const formId: string = "ipsam";
 
-sdk.contractorForms.getV1ContractorForm("assumenda", "ipsam").then((res: GetV1ContractorFormResponse) => {
+sdk.contractorForms.getV1ContractorForm(contractorUuid, formId).then((res: GetV1ContractorFormResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -52,15 +54,17 @@ Get the link to the form PDF
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorFormPdfRequest, GetV1ContractorFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const contractorUuid: string = "alias";
+const formId: string = "fugit";
 
-sdk.contractorForms.getV1ContractorFormPdf("alias", "fugit").then((res: GetV1ContractorFormPdfResponse) => {
+sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId).then((res: GetV1ContractorFormPdfResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -89,15 +93,16 @@ Get a list of all contractor's forms
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorFormsRequest, GetV1ContractorFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const contractorUuid: string = "dolorum";
 
-sdk.contractorForms.getV1ContractorForms("dolorum").then((res: GetV1ContractorFormsResponse) => {
+sdk.contractorForms.getV1ContractorForms(contractorUuid).then((res: GetV1ContractorFormsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

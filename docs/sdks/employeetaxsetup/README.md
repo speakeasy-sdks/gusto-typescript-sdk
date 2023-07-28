@@ -15,15 +15,19 @@ Get attributes relevant for an employee's federal taxes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesEmployeeIdFederalTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1EmployeesEmployeeIdFederalTaxesRequest,
+  GetV1EmployeesEmployeeIdFederalTaxesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeUuid: string = "explicabo";
 
-sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes("explicabo").then((res: GetV1EmployeesEmployeeIdFederalTaxesResponse) => {
+sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdFederalTaxesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -63,15 +67,19 @@ Payroll Admins are responsible for filing a new hire report for each Employee. T
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesEmployeeIdStateTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1EmployeesEmployeeIdStateTaxesRequest,
+  GetV1EmployeesEmployeeIdStateTaxesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeUuid: string = "minima";
 
-sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes("minima").then((res: GetV1EmployeesEmployeeIdStateTaxesResponse) => {
+sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdStateTaxesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -99,15 +107,19 @@ Update attributes relevant for an employee's federal taxes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1EmployeesEmployeeIdFederalTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1EmployeesEmployeeIdFederalTaxesRequest,
+  PutV1EmployeesEmployeeIdFederalTaxesRequestBody,
+  PutV1EmployeesEmployeeIdFederalTaxesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes("nisi", {
+const employeeUuid: string = "nisi";
+const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
   deductions: "fugit",
   dependentsAmount: "sapiente",
   extraWithholding: "consequuntur",
@@ -116,7 +128,9 @@ sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes("nisi", {
   twoJobs: false,
   version: "saepe",
   w4DataType: "occaecati",
-}).then((res: PutV1EmployeesEmployeeIdFederalTaxesResponse) => {
+};
+
+sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody).then((res: PutV1EmployeesEmployeeIdFederalTaxesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -147,15 +161,22 @@ As described for the GET endpoint, the answers must be supplied in the effective
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1EmployeesEmployeeIdStateTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1EmployeesEmployeeIdStateTaxesRequest,
+  PutV1EmployeesEmployeeIdStateTaxesRequestBody,
+  PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates,
+  PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions,
+  PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers,
+  PutV1EmployeesEmployeeIdStateTaxesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes("atque", {
+const employeeUuid: string = "atque";
+const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
   employeeId: "et",
   states: [
     {
@@ -284,7 +305,9 @@ sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes("atque", {
       state: "ullam",
     },
   ],
-}).then((res: PutV1EmployeesEmployeeIdStateTaxesResponse) => {
+};
+
+sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes(employeeUuid, requestBody).then((res: PutV1EmployeesEmployeeIdStateTaxesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

@@ -21,15 +21,16 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteDepartmentRequest, DeleteDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const departmentUuid: string = "ad";
 
-sdk.departments.deleteDepartment("ad").then((res: DeleteDepartmentResponse) => {
+sdk.departments.deleteDepartment(departmentUuid).then((res: DeleteDepartmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -59,15 +60,16 @@ scope: `departments:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetCompaniesDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetCompaniesDepartmentsRequest, GetCompaniesDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "eum";
 
-sdk.departments.getCompaniesDepartments("eum").then((res: GetCompaniesDepartmentsResponse) => {
+sdk.departments.getCompaniesDepartments(companyUuid).then((res: GetCompaniesDepartmentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -98,15 +100,16 @@ scope: `departments:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetDepartmentRequest, GetDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const departmentUuid: string = "dolor";
 
-sdk.departments.getDepartment("dolor").then((res: GetDepartmentResponse) => {
+sdk.departments.getDepartment(departmentUuid).then((res: GetDepartmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -136,17 +139,19 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostDepartmentsRequest, PostDepartmentsRequestBody, PostDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.departments.postDepartments("necessitatibus", {
+const companyUuid: string = "necessitatibus";
+const requestBody: PostDepartmentsRequestBody = {
   title: "Mr.",
-}).then((res: PostDepartmentsResponse) => {
+};
+
+sdk.departments.postDepartments(companyUuid, requestBody).then((res: PostDepartmentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -178,15 +183,21 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutAddPeopleToDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutAddPeopleToDepartmentRequest,
+  PutAddPeopleToDepartmentRequestBody,
+  PutAddPeopleToDepartmentRequestBodyContractors,
+  PutAddPeopleToDepartmentRequestBodyEmployees,
+  PutAddPeopleToDepartmentResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.departments.putAddPeopleToDepartment("nemo", {
+const departmentUuid: string = "nemo";
+const requestBody: PutAddPeopleToDepartmentRequestBody = {
   contractors: [
     {
       uuid: "6fe4c8b7-11e5-4b7f-92ed-028921cddc69",
@@ -198,7 +209,9 @@ sdk.departments.putAddPeopleToDepartment("nemo", {
     },
   ],
   version: "dolores",
-}).then((res: PutAddPeopleToDepartmentResponse) => {
+};
+
+sdk.departments.putAddPeopleToDepartment(departmentUuid, requestBody).then((res: PutAddPeopleToDepartmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -229,18 +242,20 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutDepartmentsRequest, PutDepartmentsRequestBody, PutDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.departments.putDepartments("minus", {
+const departmentUuid: string = "minus";
+const requestBody: PutDepartmentsRequestBody = {
   title: "Ms.",
   version: "dolor",
-}).then((res: PutDepartmentsResponse) => {
+};
+
+sdk.departments.putDepartments(departmentUuid, requestBody).then((res: PutDepartmentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -272,15 +287,21 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutRemovePeopleFromDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutRemovePeopleFromDepartmentRequest,
+  PutRemovePeopleFromDepartmentRequestBody,
+  PutRemovePeopleFromDepartmentRequestBodyContractors,
+  PutRemovePeopleFromDepartmentRequestBodyEmployees,
+  PutRemovePeopleFromDepartmentResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.departments.putRemovePeopleFromDepartment("vero", {
+const departmentUuid: string = "vero";
+const requestBody: PutRemovePeopleFromDepartmentRequestBody = {
   contractors: [
     {
       uuid: "fe9b90c2-8909-4b3f-a49a-8d9cbf486333",
@@ -301,7 +322,9 @@ sdk.departments.putRemovePeopleFromDepartment("vero", {
     },
   ],
   version: "ipsum",
-}).then((res: PutRemovePeopleFromDepartmentResponse) => {
+};
+
+sdk.departments.putRemovePeopleFromDepartment(departmentUuid, requestBody).then((res: PutRemovePeopleFromDepartmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

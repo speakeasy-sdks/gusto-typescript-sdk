@@ -19,15 +19,19 @@ scope: `employee_benefits:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest,
+  DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeBenefitId: string = "consequatur";
 
-sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId("consequatur").then((res: DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
+sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId).then((res: DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -57,15 +61,19 @@ scope: `employee_benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeeBenefitsEmployeeBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1EmployeeBenefitsEmployeeBenefitIdRequest,
+  GetV1EmployeeBenefitsEmployeeBenefitIdResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeBenefitId: string = "est";
 
-sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId("est").then((res: GetV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
+sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId).then((res: GetV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -97,15 +105,21 @@ scope: `employee_benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesEmployeeIdEmployeeBenefitsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1EmployeesEmployeeIdEmployeeBenefitsRequest,
+  GetV1EmployeesEmployeeIdEmployeeBenefitsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeId: string = "repellendus";
+const page: number = 7851.53;
+const per: number = 9843.3;
 
-sdk.employeeBenefits.getV1EmployeesEmployeeIdEmployeeBenefits("repellendus", 7851.53, 9843.3).then((res: GetV1EmployeesEmployeeIdEmployeeBenefitsResponse) => {
+sdk.employeeBenefits.getV1EmployeesEmployeeIdEmployeeBenefits(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdEmployeeBenefitsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -137,20 +151,26 @@ scope: `employee_benefits:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest,
+  PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody,
+  PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany("ut", {
+const employeeId: string = "ut";
+const requestBody: PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody = {
   benefitType: 7034.95,
   taxYear: 5864.1,
   ytdCompanyContributionAmount: "qui",
   ytdEmployeeDeductionAmount: "quae",
-}).then((res: PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse) => {
+};
+
+sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany(employeeId, requestBody).then((res: PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -182,7 +202,11 @@ scope: `employee_benefits:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostV1EmployeesEmployeeIdEmployeeBenefitsRequest,
+  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody,
+  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution,
   PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType,
+  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionValue2,
   PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome,
   PostV1EmployeesEmployeeIdEmployeeBenefitsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -192,8 +216,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits("laudantium", {
+const employeeId: string = "laudantium";
+const requestBody: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody = {
   active: false,
   catchUp: false,
   companyBenefitUuid: "odio",
@@ -225,7 +249,9 @@ sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits("laudantium", {
   employeeDeduction: "distinctio",
   employeeDeductionAnnualMaximum: "quod",
   limitOption: "odio",
-}).then((res: PostV1EmployeesEmployeeIdEmployeeBenefitsResponse) => {
+};
+
+sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdEmployeeBenefitsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -257,7 +283,11 @@ scope: `employee_benefits:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1EmployeeBenefitsEmployeeBenefitIdRequest,
+  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody,
+  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContribution,
   PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionType,
+  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionValue2,
   PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncome,
   PutV1EmployeeBenefitsEmployeeBenefitIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -267,8 +297,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId("similique", {
+const employeeBenefitId: string = "similique";
+const requestBody: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody = {
   active: false,
   catchUp: false,
   companyContribution: "facilis",
@@ -287,7 +317,9 @@ sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId("similique", {
   employeeDeductionAnnualMaximum: "aut",
   limitOption: "voluptatibus",
   version: "exercitationem",
-}).then((res: PutV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
+};
+
+sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId, requestBody).then((res: PutV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

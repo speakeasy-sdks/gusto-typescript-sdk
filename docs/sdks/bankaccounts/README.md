@@ -15,15 +15,19 @@ Returns company bank accounts. Currently we only support a single default bank a
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1CompaniesCompanyIdBankAccountsRequest,
+  GetV1CompaniesCompanyIdBankAccountsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "provident";
 
-sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts("provident").then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
+sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -61,6 +65,8 @@ After successful verification, the bank account's verification_status is 'verifi
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostV1CompaniesCompanyIdBankAccountsRequest,
+  PostV1CompaniesCompanyIdBankAccountsRequestBody,
   PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType,
   PostV1CompaniesCompanyIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -70,12 +76,14 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts("distinctio", {
+const companyId: string = "distinctio";
+const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {
   accountNumber: "quibusdam",
   accountType: PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType.Savings,
   routingNumber: "nulla",
-}).then((res: PostV1CompaniesCompanyIdBankAccountsResponse) => {
+};
+
+sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(companyId, requestBody).then((res: PostV1CompaniesCompanyIdBankAccountsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -166,18 +174,25 @@ We provide the endpoint `POST '/v1/companies/{company_id}/bank_accounts/{bank_ac
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompaniesCompanyIdBankAccountsVerifyResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1CompaniesCompanyIdBankAccountsVerifyRequest,
+  PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody,
+  PutV1CompaniesCompanyIdBankAccountsVerifyResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify("vel", "error", {
+const bankAccountUuid: string = "vel";
+const companyId: string = "error";
+const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {
   deposit1: 6458.94,
   deposit2: 3843.82,
-}).then((res: PutV1CompaniesCompanyIdBankAccountsVerifyResponse) => {
+};
+
+sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(bankAccountUuid, companyId, requestBody).then((res: PutV1CompaniesCompanyIdBankAccountsVerifyResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

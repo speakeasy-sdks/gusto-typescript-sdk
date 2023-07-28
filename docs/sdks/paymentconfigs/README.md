@@ -13,15 +13,16 @@ Get payment speed for the company and fast payment limit (only applicable for 2-
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyPaymentConfigsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyPaymentConfigsRequest, GetV1CompanyPaymentConfigsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "error";
 
-sdk.paymentConfigs.getV1CompanyPaymentConfigs("error").then((res: GetV1CompanyPaymentConfigsResponse) => {
+sdk.paymentConfigs.getV1CompanyPaymentConfigs(companyUuid).then((res: GetV1CompanyPaymentConfigsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -50,6 +51,8 @@ Update payment speed for the company and fast payment limit (only applicable for
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1CompanyPaymentConfigsRequest,
+  PutV1CompanyPaymentConfigsRequestBody,
   PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed,
   PutV1CompanyPaymentConfigsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -59,11 +62,13 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.paymentConfigs.putV1CompanyPaymentConfigs("officiis", {
+const companyUuid: string = "officiis";
+const requestBody: PutV1CompanyPaymentConfigsRequestBody = {
   fastPaymentLimit: "officiis",
   paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.FourDay,
-}).then((res: PutV1CompanyPaymentConfigsResponse) => {
+};
+
+sdk.paymentConfigs.putV1CompanyPaymentConfigs(companyUuid, requestBody).then((res: PutV1CompanyPaymentConfigsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

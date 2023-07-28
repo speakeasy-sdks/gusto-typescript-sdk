@@ -18,15 +18,17 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1ExternalPayrollRequest, DeleteV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "repellendus";
+const externalPayrollId: string = "officia";
 
-sdk.externalPayrolls.deleteV1ExternalPayroll("repellendus", "officia").then((res: DeleteV1ExternalPayrollResponse) => {
+sdk.externalPayrolls.deleteV1ExternalPayroll(companyUuid, externalPayrollId).then((res: DeleteV1ExternalPayrollResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -56,15 +58,16 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyExternalPayrollsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyExternalPayrollsRequest, GetV1CompanyExternalPayrollsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "maxime";
 
-sdk.externalPayrolls.getV1CompanyExternalPayrolls("maxime").then((res: GetV1CompanyExternalPayrollsResponse) => {
+sdk.externalPayrolls.getV1CompanyExternalPayrolls(companyUuid).then((res: GetV1CompanyExternalPayrollsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -93,15 +96,17 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ExternalPayrollRequest, GetV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "dignissimos";
+const externalPayrollId: string = "officia";
 
-sdk.externalPayrolls.getV1ExternalPayroll("dignissimos", "officia").then((res: GetV1ExternalPayrollResponse) => {
+sdk.externalPayrolls.getV1ExternalPayroll(companyUuid, externalPayrollId).then((res: GetV1ExternalPayrollResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -130,15 +135,20 @@ Get tax suggestions for an external payroll. Earnings and/or benefits data must 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ExternalPayrollCalculateTaxesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1ExternalPayrollCalculateTaxesRequest,
+  GetV1ExternalPayrollCalculateTaxesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "asperiores";
+const externalPayrollId: string = "nemo";
 
-sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes("asperiores", "nemo").then((res: GetV1ExternalPayrollCalculateTaxesResponse) => {
+sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes(companyUuid, externalPayrollId).then((res: GetV1ExternalPayrollCalculateTaxesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -168,19 +178,25 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PostV1ExternalPayrollRequest,
+  PostV1ExternalPayrollRequestBody,
+  PostV1ExternalPayrollResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.externalPayrolls.postV1ExternalPayroll("quae", {
+const companyUuid: string = "quae";
+const requestBody: PostV1ExternalPayrollRequestBody = {
   checkDate: "quaerat",
   paymentPeriodEndDate: "porro",
   paymentPeriodStartDate: "quod",
-}).then((res: PostV1ExternalPayrollResponse) => {
+};
+
+sdk.externalPayrolls.postV1ExternalPayroll(companyUuid, requestBody).then((res: PostV1ExternalPayrollResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -211,7 +227,13 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1ExternalPayrollRequest,
+  PutV1ExternalPayrollRequestBody,
+  PutV1ExternalPayrollRequestBodyExternalPayrollItems,
+  PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits,
+  PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings,
   PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType,
+  PutV1ExternalPayrollRequestBodyExternalPayrollItemsTaxes,
   PutV1ExternalPayrollResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
@@ -220,8 +242,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.externalPayrolls.putV1ExternalPayroll("labore", "ab", {
+const companyUuid: string = "labore";
+const externalPayrollId: string = "ab";
+const requestBody: PutV1ExternalPayrollRequestBody = {
   externalPayrollItems: [
     {
       benefits: [
@@ -277,7 +300,9 @@ sdk.externalPayrolls.putV1ExternalPayroll("labore", "ab", {
     },
   ],
   replaceFields: false,
-}).then((res: PutV1ExternalPayrollResponse) => {
+};
+
+sdk.externalPayrolls.putV1ExternalPayroll(companyUuid, externalPayrollId, requestBody).then((res: PutV1ExternalPayrollResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

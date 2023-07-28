@@ -15,15 +15,16 @@ Get a company form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyFormRequest, GetV1CompanyFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const formId: string = "qui";
 
-sdk.companyForms.getV1CompanyForm("qui").then((res: GetV1CompanyFormResponse) => {
+sdk.companyForms.getV1CompanyForm(formId).then((res: GetV1CompanyFormResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -51,15 +52,16 @@ Get the link to the form PDF
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyFormPdfRequest, GetV1CompanyFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const formId: string = "aliquid";
 
-sdk.companyForms.getV1CompanyFormPdf("aliquid").then((res: GetV1CompanyFormPdfResponse) => {
+sdk.companyForms.getV1CompanyFormPdf(formId).then((res: GetV1CompanyFormPdfResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -87,15 +89,16 @@ Get a list of all company's forms
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyFormsRequest, GetV1CompanyFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "cupiditate";
 
-sdk.companyForms.getV1CompanyForms("cupiditate").then((res: GetV1CompanyFormsResponse) => {
+sdk.companyForms.getV1CompanyForms(companyId).then((res: GetV1CompanyFormsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -123,19 +126,25 @@ Sign a company form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompanyFormSignResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1CompanyFormSignRequest,
+  PutV1CompanyFormSignRequestBody,
+  PutV1CompanyFormSignResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.companyForms.putV1CompanyFormSign("quos", {
+const formId: string = "quos";
+const requestBody: PutV1CompanyFormSignRequestBody = {
   agree: false,
   signatureText: "perferendis",
   signedByIpAddress: "magni",
-}).then((res: PutV1CompanyFormSignResponse) => {
+};
+
+sdk.companyForms.putV1CompanyFormSign(formId, requestBody).then((res: PutV1CompanyFormSignResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

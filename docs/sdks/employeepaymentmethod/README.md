@@ -15,15 +15,20 @@ Deletes an employee bank account. To update an employee's bank account details, 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest,
+  DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const bankAccountUuid: string = "ipsam";
+const employeeId: string = "ea";
 
-sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId("ipsam", "ea").then((res: DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse) => {
+sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId).then((res: DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -52,15 +57,19 @@ Fetches an employee's payment method. An employee payment method describes how t
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesEmployeeIdPaymentMethodResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1EmployeesEmployeeIdPaymentMethodRequest,
+  GetV1EmployeesEmployeeIdPaymentMethodResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeId: string = "aspernatur";
 
-sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod("aspernatur").then((res: GetV1EmployeesEmployeeIdPaymentMethodResponse) => {
+sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId).then((res: GetV1EmployeesEmployeeIdPaymentMethodResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -89,6 +98,8 @@ Creates an employee bank account. An employee can have multiple bank accounts. N
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostV1EmployeesEmployeeIdBankAccountsRequest,
+  PostV1EmployeesEmployeeIdBankAccountsRequestBody,
   PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType,
   PostV1EmployeesEmployeeIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -98,13 +109,15 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts("vel", {
+const employeeId: string = "vel";
+const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
   accountNumber: "possimus",
   accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Checking,
   name: "Mrs. Vicki Langosh",
   routingNumber: "quasi",
-}).then((res: PostV1EmployeesEmployeeIdBankAccountsResponse) => {
+};
+
+sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdBankAccountsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -134,7 +147,10 @@ Updates an employee's payment method. Note that creating an employee bank accoun
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1EmployeesEmployeeIdPaymentMethodRequest,
+  PutV1EmployeesEmployeeIdPaymentMethodRequestBody,
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy,
+  PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits,
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType,
   PutV1EmployeesEmployeeIdPaymentMethodResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -144,8 +160,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod("ex", {
+const employeeId: string = "ex";
+const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
   splitBy: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy.Percentage,
   splits: [
     {
@@ -169,7 +185,9 @@ sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod("ex", {
   ],
   type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.DirectDeposit,
   version: "atque",
-}).then((res: PutV1EmployeesEmployeeIdPaymentMethodResponse) => {
+};
+
+sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdPaymentMethodResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

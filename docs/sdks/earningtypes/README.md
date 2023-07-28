@@ -17,15 +17,20 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
+  DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "veritatis";
+const earningTypeUuid: string = "nobis";
 
-sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid("veritatis", "nobis").then((res: DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
+sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid).then((res: DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -62,15 +67,19 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdEarningTypesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1CompaniesCompanyIdEarningTypesRequest,
+  GetV1CompaniesCompanyIdEarningTypesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "quos";
 
-sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes("quos").then((res: GetV1CompaniesCompanyIdEarningTypesResponse) => {
+sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(companyId).then((res: GetV1CompaniesCompanyIdEarningTypesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -102,17 +111,23 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1CompaniesCompanyIdEarningTypesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PostV1CompaniesCompanyIdEarningTypesRequest,
+  PostV1CompaniesCompanyIdEarningTypesRequestBody,
+  PostV1CompaniesCompanyIdEarningTypesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes("tempore", {
+const companyId: string = "tempore";
+const requestBody: PostV1CompaniesCompanyIdEarningTypesRequestBody = {
   name: "Kevin Willms",
-}).then((res: PostV1CompaniesCompanyIdEarningTypesResponse) => {
+};
+
+sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes(companyId, requestBody).then((res: PostV1CompaniesCompanyIdEarningTypesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -143,17 +158,24 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
+  PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody,
+  PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid("labore", "adipisci", {
+const companyId: string = "labore";
+const earningTypeUuid: string = "adipisci";
+const requestBody: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody = {
   name: "Ms. Joe Berge",
-}).then((res: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
+};
+
+sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid, requestBody).then((res: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
