@@ -120,7 +120,7 @@ export class EmployeeBenefit extends SpeakeasyBase {
     /**
      * The amount to be paid, per pay period, by the company. This field will not appear for tiered contribution types.
      *
-     * @deprecated this field will be removed in a future release, please migrate away from it as soon as possible
+     * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "company_contribution" })
@@ -136,7 +136,7 @@ export class EmployeeBenefit extends SpeakeasyBase {
     /**
      * Whether the company_contribution value should be treated as a percentage to be added to each payroll. This field will not appear for tiered contribution types.
      *
-     * @deprecated this field will be removed in a future release, please migrate away from it as soon as possible
+     * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "contribute_as_percentage" })
