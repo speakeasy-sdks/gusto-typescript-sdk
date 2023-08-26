@@ -1,6 +1,6 @@
 {
   "name": "@speakeasy-sdks/gusto",
-  "version": "0.46.0",
+  "version": "0.47.0",
   "author": "gusto",
   "scripts": {
     "prepare": "tsc --build"
@@ -23,6 +23,7 @@
   "main": "dist/index.js",
   "files": [
     "dist",
+    "docs",
     "README.md"
   ],
   "repository": {
