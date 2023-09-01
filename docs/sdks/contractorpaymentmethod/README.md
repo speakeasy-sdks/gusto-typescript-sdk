@@ -15,16 +15,19 @@ Returns all contractor bank accounts.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorsContractorUuidBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import {
+  GetV1ContractorsContractorUuidBankAccountsRequest,
+  GetV1ContractorsContractorUuidBankAccountsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const contractorUuid: string = "facilis";
 
-sdk.contractorPaymentMethod.getV1ContractorsContractorUuidBankAccounts("facilis").then((res: GetV1ContractorsContractorUuidBankAccountsResponse) => {
+sdk.contractorPaymentMethod.getV1ContractorsContractorUuidBankAccounts(contractorUuid).then((res: GetV1ContractorsContractorUuidBankAccountsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -52,16 +55,19 @@ Fetches a contractor's payment method. A contractor payment method describes how
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorsContractorUuidPaymentMethodResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorPaymentMethodSplitBy, ContractorPaymentMethodType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import {
+  GetV1ContractorsContractorUuidPaymentMethodRequest,
+  GetV1ContractorsContractorUuidPaymentMethodResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const contractorUuid: string = "tempore";
 
-sdk.contractorPaymentMethod.getV1ContractorsContractorUuidPaymentMethod("tempore").then((res: GetV1ContractorsContractorUuidPaymentMethodResponse) => {
+sdk.contractorPaymentMethod.getV1ContractorsContractorUuidPaymentMethod(contractorUuid).then((res: GetV1ContractorsContractorUuidPaymentMethodResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -93,23 +99,26 @@ has a bank account will just replace it.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostV1ContractorsContractorUuidBankAccountsRequest,
+  PostV1ContractorsContractorUuidBankAccountsRequestBody,
   PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType,
   PostV1ContractorsContractorUuidBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorBankAccountAccountType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts("labore", {
+const contractorUuid: string = "labore";
+const requestBody: PostV1ContractorsContractorUuidBankAccountsRequestBody = {
   accountNumber: "delectus",
   accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType.Checking,
   name: "Sheri Mayer",
   routingNumber: "necessitatibus",
-}).then((res: PostV1ContractorsContractorUuidBankAccountsResponse) => {
+};
+
+sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts(contractorUuid, requestBody).then((res: PostV1ContractorsContractorUuidBankAccountsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -139,21 +148,24 @@ Updates a contractor's payment method. Note that creating a contractor bank acco
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1ContractorsContractorIdPaymentMethodRequest,
+  PutV1ContractorsContractorIdPaymentMethodRequestBody,
   PutV1ContractorsContractorIdPaymentMethodRequestBodyType,
   PutV1ContractorsContractorIdPaymentMethodResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { ContractorPaymentMethodSplitBy, ContractorPaymentMethodType } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod("sint", {
+const contractorUuid: string = "sint";
+const requestBody: PutV1ContractorsContractorIdPaymentMethodRequestBody = {
   type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType.Check,
   version: "dolor",
-}).then((res: PutV1ContractorsContractorIdPaymentMethodResponse) => {
+};
+
+sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod(contractorUuid, requestBody).then((res: PutV1ContractorsContractorIdPaymentMethodResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

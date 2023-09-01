@@ -16,15 +16,17 @@ Get an employee form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeeFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeeFormRequest, GetV1EmployeeFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeId: string = "nulla";
+const formId: string = "fugit";
 
-sdk.employeeForms.getV1EmployeeForm("nulla", "fugit").then((res: GetV1EmployeeFormResponse) => {
+sdk.employeeForms.getV1EmployeeForm(employeeId, formId).then((res: GetV1EmployeeFormResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -53,15 +55,17 @@ Get the link to the form PDF
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeeFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeeFormPdfRequest, GetV1EmployeeFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeId: string = "porro";
+const formId: string = "maiores";
 
-sdk.employeeForms.getV1EmployeeFormPdf("porro", "maiores").then((res: GetV1EmployeeFormPdfResponse) => {
+sdk.employeeForms.getV1EmployeeFormPdf(employeeId, formId).then((res: GetV1EmployeeFormPdfResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -90,15 +94,16 @@ Get a list of all employee's forms
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeeFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeeFormsRequest, GetV1EmployeeFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeId: string = "doloribus";
 
-sdk.employeeForms.getV1EmployeeForms("doloribus").then((res: GetV1EmployeeFormsResponse) => {
+sdk.employeeForms.getV1EmployeeForms(employeeId).then((res: GetV1EmployeeFormsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -172,19 +177,26 @@ Sign a company form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1EmployeeFormSignResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1EmployeeFormSignRequest,
+  PutV1EmployeeFormSignRequestBody,
+  PutV1EmployeeFormSignResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.employeeForms.putV1EmployeeFormSign("ducimus", "alias", {
+const employeeId: string = "ducimus";
+const formId: string = "alias";
+const requestBody: PutV1EmployeeFormSignRequestBody = {
   agree: false,
   signatureText: "officia",
   signedByIpAddress: "tempora",
-}).then((res: PutV1EmployeeFormSignResponse) => {
+};
+
+sdk.employeeForms.putV1EmployeeFormSign(employeeId, formId, requestBody).then((res: PutV1EmployeeFormSignResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

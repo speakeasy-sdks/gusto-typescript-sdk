@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
@@ -43,6 +44,7 @@ export class EmployeeTaxSetup {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -75,6 +77,13 @@ export class EmployeeTaxSetup {
                     res.employeeFederalTax = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.EmployeeFederalTax
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -125,6 +134,7 @@ export class EmployeeTaxSetup {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -160,6 +170,13 @@ export class EmployeeTaxSetup {
                         JSON.parse(decodedRes),
                         shared.EmployeeStateTax,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -209,7 +226,8 @@ export class EmployeeTaxSetup {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -244,6 +262,13 @@ export class EmployeeTaxSetup {
                         JSON.parse(decodedRes),
                         shared.EmployeeFederalTax
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -253,6 +278,13 @@ export class EmployeeTaxSetup {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -302,7 +334,8 @@ export class EmployeeTaxSetup {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -340,6 +373,13 @@ export class EmployeeTaxSetup {
                         shared.EmployeeStateTax,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -354,6 +394,13 @@ export class EmployeeTaxSetup {
                             operations.PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON,
                             resFieldDepth
                         );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }

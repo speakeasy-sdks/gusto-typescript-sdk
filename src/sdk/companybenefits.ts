@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
@@ -46,6 +47,7 @@ export class CompanyBenefits {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -82,6 +84,13 @@ export class CompanyBenefits {
                             JSON.parse(decodedRes),
                             operations.DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON
                         );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -111,6 +120,7 @@ export class CompanyBenefits {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -145,6 +155,13 @@ export class CompanyBenefits {
                         JSON.parse(decodedRes),
                         shared.SupportedBenefit,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -183,6 +200,7 @@ export class CompanyBenefits {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -215,6 +233,13 @@ export class CompanyBenefits {
                     res.supportedBenefit = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.SupportedBenefit
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -255,6 +280,7 @@ export class CompanyBenefits {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -287,6 +313,13 @@ export class CompanyBenefits {
                     res.benefitTypeRequirements = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.BenefitTypeRequirements
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -334,6 +367,7 @@ export class CompanyBenefits {
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -366,6 +400,13 @@ export class CompanyBenefits {
                     res.benefitSummary = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.BenefitSummary
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -411,6 +452,7 @@ export class CompanyBenefits {
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -446,6 +488,13 @@ export class CompanyBenefits {
                         JSON.parse(decodedRes),
                         shared.CompanyBenefit,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -493,6 +542,7 @@ export class CompanyBenefits {
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -525,6 +575,13 @@ export class CompanyBenefits {
                     res.companyBenefit = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.CompanyBenefit
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -578,7 +635,8 @@ export class CompanyBenefits {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -613,6 +671,13 @@ export class CompanyBenefits {
                         JSON.parse(decodedRes),
                         shared.CompanyBenefit
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -622,6 +687,13 @@ export class CompanyBenefits {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -673,7 +745,8 @@ export class CompanyBenefits {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -708,6 +781,13 @@ export class CompanyBenefits {
                         JSON.parse(decodedRes),
                         shared.CompanyBenefit
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -717,6 +797,13 @@ export class CompanyBenefits {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;

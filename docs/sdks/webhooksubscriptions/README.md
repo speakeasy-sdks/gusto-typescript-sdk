@@ -26,15 +26,16 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1WebhookSubscriptionUuidRequest, DeleteV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const webhookSubscriptionUuid: string = "quae";
 
-sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid("quae").then((res: DeleteV1WebhookSubscriptionUuidResponse) => {
+sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid).then((res: DeleteV1WebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -70,16 +71,16 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { GetV1WebhookSubscriptionUuidRequest, GetV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const webhookSubscriptionUuid: string = "amet";
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid("amet").then((res: GetV1WebhookSubscriptionUuidResponse) => {
+sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid).then((res: GetV1WebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -115,15 +116,19 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1WebhookSubscriptionVerificationTokenUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1WebhookSubscriptionVerificationTokenUuidRequest,
+  GetV1WebhookSubscriptionVerificationTokenUuidResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const webhookSubscriptionUuid: string = "illum";
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid("illum").then((res: GetV1WebhookSubscriptionVerificationTokenUuidResponse) => {
+sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid).then((res: GetV1WebhookSubscriptionVerificationTokenUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -159,7 +164,6 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1WebhookSubscriptionsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -206,7 +210,6 @@ import {
   PostV1WebhookSubscriptionRequestBodySubscriptionTypes,
   PostV1WebhookSubscriptionResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -260,18 +263,23 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1VerifyWebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import {
+  PutV1VerifyWebhookSubscriptionUuidRequest,
+  PutV1VerifyWebhookSubscriptionUuidRequestBody,
+  PutV1VerifyWebhookSubscriptionUuidResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid("dicta", {
+const webhookSubscriptionUuid: string = "dicta";
+const requestBody: PutV1VerifyWebhookSubscriptionUuidRequestBody = {
   verificationToken: "laudantium",
-}).then((res: PutV1VerifyWebhookSubscriptionUuidResponse) => {
+};
+
+sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody).then((res: PutV1VerifyWebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -309,25 +317,28 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1WebhookSubscriptionUuidRequest,
+  PutV1WebhookSubscriptionUuidRequestBody,
   PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes,
   PutV1WebhookSubscriptionUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { WebhookSubscriptionStatus, WebhookSubscriptionSubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid("doloremque", {
+const webhookSubscriptionUuid: string = "doloremque";
+const requestBody: PutV1WebhookSubscriptionUuidRequestBody = {
   subscriptionTypes: [
     PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.EmployeeBenefit,
     PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Contractor,
     PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.ExternalPayroll,
     PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Form,
   ],
-}).then((res: PutV1WebhookSubscriptionUuidResponse) => {
+};
+
+sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody).then((res: PutV1WebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

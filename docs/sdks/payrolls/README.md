@@ -26,15 +26,21 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdPayrollReversalsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1CompaniesCompanyIdPayrollReversalsRequest,
+  GetV1CompaniesCompanyIdPayrollReversalsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "natus";
+const page: number = 3283.03;
+const per: number = 1334.61;
 
-sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals("natus", 3283.03, 1334.61).then((res: GetV1CompaniesCompanyIdPayrollReversalsResponse) => {
+sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per).then((res: GetV1CompaniesCompanyIdPayrollReversalsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -73,11 +79,6 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdPayrollsInclude, GetV1CompaniesCompanyIdPayrollsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
@@ -134,21 +135,21 @@ scope: `payrolls:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   GetV1CompaniesCompanyIdPayrollsPayrollIdInclude,
+  GetV1CompaniesCompanyIdPayrollsPayrollIdRequest,
   GetV1CompaniesCompanyIdPayrollsPayrollIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "repudiandae";
+const payrollId: string = "atque";
+const include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.PayrollStatusMeta;
+const showCalculation: string = "sunt";
 
-sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId("repudiandae", "atque", GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.PayrollStatusMeta, "sunt").then((res: GetV1CompaniesCompanyIdPayrollsPayrollIdResponse) => {
+sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation).then((res: GetV1CompaniesCompanyIdPayrollsPayrollIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -183,15 +184,19 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesPayrollBlockersCompanyUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1CompaniesPayrollBlockersCompanyUuidRequest,
+  GetV1CompaniesPayrollBlockersCompanyUuidResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "recusandae";
 
-sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid("recusandae").then((res: GetV1CompaniesPayrollBlockersCompanyUuidResponse) => {
+sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid).then((res: GetV1CompaniesPayrollBlockersCompanyUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -226,15 +231,19 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1PaymentReceiptsPayrollsPayrollUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1PaymentReceiptsPayrollsPayrollUuidRequest,
+  GetV1PaymentReceiptsPayrollsPayrollUuidResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const payrollUuid: string = "dolorum";
 
-sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid("dolorum").then((res: GetV1PaymentReceiptsPayrollsPayrollUuidResponse) => {
+sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid).then((res: GetV1PaymentReceiptsPayrollsPayrollUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -264,15 +273,20 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest,
+  GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeId: string = "repellendus";
+const payrollId: string = "labore";
 
-sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub("repellendus", "labore").then((res: GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse) => {
+sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId).then((res: GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -306,23 +320,20 @@ Creates a new, unprocessed, off-cycle payroll.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostV1CompaniesCompanyIdPayrollsRequest,
+  PostV1CompaniesCompanyIdPayrollsRequestBody,
   PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason,
   PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod,
   PostV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.payrolls.postV1CompaniesCompanyIdPayrolls("reiciendis", {
+const companyId: string = "reiciendis";
+const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
   checkDate: "doloremque",
   employeeUuids: [
     "dicta",
@@ -337,7 +348,9 @@ sdk.payrolls.postV1CompaniesCompanyIdPayrolls("reiciendis", {
   skipRegularDeductions: false,
   startDate: "velit",
   withholdingPayPeriod: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod.Annually,
-}).then((res: PostV1CompaniesCompanyIdPayrollsResponse) => {
+};
+
+sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody).then((res: PostV1CompaniesCompanyIdPayrollsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -368,18 +381,24 @@ scope: `generated_documents:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequest,
+  PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody,
+  PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks("molestias", {
+const payrollId: string = "molestias";
+const requestBody: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody = {
   printingFormat: "magnam",
   startingCheckNumber: 906355,
-}).then((res: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse) => {
+};
+
+sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody).then((res: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -411,20 +430,20 @@ Transitions a `processed` payroll back to the `unprocessed` state. A payroll can
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+  PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest,
+  PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "consequuntur";
+const payrollId: string = "occaecati";
 
-sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel("consequuntur", "occaecati").then((res: PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse) => {
+sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId).then((res: PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -456,22 +475,24 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1CompaniesCompanyIdPayrollsRequest,
+  PutV1CompaniesCompanyIdPayrollsRequestBody,
+  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations,
+  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations,
+  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations,
+  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff,
   PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod,
   PutV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.payrolls.putV1CompaniesCompanyIdPayrolls("officiis", "perspiciatis", {
+const companyId: string = "officiis";
+const payrollId: string = "perspiciatis";
+const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
   employeeCompensations: [
     {
       employeeUuid: "adipisci",
@@ -593,7 +614,9 @@ sdk.payrolls.putV1CompaniesCompanyIdPayrolls("officiis", "perspiciatis", {
     },
   ],
   version: "adipisci",
-}).then((res: PutV1CompaniesCompanyIdPayrollsResponse) => {
+};
+
+sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody).then((res: PutV1CompaniesCompanyIdPayrollsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -628,22 +651,25 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequest,
+  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody,
+  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensations,
+  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsFixedCompensations,
+  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsHourlyCompensations,
+  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaidTimeOff,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  PayrollEmployeeCompensationsPaymentMethod,
-  PayrollOffCycleReason,
-  PayrollWithholdingPayPeriod,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate("quasi", "magni", "doloribus", {
+const companyId: string = "quasi";
+const payPeriodEndDate: string = "magni";
+const payPeriodStartDate: string = "doloribus";
+const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody = {
   employeeCompensations: [
     {
       employeeUuid: "necessitatibus",
@@ -841,7 +867,9 @@ sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate("
     },
   ],
   version: "dolore",
-}).then((res: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse) => {
+};
+
+sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody).then((res: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -876,15 +904,20 @@ If the company is blocked from running payroll due to issues like incomplete set
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest,
+  PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "iusto";
+const payrollId: string = "voluptate";
 
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate("iusto", "voluptate").then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse) => {
+sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -915,15 +948,20 @@ If the company is blocked from running payroll due to issues like incomplete set
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest,
+  PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "sequi";
+const payrollId: string = "dignissimos";
 
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit("sequi", "dignissimos").then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse) => {
+sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

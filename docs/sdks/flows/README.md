@@ -12,19 +12,26 @@ Generate a link to access a pre-built workflow in Gusto white-label UI. For secu
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1CompanyFlowsRequestBodyEntityType, PostV1CompanyFlowsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PostV1CompanyFlowsRequest,
+  PostV1CompanyFlowsRequestBody,
+  PostV1CompanyFlowsRequestBodyEntityType,
+  PostV1CompanyFlowsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.flows.postV1CompanyFlows("quidem", {
+const companyUuid: string = "quidem";
+const requestBody: PostV1CompanyFlowsRequestBody = {
   entityType: PostV1CompanyFlowsRequestBodyEntityType.Employee,
   entityUuid: "necessitatibus",
   flowType: "dolore",
-}).then((res: PostV1CompanyFlowsResponse) => {
+};
+
+sdk.flows.postV1CompanyFlows(companyUuid, requestBody).then((res: PostV1CompanyFlowsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

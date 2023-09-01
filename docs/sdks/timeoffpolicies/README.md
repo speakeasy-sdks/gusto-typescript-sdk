@@ -21,15 +21,19 @@ scope: `time_off_policies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetCompaniesCompanyUuidTimeOffPoliciesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetCompaniesCompanyUuidTimeOffPoliciesRequest,
+  GetCompaniesCompanyUuidTimeOffPoliciesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "facere";
 
-sdk.timeOffPolicies.getCompaniesCompanyUuidTimeOffPolicies("facere").then((res: GetCompaniesCompanyUuidTimeOffPoliciesResponse) => {
+sdk.timeOffPolicies.getCompaniesCompanyUuidTimeOffPolicies(companyUuid).then((res: GetCompaniesCompanyUuidTimeOffPoliciesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -58,15 +62,19 @@ scope: `time_off_policies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetTimeOffPoliciesTimeOffPolicyUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetTimeOffPoliciesTimeOffPolicyUuidRequest,
+  GetTimeOffPoliciesTimeOffPolicyUuidResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const timeOffPolicyUuid: string = "corrupti";
 
-sdk.timeOffPolicies.getTimeOffPoliciesTimeOffPolicyUuid("corrupti").then((res: GetTimeOffPoliciesTimeOffPolicyUuidResponse) => {
+sdk.timeOffPolicies.getTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid).then((res: GetTimeOffPoliciesTimeOffPolicyUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -96,6 +104,8 @@ scope: `time_off_policies:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostCompaniesCompanyUuidTimeOffPoliciesRequest,
+  PostCompaniesCompanyUuidTimeOffPoliciesRequestBody,
   PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod,
   PostCompaniesCompanyUuidTimeOffPoliciesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -105,8 +115,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.timeOffPolicies.postCompaniesCompanyUuidTimeOffPolicies("molestiae", {
+const companyUuid: string = "molestiae";
+const requestBody: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody = {
   accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod.PerHourWorked,
   accrualRate: "accusamus",
   accrualRateUnit: "necessitatibus",
@@ -117,7 +127,9 @@ sdk.timeOffPolicies.postCompaniesCompanyUuidTimeOffPolicies("molestiae", {
   name: "Olivia Larkin",
   paidOutOnTermination: false,
   policyType: "voluptatibus",
-}).then((res: PostCompaniesCompanyUuidTimeOffPoliciesResponse) => {
+};
+
+sdk.timeOffPolicies.postCompaniesCompanyUuidTimeOffPolicies(companyUuid, requestBody).then((res: PostCompaniesCompanyUuidTimeOffPoliciesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -154,21 +166,28 @@ If none of the parameters is passed in, the accrued time off hour will be 0.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequest,
+  PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody,
+  PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.timeOffPolicies.postV1PayrollsPayrollIdCalculateAccruingTimeOffHours("cum", "at", {
+const employeeId: string = "cum";
+const payrollId: string = "at";
+const requestBody: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody = {
   doubleOvertimeHoursWorked: 51.52,
   overtimeHoursWorked: 1566.53,
   ptoHoursUsed: 6941.58,
   regularHoursWorked: 6841.26,
   sickHoursUsed: 9195.08,
-}).then((res: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse) => {
+};
+
+sdk.timeOffPolicies.postV1PayrollsPayrollIdCalculateAccruingTimeOffHours(employeeId, payrollId, requestBody).then((res: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -200,6 +219,8 @@ scope: `time_off_policies:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutTimeOffPoliciesTimeOffPolicyUuidRequest,
+  PutTimeOffPoliciesTimeOffPolicyUuidRequestBody,
   PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod,
   PutTimeOffPoliciesTimeOffPolicyUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
@@ -209,8 +230,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.timeOffPolicies.putTimeOffPoliciesTimeOffPolicyUuid("accusantium", {
+const timeOffPolicyUuid: string = "accusantium";
+const requestBody: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody = {
   accrualMethod: PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod.PerHourWorkedNoOvertime,
   accrualRate: "officiis",
   accrualRateUnit: "eos",
@@ -220,7 +241,9 @@ sdk.timeOffPolicies.putTimeOffPoliciesTimeOffPolicyUuid("accusantium", {
   maxHours: "odit",
   name: "Stacy Mraz",
   paidOutOnTermination: false,
-}).then((res: PutTimeOffPoliciesTimeOffPolicyUuidResponse) => {
+};
+
+sdk.timeOffPolicies.putTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid, requestBody).then((res: PutTimeOffPoliciesTimeOffPolicyUuidResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -249,15 +272,19 @@ Deactivate a time off policy
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateRequest,
+  PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const timeOffPolicyUuid: string = "recusandae";
 
-sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate("recusandae").then((res: PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse) => {
+sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate(timeOffPolicyUuid).then((res: PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -286,15 +313,20 @@ scope: `time_off_policies:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequest,
+  PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody,
+  PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees,
+  PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees("similique", {
+const timeOffPolicyUuid: string = "similique";
+const requestBody: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody = {
   employees: [
     {
       uuid: "b5197f92-443d-4a7c-a52b-895c537c6454",
@@ -303,7 +335,9 @@ sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees("simili
       uuid: "efb0b348-96c3-4ca5-acfb-e2fd57075779",
     },
   ],
-}).then((res: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse) => {
+};
+
+sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees(timeOffPolicyUuid, requestBody).then((res: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -333,15 +367,20 @@ scope: `time_off_policies:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest,
+  PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody,
+  PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEmployees,
+  PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.timeOffPolicies.putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees("dolores", {
+const timeOffPolicyUuid: string = "dolores";
+const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody = {
   employees: [
     {
       balance: "veritatis",
@@ -356,7 +395,9 @@ sdk.timeOffPolicies.putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees("dolo
       uuid: "0fcb33ea-055b-4197-8d44-e2f52d82d351",
     },
   ],
-}).then((res: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse) => {
+};
+
+sdk.timeOffPolicies.putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees(timeOffPolicyUuid, requestBody).then((res: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -386,15 +427,20 @@ scope: `time_off_policies:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequest,
+  PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody,
+  PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBodyEmployees,
+  PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.timeOffPolicies.putVersionTimeOffPoliciesTimeOffPolicyUuidBalance("velit", {
+const timeOffPolicyUuid: string = "velit";
+const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody = {
   employees: [
     {
       balance: "tempore",
@@ -409,7 +455,9 @@ sdk.timeOffPolicies.putVersionTimeOffPoliciesTimeOffPolicyUuidBalance("velit", {
       uuid: "814d4c98-e0c2-4bb8-9eb7-5dad636c6005",
     },
   ],
-}).then((res: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse) => {
+};
+
+sdk.timeOffPolicies.putVersionTimeOffPoliciesTimeOffPolicyUuidBalance(timeOffPolicyUuid, requestBody).then((res: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

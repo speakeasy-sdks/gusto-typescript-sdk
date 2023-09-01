@@ -479,3 +479,203 @@ Based on:
 - Speakeasy CLI 1.50.1 (2.43.2) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [NPM v0.30.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.30.1 - .
+
+## 2023-06-27 00:35:23
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.51.1 (2.50.2) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.31.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.31.0 - .
+
+## 2023-06-29 00:34:41
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.51.3 (2.52.2) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.32.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.32.0 - .
+
+## 2023-07-01 00:38:54
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.52.0 (2.55.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.33.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.33.0 - .
+
+## 2023-07-06 00:36:25
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.52.2 (2.57.2) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.34.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.34.0 - .
+
+## 2023-07-07 00:35:34
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.53.0 (2.58.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.35.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.35.0 - .
+
+## 2023-07-08 00:33:56
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.53.1 (2.58.2) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.35.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.35.1 - .
+
+## 2023-07-11 00:31:24
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.56.0 (2.61.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.36.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.36.0 - .
+
+## 2023-07-12 00:37:43
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.56.3 (2.61.4) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.36.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.36.1 - .
+
+## 2023-07-13 00:35:25
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.57.0 (2.62.1) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.37.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.37.0 - .
+
+## 2023-07-14 00:36:20
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.59.0 (2.65.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.38.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.38.0 - .
+
+## 2023-07-18 00:54:47
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.61.0 (2.70.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.39.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.39.0 - .
+
+## 2023-07-19 00:54:27
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.62.1 (2.70.2) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.39.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.39.1 - .
+
+## 2023-07-22 00:31:42
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.64.0 (2.71.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.40.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.40.0 - .
+
+## 2023-07-26 00:30:22
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.65.0 (2.73.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.41.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.41.0 - .
+
+## 2023-07-27 00:29:35
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.65.1 (2.73.1) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.41.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.41.1 - .
+
+## 2023-07-28 00:28:48
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.65.2 (2.75.1) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.42.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.42.0 - .
+
+## 2023-08-01 00:34:22
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.66.1 (2.75.2) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.42.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.42.1 - .
+
+## 2023-08-03 00:31:23
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.68.1 (2.77.1) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.43.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.43.0 - .
+
+## 2023-08-04 00:30:34
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.68.3 (2.81.1) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.44.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.44.0 - .
+
+## 2023-08-08 00:29:10
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.69.1 (2.82.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.45.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.45.0 - .
+
+## 2023-08-16 00:24:04
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.73.1 (2.84.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.46.0] .
+### Releases
+- [NPM v0.46.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.46.0 - .
+
+## 2023-08-26 00:23:44
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.74.15 (2.88.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.47.0] .
+### Releases
+- [NPM v0.47.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.47.0 - .
+
+## 2023-08-31 00:24:55
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.75.0 (2.89.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.48.0] .
+### Releases
+- [NPM v0.48.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.48.0 - .
+
+## 2023-09-01 00:27:20
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.77.0 (2.91.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.49.0] .
+### Releases
+- [NPM v0.49.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.49.0 - .

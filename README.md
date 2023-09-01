@@ -41,23 +41,23 @@ Once you have your API Token, `client_id`, `secret`, and a demo company, you’r
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+
+
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdBankAccountsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  CompanyBankAccountAccountType,
-  CompanyBankAccountPlaidStatus,
-  CompanyBankAccountVerificationStatus,
-  CompanyBankAccountVerificationType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+  GetV1CompaniesCompanyIdBankAccountsRequest,
+  GetV1CompaniesCompanyIdBankAccountsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "corrupti";
 
-sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts("corrupti").then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
+sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

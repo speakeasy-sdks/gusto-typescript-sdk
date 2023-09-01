@@ -13,13 +13,19 @@ Fetches attributes relevant for a company's federal taxes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdFederalTaxDetailsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1CompaniesCompanyIdFederalTaxDetailsRequest,
+  GetV1CompaniesCompanyIdFederalTaxDetailsResponse,
+  GetV1CompaniesCompanyIdFederalTaxDetailsSecurity,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto();
-
-sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails({
+const companyId: string = "exercitationem";
+const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
   authorization: "",
-}, "exercitationem").then((res: GetV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
+};
+
+sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails(operationSecurity, companyId).then((res: GetV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -48,22 +54,28 @@ Updates attributes relevant for a company's federal taxes. This information is r
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompaniesCompanyIdFederalTaxDetailsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1CompaniesCompanyIdFederalTaxDetailsRequest,
+  PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody,
+  PutV1CompaniesCompanyIdFederalTaxDetailsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails("earum", {
+const companyId: string = "earum";
+const requestBody: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody = {
   ein: "facere",
   filingForm: "numquam",
   legalName: "doloribus",
   taxPayerType: "suscipit",
   taxableAsScorp: false,
   version: "reiciendis",
-}).then((res: PutV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
+};
+
+sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails(companyId, requestBody).then((res: PutV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

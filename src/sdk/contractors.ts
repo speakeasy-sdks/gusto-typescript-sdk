@@ -3,10 +3,21 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+
+export enum GetV1ContractorsContractorUuidOnboardingStatusAcceptEnum {
+    applicationJson = "application/json",
+    applicationXml = "application/xml",
+}
+
+export enum PutV1ContractorsContractorUuidOnboardingStatusAcceptEnum {
+    applicationJson = "application/json",
+    applicationXml = "application/xml",
+}
 
 export class Contractors {
     private sdkConfiguration: SDKConfiguration;
@@ -39,6 +50,7 @@ export class Contractors {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "*/*";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -107,6 +119,7 @@ export class Contractors {
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -143,6 +156,13 @@ export class Contractors {
                         shared.Contractor,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -178,6 +198,7 @@ export class Contractors {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -208,6 +229,13 @@ export class Contractors {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractor = utils.objectToClass(JSON.parse(decodedRes), shared.Contractor);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -247,6 +275,7 @@ export class Contractors {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -279,6 +308,13 @@ export class Contractors {
                     res.contractorAddress = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ContractorAddress1
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -330,7 +366,8 @@ export class Contractors {
      */
     async getV1ContractorsContractorUuidOnboardingStatus(
         contractorUuid: string,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: GetV1ContractorsContractorUuidOnboardingStatusAcceptEnum
     ): Promise<operations.GetV1ContractorsContractorUuidOnboardingStatusResponse> {
         const req = new operations.GetV1ContractorsContractorUuidOnboardingStatusRequest({
             contractorUuid: contractorUuid,
@@ -349,7 +386,12 @@ export class Contractors {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/xml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/json;q=1, application/xml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -383,9 +425,15 @@ export class Contractors {
                         JSON.parse(decodedRes),
                         shared.ContractorOnboardingStatus1
                     );
-                }
-                if (utils.matchContentType(contentType, `application/xml`)) {
+                } else if (utils.matchContentType(contentType, `application/xml`)) {
                     res.body = httpRes?.data;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -436,7 +484,8 @@ export class Contractors {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -468,6 +517,13 @@ export class Contractors {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractor = utils.objectToClass(JSON.parse(decodedRes), shared.Contractor);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -477,6 +533,13 @@ export class Contractors {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -526,7 +589,8 @@ export class Contractors {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -558,6 +622,13 @@ export class Contractors {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractor = utils.objectToClass(JSON.parse(decodedRes), shared.Contractor);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -567,6 +638,13 @@ export class Contractors {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -616,7 +694,8 @@ export class Contractors {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -651,6 +730,13 @@ export class Contractors {
                         JSON.parse(decodedRes),
                         shared.ContractorAddress1
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -660,6 +746,13 @@ export class Contractors {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -688,7 +781,8 @@ export class Contractors {
     async putV1ContractorsContractorUuidOnboardingStatus(
         contractorUuid: string,
         requestBody?: operations.PutV1ContractorsContractorUuidOnboardingStatusRequestBody,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: PutV1ContractorsContractorUuidOnboardingStatusAcceptEnum
     ): Promise<operations.PutV1ContractorsContractorUuidOnboardingStatusResponse> {
         const req = new operations.PutV1ContractorsContractorUuidOnboardingStatusRequest({
             contractorUuid: contractorUuid,
@@ -718,7 +812,12 @@ export class Contractors {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0.7, application/xml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/json;q=1, application/xml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -753,9 +852,15 @@ export class Contractors {
                         JSON.parse(decodedRes),
                         shared.ContractorOnboardingStatus1
                     );
-                }
-                if (utils.matchContentType(contentType, `application/xml`)) {
+                } else if (utils.matchContentType(contentType, `application/xml`)) {
                     res.body = httpRes?.data;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -765,6 +870,13 @@ export class Contractors {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;

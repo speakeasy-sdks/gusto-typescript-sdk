@@ -18,15 +18,20 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest,
+  DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "debitis";
+const contractorPaymentId: string = "a";
 
-sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment("debitis", "a").then((res: DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
+sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId).then((res: DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -57,20 +62,20 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  ContractorPaymentPaymentMethod,
-  ContractorPaymentStatus,
-  ContractorPaymentWageType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+  GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest,
+  GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyId: string = "dolorum";
+const contractorPaymentId: string = "in";
 
-sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment("dolorum", "in").then((res: GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
+sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId).then((res: GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -154,16 +159,19 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
+import {
+  GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest,
+  GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const contractorPaymentUuid: string = "dicta";
 
-sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt("dicta").then((res: GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse) => {
+sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt(contractorPaymentUuid).then((res: GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -194,14 +202,11 @@ scope: `payrolls:run`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostV1CompaniesCompanyIdContractorPaymentsRequest,
+  PostV1CompaniesCompanyIdContractorPaymentsRequestBody,
   PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod,
   PostV1CompaniesCompanyIdContractorPaymentsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import {
-  ContractorPaymentPaymentMethod,
-  ContractorPaymentStatus,
-  ContractorPaymentWageType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
 
 const sdk = new Gusto({
@@ -209,8 +214,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-
-sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments("magnam", {
+const companyId: string = "magnam";
+const requestBody: PostV1CompaniesCompanyIdContractorPaymentsRequestBody = {
   bonus: 500,
   contractorUuid: "cumque",
   date: new RFCDate("2020-01-01"),
@@ -218,7 +223,9 @@ sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments("magnam", {
   paymentMethod: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod.HistoricalPayment,
   reimbursement: 20,
   wage: 5000,
-}).then((res: PostV1CompaniesCompanyIdContractorPaymentsResponse) => {
+};
+
+sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments(companyId, requestBody).then((res: PostV1CompaniesCompanyIdContractorPaymentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

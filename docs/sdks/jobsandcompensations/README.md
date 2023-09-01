@@ -21,15 +21,16 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1JobsJobIdRequest, DeleteV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const jobId: string = "dolorum";
 
-sdk.jobsAndCompensations.deleteV1JobsJobId("dolorum").then((res: DeleteV1JobsJobIdResponse) => {
+sdk.jobsAndCompensations.deleteV1JobsJobId(jobId).then((res: DeleteV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -62,16 +63,19 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompensationsCompensationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import {
+  GetV1CompensationsCompensationIdRequest,
+  GetV1CompensationsCompensationIdResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const compensationId: string = "adipisci";
 
-sdk.jobsAndCompensations.getV1CompensationsCompensationId("adipisci").then((res: GetV1CompensationsCompensationIdResponse) => {
+sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId).then((res: GetV1CompensationsCompensationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -101,16 +105,23 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesEmployeeIdJobsInclude, GetV1EmployeesEmployeeIdJobsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import {
+  GetV1EmployeesEmployeeIdJobsInclude,
+  GetV1EmployeesEmployeeIdJobsRequest,
+  GetV1EmployeesEmployeeIdJobsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeId: string = "minus";
+const include: GetV1EmployeesEmployeeIdJobsInclude = GetV1EmployeesEmployeeIdJobsInclude.AllCompensations;
+const page: number = 1718.53;
+const per: number = 5039.34;
 
-sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs("minus", GetV1EmployeesEmployeeIdJobsInclude.AllCompensations, 1718.53, 5039.34).then((res: GetV1EmployeesEmployeeIdJobsResponse) => {
+sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page, per).then((res: GetV1EmployeesEmployeeIdJobsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -143,16 +154,17 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1JobsJobIdInclude, GetV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { GetV1JobsJobIdInclude, GetV1JobsJobIdRequest, GetV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const jobId: string = "in";
+const include: GetV1JobsJobIdInclude = GetV1JobsJobIdInclude.AllCompensations;
 
-sdk.jobsAndCompensations.getV1JobsJobId("in", GetV1JobsJobIdInclude.AllCompensations).then((res: GetV1JobsJobIdResponse) => {
+sdk.jobsAndCompensations.getV1JobsJobId(jobId, include).then((res: GetV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -187,16 +199,23 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1JobsJobIdCompensationsInclude, GetV1JobsJobIdCompensationsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import {
+  GetV1JobsJobIdCompensationsInclude,
+  GetV1JobsJobIdCompensationsRequest,
+  GetV1JobsJobIdCompensationsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const jobId: string = "dolore";
+const include: GetV1JobsJobIdCompensationsInclude = GetV1JobsJobIdCompensationsInclude.AllCompensations;
+const page: number = 3044.68;
+const per: number = 8859.63;
 
-sdk.jobsAndCompensations.getV1JobsJobIdCompensations("dolore", GetV1JobsJobIdCompensationsInclude.AllCompensations, 3044.68, 8859.63).then((res: GetV1JobsJobIdCompensationsResponse) => {
+sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per).then((res: GetV1JobsJobIdCompensationsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -229,20 +248,21 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { PostV1JobsJobIdRequest, PostV1JobsJobIdRequestBody, PostV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.jobsAndCompensations.postV1JobsJobId("temporibus", {
+const employeeId: string = "temporibus";
+const requestBody: PostV1JobsJobIdRequestBody = {
   hireDate: "ullam",
   locationUuid: "adipisci",
   title: "Miss",
-}).then((res: PostV1JobsJobIdResponse) => {
+};
+
+sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody).then((res: PostV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -276,19 +296,21 @@ scope: `jobs:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1CompensationsCompensationIdRequest,
+  PutV1CompensationsCompensationIdRequestBody,
   PutV1CompensationsCompensationIdRequestBodyFlsaStatus,
+  PutV1CompensationsCompensationIdRequestBodyMinimumWages,
   PutV1CompensationsCompensationIdRequestBodyPaymentUnit,
   PutV1CompensationsCompensationIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.jobsAndCompensations.putV1CompensationsCompensationId("blanditiis", {
+const compensationId: string = "blanditiis";
+const requestBody: PutV1CompensationsCompensationIdRequestBody = {
   adjustForMinimumWage: false,
   flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatus.CommissionOnlyExempt,
   minimumWages: [
@@ -308,7 +330,9 @@ sdk.jobsAndCompensations.putV1CompensationsCompensationId("blanditiis", {
   paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnit.Paycheck,
   rate: "dolorem",
   version: "harum",
-}).then((res: PutV1CompensationsCompensationIdResponse) => {
+};
+
+sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody).then((res: PutV1CompensationsCompensationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -339,21 +363,22 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-import { CompensationFlsaStatus, CompensationPaymentUnit } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+import { PutV1JobsJobIdRequest, PutV1JobsJobIdRequestBody, PutV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.jobsAndCompensations.putV1JobsJobId("dicta", {
+const jobId: string = "dicta";
+const requestBody: PutV1JobsJobIdRequestBody = {
   hireDate: "architecto",
   locationUuid: "occaecati",
   title: "Mrs.",
   version: "quidem",
-}).then((res: PutV1JobsJobIdResponse) => {
+};
+
+sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody).then((res: PutV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

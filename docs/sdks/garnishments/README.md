@@ -17,15 +17,21 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesEmployeeIdGarnishmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1EmployeesEmployeeIdGarnishmentsRequest,
+  GetV1EmployeesEmployeeIdGarnishmentsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const employeeId: string = "sunt";
+const page: number = 9920.12;
+const per: number = 2415.45;
 
-sdk.garnishments.getV1EmployeesEmployeeIdGarnishments("sunt", 9920.12, 2415.45).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse) => {
+sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -57,15 +63,16 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1GarnishmentsGarnishmentIdRequest, GetV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const garnishmentId: string = "non";
 
-sdk.garnishments.getV1GarnishmentsGarnishmentId("non").then((res: GetV1GarnishmentsGarnishmentIdResponse) => {
+sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId).then((res: GetV1GarnishmentsGarnishmentIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -95,15 +102,19 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1EmployeesEmployeeIdGarnishmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PostV1EmployeesEmployeeIdGarnishmentsRequest,
+  PostV1EmployeesEmployeeIdGarnishmentsRequestBody,
+  PostV1EmployeesEmployeeIdGarnishmentsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.garnishments.postV1EmployeesEmployeeIdGarnishments("amet", {
+const employeeId: string = "amet";
+const requestBody: PostV1EmployeesEmployeeIdGarnishmentsRequestBody = {
   active: false,
   amount: "beatae",
   annualMaximum: "dignissimos",
@@ -113,7 +124,9 @@ sdk.garnishments.postV1EmployeesEmployeeIdGarnishments("amet", {
   payPeriodMaximum: "debitis",
   recurring: false,
   times: 233420,
-}).then((res: PostV1EmployeesEmployeeIdGarnishmentsResponse) => {
+};
+
+sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdGarnishmentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -144,15 +157,19 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1GarnishmentsGarnishmentIdRequest,
+  PutV1GarnishmentsGarnishmentIdRequestBody,
+  PutV1GarnishmentsGarnishmentIdResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.garnishments.putV1GarnishmentsGarnishmentId("corporis", {
+const garnishmentId: string = "corporis";
+const requestBody: PutV1GarnishmentsGarnishmentIdRequestBody = {
   active: false,
   amount: "harum",
   annualMaximum: "laboriosam",
@@ -163,7 +180,9 @@ sdk.garnishments.putV1GarnishmentsGarnishmentId("corporis", {
   recurring: false,
   times: 730709,
   version: "vitae",
-}).then((res: PutV1GarnishmentsGarnishmentIdResponse) => {
+};
+
+sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody).then((res: PutV1GarnishmentsGarnishmentIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

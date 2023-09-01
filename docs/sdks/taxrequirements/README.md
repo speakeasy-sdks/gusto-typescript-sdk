@@ -14,15 +14,19 @@ Returns objects describing the states that have tax requirements for the company
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyUuidTaxRequirementsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  GetV1CompaniesCompanyUuidTaxRequirementsRequest,
+  GetV1CompaniesCompanyUuidTaxRequirementsResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "neque";
 
-sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements("neque").then((res: GetV1CompaniesCompanyUuidTaxRequirementsResponse) => {
+sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid).then((res: GetV1CompaniesCompanyUuidTaxRequirementsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -90,20 +94,21 @@ Get all tax requirements for a given state.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyUuidTaxRequirementsStateResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import {
-  TaxRequirementMetadataRateType,
-  TaxRequirementMetadataType,
-  TaxRequirementMetadataValidationType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
+  GetV1CompaniesCompanyUuidTaxRequirementsStateRequest,
+  GetV1CompaniesCompanyUuidTaxRequirementsStateResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
+const companyUuid: string = "exercitationem";
+const state: string = "itaque";
+const scheduling: boolean = false;
 
-sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState("exercitationem", "itaque", false).then((res: GetV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
+sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling).then((res: GetV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -133,15 +138,22 @@ Update State Tax Requirements
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1CompaniesCompanyUuidTaxRequirementsStateResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import {
+  PutV1CompaniesCompanyUuidTaxRequirementsStateRequest,
+  PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody,
+  PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets,
+  PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements,
+  PutV1CompaniesCompanyUuidTaxRequirementsStateResponse,
+} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto({
   security: {
     authorization: "",
   },
 });
-
-sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState("et", "ipsum", {
+const companyUuid: string = "et";
+const state: string = "ipsum";
+const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
   requirementSets: [
     {
       effectiveFrom: "nulla",
@@ -205,7 +217,9 @@ sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState("et", "ipsum",
       state: "est",
     },
   ],
-}).then((res: PutV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
+};
+
+sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, requestBody).then((res: PutV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

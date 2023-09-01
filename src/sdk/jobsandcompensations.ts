@@ -3,10 +3,21 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+
+export enum GetV1CompensationsCompensationIdAcceptEnum {
+    applicationJson = "application/json",
+    applicationXml = "application/xml",
+}
+
+export enum PutV1CompensationsCompensationIdAcceptEnum {
+    applicationJson = "application/json",
+    applicationXml = "application/xml",
+}
 
 export class JobsAndCompensations {
     private sdkConfiguration: SDKConfiguration;
@@ -41,6 +52,7 @@ export class JobsAndCompensations {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "*/*";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -86,7 +98,8 @@ export class JobsAndCompensations {
      */
     async getV1CompensationsCompensationId(
         compensationId: string,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: GetV1CompensationsCompensationIdAcceptEnum
     ): Promise<operations.GetV1CompensationsCompensationIdResponse> {
         const req = new operations.GetV1CompensationsCompensationIdRequest({
             compensationId: compensationId,
@@ -101,7 +114,12 @@ export class JobsAndCompensations {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/xml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/json;q=1, application/xml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -135,9 +153,15 @@ export class JobsAndCompensations {
                         JSON.parse(decodedRes),
                         shared.Compensation
                     );
-                }
-                if (utils.matchContentType(contentType, `application/xml`)) {
+                } else if (utils.matchContentType(contentType, `application/xml`)) {
                     res.body = httpRes?.data;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -180,6 +204,7 @@ export class JobsAndCompensations {
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -215,6 +240,13 @@ export class JobsAndCompensations {
                         JSON.parse(decodedRes),
                         shared.Job,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -254,6 +286,7 @@ export class JobsAndCompensations {
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -283,6 +316,13 @@ export class JobsAndCompensations {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.job = utils.objectToClass(JSON.parse(decodedRes), shared.Job);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -329,6 +369,7 @@ export class JobsAndCompensations {
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -364,6 +405,13 @@ export class JobsAndCompensations {
                         JSON.parse(decodedRes),
                         shared.Compensation,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -411,7 +459,8 @@ export class JobsAndCompensations {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -442,6 +491,13 @@ export class JobsAndCompensations {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.job = utils.objectToClass(JSON.parse(decodedRes), shared.Job);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -451,6 +507,13 @@ export class JobsAndCompensations {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -472,7 +535,8 @@ export class JobsAndCompensations {
     async putV1CompensationsCompensationId(
         compensationId: string,
         requestBody?: operations.PutV1CompensationsCompensationIdRequestBody,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: PutV1CompensationsCompensationIdAcceptEnum
     ): Promise<operations.PutV1CompensationsCompensationIdResponse> {
         const req = new operations.PutV1CompensationsCompensationIdRequest({
             compensationId: compensationId,
@@ -498,7 +562,12 @@ export class JobsAndCompensations {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0.7, application/xml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/json;q=1, application/xml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -533,9 +602,15 @@ export class JobsAndCompensations {
                         JSON.parse(decodedRes),
                         shared.Compensation
                     );
-                }
-                if (utils.matchContentType(contentType, `application/xml`)) {
+                } else if (utils.matchContentType(contentType, `application/xml`)) {
                     res.body = httpRes?.data;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -545,6 +620,13 @@ export class JobsAndCompensations {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -590,7 +672,8 @@ export class JobsAndCompensations {
             this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
 
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers["Accept"] = "application/json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -621,6 +704,13 @@ export class JobsAndCompensations {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.job = utils.objectToClass(JSON.parse(decodedRes), shared.Job);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 404:
@@ -630,6 +720,13 @@ export class JobsAndCompensations {
                     res.unprocessableEntityErrorObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.UnprocessableEntityErrorObject
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
