@@ -48,7 +48,6 @@ export const ServerDemo = "demo";
  * Production
  */
 export const ServerProd = "prod";
-
 /**
  * Contains the list of servers available to the SDK
  */
@@ -88,8 +87,8 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "2023-03-01";
-    sdkVersion = "0.49.0";
-    genVersion = "2.91.2";
+    sdkVersion = "0.49.1";
+    genVersion = "2.93.0";
 
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
