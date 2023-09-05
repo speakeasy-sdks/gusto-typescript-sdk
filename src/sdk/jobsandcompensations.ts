@@ -46,11 +46,16 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverDefaults
         );
         const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
-
-        const client: AxiosInstance =
-            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
-
-        const headers = { ...config?.headers };
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "*/*";
 
         headers[
@@ -109,11 +114,16 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverDefaults
         );
         const url: string = utils.generateURL(baseURL, "/v1/compensations/{compensation_id}", req);
-
-        const client: AxiosInstance =
-            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
-
-        const headers = { ...config?.headers };
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers = { ...config?.headers, ...properties.headers };
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
         } else {
@@ -197,11 +207,16 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverDefaults
         );
         const url: string = utils.generateURL(baseURL, "/v1/employees/{employee_id}/jobs", req);
-
-        const client: AxiosInstance =
-            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
-
-        const headers = { ...config?.headers };
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
@@ -279,11 +294,16 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverDefaults
         );
         const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
-
-        const client: AxiosInstance =
-            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
-
-        const headers = { ...config?.headers };
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
@@ -362,11 +382,16 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverDefaults
         );
         const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}/compensations", req);
-
-        const client: AxiosInstance =
-            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
-
-        const headers = { ...config?.headers };
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
@@ -454,11 +479,16 @@ export class JobsAndCompensations {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
-        const client: AxiosInstance =
-            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
-
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers = { ...reqBodyHeaders, ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
         headers[
@@ -557,11 +587,16 @@ export class JobsAndCompensations {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
-        const client: AxiosInstance =
-            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
-
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers = { ...reqBodyHeaders, ...config?.headers, ...properties.headers };
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
         } else {
@@ -667,11 +702,16 @@ export class JobsAndCompensations {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
-        const client: AxiosInstance =
-            this.sdkConfiguration.securityClient || this.sdkConfiguration.defaultClient;
-
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers = { ...reqBodyHeaders, ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
         headers[

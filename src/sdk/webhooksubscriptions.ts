@@ -46,9 +46,7 @@ export class WebhookSubscriptions {
             "/v1/webhook_subscriptions/{webhook_subscription_uuid}",
             req
         );
-
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-
         const headers = { ...config?.headers };
         headers["Accept"] = "*/*";
 
@@ -115,9 +113,7 @@ export class WebhookSubscriptions {
             "/v1/webhook_subscriptions/{webhook_subscription_uuid}",
             req
         );
-
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-
         const headers = { ...config?.headers };
         headers["Accept"] = "application/json";
 
@@ -200,9 +196,7 @@ export class WebhookSubscriptions {
             "/v1/webhook_subscriptions/{webhook_subscription_uuid}/request_verification_token",
             req
         );
-
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-
         const headers = { ...config?.headers };
         headers["Accept"] = "*/*";
 
@@ -260,9 +254,7 @@ export class WebhookSubscriptions {
             this.sdkConfiguration.serverDefaults
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/webhook_subscriptions";
-
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-
         const headers = { ...config?.headers };
         headers["Accept"] = "application/json";
 
@@ -355,9 +347,7 @@ export class WebhookSubscriptions {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-
         const headers = { ...reqBodyHeaders, ...config?.headers };
         headers["Accept"] = "application/json";
 
@@ -471,9 +461,7 @@ export class WebhookSubscriptions {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-
         const headers = { ...reqBodyHeaders, ...config?.headers };
         headers["Accept"] = "application/json";
 
@@ -584,9 +572,7 @@ export class WebhookSubscriptions {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-
         const headers = { ...reqBodyHeaders, ...config?.headers };
         headers["Accept"] = "application/json";
 
