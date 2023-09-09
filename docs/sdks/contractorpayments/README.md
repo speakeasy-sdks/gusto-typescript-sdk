@@ -28,8 +28,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "debitis";
-const contractorPaymentId: string = "a";
+const companyId: string = "sint";
+const contractorPaymentId: string = "veritatis";
 
 sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId).then((res: DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
   if (res.statusCode == 200) {
@@ -72,8 +72,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "dolorum";
-const contractorPaymentId: string = "in";
+const companyId: string = "itaque";
+const contractorPaymentId: string = "incidunt";
 
 sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId).then((res: GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
   if (res.statusCode == 200) {
@@ -115,12 +115,12 @@ const sdk = new Gusto({
 });
 
 sdk.contractorPayments.getV1CompaniesCompanyIdContractorPayments({
-  companyId: "in",
-  contractorUuid: "illum",
+  companyId: "enim",
+  contractorUuid: "consequatur",
   endDate: "2020-12-31",
   groupByDate: false,
-  page: 9785.71,
-  per: 6994.79,
+  page: 6674.11,
+  per: 8423.42,
   startDate: "2020-01-01",
 }).then((res: GetV1CompaniesCompanyIdContractorPaymentsResponse) => {
   if (res.statusCode == 200) {
@@ -169,7 +169,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorPaymentUuid: string = "dicta";
+const contractorPaymentUuid: string = "explicabo";
 
 sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt(contractorPaymentUuid).then((res: GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse) => {
   if (res.statusCode == 200) {
@@ -214,10 +214,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "magnam";
+const companyId: string = "deserunt";
 const requestBody: PostV1CompaniesCompanyIdContractorPaymentsRequestBody = {
   bonus: 500,
-  contractorUuid: "cumque",
+  contractorUuid: "distinctio",
   date: new RFCDate("2020-01-01"),
   hours: 40,
   paymentMethod: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod.HistoricalPayment,

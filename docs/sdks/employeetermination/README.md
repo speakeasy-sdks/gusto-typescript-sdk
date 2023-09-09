@@ -26,7 +26,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "reprehenderit";
+const employeeId: string = "saepe";
 
 sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(employeeId).then((res: DeleteV1EmployeesEmployeeIdTerminationsResponse) => {
   if (res.statusCode == 200) {
@@ -68,7 +68,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "ullam";
+const companyId: string = "ipsum";
 
 sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(companyId).then((res: GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse) => {
   if (res.statusCode == 200) {
@@ -112,7 +112,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "nisi";
+const employeeId: string = "veritatis";
 
 sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(employeeId).then((res: GetV1EmployeesEmployeeIdTerminationsResponse) => {
   if (res.statusCode == 200) {
@@ -157,9 +157,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "aut";
+const employeeId: string = "nobis";
 const requestBody: PostV1EmployeesEmployeeIdTerminationsRequestBody = {
-  effectiveDate: "voluptatum",
+  effectiveDate: "quos",
   runTerminationPayroll: false,
 };
 
@@ -207,11 +207,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "qui";
+const employeeId: string = "tempore";
 const requestBody: PutV1TerminationsEmployeeIdRequestBody = {
-  effectiveDate: "quibusdam",
+  effectiveDate: "cupiditate",
   runTerminationPayroll: false,
-  version: "ex",
+  version: "aperiam",
 };
 
 sdk.employeeTermination.putV1TerminationsEmployeeId(employeeId, requestBody).then((res: PutV1TerminationsEmployeeIdResponse) => {

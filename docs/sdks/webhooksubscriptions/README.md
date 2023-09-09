@@ -33,7 +33,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const webhookSubscriptionUuid: string = "quae";
+const webhookSubscriptionUuid: string = "laboriosam";
 
 sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid).then((res: DeleteV1WebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
@@ -78,7 +78,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const webhookSubscriptionUuid: string = "amet";
+const webhookSubscriptionUuid: string = "dolorum";
 
 sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid).then((res: GetV1WebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
@@ -126,7 +126,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const webhookSubscriptionUuid: string = "illum";
+const webhookSubscriptionUuid: string = "voluptatum";
 
 sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid).then((res: GetV1WebhookSubscriptionVerificationTokenUuidResponse) => {
   if (res.statusCode == 200) {
@@ -219,11 +219,9 @@ const sdk = new Gusto({
 
 sdk.webhookSubscriptions.postV1WebhookSubscription({
   subscriptionTypes: [
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Form,
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Location,
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Contractor,
+    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.ExternalPayroll,
   ],
-  url: "quasi",
+  url: "hic",
 }).then((res: PostV1WebhookSubscriptionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -274,9 +272,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const webhookSubscriptionUuid: string = "dicta";
+const webhookSubscriptionUuid: string = "expedita";
 const requestBody: PutV1VerifyWebhookSubscriptionUuidRequestBody = {
-  verificationToken: "laudantium",
+  verificationToken: "debitis",
 };
 
 sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody).then((res: PutV1VerifyWebhookSubscriptionUuidResponse) => {
@@ -328,12 +326,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const webhookSubscriptionUuid: string = "doloremque";
+const webhookSubscriptionUuid: string = "neque";
 const requestBody: PutV1WebhookSubscriptionUuidRequestBody = {
   subscriptionTypes: [
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.EmployeeBenefit,
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Contractor,
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.ExternalPayroll,
     PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Form,
   ],
 };

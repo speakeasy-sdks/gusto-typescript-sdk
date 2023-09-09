@@ -26,8 +26,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "neque";
-const signatoryUuid: string = "quo";
+const companyUuid: string = "omnis";
+const signatoryUuid: string = "tenetur";
 
 sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid).then((res: DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
   if (res.statusCode == 200) {
@@ -68,7 +68,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "deleniti";
+const companyUuid: string = "quasi";
 
 sdk.signatories.getV1CompaniesCompanyUuidSignatories(companyUuid).then((res: GetV1CompaniesCompanyUuidSignatoriesResponse) => {
   if (res.statusCode == 200) {
@@ -109,12 +109,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "quibusdam";
+const companyUuid: string = "at";
 const requestBody: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody = {
-  email: "Brock.Wolf@yahoo.com",
-  firstName: "Rory",
-  lastName: "Block",
-  title: "Dr.",
+  email: "Jacinto8@gmail.com",
+  firstName: "Darlene",
+  lastName: "Ferry",
+  title: "Miss",
 };
 
 sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite(companyUuid, requestBody).then((res: PostV1CompaniesCompanyUuidSignatoriesInviteResponse) => {
@@ -158,23 +158,23 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "libero";
+const companyUuid: string = "temporibus";
 const requestBody: PostV1CompanySignatoriesRequestBody = {
-  birthday: "architecto",
-  email: "Carli24@hotmail.com",
-  firstName: "Arch",
+  birthday: "accusantium",
+  email: "Adrienne_Langworth@yahoo.com",
+  firstName: "Anne",
   homeAddress: {
-    city: "South Gwenland",
-    state: "vero",
-    street1: "excepturi",
-    street2: "eum",
-    zip: "velit",
+    city: "Demondtown",
+    state: "dolor",
+    street1: "occaecati",
+    street2: "numquam",
+    zip: "impedit",
   },
-  lastName: "Graham",
-  middleInitial: "perspiciatis",
-  phone: "1-279-690-3926 x22400",
-  ssn: "consequatur",
-  title: "Miss",
+  lastName: "Christiansen",
+  middleInitial: "voluptas",
+  phone: "519-629-3904",
+  ssn: "quaerat",
+  title: "Mr.",
 };
 
 sdk.signatories.postV1CompanySignatories(companyUuid, requestBody).then((res: PostV1CompanySignatoriesResponse) => {
@@ -218,24 +218,24 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "recusandae";
-const signatoryUuid: string = "ea";
+const companyUuid: string = "repellendus";
+const signatoryUuid: string = "officia";
 const requestBody: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody = {
-  birthday: "quidem",
-  firstName: "Gavin",
+  birthday: "maxime",
+  firstName: "Jennifer",
   homeAddress: {
-    city: "Schowalterstead",
-    state: "expedita",
-    street1: "deleniti",
-    street2: "a",
-    zip: "voluptate",
+    city: "Yundtbury",
+    state: "quae",
+    street1: "quaerat",
+    street2: "porro",
+    zip: "quod",
   },
-  lastName: "Herman",
-  middleInitial: "unde",
-  phone: "1-773-466-4208 x21023",
-  ssn: "qui",
-  title: "Miss",
-  version: "ex",
+  lastName: "Green",
+  middleInitial: "ab",
+  phone: "763.366.9584",
+  ssn: "ducimus",
+  title: "Ms.",
+  version: "vel",
 };
 
 sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid, requestBody).then((res: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {

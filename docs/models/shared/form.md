@@ -1,7 +1,5 @@
 # Form
 
-Example response
-
 
 ## Fields
 

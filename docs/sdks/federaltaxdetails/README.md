@@ -20,7 +20,7 @@ import {
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto();
-const companyId: string = "exercitationem";
+const companyId: string = "possimus";
 const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
   authorization: "",
 };
@@ -65,14 +65,14 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "earum";
+const companyId: string = "magnam";
 const requestBody: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody = {
-  ein: "facere",
-  filingForm: "numquam",
-  legalName: "doloribus",
-  taxPayerType: "suscipit",
+  ein: "ratione",
+  filingForm: "ex",
+  legalName: "laudantium",
+  taxPayerType: "dicta",
   taxableAsScorp: false,
-  version: "reiciendis",
+  version: "dolor",
 };
 
 sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails(companyId, requestBody).then((res: PutV1CompaniesCompanyIdFederalTaxDetailsResponse) => {

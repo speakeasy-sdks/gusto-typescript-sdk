@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Example response
- */
 export class Form extends SpeakeasyBase {
     /**
      * The description of the form

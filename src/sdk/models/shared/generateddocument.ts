@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Example response
- */
 export class GeneratedDocument extends SpeakeasyBase {
     /**
      * The array of urls to access the documents.

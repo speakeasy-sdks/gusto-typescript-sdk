@@ -25,7 +25,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "facilis";
+const contractorUuid: string = "commodi";
 
 sdk.contractorPaymentMethod.getV1ContractorsContractorUuidBankAccounts(contractorUuid).then((res: GetV1ContractorsContractorUuidBankAccountsResponse) => {
   if (res.statusCode == 200) {
@@ -65,7 +65,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "tempore";
+const contractorUuid: string = "repudiandae";
 
 sdk.contractorPaymentMethod.getV1ContractorsContractorUuidPaymentMethod(contractorUuid).then((res: GetV1ContractorsContractorUuidPaymentMethodResponse) => {
   if (res.statusCode == 200) {
@@ -110,12 +110,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "labore";
+const contractorUuid: string = "quae";
 const requestBody: PostV1ContractorsContractorUuidBankAccountsRequestBody = {
-  accountNumber: "delectus",
-  accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType.Checking,
-  name: "Sheri Mayer",
-  routingNumber: "necessitatibus",
+  accountNumber: "ipsum",
+  accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType.Savings,
+  name: "Andy Streich",
+  routingNumber: "rem",
 };
 
 sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts(contractorUuid, requestBody).then((res: PostV1ContractorsContractorUuidBankAccountsResponse) => {
@@ -159,10 +159,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "sint";
+const contractorUuid: string = "voluptates";
 const requestBody: PutV1ContractorsContractorIdPaymentMethodRequestBody = {
-  type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType.Check,
-  version: "dolor",
+  type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType.DirectDeposit,
+  version: "repudiandae",
 };
 
 sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod(contractorUuid, requestBody).then((res: PutV1ContractorsContractorIdPaymentMethodResponse) => {

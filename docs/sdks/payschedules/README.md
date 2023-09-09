@@ -30,7 +30,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "atque";
+const companyId: string = "molestiae";
 const endDate: string = "2020-01-31";
 const startDate: string = "2020-01-01";
 
@@ -76,9 +76,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "reprehenderit";
-const page: number = 9911.42;
-const per: number = 5199.52;
+const companyId: string = "accusantium";
+const page: number = 7836.48;
+const per: number = 4304.02;
 
 sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules(companyId, page, per).then((res: GetV1CompaniesCompanyIdPaySchedulesResponse) => {
   if (res.statusCode == 200) {
@@ -122,8 +122,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "suscipit";
-const payScheduleId: string = "quidem";
+const companyId: string = "quas";
+const payScheduleId: string = "praesentium";
 
 sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId).then((res: GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
   if (res.statusCode == 200) {
@@ -170,13 +170,13 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "maxime";
+const companyId: string = "consequuntur";
 const requestBody: PostV1CompaniesCompanyIdPaySchedulesRequestBody = {
   anchorEndOfPayPeriod: "2020-05-08",
   anchorPayDate: "2020-05-15",
-  day1: 90885,
-  day2: 461007,
-  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.EveryWeek,
+  day1: 536178,
+  day2: 143829,
+  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.TwicePerMonth,
 };
 
 sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules(companyId, requestBody).then((res: PostV1CompaniesCompanyIdPaySchedulesResponse) => {
@@ -219,8 +219,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "assumenda";
-const payScheduleId: string = "ea";
+const companyId: string = "mollitia";
+const payScheduleId: string = "incidunt";
 const requestBody: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody = {
   autoPilot: false,
   version: "atque",

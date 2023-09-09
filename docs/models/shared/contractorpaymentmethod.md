@@ -1,7 +1,5 @@
 # ContractorPaymentMethod
 
-Example response
-
 
 ## Fields
 

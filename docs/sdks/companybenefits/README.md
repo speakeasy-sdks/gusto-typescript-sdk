@@ -33,7 +33,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyBenefitId: string = "itaque";
+const companyBenefitId: string = "laborum";
 
 sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId).then((res: DeleteV1CompanyBenefitsCompanyBenefitIdResponse) => {
   if (res.statusCode == 200) {
@@ -113,7 +113,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const benefitId: string = "incidunt";
+const benefitId: string = "quasi";
 
 sdk.companyBenefits.getV1BenefitsBenefitId(benefitId).then((res: GetV1BenefitsBenefitIdResponse) => {
   if (res.statusCode == 200) {
@@ -155,7 +155,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const benefitId: string = "enim";
+const benefitId: string = "reiciendis";
 
 sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements(benefitId).then((res: GetV1BenefitsBenefitsIdRequirementsResponse) => {
   if (res.statusCode == 200) {
@@ -197,7 +197,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyBenefitId: string = "consequatur";
+const companyBenefitId: string = "voluptatibus";
 const detailed: boolean = false;
 const endDate: string = "2022-12-31";
 const startDate: string = "2022-01-01";
@@ -247,7 +247,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "est";
+const companyId: string = "vero";
 const enrollmentCount: boolean = false;
 
 sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits(companyId, enrollmentCount).then((res: GetV1CompaniesCompanyIdCompanyBenefitsResponse) => {
@@ -295,7 +295,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyBenefitId: string = "quibusdam";
+const companyBenefitId: string = "nihil";
 const withEmployeeBenefits: boolean = false;
 
 sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId(companyBenefitId, withEmployeeBenefits).then((res: GetV1CompanyBenefitsCompanyBenefitIdResponse) => {
@@ -342,11 +342,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "explicabo";
+const companyId: string = "praesentium";
 const requestBody: PostV1CompaniesCompanyIdCompanyBenefitsRequestBody = {
   active: false,
-  benefitType: 6471.74,
-  description: "distinctio",
+  benefitType: 9767.62,
+  description: "ipsa",
   responsibleForEmployeeW2: false,
   responsibleForEmployerTaxes: false,
 };
@@ -395,11 +395,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyBenefitId: string = "quibusdam";
+const companyBenefitId: string = "omnis";
 const requestBody: PutV1CompanyBenefitsCompanyBenefitIdRequestBody = {
   active: false,
-  description: "labore",
-  version: "modi",
+  description: "voluptate",
+  version: "cum",
 };
 
 sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId(companyBenefitId, requestBody).then((res: PutV1CompanyBenefitsCompanyBenefitIdResponse) => {

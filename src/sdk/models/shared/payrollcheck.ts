@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Example response
- */
 export class PayrollCheck extends SpeakeasyBase {
     /**
      * A unique identifier of the payroll.

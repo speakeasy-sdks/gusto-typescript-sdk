@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Supported benefit response
- */
 export class SupportedBenefit extends SpeakeasyBase {
     /**
      * The benefit type in Gusto.

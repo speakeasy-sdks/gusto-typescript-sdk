@@ -22,7 +22,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const formId: string = "qui";
+const formId: string = "perferendis";
 
 sdk.companyForms.getV1CompanyForm(formId).then((res: GetV1CompanyFormResponse) => {
   if (res.statusCode == 200) {
@@ -59,7 +59,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const formId: string = "aliquid";
+const formId: string = "doloremque";
 
 sdk.companyForms.getV1CompanyFormPdf(formId).then((res: GetV1CompanyFormPdfResponse) => {
   if (res.statusCode == 200) {
@@ -96,7 +96,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "cupiditate";
+const companyId: string = "reprehenderit";
 
 sdk.companyForms.getV1CompanyForms(companyId).then((res: GetV1CompanyFormsResponse) => {
   if (res.statusCode == 200) {
@@ -137,11 +137,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const formId: string = "quos";
+const formId: string = "ut";
 const requestBody: PutV1CompanyFormSignRequestBody = {
   agree: false,
-  signatureText: "perferendis",
-  signedByIpAddress: "magni",
+  signatureText: "maiores",
+  signedByIpAddress: "dicta",
 };
 
 sdk.companyForms.putV1CompanyFormSign(formId, requestBody).then((res: PutV1CompanyFormSignResponse) => {

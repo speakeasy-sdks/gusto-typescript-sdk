@@ -13,9 +13,6 @@ export enum EmployeeFederalTaxW4DataType {
     Rev2020W4 = "rev_2020_w4",
 }
 
-/**
- * Example response
- */
 export class EmployeeFederalTax extends SpeakeasyBase {
     /**
      * *does not apply to rev_2020_w4 form*

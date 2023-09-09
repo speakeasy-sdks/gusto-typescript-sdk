@@ -25,7 +25,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeUuid: string = "explicabo";
+const employeeUuid: string = "quam";
 
 sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdFederalTaxesResponse) => {
   if (res.statusCode == 200) {
@@ -77,7 +77,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeUuid: string = "minima";
+const employeeUuid: string = "molestias";
 
 sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdStateTaxesResponse) => {
   if (res.statusCode == 200) {
@@ -118,16 +118,16 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeUuid: string = "nisi";
+const employeeUuid: string = "temporibus";
 const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
-  deductions: "fugit",
-  dependentsAmount: "sapiente",
-  extraWithholding: "consequuntur",
-  filingStatus: "ratione",
-  otherIncome: "explicabo",
+  deductions: "qui",
+  dependentsAmount: "neque",
+  extraWithholding: "fugit",
+  filingStatus: "magni",
+  otherIncome: "odio",
   twoJobs: false,
-  version: "saepe",
-  w4DataType: "occaecati",
+  version: "sunt",
+  w4DataType: "ullam",
 };
 
 sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody).then((res: PutV1EmployeesEmployeeIdFederalTaxesResponse) => {
@@ -175,134 +175,24 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeUuid: string = "atque";
+const employeeUuid: string = "nam";
 const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
-  employeeId: "et",
+  employeeId: "hic",
   states: [
     {
       questions: [
         {
           answers: [
             {
-              validFrom: "veritatis",
-              validUpTo: "esse",
-              value: "quod",
-            },
-            {
-              validFrom: "nam",
-              validUpTo: "vero",
-              value: "aliquid",
-            },
-            {
-              validFrom: "quasi",
-              validUpTo: "saepe",
-              value: "vel",
-            },
-            {
-              validFrom: "harum",
-              validUpTo: "molestiae",
-              value: "rerum",
-            },
-          ],
-          key: "occaecati",
-        },
-        {
-          answers: [
-            {
-              validFrom: "distinctio",
-              validUpTo: "eligendi",
-              value: "sit",
-            },
-            {
-              validFrom: "culpa",
-              validUpTo: "tempore",
-              value: "adipisci",
-            },
-          ],
-          key: "cumque",
-        },
-        {
-          answers: [
-            {
-              validFrom: "consequatur",
-              validUpTo: "minus",
-              value: "quaerat",
-            },
-          ],
-          key: "sapiente",
-        },
-        {
-          answers: [
-            {
-              validFrom: "esse",
-              validUpTo: "blanditiis",
-              value: "provident",
-            },
-          ],
-          key: "a",
-        },
-      ],
-      state: "nulla",
-    },
-    {
-      questions: [
-        {
-          answers: [
-            {
-              validFrom: "quasi",
-              validUpTo: "a",
-              value: "error",
-            },
-            {
-              validFrom: "sint",
-              validUpTo: "pariatur",
-              value: "possimus",
-            },
-          ],
-          key: "quia",
-        },
-        {
-          answers: [
-            {
-              validFrom: "asperiores",
-              validUpTo: "facere",
-              value: "veritatis",
-            },
-            {
-              validFrom: "consequuntur",
-              validUpTo: "quasi",
-              value: "similique",
-            },
-            {
-              validFrom: "culpa",
-              validUpTo: "aliquid",
-              value: "tenetur",
-            },
-            {
-              validFrom: "quae",
-              validUpTo: "earum",
-              value: "vel",
-            },
-          ],
-          key: "in",
-        },
-        {
-          answers: [
-            {
-              validFrom: "libero",
-              validUpTo: "illum",
+              validFrom: "voluptatem",
+              validUpTo: "cumque",
               value: "soluta",
             },
-            {
-              validFrom: "accusantium",
-              validUpTo: "aliquam",
-              value: "sapiente",
-            },
           ],
-          key: "dicta",
+          key: "nobis",
         },
       ],
-      state: "ullam",
+      state: "et",
     },
   ],
 };

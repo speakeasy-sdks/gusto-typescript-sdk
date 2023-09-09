@@ -22,8 +22,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "assumenda";
-const formId: string = "ipsam";
+const contractorUuid: string = "corporis";
+const formId: string = "dolore";
 
 sdk.contractorForms.getV1ContractorForm(contractorUuid, formId).then((res: GetV1ContractorFormResponse) => {
   if (res.statusCode == 200) {
@@ -61,8 +61,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "alias";
-const formId: string = "fugit";
+const contractorUuid: string = "iusto";
+const formId: string = "dicta";
 
 sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId).then((res: GetV1ContractorFormPdfResponse) => {
   if (res.statusCode == 200) {
@@ -100,7 +100,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "dolorum";
+const contractorUuid: string = "harum";
 
 sdk.contractorForms.getV1ContractorForms(contractorUuid).then((res: GetV1ContractorFormsResponse) => {
   if (res.statusCode == 200) {
@@ -146,8 +146,8 @@ const sdk = new Gusto({
 });
 
 sdk.contractorForms.postV1SandboxGenerate1099({
-  contractorId: "excepturi",
-  year: 270008,
+  contractorId: "enim",
+  year: 880476,
 }).then((res: PostV1SandboxGenerate1099Response) => {
   if (res.statusCode == 200) {
     // handle response

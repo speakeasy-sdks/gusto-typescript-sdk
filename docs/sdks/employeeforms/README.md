@@ -23,8 +23,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "nulla";
-const formId: string = "fugit";
+const employeeId: string = "eius";
+const formId: string = "aspernatur";
 
 sdk.employeeForms.getV1EmployeeForm(employeeId, formId).then((res: GetV1EmployeeFormResponse) => {
   if (res.statusCode == 200) {
@@ -62,8 +62,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "porro";
-const formId: string = "maiores";
+const employeeId: string = "perferendis";
+const formId: string = "amet";
 
 sdk.employeeForms.getV1EmployeeFormPdf(employeeId, formId).then((res: GetV1EmployeeFormPdfResponse) => {
   if (res.statusCode == 200) {
@@ -101,7 +101,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "doloribus";
+const employeeId: string = "optio";
 
 sdk.employeeForms.getV1EmployeeForms(employeeId).then((res: GetV1EmployeeFormsResponse) => {
   if (res.statusCode == 200) {
@@ -147,8 +147,8 @@ const sdk = new Gusto({
 });
 
 sdk.employeeForms.postV1SandboxGenerateW2({
-  employeeId: "iusto",
-  year: 753570,
+  employeeId: "accusamus",
+  year: 320017,
 }).then((res: PostV1SandboxGenerateW2Response) => {
   if (res.statusCode == 200) {
     // handle response
@@ -188,12 +188,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "ducimus";
-const formId: string = "alias";
+const employeeId: string = "saepe";
+const formId: string = "suscipit";
 const requestBody: PutV1EmployeeFormSignRequestBody = {
   agree: false,
-  signatureText: "officia",
-  signedByIpAddress: "tempora",
+  signatureText: "deserunt",
+  signedByIpAddress: "provident",
 };
 
 sdk.employeeForms.putV1EmployeeFormSign(employeeId, formId, requestBody).then((res: PutV1EmployeeFormSignResponse) => {

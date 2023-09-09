@@ -447,47 +447,28 @@ sdk.companies.postV1Provision({
   company: {
     addresses: [
       {
-        city: "Fort Steve",
-        isPrimary: "fuga",
-        phone: "464.960.0966 x612",
+        city: "Howeshire",
+        isPrimary: "saepe",
+        phone: "1-536-596-0096 x6612",
         state: "corporis",
         street1: "explicabo",
         street2: "nobis",
         zip: "enim",
       },
-      {
-        city: "Hickleborough",
-        isPrimary: "excepturi",
-        phone: "569-916-2619",
-        state: "mollitia",
-        street1: "occaecati",
-        street2: "numquam",
-        zip: "commodi",
-      },
-      {
-        city: "Jarredburgh",
-        isPrimary: "error",
-        phone: "1-416-731-7193",
-        state: "id",
-        street1: "possimus",
-        street2: "aut",
-        zip: "quasi",
-      },
     ],
-    ein: "error",
-    name: "Neal Boyer",
-    numberEmployees: 8781.94,
+    ein: "omnis",
+    name: "Ms. Cathy Marks",
+    numberEmployees: 9883.74,
     states: [
-      "praesentium",
-      "voluptatibus",
+      "sapiente",
     ],
-    tradeName: "ipsa",
+    tradeName: "architecto",
   },
   user: {
-    email: "Ivah3@yahoo.com",
-    firstName: "Iliana",
-    lastName: "Grady",
-    phone: "232.516.3849 x02655",
+    email: "Cordie99@yahoo.com",
+    firstName: "Madaline",
+    lastName: "McCullough",
+    phone: "544-361-3166 x317",
   },
 }).then((res: PostV1ProvisionResponse) => {
   if (res.statusCode == 200) {
@@ -528,11 +509,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "pariatur";
+const companyUuid: string = "sequi";
 const requestBody: PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody = {
-  email: "Johanna.Ledner92@gmail.com",
-  externalUserId: "sint",
-  ipAddress: "veritatis",
+  email: "Freida.Ondricka9@hotmail.com",
+  externalUserId: "error",
+  ipAddress: "temporibus",
 };
 
 sdk.companies.putV1PartnerManagedCompaniesCompanyUuidMigrate(companyUuid, requestBody).then((res: PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse) => {

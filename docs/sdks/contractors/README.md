@@ -27,7 +27,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorId: string = "ea";
+const contractorId: string = "labore";
 
 sdk.contractors.deleteV1ContractorsContractorId(contractorId).then((res: DeleteV1ContractorsContractorIdResponse) => {
   if (res.statusCode == 200) {
@@ -69,9 +69,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "aliquid";
-const page: number = 6754.39;
-const per: number = 8811.04;
+const companyId: string = "modi";
+const page: number = 1831.91;
+const per: number = 3978.21;
 
 sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per).then((res: GetV1CompaniesCompanyIdContractorsResponse) => {
   if (res.statusCode == 200) {
@@ -112,7 +112,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorId: string = "non";
+const contractorId: string = "cupiditate";
 
 sdk.contractors.getV1ContractorsContractorId(contractorId).then((res: GetV1ContractorsContractorIdResponse) => {
   if (res.statusCode == 200) {
@@ -154,7 +154,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "occaecati";
+const contractorUuid: string = "quos";
 
 sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid).then((res: GetV1ContractorsContractorUuidAddressResponse) => {
   if (res.statusCode == 200) {
@@ -227,7 +227,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "enim";
+const contractorUuid: string = "perferendis";
 
 sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid).then((res: GetV1ContractorsContractorUuidOnboardingStatusResponse) => {
   if (res.statusCode == 200) {
@@ -272,23 +272,23 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "accusamus";
+const companyId: string = "magni";
 const requestBody: PostV1CompaniesCompanyIdContractorsRequestBody = {
-  businessName: "delectus",
-  ein: "quidem",
-  email: "Mohammad_Olson@yahoo.com",
+  businessName: "assumenda",
+  ein: "ipsam",
+  email: "Caden.Pagac@gmail.com",
   fileNewHireReport: false,
-  firstName: "Verlie",
+  firstName: "Mckayla",
   hourlyRate: "40.0",
   isActive: false,
-  lastName: "Feeney",
-  middleInitial: "deserunt",
+  lastName: "Rice",
+  middleInitial: "labore",
   selfOnboarding: false,
-  ssn: "nisi",
+  ssn: "delectus",
   startDate: "2020-01-11",
   type: PostV1CompaniesCompanyIdContractorsRequestBodyType.Individual,
-  wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType.Hourly,
-  workState: "omnis",
+  wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType.Fixed,
+  workState: "eligendi",
 };
 
 sdk.contractors.postV1CompaniesCompanyIdContractors(companyId, requestBody).then((res: PostV1CompaniesCompanyIdContractorsResponse) => {
@@ -339,24 +339,24 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorId: string = "molestiae";
+const contractorId: string = "sint";
 const requestBody: PutV1ContractorsContractorIdRequestBody = {
-  businessName: "perferendis",
-  ein: "nihil",
-  email: "Michele29@gmail.com",
+  businessName: "aliquid",
+  ein: "provident",
+  email: "Kianna89@hotmail.com",
   fileNewHireReport: false,
-  firstName: "Geraldine",
+  firstName: "Veda",
   hourlyRate: "40.0",
   isActive: false,
-  lastName: "Mosciski",
-  middleInitial: "nobis",
+  lastName: "Parisian",
+  middleInitial: "in",
   selfOnboarding: false,
-  ssn: "eum",
+  ssn: "in",
   startDate: "2020-01-11",
   type: PutV1ContractorsContractorIdRequestBodyType.Business,
-  version: "aspernatur",
-  wageType: PutV1ContractorsContractorIdRequestBodyWageType.Fixed,
-  workState: "magnam",
+  version: "maiores",
+  wageType: PutV1ContractorsContractorIdRequestBodyWageType.Hourly,
+  workState: "dicta",
 };
 
 sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody).then((res: PutV1ContractorsContractorIdResponse) => {
@@ -401,14 +401,14 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "et";
+const contractorUuid: string = "magnam";
 const requestBody: PutV1ContractorsContractorUuidAddressRequestBody = {
-  city: "Fernestead",
-  state: "quos",
-  street1: "sint",
-  street2: "accusantium",
-  version: "mollitia",
-  zip: "reiciendis",
+  city: "Schulistview",
+  state: "aliquid",
+  street1: "laborum",
+  street2: "accusamus",
+  version: "non",
+  zip: "occaecati",
 };
 
 sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody).then((res: PutV1ContractorsContractorUuidAddressResponse) => {
@@ -463,7 +463,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "mollitia";
+const contractorUuid: string = "enim";
 const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {
   onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus.OnboardingCompleted,
 };

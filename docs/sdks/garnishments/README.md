@@ -27,9 +27,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "sunt";
-const page: number = 9920.12;
-const per: number = 2415.45;
+const employeeId: string = "excepturi";
+const page: number = 9729.2;
+const per: number = 3436.05;
 
 sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse) => {
   if (res.statusCode == 200) {
@@ -70,7 +70,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const garnishmentId: string = "non";
+const garnishmentId: string = "sapiente";
 
 sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId).then((res: GetV1GarnishmentsGarnishmentIdResponse) => {
   if (res.statusCode == 200) {
@@ -113,17 +113,17 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "amet";
+const employeeId: string = "quisquam";
 const requestBody: PostV1EmployeesEmployeeIdGarnishmentsRequestBody = {
   active: false,
-  amount: "beatae",
-  annualMaximum: "dignissimos",
+  amount: "saepe",
+  annualMaximum: "ea",
   courtOrdered: false,
   deductAsPercentage: false,
-  description: "a",
-  payPeriodMaximum: "debitis",
+  description: "impedit",
+  payPeriodMaximum: "corporis",
   recurring: false,
-  times: 233420,
+  times: 333145,
 };
 
 sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdGarnishmentsResponse) => {
@@ -168,18 +168,18 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const garnishmentId: string = "corporis";
+const garnishmentId: string = "aliquid";
 const requestBody: PutV1GarnishmentsGarnishmentIdRequestBody = {
   active: false,
-  amount: "harum",
-  annualMaximum: "laboriosam",
+  amount: "inventore",
+  annualMaximum: "magnam",
   courtOrdered: false,
   deductAsPercentage: false,
-  description: "ipsa",
-  payPeriodMaximum: "voluptates",
+  description: "ea",
+  payPeriodMaximum: "quo",
   recurring: false,
-  times: 730709,
-  version: "vitae",
+  times: 232234,
+  version: "recusandae",
 };
 
 sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody).then((res: PutV1GarnishmentsGarnishmentIdResponse) => {

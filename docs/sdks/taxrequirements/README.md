@@ -24,7 +24,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "neque";
+const companyUuid: string = "corporis";
 
 sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid).then((res: GetV1CompaniesCompanyUuidTaxRequirementsResponse) => {
   if (res.statusCode == 200) {
@@ -104,8 +104,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "exercitationem";
-const state: string = "itaque";
+const companyUuid: string = "reiciendis";
+const state: string = "assumenda";
 const scheduling: boolean = false;
 
 sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling).then((res: GetV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
@@ -151,70 +151,20 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "et";
-const state: string = "ipsum";
+const companyUuid: string = "nemo";
+const state: string = "recusandae";
 const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
   requirementSets: [
     {
-      effectiveFrom: "nulla",
-      key: "distinctio",
+      effectiveFrom: "aliquid",
+      key: "aperiam",
       requirements: [
         {
-          key: "quia",
-          value: "quia",
-        },
-        {
-          key: "nostrum",
-          value: "omnis",
-        },
-        {
-          key: "libero",
-          value: "dicta",
-        },
-        {
-          key: "id",
-          value: "libero",
+          key: "cum",
+          value: "consectetur",
         },
       ],
-      state: "fugiat",
-    },
-    {
-      effectiveFrom: "officia",
-      key: "quos",
-      requirements: [
-        {
-          key: "sit",
-          value: "iusto",
-        },
-        {
-          key: "ipsa",
-          value: "voluptates",
-        },
-        {
-          key: "inventore",
-          value: "aperiam",
-        },
-        {
-          key: "totam",
-          value: "dolore",
-        },
-      ],
-      state: "eligendi",
-    },
-    {
-      effectiveFrom: "distinctio",
-      key: "voluptatem",
-      requirements: [
-        {
-          key: "esse",
-          value: "dolores",
-        },
-        {
-          key: "assumenda",
-          value: "beatae",
-        },
-      ],
-      state: "est",
+      state: "in",
     },
   ],
 };

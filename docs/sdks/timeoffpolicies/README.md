@@ -31,7 +31,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "facere";
+const companyUuid: string = "exercitationem";
 
 sdk.timeOffPolicies.getCompaniesCompanyUuidTimeOffPolicies(companyUuid).then((res: GetCompaniesCompanyUuidTimeOffPoliciesResponse) => {
   if (res.statusCode == 200) {
@@ -72,7 +72,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "corrupti";
+const timeOffPolicyUuid: string = "earum";
 
 sdk.timeOffPolicies.getTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid).then((res: GetTimeOffPoliciesTimeOffPolicyUuidResponse) => {
   if (res.statusCode == 200) {
@@ -115,18 +115,18 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "molestiae";
+const companyUuid: string = "facere";
 const requestBody: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody = {
-  accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod.PerHourWorked,
-  accrualRate: "accusamus",
-  accrualRateUnit: "necessitatibus",
-  accrualWaitingPeriodDays: 733289,
-  carryoverLimitHours: "sint",
-  maxAccrualHoursPerYear: "ea",
-  maxHours: "autem",
-  name: "Olivia Larkin",
+  accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod.PerCalendarYear,
+  accrualRate: "doloribus",
+  accrualRateUnit: "suscipit",
+  accrualWaitingPeriodDays: 968972,
+  carryoverLimitHours: "quidem",
+  maxAccrualHoursPerYear: "saepe",
+  maxHours: "necessitatibus",
+  name: "Katherine Zemlak",
   paidOutOnTermination: false,
-  policyType: "voluptatibus",
+  policyType: "amet",
 };
 
 sdk.timeOffPolicies.postCompaniesCompanyUuidTimeOffPolicies(companyUuid, requestBody).then((res: PostCompaniesCompanyUuidTimeOffPoliciesResponse) => {
@@ -177,14 +177,14 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "cum";
-const payrollId: string = "at";
+const employeeId: string = "beatae";
+const payrollId: string = "dignissimos";
 const requestBody: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody = {
-  doubleOvertimeHoursWorked: 51.52,
-  overtimeHoursWorked: 1566.53,
-  ptoHoursUsed: 6941.58,
-  regularHoursWorked: 6841.26,
-  sickHoursUsed: 9195.08,
+  doubleOvertimeHoursWorked: 9509.53,
+  overtimeHoursWorked: 8915.23,
+  ptoHoursUsed: 2334.2,
+  regularHoursWorked: 3581.07,
+  sickHoursUsed: 6897.68,
 };
 
 sdk.timeOffPolicies.postV1PayrollsPayrollIdCalculateAccruingTimeOffHours(employeeId, payrollId, requestBody).then((res: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse) => {
@@ -230,16 +230,16 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "accusantium";
+const timeOffPolicyUuid: string = "laboriosam";
 const requestBody: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody = {
-  accrualMethod: PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod.PerHourWorkedNoOvertime,
-  accrualRate: "officiis",
-  accrualRateUnit: "eos",
-  accrualWaitingPeriodDays: 844854,
-  carryoverLimitHours: "odio",
-  maxAccrualHoursPerYear: "praesentium",
-  maxHours: "odit",
-  name: "Stacy Mraz",
+  accrualMethod: PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod.Unlimited,
+  accrualRate: "voluptates",
+  accrualRateUnit: "libero",
+  accrualWaitingPeriodDays: 113816,
+  carryoverLimitHours: "accusamus",
+  maxAccrualHoursPerYear: "similique",
+  maxHours: "tempora",
+  name: "Yolanda Hirthe",
   paidOutOnTermination: false,
 };
 
@@ -282,7 +282,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "recusandae";
+const timeOffPolicyUuid: string = "nobis";
 
 sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate(timeOffPolicyUuid).then((res: PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse) => {
   if (res.statusCode == 200) {
@@ -325,14 +325,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "similique";
+const timeOffPolicyUuid: string = "dolorum";
 const requestBody: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody = {
   employees: [
     {
-      uuid: "b5197f92-443d-4a7c-a52b-895c537c6454",
-    },
-    {
-      uuid: "efb0b348-96c3-4ca5-acfb-e2fd57075779",
+      uuid: "3c28744e-d53b-488f-ba8d-8f5c0b2f2fb7",
     },
   ],
 };
@@ -379,20 +376,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "dolores";
+const timeOffPolicyUuid: string = "expedita";
 const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody = {
   employees: [
     {
-      balance: "veritatis",
-      uuid: "77deac64-6ecb-4573-809e-3eb1e5a2b12e",
-    },
-    {
-      balance: "nobis",
-      uuid: "07f116db-9954-45fc-95fa-88970e189dbb",
-    },
-    {
-      balance: "velit",
-      uuid: "0fcb33ea-055b-4197-8d44-e2f52d82d351",
+      balance: "ab",
+      uuid: "94a276b2-6916-4fe1-b08f-4294e3698f44",
     },
   ],
 };
@@ -439,20 +428,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "velit";
+const timeOffPolicyUuid: string = "voluptate";
 const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody = {
   employees: [
     {
-      balance: "tempore",
-      uuid: "6f48b656-bcdb-435f-b2e4-b27537a8cd9e",
-    },
-    {
-      balance: "ducimus",
-      uuid: "319c177d-525f-477b-914e-eb52ff785fc3",
-    },
-    {
-      balance: "nihil",
-      uuid: "814d4c98-e0c2-4bb8-9eb7-5dad636c6005",
+      balance: "reiciendis",
+      uuid: "603e8b44-5e80-4ca5-9efd-20e457e1858b",
     },
   ],
 };

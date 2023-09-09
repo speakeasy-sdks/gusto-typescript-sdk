@@ -1,7 +1,5 @@
 # TaxRequirementsState
 
-OK
-
 
 ## Fields
 

@@ -71,9 +71,6 @@ export class CurrentUserRoles extends SpeakeasyBase {
     payrollAdmin?: CurrentUserRolesPayrollAdmin;
 }
 
-/**
- * Example response
- */
 export class CurrentUser extends SpeakeasyBase {
     /**
      * The email address of the authenticated user.

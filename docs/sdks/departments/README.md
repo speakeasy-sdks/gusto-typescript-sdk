@@ -28,7 +28,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const departmentUuid: string = "ad";
+const departmentUuid: string = "accusamus";
 
 sdk.departments.deleteDepartment(departmentUuid).then((res: DeleteDepartmentResponse) => {
   if (res.statusCode == 200) {
@@ -67,7 +67,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "eum";
+const companyUuid: string = "delectus";
 
 sdk.departments.getCompaniesDepartments(companyUuid).then((res: GetCompaniesDepartmentsResponse) => {
   if (res.statusCode == 200) {
@@ -107,7 +107,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const departmentUuid: string = "dolor";
+const departmentUuid: string = "quidem";
 
 sdk.departments.getDepartment(departmentUuid).then((res: GetDepartmentResponse) => {
   if (res.statusCode == 200) {
@@ -146,9 +146,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "necessitatibus";
+const companyUuid: string = "provident";
 const requestBody: PostDepartmentsRequestBody = {
-  title: "Mr.",
+  title: "Miss",
 };
 
 sdk.departments.postDepartments(companyUuid, requestBody).then((res: PostDepartmentsResponse) => {
@@ -196,19 +196,19 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const departmentUuid: string = "nemo";
+const departmentUuid: string = "id";
 const requestBody: PutAddPeopleToDepartmentRequestBody = {
   contractors: [
     {
-      uuid: "6fe4c8b7-11e5-4b7f-92ed-028921cddc69",
+      uuid: "88f3a669-9707-44ba-8469-b6e214195989",
     },
   ],
   employees: [
     {
-      uuid: "601fb576-b0d5-4f0d-b0c5-fbb258705320",
+      uuid: "0afa563e-2516-4fe4-88b7-11e5b7fd2ed0",
     },
   ],
-  version: "dolores",
+  version: "consequuntur",
 };
 
 sdk.departments.putAddPeopleToDepartment(departmentUuid, requestBody).then((res: PutAddPeopleToDepartmentResponse) => {
@@ -249,10 +249,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const departmentUuid: string = "minus";
+const departmentUuid: string = "praesentium";
 const requestBody: PutDepartmentsRequestBody = {
-  title: "Ms.",
-  version: "dolor",
+  title: "Miss",
+  version: "magni",
 };
 
 sdk.departments.putDepartments(departmentUuid, requestBody).then((res: PutDepartmentsResponse) => {
@@ -300,28 +300,19 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const departmentUuid: string = "vero";
+const departmentUuid: string = "sunt";
 const requestBody: PutRemovePeopleFromDepartmentRequestBody = {
   contractors: [
     {
-      uuid: "fe9b90c2-8909-4b3f-a49a-8d9cbf486333",
-    },
-    {
-      uuid: "23f9b77f-3a41-4006-b4eb-f69280d1ba77",
+      uuid: "cddc6926-01fb-4576-b0d5-f0d30c5fbb25",
     },
   ],
   employees: [
     {
-      uuid: "89ebf737-ae42-403c-a5e6-a95d8a0d446c",
-    },
-    {
-      uuid: "e2af7a73-cf3b-4e45-bf87-0b326b5a7342",
-    },
-    {
-      uuid: "9cdb1a84-22bb-4679-9232-2715bf0cbb1e",
+      uuid: "87053202-c73d-45fe-9b90-c28909b3fe49",
     },
   ],
-  version: "ipsum",
+  version: "dolorum",
 };
 
 sdk.departments.putRemovePeopleFromDepartment(departmentUuid, requestBody).then((res: PutRemovePeopleFromDepartmentResponse) => {

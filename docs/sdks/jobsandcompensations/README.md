@@ -28,7 +28,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const jobId: string = "dolorum";
+const jobId: string = "deleniti";
 
 sdk.jobsAndCompensations.deleteV1JobsJobId(jobId).then((res: DeleteV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
@@ -73,7 +73,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const compensationId: string = "adipisci";
+const compensationId: string = "impedit";
 
 sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId).then((res: GetV1CompensationsCompensationIdResponse) => {
   if (res.statusCode == 200) {
@@ -116,10 +116,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "minus";
+const employeeId: string = "aliquam";
 const include: GetV1EmployeesEmployeeIdJobsInclude = GetV1EmployeesEmployeeIdJobsInclude.AllCompensations;
-const page: number = 1718.53;
-const per: number = 5039.34;
+const page: number = 1469.46;
+const per: number = 8828.6;
 
 sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page, per).then((res: GetV1EmployeesEmployeeIdJobsResponse) => {
   if (res.statusCode == 200) {
@@ -161,7 +161,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const jobId: string = "in";
+const jobId: string = "inventore";
 const include: GetV1JobsJobIdInclude = GetV1JobsJobIdInclude.AllCompensations;
 
 sdk.jobsAndCompensations.getV1JobsJobId(jobId, include).then((res: GetV1JobsJobIdResponse) => {
@@ -210,10 +210,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const jobId: string = "dolore";
+const jobId: string = "non";
 const include: GetV1JobsJobIdCompensationsInclude = GetV1JobsJobIdCompensationsInclude.AllCompensations;
-const page: number = 3044.68;
-const per: number = 8859.63;
+const page: number = 896.03;
+const per: number = 6774.12;
 
 sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per).then((res: GetV1JobsJobIdCompensationsResponse) => {
   if (res.statusCode == 200) {
@@ -255,11 +255,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "temporibus";
+const employeeId: string = "laborum";
 const requestBody: PostV1JobsJobIdRequestBody = {
-  hireDate: "ullam",
-  locationUuid: "adipisci",
-  title: "Miss",
+  hireDate: "placeat",
+  locationUuid: "velit",
+  title: "Ms.",
 };
 
 sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody).then((res: PostV1JobsJobIdResponse) => {
@@ -309,27 +309,18 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const compensationId: string = "blanditiis";
+const compensationId: string = "autem";
 const requestBody: PutV1CompensationsCompensationIdRequestBody = {
   adjustForMinimumWage: false,
-  flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatus.CommissionOnlyExempt,
+  flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatus.CommissionOnlyNonexempt,
   minimumWages: [
     {
-      uuid: "3a8d8f5c-0b2f-42fb-bb19-4a276b26916f",
-    },
-    {
-      uuid: "e1f08f42-94e3-4698-b447-f603e8b445e8",
-    },
-    {
-      uuid: "0ca55efd-20e4-457e-9858-b6a89fbe3a5a",
-    },
-    {
-      uuid: "a8e4824d-0ab4-4075-888e-51862065e904",
+      uuid: "8dd6b144-2907-4474-b78a-7bd466d28c10",
     },
   ],
-  paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnit.Paycheck,
-  rate: "dolorem",
-  version: "harum",
+  paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnit.Year,
+  rate: "quidem",
+  version: "neque",
 };
 
 sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody).then((res: PutV1CompensationsCompensationIdResponse) => {
@@ -370,12 +361,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const jobId: string = "dicta";
+const jobId: string = "quo";
 const requestBody: PutV1JobsJobIdRequestBody = {
-  hireDate: "architecto",
-  locationUuid: "occaecati",
-  title: "Mrs.",
-  version: "quidem",
+  hireDate: "illum",
+  locationUuid: "quo",
+  title: "Miss",
+  version: "eius",
 };
 
 sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody).then((res: PutV1JobsJobIdResponse) => {

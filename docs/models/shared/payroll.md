@@ -1,7 +1,5 @@
 # Payroll
 
-Example response
-
 
 ## Fields
 

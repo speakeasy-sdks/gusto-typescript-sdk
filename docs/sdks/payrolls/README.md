@@ -36,9 +36,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "natus";
-const page: number = 3283.03;
-const per: number = 1334.61;
+const companyId: string = "sapiente";
+const page: number = 1598.7;
+const per: number = 1871.31;
 
 sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per).then((res: GetV1CompaniesCompanyIdPayrollReversalsResponse) => {
   if (res.statusCode == 200) {
@@ -87,16 +87,14 @@ const sdk = new Gusto({
 });
 
 sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
-  companyId: "ex",
-  endDate: "maiores",
+  companyId: "explicabo",
+  endDate: "saepe",
   include: [
-    GetV1CompaniesCompanyIdPayrollsInclude.Taxes,
-    GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
     GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
   ],
   includeOffCycle: false,
   processed: false,
-  startDate: "suscipit",
+  startDate: "atque",
 }).then((res: GetV1CompaniesCompanyIdPayrollsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -144,10 +142,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "repudiandae";
-const payrollId: string = "atque";
-const include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.PayrollStatusMeta;
-const showCalculation: string = "sunt";
+const companyId: string = "et";
+const payrollId: string = "esse";
+const include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.Taxes;
+const showCalculation: string = "accusamus";
 
 sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation).then((res: GetV1CompaniesCompanyIdPayrollsPayrollIdResponse) => {
   if (res.statusCode == 200) {
@@ -194,7 +192,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "recusandae";
+const companyUuid: string = "veritatis";
 
 sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid).then((res: GetV1CompaniesPayrollBlockersCompanyUuidResponse) => {
   if (res.statusCode == 200) {
@@ -241,7 +239,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const payrollUuid: string = "dolorum";
+const payrollUuid: string = "esse";
 
 sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid).then((res: GetV1PaymentReceiptsPayrollsPayrollUuidResponse) => {
   if (res.statusCode == 200) {
@@ -283,8 +281,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "repellendus";
-const payrollId: string = "labore";
+const employeeId: string = "quod";
+const payrollId: string = "nam";
 
 sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId).then((res: GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse) => {
   if (res.statusCode == 200) {
@@ -332,22 +330,19 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "reiciendis";
+const companyId: string = "vero";
 const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
-  checkDate: "doloremque",
+  checkDate: "aliquid",
   employeeUuids: [
-    "dicta",
-    "accusantium",
-    "beatae",
-    "dolores",
+    "quasi",
   ],
-  endDate: "enim",
+  endDate: "saepe",
   fixedWithholdingRate: false,
   offCycle: false,
   offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason.Correction,
   skipRegularDeductions: false,
-  startDate: "velit",
-  withholdingPayPeriod: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod.Annually,
+  startDate: "harum",
+  withholdingPayPeriod: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod.Monthly,
 };
 
 sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody).then((res: PostV1CompaniesCompanyIdPayrollsResponse) => {
@@ -392,10 +387,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const payrollId: string = "molestias";
+const payrollId: string = "rerum";
 const requestBody: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody = {
-  printingFormat: "magnam",
-  startingCheckNumber: 906355,
+  printingFormat: "occaecati",
+  startingCheckNumber: 327720,
 };
 
 sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody).then((res: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse) => {
@@ -440,8 +435,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "consequuntur";
-const payrollId: string = "occaecati";
+const companyId: string = "distinctio";
+const payrollId: string = "eligendi";
 
 sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId).then((res: PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse) => {
   if (res.statusCode == 200) {
@@ -490,130 +485,39 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "officiis";
-const payrollId: string = "perspiciatis";
+const companyId: string = "sit";
+const payrollId: string = "culpa";
 const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
   employeeCompensations: [
     {
-      employeeUuid: "adipisci",
+      employeeUuid: "tempore",
       excluded: false,
       fixedCompensations: [
         {
-          amount: "occaecati",
-          jobUuid: 160230,
-          name: "Amelia Harvey",
-        },
-        {
-          amount: "illo",
-          jobUuid: 361306,
-          name: "Conrad Franey III",
-        },
-        {
-          amount: "ipsa",
-          jobUuid: 517612,
-          name: "Nellie Upton",
-        },
-        {
-          amount: "iure",
-          jobUuid: 898063,
-          name: "Maggie Rau",
+          amount: "adipisci",
+          jobUuid: 766964,
+          name: "Elizabeth Schinner",
         },
       ],
       hourlyCompensations: [
         {
-          hours: "ad",
-          jobUuid: 997963,
-          name: "Renee Metz",
-        },
-        {
-          hours: "voluptas",
-          jobUuid: 5189,
-          name: "Dominick Daniel",
+          hours: "consectetur",
+          jobUuid: 458139,
+          name: "Eduardo Wilkinson",
         },
       ],
       paidTimeOff: [
         {
-          finalPayoutUnusedHoursInput: "dolorum",
-          hours: "nesciunt",
-          name: "Sophie Mohr",
-          policyUuid: "ex",
-        },
-        {
-          finalPayoutUnusedHoursInput: "ut",
-          hours: "culpa",
-          name: "Raquel Larkin",
-          policyUuid: "recusandae",
+          finalPayoutUnusedHoursInput: "esse",
+          hours: "quasi",
+          name: "Jeremiah Mayer",
+          policyUuid: "quia",
         },
       ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
-    },
-    {
-      employeeUuid: "provident",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "eum",
-          jobUuid: 970494,
-          name: "Miss Bruce Hermann",
-        },
-        {
-          amount: "mollitia",
-          jobUuid: 591027,
-          name: "Lynn Jacobson DVM",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "ullam",
-          jobUuid: 448143,
-          name: "Darin Nienow",
-        },
-        {
-          hours: "modi",
-          jobUuid: 976226,
-          name: "Stewart Will MD",
-        },
-        {
-          hours: "tempora",
-          jobUuid: 335498,
-          name: "Mr. Denise Runolfsdottir",
-        },
-        {
-          hours: "aspernatur",
-          jobUuid: 432281,
-          name: "Deanna Swaniawski",
-        },
-      ],
-      paidTimeOff: [
-        {
-          finalPayoutUnusedHoursInput: "eum",
-          hours: "dicta",
-          name: "Teresa McCullough",
-          policyUuid: "soluta",
-        },
-        {
-          finalPayoutUnusedHoursInput: "hic",
-          hours: "illum",
-          name: "Sonja Metz",
-          policyUuid: "aliquid",
-        },
-        {
-          finalPayoutUnusedHoursInput: "porro",
-          hours: "suscipit",
-          name: "Denise Runolfsdottir",
-          policyUuid: "animi",
-        },
-        {
-          finalPayoutUnusedHoursInput: "necessitatibus",
-          hours: "nulla",
-          name: "Joyce Borer",
-          policyUuid: "occaecati",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
+      paymentMethod: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod.Check,
     },
   ],
-  version: "adipisci",
+  version: "asperiores",
 };
 
 sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody).then((res: PutV1CompaniesCompanyIdPayrollsResponse) => {
@@ -666,207 +570,39 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "quasi";
-const payPeriodEndDate: string = "magni";
-const payPeriodStartDate: string = "doloribus";
+const companyId: string = "facere";
+const payPeriodEndDate: string = "veritatis";
+const payPeriodStartDate: string = "consequuntur";
 const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody = {
   employeeCompensations: [
     {
-      employeeUuid: "necessitatibus",
+      employeeUuid: "quasi",
       excluded: false,
       fixedCompensations: [
         {
-          amount: "tempora",
-          jobUuid: "nihil",
-          name: "Jean Kris",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "reiciendis",
-          jobUuid: "vel",
-          name: "Ms. Janis Batz",
-        },
-        {
-          hours: "esse",
-          jobUuid: "ex",
-          name: "Jeanne Beer II",
-        },
-        {
-          hours: "fugiat",
-          jobUuid: "expedita",
-          name: "Brandi Homenick III",
-        },
-        {
-          hours: "voluptas",
-          jobUuid: "iste",
-          name: "Raymond Muller",
-        },
-      ],
-      paidTimeOff: [
-        {
-          hours: "laborum",
-          name: "Derek Leuschke PhD",
-          policyUuid: "ex",
-        },
-        {
-          hours: "quo",
-          name: "Debbie Hammes V",
-          policyUuid: "cum",
-        },
-        {
-          hours: "aliquid",
-          name: "Miss Nora Moen",
-          policyUuid: "culpa",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
-    },
-    {
-      employeeUuid: "sapiente",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "architecto",
-          jobUuid: "fuga",
-          name: "Ms. Doyle Barrows",
-        },
-        {
-          amount: "ex",
-          jobUuid: "sapiente",
-          name: "Israel Hickle",
-        },
-        {
-          amount: "ullam",
-          jobUuid: "perferendis",
-          name: "Jimmie Russel",
-        },
-        {
-          amount: "ipsam",
+          amount: "similique",
           jobUuid: "culpa",
-          name: "Michele Bode II",
+          name: "Mandy Berge",
         },
       ],
       hourlyCompensations: [
         {
-          hours: "consequatur",
-          jobUuid: "architecto",
-          name: "Ms. Pauline Considine I",
-        },
-      ],
-      paidTimeOff: [
-        {
-          hours: "ipsam",
-          name: "Cynthia Macejkovic",
-          policyUuid: "officiis",
-        },
-        {
-          hours: "esse",
-          name: "Aaron Hartmann",
-          policyUuid: "eum",
-        },
-        {
-          hours: "vel",
-          name: "Miss Oscar Heller",
-          policyUuid: "nobis",
-        },
-        {
-          hours: "laboriosam",
-          name: "Carlos Barrows",
-          policyUuid: "quasi",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
-    },
-    {
-      employeeUuid: "at",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "est",
-          jobUuid: "harum",
-          name: "Ora VonRueden",
-        },
-        {
-          amount: "nemo",
-          jobUuid: "voluptate",
-          name: "Gerard Hodkiewicz",
-        },
-        {
-          amount: "quos",
+          hours: "in",
           jobUuid: "eius",
-          name: "Caroline Dooley",
-        },
-        {
-          amount: "incidunt",
-          jobUuid: "quasi",
-          name: "Clint Carroll",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "aperiam",
-          jobUuid: "cupiditate",
-          name: "Dominic Abernathy",
+          name: "Mrs. Gilberto Roberts",
         },
       ],
       paidTimeOff: [
         {
-          hours: "iste",
-          name: "Stephanie Pfannerstill",
-          policyUuid: "distinctio",
-        },
-        {
-          hours: "omnis",
-          name: "Darrell Lang",
-          policyUuid: "temporibus",
-        },
-        {
-          hours: "quos",
-          name: "Lorena Johns",
-          policyUuid: "modi",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.Check,
-    },
-    {
-      employeeUuid: "vero",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "ipsam",
-          jobUuid: "vel",
-          name: "Frances Franey",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "nulla",
-          jobUuid: "deserunt",
-          name: "Ida Kilback",
-        },
-        {
-          hours: "sint",
-          jobUuid: "accusamus",
-          name: "Irvin Tromp",
-        },
-        {
-          hours: "voluptas",
-          jobUuid: "debitis",
-          name: "Eric Schiller",
-        },
-      ],
-      paidTimeOff: [
-        {
-          hours: "velit",
-          name: "Dale Rutherford",
-          policyUuid: "repudiandae",
+          hours: "dicta",
+          name: "Delores Hermiston IV",
+          policyUuid: "qui",
         },
       ],
       paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.Check,
     },
   ],
-  version: "dolore",
+  version: "ex",
 };
 
 sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody).then((res: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse) => {
@@ -914,8 +650,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "iusto";
-const payrollId: string = "voluptate";
+const companyId: string = "deleniti";
+const payrollId: string = "itaque";
 
 sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse) => {
   if (res.statusCode == 200) {
@@ -958,8 +694,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "sequi";
-const payrollId: string = "dignissimos";
+const companyId: string = "dolorum";
+const payrollId: string = "architecto";
 
 sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse) => {
   if (res.statusCode == 200) {

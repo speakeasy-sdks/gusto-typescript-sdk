@@ -25,8 +25,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const bankAccountUuid: string = "ipsam";
-const employeeId: string = "ea";
+const bankAccountUuid: string = "minima";
+const employeeId: string = "repellendus";
 
 sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId).then((res: DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse) => {
   if (res.statusCode == 200) {
@@ -67,7 +67,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "aspernatur";
+const employeeId: string = "totam";
 
 sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId).then((res: GetV1EmployeesEmployeeIdPaymentMethodResponse) => {
   if (res.statusCode == 200) {
@@ -109,12 +109,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "vel";
+const employeeId: string = "similique";
 const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
-  accountNumber: "possimus",
-  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Checking,
-  name: "Mrs. Vicki Langosh",
-  routingNumber: "quasi",
+  accountNumber: "alias",
+  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Savings,
+  name: "Rhonda Kautzer",
+  routingNumber: "qui",
 };
 
 sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdBankAccountsResponse) => {
@@ -160,31 +160,19 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "ex";
+const employeeId: string = "dolorum";
 const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
   splitBy: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy.Percentage,
   splits: [
     {
-      name: "Gordon Willms",
-      priority: 411372,
-      splitAmount: 774048,
-      uuid: "556146c3-e250-4fb0-88c4-2e141aac366c",
-    },
-    {
-      name: "Mack Stoltenberg",
-      priority: 96549,
-      splitAmount: 270328,
-      uuid: "42907474-778a-47bd-866d-28c10ab3cdca",
-    },
-    {
-      name: "Ms. Ruby Hintz II",
-      priority: 892050,
-      splitAmount: 370853,
-      uuid: "23c7e0bc-7178-4e47-96f2-a70c688282aa",
+      name: "Fannie Kub",
+      priority: 947371,
+      splitAmount: 229442,
+      uuid: "be453f87-0b32-46b5-a734-29cdb1a8422b",
     },
   ],
-  type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.DirectDeposit,
-  version: "atque",
+  type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.Check,
+  version: "aliquid",
 };
 
 sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdPaymentMethodResponse) => {

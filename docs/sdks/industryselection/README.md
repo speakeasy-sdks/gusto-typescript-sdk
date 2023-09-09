@@ -20,7 +20,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "tempora";
+const companyId: string = "eaque";
 
 sdk.industrySelection.getV1CompanyIndustry(companyId).then((res: GetV1CompanyIndustryResponse) => {
   if (res.statusCode == 200) {
@@ -61,14 +61,13 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "aspernatur";
+const companyId: string = "a";
 const requestBody: PutV1CompanyIndustryRequestBody = {
-  naicsCode: "voluptas",
+  naicsCode: "libero",
   sicCodes: [
-    "voluptas",
-    "minima",
+    "aut",
   ],
-  title: "Miss",
+  title: "Mr.",
 };
 
 sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody).then((res: PutV1CompanyIndustryResponse) => {

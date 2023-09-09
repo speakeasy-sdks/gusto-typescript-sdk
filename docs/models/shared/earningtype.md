@@ -1,7 +1,5 @@
 # EarningType
 
-Example response
-
 
 ## Fields
 

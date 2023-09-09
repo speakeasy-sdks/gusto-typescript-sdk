@@ -20,7 +20,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "error";
+const companyUuid: string = "explicabo";
 
 sdk.paymentConfigs.getV1CompanyPaymentConfigs(companyUuid).then((res: GetV1CompanyPaymentConfigsResponse) => {
   if (res.statusCode == 200) {
@@ -62,10 +62,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "officiis";
+const companyUuid: string = "minima";
 const requestBody: PutV1CompanyPaymentConfigsRequestBody = {
-  fastPaymentLimit: "officiis",
-  paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.FourDay,
+  fastPaymentLimit: "nisi",
+  paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.TwoDay,
 };
 
 sdk.paymentConfigs.putV1CompanyPaymentConfigs(companyUuid, requestBody).then((res: PutV1CompanyPaymentConfigsResponse) => {

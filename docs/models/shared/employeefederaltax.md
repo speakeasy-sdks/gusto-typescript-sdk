@@ -1,7 +1,5 @@
 # EmployeeFederalTax
 
-Example response
-
 
 ## Fields
 

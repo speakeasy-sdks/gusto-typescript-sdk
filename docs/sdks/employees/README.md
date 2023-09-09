@@ -29,7 +29,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "deleniti";
+const employeeId: string = "delectus";
 
 sdk.employees.deleteV1Employee(employeeId).then((res: DeleteV1EmployeeResponse) => {
   if (res.statusCode == 200) {
@@ -69,8 +69,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "itaque";
-const include: GetV1EmployeesInclude = GetV1EmployeesInclude.CustomFields;
+const employeeId: string = "dolorem";
+const include: GetV1EmployeesInclude = GetV1EmployeesInclude.AllCompensations;
 
 sdk.employees.getV1Employees(employeeId, include).then((res: GetV1EmployeesResponse) => {
   if (res.statusCode == 200) {
@@ -113,9 +113,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "architecto";
-const page: number = 6091.78;
-const per: number = 9453.02;
+const employeeId: string = "labore";
+const page: number = 2408.29;
+const per: number = 6772.63;
 
 sdk.employees.getV1EmployeesEmployeeIdCustomFields(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdCustomFieldsResponse) => {
   if (res.statusCode == 200) {
@@ -159,7 +159,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "quasi";
+const employeeId: string = "architecto";
 
 sdk.employees.getV1EmployeesEmployeeIdHomeAddress(employeeId).then((res: GetV1EmployeesEmployeeIdHomeAddressResponse) => {
   if (res.statusCode == 200) {
@@ -236,7 +236,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "at";
+const employeeId: string = "quae";
 
 sdk.employees.getV1EmployeesEmployeeIdOnboardingStatus(employeeId).then((res: GetV1EmployeesEmployeeIdOnboardingStatusResponse) => {
   if (res.statusCode == 200) {
@@ -278,8 +278,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeUuid: string = "et";
-const timeOffType: string = "voluptate";
+const employeeUuid: string = "aut";
+const timeOffType: string = "quas";
 
 sdk.employees.getVersionEmployeesTimeOffActivities(employeeUuid, timeOffType).then((res: GetVersionEmployeesTimeOffActivitiesResponse) => {
   if (res.statusCode == 200) {
@@ -319,13 +319,13 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "ipsa";
+const companyId: string = "itaque";
 const requestBody: PostV1EmployeesRequestBody = {
-  dateOfBirth: "minima",
-  email: "Darlene_Ferry@gmail.com",
-  firstName: "Alexanne",
-  lastName: "Ledner",
-  middleInitial: "aut",
+  dateOfBirth: "consequatur",
+  email: "River.Schaden70@hotmail.com",
+  firstName: "Kyler",
+  lastName: "Davis",
+  middleInitial: "quae",
   selfOnboarding: false,
   ssn: "laudantium",
 };
@@ -368,7 +368,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "eum";
+const employeeId: string = "odio";
 
 sdk.employees.putV1EmployeeFinishOnboarding(employeeId).then((res: PutV1EmployeeFinishOnboardingResponse) => {
   if (res.statusCode == 200) {
@@ -407,16 +407,16 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "mollitia";
+const employeeId: string = "occaecati";
 const requestBody: PutV1EmployeesRequestBody = {
-  dateOfBirth: "ab",
-  email: "Demond58@yahoo.com",
-  firstName: "Dennis",
-  lastName: "Russel",
-  middleInitial: "explicabo",
-  ssn: "voluptas",
+  dateOfBirth: "voluptatibus",
+  email: "Selina.Moen@hotmail.com",
+  firstName: "Vida",
+  lastName: "Klocko",
+  middleInitial: "consectetur",
+  ssn: "vero",
   twoPercentShareholder: false,
-  version: "aut",
+  version: "tenetur",
 };
 
 sdk.employees.putV1Employees(employeeId, requestBody).then((res: PutV1EmployeesResponse) => {
@@ -463,12 +463,12 @@ const sdk = new Gusto({
 });
 const employeeId: string = "dignissimos";
 const requestBody: PutV1EmployeesEmployeeIdHomeAddressRequestBody = {
-  city: "Fort Libbieburgh",
-  state: "voluptatibus",
-  street1: "voluptas",
-  street2: "asperiores",
-  version: "aperiam",
-  zip: "ea",
+  city: "Portsmouth",
+  state: "quod",
+  street1: "odio",
+  street2: "similique",
+  version: "facilis",
+  zip: "vero",
 };
 
 sdk.employees.putV1EmployeesEmployeeIdHomeAddress(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdHomeAddressResponse) => {
@@ -522,9 +522,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "quaerat";
+const employeeId: string = "ducimus";
 const requestBody: PutV1EmployeesEmployeeIdOnboardingStatusRequestBody = {
-  onboardingStatus: "consequuntur",
+  onboardingStatus: "dolore",
 };
 
 sdk.employees.putV1EmployeesEmployeeIdOnboardingStatus(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdOnboardingStatusResponse) => {

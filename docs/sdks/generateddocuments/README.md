@@ -24,8 +24,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const documentType: string = "accusamus";
-const requestUuid: string = "similique";
+const documentType: string = "aspernatur";
+const requestUuid: string = "minima";
 
 sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid(documentType, requestUuid).then((res: GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse) => {
   if (res.statusCode == 200) {
