@@ -1,4 +1,4 @@
-# paySchedules
+# PaySchedules
 
 ### Available Operations
 

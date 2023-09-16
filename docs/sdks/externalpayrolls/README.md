@@ -1,4 +1,4 @@
-# externalPayrolls
+# ExternalPayrolls
 
 ### Available Operations
 

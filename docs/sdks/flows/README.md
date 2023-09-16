@@ -1,4 +1,4 @@
-# flows
+# Flows
 
 ### Available Operations
 

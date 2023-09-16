@@ -1,4 +1,4 @@
-# paymentConfigs
+# PaymentConfigs
 
 ### Available Operations
 

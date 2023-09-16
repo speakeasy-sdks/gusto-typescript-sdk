@@ -1,4 +1,4 @@
-# webhookSubscriptions
+# WebhookSubscriptions
 
 ### Available Operations
 

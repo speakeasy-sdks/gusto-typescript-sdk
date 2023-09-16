@@ -1,4 +1,4 @@
-# generatedDocuments
+# GeneratedDocuments
 
 ### Available Operations
 

@@ -1,4 +1,4 @@
-# companyBenefits
+# CompanyBenefits
 
 ### Available Operations
 

@@ -1,4 +1,4 @@
-# departments
+# Departments
 
 ### Available Operations
 

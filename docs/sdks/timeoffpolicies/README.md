@@ -1,4 +1,4 @@
-# timeOffPolicies
+# TimeOffPolicies
 
 ### Available Operations
 

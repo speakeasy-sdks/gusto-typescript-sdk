@@ -1,4 +1,4 @@
-# signatories
+# Signatories
 
 ### Available Operations
 

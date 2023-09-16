@@ -1,4 +1,4 @@
-# jobsAndCompensations
+# JobsAndCompensations
 
 ### Available Operations
 

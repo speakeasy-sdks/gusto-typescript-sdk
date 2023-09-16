@@ -1,4 +1,4 @@
-# contractorPaymentMethod
+# ContractorPaymentMethod
 
 ### Available Operations
 

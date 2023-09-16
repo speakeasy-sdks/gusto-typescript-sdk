@@ -1,4 +1,4 @@
-# employeeTaxSetup
+# EmployeeTaxSetup
 
 ### Available Operations
 

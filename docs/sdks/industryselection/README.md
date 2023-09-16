@@ -1,4 +1,4 @@
-# industrySelection
+# IndustrySelection
 
 ### Available Operations
 

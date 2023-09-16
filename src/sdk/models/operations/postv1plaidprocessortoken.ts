@@ -38,6 +38,12 @@ export class PostV1PlaidProcessorTokenRequestBody extends SpeakeasyBase {
 }
 
 export class PostV1PlaidProcessorTokenResponse extends SpeakeasyBase {
+    /**
+     * A JSON object containing bank information
+     */
+    @SpeakeasyMetadata()
+    companyBankAccount?: shared.CompanyBankAccount;
+
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -57,10 +63,4 @@ export class PostV1PlaidProcessorTokenResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
-
-    /**
-     * A JSON object containing bank information
-     */
-    @SpeakeasyMetadata()
-    postV1PlaidProcessorToken201ApplicationJSONOneOf?: any;
 }

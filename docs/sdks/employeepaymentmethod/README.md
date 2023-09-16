@@ -1,4 +1,4 @@
-# employeePaymentMethod
+# EmployeePaymentMethod
 
 ### Available Operations
 

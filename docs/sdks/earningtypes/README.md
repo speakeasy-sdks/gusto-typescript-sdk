@@ -1,4 +1,4 @@
-# earningTypes
+# EarningTypes
 
 ### Available Operations
 

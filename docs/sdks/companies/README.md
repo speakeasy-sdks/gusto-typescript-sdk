@@ -1,4 +1,4 @@
-# companies
+# Companies
 
 ### Available Operations
 

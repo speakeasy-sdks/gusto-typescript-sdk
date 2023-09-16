@@ -1,4 +1,4 @@
-# payrolls
+# Payrolls
 
 ### Available Operations
 

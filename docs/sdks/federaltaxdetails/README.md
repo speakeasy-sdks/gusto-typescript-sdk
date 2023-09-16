@@ -1,4 +1,4 @@
-# federalTaxDetails
+# FederalTaxDetails
 
 ### Available Operations
 

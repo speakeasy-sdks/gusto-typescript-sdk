@@ -1,4 +1,4 @@
-# garnishments
+# Garnishments
 
 ### Available Operations
 

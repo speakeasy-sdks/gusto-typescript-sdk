@@ -1,4 +1,4 @@
-# employeeBenefits
+# EmployeeBenefits
 
 ### Available Operations
 
