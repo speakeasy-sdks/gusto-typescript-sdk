@@ -27,14 +27,14 @@ export class PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody extend
      */
     @SpeakeasyMetadata()
     @Expose({ name: "ytd_company_contribution_amount" })
-    ytdCompanyContributionAmount: string;
+    ytdCompanyContributionAmount?: string;
 
     /**
      * The year-to-date employee deduction made outside the current company.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "ytd_employee_deduction_amount" })
-    ytdEmployeeDeductionAmount: string;
+    ytdEmployeeDeductionAmount?: string;
 }
 
 export class PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest extends SpeakeasyBase {

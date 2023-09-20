@@ -470,7 +470,7 @@ export class JobsAndCompensations {
         );
         const url: string = utils.generateURL(baseURL, "/v1/employees/{employee_id}/jobs", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
@@ -578,7 +578,7 @@ export class JobsAndCompensations {
         );
         const url: string = utils.generateURL(baseURL, "/v1/compensations/{compensation_id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
@@ -693,7 +693,7 @@ export class JobsAndCompensations {
         );
         const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");

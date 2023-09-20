@@ -37,7 +37,7 @@ export class Flows {
         );
         const url: string = utils.generateURL(baseURL, "/v1/companies/{company_uuid}/flows", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");

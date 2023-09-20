@@ -296,7 +296,7 @@ export class ContractorForms {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/sandbox/generate_1099";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");

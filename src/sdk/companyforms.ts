@@ -269,7 +269,7 @@ export class CompanyForms {
         );
         const url: string = utils.generateURL(baseURL, "/v1/forms/{form_id}/sign", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");

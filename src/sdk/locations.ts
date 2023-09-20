@@ -301,7 +301,7 @@ export class Locations {
         );
         const url: string = utils.generateURL(baseURL, "/v1/companies/{company_id}/locations", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
@@ -409,7 +409,7 @@ export class Locations {
         );
         const url: string = utils.generateURL(baseURL, "/v1/companies/{company_id}/locations", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "raw");
@@ -515,7 +515,7 @@ export class Locations {
         );
         const url: string = utils.generateURL(baseURL, "/v1/locations/{location_id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");

@@ -20,7 +20,7 @@ export class PutV1ContractorsContractorUuidOnboardingStatusRequestBody extends S
      */
     @SpeakeasyMetadata()
     @Expose({ name: "onboarding_status" })
-    onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus;
+    onboardingStatus?: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus;
 }
 
 export class PutV1ContractorsContractorUuidOnboardingStatusRequest extends SpeakeasyBase {

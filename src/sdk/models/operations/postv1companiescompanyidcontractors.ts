@@ -144,7 +144,7 @@ export class PostV1CompaniesCompanyIdContractorsRequestBody extends SpeakeasyBas
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: PostV1CompaniesCompanyIdContractorsRequestBodyType;
+    type?: PostV1CompaniesCompanyIdContractorsRequestBodyType;
 
     /**
      * The contractor’s wage type.
