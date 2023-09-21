@@ -729,3 +729,13 @@ Based on:
 - [typescript v0.50.3] .
 ### Releases
 - [NPM v0.50.3] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.50.3 - .
+
+## 2023-09-21 00:25:11
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.88.1 (2.122.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.50.4] .
+### Releases
+- [NPM v0.50.4] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.50.4 - .
