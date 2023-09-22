@@ -34,7 +34,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "iure";
+const companyId: string = "magnam";
 
 sdk.companies.getV1Companies(companyId).then((res: GetV1CompaniesResponse) => {
   if (res.statusCode == 200) {
@@ -71,9 +71,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "magnam";
-const page: number = 8917.73;
-const per: number = 567.13;
+const companyId: string = "debitis";
+const page: number = 567.13;
+const per: number = 9636.63;
 
 sdk.companies.getV1CompaniesCompanyIdAdmins(companyId, page, per).then((res: GetV1CompaniesCompanyIdAdminsResponse) => {
   if (res.statusCode == 200) {
@@ -117,9 +117,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "delectus";
-const page: number = 2726.56;
-const per: number = 3834.41;
+const companyId: string = "tempora";
+const page: number = 3834.41;
+const per: number = 4776.65;
 
 sdk.companies.getV1CompaniesCompanyIdCustomFields(companyId, page, per).then((res: GetV1CompaniesCompanyIdCustomFieldsResponse) => {
   if (res.statusCode == 200) {
@@ -169,7 +169,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "molestiae";
+const companyUuid: string = "minus";
 
 sdk.companies.getV1CompanyFinishOnboarding(companyUuid).then((res: GetV1CompanyFinishOnboardingResponse) => {
   if (res.statusCode == 200) {
@@ -206,7 +206,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "minus";
+const companyUuid: string = "placeat";
 
 sdk.companies.getV1CompanyOnboardingStatus(companyUuid).then((res: GetV1CompanyOnboardingStatusResponse) => {
   if (res.statusCode == 200) {
@@ -247,11 +247,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "placeat";
+const companyUuid: string = "voluptatum";
 const requestBody: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequestBody = {
-  email: "Jaycee_Mante@yahoo.com",
-  externalUserId: "temporibus",
-  ipAddress: "ab",
+  email: "Kenyon_Huel7@yahoo.com",
+  externalUserId: "quis",
+  ipAddress: "veritatis",
 };
 
 sdk.companies.postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService(companyUuid, requestBody).then((res: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse) => {
@@ -294,9 +294,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "quis";
+const companyUuid: string = "deserunt";
 const requestBody: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody = {
-  email: "Lydia_Aufderhar@gmail.com",
+  email: "Freeda_Sipes14@gmail.com",
 };
 
 sdk.companies.postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService(companyUuid, requestBody).then((res: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse) => {
@@ -339,11 +339,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "sapiente";
+const companyId: string = "at";
 const requestBody: PostV1CompaniesCompanyIdAdminsRequestBody = {
-  email: "Brooke_Strosin47@hotmail.com",
-  firstName: "Pinkie",
-  lastName: "Schmidt",
+  email: "Wilford_Krajcik46@hotmail.com",
+  firstName: "Jovan",
+  lastName: "Sauer",
 };
 
 sdk.companies.postV1CompaniesCompanyIdAdmins(companyId, requestBody).then((res: PostV1CompaniesCompanyIdAdminsResponse) => {
@@ -385,15 +385,15 @@ const sdk = new Gusto({
 
 sdk.companies.postV1PartnerManagedCompanies({
   company: {
-    ein: "esse",
-    name: "Miss Lowell Parisian",
-    tradeName: "occaecati",
+    ein: "dolorum",
+    name: "Antoinette Nikolaus",
+    tradeName: "deleniti",
   },
   user: {
-    email: "Kale_Welch10@gmail.com",
-    firstName: "Haskell",
-    lastName: "Krajcik",
-    phone: "377-525-1036 x162",
+    email: "Nina41@hotmail.com",
+    firstName: "Jaren",
+    lastName: "Gleason",
+    phone: "1-874-351-0361",
   },
 }).then((res: PostV1PartnerManagedCompaniesResponse) => {
   if (res.statusCode == 200) {
@@ -447,28 +447,28 @@ sdk.companies.postV1Provision({
   company: {
     addresses: [
       {
-        city: "Howeshire",
-        isPrimary: "saepe",
-        phone: "1-536-596-0096 x6612",
-        state: "corporis",
-        street1: "explicabo",
-        street2: "nobis",
-        zip: "enim",
+        city: "Fadelfurt",
+        isPrimary: "laboriosam",
+        phone: "964.464.9600 x96661",
+        state: "dolorem",
+        street1: "corporis",
+        street2: "explicabo",
+        zip: "nobis",
       },
     ],
-    ein: "omnis",
-    name: "Ms. Cathy Marks",
-    numberEmployees: 9883.74,
+    ein: "enim",
+    name: "Corey Hane III",
+    numberEmployees: 6342.74,
     states: [
-      "sapiente",
+      "doloribus",
     ],
-    tradeName: "architecto",
+    tradeName: "sapiente",
   },
   user: {
-    email: "Cordie99@yahoo.com",
-    firstName: "Madaline",
-    lastName: "McCullough",
-    phone: "544-361-3166 x317",
+    email: "Macy.Durgan@gmail.com",
+    firstName: "Zechariah",
+    lastName: "O'Hara",
+    phone: "(444) 526-1316 x6317",
   },
 }).then((res: PostV1ProvisionResponse) => {
   if (res.statusCode == 200) {

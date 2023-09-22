@@ -25,7 +25,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "provident";
+const companyId: string = "distinctio";
 
 sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
   if (res.statusCode == 200) {
@@ -76,11 +76,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "distinctio";
+const companyId: string = "quibusdam";
 const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {
-  accountNumber: "quibusdam",
+  accountNumber: "unde",
   accountType: PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType.Savings,
-  routingNumber: "nulla",
+  routingNumber: "corrupti",
 };
 
 sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(companyId, requestBody).then((res: PostV1CompaniesCompanyIdBankAccountsResponse) => {
@@ -130,9 +130,9 @@ const sdk = new Gusto({
 });
 
 sdk.bankAccounts.postV1PlaidProcessorToken({
-  ownerId: "corrupti",
+  ownerId: "illum",
   ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType.Company,
-  processorToken: "illum",
+  processorToken: "vel",
 }).then((res: PostV1PlaidProcessorTokenResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -185,11 +185,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const bankAccountUuid: string = "vel";
-const companyId: string = "error";
+const bankAccountUuid: string = "error";
+const companyId: string = "deserunt";
 const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {
-  deposit1: 6458.94,
-  deposit2: 3843.82,
+  deposit1: 3843.82,
+  deposit2: 4375.87,
 };
 
 sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(bankAccountUuid, companyId, requestBody).then((res: PutV1CompaniesCompanyIdBankAccountsVerifyResponse) => {
