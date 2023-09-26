@@ -214,6 +214,9 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequest extends SpeakeasyB
 }
 
 export class PostV1EmployeesEmployeeIdEmployeeBenefitsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -223,9 +226,15 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsResponse extends Speakeasy
     @SpeakeasyMetadata()
     employeeBenefit?: shared.EmployeeBenefit;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

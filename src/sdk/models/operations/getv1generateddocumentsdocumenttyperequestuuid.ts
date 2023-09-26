@@ -21,6 +21,9 @@ export class GetV1GeneratedDocumentsDocumentTypeRequestUuidRequest extends Speak
 }
 
 export class GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -30,9 +33,15 @@ export class GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse extends Spea
     @SpeakeasyMetadata()
     generatedDocument?: shared.GeneratedDocument;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

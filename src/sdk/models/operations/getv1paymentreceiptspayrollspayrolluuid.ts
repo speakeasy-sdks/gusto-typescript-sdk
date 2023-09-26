@@ -15,6 +15,9 @@ export class GetV1PaymentReceiptsPayrollsPayrollUuidRequest extends SpeakeasyBas
 }
 
 export class GetV1PaymentReceiptsPayrollsPayrollUuidResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -24,9 +27,15 @@ export class GetV1PaymentReceiptsPayrollsPayrollUuidResponse extends SpeakeasyBa
     @SpeakeasyMetadata()
     payrollReceipt?: shared.PayrollReceipt;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

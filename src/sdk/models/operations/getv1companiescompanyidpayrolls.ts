@@ -52,6 +52,9 @@ export class GetV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {
 }
 
 export class GetV1CompaniesCompanyIdPayrollsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -61,9 +64,15 @@ export class GetV1CompaniesCompanyIdPayrollsResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.Payroll })
     payrolls?: shared.Payroll[];
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }
