@@ -1,4 +1,5 @@
 # ContractorPaymentMethod
+(*contractorPaymentMethod*)
 
 ### Available Operations
 
