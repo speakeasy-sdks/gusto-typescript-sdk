@@ -32,7 +32,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "exercitationem";
+const companyUuid: string = "steradian";
 
 sdk.timeOffPolicies.getCompaniesCompanyUuidTimeOffPolicies(companyUuid).then((res: GetCompaniesCompanyUuidTimeOffPoliciesResponse) => {
   if (res.statusCode == 200) {
@@ -73,7 +73,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "earum";
+const timeOffPolicyUuid: string = "Utah";
 
 sdk.timeOffPolicies.getTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid).then((res: GetTimeOffPoliciesTimeOffPolicyUuidResponse) => {
   if (res.statusCode == 200) {
@@ -116,18 +116,18 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "facere";
+const companyUuid: string = "Loan";
 const requestBody: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody = {
-  accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod.PerCalendarYear,
-  accrualRate: "doloribus",
-  accrualRateUnit: "suscipit",
-  accrualWaitingPeriodDays: 968972,
-  carryoverLimitHours: "quidem",
-  maxAccrualHoursPerYear: "saepe",
-  maxHours: "necessitatibus",
-  name: "Katherine Zemlak",
+  accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod.PerPayPeriod,
+  accrualRate: "mole Pennsylvania",
+  accrualRateUnit: "application",
+  accrualWaitingPeriodDays: 738646,
+  carryoverLimitHours: "West Electric anti",
+  maxAccrualHoursPerYear: "mobile Brand",
+  maxHours: "Oganesson Northwest Diesel",
+  name: "haptic",
   paidOutOnTermination: false,
-  policyType: "amet",
+  policyType: "Jazz Southwest",
 };
 
 sdk.timeOffPolicies.postCompaniesCompanyUuidTimeOffPolicies(companyUuid, requestBody).then((res: PostCompaniesCompanyUuidTimeOffPoliciesResponse) => {
@@ -178,14 +178,14 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "beatae";
-const payrollId: string = "dignissimos";
+const employeeId: string = "Bacon";
+const payrollId: string = "MTF";
 const requestBody: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody = {
-  doubleOvertimeHoursWorked: 9509.53,
-  overtimeHoursWorked: 8915.23,
-  ptoHoursUsed: 2334.2,
-  regularHoursWorked: 3581.07,
-  sickHoursUsed: 6897.68,
+  doubleOvertimeHoursWorked: 2127.1,
+  overtimeHoursWorked: 6678.28,
+  ptoHoursUsed: 9986.43,
+  regularHoursWorked: 568.29,
+  sickHoursUsed: 6908.63,
 };
 
 sdk.timeOffPolicies.postV1PayrollsPayrollIdCalculateAccruingTimeOffHours(employeeId, payrollId, requestBody).then((res: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse) => {
@@ -231,16 +231,16 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "laboriosam";
+const timeOffPolicyUuid: string = "Uganda";
 const requestBody: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody = {
-  accrualMethod: PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod.Unlimited,
-  accrualRate: "voluptates",
-  accrualRateUnit: "libero",
-  accrualWaitingPeriodDays: 113816,
-  carryoverLimitHours: "accusamus",
-  maxAccrualHoursPerYear: "similique",
-  maxHours: "tempora",
-  name: "Yolanda Hirthe",
+  accrualMethod: PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod.PerHourPaid,
+  accrualRate: "payment parse Luxurious",
+  accrualRateUnit: "green Administrator",
+  accrualWaitingPeriodDays: 418829,
+  carryoverLimitHours: "Analyst RAM magenta",
+  maxAccrualHoursPerYear: "Hybrid SAS",
+  maxHours: "Hat connecting taxi",
+  name: "Generic Synchronised Ytterbium",
   paidOutOnTermination: false,
 };
 
@@ -283,7 +283,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "nobis";
+const timeOffPolicyUuid: string = "payment";
 
 sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate(timeOffPolicyUuid).then((res: PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse) => {
   if (res.statusCode == 200) {
@@ -326,11 +326,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "dolorum";
+const timeOffPolicyUuid: string = "male";
 const requestBody: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody = {
   employees: [
     {
-      uuid: "3c28744e-d53b-488f-ba8d-8f5c0b2f2fb7",
+      uuid: "b5f8e4ec-8e25-4c19-8e9c-6e065c64f59d",
     },
   ],
 };
@@ -377,12 +377,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "expedita";
+const timeOffPolicyUuid: string = "magenta";
 const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody = {
   employees: [
     {
-      balance: "ab",
-      uuid: "94a276b2-6916-4fe1-b08f-4294e3698f44",
+      balance: "Soft",
+      uuid: "8be07832-f62f-4ccd-a7d5-70336b1338e9",
     },
   ],
 };
@@ -429,12 +429,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const timeOffPolicyUuid: string = "voluptate";
+const timeOffPolicyUuid: string = "deposit";
 const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody = {
   employees: [
     {
-      balance: "reiciendis",
-      uuid: "603e8b44-5e80-4ca5-9efd-20e457e1858b",
+      balance: "Cargo Supervisor Farmington",
+      uuid: "2748ace8-9ba5-40a4-a2cd-1867b7dd9732",
     },
   ],
 };

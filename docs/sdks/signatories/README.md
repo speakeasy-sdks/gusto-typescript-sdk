@@ -27,8 +27,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "omnis";
-const signatoryUuid: string = "tenetur";
+const companyUuid: string = "Tricycle";
+const signatoryUuid: string = "aggregate";
 
 sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid).then((res: DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
   if (res.statusCode == 200) {
@@ -69,7 +69,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "quasi";
+const companyUuid: string = "directional";
 
 sdk.signatories.getV1CompaniesCompanyUuidSignatories(companyUuid).then((res: GetV1CompaniesCompanyUuidSignatoriesResponse) => {
   if (res.statusCode == 200) {
@@ -110,12 +110,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "at";
+const companyUuid: string = "disintermediate";
 const requestBody: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody = {
-  email: "Jacinto8@gmail.com",
-  firstName: "Darlene",
-  lastName: "Ferry",
-  title: "Miss",
+  email: "Kirstin25@yahoo.com",
+  firstName: "Jalon",
+  lastName: "Kirlin",
+  title: "Southwest",
 };
 
 sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite(companyUuid, requestBody).then((res: PostV1CompaniesCompanyUuidSignatoriesInviteResponse) => {
@@ -159,23 +159,23 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "temporibus";
+const companyUuid: string = "Rubber";
 const requestBody: PostV1CompanySignatoriesRequestBody = {
-  birthday: "accusantium",
-  email: "Adrienne_Langworth@yahoo.com",
-  firstName: "Anne",
+  birthday: "Officer",
+  email: "Ian_Brakus@gmail.com",
+  firstName: "Uriel",
   homeAddress: {
-    city: "Demondtown",
-    state: "dolor",
-    street1: "occaecati",
-    street2: "numquam",
-    zip: "impedit",
+    city: "Windlerfurt",
+    state: "Sedan sticky",
+    street1: "clever Forward Hybrid",
+    street2: "Developer",
+    zip: "North",
   },
-  lastName: "Christiansen",
-  middleInitial: "voluptas",
-  phone: "519-629-3904",
-  ssn: "quaerat",
-  title: "Mr.",
+  lastName: "Smitham",
+  middleInitial: "target",
+  phone: "1-581-834-8307 x0447",
+  ssn: "quantify",
+  title: "turquoise Bohrium",
 };
 
 sdk.signatories.postV1CompanySignatories(companyUuid, requestBody).then((res: PostV1CompanySignatoriesResponse) => {
@@ -219,24 +219,24 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "repellendus";
-const signatoryUuid: string = "officia";
+const companyUuid: string = "Consultant";
+const signatoryUuid: string = "optical";
 const requestBody: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody = {
-  birthday: "maxime",
-  firstName: "Jennifer",
+  birthday: "Future Cambridgeshire Coupe",
+  firstName: "Geo",
   homeAddress: {
-    city: "Yundtbury",
-    state: "quae",
-    street1: "quaerat",
-    street2: "porro",
-    zip: "quod",
+    city: "Lake Zoraland",
+    state: "East",
+    street1: "Hybrid composite Plastic",
+    street2: "female",
+    zip: "Division",
   },
-  lastName: "Green",
-  middleInitial: "ab",
-  phone: "763.366.9584",
-  ssn: "ducimus",
-  title: "Ms.",
-  version: "vel",
+  lastName: "Roob",
+  middleInitial: "Uganda smoothly",
+  phone: "690-574-5390 x54997",
+  ssn: "excepting",
+  title: "niches",
+  version: "Mouse Frozen",
 };
 
 sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid, requestBody).then((res: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {

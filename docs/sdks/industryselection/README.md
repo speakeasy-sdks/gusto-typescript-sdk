@@ -21,7 +21,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "eaque";
+const companyId: string = "Americium";
 
 sdk.industrySelection.getV1CompanyIndustry(companyId).then((res: GetV1CompanyIndustryResponse) => {
   if (res.statusCode == 200) {
@@ -62,13 +62,13 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "a";
+const companyId: string = "Solutions";
 const requestBody: PutV1CompanyIndustryRequestBody = {
-  naicsCode: "libero",
+  naicsCode: "Iodine Blues male",
   sicCodes: [
-    "aut",
+    "ice",
   ],
-  title: "Mr.",
+  title: "Erbium edge",
 };
 
 sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody).then((res: PutV1CompanyIndustryResponse) => {

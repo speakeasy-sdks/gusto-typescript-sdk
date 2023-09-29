@@ -21,7 +21,7 @@ import {
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 const sdk = new Gusto();
-const companyId: string = "possimus";
+const companyId: string = "Central";
 const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
   authorization: "",
 };
@@ -66,14 +66,14 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "magnam";
+const companyId: string = "Blues";
 const requestBody: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody = {
-  ein: "ratione",
-  filingForm: "ex",
-  legalName: "laudantium",
-  taxPayerType: "dicta",
+  ein: "Dominican Designer",
+  filingForm: "Magnesium Interface",
+  legalName: "upward",
+  taxPayerType: "handicap",
   taxableAsScorp: false,
-  version: "dolor",
+  version: "Gaithersburg gold UDP",
 };
 
 sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails(companyId, requestBody).then((res: PutV1CompaniesCompanyIdFederalTaxDetailsResponse) => {

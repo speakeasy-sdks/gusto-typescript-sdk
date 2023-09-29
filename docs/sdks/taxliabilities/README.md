@@ -23,7 +23,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "labore";
+const companyUuid: string = "Danbury";
 
 sdk.taxLiabilities.getV1TaxLiabilities(companyUuid).then((res: GetV1TaxLiabilitiesResponse) => {
   if (res.statusCode == 200) {
@@ -66,13 +66,13 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "possimus";
+const companyUuid: string = "Investment";
 const requestBody: PutV1TaxLiabilitiesRequestBody = {
   liabilitySelections: [
     {
-      lastUnpaidExternalPayrollUuid: "facilis",
-      taxId: 738227,
-      unpaidLiabilityAmount: 4148.57,
+      lastUnpaidExternalPayrollUuid: "pro Cis",
+      taxId: 497042,
+      unpaidLiabilityAmount: 8081.46,
     },
   ],
 };
@@ -114,7 +114,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "in";
+const companyUuid: string = "1080p";
 
 sdk.taxLiabilities.putV1TaxLiabilitiesFinish(companyUuid).then((res: PutV1TaxLiabilitiesFinishResponse) => {
   if (res.statusCode == 200) {

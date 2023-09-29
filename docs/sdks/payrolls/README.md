@@ -37,9 +37,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "sapiente";
-const page: number = 1598.7;
-const per: number = 1871.31;
+const companyId: string = "SUV";
+const page: number = 3289.2;
+const per: number = 5215.35;
 
 sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per).then((res: GetV1CompaniesCompanyIdPayrollReversalsResponse) => {
   if (res.statusCode == 200) {
@@ -88,14 +88,14 @@ const sdk = new Gusto({
 });
 
 sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
-  companyId: "explicabo",
-  endDate: "saepe",
+  companyId: "Ferry healthily",
+  endDate: "microchip marketing",
   include: [
-    GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
+    GetV1CompaniesCompanyIdPayrollsInclude.Deductions,
   ],
   includeOffCycle: false,
   processed: false,
-  startDate: "atque",
+  startDate: "gee Oxygen Ford",
 }).then((res: GetV1CompaniesCompanyIdPayrollsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -143,10 +143,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "et";
-const payrollId: string = "esse";
-const include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.Taxes;
-const showCalculation: string = "accusamus";
+const companyId: string = "application";
+const payrollId: string = "software";
+const include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.Benefits;
+const showCalculation: string = "Country";
 
 sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation).then((res: GetV1CompaniesCompanyIdPayrollsPayrollIdResponse) => {
   if (res.statusCode == 200) {
@@ -193,7 +193,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "veritatis";
+const companyUuid: string = "yuck";
 
 sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid).then((res: GetV1CompaniesPayrollBlockersCompanyUuidResponse) => {
   if (res.statusCode == 200) {
@@ -240,7 +240,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const payrollUuid: string = "esse";
+const payrollUuid: string = "neglected";
 
 sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid).then((res: GetV1PaymentReceiptsPayrollsPayrollUuidResponse) => {
   if (res.statusCode == 200) {
@@ -282,8 +282,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "quod";
-const payrollId: string = "nam";
+const employeeId: string = "radical";
+const payrollId: string = "payment";
 
 sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId).then((res: GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse) => {
   if (res.statusCode == 200) {
@@ -331,19 +331,19 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "vero";
+const companyId: string = "gold";
 const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
-  checkDate: "aliquid",
+  checkDate: "solid",
   employeeUuids: [
-    "quasi",
+    "Montana",
   ],
-  endDate: "saepe",
+  endDate: "Tricycle joule",
   fixedWithholdingRate: false,
   offCycle: false,
-  offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason.Correction,
+  offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason.Bonus,
   skipRegularDeductions: false,
-  startDate: "harum",
-  withholdingPayPeriod: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod.Monthly,
+  startDate: "B2C Southeast Ergonomic",
+  withholdingPayPeriod: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod.Quarterly,
 };
 
 sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody).then((res: PostV1CompaniesCompanyIdPayrollsResponse) => {
@@ -388,10 +388,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const payrollId: string = "rerum";
+const payrollId: string = "female";
 const requestBody: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody = {
-  printingFormat: "occaecati",
-  startingCheckNumber: 327720,
+  printingFormat: "Group",
+  startingCheckNumber: 499002,
 };
 
 sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody).then((res: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse) => {
@@ -436,8 +436,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "distinctio";
-const payrollId: string = "eligendi";
+const companyId: string = "systematic";
+const payrollId: string = "Director";
 
 sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId).then((res: PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse) => {
   if (res.statusCode == 200) {
@@ -486,39 +486,39 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "sit";
-const payrollId: string = "culpa";
+const companyId: string = "Electric";
+const payrollId: string = "Pop";
 const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
   employeeCompensations: [
     {
-      employeeUuid: "tempore",
+      employeeUuid: "and cheap",
       excluded: false,
       fixedCompensations: [
         {
-          amount: "adipisci",
-          jobUuid: 766964,
-          name: "Elizabeth Schinner",
+          amount: "253.53",
+          jobUuid: 696358,
+          name: "against",
         },
       ],
       hourlyCompensations: [
         {
-          hours: "consectetur",
-          jobUuid: 458139,
-          name: "Eduardo Wilkinson",
+          hours: "Cheese",
+          jobUuid: 102623,
+          name: "Account holistic",
         },
       ],
       paidTimeOff: [
         {
-          finalPayoutUnusedHoursInput: "esse",
-          hours: "quasi",
-          name: "Jeremiah Mayer",
-          policyUuid: "quia",
+          finalPayoutUnusedHoursInput: "Digitized",
+          hours: "weakly",
+          name: "West Denmark",
+          policyUuid: "Lawrencium",
         },
       ],
       paymentMethod: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod.Check,
     },
   ],
-  version: "asperiores",
+  version: "olive Rubber Developer",
 };
 
 sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody).then((res: PutV1CompaniesCompanyIdPayrollsResponse) => {
@@ -571,39 +571,39 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "facere";
-const payPeriodEndDate: string = "veritatis";
-const payPeriodStartDate: string = "consequuntur";
+const companyId: string = "Tricycle";
+const payPeriodEndDate: string = "coherent";
+const payPeriodStartDate: string = "pick";
 const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody = {
   employeeCompensations: [
     {
-      employeeUuid: "quasi",
+      employeeUuid: "input rescue indigo",
       excluded: false,
       fixedCompensations: [
         {
-          amount: "similique",
-          jobUuid: "culpa",
-          name: "Mandy Berge",
+          amount: "43.52",
+          jobUuid: "Royce navigating Quality",
+          name: "Southwest huzzah",
         },
       ],
       hourlyCompensations: [
         {
-          hours: "in",
-          jobUuid: "eius",
-          name: "Mrs. Gilberto Roberts",
+          hours: "illo",
+          jobUuid: "reintermediate",
+          name: "Outdoors",
         },
       ],
       paidTimeOff: [
         {
-          hours: "dicta",
-          name: "Delores Hermiston IV",
-          policyUuid: "qui",
+          hours: "solid",
+          name: "BMX Concrete virtual",
+          policyUuid: "periodic",
         },
       ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.Check,
+      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
     },
   ],
-  version: "ex",
+  version: "gee Land",
 };
 
 sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody).then((res: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse) => {
@@ -651,8 +651,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "deleniti";
-const payrollId: string = "itaque";
+const companyId: string = "compress";
+const payrollId: string = "scale";
 
 sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse) => {
   if (res.statusCode == 200) {
@@ -695,8 +695,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "dolorum";
-const payrollId: string = "architecto";
+const companyId: string = "programming";
+const payrollId: string = "Lead";
 
 sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse) => {
   if (res.statusCode == 200) {

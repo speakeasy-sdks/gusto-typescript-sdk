@@ -23,7 +23,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const formId: string = "perferendis";
+const formId: string = "fluid";
 
 sdk.companyForms.getV1CompanyForm(formId).then((res: GetV1CompanyFormResponse) => {
   if (res.statusCode == 200) {
@@ -60,7 +60,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const formId: string = "doloremque";
+const formId: string = "Miller";
 
 sdk.companyForms.getV1CompanyFormPdf(formId).then((res: GetV1CompanyFormPdfResponse) => {
   if (res.statusCode == 200) {
@@ -97,7 +97,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "reprehenderit";
+const companyId: string = "primary";
 
 sdk.companyForms.getV1CompanyForms(companyId).then((res: GetV1CompanyFormsResponse) => {
   if (res.statusCode == 200) {
@@ -138,11 +138,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const formId: string = "ut";
+const formId: string = "EXE";
 const requestBody: PutV1CompanyFormSignRequestBody = {
   agree: false,
-  signatureText: "maiores",
-  signedByIpAddress: "dicta",
+  signatureText: "Mazda",
+  signedByIpAddress: "PNG Multigender Evansville",
 };
 
 sdk.companyForms.putV1CompanyFormSign(formId, requestBody).then((res: PutV1CompanyFormSignResponse) => {

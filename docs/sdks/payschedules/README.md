@@ -31,7 +31,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "molestiae";
+const companyId: string = "Recumbent";
 const endDate: string = "2020-01-31";
 const startDate: string = "2020-01-01";
 
@@ -77,9 +77,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "accusantium";
-const page: number = 7836.48;
-const per: number = 4304.02;
+const companyId: string = "cultivate";
+const page: number = 8748;
+const per: number = 6116.15;
 
 sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules(companyId, page, per).then((res: GetV1CompaniesCompanyIdPaySchedulesResponse) => {
   if (res.statusCode == 200) {
@@ -123,8 +123,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "quas";
-const payScheduleId: string = "praesentium";
+const companyId: string = "overriding";
+const payScheduleId: string = "sensor";
 
 sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId).then((res: GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
   if (res.statusCode == 200) {
@@ -171,13 +171,13 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "consequuntur";
+const companyId: string = "Elegant";
 const requestBody: PostV1CompaniesCompanyIdPaySchedulesRequestBody = {
   anchorEndOfPayPeriod: "2020-05-08",
   anchorPayDate: "2020-05-15",
-  day1: 536178,
-  day2: 143829,
-  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.TwicePerMonth,
+  day1: 105783,
+  day2: 776080,
+  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.EveryWeek,
 };
 
 sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules(companyId, requestBody).then((res: PostV1CompaniesCompanyIdPaySchedulesResponse) => {
@@ -220,11 +220,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "mollitia";
-const payScheduleId: string = "incidunt";
+const companyId: string = "copying";
+const payScheduleId: string = "Polygender";
 const requestBody: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody = {
   autoPilot: false,
-  version: "atque",
+  version: "Crew",
 };
 
 sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId, requestBody).then((res: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {

@@ -34,7 +34,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const webhookSubscriptionUuid: string = "laboriosam";
+const webhookSubscriptionUuid: string = "range";
 
 sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid).then((res: DeleteV1WebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
@@ -79,7 +79,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const webhookSubscriptionUuid: string = "dolorum";
+const webhookSubscriptionUuid: string = "withdrawal";
 
 sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid).then((res: GetV1WebhookSubscriptionUuidResponse) => {
   if (res.statusCode == 200) {
@@ -127,7 +127,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const webhookSubscriptionUuid: string = "voluptatum";
+const webhookSubscriptionUuid: string = "auxiliary";
 
 sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid).then((res: GetV1WebhookSubscriptionVerificationTokenUuidResponse) => {
   if (res.statusCode == 200) {
@@ -220,9 +220,9 @@ const sdk = new Gusto({
 
 sdk.webhookSubscriptions.postV1WebhookSubscription({
   subscriptionTypes: [
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.ExternalPayroll,
+    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.PaySchedule,
   ],
-  url: "hic",
+  url: "http://adept-mutation.com",
 }).then((res: PostV1WebhookSubscriptionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -273,9 +273,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const webhookSubscriptionUuid: string = "expedita";
+const webhookSubscriptionUuid: string = "collaboration";
 const requestBody: PutV1VerifyWebhookSubscriptionUuidRequestBody = {
-  verificationToken: "debitis",
+  verificationToken: "Bedfordshire North organic",
 };
 
 sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody).then((res: PutV1VerifyWebhookSubscriptionUuidResponse) => {
@@ -327,7 +327,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const webhookSubscriptionUuid: string = "neque";
+const webhookSubscriptionUuid: string = "disintermediate";
 const requestBody: PutV1WebhookSubscriptionUuidRequestBody = {
   subscriptionTypes: [
     PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Form,

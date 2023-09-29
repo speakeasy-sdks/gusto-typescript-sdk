@@ -28,8 +28,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "deleniti";
-const earningTypeUuid: string = "pariatur";
+const companyId: string = "Krone";
+const earningTypeUuid: string = "purple";
 
 sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid).then((res: DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
   if (res.statusCode == 200) {
@@ -78,7 +78,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "provident";
+const companyId: string = "Agent";
 
 sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(companyId).then((res: GetV1CompaniesCompanyIdEarningTypesResponse) => {
   if (res.statusCode == 200) {
@@ -123,9 +123,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "nobis";
+const companyId: string = "dolor";
 const requestBody: PostV1CompaniesCompanyIdEarningTypesRequestBody = {
-  name: "Toby Hahn",
+  name: "grey Soft Account",
 };
 
 sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes(companyId, requestBody).then((res: PostV1CompaniesCompanyIdEarningTypesResponse) => {
@@ -170,10 +170,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "dolorem";
-const earningTypeUuid: string = "dolorem";
+const companyId: string = "male";
+const earningTypeUuid: string = "South";
 const requestBody: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody = {
-  name: "Norma Erdman",
+  name: "siemens",
 };
 
 sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid, requestBody).then((res: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {

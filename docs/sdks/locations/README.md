@@ -32,9 +32,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "eos";
-const page: number = 3738.13;
-const per: number = 698.59;
+const companyId: string = "oh";
+const page: number = 5661.13;
+const per: number = 7059.47;
 
 sdk.locations.getV1CompaniesCompanyIdLocations(companyId, page, per).then((res: GetV1CompaniesCompanyIdLocationsResponse) => {
   if (res.statusCode == 200) {
@@ -75,7 +75,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const locationId: string = "cupiditate";
+const locationId: string = "Analyst";
 
 sdk.locations.getV1LocationsLocationId(locationId).then((res: GetV1LocationsLocationIdResponse) => {
   if (res.statusCode == 200) {
@@ -117,7 +117,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const locationUuid: string = "consequatur";
+const locationUuid: string = "Communications";
 const effectiveDate: string = "2020-01-31";
 
 sdk.locations.getV1LocationsLocationUuidMinimumWages(locationUuid, effectiveDate).then((res: GetV1LocationsLocationUuidMinimumWagesResponse) => {
@@ -164,17 +164,17 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "tempora";
+const companyId: string = "salmon";
 const requestBody: PostV1CompaniesCompanyIdLocationsApplicationJSON = {
-  city: "Gulfport",
-  country: "Bulgaria",
+  city: "Cupertino",
+  country: "Singapore",
   filingAddress: false,
   mailingAddress: false,
-  phoneNumber: "sequi",
-  state: "quo",
-  street1: "esse",
-  street2: "recusandae",
-  zip: "aperiam",
+  phoneNumber: "Home North Integration",
+  state: "Hermaphrodite boohoo",
+  street1: "Bronze",
+  street2: "Technician",
+  zip: "female Chair",
 };
 
 sdk.locations.postV1CompaniesCompanyIdLocationsJson(companyId, requestBody).then((res: PostV1CompaniesCompanyIdLocationsJsonResponse) => {
@@ -221,8 +221,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "distinctio";
-const requestBody: Uint8Array = "quod".encode();
+const companyId: string = "pink";
+const requestBody: Uint8Array = ":2||$cFaB;" as bytes <<<>>>;
 
 sdk.locations.postV1CompaniesCompanyIdLocationsRaw(companyId, requestBody).then((res: PostV1CompaniesCompanyIdLocationsRawResponse) => {
   if (res.statusCode == 200) {
@@ -266,18 +266,18 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const locationId: string = "dignissimos";
+const locationId: string = "Osmium";
 const requestBody: PutV1LocationsLocationIdRequestBody = {
-  city: "South Josiahside",
-  country: "French Southern Territories",
+  city: "Birmingham",
+  country: "Solomon Islands",
   filingAddress: false,
   mailingAddress: false,
-  phoneNumber: "odio",
-  state: "occaecati",
-  street1: "commodi",
-  street2: "sapiente",
-  version: "dolores",
-  zip: "deserunt",
+  phoneNumber: "optical generating Account",
+  state: "salmon Avon",
+  street1: "Solutions IB",
+  street2: "Veum Steel",
+  version: "Rapid actuating",
+  zip: "Electric Wooden",
 };
 
 sdk.locations.putV1LocationsLocationId(locationId, requestBody).then((res: PutV1LocationsLocationIdResponse) => {

@@ -53,7 +53,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "provident";
+const companyId: string = "payment";
 
 sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
   if (res.statusCode == 200) {

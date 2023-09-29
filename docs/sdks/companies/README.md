@@ -35,7 +35,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "magnam";
+const companyId: string = "female";
 
 sdk.companies.getV1Companies(companyId).then((res: GetV1CompaniesResponse) => {
   if (res.statusCode == 200) {
@@ -72,9 +72,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "debitis";
-const page: number = 567.13;
-const per: number = 9636.63;
+const companyId: string = "Soap";
+const page: number = 4846.14;
+const per: number = 5137.2;
 
 sdk.companies.getV1CompaniesCompanyIdAdmins(companyId, page, per).then((res: GetV1CompaniesCompanyIdAdminsResponse) => {
   if (res.statusCode == 200) {
@@ -118,9 +118,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "tempora";
-const page: number = 3834.41;
-const per: number = 4776.65;
+const companyId: string = "after";
+const page: number = 1619.52;
+const per: number = 7836.97;
 
 sdk.companies.getV1CompaniesCompanyIdCustomFields(companyId, page, per).then((res: GetV1CompaniesCompanyIdCustomFieldsResponse) => {
   if (res.statusCode == 200) {
@@ -170,7 +170,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "minus";
+const companyUuid: string = "West";
 
 sdk.companies.getV1CompanyFinishOnboarding(companyUuid).then((res: GetV1CompanyFinishOnboardingResponse) => {
   if (res.statusCode == 200) {
@@ -207,7 +207,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "placeat";
+const companyUuid: string = "access";
 
 sdk.companies.getV1CompanyOnboardingStatus(companyUuid).then((res: GetV1CompanyOnboardingStatusResponse) => {
   if (res.statusCode == 200) {
@@ -248,11 +248,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "voluptatum";
+const companyUuid: string = "Fundamental";
 const requestBody: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequestBody = {
-  email: "Kenyon_Huel7@yahoo.com",
-  externalUserId: "quis",
-  ipAddress: "veritatis",
+  email: "Myles66@gmail.com",
+  externalUserId: "ivory contextualize yieldingly",
+  ipAddress: "115.209.153.222",
 };
 
 sdk.companies.postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService(companyUuid, requestBody).then((res: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse) => {
@@ -295,9 +295,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "deserunt";
+const companyUuid: string = "synthesizing";
 const requestBody: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody = {
-  email: "Freeda_Sipes14@gmail.com",
+  email: "Dwight.Conn51@gmail.com",
 };
 
 sdk.companies.postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService(companyUuid, requestBody).then((res: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse) => {
@@ -340,11 +340,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "at";
+const companyId: string = "UTF8";
 const requestBody: PostV1CompaniesCompanyIdAdminsRequestBody = {
-  email: "Wilford_Krajcik46@hotmail.com",
-  firstName: "Jovan",
-  lastName: "Sauer",
+  email: "Ruben_Runte@yahoo.com",
+  firstName: "Julia",
+  lastName: "Lehner",
 };
 
 sdk.companies.postV1CompaniesCompanyIdAdmins(companyId, requestBody).then((res: PostV1CompaniesCompanyIdAdminsResponse) => {
@@ -386,15 +386,15 @@ const sdk = new Gusto({
 
 sdk.companies.postV1PartnerManagedCompanies({
   company: {
-    ein: "dolorum",
-    name: "Antoinette Nikolaus",
-    tradeName: "deleniti",
+    ein: "becquerel virtual",
+    name: "deleniti efficient Assurance",
+    tradeName: "Fantastic mesh Electric",
   },
   user: {
-    email: "Nina41@hotmail.com",
-    firstName: "Jaren",
-    lastName: "Gleason",
-    phone: "1-874-351-0361",
+    email: "Raleigh_Nienow53@yahoo.com",
+    firstName: "Jamie",
+    lastName: "Powlowski",
+    phone: "530-812-4626",
   },
 }).then((res: PostV1PartnerManagedCompaniesResponse) => {
   if (res.statusCode == 200) {
@@ -448,28 +448,28 @@ sdk.companies.postV1Provision({
   company: {
     addresses: [
       {
-        city: "Fadelfurt",
-        isPrimary: "laboriosam",
-        phone: "964.464.9600 x96661",
-        state: "dolorem",
-        street1: "corporis",
-        street2: "explicabo",
-        zip: "nobis",
+        city: "Fort Rowanstead",
+        isPrimary: "Account facilis",
+        phone: "910-227-8076 x191",
+        state: "methinks overriding parsing",
+        street1: "markets",
+        street2: "Principal",
+        zip: "Producer Soft 1080p",
       },
     ],
-    ein: "enim",
-    name: "Corey Hane III",
-    numberEmployees: 6342.74,
+    ein: "Home Chips",
+    name: "Rap Diesel Flavie",
+    numberEmployees: 9982.58,
     states: [
-      "doloribus",
+      "BMW",
     ],
-    tradeName: "sapiente",
+    tradeName: "Bike Lead",
   },
   user: {
-    email: "Macy.Durgan@gmail.com",
-    firstName: "Zechariah",
-    lastName: "O'Hara",
-    phone: "(444) 526-1316 x6317",
+    email: "Eunice.Bashirian@yahoo.com",
+    firstName: "Grady",
+    lastName: "Gottlieb",
+    phone: "860-937-1108",
   },
 }).then((res: PostV1ProvisionResponse) => {
   if (res.statusCode == 200) {
@@ -510,11 +510,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "sequi";
+const companyUuid: string = "Hyundai";
 const requestBody: PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody = {
-  email: "Freida.Ondricka9@hotmail.com",
-  externalUserId: "error",
-  ipAddress: "temporibus",
+  email: "Estel40@yahoo.com",
+  externalUserId: "Oxygen AGP",
+  ipAddress: "74.62.158.119",
 };
 
 sdk.companies.putV1PartnerManagedCompaniesCompanyUuidMigrate(companyUuid, requestBody).then((res: PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse) => {

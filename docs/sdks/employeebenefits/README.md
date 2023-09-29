@@ -30,7 +30,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeBenefitId: string = "cum";
+const employeeBenefitId: string = "SDD";
 
 sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId).then((res: DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
   if (res.statusCode == 200) {
@@ -72,7 +72,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeBenefitId: string = "voluptate";
+const employeeBenefitId: string = "Alvina";
 
 sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId).then((res: GetV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
   if (res.statusCode == 200) {
@@ -116,9 +116,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "dignissimos";
-const page: number = 9702.37;
-const per: number = 2274.14;
+const employeeId: string = "Fresh";
+const page: number = 1074.14;
+const per: number = 7853.61;
 
 sdk.employeeBenefits.getV1EmployeesEmployeeIdEmployeeBenefits(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdEmployeeBenefitsResponse) => {
   if (res.statusCode == 200) {
@@ -163,12 +163,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "dolorum";
+const employeeId: string = "copy";
 const requestBody: PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody = {
-  benefitType: 2543.56,
-  taxYear: 852.95,
-  ytdCompanyContributionAmount: "ipsa",
-  ytdEmployeeDeductionAmount: "ipsa",
+  benefitType: 3580.76,
+  taxYear: 316.44,
+  ytdCompanyContributionAmount: "program Soul",
+  ytdEmployeeDeductionAmount: "South female",
 };
 
 sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany(employeeId, requestBody).then((res: PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse) => {
@@ -217,31 +217,26 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "iure";
+const employeeId: string = "Dinar";
 const requestBody: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody = {
   active: false,
   catchUp: false,
-  companyBenefitUuid: "odio",
-  companyContribution: "quaerat",
-  companyContributionAnnualMaximum: "accusamus",
+  companyBenefitUuid: "engage Sausages Officer",
+  companyContribution: "Supervisor Rustic Darmstadtium",
+  companyContributionAnnualMaximum: "Tandem",
   contributeAsPercentage: false,
   contribution: {
     type: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType.Amount,
-    value: [
-      {
-        rate: "voluptas",
-        threshold: "natus",
-      },
-    ],
+    value: "to",
   },
-  coverageAmount: "eos",
-  coverageSalaryMultiplier: "atque",
+  coverageAmount: "barrier lively",
+  coverageSalaryMultiplier: "dynamic Turkey consequently",
   deductAsPercentage: false,
-  deductionReducesTaxableIncome: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome.Unset,
+  deductionReducesTaxableIncome: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome.DoesNotReduceTaxableIncome,
   elective: false,
-  employeeDeduction: "fugiat",
-  employeeDeductionAnnualMaximum: "ab",
-  limitOption: "soluta",
+  employeeDeduction: "Outdoors monitor Jaden",
+  employeeDeductionAnnualMaximum: "disintermediate delectus Oak",
+  limitOption: "engage kilogram",
 };
 
 sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdEmployeeBenefitsResponse) => {
@@ -290,31 +285,26 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeBenefitId: string = "dolorum";
+const employeeBenefitId: string = "West";
 const requestBody: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody = {
   active: false,
   catchUp: false,
-  companyContribution: "iusto",
-  companyContributionAnnualMaximum: "voluptate",
+  companyContribution: "Generic Fantastic",
+  companyContributionAnnualMaximum: "Rupee Triathlon/Time",
   contributeAsPercentage: false,
   contribution: {
     type: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionType.Tiered,
-    value: [
-      {
-        rate: "omnis",
-        threshold: "necessitatibus",
-      },
-    ],
+    value: "whoa International",
   },
-  coverageAmount: "distinctio",
-  coverageSalaryMultiplier: "asperiores",
+  coverageAmount: "Bedfordshire mole",
+  coverageSalaryMultiplier: "Androgynous defense surprisingly",
   deductAsPercentage: false,
   deductionReducesTaxableIncome: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncome.ReducesTaxableIncome,
   elective: false,
-  employeeDeduction: "ipsum",
-  employeeDeductionAnnualMaximum: "voluptate",
-  limitOption: "id",
-  version: "saepe",
+  employeeDeduction: "SUV",
+  employeeDeductionAnnualMaximum: "copying Orchestrator",
+  limitOption: "Greece HTTP",
+  version: "Folk purple absentmindedly",
 };
 
 sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId, requestBody).then((res: PutV1EmployeeBenefitsEmployeeBenefitIdResponse) => {

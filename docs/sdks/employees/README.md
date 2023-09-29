@@ -30,7 +30,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "delectus";
+const employeeId: string = "Androgyne";
 
 sdk.employees.deleteV1Employee(employeeId).then((res: DeleteV1EmployeeResponse) => {
   if (res.statusCode == 200) {
@@ -70,8 +70,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "dolorem";
-const include: GetV1EmployeesInclude = GetV1EmployeesInclude.AllCompensations;
+const employeeId: string = "functionalities";
+const include: GetV1EmployeesInclude = GetV1EmployeesInclude.CustomFields;
 
 sdk.employees.getV1Employees(employeeId, include).then((res: GetV1EmployeesResponse) => {
   if (res.statusCode == 200) {
@@ -114,9 +114,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "labore";
-const page: number = 2408.29;
-const per: number = 6772.63;
+const employeeId: string = "Factors";
+const page: number = 2328.39;
+const per: number = 881.15;
 
 sdk.employees.getV1EmployeesEmployeeIdCustomFields(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdCustomFieldsResponse) => {
   if (res.statusCode == 200) {
@@ -160,7 +160,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "architecto";
+const employeeId: string = "Technetium";
 
 sdk.employees.getV1EmployeesEmployeeIdHomeAddress(employeeId).then((res: GetV1EmployeesEmployeeIdHomeAddressResponse) => {
   if (res.statusCode == 200) {
@@ -237,7 +237,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "quae";
+const employeeId: string = "bypassing";
 
 sdk.employees.getV1EmployeesEmployeeIdOnboardingStatus(employeeId).then((res: GetV1EmployeesEmployeeIdOnboardingStatusResponse) => {
   if (res.statusCode == 200) {
@@ -279,8 +279,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeUuid: string = "aut";
-const timeOffType: string = "quas";
+const employeeUuid: string = "chorus";
+const timeOffType: string = "Sports";
 
 sdk.employees.getVersionEmployeesTimeOffActivities(employeeUuid, timeOffType).then((res: GetVersionEmployeesTimeOffActivitiesResponse) => {
   if (res.statusCode == 200) {
@@ -320,15 +320,15 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "itaque";
+const companyId: string = "Lights";
 const requestBody: PostV1EmployeesRequestBody = {
-  dateOfBirth: "consequatur",
-  email: "River.Schaden70@hotmail.com",
-  firstName: "Kyler",
-  lastName: "Davis",
-  middleInitial: "quae",
+  dateOfBirth: "Concrete confused",
+  email: "Francesco.Dicki@yahoo.com",
+  firstName: "Marge",
+  lastName: "Stiedemann",
+  middleInitial: "green impactful",
   selfOnboarding: false,
-  ssn: "laudantium",
+  ssn: "Southwest male Non",
 };
 
 sdk.employees.postV1Employees(companyId, requestBody).then((res: PostV1EmployeesResponse) => {
@@ -369,7 +369,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "odio";
+const employeeId: string = "moratorium";
 
 sdk.employees.putV1EmployeeFinishOnboarding(employeeId).then((res: PutV1EmployeeFinishOnboardingResponse) => {
   if (res.statusCode == 200) {
@@ -408,16 +408,16 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "occaecati";
+const employeeId: string = "Lake";
 const requestBody: PutV1EmployeesRequestBody = {
-  dateOfBirth: "voluptatibus",
-  email: "Selina.Moen@hotmail.com",
-  firstName: "Vida",
-  lastName: "Klocko",
-  middleInitial: "consectetur",
-  ssn: "vero",
+  dateOfBirth: "application",
+  email: "Meta_Spencer@yahoo.com",
+  firstName: "Makenzie",
+  lastName: "O'Keefe",
+  middleInitial: "intangible Interactions female",
+  ssn: "Liaison iterate woman",
   twoPercentShareholder: false,
-  version: "tenetur",
+  version: "CSS",
 };
 
 sdk.employees.putV1Employees(employeeId, requestBody).then((res: PutV1EmployeesResponse) => {
@@ -462,14 +462,14 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "dignissimos";
+const employeeId: string = "suburban";
 const requestBody: PutV1EmployeesEmployeeIdHomeAddressRequestBody = {
-  city: "Portsmouth",
-  state: "quod",
-  street1: "odio",
-  street2: "similique",
-  version: "facilis",
-  zip: "vero",
+  city: "Coachella",
+  state: "Account",
+  street1: "Country system",
+  street2: "seize",
+  version: "Refined",
+  zip: "scalable Car",
 };
 
 sdk.employees.putV1EmployeesEmployeeIdHomeAddress(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdHomeAddressResponse) => {
@@ -523,9 +523,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "ducimus";
+const employeeId: string = "XSS";
 const requestBody: PutV1EmployeesEmployeeIdOnboardingStatusRequestBody = {
-  onboardingStatus: "dolore",
+  onboardingStatus: "Forward",
 };
 
 sdk.employees.putV1EmployeesEmployeeIdOnboardingStatus(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdOnboardingStatusResponse) => {

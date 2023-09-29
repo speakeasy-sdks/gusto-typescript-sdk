@@ -25,7 +25,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "corporis";
+const companyUuid: string = "Bedfordshire";
 
 sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid).then((res: GetV1CompaniesCompanyUuidTaxRequirementsResponse) => {
   if (res.statusCode == 200) {
@@ -105,8 +105,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "reiciendis";
-const state: string = "assumenda";
+const companyUuid: string = "Intersex";
+const state: string = "ohm";
 const scheduling: boolean = false;
 
 sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling).then((res: GetV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
@@ -152,20 +152,20 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "nemo";
-const state: string = "recusandae";
+const companyUuid: string = "Folk";
+const state: string = "online";
 const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
   requirementSets: [
     {
-      effectiveFrom: "aliquid",
-      key: "aperiam",
+      effectiveFrom: "for Islands lest",
+      key: "<key>",
       requirements: [
         {
-          key: "cum",
-          value: "consectetur",
+          key: "<key>",
+          value: "Reggae",
         },
       ],
-      state: "in",
+      state: "synergize",
     },
   ],
 };

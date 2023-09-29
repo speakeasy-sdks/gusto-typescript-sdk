@@ -26,8 +26,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "quibusdam";
-const externalPayrollId: string = "illum";
+const companyUuid: string = "Porsche";
+const externalPayrollId: string = "Southwest";
 
 sdk.externalPayrolls.deleteV1ExternalPayroll(companyUuid, externalPayrollId).then((res: DeleteV1ExternalPayrollResponse) => {
   if (res.statusCode == 200) {
@@ -66,7 +66,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "sequi";
+const companyUuid: string = "neural";
 
 sdk.externalPayrolls.getV1CompanyExternalPayrolls(companyUuid).then((res: GetV1CompanyExternalPayrollsResponse) => {
   if (res.statusCode == 200) {
@@ -104,8 +104,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "natus";
-const externalPayrollId: string = "impedit";
+const companyUuid: string = "Persevering";
+const externalPayrollId: string = "Gasoline";
 
 sdk.externalPayrolls.getV1ExternalPayroll(companyUuid, externalPayrollId).then((res: GetV1ExternalPayrollResponse) => {
   if (res.statusCode == 200) {
@@ -146,8 +146,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "aut";
-const externalPayrollId: string = "voluptatibus";
+const companyUuid: string = "Frozen";
+const externalPayrollId: string = "Ytterbium";
 
 sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes(companyUuid, externalPayrollId).then((res: GetV1ExternalPayrollCalculateTaxesResponse) => {
   if (res.statusCode == 200) {
@@ -190,11 +190,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "exercitationem";
+const companyUuid: string = "navigating";
 const requestBody: PostV1ExternalPayrollRequestBody = {
-  checkDate: "nulla",
-  paymentPeriodEndDate: "fugit",
-  paymentPeriodStartDate: "porro",
+  checkDate: "Facilitator Direct",
+  paymentPeriodEndDate: "Screen Manchester Senior",
+  paymentPeriodStartDate: "granular redefine",
 };
 
 sdk.externalPayrolls.postV1ExternalPayroll(companyUuid, requestBody).then((res: PostV1ExternalPayrollResponse) => {
@@ -243,31 +243,31 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "maiores";
-const externalPayrollId: string = "doloribus";
+const companyUuid: string = "lest";
+const externalPayrollId: string = "sherry";
 const requestBody: PutV1ExternalPayrollRequestBody = {
   externalPayrollItems: [
     {
       benefits: [
         {
-          benefitId: 478370,
-          companyContributionAmount: "eligendi",
-          employeeDeductionAmount: "ducimus",
+          benefitId: 944296,
+          companyContributionAmount: "Concrete",
+          employeeDeductionAmount: "Maserati Equatorial",
         },
       ],
       earnings: [
         {
-          amount: "alias",
-          earningId: 639473,
+          amount: "254.50",
+          earningId: 426646,
           earningType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType.CompanyPayType,
-          hours: "ipsam",
+          hours: "whereas Southwest",
         },
       ],
-      employeeUuid: "ea",
+      employeeUuid: "Bicycle",
       taxes: [
         {
-          amount: "aspernatur",
-          taxId: 428224,
+          amount: "105.01",
+          taxId: 750553,
         },
       ],
     },

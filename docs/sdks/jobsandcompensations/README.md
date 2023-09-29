@@ -29,7 +29,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const jobId: string = "deleniti";
+const jobId: string = "weber";
 
 sdk.jobsAndCompensations.deleteV1JobsJobId(jobId).then((res: DeleteV1JobsJobIdResponse) => {
   if (res.statusCode == 200) {
@@ -74,7 +74,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const compensationId: string = "impedit";
+const compensationId: string = "Operations";
 
 sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId).then((res: GetV1CompensationsCompensationIdResponse) => {
   if (res.statusCode == 200) {
@@ -117,10 +117,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "aliquam";
+const employeeId: string = "synergistic";
 const include: GetV1EmployeesEmployeeIdJobsInclude = GetV1EmployeesEmployeeIdJobsInclude.AllCompensations;
-const page: number = 1469.46;
-const per: number = 8828.6;
+const page: number = 7941.63;
+const per: number = 3904.25;
 
 sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page, per).then((res: GetV1EmployeesEmployeeIdJobsResponse) => {
   if (res.statusCode == 200) {
@@ -162,7 +162,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const jobId: string = "inventore";
+const jobId: string = "Electronic";
 const include: GetV1JobsJobIdInclude = GetV1JobsJobIdInclude.AllCompensations;
 
 sdk.jobsAndCompensations.getV1JobsJobId(jobId, include).then((res: GetV1JobsJobIdResponse) => {
@@ -211,10 +211,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const jobId: string = "non";
+const jobId: string = "delightfully";
 const include: GetV1JobsJobIdCompensationsInclude = GetV1JobsJobIdCompensationsInclude.AllCompensations;
-const page: number = 896.03;
-const per: number = 6774.12;
+const page: number = 4750.13;
+const per: number = 2850.55;
 
 sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per).then((res: GetV1JobsJobIdCompensationsResponse) => {
   if (res.statusCode == 200) {
@@ -256,11 +256,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "laborum";
+const employeeId: string = "quae";
 const requestBody: PostV1JobsJobIdRequestBody = {
-  hireDate: "placeat",
-  locationUuid: "velit",
-  title: "Ms.",
+  hireDate: "Facilitator",
+  locationUuid: "Montana Diesel",
+  title: "fox parse Human",
 };
 
 sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody).then((res: PostV1JobsJobIdResponse) => {
@@ -310,18 +310,18 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const compensationId: string = "autem";
+const compensationId: string = "Practical";
 const requestBody: PutV1CompensationsCompensationIdRequestBody = {
   adjustForMinimumWage: false,
-  flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatus.CommissionOnlyNonexempt,
+  flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatus.CommissionOnlyExempt,
   minimumWages: [
     {
-      uuid: "8dd6b144-2907-4474-b78a-7bd466d28c10",
+      uuid: "049c436a-e532-4a1a-9367-d12ade6aef7b",
     },
   ],
-  paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnit.Year,
-  rate: "quidem",
-  version: "neque",
+  paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnit.Hour,
+  rate: "Toys Money Southeast",
+  version: "navigate",
 };
 
 sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody).then((res: PutV1CompensationsCompensationIdResponse) => {
@@ -362,12 +362,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const jobId: string = "quo";
+const jobId: string = "Southwest";
 const requestBody: PutV1JobsJobIdRequestBody = {
-  hireDate: "illum",
-  locationUuid: "quo",
-  title: "Miss",
-  version: "eius",
+  hireDate: "state Bedfordshire morph",
+  locationUuid: "Sedan",
+  title: "Specialist Northeast Hybrid",
+  version: "Ukraine Buckinghamshire",
 };
 
 sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody).then((res: PutV1JobsJobIdResponse) => {

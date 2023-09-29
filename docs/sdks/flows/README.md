@@ -25,11 +25,11 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyUuid: string = "maiores";
+const companyUuid: string = "gee";
 const requestBody: PostV1CompanyFlowsRequestBody = {
-  entityType: PostV1CompanyFlowsRequestBodyEntityType.Company,
-  entityUuid: "ex",
-  flowType: "nulla",
+  entityType: PostV1CompanyFlowsRequestBodyEntityType.Employee,
+  entityUuid: "Visionary thwart detract",
+  flowType: "rich out",
 };
 
 sdk.flows.postV1CompanyFlows(companyUuid, requestBody).then((res: PostV1CompanyFlowsResponse) => {

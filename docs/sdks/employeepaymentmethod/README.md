@@ -26,8 +26,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const bankAccountUuid: string = "minima";
-const employeeId: string = "repellendus";
+const bankAccountUuid: string = "Watsica";
+const employeeId: string = "ah";
 
 sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId).then((res: DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse) => {
   if (res.statusCode == 200) {
@@ -68,7 +68,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "totam";
+const employeeId: string = "hack";
 
 sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId).then((res: GetV1EmployeesEmployeeIdPaymentMethodResponse) => {
   if (res.statusCode == 200) {
@@ -110,12 +110,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "similique";
+const employeeId: string = "Fitness";
 const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
-  accountNumber: "alias",
-  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Savings,
-  name: "Rhonda Kautzer",
-  routingNumber: "qui",
+  accountNumber: "mmm",
+  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Checking,
+  name: "Automotive North",
+  routingNumber: "ohm",
 };
 
 sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdBankAccountsResponse) => {
@@ -161,19 +161,19 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "dolorum";
+const employeeId: string = "Supervisor";
 const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
   splitBy: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy.Percentage,
   splits: [
     {
-      name: "Fannie Kub",
-      priority: 947371,
-      splitAmount: 229442,
-      uuid: "be453f87-0b32-46b5-a734-29cdb1a8422b",
+      name: "Gasoline Bugatti",
+      priority: 441802,
+      splitAmount: 417536,
+      uuid: "85f38a89-f02e-4e76-93d1-85c70e3b9d7b",
     },
   ],
   type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.Check,
-  version: "aliquid",
+  version: "inasmuch anti",
 };
 
 sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdPaymentMethodResponse) => {

@@ -28,9 +28,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "excepturi";
-const page: number = 9729.2;
-const per: number = 3436.05;
+const employeeId: string = "reboot";
+const page: number = 7793.33;
+const per: number = 779.75;
 
 sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse) => {
   if (res.statusCode == 200) {
@@ -71,7 +71,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const garnishmentId: string = "sapiente";
+const garnishmentId: string = "Executive";
 
 sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId).then((res: GetV1GarnishmentsGarnishmentIdResponse) => {
   if (res.statusCode == 200) {
@@ -114,17 +114,17 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "quisquam";
+const employeeId: string = "West";
 const requestBody: PostV1EmployeesEmployeeIdGarnishmentsRequestBody = {
   active: false,
-  amount: "saepe",
-  annualMaximum: "ea",
+  amount: "World relationships",
+  annualMaximum: "auxiliary Rustic Madison",
   courtOrdered: false,
   deductAsPercentage: false,
-  description: "impedit",
-  payPeriodMaximum: "corporis",
+  description: "Realigned actuating synergy",
+  payPeriodMaximum: "quantifying",
   recurring: false,
-  times: 333145,
+  times: 67606,
 };
 
 sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdGarnishmentsResponse) => {
@@ -169,18 +169,18 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const garnishmentId: string = "aliquid";
+const garnishmentId: string = "matrix";
 const requestBody: PutV1GarnishmentsGarnishmentIdRequestBody = {
   active: false,
-  amount: "inventore",
-  annualMaximum: "magnam",
+  amount: "Northeast Solutions male",
+  annualMaximum: "pish",
   courtOrdered: false,
   deductAsPercentage: false,
-  description: "ea",
-  payPeriodMaximum: "quo",
+  description: "Open-source optimizing capability",
+  payPeriodMaximum: "Kids Elegant Paradigm",
   recurring: false,
-  times: 232234,
-  version: "recusandae",
+  times: 795946,
+  version: "cutlet",
 };
 
 sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody).then((res: PutV1GarnishmentsGarnishmentIdResponse) => {

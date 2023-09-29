@@ -25,8 +25,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const documentType: string = "aspernatur";
-const requestUuid: string = "minima";
+const documentType: string = "female";
+const requestUuid: string = "Assurance";
 
 sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid(documentType, requestUuid).then((res: GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse) => {
   if (res.statusCode == 200) {

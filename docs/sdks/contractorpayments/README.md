@@ -29,8 +29,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "sint";
-const contractorPaymentId: string = "veritatis";
+const companyId: string = "whose";
+const contractorPaymentId: string = "Licensed";
 
 sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId).then((res: DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
   if (res.statusCode == 200) {
@@ -73,8 +73,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "itaque";
-const contractorPaymentId: string = "incidunt";
+const companyId: string = "subjugate";
+const contractorPaymentId: string = "fuchsia";
 
 sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId).then((res: GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
   if (res.statusCode == 200) {
@@ -116,12 +116,12 @@ const sdk = new Gusto({
 });
 
 sdk.contractorPayments.getV1CompaniesCompanyIdContractorPayments({
-  companyId: "enim",
-  contractorUuid: "consequatur",
+  companyId: "Pula Orchestrator",
+  contractorUuid: "slowly",
   endDate: "2020-12-31",
   groupByDate: false,
-  page: 6674.11,
-  per: 8423.42,
+  page: 1356.06,
+  per: 7823.71,
   startDate: "2020-01-01",
 }).then((res: GetV1CompaniesCompanyIdContractorPaymentsResponse) => {
   if (res.statusCode == 200) {
@@ -170,7 +170,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorPaymentUuid: string = "explicabo";
+const contractorPaymentUuid: string = "yahoo";
 
 sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt(contractorPaymentUuid).then((res: GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse) => {
   if (res.statusCode == 200) {
@@ -215,10 +215,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "deserunt";
+const companyId: string = "zero";
 const requestBody: PostV1CompaniesCompanyIdContractorPaymentsRequestBody = {
   bonus: 500,
-  contractorUuid: "distinctio",
+  contractorUuid: "connect",
   date: new RFCDate("2020-01-01"),
   hours: 40,
   paymentMethod: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod.HistoricalPayment,

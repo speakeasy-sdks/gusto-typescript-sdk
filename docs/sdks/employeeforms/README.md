@@ -24,8 +24,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "eius";
-const formId: string = "aspernatur";
+const employeeId: string = "Coordinator";
+const formId: string = "Carolina";
 
 sdk.employeeForms.getV1EmployeeForm(employeeId, formId).then((res: GetV1EmployeeFormResponse) => {
   if (res.statusCode == 200) {
@@ -63,8 +63,8 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "perferendis";
-const formId: string = "amet";
+const employeeId: string = "solution";
+const formId: string = "gray";
 
 sdk.employeeForms.getV1EmployeeFormPdf(employeeId, formId).then((res: GetV1EmployeeFormPdfResponse) => {
   if (res.statusCode == 200) {
@@ -102,7 +102,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "optio";
+const employeeId: string = "Global";
 
 sdk.employeeForms.getV1EmployeeForms(employeeId).then((res: GetV1EmployeeFormsResponse) => {
   if (res.statusCode == 200) {
@@ -148,8 +148,8 @@ const sdk = new Gusto({
 });
 
 sdk.employeeForms.postV1SandboxGenerateW2({
-  employeeId: "accusamus",
-  year: 320017,
+  employeeId: "male Northeast",
+  year: 639060,
 }).then((res: PostV1SandboxGenerateW2Response) => {
   if (res.statusCode == 200) {
     // handle response
@@ -189,12 +189,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeId: string = "saepe";
-const formId: string = "suscipit";
+const employeeId: string = "Electronic";
+const formId: string = "indolent";
 const requestBody: PutV1EmployeeFormSignRequestBody = {
   agree: false,
-  signatureText: "deserunt",
-  signedByIpAddress: "provident",
+  signatureText: "Ball above considering",
+  signedByIpAddress: "World Loan Non",
 };
 
 sdk.employeeForms.putV1EmployeeFormSign(employeeId, formId, requestBody).then((res: PutV1EmployeeFormSignResponse) => {

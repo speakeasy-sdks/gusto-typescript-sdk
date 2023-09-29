@@ -28,7 +28,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorId: string = "labore";
+const contractorId: string = "compress";
 
 sdk.contractors.deleteV1ContractorsContractorId(contractorId).then((res: DeleteV1ContractorsContractorIdResponse) => {
   if (res.statusCode == 200) {
@@ -70,9 +70,9 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "modi";
-const page: number = 1831.91;
-const per: number = 3978.21;
+const companyId: string = "Rap";
+const page: number = 6082.07;
+const per: number = 4118.44;
 
 sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per).then((res: GetV1CompaniesCompanyIdContractorsResponse) => {
   if (res.statusCode == 200) {
@@ -113,7 +113,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorId: string = "cupiditate";
+const contractorId: string = "bandwidth";
 
 sdk.contractors.getV1ContractorsContractorId(contractorId).then((res: GetV1ContractorsContractorIdResponse) => {
   if (res.statusCode == 200) {
@@ -155,7 +155,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "quos";
+const contractorUuid: string = "carpet";
 
 sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid).then((res: GetV1ContractorsContractorUuidAddressResponse) => {
   if (res.statusCode == 200) {
@@ -228,7 +228,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "perferendis";
+const contractorUuid: string = "morph";
 
 sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid).then((res: GetV1ContractorsContractorUuidOnboardingStatusResponse) => {
   if (res.statusCode == 200) {
@@ -273,23 +273,23 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const companyId: string = "magni";
+const companyId: string = "Mountain";
 const requestBody: PostV1CompaniesCompanyIdContractorsRequestBody = {
-  businessName: "assumenda",
-  ein: "ipsam",
-  email: "Caden.Pagac@gmail.com",
+  businessName: "parsing",
+  ein: "streamline directional",
+  email: "Kyler.Mosciski@gmail.com",
   fileNewHireReport: false,
-  firstName: "Mckayla",
+  firstName: "Kiana",
   hourlyRate: "40.0",
   isActive: false,
-  lastName: "Rice",
-  middleInitial: "labore",
+  lastName: "Littel",
+  middleInitial: "Neutrois Zambia",
   selfOnboarding: false,
-  ssn: "delectus",
+  ssn: "lumen Perth",
   startDate: "2020-01-11",
   type: PostV1CompaniesCompanyIdContractorsRequestBodyType.Individual,
   wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType.Fixed,
-  workState: "eligendi",
+  workState: "Electronic decline incremental",
 };
 
 sdk.contractors.postV1CompaniesCompanyIdContractors(companyId, requestBody).then((res: PostV1CompaniesCompanyIdContractorsResponse) => {
@@ -340,24 +340,24 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorId: string = "sint";
+const contractorId: string = "forsaken";
 const requestBody: PutV1ContractorsContractorIdRequestBody = {
-  businessName: "aliquid",
-  ein: "provident",
-  email: "Kianna89@hotmail.com",
+  businessName: "synergies Flerovium scalable",
+  ein: "Lawrencium Southeast",
+  email: "Kaylee8@yahoo.com",
   fileNewHireReport: false,
-  firstName: "Veda",
+  firstName: "Stephania",
   hourlyRate: "40.0",
   isActive: false,
-  lastName: "Parisian",
-  middleInitial: "in",
+  lastName: "Witting",
+  middleInitial: "Principal Northwest",
   selfOnboarding: false,
-  ssn: "in",
+  ssn: "elliptical Manager Senior",
   startDate: "2020-01-11",
-  type: PutV1ContractorsContractorIdRequestBodyType.Business,
-  version: "maiores",
+  type: PutV1ContractorsContractorIdRequestBodyType.Individual,
+  version: "Kids Investor Sleek",
   wageType: PutV1ContractorsContractorIdRequestBodyWageType.Hourly,
-  workState: "dicta",
+  workState: "robust",
 };
 
 sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody).then((res: PutV1ContractorsContractorIdResponse) => {
@@ -402,14 +402,14 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "magnam";
+const contractorUuid: string = "Diesel";
 const requestBody: PutV1ContractorsContractorUuidAddressRequestBody = {
-  city: "Schulistview",
-  state: "aliquid",
-  street1: "laborum",
-  street2: "accusamus",
-  version: "non",
-  zip: "occaecati",
+  city: "Cambridge",
+  state: "Southeast henry Altoona",
+  street1: "regulation Granite elastic",
+  street2: "Southeast transmitting Gasoline",
+  version: "fortunately",
+  zip: "infrastructure Diverse male",
 };
 
 sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody).then((res: PutV1ContractorsContractorUuidAddressResponse) => {
@@ -464,7 +464,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "enim";
+const contractorUuid: string = "delectus";
 const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {
   onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus.OnboardingCompleted,
 };

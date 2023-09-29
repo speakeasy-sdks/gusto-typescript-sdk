@@ -26,7 +26,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "commodi";
+const contractorUuid: string = "Pocatello";
 
 sdk.contractorPaymentMethod.getV1ContractorsContractorUuidBankAccounts(contractorUuid).then((res: GetV1ContractorsContractorUuidBankAccountsResponse) => {
   if (res.statusCode == 200) {
@@ -66,7 +66,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "repudiandae";
+const contractorUuid: string = "users";
 
 sdk.contractorPaymentMethod.getV1ContractorsContractorUuidPaymentMethod(contractorUuid).then((res: GetV1ContractorsContractorUuidPaymentMethodResponse) => {
   if (res.statusCode == 200) {
@@ -111,12 +111,12 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "quae";
+const contractorUuid: string = "Borders";
 const requestBody: PostV1ContractorsContractorUuidBankAccountsRequestBody = {
-  accountNumber: "ipsum",
-  accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType.Savings,
-  name: "Andy Streich",
-  routingNumber: "rem",
+  accountNumber: "tenetur Saint overriding",
+  accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType.Checking,
+  name: "male Account IP",
+  routingNumber: "drive Soap up",
 };
 
 sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts(contractorUuid, requestBody).then((res: PostV1ContractorsContractorUuidBankAccountsResponse) => {
@@ -160,10 +160,10 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const contractorUuid: string = "voluptates";
+const contractorUuid: string = "Implementation";
 const requestBody: PutV1ContractorsContractorIdPaymentMethodRequestBody = {
-  type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType.DirectDeposit,
-  version: "repudiandae",
+  type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType.Check,
+  version: "siemens Hawaii",
 };
 
 sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod(contractorUuid, requestBody).then((res: PutV1ContractorsContractorIdPaymentMethodResponse) => {

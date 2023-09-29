@@ -26,7 +26,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeUuid: string = "quam";
+const employeeUuid: string = "Pickup";
 
 sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdFederalTaxesResponse) => {
   if (res.statusCode == 200) {
@@ -78,7 +78,7 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeUuid: string = "molestias";
+const employeeUuid: string = "orchid";
 
 sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdStateTaxesResponse) => {
   if (res.statusCode == 200) {
@@ -119,16 +119,16 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeUuid: string = "temporibus";
+const employeeUuid: string = "driver";
 const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
-  deductions: "qui",
-  dependentsAmount: "neque",
-  extraWithholding: "fugit",
-  filingStatus: "magni",
-  otherIncome: "odio",
+  deductions: "Soul",
+  dependentsAmount: "infrastructures",
+  extraWithholding: "reboot South voluptatem",
+  filingStatus: "DRAM nor",
+  otherIncome: "Analyst Legacy Fluorine",
   twoJobs: false,
-  version: "sunt",
-  w4DataType: "ullam",
+  version: "Sleek synergistic lavender",
+  w4DataType: "ampere redesign",
 };
 
 sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody).then((res: PutV1EmployeesEmployeeIdFederalTaxesResponse) => {
@@ -176,24 +176,24 @@ const sdk = new Gusto({
     authorization: "",
   },
 });
-const employeeUuid: string = "nam";
+const employeeUuid: string = "Developer";
 const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
-  employeeId: "hic",
+  employeeId: "Electronic canonise",
   states: [
     {
       questions: [
         {
           answers: [
             {
-              validFrom: "voluptatem",
-              validUpTo: "cumque",
-              value: "soluta",
+              validFrom: "anti volt DRAM",
+              validUpTo: "Ohio",
+              value: "Facilitator Harrisonburg global",
             },
           ],
-          key: "nobis",
+          key: "<key>",
         },
       ],
-      state: "et",
+      state: "Electronic male Passenger",
     },
   ],
 };
