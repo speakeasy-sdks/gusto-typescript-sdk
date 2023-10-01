@@ -304,10 +304,7 @@ export class BankAccounts {
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.companyBankAccount = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.CompanyBankAccount
-                    );
+                    res.postV1PlaidProcessorToken201ApplicationJSONOneOf = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
