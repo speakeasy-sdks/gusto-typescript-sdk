@@ -166,6 +166,7 @@ export class ContractorPaymentReceipt extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "debit_date" })
+    @Type(() => String)
     @Transform(({ value }) => new RFCDate(value), { toClassOnly: true })
     debitDate?: RFCDate;
 

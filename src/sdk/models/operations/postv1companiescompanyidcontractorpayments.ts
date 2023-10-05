@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { RFCDate } from "../../types";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
-import { Expose, Transform } from "class-transformer";
+import { Expose, Transform, Type } from "class-transformer";
 
 export enum PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod {
     DirectDeposit = "Direct Deposit",
@@ -34,6 +34,7 @@ export class PostV1CompaniesCompanyIdContractorPaymentsRequestBody extends Speak
      */
     @SpeakeasyMetadata()
     @Expose({ name: "date" })
+    @Type(() => String)
     @Transform(({ value }) => new RFCDate(value), { toClassOnly: true })
     date: RFCDate;
 
