@@ -25,31 +25,6 @@ export enum PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionType {
 }
 
 /**
- * A single tier of a tiered matching scheme.
- */
-export class PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionValue2 extends SpeakeasyBase {
-    /**
-     * The percentage of employee deduction within this tier the company contribution will match.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "rate" })
-    rate?: string;
-
-    /**
-     * The percentage threshold at which this tier ends (inclusive).
-     *
-     * @remarks
-     *
-     * For example, a value of "5" means the company contribution will match employee deductions from the previous tier's threshold up to and including 5% of payroll.
-     *
-     * If this is the first tier, a value of "5" means the company contribution will match employee deductions from 0% up to and including 5% of payroll.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "threshold" })
-    threshold?: string;
-}
-
-/**
  * An object representing the type and value of the company contribution.
  */
 export class PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContribution extends SpeakeasyBase {

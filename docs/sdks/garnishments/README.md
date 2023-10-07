@@ -18,25 +18,24 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdGarnishmentsRequest,
-  GetV1EmployeesEmployeeIdGarnishmentsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdGarnishmentsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "reboot";
 const page: number = 7793.33;
 const per: number = 779.75;
 
-sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse) => {
+  const res = await sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -64,20 +63,22 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1GarnishmentsGarnishmentIdRequest, GetV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1GarnishmentsGarnishmentIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const garnishmentId: string = "Executive";
 
-sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId).then((res: GetV1GarnishmentsGarnishmentIdResponse) => {
+  const res = await sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -106,32 +107,27 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1EmployeesEmployeeIdGarnishmentsRequest,
   PostV1EmployeesEmployeeIdGarnishmentsRequestBody,
-  PostV1EmployeesEmployeeIdGarnishmentsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "West";
 const requestBody: PostV1EmployeesEmployeeIdGarnishmentsRequestBody = {
-  active: false,
   amount: "World relationships",
-  annualMaximum: "auxiliary Rustic Madison",
   courtOrdered: false,
-  deductAsPercentage: false,
-  description: "Realigned actuating synergy",
-  payPeriodMaximum: "quantifying",
-  recurring: false,
-  times: 67606,
+  description: "Streamlined hybrid algorithm",
 };
 
-sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdGarnishmentsResponse) => {
+  const res = await sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -158,36 +154,25 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1GarnishmentsGarnishmentIdRequest,
-  PutV1GarnishmentsGarnishmentIdRequestBody,
-  PutV1GarnishmentsGarnishmentIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1GarnishmentsGarnishmentIdRequest, PutV1GarnishmentsGarnishmentIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const garnishmentId: string = "matrix";
 const requestBody: PutV1GarnishmentsGarnishmentIdRequestBody = {
-  active: false,
-  amount: "Northeast Solutions male",
-  annualMaximum: "pish",
-  courtOrdered: false,
-  deductAsPercentage: false,
-  description: "Open-source optimizing capability",
-  payPeriodMaximum: "Kids Elegant Paradigm",
-  recurring: false,
-  times: 795946,
-  version: "cutlet",
+  version: "Northeast Solutions male",
 };
 
-sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody).then((res: PutV1GarnishmentsGarnishmentIdResponse) => {
+  const res = await sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

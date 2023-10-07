@@ -22,25 +22,24 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdLocationsRequest,
-  GetV1CompaniesCompanyIdLocationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdLocationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "oh";
 const page: number = 5661.13;
 const per: number = 7059.47;
 
-sdk.locations.getV1CompaniesCompanyIdLocations(companyId, page, per).then((res: GetV1CompaniesCompanyIdLocationsResponse) => {
+  const res = await sdk.locations.getV1CompaniesCompanyIdLocations(companyId, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -68,20 +67,22 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1LocationsLocationIdRequest, GetV1LocationsLocationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1LocationsLocationIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const locationId: string = "Analyst";
 
-sdk.locations.getV1LocationsLocationId(locationId).then((res: GetV1LocationsLocationIdResponse) => {
+  const res = await sdk.locations.getV1LocationsLocationId(locationId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -107,24 +108,23 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1LocationsLocationUuidMinimumWagesRequest,
-  GetV1LocationsLocationUuidMinimumWagesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1LocationsLocationUuidMinimumWagesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const locationUuid: string = "Communications";
 const effectiveDate: string = "2020-01-31";
 
-sdk.locations.getV1LocationsLocationUuidMinimumWages(locationUuid, effectiveDate).then((res: GetV1LocationsLocationUuidMinimumWagesResponse) => {
+  const res = await sdk.locations.getV1LocationsLocationUuidMinimumWages(locationUuid, effectiveDate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -156,32 +156,29 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1CompaniesCompanyIdLocationsApplicationJSON,
   PostV1CompaniesCompanyIdLocationsJsonRequest,
-  PostV1CompaniesCompanyIdLocationsJsonResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "salmon";
 const requestBody: PostV1CompaniesCompanyIdLocationsApplicationJSON = {
   city: "Cupertino",
-  country: "Singapore",
-  filingAddress: false,
-  mailingAddress: false,
-  phoneNumber: "Home North Integration",
-  state: "Hermaphrodite boohoo",
-  street1: "Bronze",
-  street2: "Technician",
-  zip: "female Chair",
+  phoneNumber: "maroon program North",
+  state: "Practical Hermaphrodite",
+  street1: "Home Bronze Chicken",
+  zip: "facilis Marcos lux",
 };
 
-sdk.locations.postV1CompaniesCompanyIdLocationsJson(companyId, requestBody).then((res: PostV1CompaniesCompanyIdLocationsJsonResponse) => {
+  const res = await sdk.locations.postV1CompaniesCompanyIdLocationsJson(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -213,22 +210,23 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1CompaniesCompanyIdLocationsApplicationXML,
   PostV1CompaniesCompanyIdLocationsRawRequest,
-  PostV1CompaniesCompanyIdLocationsRawResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "pink";
 const requestBody: Uint8Array = ":2||$cFaB;" as bytes <<<>>>;
 
-sdk.locations.postV1CompaniesCompanyIdLocationsRaw(companyId, requestBody).then((res: PostV1CompaniesCompanyIdLocationsRawResponse) => {
+  const res = await sdk.locations.postV1CompaniesCompanyIdLocationsRaw(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -255,36 +253,25 @@ scope: `companies.write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1LocationsLocationIdRequest,
-  PutV1LocationsLocationIdRequestBody,
-  PutV1LocationsLocationIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1LocationsLocationIdRequest, PutV1LocationsLocationIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const locationId: string = "Osmium";
 const requestBody: PutV1LocationsLocationIdRequestBody = {
-  city: "Birmingham",
-  country: "Solomon Islands",
-  filingAddress: false,
-  mailingAddress: false,
-  phoneNumber: "optical generating Account",
-  state: "salmon Avon",
-  street1: "Solutions IB",
-  street2: "Veum Steel",
-  version: "Rapid actuating",
-  zip: "Electric Wooden",
+  version: "Southeast Electric Hatchback",
 };
 
-sdk.locations.putV1LocationsLocationId(locationId, requestBody).then((res: PutV1LocationsLocationIdResponse) => {
+  const res = await sdk.locations.putV1LocationsLocationId(locationId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -22,20 +22,22 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1JobsJobIdRequest, DeleteV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1JobsJobIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const jobId: string = "weber";
 
-sdk.jobsAndCompensations.deleteV1JobsJobId(jobId).then((res: DeleteV1JobsJobIdResponse) => {
+  const res = await sdk.jobsAndCompensations.deleteV1JobsJobId(jobId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -64,23 +66,22 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompensationsCompensationIdRequest,
-  GetV1CompensationsCompensationIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompensationsCompensationIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const compensationId: string = "Operations";
 
-sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId).then((res: GetV1CompensationsCompensationIdResponse) => {
+  const res = await sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -106,27 +107,25 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdJobsInclude,
-  GetV1EmployeesEmployeeIdJobsRequest,
-  GetV1EmployeesEmployeeIdJobsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdJobsInclude, GetV1EmployeesEmployeeIdJobsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "synergistic";
 const include: GetV1EmployeesEmployeeIdJobsInclude = GetV1EmployeesEmployeeIdJobsInclude.AllCompensations;
 const page: number = 7941.63;
 const per: number = 3904.25;
 
-sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page, per).then((res: GetV1EmployeesEmployeeIdJobsResponse) => {
+  const res = await sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -155,21 +154,23 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1JobsJobIdInclude, GetV1JobsJobIdRequest, GetV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1JobsJobIdInclude, GetV1JobsJobIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const jobId: string = "Electronic";
 const include: GetV1JobsJobIdInclude = GetV1JobsJobIdInclude.AllCompensations;
 
-sdk.jobsAndCompensations.getV1JobsJobId(jobId, include).then((res: GetV1JobsJobIdResponse) => {
+  const res = await sdk.jobsAndCompensations.getV1JobsJobId(jobId, include);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -200,27 +201,25 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1JobsJobIdCompensationsInclude,
-  GetV1JobsJobIdCompensationsRequest,
-  GetV1JobsJobIdCompensationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1JobsJobIdCompensationsInclude, GetV1JobsJobIdCompensationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const jobId: string = "delightfully";
 const include: GetV1JobsJobIdCompensationsInclude = GetV1JobsJobIdCompensationsInclude.AllCompensations;
 const page: number = 4750.13;
 const per: number = 2850.55;
 
-sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per).then((res: GetV1JobsJobIdCompensationsResponse) => {
+  const res = await sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -249,25 +248,23 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1JobsJobIdRequest, PostV1JobsJobIdRequestBody, PostV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1JobsJobIdRequest, PostV1JobsJobIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "quae";
-const requestBody: PostV1JobsJobIdRequestBody = {
-  hireDate: "Facilitator",
-  locationUuid: "Montana Diesel",
-  title: "fox parse Human",
-};
+const requestBody: PostV1JobsJobIdRequestBody = {};
 
-sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody).then((res: PostV1JobsJobIdResponse) => {
+  const res = await sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -302,33 +299,28 @@ import {
   PutV1CompensationsCompensationIdRequestBodyFlsaStatus,
   PutV1CompensationsCompensationIdRequestBodyMinimumWages,
   PutV1CompensationsCompensationIdRequestBodyPaymentUnit,
-  PutV1CompensationsCompensationIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const compensationId: string = "Practical";
 const requestBody: PutV1CompensationsCompensationIdRequestBody = {
-  adjustForMinimumWage: false,
-  flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatus.CommissionOnlyExempt,
   minimumWages: [
-    {
-      uuid: "049c436a-e532-4a1a-9367-d12ade6aef7b",
-    },
+    {},
   ],
-  paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnit.Hour,
-  rate: "Toys Money Southeast",
-  version: "navigate",
+  version: "Polynesia hertz",
 };
 
-sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody).then((res: PutV1CompensationsCompensationIdResponse) => {
+  const res = await sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -355,26 +347,25 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1JobsJobIdRequest, PutV1JobsJobIdRequestBody, PutV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1JobsJobIdRequest, PutV1JobsJobIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const jobId: string = "Southwest";
 const requestBody: PutV1JobsJobIdRequestBody = {
-  hireDate: "state Bedfordshire morph",
-  locationUuid: "Sedan",
-  title: "Specialist Northeast Hybrid",
-  version: "Ukraine Buckinghamshire",
+  version: "state Bedfordshire morph",
 };
 
-sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody).then((res: PutV1JobsJobIdResponse) => {
+  const res = await sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

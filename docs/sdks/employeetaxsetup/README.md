@@ -16,23 +16,22 @@ Get attributes relevant for an employee's federal taxes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdFederalTaxesRequest,
-  GetV1EmployeesEmployeeIdFederalTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdFederalTaxesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeUuid: string = "Pickup";
 
-sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdFederalTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -68,23 +67,22 @@ Payroll Admins are responsible for filing a new hire report for each Employee. T
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdStateTaxesRequest,
-  GetV1EmployeesEmployeeIdStateTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdStateTaxesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeUuid: string = "orchid";
 
-sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdStateTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -111,31 +109,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1EmployeesEmployeeIdFederalTaxesRequest,
   PutV1EmployeesEmployeeIdFederalTaxesRequestBody,
-  PutV1EmployeesEmployeeIdFederalTaxesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeUuid: string = "driver";
 const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
-  deductions: "Soul",
-  dependentsAmount: "infrastructures",
-  extraWithholding: "reboot South voluptatem",
-  filingStatus: "DRAM nor",
-  otherIncome: "Analyst Legacy Fluorine",
-  twoJobs: false,
-  version: "Sleek synergistic lavender",
-  w4DataType: "ampere redesign",
+  version: "Soul",
 };
 
-sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody).then((res: PutV1EmployeesEmployeeIdFederalTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -168,14 +160,14 @@ import {
   PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates,
   PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions,
   PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers,
-  PutV1EmployeesEmployeeIdStateTaxesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeUuid: string = "Developer";
 const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
   employeeId: "Electronic canonise",
@@ -186,23 +178,23 @@ const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
           answers: [
             {
               validFrom: "anti volt DRAM",
-              validUpTo: "Ohio",
-              value: "Facilitator Harrisonburg global",
+              value: "Assistant",
             },
           ],
           key: "<key>",
         },
       ],
-      state: "Electronic male Passenger",
+      state: "alarmed emulation Wooden",
     },
   ],
 };
 
-sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes(employeeUuid, requestBody).then((res: PutV1EmployeesEmployeeIdStateTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes(employeeUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -16,23 +16,22 @@ Returns company bank accounts. Currently we only support a single default bank a
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdBankAccountsRequest,
-  GetV1CompaniesCompanyIdBankAccountsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdBankAccountsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "payment";
 
-sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
+  const res = await sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -69,26 +68,23 @@ import {
   PostV1CompaniesCompanyIdBankAccountsRequest,
   PostV1CompaniesCompanyIdBankAccountsRequestBody,
   PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType,
-  PostV1CompaniesCompanyIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Tactics";
-const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {
-  accountNumber: "female connect",
-  accountType: PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType.Checking,
-  routingNumber: "West",
-};
+const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {};
 
-sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(companyId, requestBody).then((res: PostV1CompaniesCompanyIdBankAccountsResponse) => {
+  const res = await sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -122,23 +118,25 @@ This endpoint creates a new **verified** bank account by using a plaid processor
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1PlaidProcessorTokenRequestBodyOwnerType, PostV1PlaidProcessorTokenResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1PlaidProcessorTokenRequestBodyOwnerType } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.bankAccounts.postV1PlaidProcessorToken({
-  ownerId: "Metical",
-  ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType.Company,
-  processorToken: "Pizza",
-}).then((res: PostV1PlaidProcessorTokenResponse) => {
+  const res = await sdk.bankAccounts.postV1PlaidProcessorToken({
+    ownerId: "Metical",
+    ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType.Company,
+    processorToken: "Pizza",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -178,26 +176,24 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1CompaniesCompanyIdBankAccountsVerifyRequest,
   PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody,
-  PutV1CompaniesCompanyIdBankAccountsVerifyResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const bankAccountUuid: string = "connecting";
 const companyId: string = "generating";
-const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {
-  deposit1: 3966.39,
-  deposit2: 130.04,
-};
+const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {};
 
-sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(bankAccountUuid, companyId, requestBody).then((res: PutV1CompaniesCompanyIdBankAccountsVerifyResponse) => {
+  const res = await sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(bankAccountUuid, companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -19,21 +19,23 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1ExternalPayrollRequest, DeleteV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1ExternalPayrollRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "Porsche";
 const externalPayrollId: string = "Southwest";
 
-sdk.externalPayrolls.deleteV1ExternalPayroll(companyUuid, externalPayrollId).then((res: DeleteV1ExternalPayrollResponse) => {
+  const res = await sdk.externalPayrolls.deleteV1ExternalPayroll(companyUuid, externalPayrollId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -59,20 +61,22 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyExternalPayrollsRequest, GetV1CompanyExternalPayrollsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyExternalPayrollsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "neural";
 
-sdk.externalPayrolls.getV1CompanyExternalPayrolls(companyUuid).then((res: GetV1CompanyExternalPayrollsResponse) => {
+  const res = await sdk.externalPayrolls.getV1CompanyExternalPayrolls(companyUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -97,21 +101,23 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ExternalPayrollRequest, GetV1ExternalPayrollResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ExternalPayrollRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "Persevering";
 const externalPayrollId: string = "Gasoline";
 
-sdk.externalPayrolls.getV1ExternalPayroll(companyUuid, externalPayrollId).then((res: GetV1ExternalPayrollResponse) => {
+  const res = await sdk.externalPayrolls.getV1ExternalPayroll(companyUuid, externalPayrollId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -136,24 +142,23 @@ Get tax suggestions for an external payroll. Earnings and/or benefits data must 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ExternalPayrollCalculateTaxesRequest,
-  GetV1ExternalPayrollCalculateTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ExternalPayrollCalculateTaxesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "Frozen";
 const externalPayrollId: string = "Ytterbium";
 
-sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes(companyUuid, externalPayrollId).then((res: GetV1ExternalPayrollCalculateTaxesResponse) => {
+  const res = await sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes(companyUuid, externalPayrollId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -179,17 +184,14 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1ExternalPayrollRequest,
-  PostV1ExternalPayrollRequestBody,
-  PostV1ExternalPayrollResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1ExternalPayrollRequest, PostV1ExternalPayrollRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "navigating";
 const requestBody: PostV1ExternalPayrollRequestBody = {
   checkDate: "Facilitator Direct",
@@ -197,11 +199,12 @@ const requestBody: PostV1ExternalPayrollRequestBody = {
   paymentPeriodStartDate: "granular redefine",
 };
 
-sdk.externalPayrolls.postV1ExternalPayroll(companyUuid, requestBody).then((res: PostV1ExternalPayrollResponse) => {
+  const res = await sdk.externalPayrolls.postV1ExternalPayroll(companyUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -235,51 +238,38 @@ import {
   PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings,
   PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType,
   PutV1ExternalPayrollRequestBodyExternalPayrollItemsTaxes,
-  PutV1ExternalPayrollResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "lest";
 const externalPayrollId: string = "sherry";
 const requestBody: PutV1ExternalPayrollRequestBody = {
   externalPayrollItems: [
     {
       benefits: [
-        {
-          benefitId: 944296,
-          companyContributionAmount: "Concrete",
-          employeeDeductionAmount: "Maserati Equatorial",
-        },
+        {},
       ],
       earnings: [
-        {
-          amount: "254.50",
-          earningId: 426646,
-          earningType: PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType.CompanyPayType,
-          hours: "whereas Southwest",
-        },
+        {},
       ],
-      employeeUuid: "Bicycle",
       taxes: [
-        {
-          amount: "105.01",
-          taxId: 750553,
-        },
+        {},
       ],
     },
   ],
-  replaceFields: false,
 };
 
-sdk.externalPayrolls.putV1ExternalPayroll(companyUuid, externalPayrollId, requestBody).then((res: PutV1ExternalPayrollResponse) => {
+  const res = await sdk.externalPayrolls.putV1ExternalPayroll(companyUuid, externalPayrollId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

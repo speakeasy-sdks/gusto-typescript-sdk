@@ -17,26 +17,25 @@ import {
   PostV1CompanyFlowsRequest,
   PostV1CompanyFlowsRequestBody,
   PostV1CompanyFlowsRequestBodyEntityType,
-  PostV1CompanyFlowsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "gee";
 const requestBody: PostV1CompanyFlowsRequestBody = {
-  entityType: PostV1CompanyFlowsRequestBodyEntityType.Employee,
-  entityUuid: "Visionary thwart detract",
-  flowType: "rich out",
+  flowType: "Pickup thwart detract",
 };
 
-sdk.flows.postV1CompanyFlows(companyUuid, requestBody).then((res: PostV1CompanyFlowsResponse) => {
+  const res = await sdk.flows.postV1CompanyFlows(companyUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

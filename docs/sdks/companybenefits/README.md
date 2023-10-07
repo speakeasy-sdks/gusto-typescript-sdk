@@ -24,23 +24,22 @@ The following must be true in order to delete a company benefit
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1CompanyBenefitsCompanyBenefitIdRequest,
-  DeleteV1CompanyBenefitsCompanyBenefitIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyBenefitId: string = "New";
 
-sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId).then((res: DeleteV1CompanyBenefitsCompanyBenefitIdResponse) => {
+  const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -68,19 +67,20 @@ scope: `benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1BenefitsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.companyBenefits.getV1Benefits().then((res: GetV1BenefitsResponse) => {
+  const res = await sdk.companyBenefits.getV1Benefits();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -107,20 +107,22 @@ scope: `benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1BenefitsBenefitIdRequest, GetV1BenefitsBenefitIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1BenefitsBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const benefitId: string = "Northwest";
 
-sdk.companyBenefits.getV1BenefitsBenefitId(benefitId).then((res: GetV1BenefitsBenefitIdResponse) => {
+  const res = await sdk.companyBenefits.getV1BenefitsBenefitId(benefitId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -146,23 +148,22 @@ scope: `benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1BenefitsBenefitsIdRequirementsRequest,
-  GetV1BenefitsBenefitsIdRequirementsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1BenefitsBenefitsIdRequirementsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const benefitId: string = "fooey";
 
-sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements(benefitId).then((res: GetV1BenefitsBenefitsIdRequirementsResponse) => {
+  const res = await sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements(benefitId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -188,26 +189,25 @@ scope: `benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1BenefitsCompanyBenefitIdSummaryRequest,
-  GetV1BenefitsCompanyBenefitIdSummaryResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1BenefitsCompanyBenefitIdSummaryRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyBenefitId: string = "ugh";
 const detailed: boolean = false;
 const endDate: string = "2022-12-31";
 const startDate: string = "2022-01-01";
 
-sdk.companyBenefits.getV1BenefitsCompanyBenefitIdSummary(companyBenefitId, detailed, endDate, startDate).then((res: GetV1BenefitsCompanyBenefitIdSummaryResponse) => {
+  const res = await sdk.companyBenefits.getV1BenefitsCompanyBenefitIdSummary(companyBenefitId, detailed, endDate, startDate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -238,24 +238,23 @@ scope: `company_benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdCompanyBenefitsRequest,
-  GetV1CompaniesCompanyIdCompanyBenefitsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdCompanyBenefitsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Shoes";
 const enrollmentCount: boolean = false;
 
-sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits(companyId, enrollmentCount).then((res: GetV1CompaniesCompanyIdCompanyBenefitsResponse) => {
+  const res = await sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits(companyId, enrollmentCount);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -286,24 +285,23 @@ scope: `company_benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompanyBenefitsCompanyBenefitIdRequest,
-  GetV1CompanyBenefitsCompanyBenefitIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyBenefitId: string = "Dollar";
 const withEmployeeBenefits: boolean = false;
 
-sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId(companyBenefitId, withEmployeeBenefits).then((res: GetV1CompanyBenefitsCompanyBenefitIdResponse) => {
+  const res = await sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId(companyBenefitId, withEmployeeBenefits);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -335,28 +333,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1CompaniesCompanyIdCompanyBenefitsRequest,
   PostV1CompaniesCompanyIdCompanyBenefitsRequestBody,
-  PostV1CompaniesCompanyIdCompanyBenefitsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Soul";
 const requestBody: PostV1CompaniesCompanyIdCompanyBenefitsRequestBody = {
-  active: false,
-  benefitType: 9826,
-  description: "Virtual reciprocal installation",
-  responsibleForEmployeeW2: false,
-  responsibleForEmployerTaxes: false,
+  description: "Visionary zero administration product",
 };
 
-sdk.companyBenefits.postV1CompaniesCompanyIdCompanyBenefits(companyId, requestBody).then((res: PostV1CompaniesCompanyIdCompanyBenefitsResponse) => {
+  const res = await sdk.companyBenefits.postV1CompaniesCompanyIdCompanyBenefits(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -388,26 +383,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1CompanyBenefitsCompanyBenefitIdRequest,
   PutV1CompanyBenefitsCompanyBenefitIdRequestBody,
-  PutV1CompanyBenefitsCompanyBenefitIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyBenefitId: string = "Digitized";
 const requestBody: PutV1CompanyBenefitsCompanyBenefitIdRequestBody = {
-  active: false,
-  description: "Ergonomic 4th generation strategy",
-  version: "South content",
+  version: "Summerville",
 };
 
-sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId(companyBenefitId, requestBody).then((res: PutV1CompanyBenefitsCompanyBenefitIdResponse) => {
+  const res = await sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId(companyBenefitId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -15,24 +15,23 @@ scope: `generated_documents:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1GeneratedDocumentsDocumentTypeRequestUuidRequest,
-  GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1GeneratedDocumentsDocumentTypeRequestUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const documentType: string = "female";
 const requestUuid: string = "Assurance";
 
-sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid(documentType, requestUuid).then((res: GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse) => {
+  const res = await sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid(documentType, requestUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

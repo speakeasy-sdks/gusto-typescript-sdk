@@ -17,24 +17,23 @@ Delete a company signatory.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
-  DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "Tricycle";
 const signatoryUuid: string = "aggregate";
 
-sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid).then((res: DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
+  const res = await sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -59,23 +58,22 @@ Returns company signatories. Currently we only support a single signatory per co
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyUuidSignatoriesRequest,
-  GetV1CompaniesCompanyUuidSignatoriesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyUuidSignatoriesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "directional";
 
-sdk.signatories.getV1CompaniesCompanyUuidSignatories(companyUuid).then((res: GetV1CompaniesCompanyUuidSignatoriesResponse) => {
+  const res = await sdk.signatories.getV1CompaniesCompanyUuidSignatories(companyUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -102,27 +100,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1CompaniesCompanyUuidSignatoriesInviteRequest,
   PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody,
-  PostV1CompaniesCompanyUuidSignatoriesInviteResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "disintermediate";
 const requestBody: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody = {
   email: "Kirstin25@yahoo.com",
-  firstName: "Jalon",
-  lastName: "Kirlin",
-  title: "Southwest",
 };
 
-sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite(companyUuid, requestBody).then((res: PostV1CompaniesCompanyUuidSignatoriesInviteResponse) => {
+  const res = await sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite(companyUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -151,14 +147,14 @@ import {
   PostV1CompanySignatoriesRequest,
   PostV1CompanySignatoriesRequestBody,
   PostV1CompanySignatoriesRequestBodyHomeAddress,
-  PostV1CompanySignatoriesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "Rubber";
 const requestBody: PostV1CompanySignatoriesRequestBody = {
   birthday: "Officer",
@@ -168,21 +164,19 @@ const requestBody: PostV1CompanySignatoriesRequestBody = {
     city: "Windlerfurt",
     state: "Sedan sticky",
     street1: "clever Forward Hybrid",
-    street2: "Developer",
-    zip: "North",
+    zip: "Developer",
   },
-  lastName: "Smitham",
-  middleInitial: "target",
-  phone: "1-581-834-8307 x0447",
-  ssn: "quantify",
-  title: "turquoise Bohrium",
+  lastName: "Gerhold",
+  ssn: "red",
+  title: "Fiat",
 };
 
-sdk.signatories.postV1CompanySignatories(companyUuid, requestBody).then((res: PostV1CompanySignatoriesResponse) => {
+  const res = await sdk.signatories.postV1CompanySignatories(companyUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -211,39 +205,26 @@ import {
   PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
   PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody,
   PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress,
-  PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "Consultant";
 const signatoryUuid: string = "optical";
 const requestBody: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody = {
-  birthday: "Future Cambridgeshire Coupe",
-  firstName: "Geo",
-  homeAddress: {
-    city: "Lake Zoraland",
-    state: "East",
-    street1: "Hybrid composite Plastic",
-    street2: "female",
-    zip: "Division",
-  },
-  lastName: "Roob",
-  middleInitial: "Uganda smoothly",
-  phone: "690-574-5390 x54997",
-  ssn: "excepting",
-  title: "niches",
-  version: "Mouse Frozen",
+  homeAddress: {},
 };
 
-sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid, requestBody).then((res: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
+  const res = await sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

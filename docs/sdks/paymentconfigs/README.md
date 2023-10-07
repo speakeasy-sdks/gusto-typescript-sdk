@@ -14,20 +14,22 @@ Get payment speed for the company and fast payment limit (only applicable for 2-
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyPaymentConfigsRequest, GetV1CompanyPaymentConfigsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyPaymentConfigsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "Terbium";
 
-sdk.paymentConfigs.getV1CompanyPaymentConfigs(companyUuid).then((res: GetV1CompanyPaymentConfigsResponse) => {
+  const res = await sdk.paymentConfigs.getV1CompanyPaymentConfigs(companyUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -55,25 +57,26 @@ import {
   PutV1CompanyPaymentConfigsRequest,
   PutV1CompanyPaymentConfigsRequestBody,
   PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed,
-  PutV1CompanyPaymentConfigsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyUuid: string = "capability";
 const requestBody: PutV1CompanyPaymentConfigsRequestBody = {
   fastPaymentLimit: "Senior Hermaphrodite",
   paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.FourDay,
 };
 
-sdk.paymentConfigs.putV1CompanyPaymentConfigs(companyUuid, requestBody).then((res: PutV1CompanyPaymentConfigsResponse) => {
+  const res = await sdk.paymentConfigs.putV1CompanyPaymentConfigs(companyUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

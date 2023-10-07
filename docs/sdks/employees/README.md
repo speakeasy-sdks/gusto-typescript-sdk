@@ -23,20 +23,22 @@ Use this endpoint to delete an employee who is in onboarding. Deleting an onboar
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1EmployeeRequest, DeleteV1EmployeeResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1EmployeeRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "Androgyne";
 
-sdk.employees.deleteV1Employee(employeeId).then((res: DeleteV1EmployeeResponse) => {
+  const res = await sdk.employees.deleteV1Employee(employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -63,21 +65,23 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesInclude, GetV1EmployeesRequest, GetV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesInclude, GetV1EmployeesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "functionalities";
 const include: GetV1EmployeesInclude = GetV1EmployeesInclude.CustomFields;
 
-sdk.employees.getV1Employees(employeeId, include).then((res: GetV1EmployeesResponse) => {
+  const res = await sdk.employees.getV1Employees(employeeId, include);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -104,25 +108,24 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdCustomFieldsRequest,
-  GetV1EmployeesEmployeeIdCustomFieldsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdCustomFieldsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "Factors";
 const page: number = 2328.39;
 const per: number = 881.15;
 
-sdk.employees.getV1EmployeesEmployeeIdCustomFields(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdCustomFieldsResponse) => {
+  const res = await sdk.employees.getV1EmployeesEmployeeIdCustomFields(employeeId, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -150,23 +153,22 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdHomeAddressRequest,
-  GetV1EmployeesEmployeeIdHomeAddressResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdHomeAddressRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "Technetium";
 
-sdk.employees.getV1EmployeesEmployeeIdHomeAddress(employeeId).then((res: GetV1EmployeesEmployeeIdHomeAddressResponse) => {
+  const res = await sdk.employees.getV1EmployeesEmployeeIdHomeAddress(employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -227,23 +229,22 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdOnboardingStatusRequest,
-  GetV1EmployeesEmployeeIdOnboardingStatusResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdOnboardingStatusRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "bypassing";
 
-sdk.employees.getV1EmployeesEmployeeIdOnboardingStatus(employeeId).then((res: GetV1EmployeesEmployeeIdOnboardingStatusResponse) => {
+  const res = await sdk.employees.getV1EmployeesEmployeeIdOnboardingStatus(employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -269,24 +270,23 @@ scope: `employee_time_off_activities:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetVersionEmployeesTimeOffActivitiesRequest,
-  GetVersionEmployeesTimeOffActivitiesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetVersionEmployeesTimeOffActivitiesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeUuid: string = "chorus";
 const timeOffType: string = "Sports";
 
-sdk.employees.getVersionEmployeesTimeOffActivities(employeeUuid, timeOffType).then((res: GetVersionEmployeesTimeOffActivitiesResponse) => {
+  const res = await sdk.employees.getVersionEmployeesTimeOffActivities(employeeUuid, timeOffType);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -313,29 +313,23 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1EmployeesRequest, PostV1EmployeesRequestBody, PostV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1EmployeesRequest, PostV1EmployeesRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Lights";
-const requestBody: PostV1EmployeesRequestBody = {
-  dateOfBirth: "Concrete confused",
-  email: "Francesco.Dicki@yahoo.com",
-  firstName: "Marge",
-  lastName: "Stiedemann",
-  middleInitial: "green impactful",
-  selfOnboarding: false,
-  ssn: "Southwest male Non",
-};
+const requestBody: PostV1EmployeesRequestBody = {};
 
-sdk.employees.postV1Employees(companyId, requestBody).then((res: PostV1EmployeesResponse) => {
+  const res = await sdk.employees.postV1Employees(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -362,20 +356,22 @@ Call this endpoint as the very last step of employee onboarding to complete thei
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1EmployeeFinishOnboardingRequest, PutV1EmployeeFinishOnboardingResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1EmployeeFinishOnboardingRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "moratorium";
 
-sdk.employees.putV1EmployeeFinishOnboarding(employeeId).then((res: PutV1EmployeeFinishOnboardingResponse) => {
+  const res = await sdk.employees.putV1EmployeeFinishOnboarding(employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -401,30 +397,25 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1EmployeesRequest, PutV1EmployeesRequestBody, PutV1EmployeesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1EmployeesRequest, PutV1EmployeesRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "Lake";
 const requestBody: PutV1EmployeesRequestBody = {
-  dateOfBirth: "application",
-  email: "Meta_Spencer@yahoo.com",
-  firstName: "Makenzie",
-  lastName: "O'Keefe",
-  middleInitial: "intangible Interactions female",
-  ssn: "Liaison iterate woman",
-  twoPercentShareholder: false,
-  version: "CSS",
+  version: "application",
 };
 
-sdk.employees.putV1Employees(employeeId, requestBody).then((res: PutV1EmployeesResponse) => {
+  const res = await sdk.employees.putV1Employees(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -454,29 +445,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1EmployeesEmployeeIdHomeAddressRequest,
   PutV1EmployeesEmployeeIdHomeAddressRequestBody,
-  PutV1EmployeesEmployeeIdHomeAddressResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "suburban";
 const requestBody: PutV1EmployeesEmployeeIdHomeAddressRequestBody = {
-  city: "Coachella",
-  state: "Account",
-  street1: "Country system",
-  street2: "seize",
-  version: "Refined",
-  zip: "scalable Car",
+  version: "Music Account Customer",
 };
 
-sdk.employees.putV1EmployeesEmployeeIdHomeAddress(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdHomeAddressResponse) => {
+  const res = await sdk.employees.putV1EmployeesEmployeeIdHomeAddress(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -515,24 +502,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1EmployeesEmployeeIdOnboardingStatusRequest,
   PutV1EmployeesEmployeeIdOnboardingStatusRequestBody,
-  PutV1EmployeesEmployeeIdOnboardingStatusResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "XSS";
 const requestBody: PutV1EmployeesEmployeeIdOnboardingStatusRequestBody = {
   onboardingStatus: "Forward",
 };
 
-sdk.employees.putV1EmployeesEmployeeIdOnboardingStatus(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdOnboardingStatusResponse) => {
+  const res = await sdk.employees.putV1EmployeesEmployeeIdOnboardingStatus(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

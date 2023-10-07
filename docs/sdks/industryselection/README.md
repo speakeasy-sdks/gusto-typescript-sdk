@@ -14,20 +14,22 @@ Get industry selection for the company.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyIndustryRequest, GetV1CompanyIndustryResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyIndustryRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Americium";
 
-sdk.industrySelection.getV1CompanyIndustry(companyId).then((res: GetV1CompanyIndustryResponse) => {
+  const res = await sdk.industrySelection.getV1CompanyIndustry(companyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -51,17 +53,14 @@ Update the company industry selection by passing in industry classification code
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompanyIndustryRequest,
-  PutV1CompanyIndustryRequestBody,
-  PutV1CompanyIndustryResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1CompanyIndustryRequest, PutV1CompanyIndustryRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Solutions";
 const requestBody: PutV1CompanyIndustryRequestBody = {
   naicsCode: "Iodine Blues male",
@@ -71,11 +70,12 @@ const requestBody: PutV1CompanyIndustryRequestBody = {
   title: "Erbium edge",
 };
 
-sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody).then((res: PutV1CompanyIndustryResponse) => {
+  const res = await sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

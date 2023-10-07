@@ -16,21 +16,22 @@ Fetches attributes relevant for a company's federal taxes.
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   GetV1CompaniesCompanyIdFederalTaxDetailsRequest,
-  GetV1CompaniesCompanyIdFederalTaxDetailsResponse,
   GetV1CompaniesCompanyIdFederalTaxDetailsSecurity,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto();
+(async() => {
+  const sdk = new Gusto();
 const companyId: string = "Central";
 const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
   authorization: "",
 };
 
-sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails(operationSecurity, companyId).then((res: GetV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
+  const res = await sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails(operationSecurity, companyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -58,29 +59,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1CompaniesCompanyIdFederalTaxDetailsRequest,
   PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody,
-  PutV1CompaniesCompanyIdFederalTaxDetailsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Blues";
 const requestBody: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody = {
-  ein: "Dominican Designer",
-  filingForm: "Magnesium Interface",
-  legalName: "upward",
-  taxPayerType: "handicap",
-  taxableAsScorp: false,
-  version: "Gaithersburg gold UDP",
+  version: "Dominican Designer",
 };
 
-sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails(companyId, requestBody).then((res: PutV1CompaniesCompanyIdFederalTaxDetailsResponse) => {
+  const res = await sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

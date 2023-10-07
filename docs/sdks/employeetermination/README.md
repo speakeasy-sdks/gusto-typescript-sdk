@@ -17,23 +17,22 @@ Delete an employee termination. To update an employee's termination, delete the 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1EmployeesEmployeeIdTerminationsRequest,
-  DeleteV1EmployeesEmployeeIdTerminationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1EmployeesEmployeeIdTerminationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "Chips";
 
-sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(employeeId).then((res: DeleteV1EmployeesEmployeeIdTerminationsResponse) => {
+  const res = await sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -59,23 +58,22 @@ This endpoint returns the unprocessed pay periods for past and future terminated
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest,
-  GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Gasoline";
 
-sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(companyId).then((res: GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse) => {
+  const res = await sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(companyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -103,23 +101,22 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdTerminationsRequest,
-  GetV1EmployeesEmployeeIdTerminationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdTerminationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "North";
 
-sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(employeeId).then((res: GetV1EmployeesEmployeeIdTerminationsResponse) => {
+  const res = await sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -150,25 +147,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1EmployeesEmployeeIdTerminationsRequest,
   PostV1EmployeesEmployeeIdTerminationsRequestBody,
-  PostV1EmployeesEmployeeIdTerminationsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "Tunisia";
 const requestBody: PostV1EmployeesEmployeeIdTerminationsRequestBody = {
   effectiveDate: "exotic payment bus",
-  runTerminationPayroll: false,
 };
 
-sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdTerminationsResponse) => {
+  const res = await sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -197,29 +194,26 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1TerminationsEmployeeIdRequest,
-  PutV1TerminationsEmployeeIdRequestBody,
-  PutV1TerminationsEmployeeIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1TerminationsEmployeeIdRequest, PutV1TerminationsEmployeeIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "24/365";
 const requestBody: PutV1TerminationsEmployeeIdRequestBody = {
   effectiveDate: "female Wagon",
-  runTerminationPayroll: false,
   version: "Trans infomediaries",
 };
 
-sdk.employeeTermination.putV1TerminationsEmployeeId(employeeId, requestBody).then((res: PutV1TerminationsEmployeeIdResponse) => {
+  const res = await sdk.employeeTermination.putV1TerminationsEmployeeId(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -19,24 +19,23 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest,
-  DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "whose";
 const contractorPaymentId: string = "Licensed";
 
-sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId).then((res: DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
+  const res = await sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -63,24 +62,23 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest,
-  GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "subjugate";
 const contractorPaymentId: string = "fuchsia";
 
-sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId).then((res: GetV1CompaniesCompanyIdContractorPaymentContractorPaymentResponse) => {
+  const res = await sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -107,27 +105,24 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdContractorPaymentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.contractorPayments.getV1CompaniesCompanyIdContractorPayments({
-  companyId: "Pula Orchestrator",
-  contractorUuid: "slowly",
-  endDate: "2020-12-31",
-  groupByDate: false,
-  page: 1356.06,
-  per: 7823.71,
-  startDate: "2020-01-01",
-}).then((res: GetV1CompaniesCompanyIdContractorPaymentsResponse) => {
+  const res = await sdk.contractorPayments.getV1CompaniesCompanyIdContractorPayments({
+    companyId: "Pula Orchestrator",
+    endDate: "2020-12-31",
+    startDate: "2020-01-01",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -160,23 +155,22 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest,
-  GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorPaymentUuid: string = "yahoo";
 
-sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt(contractorPaymentUuid).then((res: GetV1ContractorPaymentsContractorPaymentUuidReceiptResponse) => {
+  const res = await sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt(contractorPaymentUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -206,31 +200,31 @@ import {
   PostV1CompaniesCompanyIdContractorPaymentsRequest,
   PostV1CompaniesCompanyIdContractorPaymentsRequestBody,
   PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod,
-  PostV1CompaniesCompanyIdContractorPaymentsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "zero";
 const requestBody: PostV1CompaniesCompanyIdContractorPaymentsRequestBody = {
   bonus: 500,
   contractorUuid: "connect",
   date: new RFCDate("2020-01-01"),
   hours: 40,
-  paymentMethod: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod.HistoricalPayment,
   reimbursement: 20,
   wage: 5000,
 };
 
-sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments(companyId, requestBody).then((res: PostV1CompaniesCompanyIdContractorPaymentsResponse) => {
+  const res = await sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

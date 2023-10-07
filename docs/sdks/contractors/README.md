@@ -21,20 +21,22 @@ A contractor can only be deleted when there are no contractor payments.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1ContractorsContractorIdRequest, DeleteV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1ContractorsContractorIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorId: string = "compress";
 
-sdk.contractors.deleteV1ContractorsContractorId(contractorId).then((res: DeleteV1ContractorsContractorIdResponse) => {
+  const res = await sdk.contractors.deleteV1ContractorsContractorId(contractorId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -60,25 +62,24 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdContractorsRequest,
-  GetV1CompaniesCompanyIdContractorsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdContractorsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Rap";
 const page: number = 6082.07;
 const per: number = 4118.44;
 
-sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per).then((res: GetV1CompaniesCompanyIdContractorsResponse) => {
+  const res = await sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -106,20 +107,22 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorsContractorIdRequest, GetV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorId: string = "bandwidth";
 
-sdk.contractors.getV1ContractorsContractorId(contractorId).then((res: GetV1ContractorsContractorIdResponse) => {
+  const res = await sdk.contractors.getV1ContractorsContractorId(contractorId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -145,23 +148,22 @@ scope: `contractors:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorsContractorUuidAddressRequest,
-  GetV1ContractorsContractorUuidAddressResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorUuidAddressRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorUuid: string = "carpet";
 
-sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid).then((res: GetV1ContractorsContractorUuidAddressResponse) => {
+  const res = await sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -218,23 +220,22 @@ scope: `contractors.read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorsContractorUuidOnboardingStatusRequest,
-  GetV1ContractorsContractorUuidOnboardingStatusResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorUuidOnboardingStatusRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorUuid: string = "morph";
 
-sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid).then((res: GetV1ContractorsContractorUuidOnboardingStatusResponse) => {
+  const res = await sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -265,38 +266,27 @@ import {
   PostV1CompaniesCompanyIdContractorsRequestBody,
   PostV1CompaniesCompanyIdContractorsRequestBodyType,
   PostV1CompaniesCompanyIdContractorsRequestBodyWageType,
-  PostV1CompaniesCompanyIdContractorsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Mountain";
 const requestBody: PostV1CompaniesCompanyIdContractorsRequestBody = {
-  businessName: "parsing",
-  ein: "streamline directional",
-  email: "Kyler.Mosciski@gmail.com",
-  fileNewHireReport: false,
-  firstName: "Kiana",
   hourlyRate: "40.0",
-  isActive: false,
-  lastName: "Littel",
-  middleInitial: "Neutrois Zambia",
-  selfOnboarding: false,
-  ssn: "lumen Perth",
   startDate: "2020-01-11",
-  type: PostV1CompaniesCompanyIdContractorsRequestBodyType.Individual,
   wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType.Fixed,
-  workState: "Electronic decline incremental",
 };
 
-sdk.contractors.postV1CompaniesCompanyIdContractors(companyId, requestBody).then((res: PostV1CompaniesCompanyIdContractorsResponse) => {
+  const res = await sdk.contractors.postV1CompaniesCompanyIdContractors(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -332,39 +322,27 @@ import {
   PutV1ContractorsContractorIdRequestBody,
   PutV1ContractorsContractorIdRequestBodyType,
   PutV1ContractorsContractorIdRequestBodyWageType,
-  PutV1ContractorsContractorIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorId: string = "forsaken";
 const requestBody: PutV1ContractorsContractorIdRequestBody = {
-  businessName: "synergies Flerovium scalable",
-  ein: "Lawrencium Southeast",
-  email: "Kaylee8@yahoo.com",
-  fileNewHireReport: false,
-  firstName: "Stephania",
   hourlyRate: "40.0",
-  isActive: false,
-  lastName: "Witting",
-  middleInitial: "Principal Northwest",
-  selfOnboarding: false,
-  ssn: "elliptical Manager Senior",
   startDate: "2020-01-11",
-  type: PutV1ContractorsContractorIdRequestBodyType.Individual,
-  version: "Kids Investor Sleek",
-  wageType: PutV1ContractorsContractorIdRequestBodyWageType.Hourly,
-  workState: "robust",
+  version: "synergies Flerovium scalable",
 };
 
-sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody).then((res: PutV1ContractorsContractorIdResponse) => {
+  const res = await sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -394,29 +372,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1ContractorsContractorUuidAddressRequest,
   PutV1ContractorsContractorUuidAddressRequestBody,
-  PutV1ContractorsContractorUuidAddressResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorUuid: string = "Diesel";
 const requestBody: PutV1ContractorsContractorUuidAddressRequestBody = {
-  city: "Cambridge",
-  state: "Southeast henry Altoona",
-  street1: "regulation Granite elastic",
-  street2: "Southeast transmitting Gasoline",
-  version: "fortunately",
-  zip: "infrastructure Diverse male",
+  version: "Oregon Southeast henry",
 };
 
-sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody).then((res: PutV1ContractorsContractorUuidAddressResponse) => {
+  const res = await sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -456,24 +430,23 @@ import {
   PutV1ContractorsContractorUuidOnboardingStatusRequest,
   PutV1ContractorsContractorUuidOnboardingStatusRequestBody,
   PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus,
-  PutV1ContractorsContractorUuidOnboardingStatusResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorUuid: string = "delectus";
-const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {
-  onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus.OnboardingCompleted,
-};
+const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {};
 
-sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus(contractorUuid, requestBody).then((res: PutV1ContractorsContractorUuidOnboardingStatusResponse) => {
+  const res = await sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus(contractorUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

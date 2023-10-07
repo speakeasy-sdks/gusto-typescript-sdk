@@ -269,12 +269,13 @@ export class EmployeeBenefits {
      */
     async postEmployeeYtdBenefitAmountsFromDifferentCompany(
         employeeId: string,
-        requestBody?: operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody,
+        postEmployeeYtdBenefitAmountsFromDifferentCompany?: shared.PostEmployeeYtdBenefitAmountsFromDifferentCompany,
         config?: AxiosRequestConfig
     ): Promise<operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse> {
         const req = new operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest({
             employeeId: employeeId,
-            requestBody: requestBody,
+            postEmployeeYtdBenefitAmountsFromDifferentCompany:
+                postEmployeeYtdBenefitAmountsFromDifferentCompany,
         });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
@@ -289,7 +290,11 @@ export class EmployeeBenefits {
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+                req,
+                "postEmployeeYtdBenefitAmountsFromDifferentCompany",
+                "json"
+            );
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);

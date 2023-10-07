@@ -16,21 +16,23 @@ Get a contractor form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormRequest, GetV1ContractorFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorFormRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorUuid: string = "briskly";
 const formId: string = "copying";
 
-sdk.contractorForms.getV1ContractorForm(contractorUuid, formId).then((res: GetV1ContractorFormResponse) => {
+  const res = await sdk.contractorForms.getV1ContractorForm(contractorUuid, formId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -55,21 +57,23 @@ Get the link to the form PDF
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormPdfRequest, GetV1ContractorFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorFormPdfRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorUuid: string = "Networked";
 const formId: string = "North";
 
-sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId).then((res: GetV1ContractorFormPdfResponse) => {
+  const res = await sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -94,20 +98,22 @@ Get a list of all contractor's forms
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormsRequest, GetV1ContractorFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const contractorUuid: string = "plum";
 
-sdk.contractorForms.getV1ContractorForms(contractorUuid).then((res: GetV1ContractorFormsResponse) => {
+  const res = await sdk.contractorForms.getV1ContractorForms(contractorUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -138,22 +144,22 @@ Generates a 1099 document for testing purposes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1SandboxGenerate1099Response } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.contractorForms.postV1SandboxGenerate1099({
-  contractorId: "Jewelery blue Cuba",
-  year: 739958,
-}).then((res: PostV1SandboxGenerate1099Response) => {
+  const res = await sdk.contractorForms.postV1SandboxGenerate1099({
+    contractorId: "Jewelery blue Cuba",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

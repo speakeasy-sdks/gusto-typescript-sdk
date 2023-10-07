@@ -18,24 +18,23 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
-  DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Krone";
 const earningTypeUuid: string = "purple";
 
-sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid).then((res: DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
+  const res = await sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -68,23 +67,22 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdEarningTypesRequest,
-  GetV1CompaniesCompanyIdEarningTypesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdEarningTypesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "Agent";
 
-sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(companyId).then((res: GetV1CompaniesCompanyIdEarningTypesResponse) => {
+  const res = await sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(companyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -115,24 +113,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1CompaniesCompanyIdEarningTypesRequest,
   PostV1CompaniesCompanyIdEarningTypesRequestBody,
-  PostV1CompaniesCompanyIdEarningTypesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "dolor";
 const requestBody: PostV1CompaniesCompanyIdEarningTypesRequestBody = {
   name: "grey Soft Account",
 };
 
-sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes(companyId, requestBody).then((res: PostV1CompaniesCompanyIdEarningTypesResponse) => {
+  const res = await sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -162,25 +161,24 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
   PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody,
-  PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const companyId: string = "male";
 const earningTypeUuid: string = "South";
-const requestBody: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody = {
-  name: "siemens",
-};
+const requestBody: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody = {};
 
-sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid, requestBody).then((res: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
+  const res = await sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

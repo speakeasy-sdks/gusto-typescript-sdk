@@ -16,24 +16,23 @@ Deletes an employee bank account. To update an employee's bank account details, 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest,
-  DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const bankAccountUuid: string = "Watsica";
 const employeeId: string = "ah";
 
-sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId).then((res: DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse) => {
+  const res = await sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -58,23 +57,22 @@ Fetches an employee's payment method. An employee payment method describes how t
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdPaymentMethodRequest,
-  GetV1EmployeesEmployeeIdPaymentMethodResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdPaymentMethodRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "hack";
 
-sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId).then((res: GetV1EmployeesEmployeeIdPaymentMethodResponse) => {
+  const res = await sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -102,14 +100,14 @@ import {
   PostV1EmployeesEmployeeIdBankAccountsRequest,
   PostV1EmployeesEmployeeIdBankAccountsRequestBody,
   PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType,
-  PostV1EmployeesEmployeeIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "Fitness";
 const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
   accountNumber: "mmm",
@@ -118,11 +116,12 @@ const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
   routingNumber: "ohm",
 };
 
-sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdBankAccountsResponse) => {
+  const res = await sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -153,34 +152,29 @@ import {
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy,
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits,
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType,
-  PutV1EmployeesEmployeeIdPaymentMethodResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 const employeeId: string = "Supervisor";
 const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
-  splitBy: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy.Percentage,
   splits: [
-    {
-      name: "Gasoline Bugatti",
-      priority: 441802,
-      splitAmount: 417536,
-      uuid: "85f38a89-f02e-4e76-93d1-85c70e3b9d7b",
-    },
+    {},
   ],
   type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.Check,
-  version: "inasmuch anti",
+  version: "Gasoline Bugatti",
 };
 
-sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdPaymentMethodResponse) => {
+  const res = await sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
