@@ -24,7 +24,7 @@ import { GetV1ContractorsContractorUuidBankAccountsRequest } from "@speakeasy-sd
       authorization: "",
     },
   });
-const contractorUuid: string = "Pocatello";
+const contractorUuid: string = "string";
 
   const res = await sdk.contractorPaymentMethod.getV1ContractorsContractorUuidBankAccounts(contractorUuid);
 
@@ -63,7 +63,7 @@ import { GetV1ContractorsContractorUuidPaymentMethodRequest } from "@speakeasy-s
       authorization: "",
     },
   });
-const contractorUuid: string = "users";
+const contractorUuid: string = "string";
 
   const res = await sdk.contractorPaymentMethod.getV1ContractorsContractorUuidPaymentMethod(contractorUuid);
 
@@ -109,12 +109,12 @@ import {
       authorization: "",
     },
   });
-const contractorUuid: string = "Borders";
+const contractorUuid: string = "string";
 const requestBody: PostV1ContractorsContractorUuidBankAccountsRequestBody = {
-  accountNumber: "tenetur Saint overriding",
+  accountNumber: "string",
   accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType.Checking,
-  name: "male Account IP",
-  routingNumber: "drive Soap up",
+  name: "string",
+  routingNumber: "string",
 };
 
   const res = await sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts(contractorUuid, requestBody);
@@ -159,10 +159,10 @@ import {
       authorization: "",
     },
   });
-const contractorUuid: string = "Implementation";
+const contractorUuid: string = "string";
 const requestBody: PutV1ContractorsContractorIdPaymentMethodRequestBody = {
   type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType.Check,
-  version: "siemens Hawaii",
+  version: "string",
 };
 
   const res = await sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod(contractorUuid, requestBody);

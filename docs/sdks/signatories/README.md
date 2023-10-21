@@ -25,8 +25,8 @@ import { DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest } from "@sp
       authorization: "",
     },
   });
-const companyUuid: string = "Tricycle";
-const signatoryUuid: string = "aggregate";
+const companyUuid: string = "string";
+const signatoryUuid: string = "string";
 
   const res = await sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid);
 
@@ -66,7 +66,7 @@ import { GetV1CompaniesCompanyUuidSignatoriesRequest } from "@speakeasy-sdks/gus
       authorization: "",
     },
   });
-const companyUuid: string = "directional";
+const companyUuid: string = "string";
 
   const res = await sdk.signatories.getV1CompaniesCompanyUuidSignatories(companyUuid);
 
@@ -108,9 +108,9 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "disintermediate";
+const companyUuid: string = "string";
 const requestBody: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody = {
-  email: "Kirstin25@yahoo.com",
+  email: "Ellis_Morissette@yahoo.com",
 };
 
   const res = await sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite(companyUuid, requestBody);
@@ -155,20 +155,20 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "Rubber";
+const companyUuid: string = "string";
 const requestBody: PostV1CompanySignatoriesRequestBody = {
-  birthday: "Officer",
-  email: "Ian_Brakus@gmail.com",
-  firstName: "Uriel",
+  birthday: "string",
+  email: "Libby.Cole5@gmail.com",
+  firstName: "Ian",
   homeAddress: {
-    city: "Windlerfurt",
-    state: "Sedan sticky",
-    street1: "clever Forward Hybrid",
-    zip: "Developer",
+    city: "South Maggieshire",
+    state: "string",
+    street1: "string",
+    zip: "string",
   },
-  lastName: "Gerhold",
-  ssn: "red",
-  title: "Fiat",
+  lastName: "Quitzon",
+  ssn: "string",
+  title: "string",
 };
 
   const res = await sdk.signatories.postV1CompanySignatories(companyUuid, requestBody);
@@ -213,8 +213,8 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "Consultant";
-const signatoryUuid: string = "optical";
+const companyUuid: string = "string";
+const signatoryUuid: string = "string";
 const requestBody: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody = {
   homeAddress: {},
 };

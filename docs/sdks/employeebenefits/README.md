@@ -28,7 +28,7 @@ import { DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest } from "@speakeasy-sdk
       authorization: "",
     },
   });
-const employeeBenefitId: string = "SDD";
+const employeeBenefitId: string = "string";
 
   const res = await sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId);
 
@@ -69,7 +69,7 @@ import { GetV1EmployeeBenefitsEmployeeBenefitIdRequest } from "@speakeasy-sdks/g
       authorization: "",
     },
   });
-const employeeBenefitId: string = "Alvina";
+const employeeBenefitId: string = "string";
 
   const res = await sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId);
 
@@ -112,9 +112,9 @@ import { GetV1EmployeesEmployeeIdEmployeeBenefitsRequest } from "@speakeasy-sdks
       authorization: "",
     },
   });
-const employeeId: string = "Fresh";
-const page: number = 1074.14;
-const per: number = 7853.61;
+const employeeId: string = "string";
+const page: number = 2519.68;
+const per: number = 8862.03;
 
   const res = await sdk.employeeBenefits.getV1EmployeesEmployeeIdEmployeeBenefits(employeeId, page, per);
 
@@ -158,9 +158,9 @@ import { PostEmployeeYtdBenefitAmountsFromDifferentCompany } from "@speakeasy-sd
       authorization: "",
     },
   });
-const employeeId: string = "copy";
+const employeeId: string = "string";
 const postEmployeeYtdBenefitAmountsFromDifferentCompany: PostEmployeeYtdBenefitAmountsFromDifferentCompany = {
-  taxYear: 3580.76,
+  taxYear: 5497.18,
 };
 
   const res = await sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany(employeeId, postEmployeeYtdBenefitAmountsFromDifferentCompany);
@@ -209,11 +209,11 @@ import {
       authorization: "",
     },
   });
-const employeeId: string = "Dinar";
+const employeeId: string = "string";
 const requestBody: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody = {
-  companyBenefitUuid: "engage Sausages Officer",
+  companyBenefitUuid: "string",
   contribution: {
-    value: "female",
+    value: "string",
   },
 };
 
@@ -263,12 +263,12 @@ import {
       authorization: "",
     },
   });
-const employeeBenefitId: string = "West";
+const employeeBenefitId: string = "string";
 const requestBody: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody = {
   contribution: {
-    value: "overriding",
+    value: "string",
   },
-  version: "Fantastic Group",
+  version: "string",
 };
 
   const res = await sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId, requestBody);

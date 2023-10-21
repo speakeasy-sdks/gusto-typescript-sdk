@@ -30,7 +30,7 @@ import { DeleteV1JobsJobIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/
       authorization: "",
     },
   });
-const jobId: string = "weber";
+const jobId: string = "string";
 
   const res = await sdk.jobsAndCompensations.deleteV1JobsJobId(jobId);
 
@@ -74,7 +74,7 @@ import { GetV1CompensationsCompensationIdRequest } from "@speakeasy-sdks/gusto/d
       authorization: "",
     },
   });
-const compensationId: string = "Operations";
+const compensationId: string = "string";
 
   const res = await sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId);
 
@@ -115,10 +115,10 @@ import { GetV1EmployeesEmployeeIdJobsInclude, GetV1EmployeesEmployeeIdJobsReques
       authorization: "",
     },
   });
-const employeeId: string = "synergistic";
+const employeeId: string = "string";
 const include: GetV1EmployeesEmployeeIdJobsInclude = GetV1EmployeesEmployeeIdJobsInclude.AllCompensations;
-const page: number = 7941.63;
-const per: number = 3904.25;
+const page: number = 2958.61;
+const per: number = 7200.06;
 
   const res = await sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page, per);
 
@@ -162,7 +162,7 @@ import { GetV1JobsJobIdInclude, GetV1JobsJobIdRequest } from "@speakeasy-sdks/gu
       authorization: "",
     },
   });
-const jobId: string = "Electronic";
+const jobId: string = "string";
 const include: GetV1JobsJobIdInclude = GetV1JobsJobIdInclude.AllCompensations;
 
   const res = await sdk.jobsAndCompensations.getV1JobsJobId(jobId, include);
@@ -209,10 +209,10 @@ import { GetV1JobsJobIdCompensationsInclude, GetV1JobsJobIdCompensationsRequest 
       authorization: "",
     },
   });
-const jobId: string = "delightfully";
+const jobId: string = "string";
 const include: GetV1JobsJobIdCompensationsInclude = GetV1JobsJobIdCompensationsInclude.AllCompensations;
-const page: number = 4750.13;
-const per: number = 2850.55;
+const page: number = 8955.23;
+const per: number = 1707.54;
 
   const res = await sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per);
 
@@ -256,7 +256,7 @@ import { PostV1JobsJobIdRequest, PostV1JobsJobIdRequestBody } from "@speakeasy-s
       authorization: "",
     },
   });
-const employeeId: string = "quae";
+const employeeId: string = "string";
 const requestBody: PostV1JobsJobIdRequestBody = {};
 
   const res = await sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody);
@@ -307,12 +307,12 @@ import {
       authorization: "",
     },
   });
-const compensationId: string = "Practical";
+const compensationId: string = "string";
 const requestBody: PutV1CompensationsCompensationIdRequestBody = {
   minimumWages: [
     {},
   ],
-  version: "Polynesia hertz",
+  version: "string",
 };
 
   const res = await sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody);
@@ -355,9 +355,9 @@ import { PutV1JobsJobIdRequest, PutV1JobsJobIdRequestBody } from "@speakeasy-sdk
       authorization: "",
     },
   });
-const jobId: string = "Southwest";
+const jobId: string = "string";
 const requestBody: PutV1JobsJobIdRequestBody = {
-  version: "state Bedfordshire morph",
+  version: "string",
 };
 
   const res = await sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody);

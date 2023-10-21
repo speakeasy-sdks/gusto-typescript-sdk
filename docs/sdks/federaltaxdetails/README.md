@@ -21,7 +21,7 @@ import {
 
 (async() => {
   const sdk = new Gusto();
-const companyId: string = "Central";
+const companyId: string = "string";
 const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
   authorization: "",
 };
@@ -67,9 +67,9 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "Blues";
+const companyId: string = "string";
 const requestBody: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody = {
-  version: "Dominican Designer",
+  version: "string",
 };
 
   const res = await sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails(companyId, requestBody);

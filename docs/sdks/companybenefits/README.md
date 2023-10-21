@@ -32,7 +32,7 @@ import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/
       authorization: "",
     },
   });
-const companyBenefitId: string = "New";
+const companyBenefitId: string = "string";
 
   const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
 
@@ -115,7 +115,7 @@ import { GetV1BenefitsBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/mo
       authorization: "",
     },
   });
-const benefitId: string = "Northwest";
+const benefitId: string = "string";
 
   const res = await sdk.companyBenefits.getV1BenefitsBenefitId(benefitId);
 
@@ -156,7 +156,7 @@ import { GetV1BenefitsBenefitsIdRequirementsRequest } from "@speakeasy-sdks/gust
       authorization: "",
     },
   });
-const benefitId: string = "fooey";
+const benefitId: string = "string";
 
   const res = await sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements(benefitId);
 
@@ -197,7 +197,7 @@ import { GetV1BenefitsCompanyBenefitIdSummaryRequest } from "@speakeasy-sdks/gus
       authorization: "",
     },
   });
-const companyBenefitId: string = "ugh";
+const companyBenefitId: string = "string";
 const detailed: boolean = false;
 const endDate: string = "2022-12-31";
 const startDate: string = "2022-01-01";
@@ -246,7 +246,7 @@ import { GetV1CompaniesCompanyIdCompanyBenefitsRequest } from "@speakeasy-sdks/g
       authorization: "",
     },
   });
-const companyId: string = "Shoes";
+const companyId: string = "string";
 const enrollmentCount: boolean = false;
 
   const res = await sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits(companyId, enrollmentCount);
@@ -293,7 +293,7 @@ import { GetV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gus
       authorization: "",
     },
   });
-const companyBenefitId: string = "Dollar";
+const companyBenefitId: string = "string";
 const withEmployeeBenefits: boolean = false;
 
   const res = await sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId(companyBenefitId, withEmployeeBenefits);
@@ -341,9 +341,9 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "Soul";
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdCompanyBenefitsRequestBody = {
-  description: "Visionary zero administration product",
+  description: "Persevering intangible website",
 };
 
   const res = await sdk.companyBenefits.postV1CompaniesCompanyIdCompanyBenefits(companyId, requestBody);
@@ -391,9 +391,9 @@ import {
       authorization: "",
     },
   });
-const companyBenefitId: string = "Digitized";
+const companyBenefitId: string = "string";
 const requestBody: PutV1CompanyBenefitsCompanyBenefitIdRequestBody = {
-  version: "Summerville",
+  version: "string",
 };
 
   const res = await sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId(companyBenefitId, requestBody);

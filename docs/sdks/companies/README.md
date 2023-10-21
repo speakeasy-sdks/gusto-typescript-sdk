@@ -36,7 +36,7 @@ import { GetV1CompaniesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/ope
       authorization: "",
     },
   });
-const companyId: string = "female";
+const companyId: string = "string";
 
   const res = await sdk.companies.getV1Companies(companyId);
 
@@ -75,9 +75,9 @@ import { GetV1CompaniesCompanyIdAdminsRequest } from "@speakeasy-sdks/gusto/dist
       authorization: "",
     },
   });
-const companyId: string = "Soap";
-const page: number = 4846.14;
-const per: number = 5137.2;
+const companyId: string = "string";
+const page: number = 2654.95;
+const per: number = 7436.28;
 
   const res = await sdk.companies.getV1CompaniesCompanyIdAdmins(companyId, page, per);
 
@@ -120,9 +120,9 @@ import { GetV1CompaniesCompanyIdCustomFieldsRequest } from "@speakeasy-sdks/gust
       authorization: "",
     },
   });
-const companyId: string = "after";
-const page: number = 1619.52;
-const per: number = 7836.97;
+const companyId: string = "string";
+const page: number = 9765.05;
+const per: number = 751.25;
 
   const res = await sdk.companies.getV1CompaniesCompanyIdCustomFields(companyId, page, per);
 
@@ -174,7 +174,7 @@ import { GetV1CompanyFinishOnboardingRequest } from "@speakeasy-sdks/gusto/dist/
       authorization: "",
     },
   });
-const companyUuid: string = "West";
+const companyUuid: string = "string";
 
   const res = await sdk.companies.getV1CompanyFinishOnboarding(companyUuid);
 
@@ -213,7 +213,7 @@ import { GetV1CompanyOnboardingStatusRequest } from "@speakeasy-sdks/gusto/dist/
       authorization: "",
     },
   });
-const companyUuid: string = "access";
+const companyUuid: string = "string";
 
   const res = await sdk.companies.getV1CompanyOnboardingStatus(companyUuid);
 
@@ -255,11 +255,11 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "Fundamental";
+const companyUuid: string = "string";
 const requestBody: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequestBody = {
-  email: "Myles66@gmail.com",
-  externalUserId: "ivory contextualize yieldingly",
-  ipAddress: "115.209.153.222",
+  email: "Estrella_Gottlieb27@yahoo.com",
+  externalUserId: "string",
+  ipAddress: "171.196.45.198",
 };
 
   const res = await sdk.companies.postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService(companyUuid, requestBody);
@@ -303,9 +303,9 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "synthesizing";
+const companyUuid: string = "string";
 const requestBody: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody = {
-  email: "Dwight.Conn51@gmail.com",
+  email: "Nya13@yahoo.com",
 };
 
   const res = await sdk.companies.postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService(companyUuid, requestBody);
@@ -346,11 +346,11 @@ import { PostV1CompaniesCompanyIdAdminsRequest, PostV1CompaniesCompanyIdAdminsRe
       authorization: "",
     },
   });
-const companyId: string = "UTF8";
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdAdminsRequestBody = {
-  email: "Ruben_Runte@yahoo.com",
-  firstName: "Julia",
-  lastName: "Lehner",
+  email: "Teagan_Kulas60@yahoo.com",
+  firstName: "Sallie",
+  lastName: "Leffler",
 };
 
   const res = await sdk.companies.postV1CompaniesCompanyIdAdmins(companyId, requestBody);
@@ -393,12 +393,12 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 
   const res = await sdk.companies.postV1PartnerManagedCompanies({
     company: {
-      name: "becquerel virtual",
+      name: "string",
     },
     user: {
-      email: "Kenneth56@hotmail.com",
-      firstName: "Lon",
-      lastName: "Reilly",
+      email: "Noble.OKon@yahoo.com",
+      firstName: "Tod",
+      lastName: "Mann",
     },
   });
 
@@ -454,15 +454,15 @@ import { Gusto } from "@speakeasy-sdks/gusto";
       addresses: [
         {},
       ],
-      name: "hmph",
+      name: "string",
       states: [
-        "Country",
+        "string",
       ],
     },
     user: {
-      email: "Jo_Tremblay@yahoo.com",
-      firstName: "Elise",
-      lastName: "Williamson",
+      email: "Tito.Stark@gmail.com",
+      firstName: "Gust",
+      lastName: "Kuvalis",
     },
   });
 
@@ -504,11 +504,11 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "Hyundai";
+const companyUuid: string = "string";
 const requestBody: PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody = {
-  email: "Estel40@yahoo.com",
-  externalUserId: "Oxygen AGP",
-  ipAddress: "74.62.158.119",
+  email: "Harley87@hotmail.com",
+  externalUserId: "string",
+  ipAddress: "3.103.93.184",
 };
 
   const res = await sdk.companies.putV1PartnerManagedCompaniesCompanyUuidMigrate(companyUuid, requestBody);

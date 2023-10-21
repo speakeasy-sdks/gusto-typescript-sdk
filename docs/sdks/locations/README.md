@@ -30,9 +30,9 @@ import { GetV1CompaniesCompanyIdLocationsRequest } from "@speakeasy-sdks/gusto/d
       authorization: "",
     },
   });
-const companyId: string = "oh";
-const page: number = 5661.13;
-const per: number = 7059.47;
+const companyId: string = "string";
+const page: number = 4858.9;
+const per: number = 6096.54;
 
   const res = await sdk.locations.getV1CompaniesCompanyIdLocations(companyId, page, per);
 
@@ -75,7 +75,7 @@ import { GetV1LocationsLocationIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/
       authorization: "",
     },
   });
-const locationId: string = "Analyst";
+const locationId: string = "string";
 
   const res = await sdk.locations.getV1LocationsLocationId(locationId);
 
@@ -116,7 +116,7 @@ import { GetV1LocationsLocationUuidMinimumWagesRequest } from "@speakeasy-sdks/g
       authorization: "",
     },
   });
-const locationUuid: string = "Communications";
+const locationUuid: string = "string";
 const effectiveDate: string = "2020-01-31";
 
   const res = await sdk.locations.getV1LocationsLocationUuidMinimumWages(locationUuid, effectiveDate);
@@ -164,13 +164,13 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "salmon";
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdLocationsApplicationJSON = {
-  city: "Cupertino",
-  phoneNumber: "maroon program North",
-  state: "Practical Hermaphrodite",
-  street1: "Home Bronze Chicken",
-  zip: "facilis Marcos lux",
+  city: "New Svenberg",
+  phoneNumber: "string",
+  state: "string",
+  street1: "string",
+  zip: "string",
 };
 
   const res = await sdk.locations.postV1CompaniesCompanyIdLocationsJson(companyId, requestBody);
@@ -218,8 +218,8 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "pink";
-const requestBody: Uint8Array = ":2||$cFaB;" as bytes <<<>>>;
+const companyId: string = "string";
+const requestBody: Uint8Array = "1@:2||$cFa" as bytes <<<>>>;
 
   const res = await sdk.locations.postV1CompaniesCompanyIdLocationsRaw(companyId, requestBody);
 
@@ -261,9 +261,9 @@ import { PutV1LocationsLocationIdRequest, PutV1LocationsLocationIdRequestBody } 
       authorization: "",
     },
   });
-const locationId: string = "Osmium";
+const locationId: string = "string";
 const requestBody: PutV1LocationsLocationIdRequestBody = {
-  version: "Southeast Electric Hatchback",
+  version: "string",
 };
 
   const res = await sdk.locations.putV1LocationsLocationId(locationId, requestBody);

@@ -24,7 +24,7 @@ import { GetV1TaxLiabilitiesRequest } from "@speakeasy-sdks/gusto/dist/sdk/model
       authorization: "",
     },
   });
-const companyUuid: string = "Danbury";
+const companyUuid: string = "string";
 
   const res = await sdk.taxLiabilities.getV1TaxLiabilities(companyUuid);
 
@@ -68,7 +68,7 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "Investment";
+const companyUuid: string = "string";
 const requestBody: PutV1TaxLiabilitiesRequestBody = {
   liabilitySelections: [
     {},
@@ -114,7 +114,7 @@ import { PutV1TaxLiabilitiesFinishRequest } from "@speakeasy-sdks/gusto/dist/sdk
       authorization: "",
     },
   });
-const companyUuid: string = "1080p";
+const companyUuid: string = "string";
 
   const res = await sdk.taxLiabilities.putV1TaxLiabilitiesFinish(companyUuid);
 

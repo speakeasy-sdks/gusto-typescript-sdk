@@ -24,7 +24,7 @@ import { GetV1CompaniesCompanyIdBankAccountsRequest } from "@speakeasy-sdks/gust
       authorization: "",
     },
   });
-const companyId: string = "payment";
+const companyId: string = "string";
 
   const res = await sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId);
 
@@ -76,7 +76,7 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "Tactics";
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {};
 
   const res = await sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(companyId, requestBody);
@@ -128,9 +128,9 @@ import { PostV1PlaidProcessorTokenRequestBodyOwnerType } from "@speakeasy-sdks/g
   });
 
   const res = await sdk.bankAccounts.postV1PlaidProcessorToken({
-    ownerId: "Metical",
+    ownerId: "string",
     ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType.Company,
-    processorToken: "Pizza",
+    processorToken: "string",
   });
 
   if (res.statusCode == 200) {
@@ -184,8 +184,8 @@ import {
       authorization: "",
     },
   });
-const bankAccountUuid: string = "connecting";
-const companyId: string = "generating";
+const bankAccountUuid: string = "string";
+const companyId: string = "string";
 const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {};
 
   const res = await sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(bankAccountUuid, companyId, requestBody);

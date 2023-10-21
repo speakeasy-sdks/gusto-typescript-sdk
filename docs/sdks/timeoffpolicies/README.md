@@ -30,7 +30,7 @@ import { GetCompaniesCompanyUuidTimeOffPoliciesRequest } from "@speakeasy-sdks/g
       authorization: "",
     },
   });
-const companyUuid: string = "steradian";
+const companyUuid: string = "string";
 
   const res = await sdk.timeOffPolicies.getCompaniesCompanyUuidTimeOffPolicies(companyUuid);
 
@@ -70,7 +70,7 @@ import { GetTimeOffPoliciesTimeOffPolicyUuidRequest } from "@speakeasy-sdks/gust
       authorization: "",
     },
   });
-const timeOffPolicyUuid: string = "Utah";
+const timeOffPolicyUuid: string = "string";
 
   const res = await sdk.timeOffPolicies.getTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid);
 
@@ -114,11 +114,11 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "Loan";
+const companyUuid: string = "string";
 const requestBody: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody = {
-  accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod.PerPayPeriod,
-  name: "mole Pennsylvania",
-  policyType: "application",
+  accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod.PerAnniversaryYear,
+  name: "string",
+  policyType: "string",
 };
 
   const res = await sdk.timeOffPolicies.postCompaniesCompanyUuidTimeOffPolicies(companyUuid, requestBody);
@@ -170,8 +170,8 @@ import {
       authorization: "",
     },
   });
-const employeeId: string = "Bacon";
-const payrollId: string = "MTF";
+const employeeId: string = "string";
+const payrollId: string = "string";
 const requestBody: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody = {};
 
   const res = await sdk.timeOffPolicies.postV1PayrollsPayrollIdCalculateAccruingTimeOffHours(employeeId, payrollId, requestBody);
@@ -218,7 +218,7 @@ import {
       authorization: "",
     },
   });
-const timeOffPolicyUuid: string = "Uganda";
+const timeOffPolicyUuid: string = "string";
 const requestBody: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody = {};
 
   const res = await sdk.timeOffPolicies.putTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid, requestBody);
@@ -259,7 +259,7 @@ import { PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateRequest } from "@speakea
       authorization: "",
     },
   });
-const timeOffPolicyUuid: string = "payment";
+const timeOffPolicyUuid: string = "string";
 
   const res = await sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate(timeOffPolicyUuid);
 
@@ -303,7 +303,7 @@ import {
       authorization: "",
     },
   });
-const timeOffPolicyUuid: string = "male";
+const timeOffPolicyUuid: string = "string";
 const requestBody: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody = {
   employees: [
     {},
@@ -353,7 +353,7 @@ import {
       authorization: "",
     },
   });
-const timeOffPolicyUuid: string = "magenta";
+const timeOffPolicyUuid: string = "string";
 const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody = {
   employees: [
     {},
@@ -403,7 +403,7 @@ import {
       authorization: "",
     },
   });
-const timeOffPolicyUuid: string = "deposit";
+const timeOffPolicyUuid: string = "string";
 const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody = {
   employees: [
     {},

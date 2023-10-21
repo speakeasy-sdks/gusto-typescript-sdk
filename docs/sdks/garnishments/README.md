@@ -26,9 +26,9 @@ import { GetV1EmployeesEmployeeIdGarnishmentsRequest } from "@speakeasy-sdks/gus
       authorization: "",
     },
   });
-const employeeId: string = "reboot";
-const page: number = 7793.33;
-const per: number = 779.75;
+const employeeId: string = "string";
+const page: number = 5514.05;
+const per: number = 9088.83;
 
   const res = await sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per);
 
@@ -71,7 +71,7 @@ import { GetV1GarnishmentsGarnishmentIdRequest } from "@speakeasy-sdks/gusto/dis
       authorization: "",
     },
   });
-const garnishmentId: string = "Executive";
+const garnishmentId: string = "string";
 
   const res = await sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId);
 
@@ -115,11 +115,11 @@ import {
       authorization: "",
     },
   });
-const employeeId: string = "West";
+const employeeId: string = "string";
 const requestBody: PostV1EmployeesEmployeeIdGarnishmentsRequestBody = {
-  amount: "World relationships",
+  amount: "string",
   courtOrdered: false,
-  description: "Streamlined hybrid algorithm",
+  description: "Advanced systematic hardware",
 };
 
   const res = await sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody);
@@ -162,9 +162,9 @@ import { PutV1GarnishmentsGarnishmentIdRequest, PutV1GarnishmentsGarnishmentIdRe
       authorization: "",
     },
   });
-const garnishmentId: string = "matrix";
+const garnishmentId: string = "string";
 const requestBody: PutV1GarnishmentsGarnishmentIdRequestBody = {
-  version: "Northeast Solutions male",
+  version: "string",
 };
 
   const res = await sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody);

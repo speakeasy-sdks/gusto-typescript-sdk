@@ -23,7 +23,7 @@ import { GetV1CompaniesCompanyUuidTaxRequirementsRequest } from "@speakeasy-sdks
       authorization: "",
     },
   });
-const companyUuid: string = "Bedfordshire";
+const companyUuid: string = "string";
 
   const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid);
 
@@ -102,8 +102,8 @@ import { GetV1CompaniesCompanyUuidTaxRequirementsStateRequest } from "@speakeasy
       authorization: "",
     },
   });
-const companyUuid: string = "Intersex";
-const state: string = "ohm";
+const companyUuid: string = "string";
+const state: string = "string";
 const scheduling: boolean = false;
 
   const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling);
@@ -150,8 +150,8 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "Folk";
-const state: string = "online";
+const companyUuid: string = "string";
+const state: string = "string";
 const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
   requirementSets: [
     {

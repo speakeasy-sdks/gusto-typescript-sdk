@@ -25,8 +25,8 @@ import { GetV1EmployeeFormRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/
       authorization: "",
     },
   });
-const employeeId: string = "Coordinator";
-const formId: string = "Carolina";
+const employeeId: string = "string";
+const formId: string = "string";
 
   const res = await sdk.employeeForms.getV1EmployeeForm(employeeId, formId);
 
@@ -66,8 +66,8 @@ import { GetV1EmployeeFormPdfRequest } from "@speakeasy-sdks/gusto/dist/sdk/mode
       authorization: "",
     },
   });
-const employeeId: string = "solution";
-const formId: string = "gray";
+const employeeId: string = "string";
+const formId: string = "string";
 
   const res = await sdk.employeeForms.getV1EmployeeFormPdf(employeeId, formId);
 
@@ -107,7 +107,7 @@ import { GetV1EmployeeFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models
       authorization: "",
     },
   });
-const employeeId: string = "Global";
+const employeeId: string = "string";
 
   const res = await sdk.employeeForms.getV1EmployeeForms(employeeId);
 
@@ -154,7 +154,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
   });
 
   const res = await sdk.employeeForms.postV1SandboxGenerateW2({
-    employeeId: "male Northeast",
+    employeeId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -192,12 +192,12 @@ import { PutV1EmployeeFormSignRequest, PutV1EmployeeFormSignRequestBody } from "
       authorization: "",
     },
   });
-const employeeId: string = "Electronic";
-const formId: string = "indolent";
+const employeeId: string = "string";
+const formId: string = "string";
 const requestBody: PutV1EmployeeFormSignRequestBody = {
   agree: false,
-  signatureText: "Ball above considering",
-  signedByIpAddress: "World Loan Non",
+  signatureText: "string",
+  signedByIpAddress: "string",
 };
 
   const res = await sdk.employeeForms.putV1EmployeeFormSign(employeeId, formId, requestBody);

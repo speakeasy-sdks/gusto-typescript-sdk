@@ -27,8 +27,8 @@ import { DeleteV1ExternalPayrollRequest } from "@speakeasy-sdks/gusto/dist/sdk/m
       authorization: "",
     },
   });
-const companyUuid: string = "Porsche";
-const externalPayrollId: string = "Southwest";
+const companyUuid: string = "string";
+const externalPayrollId: string = "string";
 
   const res = await sdk.externalPayrolls.deleteV1ExternalPayroll(companyUuid, externalPayrollId);
 
@@ -69,7 +69,7 @@ import { GetV1CompanyExternalPayrollsRequest } from "@speakeasy-sdks/gusto/dist/
       authorization: "",
     },
   });
-const companyUuid: string = "neural";
+const companyUuid: string = "string";
 
   const res = await sdk.externalPayrolls.getV1CompanyExternalPayrolls(companyUuid);
 
@@ -109,8 +109,8 @@ import { GetV1ExternalPayrollRequest } from "@speakeasy-sdks/gusto/dist/sdk/mode
       authorization: "",
     },
   });
-const companyUuid: string = "Persevering";
-const externalPayrollId: string = "Gasoline";
+const companyUuid: string = "string";
+const externalPayrollId: string = "string";
 
   const res = await sdk.externalPayrolls.getV1ExternalPayroll(companyUuid, externalPayrollId);
 
@@ -150,8 +150,8 @@ import { GetV1ExternalPayrollCalculateTaxesRequest } from "@speakeasy-sdks/gusto
       authorization: "",
     },
   });
-const companyUuid: string = "Frozen";
-const externalPayrollId: string = "Ytterbium";
+const companyUuid: string = "string";
+const externalPayrollId: string = "string";
 
   const res = await sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes(companyUuid, externalPayrollId);
 
@@ -192,11 +192,11 @@ import { PostV1ExternalPayrollRequest, PostV1ExternalPayrollRequestBody } from "
       authorization: "",
     },
   });
-const companyUuid: string = "navigating";
+const companyUuid: string = "string";
 const requestBody: PostV1ExternalPayrollRequestBody = {
-  checkDate: "Facilitator Direct",
-  paymentPeriodEndDate: "Screen Manchester Senior",
-  paymentPeriodStartDate: "granular redefine",
+  checkDate: "string",
+  paymentPeriodEndDate: "string",
+  paymentPeriodStartDate: "string",
 };
 
   const res = await sdk.externalPayrolls.postV1ExternalPayroll(companyUuid, requestBody);
@@ -246,8 +246,8 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "lest";
-const externalPayrollId: string = "sherry";
+const companyUuid: string = "string";
+const externalPayrollId: string = "string";
 const requestBody: PutV1ExternalPayrollRequestBody = {
   externalPayrollItems: [
     {

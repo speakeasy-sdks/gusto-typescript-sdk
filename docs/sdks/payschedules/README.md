@@ -29,7 +29,7 @@ import { GetV1CompaniesCompanyIdPayPeriodsRequest } from "@speakeasy-sdks/gusto/
       authorization: "",
     },
   });
-const companyId: string = "Recumbent";
+const companyId: string = "string";
 const endDate: string = "2020-01-31";
 const startDate: string = "2020-01-01";
 
@@ -74,9 +74,9 @@ import { GetV1CompaniesCompanyIdPaySchedulesRequest } from "@speakeasy-sdks/gust
       authorization: "",
     },
   });
-const companyId: string = "cultivate";
-const page: number = 8748;
-const per: number = 6116.15;
+const companyId: string = "string";
+const page: number = 3004.3;
+const per: number = 9327.24;
 
   const res = await sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules(companyId, page, per);
 
@@ -119,8 +119,8 @@ import { GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest } from "@speake
       authorization: "",
     },
   });
-const companyId: string = "overriding";
-const payScheduleId: string = "sensor";
+const companyId: string = "string";
+const payScheduleId: string = "string";
 
   const res = await sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId);
 
@@ -168,11 +168,11 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "Elegant";
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdPaySchedulesRequestBody = {
   anchorEndOfPayPeriod: "2020-05-08",
   anchorPayDate: "2020-05-15",
-  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.EveryWeek,
+  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.EveryOtherWeek,
 };
 
   const res = await sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules(companyId, requestBody);
@@ -216,10 +216,10 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "copying";
-const payScheduleId: string = "Polygender";
+const companyId: string = "string";
+const payScheduleId: string = "string";
 const requestBody: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody = {
-  version: "Crew",
+  version: "string",
 };
 
   const res = await sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId, requestBody);

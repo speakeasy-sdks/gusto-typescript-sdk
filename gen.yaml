@@ -2,16 +2,17 @@ configVersion: 1.0.0
 management:
   docChecksum: b3be58d6a42b3f6b9a53f2e76d05f1a8
   docVersion: "2023-03-01"
-  speakeasyVersion: 1.96.1
-  generationVersion: 2.150.0
+  speakeasyVersion: 1.104.0
+  generationVersion: 2.169.0
 generation:
+  repoURL: https://github.com/speakeasy-sdks/gusto-typescript-sdk.git
   sdkClassName: gusto
   singleTagPerOp: false
   telemetryEnabled: false
 features:
   typescript:
     acceptHeaders: 2.81.1
-    core: 2.90.4
+    core: 2.93.0
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.82.0
@@ -19,8 +20,11 @@ features:
     methodSecurity: 2.82.0
     serverIDs: 2.81.1
 typescript:
-  version: 0.55.0
+  version: 0.56.0
   author: gusto
   flattenGlobalSecurity: false
+  installationURL: https://github.com/speakeasy-sdks/gusto-typescript-sdk
   maxMethodParams: 4
   packageName: '@speakeasy-sdks/gusto'
+  published: true
+  repoSubDirectory: .

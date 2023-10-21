@@ -26,8 +26,8 @@ import { DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest } from "@s
       authorization: "",
     },
   });
-const companyId: string = "Krone";
-const earningTypeUuid: string = "purple";
+const companyId: string = "string";
+const earningTypeUuid: string = "string";
 
   const res = await sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid);
 
@@ -75,7 +75,7 @@ import { GetV1CompaniesCompanyIdEarningTypesRequest } from "@speakeasy-sdks/gust
       authorization: "",
     },
   });
-const companyId: string = "Agent";
+const companyId: string = "string";
 
   const res = await sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(companyId);
 
@@ -121,9 +121,9 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "dolor";
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdEarningTypesRequestBody = {
-  name: "grey Soft Account",
+  name: "string",
 };
 
   const res = await sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes(companyId, requestBody);
@@ -169,8 +169,8 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "male";
-const earningTypeUuid: string = "South";
+const companyId: string = "string";
+const earningTypeUuid: string = "string";
 const requestBody: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody = {};
 
   const res = await sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid, requestBody);

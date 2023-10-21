@@ -29,7 +29,7 @@ import { DeleteV1ContractorsContractorIdRequest } from "@speakeasy-sdks/gusto/di
       authorization: "",
     },
   });
-const contractorId: string = "compress";
+const contractorId: string = "string";
 
   const res = await sdk.contractors.deleteV1ContractorsContractorId(contractorId);
 
@@ -70,9 +70,9 @@ import { GetV1CompaniesCompanyIdContractorsRequest } from "@speakeasy-sdks/gusto
       authorization: "",
     },
   });
-const companyId: string = "Rap";
-const page: number = 6082.07;
-const per: number = 4118.44;
+const companyId: string = "string";
+const page: number = 5925.71;
+const per: number = 9595.07;
 
   const res = await sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per);
 
@@ -115,7 +115,7 @@ import { GetV1ContractorsContractorIdRequest } from "@speakeasy-sdks/gusto/dist/
       authorization: "",
     },
   });
-const contractorId: string = "bandwidth";
+const contractorId: string = "string";
 
   const res = await sdk.contractors.getV1ContractorsContractorId(contractorId);
 
@@ -156,7 +156,7 @@ import { GetV1ContractorsContractorUuidAddressRequest } from "@speakeasy-sdks/gu
       authorization: "",
     },
   });
-const contractorUuid: string = "carpet";
+const contractorUuid: string = "string";
 
   const res = await sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid);
 
@@ -228,7 +228,7 @@ import { GetV1ContractorsContractorUuidOnboardingStatusRequest } from "@speakeas
       authorization: "",
     },
   });
-const contractorUuid: string = "morph";
+const contractorUuid: string = "string";
 
   const res = await sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid);
 
@@ -274,7 +274,7 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "Mountain";
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdContractorsRequestBody = {
   hourlyRate: "40.0",
   startDate: "2020-01-11",
@@ -330,11 +330,11 @@ import {
       authorization: "",
     },
   });
-const contractorId: string = "forsaken";
+const contractorId: string = "string";
 const requestBody: PutV1ContractorsContractorIdRequestBody = {
   hourlyRate: "40.0",
   startDate: "2020-01-11",
-  version: "synergies Flerovium scalable",
+  version: "string",
 };
 
   const res = await sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody);
@@ -380,9 +380,9 @@ import {
       authorization: "",
     },
   });
-const contractorUuid: string = "Diesel";
+const contractorUuid: string = "string";
 const requestBody: PutV1ContractorsContractorUuidAddressRequestBody = {
-  version: "Oregon Southeast henry",
+  version: "string",
 };
 
   const res = await sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody);
@@ -438,7 +438,7 @@ import {
       authorization: "",
     },
   });
-const contractorUuid: string = "delectus";
+const contractorUuid: string = "string";
 const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {};
 
   const res = await sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus(contractorUuid, requestBody);

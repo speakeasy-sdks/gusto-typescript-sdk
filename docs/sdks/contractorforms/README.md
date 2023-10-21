@@ -24,8 +24,8 @@ import { GetV1ContractorFormRequest } from "@speakeasy-sdks/gusto/dist/sdk/model
       authorization: "",
     },
   });
-const contractorUuid: string = "briskly";
-const formId: string = "copying";
+const contractorUuid: string = "string";
+const formId: string = "string";
 
   const res = await sdk.contractorForms.getV1ContractorForm(contractorUuid, formId);
 
@@ -65,8 +65,8 @@ import { GetV1ContractorFormPdfRequest } from "@speakeasy-sdks/gusto/dist/sdk/mo
       authorization: "",
     },
   });
-const contractorUuid: string = "Networked";
-const formId: string = "North";
+const contractorUuid: string = "string";
+const formId: string = "string";
 
   const res = await sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId);
 
@@ -106,7 +106,7 @@ import { GetV1ContractorFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/mode
       authorization: "",
     },
   });
-const contractorUuid: string = "plum";
+const contractorUuid: string = "string";
 
   const res = await sdk.contractorForms.getV1ContractorForms(contractorUuid);
 
@@ -153,7 +153,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
   });
 
   const res = await sdk.contractorForms.postV1SandboxGenerate1099({
-    contractorId: "Jewelery blue Cuba",
+    contractorId: "string",
   });
 
   if (res.statusCode == 200) {

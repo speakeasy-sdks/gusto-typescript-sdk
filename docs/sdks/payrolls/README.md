@@ -35,9 +35,9 @@ import { GetV1CompaniesCompanyIdPayrollReversalsRequest } from "@speakeasy-sdks/
       authorization: "",
     },
   });
-const companyId: string = "SUV";
-const page: number = 3289.2;
-const per: number = 5215.35;
+const companyId: string = "string";
+const page: number = 8487.52;
+const per: number = 7763.39;
 
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per);
 
@@ -88,7 +88,7 @@ import { GetV1CompaniesCompanyIdPayrollsInclude } from "@speakeasy-sdks/gusto/di
   });
 
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
-    companyId: "Ferry healthily",
+    companyId: "string",
     include: [
       GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
     ],
@@ -140,10 +140,10 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "application";
-const payrollId: string = "software";
-const include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.Benefits;
-const showCalculation: string = "Country";
+const companyId: string = "string";
+const payrollId: string = "string";
+const include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.PayrollStatusMeta;
+const showCalculation: string = "string";
 
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation);
 
@@ -189,7 +189,7 @@ import { GetV1CompaniesPayrollBlockersCompanyUuidRequest } from "@speakeasy-sdks
       authorization: "",
     },
   });
-const companyUuid: string = "yuck";
+const companyUuid: string = "string";
 
   const res = await sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid);
 
@@ -235,7 +235,7 @@ import { GetV1PaymentReceiptsPayrollsPayrollUuidRequest } from "@speakeasy-sdks/
       authorization: "",
     },
   });
-const payrollUuid: string = "neglected";
+const payrollUuid: string = "string";
 
   const res = await sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid);
 
@@ -276,8 +276,8 @@ import { GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest } from "@sp
       authorization: "",
     },
   });
-const employeeId: string = "radical";
-const payrollId: string = "payment";
+const employeeId: string = "string";
+const payrollId: string = "string";
 
   const res = await sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId);
 
@@ -326,15 +326,15 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "gold";
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
   employeeUuids: [
-    "Lesotho",
+    "string",
   ],
-  endDate: "Avon indexing Tricycle",
+  endDate: "string",
   offCycle: false,
   offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason.DismissedEmployee,
-  startDate: "Frozen B2C",
+  startDate: "string",
 };
 
   const res = await sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody);
@@ -380,9 +380,9 @@ import {
       authorization: "",
     },
   });
-const payrollId: string = "female";
+const payrollId: string = "string";
 const requestBody: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody = {
-  printingFormat: "Group",
+  printingFormat: "string",
 };
 
   const res = await sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody);
@@ -426,8 +426,8 @@ import { PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest } from "@speak
       authorization: "",
     },
   });
-const companyId: string = "systematic";
-const payrollId: string = "Director";
+const companyId: string = "string";
+const payrollId: string = "string";
 
   const res = await sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId);
 
@@ -477,8 +477,8 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "Electric";
-const payrollId: string = "Pop";
+const companyId: string = "string";
+const payrollId: string = "string";
 const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
   employeeCompensations: [
     {
@@ -493,7 +493,7 @@ const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
       ],
     },
   ],
-  version: "and cheap",
+  version: "string",
 };
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody);
@@ -547,9 +547,9 @@ import {
       authorization: "",
     },
   });
-const companyId: string = "Tricycle";
-const payPeriodEndDate: string = "coherent";
-const payPeriodStartDate: string = "pick";
+const companyId: string = "string";
+const payPeriodEndDate: string = "string";
+const payPeriodStartDate: string = "string";
 const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody = {
   employeeCompensations: [
     {
@@ -564,7 +564,7 @@ const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEnd
       ],
     },
   ],
-  version: "input rescue indigo",
+  version: "string",
 };
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody);
@@ -611,8 +611,8 @@ import { PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest } from "@speak
       authorization: "",
     },
   });
-const companyId: string = "compress";
-const payrollId: string = "scale";
+const companyId: string = "string";
+const payrollId: string = "string";
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId);
 
@@ -654,8 +654,8 @@ import { PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest } from "@speakeas
       authorization: "",
     },
   });
-const companyId: string = "programming";
-const payrollId: string = "Lead";
+const companyId: string = "string";
+const payrollId: string = "string";
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId);
 

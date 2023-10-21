@@ -24,7 +24,7 @@ import { GetV1EmployeesEmployeeIdFederalTaxesRequest } from "@speakeasy-sdks/gus
       authorization: "",
     },
   });
-const employeeUuid: string = "Pickup";
+const employeeUuid: string = "string";
 
   const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid);
 
@@ -75,7 +75,7 @@ import { GetV1EmployeesEmployeeIdStateTaxesRequest } from "@speakeasy-sdks/gusto
       authorization: "",
     },
   });
-const employeeUuid: string = "orchid";
+const employeeUuid: string = "string";
 
   const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid);
 
@@ -117,9 +117,9 @@ import {
       authorization: "",
     },
   });
-const employeeUuid: string = "driver";
+const employeeUuid: string = "string";
 const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
-  version: "Soul",
+  version: "string",
 };
 
   const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody);
@@ -168,23 +168,23 @@ import {
       authorization: "",
     },
   });
-const employeeUuid: string = "Developer";
+const employeeUuid: string = "string";
 const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
-  employeeId: "Electronic canonise",
+  employeeId: "string",
   states: [
     {
       questions: [
         {
           answers: [
             {
-              validFrom: "anti volt DRAM",
-              value: "Assistant",
+              validFrom: "string",
+              value: "string",
             },
           ],
           key: "<key>",
         },
       ],
-      state: "alarmed emulation Wooden",
+      state: "string",
     },
   ],
 };

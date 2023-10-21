@@ -22,7 +22,7 @@ import { GetV1CompanyIndustryRequest } from "@speakeasy-sdks/gusto/dist/sdk/mode
       authorization: "",
     },
   });
-const companyId: string = "Americium";
+const companyId: string = "string";
 
   const res = await sdk.industrySelection.getV1CompanyIndustry(companyId);
 
@@ -61,13 +61,13 @@ import { PutV1CompanyIndustryRequest, PutV1CompanyIndustryRequestBody } from "@s
       authorization: "",
     },
   });
-const companyId: string = "Solutions";
+const companyId: string = "string";
 const requestBody: PutV1CompanyIndustryRequestBody = {
-  naicsCode: "Iodine Blues male",
+  naicsCode: "string",
   sicCodes: [
-    "ice",
+    "string",
   ],
-  title: "Erbium edge",
+  title: "string",
 };
 
   const res = await sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody);

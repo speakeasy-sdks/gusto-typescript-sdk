@@ -35,7 +35,7 @@ import { DeleteV1WebhookSubscriptionUuidRequest } from "@speakeasy-sdks/gusto/di
       authorization: "",
     },
   });
-const webhookSubscriptionUuid: string = "range";
+const webhookSubscriptionUuid: string = "string";
 
   const res = await sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
 
@@ -82,7 +82,7 @@ import { GetV1WebhookSubscriptionUuidRequest } from "@speakeasy-sdks/gusto/dist/
       authorization: "",
     },
   });
-const webhookSubscriptionUuid: string = "withdrawal";
+const webhookSubscriptionUuid: string = "string";
 
   const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
 
@@ -129,7 +129,7 @@ import { GetV1WebhookSubscriptionVerificationTokenUuidRequest } from "@speakeasy
       authorization: "",
     },
   });
-const webhookSubscriptionUuid: string = "auxiliary";
+const webhookSubscriptionUuid: string = "string";
 
   const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid);
 
@@ -276,9 +276,9 @@ import {
       authorization: "",
     },
   });
-const webhookSubscriptionUuid: string = "collaboration";
+const webhookSubscriptionUuid: string = "string";
 const requestBody: PutV1VerifyWebhookSubscriptionUuidRequestBody = {
-  verificationToken: "Bedfordshire North organic",
+  verificationToken: "string",
 };
 
   const res = await sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody);
@@ -331,10 +331,10 @@ import {
       authorization: "",
     },
   });
-const webhookSubscriptionUuid: string = "disintermediate";
+const webhookSubscriptionUuid: string = "string";
 const requestBody: PutV1WebhookSubscriptionUuidRequestBody = {
   subscriptionTypes: [
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Form,
+    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Employee,
   ],
 };
 

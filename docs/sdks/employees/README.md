@@ -31,7 +31,7 @@ import { DeleteV1EmployeeRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/o
       authorization: "",
     },
   });
-const employeeId: string = "Androgyne";
+const employeeId: string = "string";
 
   const res = await sdk.employees.deleteV1Employee(employeeId);
 
@@ -73,8 +73,8 @@ import { GetV1EmployeesInclude, GetV1EmployeesRequest } from "@speakeasy-sdks/gu
       authorization: "",
     },
   });
-const employeeId: string = "functionalities";
-const include: GetV1EmployeesInclude = GetV1EmployeesInclude.CustomFields;
+const employeeId: string = "string";
+const include: GetV1EmployeesInclude = GetV1EmployeesInclude.AllCompensations;
 
   const res = await sdk.employees.getV1Employees(employeeId, include);
 
@@ -116,9 +116,9 @@ import { GetV1EmployeesEmployeeIdCustomFieldsRequest } from "@speakeasy-sdks/gus
       authorization: "",
     },
   });
-const employeeId: string = "Factors";
-const page: number = 2328.39;
-const per: number = 881.15;
+const employeeId: string = "string";
+const page: number = 6617.63;
+const per: number = 9828.87;
 
   const res = await sdk.employees.getV1EmployeesEmployeeIdCustomFields(employeeId, page, per);
 
@@ -161,7 +161,7 @@ import { GetV1EmployeesEmployeeIdHomeAddressRequest } from "@speakeasy-sdks/gust
       authorization: "",
     },
   });
-const employeeId: string = "Technetium";
+const employeeId: string = "string";
 
   const res = await sdk.employees.getV1EmployeesEmployeeIdHomeAddress(employeeId);
 
@@ -237,7 +237,7 @@ import { GetV1EmployeesEmployeeIdOnboardingStatusRequest } from "@speakeasy-sdks
       authorization: "",
     },
   });
-const employeeId: string = "bypassing";
+const employeeId: string = "string";
 
   const res = await sdk.employees.getV1EmployeesEmployeeIdOnboardingStatus(employeeId);
 
@@ -278,8 +278,8 @@ import { GetVersionEmployeesTimeOffActivitiesRequest } from "@speakeasy-sdks/gus
       authorization: "",
     },
   });
-const employeeUuid: string = "chorus";
-const timeOffType: string = "Sports";
+const employeeUuid: string = "string";
+const timeOffType: string = "string";
 
   const res = await sdk.employees.getVersionEmployeesTimeOffActivities(employeeUuid, timeOffType);
 
@@ -321,7 +321,7 @@ import { PostV1EmployeesRequest, PostV1EmployeesRequestBody } from "@speakeasy-s
       authorization: "",
     },
   });
-const companyId: string = "Lights";
+const companyId: string = "string";
 const requestBody: PostV1EmployeesRequestBody = {};
 
   const res = await sdk.employees.postV1Employees(companyId, requestBody);
@@ -364,7 +364,7 @@ import { PutV1EmployeeFinishOnboardingRequest } from "@speakeasy-sdks/gusto/dist
       authorization: "",
     },
   });
-const employeeId: string = "moratorium";
+const employeeId: string = "string";
 
   const res = await sdk.employees.putV1EmployeeFinishOnboarding(employeeId);
 
@@ -405,9 +405,9 @@ import { PutV1EmployeesRequest, PutV1EmployeesRequestBody } from "@speakeasy-sdk
       authorization: "",
     },
   });
-const employeeId: string = "Lake";
+const employeeId: string = "string";
 const requestBody: PutV1EmployeesRequestBody = {
-  version: "application",
+  version: "string",
 };
 
   const res = await sdk.employees.putV1Employees(employeeId, requestBody);
@@ -453,9 +453,9 @@ import {
       authorization: "",
     },
   });
-const employeeId: string = "suburban";
+const employeeId: string = "string";
 const requestBody: PutV1EmployeesEmployeeIdHomeAddressRequestBody = {
-  version: "Music Account Customer",
+  version: "string",
 };
 
   const res = await sdk.employees.putV1EmployeesEmployeeIdHomeAddress(employeeId, requestBody);
@@ -510,9 +510,9 @@ import {
       authorization: "",
     },
   });
-const employeeId: string = "XSS";
+const employeeId: string = "string";
 const requestBody: PutV1EmployeesEmployeeIdOnboardingStatusRequestBody = {
-  onboardingStatus: "Forward",
+  onboardingStatus: "string",
 };
 
   const res = await sdk.employees.putV1EmployeesEmployeeIdOnboardingStatus(employeeId, requestBody);

@@ -27,8 +27,8 @@ import { DeleteV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest } f
       authorization: "",
     },
   });
-const companyId: string = "whose";
-const contractorPaymentId: string = "Licensed";
+const companyId: string = "string";
+const contractorPaymentId: string = "string";
 
   const res = await sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId);
 
@@ -70,8 +70,8 @@ import { GetV1CompaniesCompanyIdContractorPaymentContractorPaymentRequest } from
       authorization: "",
     },
   });
-const companyId: string = "subjugate";
-const contractorPaymentId: string = "fuchsia";
+const companyId: string = "string";
+const contractorPaymentId: string = "string";
 
   const res = await sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId);
 
@@ -114,7 +114,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
   });
 
   const res = await sdk.contractorPayments.getV1CompaniesCompanyIdContractorPayments({
-    companyId: "Pula Orchestrator",
+    companyId: "string",
     endDate: "2020-12-31",
     startDate: "2020-01-01",
   });
@@ -163,7 +163,7 @@ import { GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest } from "@spe
       authorization: "",
     },
   });
-const contractorPaymentUuid: string = "yahoo";
+const contractorPaymentUuid: string = "string";
 
   const res = await sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt(contractorPaymentUuid);
 
@@ -209,10 +209,10 @@ import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
       authorization: "",
     },
   });
-const companyId: string = "zero";
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdContractorPaymentsRequestBody = {
   bonus: 500,
-  contractorUuid: "connect",
+  contractorUuid: "string",
   date: new RFCDate("2020-01-01"),
   hours: 40,
   reimbursement: 20,

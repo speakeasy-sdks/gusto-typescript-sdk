@@ -25,9 +25,9 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "gee";
+const companyUuid: string = "string";
 const requestBody: PostV1CompanyFlowsRequestBody = {
-  flowType: "Pickup thwart detract",
+  flowType: "string",
 };
 
   const res = await sdk.flows.postV1CompanyFlows(companyUuid, requestBody);

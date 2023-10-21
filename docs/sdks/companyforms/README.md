@@ -24,7 +24,7 @@ import { GetV1CompanyFormRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/o
       authorization: "",
     },
   });
-const formId: string = "fluid";
+const formId: string = "string";
 
   const res = await sdk.companyForms.getV1CompanyForm(formId);
 
@@ -63,7 +63,7 @@ import { GetV1CompanyFormPdfRequest } from "@speakeasy-sdks/gusto/dist/sdk/model
       authorization: "",
     },
   });
-const formId: string = "Miller";
+const formId: string = "string";
 
   const res = await sdk.companyForms.getV1CompanyFormPdf(formId);
 
@@ -102,7 +102,7 @@ import { GetV1CompanyFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/
       authorization: "",
     },
   });
-const companyId: string = "primary";
+const companyId: string = "string";
 
   const res = await sdk.companyForms.getV1CompanyForms(companyId);
 
@@ -141,11 +141,11 @@ import { PutV1CompanyFormSignRequest, PutV1CompanyFormSignRequestBody } from "@s
       authorization: "",
     },
   });
-const formId: string = "EXE";
+const formId: string = "string";
 const requestBody: PutV1CompanyFormSignRequestBody = {
   agree: false,
-  signatureText: "Mazda",
-  signedByIpAddress: "PNG Multigender Evansville",
+  signatureText: "string",
+  signedByIpAddress: "string",
 };
 
   const res = await sdk.companyForms.putV1CompanyFormSign(formId, requestBody);

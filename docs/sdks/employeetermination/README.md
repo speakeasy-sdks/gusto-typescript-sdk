@@ -25,7 +25,7 @@ import { DeleteV1EmployeesEmployeeIdTerminationsRequest } from "@speakeasy-sdks/
       authorization: "",
     },
   });
-const employeeId: string = "Chips";
+const employeeId: string = "string";
 
   const res = await sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(employeeId);
 
@@ -66,7 +66,7 @@ import { GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest } from "
       authorization: "",
     },
   });
-const companyId: string = "Gasoline";
+const companyId: string = "string";
 
   const res = await sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(companyId);
 
@@ -109,7 +109,7 @@ import { GetV1EmployeesEmployeeIdTerminationsRequest } from "@speakeasy-sdks/gus
       authorization: "",
     },
   });
-const employeeId: string = "North";
+const employeeId: string = "string";
 
   const res = await sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(employeeId);
 
@@ -155,9 +155,9 @@ import {
       authorization: "",
     },
   });
-const employeeId: string = "Tunisia";
+const employeeId: string = "string";
 const requestBody: PostV1EmployeesEmployeeIdTerminationsRequestBody = {
-  effectiveDate: "exotic payment bus",
+  effectiveDate: "string",
 };
 
   const res = await sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations(employeeId, requestBody);
@@ -202,10 +202,10 @@ import { PutV1TerminationsEmployeeIdRequest, PutV1TerminationsEmployeeIdRequestB
       authorization: "",
     },
   });
-const employeeId: string = "24/365";
+const employeeId: string = "string";
 const requestBody: PutV1TerminationsEmployeeIdRequestBody = {
-  effectiveDate: "female Wagon",
-  version: "Trans infomediaries",
+  effectiveDate: "string",
+  version: "string",
 };
 
   const res = await sdk.employeeTermination.putV1TerminationsEmployeeId(employeeId, requestBody);

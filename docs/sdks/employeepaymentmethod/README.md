@@ -24,8 +24,8 @@ import { DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest } from "@sp
       authorization: "",
     },
   });
-const bankAccountUuid: string = "Watsica";
-const employeeId: string = "ah";
+const bankAccountUuid: string = "string";
+const employeeId: string = "string";
 
   const res = await sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId);
 
@@ -65,7 +65,7 @@ import { GetV1EmployeesEmployeeIdPaymentMethodRequest } from "@speakeasy-sdks/gu
       authorization: "",
     },
   });
-const employeeId: string = "hack";
+const employeeId: string = "string";
 
   const res = await sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId);
 
@@ -108,12 +108,12 @@ import {
       authorization: "",
     },
   });
-const employeeId: string = "Fitness";
+const employeeId: string = "string";
 const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
-  accountNumber: "mmm",
-  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Checking,
-  name: "Automotive North",
-  routingNumber: "ohm",
+  accountNumber: "string",
+  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Savings,
+  name: "string",
+  routingNumber: "string",
 };
 
   const res = await sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody);
@@ -160,13 +160,13 @@ import {
       authorization: "",
     },
   });
-const employeeId: string = "Supervisor";
+const employeeId: string = "string";
 const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
   splits: [
     {},
   ],
   type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.Check,
-  version: "Gasoline Bugatti",
+  version: "string",
 };
 
   const res = await sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody);

@@ -23,8 +23,8 @@ import { GetV1GeneratedDocumentsDocumentTypeRequestUuidRequest } from "@speakeas
       authorization: "",
     },
   });
-const documentType: string = "female";
-const requestUuid: string = "Assurance";
+const documentType: string = "string";
+const requestUuid: string = "string";
 
   const res = await sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid(documentType, requestUuid);
 

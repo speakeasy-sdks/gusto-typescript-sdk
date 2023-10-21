@@ -30,7 +30,7 @@ import { DeleteDepartmentRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/o
       authorization: "",
     },
   });
-const departmentUuid: string = "male";
+const departmentUuid: string = "string";
 
   const res = await sdk.departments.deleteDepartment(departmentUuid);
 
@@ -71,7 +71,7 @@ import { GetCompaniesDepartmentsRequest } from "@speakeasy-sdks/gusto/dist/sdk/m
       authorization: "",
     },
   });
-const companyUuid: string = "ick";
+const companyUuid: string = "string";
 
   const res = await sdk.departments.getCompaniesDepartments(companyUuid);
 
@@ -113,7 +113,7 @@ import { GetDepartmentRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/oper
       authorization: "",
     },
   });
-const departmentUuid: string = "Fresh";
+const departmentUuid: string = "string";
 
   const res = await sdk.departments.getDepartment(departmentUuid);
 
@@ -154,7 +154,7 @@ import { PostDepartmentsRequest, PostDepartmentsRequestBody } from "@speakeasy-s
       authorization: "",
     },
   });
-const companyUuid: string = "Tuna";
+const companyUuid: string = "string";
 const requestBody: PostDepartmentsRequestBody = {};
 
   const res = await sdk.departments.postDepartments(companyUuid, requestBody);
@@ -203,7 +203,7 @@ import {
       authorization: "",
     },
   });
-const departmentUuid: string = "Normal";
+const departmentUuid: string = "string";
 const requestBody: PutAddPeopleToDepartmentRequestBody = {
   contractors: [
     {},
@@ -253,9 +253,9 @@ import { PutDepartmentsRequest, PutDepartmentsRequestBody } from "@speakeasy-sdk
       authorization: "",
     },
   });
-const departmentUuid: string = "brown";
+const departmentUuid: string = "string";
 const requestBody: PutDepartmentsRequestBody = {
-  version: "Savings Director Corporate",
+  version: "string",
 };
 
   const res = await sdk.departments.putDepartments(departmentUuid, requestBody);
@@ -304,7 +304,7 @@ import {
       authorization: "",
     },
   });
-const departmentUuid: string = "Engineer";
+const departmentUuid: string = "string";
 const requestBody: PutRemovePeopleFromDepartmentRequestBody = {
   contractors: [
     {},

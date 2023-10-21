@@ -22,7 +22,7 @@ import { GetV1CompanyPaymentConfigsRequest } from "@speakeasy-sdks/gusto/dist/sd
       authorization: "",
     },
   });
-const companyUuid: string = "Terbium";
+const companyUuid: string = "string";
 
   const res = await sdk.paymentConfigs.getV1CompanyPaymentConfigs(companyUuid);
 
@@ -65,10 +65,10 @@ import {
       authorization: "",
     },
   });
-const companyUuid: string = "capability";
+const companyUuid: string = "string";
 const requestBody: PutV1CompanyPaymentConfigsRequestBody = {
-  fastPaymentLimit: "Senior Hermaphrodite",
-  paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.FourDay,
+  fastPaymentLimit: "string",
+  paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.TwoDay,
 };
 
   const res = await sdk.paymentConfigs.putV1CompanyPaymentConfigs(companyUuid, requestBody);
