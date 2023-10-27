@@ -56,6 +56,9 @@ export class PutRemovePeopleFromDepartmentRequest extends SpeakeasyBase {
 }
 
 export class PutRemovePeopleFromDepartmentResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -65,9 +68,15 @@ export class PutRemovePeopleFromDepartmentResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     department?: shared.Department;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { TaxRequirementSet } from "./taxrequirementset";
 import { Expose, Type } from "class-transformer";
 
-/**
- * OK
- */
 export class TaxRequirementsState extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "company_uuid" })

@@ -1,7 +1,5 @@
 # SupportedBenefit
 
-Supported benefit response
-
 
 ## Fields
 

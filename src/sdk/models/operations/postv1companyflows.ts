@@ -50,6 +50,9 @@ export class PostV1CompanyFlowsRequest extends SpeakeasyBase {
 }
 
 export class PostV1CompanyFlowsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -59,9 +62,15 @@ export class PostV1CompanyFlowsResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     flow?: shared.Flow;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

@@ -144,7 +144,7 @@ export class PostV1CompaniesCompanyIdContractorsRequestBody extends SpeakeasyBas
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: PostV1CompaniesCompanyIdContractorsRequestBodyType;
+    type?: PostV1CompaniesCompanyIdContractorsRequestBodyType;
 
     /**
      * The contractor’s wage type.
@@ -183,6 +183,9 @@ export class PostV1CompaniesCompanyIdContractorsRequest extends SpeakeasyBase {
 }
 
 export class PostV1CompaniesCompanyIdContractorsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -192,9 +195,15 @@ export class PostV1CompaniesCompanyIdContractorsResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contractor?: shared.Contractor;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

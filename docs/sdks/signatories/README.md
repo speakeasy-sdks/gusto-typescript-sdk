@@ -1,4 +1,5 @@
-# signatories
+# Signatories
+(*signatories*)
 
 ### Available Operations
 
@@ -16,24 +17,24 @@ Delete a company signatory.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
-  DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "neque";
-const signatoryUuid: string = "quo";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
+const signatoryUuid: string = "string";
 
-sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid).then((res: DeleteV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
+  const res = await sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -58,23 +59,23 @@ Returns company signatories. Currently we only support a single signatory per co
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyUuidSignatoriesRequest,
-  GetV1CompaniesCompanyUuidSignatoriesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyUuidSignatoriesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "deleniti";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 
-sdk.signatories.getV1CompaniesCompanyUuidSignatories(companyUuid).then((res: GetV1CompaniesCompanyUuidSignatoriesResponse) => {
+  const res = await sdk.signatories.getV1CompaniesCompanyUuidSignatories(companyUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -101,27 +102,26 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1CompaniesCompanyUuidSignatoriesInviteRequest,
   PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody,
-  PostV1CompaniesCompanyUuidSignatoriesInviteResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "quibusdam";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 const requestBody: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody = {
-  email: "Brock.Wolf@yahoo.com",
-  firstName: "Rory",
-  lastName: "Block",
-  title: "Dr.",
+  email: "Ellis_Morissette@yahoo.com",
 };
 
-sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite(companyUuid, requestBody).then((res: PostV1CompaniesCompanyUuidSignatoriesInviteResponse) => {
+  const res = await sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite(companyUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -150,38 +150,37 @@ import {
   PostV1CompanySignatoriesRequest,
   PostV1CompanySignatoriesRequestBody,
   PostV1CompanySignatoriesRequestBodyHomeAddress,
-  PostV1CompanySignatoriesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "libero";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 const requestBody: PostV1CompanySignatoriesRequestBody = {
-  birthday: "architecto",
-  email: "Carli24@hotmail.com",
-  firstName: "Arch",
+  birthday: "string",
+  email: "Libby.Cole5@gmail.com",
+  firstName: "Ian",
   homeAddress: {
-    city: "South Gwenland",
-    state: "vero",
-    street1: "excepturi",
-    street2: "eum",
-    zip: "velit",
+    city: "South Maggieshire",
+    state: "string",
+    street1: "string",
+    zip: "string",
   },
-  lastName: "Graham",
-  middleInitial: "perspiciatis",
-  phone: "1-279-690-3926 x22400",
-  ssn: "consequatur",
-  title: "Miss",
+  lastName: "Quitzon",
+  ssn: "string",
+  title: "string",
 };
 
-sdk.signatories.postV1CompanySignatories(companyUuid, requestBody).then((res: PostV1CompanySignatoriesResponse) => {
+  const res = await sdk.signatories.postV1CompanySignatories(companyUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -210,39 +209,27 @@ import {
   PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
   PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody,
   PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress,
-  PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "recusandae";
-const signatoryUuid: string = "ea";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
+const signatoryUuid: string = "string";
 const requestBody: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody = {
-  birthday: "quidem",
-  firstName: "Gavin",
-  homeAddress: {
-    city: "Schowalterstead",
-    state: "expedita",
-    street1: "deleniti",
-    street2: "a",
-    zip: "voluptate",
-  },
-  lastName: "Herman",
-  middleInitial: "unde",
-  phone: "1-773-466-4208 x21023",
-  ssn: "qui",
-  title: "Miss",
-  version: "ex",
+  homeAddress: {},
 };
 
-sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid, requestBody).then((res: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse) => {
+  const res = await sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

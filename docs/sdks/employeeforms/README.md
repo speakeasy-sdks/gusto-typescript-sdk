@@ -1,4 +1,5 @@
-# employeeForms
+# EmployeeForms
+(*employeeForms*)
 
 ### Available Operations
 
@@ -16,21 +17,24 @@ Get an employee form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeeFormRequest, GetV1EmployeeFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeeFormRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "nulla";
-const formId: string = "fugit";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeId: string = "string";
+const formId: string = "string";
 
-sdk.employeeForms.getV1EmployeeForm(employeeId, formId).then((res: GetV1EmployeeFormResponse) => {
+  const res = await sdk.employeeForms.getV1EmployeeForm(employeeId, formId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -55,21 +59,24 @@ Get the link to the form PDF
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeeFormPdfRequest, GetV1EmployeeFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeeFormPdfRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "porro";
-const formId: string = "maiores";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeId: string = "string";
+const formId: string = "string";
 
-sdk.employeeForms.getV1EmployeeFormPdf(employeeId, formId).then((res: GetV1EmployeeFormPdfResponse) => {
+  const res = await sdk.employeeForms.getV1EmployeeFormPdf(employeeId, formId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -94,20 +101,23 @@ Get a list of all employee's forms
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeeFormsRequest, GetV1EmployeeFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeeFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "doloribus";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeId: string = "string";
 
-sdk.employeeForms.getV1EmployeeForms(employeeId).then((res: GetV1EmployeeFormsResponse) => {
+  const res = await sdk.employeeForms.getV1EmployeeForms(employeeId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -138,22 +148,23 @@ Generates a W2 document for testing purposes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1SandboxGenerateW2Response } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.employeeForms.postV1SandboxGenerateW2({
-  employeeId: "iusto",
-  year: 753570,
-}).then((res: PostV1SandboxGenerateW2Response) => {
+  const res = await sdk.employeeForms.postV1SandboxGenerateW2({
+    employeeId: "string",
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -177,30 +188,29 @@ Sign a company form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1EmployeeFormSignRequest,
-  PutV1EmployeeFormSignRequestBody,
-  PutV1EmployeeFormSignResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1EmployeeFormSignRequest, PutV1EmployeeFormSignRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "ducimus";
-const formId: string = "alias";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeId: string = "string";
+const formId: string = "string";
 const requestBody: PutV1EmployeeFormSignRequestBody = {
   agree: false,
-  signatureText: "officia",
-  signedByIpAddress: "tempora",
+  signatureText: "string",
+  signedByIpAddress: "string",
 };
 
-sdk.employeeForms.putV1EmployeeFormSign(employeeId, formId, requestBody).then((res: PutV1EmployeeFormSignResponse) => {
+  const res = await sdk.employeeForms.putV1EmployeeFormSign(employeeId, formId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

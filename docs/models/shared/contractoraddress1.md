@@ -1,7 +1,5 @@
 # ContractorAddress1
 
-Example response
-
 
 ## Fields
 

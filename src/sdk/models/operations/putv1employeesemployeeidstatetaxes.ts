@@ -106,6 +106,9 @@ export class PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON extends Speake
 }
 
 export class PutV1EmployeesEmployeeIdStateTaxesResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -115,9 +118,15 @@ export class PutV1EmployeesEmployeeIdStateTaxesResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.EmployeeStateTax })
     employeeStateTaxes?: shared.EmployeeStateTax[];
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

@@ -1,4 +1,5 @@
-# taxRequirements
+# TaxRequirements
+(*taxRequirements*)
 
 ### Available Operations
 
@@ -14,23 +15,23 @@ Returns objects describing the states that have tax requirements for the company
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyUuidTaxRequirementsRequest,
-  GetV1CompaniesCompanyUuidTaxRequirementsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyUuidTaxRequirementsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "neque";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 
-sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid).then((res: GetV1CompaniesCompanyUuidTaxRequirementsResponse) => {
+  const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -94,25 +95,25 @@ Get all tax requirements for a given state.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyUuidTaxRequirementsStateRequest,
-  GetV1CompaniesCompanyUuidTaxRequirementsStateResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyUuidTaxRequirementsStateRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "exercitationem";
-const state: string = "itaque";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
+const state: string = "string";
 const scheduling: boolean = false;
 
-sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling).then((res: GetV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
+  const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -143,87 +144,33 @@ import {
   PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody,
   PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets,
   PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements,
-  PutV1CompaniesCompanyUuidTaxRequirementsStateResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "et";
-const state: string = "ipsum";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
+const state: string = "string";
 const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
   requirementSets: [
     {
-      effectiveFrom: "nulla",
-      key: "distinctio",
       requirements: [
-        {
-          key: "quia",
-          value: "quia",
-        },
-        {
-          key: "nostrum",
-          value: "omnis",
-        },
-        {
-          key: "libero",
-          value: "dicta",
-        },
-        {
-          key: "id",
-          value: "libero",
-        },
+        {},
       ],
-      state: "fugiat",
-    },
-    {
-      effectiveFrom: "officia",
-      key: "quos",
-      requirements: [
-        {
-          key: "sit",
-          value: "iusto",
-        },
-        {
-          key: "ipsa",
-          value: "voluptates",
-        },
-        {
-          key: "inventore",
-          value: "aperiam",
-        },
-        {
-          key: "totam",
-          value: "dolore",
-        },
-      ],
-      state: "eligendi",
-    },
-    {
-      effectiveFrom: "distinctio",
-      key: "voluptatem",
-      requirements: [
-        {
-          key: "esse",
-          value: "dolores",
-        },
-        {
-          key: "assumenda",
-          value: "beatae",
-        },
-      ],
-      state: "est",
     },
   ],
 };
 
-sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, requestBody).then((res: PutV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
+  const res = await sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

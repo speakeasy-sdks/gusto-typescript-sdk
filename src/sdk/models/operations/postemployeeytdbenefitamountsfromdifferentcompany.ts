@@ -5,37 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
-import { Expose } from "class-transformer";
-
-export class PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody extends SpeakeasyBase {
-    /**
-     * The benefit type supported by Gusto.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "benefit_type" })
-    benefitType?: number;
-
-    /**
-     * The tax year for which this amount applies.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "tax_year" })
-    taxYear: number;
-
-    /**
-     * The year-to-date company contribution made outside the current company.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "ytd_company_contribution_amount" })
-    ytdCompanyContributionAmount: string;
-
-    /**
-     * The year-to-date employee deduction made outside the current company.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "ytd_employee_deduction_amount" })
-    ytdEmployeeDeductionAmount: string;
-}
 
 export class PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest extends SpeakeasyBase {
     /**
@@ -45,16 +14,25 @@ export class PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest extends Sp
     employeeId: string;
 
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody;
+    postEmployeeYtdBenefitAmountsFromDifferentCompany?: shared.PostEmployeeYtdBenefitAmountsFromDifferentCompany;
 }
 
 export class PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

@@ -1,4 +1,5 @@
-# webhookSubscriptions
+# WebhookSubscriptions
+(*webhookSubscriptions*)
 
 ### Available Operations
 
@@ -26,20 +27,23 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1WebhookSubscriptionUuidRequest, DeleteV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1WebhookSubscriptionUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const webhookSubscriptionUuid: string = "quae";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const webhookSubscriptionUuid: string = "string";
 
-sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid).then((res: DeleteV1WebhookSubscriptionUuidResponse) => {
+  const res = await sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -71,20 +75,23 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1WebhookSubscriptionUuidRequest, GetV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1WebhookSubscriptionUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const webhookSubscriptionUuid: string = "amet";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const webhookSubscriptionUuid: string = "string";
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid).then((res: GetV1WebhookSubscriptionUuidResponse) => {
+  const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -116,23 +123,23 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1WebhookSubscriptionVerificationTokenUuidRequest,
-  GetV1WebhookSubscriptionVerificationTokenUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1WebhookSubscriptionVerificationTokenUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const webhookSubscriptionUuid: string = "illum";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const webhookSubscriptionUuid: string = "string";
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid).then((res: GetV1WebhookSubscriptionVerificationTokenUuidResponse) => {
+  const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -163,19 +170,21 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1WebhookSubscriptionsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptions().then((res: GetV1WebhookSubscriptionsResponse) => {
+  const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptions();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -206,29 +215,27 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1WebhookSubscriptionRequestBodySubscriptionTypes,
-  PostV1WebhookSubscriptionResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1WebhookSubscriptionRequestBodySubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.webhookSubscriptions.postV1WebhookSubscription({
-  subscriptionTypes: [
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Form,
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Location,
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Contractor,
-  ],
-  url: "quasi",
-}).then((res: PostV1WebhookSubscriptionResponse) => {
+  const res = await sdk.webhookSubscriptions.postV1WebhookSubscription({
+    subscriptionTypes: [
+      PostV1WebhookSubscriptionRequestBodySubscriptionTypes.PaySchedule,
+    ],
+    url: "http://adept-mutation.com",
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -266,24 +273,26 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1VerifyWebhookSubscriptionUuidRequest,
   PutV1VerifyWebhookSubscriptionUuidRequestBody,
-  PutV1VerifyWebhookSubscriptionUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const webhookSubscriptionUuid: string = "dicta";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const webhookSubscriptionUuid: string = "string";
 const requestBody: PutV1VerifyWebhookSubscriptionUuidRequestBody = {
-  verificationToken: "laudantium",
+  verificationToken: "string",
 };
 
-sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody).then((res: PutV1VerifyWebhookSubscriptionUuidResponse) => {
+  const res = await sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -320,29 +329,28 @@ import {
   PutV1WebhookSubscriptionUuidRequest,
   PutV1WebhookSubscriptionUuidRequestBody,
   PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes,
-  PutV1WebhookSubscriptionUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const webhookSubscriptionUuid: string = "doloremque";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const webhookSubscriptionUuid: string = "string";
 const requestBody: PutV1WebhookSubscriptionUuidRequestBody = {
   subscriptionTypes: [
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.EmployeeBenefit,
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Contractor,
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.ExternalPayroll,
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Form,
+    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Employee,
   ],
 };
 
-sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody).then((res: PutV1WebhookSubscriptionUuidResponse) => {
+  const res = await sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

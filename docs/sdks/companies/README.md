@@ -1,4 +1,5 @@
-# companies
+# Companies
+(*companies*)
 
 ### Available Operations
 
@@ -27,20 +28,23 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesRequest, GetV1CompaniesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "iure";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
 
-sdk.companies.getV1Companies(companyId).then((res: GetV1CompaniesResponse) => {
+  const res = await sdk.companies.getV1Companies(companyId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -64,22 +68,25 @@ Returns a list of all the admins at a company
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdAdminsRequest, GetV1CompaniesCompanyIdAdminsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdAdminsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "magnam";
-const page: number = 8917.73;
-const per: number = 567.13;
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const page: number = 2654.95;
+const per: number = 7436.28;
 
-sdk.companies.getV1CompaniesCompanyIdAdmins(companyId, page, per).then((res: GetV1CompaniesCompanyIdAdminsResponse) => {
+  const res = await sdk.companies.getV1CompaniesCompanyIdAdmins(companyId, page, per);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -107,25 +114,25 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdCustomFieldsRequest,
-  GetV1CompaniesCompanyIdCustomFieldsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdCustomFieldsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "delectus";
-const page: number = 2726.56;
-const per: number = 3834.41;
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const page: number = 9765.05;
+const per: number = 751.25;
 
-sdk.companies.getV1CompaniesCompanyIdCustomFields(companyId, page, per).then((res: GetV1CompaniesCompanyIdCustomFieldsResponse) => {
+  const res = await sdk.companies.getV1CompaniesCompanyIdCustomFields(companyId, page, per);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -162,20 +169,23 @@ PUT '/v1/companies/89771af8-b964-472e-8064-554dfbcb56d9/approve'
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyFinishOnboardingRequest, GetV1CompanyFinishOnboardingResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyFinishOnboardingRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "molestiae";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 
-sdk.companies.getV1CompanyFinishOnboarding(companyUuid).then((res: GetV1CompanyFinishOnboardingResponse) => {
+  const res = await sdk.companies.getV1CompanyFinishOnboarding(companyUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -199,20 +209,23 @@ Get company's onboarding status. The data returned helps inform the required onb
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyOnboardingStatusRequest, GetV1CompanyOnboardingStatusResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyOnboardingStatusRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "minus";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 
-sdk.companies.getV1CompanyOnboardingStatus(companyUuid).then((res: GetV1CompanyOnboardingStatusResponse) => {
+  const res = await sdk.companies.getV1CompanyOnboardingStatus(companyUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -239,26 +252,28 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequest,
   PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequestBody,
-  PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "placeat";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 const requestBody: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequestBody = {
-  email: "Jaycee_Mante@yahoo.com",
-  externalUserId: "temporibus",
-  ipAddress: "ab",
+  email: "Estrella_Gottlieb27@yahoo.com",
+  externalUserId: "string",
+  ipAddress: "171.196.45.198",
 };
 
-sdk.companies.postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService(companyUuid, requestBody).then((res: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse) => {
+  const res = await sdk.companies.postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService(companyUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -286,24 +301,26 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequest,
   PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody,
-  PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "quis";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 const requestBody: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody = {
-  email: "Lydia_Aufderhar@gmail.com",
+  email: "Nya13@yahoo.com",
 };
 
-sdk.companies.postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService(companyUuid, requestBody).then((res: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse) => {
+  const res = await sdk.companies.postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService(companyUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -328,29 +345,28 @@ Creates a new admin for a company. If the email matches an existing user, this w
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1CompaniesCompanyIdAdminsRequest,
-  PostV1CompaniesCompanyIdAdminsRequestBody,
-  PostV1CompaniesCompanyIdAdminsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1CompaniesCompanyIdAdminsRequest, PostV1CompaniesCompanyIdAdminsRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "sapiente";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdAdminsRequestBody = {
-  email: "Brooke_Strosin47@hotmail.com",
-  firstName: "Pinkie",
-  lastName: "Schmidt",
+  email: "Teagan_Kulas60@yahoo.com",
+  firstName: "Sallie",
+  lastName: "Leffler",
 };
 
-sdk.companies.postV1CompaniesCompanyIdAdmins(companyId, requestBody).then((res: PostV1CompaniesCompanyIdAdminsResponse) => {
+  const res = await sdk.companies.postV1CompaniesCompanyIdAdmins(companyId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -375,31 +391,30 @@ Create a new partner managed company
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1PartnerManagedCompaniesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.companies.postV1PartnerManagedCompanies({
-  company: {
-    ein: "esse",
-    name: "Miss Lowell Parisian",
-    tradeName: "occaecati",
-  },
-  user: {
-    email: "Kale_Welch10@gmail.com",
-    firstName: "Haskell",
-    lastName: "Krajcik",
-    phone: "377-525-1036 x162",
-  },
-}).then((res: PostV1PartnerManagedCompaniesResponse) => {
+  const res = await sdk.companies.postV1PartnerManagedCompanies({
+    company: {
+      name: "string",
+    },
+    user: {
+      email: "Noble.OKon@yahoo.com",
+      firstName: "Tod",
+      lastName: "Mann",
+    },
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -435,65 +450,36 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1ProvisionResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.companies.postV1Provision({
-  company: {
-    addresses: [
-      {
-        city: "Fort Steve",
-        isPrimary: "fuga",
-        phone: "464.960.0966 x612",
-        state: "corporis",
-        street1: "explicabo",
-        street2: "nobis",
-        zip: "enim",
-      },
-      {
-        city: "Hickleborough",
-        isPrimary: "excepturi",
-        phone: "569-916-2619",
-        state: "mollitia",
-        street1: "occaecati",
-        street2: "numquam",
-        zip: "commodi",
-      },
-      {
-        city: "Jarredburgh",
-        isPrimary: "error",
-        phone: "1-416-731-7193",
-        state: "id",
-        street1: "possimus",
-        street2: "aut",
-        zip: "quasi",
-      },
-    ],
-    ein: "error",
-    name: "Neal Boyer",
-    numberEmployees: 8781.94,
-    states: [
-      "praesentium",
-      "voluptatibus",
-    ],
-    tradeName: "ipsa",
-  },
-  user: {
-    email: "Ivah3@yahoo.com",
-    firstName: "Iliana",
-    lastName: "Grady",
-    phone: "232.516.3849 x02655",
-  },
-}).then((res: PostV1ProvisionResponse) => {
+  const res = await sdk.companies.postV1Provision({
+    company: {
+      addresses: [
+        {},
+      ],
+      name: "string",
+      states: [
+        "string",
+      ],
+    },
+    user: {
+      email: "Tito.Stark@gmail.com",
+      firstName: "Gust",
+      lastName: "Kuvalis",
+    },
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -520,26 +506,28 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1PartnerManagedCompaniesCompanyUuidMigrateRequest,
   PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody,
-  PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "pariatur";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 const requestBody: PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody = {
-  email: "Johanna.Ledner92@gmail.com",
-  externalUserId: "sint",
-  ipAddress: "veritatis",
+  email: "Harley87@hotmail.com",
+  externalUserId: "string",
+  ipAddress: "3.103.93.184",
 };
 
-sdk.companies.putV1PartnerManagedCompaniesCompanyUuidMigrate(companyUuid, requestBody).then((res: PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse) => {
+  const res = await sdk.companies.putV1PartnerManagedCompaniesCompanyUuidMigrate(companyUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

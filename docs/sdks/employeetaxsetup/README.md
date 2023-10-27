@@ -1,4 +1,5 @@
-# employeeTaxSetup
+# EmployeeTaxSetup
+(*employeeTaxSetup*)
 
 ### Available Operations
 
@@ -15,23 +16,23 @@ Get attributes relevant for an employee's federal taxes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdFederalTaxesRequest,
-  GetV1EmployeesEmployeeIdFederalTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdFederalTaxesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeUuid: string = "explicabo";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeUuid: string = "string";
 
-sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdFederalTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -67,23 +68,23 @@ Payroll Admins are responsible for filing a new hire report for each Employee. T
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdStateTaxesRequest,
-  GetV1EmployeesEmployeeIdStateTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdStateTaxesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeUuid: string = "minima";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeUuid: string = "string";
 
-sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdStateTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -110,31 +111,26 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1EmployeesEmployeeIdFederalTaxesRequest,
   PutV1EmployeesEmployeeIdFederalTaxesRequestBody,
-  PutV1EmployeesEmployeeIdFederalTaxesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeUuid: string = "nisi";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeUuid: string = "string";
 const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
-  deductions: "fugit",
-  dependentsAmount: "sapiente",
-  extraWithholding: "consequuntur",
-  filingStatus: "ratione",
-  otherIncome: "explicabo",
-  twoJobs: false,
-  version: "saepe",
-  w4DataType: "occaecati",
+  version: "string",
 };
 
-sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody).then((res: PutV1EmployeesEmployeeIdFederalTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -167,151 +163,42 @@ import {
   PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates,
   PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions,
   PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers,
-  PutV1EmployeesEmployeeIdStateTaxesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeUuid: string = "atque";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeUuid: string = "string";
 const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
-  employeeId: "et",
+  employeeId: "string",
   states: [
     {
       questions: [
         {
           answers: [
             {
-              validFrom: "veritatis",
-              validUpTo: "esse",
-              value: "quod",
-            },
-            {
-              validFrom: "nam",
-              validUpTo: "vero",
-              value: "aliquid",
-            },
-            {
-              validFrom: "quasi",
-              validUpTo: "saepe",
-              value: "vel",
-            },
-            {
-              validFrom: "harum",
-              validUpTo: "molestiae",
-              value: "rerum",
+              validFrom: "string",
+              value: "string",
             },
           ],
-          key: "occaecati",
-        },
-        {
-          answers: [
-            {
-              validFrom: "distinctio",
-              validUpTo: "eligendi",
-              value: "sit",
-            },
-            {
-              validFrom: "culpa",
-              validUpTo: "tempore",
-              value: "adipisci",
-            },
-          ],
-          key: "cumque",
-        },
-        {
-          answers: [
-            {
-              validFrom: "consequatur",
-              validUpTo: "minus",
-              value: "quaerat",
-            },
-          ],
-          key: "sapiente",
-        },
-        {
-          answers: [
-            {
-              validFrom: "esse",
-              validUpTo: "blanditiis",
-              value: "provident",
-            },
-          ],
-          key: "a",
+          key: "<key>",
         },
       ],
-      state: "nulla",
-    },
-    {
-      questions: [
-        {
-          answers: [
-            {
-              validFrom: "quasi",
-              validUpTo: "a",
-              value: "error",
-            },
-            {
-              validFrom: "sint",
-              validUpTo: "pariatur",
-              value: "possimus",
-            },
-          ],
-          key: "quia",
-        },
-        {
-          answers: [
-            {
-              validFrom: "asperiores",
-              validUpTo: "facere",
-              value: "veritatis",
-            },
-            {
-              validFrom: "consequuntur",
-              validUpTo: "quasi",
-              value: "similique",
-            },
-            {
-              validFrom: "culpa",
-              validUpTo: "aliquid",
-              value: "tenetur",
-            },
-            {
-              validFrom: "quae",
-              validUpTo: "earum",
-              value: "vel",
-            },
-          ],
-          key: "in",
-        },
-        {
-          answers: [
-            {
-              validFrom: "libero",
-              validUpTo: "illum",
-              value: "soluta",
-            },
-            {
-              validFrom: "accusantium",
-              validUpTo: "aliquam",
-              value: "sapiente",
-            },
-          ],
-          key: "dicta",
-        },
-      ],
-      state: "ullam",
+      state: "string",
     },
   ],
 };
 
-sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes(employeeUuid, requestBody).then((res: PutV1EmployeesEmployeeIdStateTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes(employeeUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -1,4 +1,5 @@
-# contractors
+# Contractors
+(*contractors*)
 
 ### Available Operations
 
@@ -20,20 +21,23 @@ A contractor can only be deleted when there are no contractor payments.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1ContractorsContractorIdRequest, DeleteV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1ContractorsContractorIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorId: string = "ea";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const contractorId: string = "string";
 
-sdk.contractors.deleteV1ContractorsContractorId(contractorId).then((res: DeleteV1ContractorsContractorIdResponse) => {
+  const res = await sdk.contractors.deleteV1ContractorsContractorId(contractorId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -59,25 +63,25 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdContractorsRequest,
-  GetV1CompaniesCompanyIdContractorsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdContractorsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "aliquid";
-const page: number = 6754.39;
-const per: number = 8811.04;
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const page: number = 5925.71;
+const per: number = 9595.07;
 
-sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per).then((res: GetV1CompaniesCompanyIdContractorsResponse) => {
+  const res = await sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -105,20 +109,23 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorsContractorIdRequest, GetV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorId: string = "non";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const contractorId: string = "string";
 
-sdk.contractors.getV1ContractorsContractorId(contractorId).then((res: GetV1ContractorsContractorIdResponse) => {
+  const res = await sdk.contractors.getV1ContractorsContractorId(contractorId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -144,23 +151,23 @@ scope: `contractors:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorsContractorUuidAddressRequest,
-  GetV1ContractorsContractorUuidAddressResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorUuidAddressRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "occaecati";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const contractorUuid: string = "string";
 
-sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid).then((res: GetV1ContractorsContractorUuidAddressResponse) => {
+  const res = await sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -217,23 +224,23 @@ scope: `contractors.read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorsContractorUuidOnboardingStatusRequest,
-  GetV1ContractorsContractorUuidOnboardingStatusResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorUuidOnboardingStatusRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "enim";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const contractorUuid: string = "string";
 
-sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid).then((res: GetV1ContractorsContractorUuidOnboardingStatusResponse) => {
+  const res = await sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -264,38 +271,28 @@ import {
   PostV1CompaniesCompanyIdContractorsRequestBody,
   PostV1CompaniesCompanyIdContractorsRequestBodyType,
   PostV1CompaniesCompanyIdContractorsRequestBodyWageType,
-  PostV1CompaniesCompanyIdContractorsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "accusamus";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdContractorsRequestBody = {
-  businessName: "delectus",
-  ein: "quidem",
-  email: "Mohammad_Olson@yahoo.com",
-  fileNewHireReport: false,
-  firstName: "Verlie",
   hourlyRate: "40.0",
-  isActive: false,
-  lastName: "Feeney",
-  middleInitial: "deserunt",
-  selfOnboarding: false,
-  ssn: "nisi",
   startDate: "2020-01-11",
-  type: PostV1CompaniesCompanyIdContractorsRequestBodyType.Individual,
-  wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType.Hourly,
-  workState: "omnis",
+  wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType.Fixed,
 };
 
-sdk.contractors.postV1CompaniesCompanyIdContractors(companyId, requestBody).then((res: PostV1CompaniesCompanyIdContractorsResponse) => {
+  const res = await sdk.contractors.postV1CompaniesCompanyIdContractors(companyId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -331,39 +328,28 @@ import {
   PutV1ContractorsContractorIdRequestBody,
   PutV1ContractorsContractorIdRequestBodyType,
   PutV1ContractorsContractorIdRequestBodyWageType,
-  PutV1ContractorsContractorIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorId: string = "molestiae";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const contractorId: string = "string";
 const requestBody: PutV1ContractorsContractorIdRequestBody = {
-  businessName: "perferendis",
-  ein: "nihil",
-  email: "Michele29@gmail.com",
-  fileNewHireReport: false,
-  firstName: "Geraldine",
   hourlyRate: "40.0",
-  isActive: false,
-  lastName: "Mosciski",
-  middleInitial: "nobis",
-  selfOnboarding: false,
-  ssn: "eum",
   startDate: "2020-01-11",
-  type: PutV1ContractorsContractorIdRequestBodyType.Business,
-  version: "aspernatur",
-  wageType: PutV1ContractorsContractorIdRequestBodyWageType.Fixed,
-  workState: "magnam",
+  version: "string",
 };
 
-sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody).then((res: PutV1ContractorsContractorIdResponse) => {
+  const res = await sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -393,29 +379,26 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1ContractorsContractorUuidAddressRequest,
   PutV1ContractorsContractorUuidAddressRequestBody,
-  PutV1ContractorsContractorUuidAddressResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "et";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const contractorUuid: string = "string";
 const requestBody: PutV1ContractorsContractorUuidAddressRequestBody = {
-  city: "Fernestead",
-  state: "quos",
-  street1: "sint",
-  street2: "accusantium",
-  version: "mollitia",
-  zip: "reiciendis",
+  version: "string",
 };
 
-sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody).then((res: PutV1ContractorsContractorUuidAddressResponse) => {
+  const res = await sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -455,24 +438,24 @@ import {
   PutV1ContractorsContractorUuidOnboardingStatusRequest,
   PutV1ContractorsContractorUuidOnboardingStatusRequestBody,
   PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus,
-  PutV1ContractorsContractorUuidOnboardingStatusResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "mollitia";
-const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {
-  onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus.OnboardingCompleted,
-};
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const contractorUuid: string = "string";
+const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {};
 
-sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus(contractorUuid, requestBody).then((res: PutV1ContractorsContractorUuidOnboardingStatusResponse) => {
+  const res = await sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus(contractorUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

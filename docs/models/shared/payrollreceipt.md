@@ -1,7 +1,5 @@
 # PayrollReceipt
 
-Example response
-
 
 ## Fields
 

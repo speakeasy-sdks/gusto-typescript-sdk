@@ -48,6 +48,9 @@ export class PutV1ContractorsContractorUuidAddressRequest extends SpeakeasyBase 
 }
 
 export class PutV1ContractorsContractorUuidAddressResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -57,9 +60,15 @@ export class PutV1ContractorsContractorUuidAddressResponse extends SpeakeasyBase
     @SpeakeasyMetadata()
     contractorAddress?: shared.ContractorAddress1;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

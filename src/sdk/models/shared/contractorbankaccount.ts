@@ -13,9 +13,6 @@ export enum ContractorBankAccountAccountType {
     Savings = "Savings",
 }
 
-/**
- * Example response
- */
 export class ContractorBankAccount extends SpeakeasyBase {
     /**
      * Bank account type

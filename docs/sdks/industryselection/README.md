@@ -1,4 +1,5 @@
-# industrySelection
+# IndustrySelection
+(*industrySelection*)
 
 ### Available Operations
 
@@ -13,20 +14,23 @@ Get industry selection for the company.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyIndustryRequest, GetV1CompanyIndustryResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyIndustryRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "tempora";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
 
-sdk.industrySelection.getV1CompanyIndustry(companyId).then((res: GetV1CompanyIndustryResponse) => {
+  const res = await sdk.industrySelection.getV1CompanyIndustry(companyId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -50,32 +54,30 @@ Update the company industry selection by passing in industry classification code
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompanyIndustryRequest,
-  PutV1CompanyIndustryRequestBody,
-  PutV1CompanyIndustryResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1CompanyIndustryRequest, PutV1CompanyIndustryRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "aspernatur";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
 const requestBody: PutV1CompanyIndustryRequestBody = {
-  naicsCode: "voluptas",
+  naicsCode: "string",
   sicCodes: [
-    "voluptas",
-    "minima",
+    "string",
   ],
-  title: "Miss",
+  title: "string",
 };
 
-sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody).then((res: PutV1CompanyIndustryResponse) => {
+  const res = await sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

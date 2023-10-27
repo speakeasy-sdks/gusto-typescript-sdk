@@ -1,7 +1,5 @@
 # EmployeePaymentMethod1
 
-Example response
-
 
 ## Fields
 

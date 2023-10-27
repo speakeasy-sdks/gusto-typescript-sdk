@@ -15,6 +15,9 @@ export class GetV1CompaniesPayrollBlockersCompanyUuidRequest extends SpeakeasyBa
 }
 
 export class GetV1CompaniesPayrollBlockersCompanyUuidResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -24,9 +27,15 @@ export class GetV1CompaniesPayrollBlockersCompanyUuidResponse extends SpeakeasyB
     @SpeakeasyMetadata({ elemType: shared.PayrollBlocker })
     payrollBlockers?: shared.PayrollBlocker[];
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

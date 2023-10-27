@@ -17,9 +17,6 @@ export class DepartmentEmployees extends SpeakeasyBase {
     uuid?: string;
 }
 
-/**
- * Department Object Example
- */
 export class Department extends SpeakeasyBase {
     /**
      * The UUID of the company

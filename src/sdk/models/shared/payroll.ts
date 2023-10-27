@@ -497,9 +497,6 @@ export enum PayrollWithholdingPayPeriod {
     Annually = "Annually",
 }
 
-/**
- * Example response
- */
 export class Payroll extends SpeakeasyBase {
     /**
      * A timestamp of the last valid payroll calculation. Null is there isn't a valid calculation.

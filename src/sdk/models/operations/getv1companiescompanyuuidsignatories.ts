@@ -15,6 +15,9 @@ export class GetV1CompaniesCompanyUuidSignatoriesRequest extends SpeakeasyBase {
 }
 
 export class GetV1CompaniesCompanyUuidSignatoriesResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -24,9 +27,15 @@ export class GetV1CompaniesCompanyUuidSignatoriesResponse extends SpeakeasyBase 
     @SpeakeasyMetadata({ elemType: shared.Signatory })
     signatories?: shared.Signatory[];
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

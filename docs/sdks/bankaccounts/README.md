@@ -1,4 +1,5 @@
-# bankAccounts
+# BankAccounts
+(*bankAccounts*)
 
 ### Available Operations
 
@@ -15,23 +16,23 @@ Returns company bank accounts. Currently we only support a single default bank a
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdBankAccountsRequest,
-  GetV1CompaniesCompanyIdBankAccountsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdBankAccountsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "provident";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
 
-sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
+  const res = await sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -68,26 +69,24 @@ import {
   PostV1CompaniesCompanyIdBankAccountsRequest,
   PostV1CompaniesCompanyIdBankAccountsRequestBody,
   PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType,
-  PostV1CompaniesCompanyIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "distinctio";
-const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {
-  accountNumber: "quibusdam",
-  accountType: PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType.Savings,
-  routingNumber: "nulla",
-};
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {};
 
-sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(companyId, requestBody).then((res: PostV1CompaniesCompanyIdBankAccountsResponse) => {
+  const res = await sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(companyId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -121,23 +120,26 @@ This endpoint creates a new **verified** bank account by using a plaid processor
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1PlaidProcessorTokenRequestBodyOwnerType, PostV1PlaidProcessorTokenResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1PlaidProcessorTokenRequestBodyOwnerType } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.bankAccounts.postV1PlaidProcessorToken({
-  ownerId: "corrupti",
-  ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType.Company,
-  processorToken: "illum",
-}).then((res: PostV1PlaidProcessorTokenResponse) => {
+  const res = await sdk.bankAccounts.postV1PlaidProcessorToken({
+    ownerId: "string",
+    ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType.Company,
+    processorToken: "string",
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -177,26 +179,25 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1CompaniesCompanyIdBankAccountsVerifyRequest,
   PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody,
-  PutV1CompaniesCompanyIdBankAccountsVerifyResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const bankAccountUuid: string = "vel";
-const companyId: string = "error";
-const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {
-  deposit1: 6458.94,
-  deposit2: 3843.82,
-};
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const bankAccountUuid: string = "string";
+const companyId: string = "string";
+const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {};
 
-sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(bankAccountUuid, companyId, requestBody).then((res: PutV1CompaniesCompanyIdBankAccountsVerifyResponse) => {
+  const res = await sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(bankAccountUuid, companyId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

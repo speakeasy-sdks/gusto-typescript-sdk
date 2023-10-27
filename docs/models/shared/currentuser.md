@@ -1,7 +1,5 @@
 # CurrentUser
 
-Example response
-
 
 ## Fields
 

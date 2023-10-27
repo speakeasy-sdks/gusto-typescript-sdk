@@ -1,7 +1,5 @@
 # PaymentConfigs
 
-Example response
-
 
 ## Fields
 

@@ -48,12 +48,21 @@ export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON extends S
 }
 
 export class DeleteV1CompanyBenefitsCompanyBenefitIdResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

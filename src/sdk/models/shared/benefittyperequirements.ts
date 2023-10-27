@@ -237,9 +237,6 @@ export class BenefitTypeRequirementsLimitOption extends SpeakeasyBase {
     required?: boolean;
 }
 
-/**
- * Benefit type requirements response
- */
 export class BenefitTypeRequirements extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "catch_up" })
