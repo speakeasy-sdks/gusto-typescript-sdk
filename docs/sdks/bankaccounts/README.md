@@ -28,6 +28,7 @@ const companyId: string = "string";
 
   const res = await sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -81,6 +82,7 @@ const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {};
 
   const res = await sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(companyId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -132,6 +134,7 @@ import { PostV1PlaidProcessorTokenRequestBodyOwnerType } from "@speakeasy-sdks/g
     ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType.Company,
     processorToken: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -189,6 +192,7 @@ const companyId: string = "string";
 const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {};
 
   const res = await sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(bankAccountUuid, companyId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

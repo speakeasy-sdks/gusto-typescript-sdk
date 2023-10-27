@@ -30,6 +30,7 @@ const formId: string = "string";
 
   const res = await sdk.employeeForms.getV1EmployeeForm(employeeId, formId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -71,6 +72,7 @@ const formId: string = "string";
 
   const res = await sdk.employeeForms.getV1EmployeeFormPdf(employeeId, formId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -110,6 +112,7 @@ import { GetV1EmployeeFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models
 const employeeId: string = "string";
 
   const res = await sdk.employeeForms.getV1EmployeeForms(employeeId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -157,6 +160,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
     employeeId: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -201,6 +205,7 @@ const requestBody: PutV1EmployeeFormSignRequestBody = {
 };
 
   const res = await sdk.employeeForms.putV1EmployeeFormSign(employeeId, formId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -35,6 +35,7 @@ const employeeId: string = "string";
 
   const res = await sdk.employees.deleteV1Employee(employeeId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -77,6 +78,7 @@ const employeeId: string = "string";
 const include: GetV1EmployeesInclude = GetV1EmployeesInclude.AllCompensations;
 
   const res = await sdk.employees.getV1Employees(employeeId, include);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -122,6 +124,7 @@ const per: number = 9828.87;
 
   const res = await sdk.employees.getV1EmployeesEmployeeIdCustomFields(employeeId, page, per);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -164,6 +167,7 @@ import { GetV1EmployeesEmployeeIdHomeAddressRequest } from "@speakeasy-sdks/gust
 const employeeId: string = "string";
 
   const res = await sdk.employees.getV1EmployeesEmployeeIdHomeAddress(employeeId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -241,6 +245,7 @@ const employeeId: string = "string";
 
   const res = await sdk.employees.getV1EmployeesEmployeeIdOnboardingStatus(employeeId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -282,6 +287,7 @@ const employeeUuid: string = "string";
 const timeOffType: string = "string";
 
   const res = await sdk.employees.getVersionEmployeesTimeOffActivities(employeeUuid, timeOffType);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -326,6 +332,7 @@ const requestBody: PostV1EmployeesRequestBody = {};
 
   const res = await sdk.employees.postV1Employees(companyId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -367,6 +374,7 @@ import { PutV1EmployeeFinishOnboardingRequest } from "@speakeasy-sdks/gusto/dist
 const employeeId: string = "string";
 
   const res = await sdk.employees.putV1EmployeeFinishOnboarding(employeeId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -411,6 +419,7 @@ const requestBody: PutV1EmployeesRequestBody = {
 };
 
   const res = await sdk.employees.putV1Employees(employeeId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -459,6 +468,7 @@ const requestBody: PutV1EmployeesEmployeeIdHomeAddressRequestBody = {
 };
 
   const res = await sdk.employees.putV1EmployeesEmployeeIdHomeAddress(employeeId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -516,6 +526,7 @@ const requestBody: PutV1EmployeesEmployeeIdOnboardingStatusRequestBody = {
 };
 
   const res = await sdk.employees.putV1EmployeesEmployeeIdOnboardingStatus(employeeId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

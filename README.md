@@ -359,6 +359,109 @@ return value of `next` is `null`, then there are no more pages to be fetched.
 Here's an example of one such pagination call:
 <!-- End Pagination -->
 
+
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+
+<!-- End Error Handling -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Name
+
+You can override the default server globally by passing a server name to the `server: string` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the names associated with the available servers:
+
+| Name | Server | Variables |
+| ----- | ------ | --------- |
+| `demo` | `https://api.gusto-demo.com` | None |
+| `prod` | `https://api.gusto.com` | None |
+
+For example:
+
+
+```typescript
+import { Gusto } from "@speakeasy-sdks/gusto";
+import { GetV1CompaniesCompanyIdBankAccountsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+
+(async () => {
+    const sdk = new Gusto({
+        security: {
+            authorization: "",
+        },
+        server: "prod",
+    });
+    const companyId: string = "string";
+
+    const res = await sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId);
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
+
+
+```typescript
+import { Gusto } from "@speakeasy-sdks/gusto";
+import { GetV1CompaniesCompanyIdBankAccountsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+
+(async () => {
+    const sdk = new Gusto({
+        security: {
+            authorization: "",
+        },
+        serverURL: "https://api.gusto-demo.com",
+    });
+    const companyId: string = "string";
+
+    const res = await sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId);
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+<!-- End Server Selection -->
+
+
+
+<!-- Start Custom HTTP Client -->
+# Custom HTTP Client
+
+The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+
+
+For example, you could specify a header for every request that your sdk makes as follows:
+
+```typescript
+from @speakeasy-sdks/gusto import Gusto;
+import axios;
+
+const httpClient = axios.create({
+    headers: {'x-custom-header': 'someValue'}
+})
+
+
+const sdk = new Gusto({defaultClient: httpClient});
+```
+
+
+<!-- End Custom HTTP Client -->
+
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
 

@@ -26,6 +26,7 @@ const companyUuid: string = "string";
 
   const res = await sdk.paymentConfigs.getV1CompanyPaymentConfigs(companyUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -72,6 +73,7 @@ const requestBody: PutV1CompanyPaymentConfigsRequestBody = {
 };
 
   const res = await sdk.paymentConfigs.putV1CompanyPaymentConfigs(companyUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

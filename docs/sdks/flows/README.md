@@ -32,6 +32,7 @@ const requestBody: PostV1CompanyFlowsRequestBody = {
 
   const res = await sdk.flows.postV1CompanyFlows(companyUuid, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }

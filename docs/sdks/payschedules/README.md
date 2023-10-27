@@ -35,6 +35,7 @@ const startDate: string = "2020-01-01";
 
   const res = await sdk.paySchedules.getV1CompaniesCompanyIdPayPeriods(companyId, endDate, startDate);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -80,6 +81,7 @@ const per: number = 9327.24;
 
   const res = await sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules(companyId, page, per);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -123,6 +125,7 @@ const companyId: string = "string";
 const payScheduleId: string = "string";
 
   const res = await sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -177,6 +180,7 @@ const requestBody: PostV1CompaniesCompanyIdPaySchedulesRequestBody = {
 
   const res = await sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules(companyId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -223,6 +227,7 @@ const requestBody: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody =
 };
 
   const res = await sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

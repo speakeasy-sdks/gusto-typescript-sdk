@@ -34,6 +34,7 @@ const departmentUuid: string = "string";
 
   const res = await sdk.departments.deleteDepartment(departmentUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -74,6 +75,7 @@ import { GetCompaniesDepartmentsRequest } from "@speakeasy-sdks/gusto/dist/sdk/m
 const companyUuid: string = "string";
 
   const res = await sdk.departments.getCompaniesDepartments(companyUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -117,6 +119,7 @@ const departmentUuid: string = "string";
 
   const res = await sdk.departments.getDepartment(departmentUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -158,6 +161,7 @@ const companyUuid: string = "string";
 const requestBody: PostDepartmentsRequestBody = {};
 
   const res = await sdk.departments.postDepartments(companyUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -215,6 +219,7 @@ const requestBody: PutAddPeopleToDepartmentRequestBody = {
 
   const res = await sdk.departments.putAddPeopleToDepartment(departmentUuid, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -259,6 +264,7 @@ const requestBody: PutDepartmentsRequestBody = {
 };
 
   const res = await sdk.departments.putDepartments(departmentUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -315,6 +321,7 @@ const requestBody: PutRemovePeopleFromDepartmentRequestBody = {
 };
 
   const res = await sdk.departments.putRemovePeopleFromDepartment(departmentUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

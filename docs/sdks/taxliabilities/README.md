@@ -28,6 +28,7 @@ const companyUuid: string = "string";
 
   const res = await sdk.taxLiabilities.getV1TaxLiabilities(companyUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -77,6 +78,7 @@ const requestBody: PutV1TaxLiabilitiesRequestBody = {
 
   const res = await sdk.taxLiabilities.putV1TaxLiabilities(companyUuid, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -117,6 +119,7 @@ import { PutV1TaxLiabilitiesFinishRequest } from "@speakeasy-sdks/gusto/dist/sdk
 const companyUuid: string = "string";
 
   const res = await sdk.taxLiabilities.putV1TaxLiabilitiesFinish(companyUuid);
+
 
   if (res.statusCode == 200) {
     // handle response

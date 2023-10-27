@@ -40,6 +40,7 @@ const companyId: string = "string";
 
   const res = await sdk.companies.getV1Companies(companyId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -80,6 +81,7 @@ const page: number = 2654.95;
 const per: number = 7436.28;
 
   const res = await sdk.companies.getV1CompaniesCompanyIdAdmins(companyId, page, per);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -125,6 +127,7 @@ const page: number = 9765.05;
 const per: number = 751.25;
 
   const res = await sdk.companies.getV1CompaniesCompanyIdCustomFields(companyId, page, per);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -178,6 +181,7 @@ const companyUuid: string = "string";
 
   const res = await sdk.companies.getV1CompanyFinishOnboarding(companyUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -216,6 +220,7 @@ import { GetV1CompanyOnboardingStatusRequest } from "@speakeasy-sdks/gusto/dist/
 const companyUuid: string = "string";
 
   const res = await sdk.companies.getV1CompanyOnboardingStatus(companyUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -264,6 +269,7 @@ const requestBody: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceReq
 
   const res = await sdk.companies.postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService(companyUuid, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -310,6 +316,7 @@ const requestBody: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceR
 
   const res = await sdk.companies.postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService(companyUuid, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -354,6 +361,7 @@ const requestBody: PostV1CompaniesCompanyIdAdminsRequestBody = {
 };
 
   const res = await sdk.companies.postV1CompaniesCompanyIdAdmins(companyId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -401,6 +409,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
       lastName: "Mann",
     },
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -466,6 +475,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
     },
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -512,6 +522,7 @@ const requestBody: PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody = {
 };
 
   const res = await sdk.companies.putV1PartnerManagedCompaniesCompanyUuidMigrate(companyUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

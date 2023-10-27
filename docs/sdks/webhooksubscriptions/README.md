@@ -39,6 +39,7 @@ const webhookSubscriptionUuid: string = "string";
 
   const res = await sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -85,6 +86,7 @@ import { GetV1WebhookSubscriptionUuidRequest } from "@speakeasy-sdks/gusto/dist/
 const webhookSubscriptionUuid: string = "string";
 
   const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -133,6 +135,7 @@ const webhookSubscriptionUuid: string = "string";
 
   const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -176,6 +179,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
   });
 
   const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptions();
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -226,6 +230,7 @@ import { PostV1WebhookSubscriptionRequestBodySubscriptionTypes } from "@speakeas
     ],
     url: "http://adept-mutation.com",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -283,6 +288,7 @@ const requestBody: PutV1VerifyWebhookSubscriptionUuidRequestBody = {
 
   const res = await sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -339,6 +345,7 @@ const requestBody: PutV1WebhookSubscriptionUuidRequestBody = {
 };
 
   const res = await sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

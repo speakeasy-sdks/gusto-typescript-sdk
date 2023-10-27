@@ -29,6 +29,7 @@ const employeeId: string = "string";
 
   const res = await sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -68,6 +69,7 @@ import { GetV1EmployeesEmployeeIdPaymentMethodRequest } from "@speakeasy-sdks/gu
 const employeeId: string = "string";
 
   const res = await sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -117,6 +119,7 @@ const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
 };
 
   const res = await sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -170,6 +173,7 @@ const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
 };
 
   const res = await sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -32,6 +32,7 @@ const employeeBenefitId: string = "string";
 
   const res = await sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -72,6 +73,7 @@ import { GetV1EmployeeBenefitsEmployeeBenefitIdRequest } from "@speakeasy-sdks/g
 const employeeBenefitId: string = "string";
 
   const res = await sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -117,6 +119,7 @@ const page: number = 2519.68;
 const per: number = 8862.03;
 
   const res = await sdk.employeeBenefits.getV1EmployeesEmployeeIdEmployeeBenefits(employeeId, page, per);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -164,6 +167,7 @@ const postEmployeeYtdBenefitAmountsFromDifferentCompany: PostEmployeeYtdBenefitA
 };
 
   const res = await sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany(employeeId, postEmployeeYtdBenefitAmountsFromDifferentCompany);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -219,6 +223,7 @@ const requestBody: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody = {
 
   const res = await sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits(employeeId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -272,6 +277,7 @@ const requestBody: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody = {
 };
 
   const res = await sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

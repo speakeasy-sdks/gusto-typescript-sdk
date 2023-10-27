@@ -29,6 +29,7 @@ const employeeId: string = "string";
 
   const res = await sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(employeeId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -69,6 +70,7 @@ import { GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest } from "
 const companyId: string = "string";
 
   const res = await sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(companyId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -112,6 +114,7 @@ import { GetV1EmployeesEmployeeIdTerminationsRequest } from "@speakeasy-sdks/gus
 const employeeId: string = "string";
 
   const res = await sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(employeeId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -162,6 +165,7 @@ const requestBody: PostV1EmployeesEmployeeIdTerminationsRequestBody = {
 
   const res = await sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations(employeeId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -209,6 +213,7 @@ const requestBody: PutV1TerminationsEmployeeIdRequestBody = {
 };
 
   const res = await sdk.employeeTermination.putV1TerminationsEmployeeId(employeeId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

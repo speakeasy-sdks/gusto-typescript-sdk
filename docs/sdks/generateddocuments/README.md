@@ -28,6 +28,7 @@ const requestUuid: string = "string";
 
   const res = await sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid(documentType, requestUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }

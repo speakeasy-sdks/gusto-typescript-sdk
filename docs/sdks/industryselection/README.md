@@ -26,6 +26,7 @@ const companyId: string = "string";
 
   const res = await sdk.industrySelection.getV1CompanyIndustry(companyId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -71,6 +72,7 @@ const requestBody: PutV1CompanyIndustryRequestBody = {
 };
 
   const res = await sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

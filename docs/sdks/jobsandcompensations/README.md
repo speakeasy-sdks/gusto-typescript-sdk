@@ -34,6 +34,7 @@ const jobId: string = "string";
 
   const res = await sdk.jobsAndCompensations.deleteV1JobsJobId(jobId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -77,6 +78,7 @@ import { GetV1CompensationsCompensationIdRequest } from "@speakeasy-sdks/gusto/d
 const compensationId: string = "string";
 
   const res = await sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -122,6 +124,7 @@ const per: number = 7200.06;
 
   const res = await sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page, per);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -166,6 +169,7 @@ const jobId: string = "string";
 const include: GetV1JobsJobIdInclude = GetV1JobsJobIdInclude.AllCompensations;
 
   const res = await sdk.jobsAndCompensations.getV1JobsJobId(jobId, include);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -216,6 +220,7 @@ const per: number = 1707.54;
 
   const res = await sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -260,6 +265,7 @@ const employeeId: string = "string";
 const requestBody: PostV1JobsJobIdRequestBody = {};
 
   const res = await sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -317,6 +323,7 @@ const requestBody: PutV1CompensationsCompensationIdRequestBody = {
 
   const res = await sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -361,6 +368,7 @@ const requestBody: PutV1JobsJobIdRequestBody = {
 };
 
   const res = await sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -32,6 +32,7 @@ const contractorPaymentId: string = "string";
 
   const res = await sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -74,6 +75,7 @@ const companyId: string = "string";
 const contractorPaymentId: string = "string";
 
   const res = await sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -118,6 +120,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
     endDate: "2020-12-31",
     startDate: "2020-01-01",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -166,6 +169,7 @@ import { GetV1ContractorPaymentsContractorPaymentUuidReceiptRequest } from "@spe
 const contractorPaymentUuid: string = "string";
 
   const res = await sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt(contractorPaymentUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -220,6 +224,7 @@ const requestBody: PostV1CompaniesCompanyIdContractorPaymentsRequestBody = {
 };
 
   const res = await sdk.contractorPayments.postV1CompaniesCompanyIdContractorPayments(companyId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

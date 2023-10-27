@@ -28,6 +28,7 @@ const employeeUuid: string = "string";
 
   const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -79,6 +80,7 @@ const employeeUuid: string = "string";
 
   const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -123,6 +125,7 @@ const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
 };
 
   const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -190,6 +193,7 @@ const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
 };
 
   const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes(employeeUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -28,6 +28,7 @@ const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
 
   const res = await sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails(operationSecurity, companyId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -73,6 +74,7 @@ const requestBody: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody = {
 };
 
   const res = await sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails(companyId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

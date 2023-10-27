@@ -41,6 +41,7 @@ const per: number = 7763.39;
 
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -93,6 +94,7 @@ import { GetV1CompaniesCompanyIdPayrollsInclude } from "@speakeasy-sdks/gusto/di
       GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
     ],
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -147,6 +149,7 @@ const showCalculation: string = "string";
 
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -192,6 +195,7 @@ import { GetV1CompaniesPayrollBlockersCompanyUuidRequest } from "@speakeasy-sdks
 const companyUuid: string = "string";
 
   const res = await sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -239,6 +243,7 @@ const payrollUuid: string = "string";
 
   const res = await sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -280,6 +285,7 @@ const employeeId: string = "string";
 const payrollId: string = "string";
 
   const res = await sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -339,6 +345,7 @@ const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
 
   const res = await sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -387,6 +394,7 @@ const requestBody: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollCh
 
   const res = await sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -430,6 +438,7 @@ const companyId: string = "string";
 const payrollId: string = "string";
 
   const res = await sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -497,6 +506,7 @@ const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
 };
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -569,6 +579,7 @@ const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEnd
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -616,6 +627,7 @@ const payrollId: string = "string";
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -658,6 +670,7 @@ const companyId: string = "string";
 const payrollId: string = "string";
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId);
+
 
   if (res.statusCode == 200) {
     // handle response

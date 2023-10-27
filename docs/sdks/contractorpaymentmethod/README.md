@@ -28,6 +28,7 @@ const contractorUuid: string = "string";
 
   const res = await sdk.contractorPaymentMethod.getV1ContractorsContractorUuidBankAccounts(contractorUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -66,6 +67,7 @@ import { GetV1ContractorsContractorUuidPaymentMethodRequest } from "@speakeasy-s
 const contractorUuid: string = "string";
 
   const res = await sdk.contractorPaymentMethod.getV1ContractorsContractorUuidPaymentMethod(contractorUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -119,6 +121,7 @@ const requestBody: PostV1ContractorsContractorUuidBankAccountsRequestBody = {
 
   const res = await sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts(contractorUuid, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -166,6 +169,7 @@ const requestBody: PutV1ContractorsContractorIdPaymentMethodRequestBody = {
 };
 
   const res = await sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod(contractorUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -34,6 +34,7 @@ const companyUuid: string = "string";
 
   const res = await sdk.timeOffPolicies.getCompaniesCompanyUuidTimeOffPolicies(companyUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -73,6 +74,7 @@ import { GetTimeOffPoliciesTimeOffPolicyUuidRequest } from "@speakeasy-sdks/gust
 const timeOffPolicyUuid: string = "string";
 
   const res = await sdk.timeOffPolicies.getTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -122,6 +124,7 @@ const requestBody: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody = {
 };
 
   const res = await sdk.timeOffPolicies.postCompaniesCompanyUuidTimeOffPolicies(companyUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -176,6 +179,7 @@ const requestBody: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBo
 
   const res = await sdk.timeOffPolicies.postV1PayrollsPayrollIdCalculateAccruingTimeOffHours(employeeId, payrollId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -223,6 +227,7 @@ const requestBody: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody = {};
 
   const res = await sdk.timeOffPolicies.putTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -262,6 +267,7 @@ import { PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateRequest } from "@speakea
 const timeOffPolicyUuid: string = "string";
 
   const res = await sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate(timeOffPolicyUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -311,6 +317,7 @@ const requestBody: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBo
 };
 
   const res = await sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees(timeOffPolicyUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -362,6 +369,7 @@ const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest
 
   const res = await sdk.timeOffPolicies.putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees(timeOffPolicyUuid, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -411,6 +419,7 @@ const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody 
 };
 
   const res = await sdk.timeOffPolicies.putVersionTimeOffPoliciesTimeOffPolicyUuidBalance(timeOffPolicyUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

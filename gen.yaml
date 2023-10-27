@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: b3be58d6a42b3f6b9a53f2e76d05f1a8
   docVersion: "2023-03-01"
-  speakeasyVersion: 1.107.0
-  generationVersion: 2.171.0
+  speakeasyVersion: 1.108.1
+  generationVersion: 2.172.4
 generation:
   repoURL: https://github.com/speakeasy-sdks/gusto-typescript-sdk.git
   sdkClassName: gusto
@@ -18,9 +18,9 @@ features:
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
     methodSecurity: 2.82.0
-    serverIDs: 2.81.1
+    serverIDs: 2.81.2
 typescript:
-  version: 0.57.0
+  version: 0.57.1
   author: gusto
   flattenGlobalSecurity: false
   installationURL: https://github.com/speakeasy-sdks/gusto-typescript-sdk

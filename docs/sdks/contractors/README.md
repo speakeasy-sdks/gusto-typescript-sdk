@@ -33,6 +33,7 @@ const contractorId: string = "string";
 
   const res = await sdk.contractors.deleteV1ContractorsContractorId(contractorId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -75,6 +76,7 @@ const page: number = 5925.71;
 const per: number = 9595.07;
 
   const res = await sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -119,6 +121,7 @@ const contractorId: string = "string";
 
   const res = await sdk.contractors.getV1ContractorsContractorId(contractorId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -159,6 +162,7 @@ import { GetV1ContractorsContractorUuidAddressRequest } from "@speakeasy-sdks/gu
 const contractorUuid: string = "string";
 
   const res = await sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -232,6 +236,7 @@ const contractorUuid: string = "string";
 
   const res = await sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -282,6 +287,7 @@ const requestBody: PostV1CompaniesCompanyIdContractorsRequestBody = {
 };
 
   const res = await sdk.contractors.postV1CompaniesCompanyIdContractors(companyId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -339,6 +345,7 @@ const requestBody: PutV1ContractorsContractorIdRequestBody = {
 
   const res = await sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -386,6 +393,7 @@ const requestBody: PutV1ContractorsContractorUuidAddressRequestBody = {
 };
 
   const res = await sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -442,6 +450,7 @@ const contractorUuid: string = "string";
 const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {};
 
   const res = await sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus(contractorUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

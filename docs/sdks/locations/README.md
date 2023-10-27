@@ -36,6 +36,7 @@ const per: number = 6096.54;
 
   const res = await sdk.locations.getV1CompaniesCompanyIdLocations(companyId, page, per);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -79,6 +80,7 @@ const locationId: string = "string";
 
   const res = await sdk.locations.getV1LocationsLocationId(locationId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -120,6 +122,7 @@ const locationUuid: string = "string";
 const effectiveDate: string = "2020-01-31";
 
   const res = await sdk.locations.getV1LocationsLocationUuidMinimumWages(locationUuid, effectiveDate);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -175,6 +178,7 @@ const requestBody: PostV1CompaniesCompanyIdLocationsApplicationJSON = {
 
   const res = await sdk.locations.postV1CompaniesCompanyIdLocationsJson(companyId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -223,6 +227,7 @@ const requestBody: Uint8Array = "1@:2||$cFa" as bytes <<<>>>;
 
   const res = await sdk.locations.postV1CompaniesCompanyIdLocationsRaw(companyId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -267,6 +272,7 @@ const requestBody: PutV1LocationsLocationIdRequestBody = {
 };
 
   const res = await sdk.locations.putV1LocationsLocationId(locationId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -27,6 +27,7 @@ const companyUuid: string = "string";
 
   const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -108,6 +109,7 @@ const scheduling: boolean = false;
 
   const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -163,6 +165,7 @@ const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
 };
 
   const res = await sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

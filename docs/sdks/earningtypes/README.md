@@ -31,6 +31,7 @@ const earningTypeUuid: string = "string";
 
   const res = await sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -78,6 +79,7 @@ import { GetV1CompaniesCompanyIdEarningTypesRequest } from "@speakeasy-sdks/gust
 const companyId: string = "string";
 
   const res = await sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(companyId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -128,6 +130,7 @@ const requestBody: PostV1CompaniesCompanyIdEarningTypesRequestBody = {
 
   const res = await sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes(companyId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -174,6 +177,7 @@ const earningTypeUuid: string = "string";
 const requestBody: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody = {};
 
   const res = await sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -32,6 +32,7 @@ const per: number = 9088.83;
 
   const res = await sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -74,6 +75,7 @@ import { GetV1GarnishmentsGarnishmentIdRequest } from "@speakeasy-sdks/gusto/dis
 const garnishmentId: string = "string";
 
   const res = await sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -124,6 +126,7 @@ const requestBody: PostV1EmployeesEmployeeIdGarnishmentsRequestBody = {
 
   const res = await sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -168,6 +171,7 @@ const requestBody: PutV1GarnishmentsGarnishmentIdRequestBody = {
 };
 
   const res = await sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

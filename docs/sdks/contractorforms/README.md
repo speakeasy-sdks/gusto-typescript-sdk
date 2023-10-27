@@ -29,6 +29,7 @@ const formId: string = "string";
 
   const res = await sdk.contractorForms.getV1ContractorForm(contractorUuid, formId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -70,6 +71,7 @@ const formId: string = "string";
 
   const res = await sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -109,6 +111,7 @@ import { GetV1ContractorFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/mode
 const contractorUuid: string = "string";
 
   const res = await sdk.contractorForms.getV1ContractorForms(contractorUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -155,6 +158,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
   const res = await sdk.contractorForms.postV1SandboxGenerate1099({
     contractorId: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

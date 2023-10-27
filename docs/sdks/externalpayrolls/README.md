@@ -32,6 +32,7 @@ const externalPayrollId: string = "string";
 
   const res = await sdk.externalPayrolls.deleteV1ExternalPayroll(companyUuid, externalPayrollId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -72,6 +73,7 @@ import { GetV1CompanyExternalPayrollsRequest } from "@speakeasy-sdks/gusto/dist/
 const companyUuid: string = "string";
 
   const res = await sdk.externalPayrolls.getV1CompanyExternalPayrolls(companyUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -114,6 +116,7 @@ const externalPayrollId: string = "string";
 
   const res = await sdk.externalPayrolls.getV1ExternalPayroll(companyUuid, externalPayrollId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -154,6 +157,7 @@ const companyUuid: string = "string";
 const externalPayrollId: string = "string";
 
   const res = await sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes(companyUuid, externalPayrollId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -200,6 +204,7 @@ const requestBody: PostV1ExternalPayrollRequestBody = {
 };
 
   const res = await sdk.externalPayrolls.postV1ExternalPayroll(companyUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -265,6 +270,7 @@ const requestBody: PutV1ExternalPayrollRequestBody = {
 };
 
   const res = await sdk.externalPayrolls.putV1ExternalPayroll(companyUuid, externalPayrollId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

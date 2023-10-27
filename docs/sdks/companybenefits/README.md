@@ -36,6 +36,7 @@ const companyBenefitId: string = "string";
 
   const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -76,6 +77,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
   });
 
   const res = await sdk.companyBenefits.getV1Benefits();
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -119,6 +121,7 @@ const benefitId: string = "string";
 
   const res = await sdk.companyBenefits.getV1BenefitsBenefitId(benefitId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -159,6 +162,7 @@ import { GetV1BenefitsBenefitsIdRequirementsRequest } from "@speakeasy-sdks/gust
 const benefitId: string = "string";
 
   const res = await sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements(benefitId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -203,6 +207,7 @@ const endDate: string = "2022-12-31";
 const startDate: string = "2022-01-01";
 
   const res = await sdk.companyBenefits.getV1BenefitsCompanyBenefitIdSummary(companyBenefitId, detailed, endDate, startDate);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -251,6 +256,7 @@ const enrollmentCount: boolean = false;
 
   const res = await sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits(companyId, enrollmentCount);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -297,6 +303,7 @@ const companyBenefitId: string = "string";
 const withEmployeeBenefits: boolean = false;
 
   const res = await sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId(companyBenefitId, withEmployeeBenefits);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -348,6 +355,7 @@ const requestBody: PostV1CompaniesCompanyIdCompanyBenefitsRequestBody = {
 
   const res = await sdk.companyBenefits.postV1CompaniesCompanyIdCompanyBenefits(companyId, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -397,6 +405,7 @@ const requestBody: PutV1CompanyBenefitsCompanyBenefitIdRequestBody = {
 };
 
   const res = await sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId(companyBenefitId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

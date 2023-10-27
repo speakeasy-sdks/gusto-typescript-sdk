@@ -28,6 +28,7 @@ const formId: string = "string";
 
   const res = await sdk.companyForms.getV1CompanyForm(formId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -67,6 +68,7 @@ const formId: string = "string";
 
   const res = await sdk.companyForms.getV1CompanyFormPdf(formId);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -105,6 +107,7 @@ import { GetV1CompanyFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/
 const companyId: string = "string";
 
   const res = await sdk.companyForms.getV1CompanyForms(companyId);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -149,6 +152,7 @@ const requestBody: PutV1CompanyFormSignRequestBody = {
 };
 
   const res = await sdk.companyForms.putV1CompanyFormSign(formId, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -27,6 +27,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 
   const res = await sdk.user.getV1Me();
 
+
   if (res.statusCode == 200) {
     // handle response
   }

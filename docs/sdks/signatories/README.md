@@ -30,6 +30,7 @@ const signatoryUuid: string = "string";
 
   const res = await sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -69,6 +70,7 @@ import { GetV1CompaniesCompanyUuidSignatoriesRequest } from "@speakeasy-sdks/gus
 const companyUuid: string = "string";
 
   const res = await sdk.signatories.getV1CompaniesCompanyUuidSignatories(companyUuid);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -114,6 +116,7 @@ const requestBody: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody = {
 };
 
   const res = await sdk.signatories.postV1CompaniesCompanyUuidSignatoriesInvite(companyUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -173,6 +176,7 @@ const requestBody: PostV1CompanySignatoriesRequestBody = {
 
   const res = await sdk.signatories.postV1CompanySignatories(companyUuid, requestBody);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -220,6 +224,7 @@ const requestBody: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody 
 };
 
   const res = await sdk.signatories.putV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid, requestBody);
+
 
   if (res.statusCode == 200) {
     // handle response
