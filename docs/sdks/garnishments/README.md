@@ -1,4 +1,5 @@
-# garnishments
+# Garnishments
+(*garnishments*)
 
 ### Available Operations
 
@@ -17,25 +18,25 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdGarnishmentsRequest,
-  GetV1EmployeesEmployeeIdGarnishmentsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdGarnishmentsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "sunt";
-const page: number = 9920.12;
-const per: number = 2415.45;
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeId: string = "string";
+const page: number = 5514.05;
+const per: number = 9088.83;
 
-sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse) => {
+  const res = await sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -63,20 +64,23 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1GarnishmentsGarnishmentIdRequest, GetV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1GarnishmentsGarnishmentIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const garnishmentId: string = "non";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const garnishmentId: string = "string";
 
-sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId).then((res: GetV1GarnishmentsGarnishmentIdResponse) => {
+  const res = await sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -105,32 +109,28 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1EmployeesEmployeeIdGarnishmentsRequest,
   PostV1EmployeesEmployeeIdGarnishmentsRequestBody,
-  PostV1EmployeesEmployeeIdGarnishmentsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "amet";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeId: string = "string";
 const requestBody: PostV1EmployeesEmployeeIdGarnishmentsRequestBody = {
-  active: false,
-  amount: "beatae",
-  annualMaximum: "dignissimos",
+  amount: "string",
   courtOrdered: false,
-  deductAsPercentage: false,
-  description: "a",
-  payPeriodMaximum: "debitis",
-  recurring: false,
-  times: 233420,
+  description: "Advanced systematic hardware",
 };
 
-sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdGarnishmentsResponse) => {
+  const res = await sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -157,36 +157,26 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1GarnishmentsGarnishmentIdRequest,
-  PutV1GarnishmentsGarnishmentIdRequestBody,
-  PutV1GarnishmentsGarnishmentIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1GarnishmentsGarnishmentIdRequest, PutV1GarnishmentsGarnishmentIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const garnishmentId: string = "corporis";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const garnishmentId: string = "string";
 const requestBody: PutV1GarnishmentsGarnishmentIdRequestBody = {
-  active: false,
-  amount: "harum",
-  annualMaximum: "laboriosam",
-  courtOrdered: false,
-  deductAsPercentage: false,
-  description: "ipsa",
-  payPeriodMaximum: "voluptates",
-  recurring: false,
-  times: 730709,
-  version: "vitae",
+  version: "string",
 };
 
-sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody).then((res: PutV1GarnishmentsGarnishmentIdResponse) => {
+  const res = await sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

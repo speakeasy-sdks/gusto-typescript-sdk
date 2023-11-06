@@ -1,4 +1,5 @@
-# flows
+# Flows
+(*flows*)
 
 ### Available Operations
 
@@ -16,26 +17,26 @@ import {
   PostV1CompanyFlowsRequest,
   PostV1CompanyFlowsRequestBody,
   PostV1CompanyFlowsRequestBodyEntityType,
-  PostV1CompanyFlowsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "quidem";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 const requestBody: PostV1CompanyFlowsRequestBody = {
-  entityType: PostV1CompanyFlowsRequestBodyEntityType.Employee,
-  entityUuid: "necessitatibus",
-  flowType: "dolore",
+  flowType: "string",
 };
 
-sdk.flows.postV1CompanyFlows(companyUuid, requestBody).then((res: PostV1CompanyFlowsResponse) => {
+  const res = await sdk.flows.postV1CompanyFlows(companyUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

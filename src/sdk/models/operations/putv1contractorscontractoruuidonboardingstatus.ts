@@ -20,7 +20,7 @@ export class PutV1ContractorsContractorUuidOnboardingStatusRequestBody extends S
      */
     @SpeakeasyMetadata()
     @Expose({ name: "onboarding_status" })
-    onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus;
+    onboardingStatus?: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus;
 }
 
 export class PutV1ContractorsContractorUuidOnboardingStatusRequest extends SpeakeasyBase {
@@ -43,6 +43,9 @@ export class PutV1ContractorsContractorUuidOnboardingStatusResponse extends Spea
     @SpeakeasyMetadata()
     body?: Uint8Array;
 
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -52,9 +55,15 @@ export class PutV1ContractorsContractorUuidOnboardingStatusResponse extends Spea
     @SpeakeasyMetadata()
     contractorOnboardingStatus?: shared.ContractorOnboardingStatus1;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

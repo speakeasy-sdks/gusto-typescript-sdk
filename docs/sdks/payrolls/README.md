@@ -1,4 +1,5 @@
-# payrolls
+# Payrolls
+(*payrolls*)
 
 ### Available Operations
 
@@ -26,25 +27,25 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdPayrollReversalsRequest,
-  GetV1CompaniesCompanyIdPayrollReversalsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdPayrollReversalsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "natus";
-const page: number = 3283.03;
-const per: number = 1334.61;
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const page: number = 8487.52;
+const per: number = 7763.39;
 
-sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per).then((res: GetV1CompaniesCompanyIdPayrollReversalsResponse) => {
+  const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -78,30 +79,27 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdPayrollsInclude, GetV1CompaniesCompanyIdPayrollsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdPayrollsInclude } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
 
-sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
-  companyId: "ex",
-  endDate: "maiores",
-  include: [
-    GetV1CompaniesCompanyIdPayrollsInclude.Taxes,
-    GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
-    GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
-  ],
-  includeOffCycle: false,
-  processed: false,
-  startDate: "suscipit",
-}).then((res: GetV1CompaniesCompanyIdPayrollsResponse) => {
+  const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
+    companyId: "string",
+    include: [
+      GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
+    ],
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -136,24 +134,26 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   GetV1CompaniesCompanyIdPayrollsPayrollIdInclude,
   GetV1CompaniesCompanyIdPayrollsPayrollIdRequest,
-  GetV1CompaniesCompanyIdPayrollsPayrollIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "repudiandae";
-const payrollId: string = "atque";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const payrollId: string = "string";
 const include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.PayrollStatusMeta;
-const showCalculation: string = "sunt";
+const showCalculation: string = "string";
 
-sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation).then((res: GetV1CompaniesCompanyIdPayrollsPayrollIdResponse) => {
+  const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -184,23 +184,23 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesPayrollBlockersCompanyUuidRequest,
-  GetV1CompaniesPayrollBlockersCompanyUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesPayrollBlockersCompanyUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "recusandae";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 
-sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid).then((res: GetV1CompaniesPayrollBlockersCompanyUuidResponse) => {
+  const res = await sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -231,23 +231,23 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1PaymentReceiptsPayrollsPayrollUuidRequest,
-  GetV1PaymentReceiptsPayrollsPayrollUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1PaymentReceiptsPayrollsPayrollUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const payrollUuid: string = "dolorum";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const payrollUuid: string = "string";
 
-sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid).then((res: GetV1PaymentReceiptsPayrollsPayrollUuidResponse) => {
+  const res = await sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -273,24 +273,24 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest,
-  GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "repellendus";
-const payrollId: string = "labore";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeId: string = "string";
+const payrollId: string = "string";
 
-sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId).then((res: GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse) => {
+  const res = await sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -324,37 +324,32 @@ import {
   PostV1CompaniesCompanyIdPayrollsRequestBody,
   PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason,
   PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod,
-  PostV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "reiciendis";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
-  checkDate: "doloremque",
   employeeUuids: [
-    "dicta",
-    "accusantium",
-    "beatae",
-    "dolores",
+    "string",
   ],
-  endDate: "enim",
-  fixedWithholdingRate: false,
+  endDate: "string",
   offCycle: false,
-  offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason.Correction,
-  skipRegularDeductions: false,
-  startDate: "velit",
-  withholdingPayPeriod: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod.Annually,
+  offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason.DismissedEmployee,
+  startDate: "string",
 };
 
-sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody).then((res: PostV1CompaniesCompanyIdPayrollsResponse) => {
+  const res = await sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -384,25 +379,26 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequest,
   PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody,
-  PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const payrollId: string = "molestias";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const payrollId: string = "string";
 const requestBody: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody = {
-  printingFormat: "magnam",
-  startingCheckNumber: 906355,
+  printingFormat: "string",
 };
 
-sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody).then((res: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse) => {
+  const res = await sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -430,24 +426,24 @@ Transitions a `processed` payroll back to the `unprocessed` state. A payroll can
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest,
-  PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "consequuntur";
-const payrollId: string = "occaecati";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const payrollId: string = "string";
 
-sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId).then((res: PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse) => {
+  const res = await sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -482,145 +478,40 @@ import {
   PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations,
   PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff,
   PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod,
-  PutV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "officiis";
-const payrollId: string = "perspiciatis";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const payrollId: string = "string";
 const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
   employeeCompensations: [
     {
-      employeeUuid: "adipisci",
-      excluded: false,
       fixedCompensations: [
-        {
-          amount: "occaecati",
-          jobUuid: 160230,
-          name: "Amelia Harvey",
-        },
-        {
-          amount: "illo",
-          jobUuid: 361306,
-          name: "Conrad Franey III",
-        },
-        {
-          amount: "ipsa",
-          jobUuid: 517612,
-          name: "Nellie Upton",
-        },
-        {
-          amount: "iure",
-          jobUuid: 898063,
-          name: "Maggie Rau",
-        },
+        {},
       ],
       hourlyCompensations: [
-        {
-          hours: "ad",
-          jobUuid: 997963,
-          name: "Renee Metz",
-        },
-        {
-          hours: "voluptas",
-          jobUuid: 5189,
-          name: "Dominick Daniel",
-        },
+        {},
       ],
       paidTimeOff: [
-        {
-          finalPayoutUnusedHoursInput: "dolorum",
-          hours: "nesciunt",
-          name: "Sophie Mohr",
-          policyUuid: "ex",
-        },
-        {
-          finalPayoutUnusedHoursInput: "ut",
-          hours: "culpa",
-          name: "Raquel Larkin",
-          policyUuid: "recusandae",
-        },
+        {},
       ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
-    },
-    {
-      employeeUuid: "provident",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "eum",
-          jobUuid: 970494,
-          name: "Miss Bruce Hermann",
-        },
-        {
-          amount: "mollitia",
-          jobUuid: 591027,
-          name: "Lynn Jacobson DVM",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "ullam",
-          jobUuid: 448143,
-          name: "Darin Nienow",
-        },
-        {
-          hours: "modi",
-          jobUuid: 976226,
-          name: "Stewart Will MD",
-        },
-        {
-          hours: "tempora",
-          jobUuid: 335498,
-          name: "Mr. Denise Runolfsdottir",
-        },
-        {
-          hours: "aspernatur",
-          jobUuid: 432281,
-          name: "Deanna Swaniawski",
-        },
-      ],
-      paidTimeOff: [
-        {
-          finalPayoutUnusedHoursInput: "eum",
-          hours: "dicta",
-          name: "Teresa McCullough",
-          policyUuid: "soluta",
-        },
-        {
-          finalPayoutUnusedHoursInput: "hic",
-          hours: "illum",
-          name: "Sonja Metz",
-          policyUuid: "aliquid",
-        },
-        {
-          finalPayoutUnusedHoursInput: "porro",
-          hours: "suscipit",
-          name: "Denise Runolfsdottir",
-          policyUuid: "animi",
-        },
-        {
-          finalPayoutUnusedHoursInput: "necessitatibus",
-          hours: "nulla",
-          name: "Joyce Borer",
-          policyUuid: "occaecati",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
     },
   ],
-  version: "adipisci",
+  version: "string",
 };
 
-sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody).then((res: PutV1CompaniesCompanyIdPayrollsResponse) => {
+  const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -658,222 +549,41 @@ import {
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsHourlyCompensations,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaidTimeOff,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "quasi";
-const payPeriodEndDate: string = "magni";
-const payPeriodStartDate: string = "doloribus";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const payPeriodEndDate: string = "string";
+const payPeriodStartDate: string = "string";
 const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody = {
   employeeCompensations: [
     {
-      employeeUuid: "necessitatibus",
-      excluded: false,
       fixedCompensations: [
-        {
-          amount: "tempora",
-          jobUuid: "nihil",
-          name: "Jean Kris",
-        },
+        {},
       ],
       hourlyCompensations: [
-        {
-          hours: "reiciendis",
-          jobUuid: "vel",
-          name: "Ms. Janis Batz",
-        },
-        {
-          hours: "esse",
-          jobUuid: "ex",
-          name: "Jeanne Beer II",
-        },
-        {
-          hours: "fugiat",
-          jobUuid: "expedita",
-          name: "Brandi Homenick III",
-        },
-        {
-          hours: "voluptas",
-          jobUuid: "iste",
-          name: "Raymond Muller",
-        },
+        {},
       ],
       paidTimeOff: [
-        {
-          hours: "laborum",
-          name: "Derek Leuschke PhD",
-          policyUuid: "ex",
-        },
-        {
-          hours: "quo",
-          name: "Debbie Hammes V",
-          policyUuid: "cum",
-        },
-        {
-          hours: "aliquid",
-          name: "Miss Nora Moen",
-          policyUuid: "culpa",
-        },
+        {},
       ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
-    },
-    {
-      employeeUuid: "sapiente",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "architecto",
-          jobUuid: "fuga",
-          name: "Ms. Doyle Barrows",
-        },
-        {
-          amount: "ex",
-          jobUuid: "sapiente",
-          name: "Israel Hickle",
-        },
-        {
-          amount: "ullam",
-          jobUuid: "perferendis",
-          name: "Jimmie Russel",
-        },
-        {
-          amount: "ipsam",
-          jobUuid: "culpa",
-          name: "Michele Bode II",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "consequatur",
-          jobUuid: "architecto",
-          name: "Ms. Pauline Considine I",
-        },
-      ],
-      paidTimeOff: [
-        {
-          hours: "ipsam",
-          name: "Cynthia Macejkovic",
-          policyUuid: "officiis",
-        },
-        {
-          hours: "esse",
-          name: "Aaron Hartmann",
-          policyUuid: "eum",
-        },
-        {
-          hours: "vel",
-          name: "Miss Oscar Heller",
-          policyUuid: "nobis",
-        },
-        {
-          hours: "laboriosam",
-          name: "Carlos Barrows",
-          policyUuid: "quasi",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
-    },
-    {
-      employeeUuid: "at",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "est",
-          jobUuid: "harum",
-          name: "Ora VonRueden",
-        },
-        {
-          amount: "nemo",
-          jobUuid: "voluptate",
-          name: "Gerard Hodkiewicz",
-        },
-        {
-          amount: "quos",
-          jobUuid: "eius",
-          name: "Caroline Dooley",
-        },
-        {
-          amount: "incidunt",
-          jobUuid: "quasi",
-          name: "Clint Carroll",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "aperiam",
-          jobUuid: "cupiditate",
-          name: "Dominic Abernathy",
-        },
-      ],
-      paidTimeOff: [
-        {
-          hours: "iste",
-          name: "Stephanie Pfannerstill",
-          policyUuid: "distinctio",
-        },
-        {
-          hours: "omnis",
-          name: "Darrell Lang",
-          policyUuid: "temporibus",
-        },
-        {
-          hours: "quos",
-          name: "Lorena Johns",
-          policyUuid: "modi",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.Check,
-    },
-    {
-      employeeUuid: "vero",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "ipsam",
-          jobUuid: "vel",
-          name: "Frances Franey",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "nulla",
-          jobUuid: "deserunt",
-          name: "Ida Kilback",
-        },
-        {
-          hours: "sint",
-          jobUuid: "accusamus",
-          name: "Irvin Tromp",
-        },
-        {
-          hours: "voluptas",
-          jobUuid: "debitis",
-          name: "Eric Schiller",
-        },
-      ],
-      paidTimeOff: [
-        {
-          hours: "velit",
-          name: "Dale Rutherford",
-          policyUuid: "repudiandae",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.Check,
     },
   ],
-  version: "dolore",
+  version: "string",
 };
 
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody).then((res: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse) => {
+  const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -904,24 +614,24 @@ If the company is blocked from running payroll due to issues like incomplete set
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest,
-  PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "iusto";
-const payrollId: string = "voluptate";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const payrollId: string = "string";
 
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse) => {
+  const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -948,24 +658,24 @@ If the company is blocked from running payroll due to issues like incomplete set
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest,
-  PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "sequi";
-const payrollId: string = "dignissimos";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyId: string = "string";
+const payrollId: string = "string";
 
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse) => {
+  const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

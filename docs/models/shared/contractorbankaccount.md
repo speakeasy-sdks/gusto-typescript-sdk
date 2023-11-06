@@ -1,7 +1,5 @@
 # ContractorBankAccount
 
-Example response
-
 
 ## Fields
 

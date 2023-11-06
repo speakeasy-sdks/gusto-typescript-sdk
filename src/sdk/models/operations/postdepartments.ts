@@ -25,6 +25,9 @@ export class PostDepartmentsRequest extends SpeakeasyBase {
 }
 
 export class PostDepartmentsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -34,9 +37,15 @@ export class PostDepartmentsResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     department?: shared.Department;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

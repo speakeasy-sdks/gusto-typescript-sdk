@@ -1,7 +1,5 @@
 # EmployeeAddress
 
-Example response
-
 
 ## Fields
 

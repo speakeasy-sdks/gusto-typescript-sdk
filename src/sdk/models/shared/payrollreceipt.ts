@@ -173,9 +173,6 @@ export class PayrollReceiptTotals extends SpeakeasyBase {
     taxDebit?: string;
 }
 
-/**
- * Example response
- */
 export class PayrollReceipt extends SpeakeasyBase {
     /**
      * A unique identifier of the company for the payroll.

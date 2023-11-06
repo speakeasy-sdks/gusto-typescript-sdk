@@ -138,9 +138,6 @@ export class ContractorPaymentReceiptTotals extends SpeakeasyBase {
     companyDebit?: string;
 }
 
-/**
- * Example response
- */
 export class ContractorPaymentReceipt extends SpeakeasyBase {
     /**
      * A unique identifier of the company making the contractor payment.
@@ -169,6 +166,7 @@ export class ContractorPaymentReceipt extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "debit_date" })
+    @Type(() => String)
     @Transform(({ value }) => new RFCDate(value), { toClassOnly: true })
     debitDate?: RFCDate;
 

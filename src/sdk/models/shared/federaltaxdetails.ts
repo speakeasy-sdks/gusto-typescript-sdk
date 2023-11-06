@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Example response
- */
 export class FederalTaxDetails extends SpeakeasyBase {
     /**
      * Whether the EIN was able to be verified as a valid EIN with the IRS.

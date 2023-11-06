@@ -1,7 +1,5 @@
 # PayrollCheck
 
-Example response
-
 
 ## Fields
 

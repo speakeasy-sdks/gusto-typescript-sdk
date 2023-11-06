@@ -66,6 +66,9 @@ export class PostV1CompaniesCompanyIdPaySchedulesRequest extends SpeakeasyBase {
 }
 
 export class PostV1CompaniesCompanyIdPaySchedulesResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -75,9 +78,15 @@ export class PostV1CompaniesCompanyIdPaySchedulesResponse extends SpeakeasyBase 
     @SpeakeasyMetadata()
     paySchedule?: shared.PaySchedule;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

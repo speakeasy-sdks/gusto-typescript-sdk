@@ -1,7 +1,5 @@
 # Industry
 
-Example response
-
 
 ## Fields
 

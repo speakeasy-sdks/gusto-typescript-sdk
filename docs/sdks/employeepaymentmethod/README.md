@@ -1,4 +1,5 @@
-# employeePaymentMethod
+# EmployeePaymentMethod
+(*employeePaymentMethod*)
 
 ### Available Operations
 
@@ -15,24 +16,24 @@ Deletes an employee bank account. To update an employee's bank account details, 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest,
-  DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const bankAccountUuid: string = "ipsam";
-const employeeId: string = "ea";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const bankAccountUuid: string = "string";
+const employeeId: string = "string";
 
-sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId).then((res: DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse) => {
+  const res = await sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -57,23 +58,23 @@ Fetches an employee's payment method. An employee payment method describes how t
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdPaymentMethodRequest,
-  GetV1EmployeesEmployeeIdPaymentMethodResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdPaymentMethodRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "aspernatur";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeId: string = "string";
 
-sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId).then((res: GetV1EmployeesEmployeeIdPaymentMethodResponse) => {
+  const res = await sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -101,27 +102,29 @@ import {
   PostV1EmployeesEmployeeIdBankAccountsRequest,
   PostV1EmployeesEmployeeIdBankAccountsRequestBody,
   PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType,
-  PostV1EmployeesEmployeeIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "vel";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeId: string = "string";
 const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
-  accountNumber: "possimus",
-  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Checking,
-  name: "Mrs. Vicki Langosh",
-  routingNumber: "quasi",
+  accountNumber: "string",
+  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Savings,
+  name: "string",
+  routingNumber: "string",
 };
 
-sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdBankAccountsResponse) => {
+  const res = await sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -152,46 +155,30 @@ import {
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy,
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits,
   PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType,
-  PutV1EmployeesEmployeeIdPaymentMethodResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "ex";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const employeeId: string = "string";
 const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
-  splitBy: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy.Percentage,
   splits: [
-    {
-      name: "Gordon Willms",
-      priority: 411372,
-      splitAmount: 774048,
-      uuid: "556146c3-e250-4fb0-88c4-2e141aac366c",
-    },
-    {
-      name: "Mack Stoltenberg",
-      priority: 96549,
-      splitAmount: 270328,
-      uuid: "42907474-778a-47bd-866d-28c10ab3cdca",
-    },
-    {
-      name: "Ms. Ruby Hintz II",
-      priority: 892050,
-      splitAmount: 370853,
-      uuid: "23c7e0bc-7178-4e47-96f2-a70c688282aa",
-    },
+    {},
   ],
-  type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.DirectDeposit,
-  version: "atque",
+  type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.Check,
+  version: "string",
 };
 
-sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdPaymentMethodResponse) => {
+  const res = await sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

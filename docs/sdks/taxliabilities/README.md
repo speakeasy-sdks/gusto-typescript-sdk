@@ -1,4 +1,5 @@
-# taxLiabilities
+# TaxLiabilities
+(*taxLiabilities*)
 
 ### Available Operations
 
@@ -15,20 +16,23 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1TaxLiabilitiesRequest, GetV1TaxLiabilitiesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1TaxLiabilitiesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "nemo";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 
-sdk.taxLiabilities.getV1TaxLiabilities(companyUuid).then((res: GetV1TaxLiabilitiesResponse) => {
+  const res = await sdk.taxLiabilities.getV1TaxLiabilities(companyUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -57,40 +61,28 @@ import {
   PutV1TaxLiabilitiesRequest,
   PutV1TaxLiabilitiesRequestBody,
   PutV1TaxLiabilitiesRequestBodyLiabilitySelections,
-  PutV1TaxLiabilitiesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "soluta";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 const requestBody: PutV1TaxLiabilitiesRequestBody = {
   liabilitySelections: [
-    {
-      lastUnpaidExternalPayrollUuid: "rem",
-      taxId: 678060,
-      unpaidLiabilityAmount: 4876.76,
-    },
-    {
-      lastUnpaidExternalPayrollUuid: "fugit",
-      taxId: 545,
-      unpaidLiabilityAmount: 1680.42,
-    },
-    {
-      lastUnpaidExternalPayrollUuid: "vel",
-      taxId: 64435,
-      unpaidLiabilityAmount: 635.53,
-    },
+    {},
   ],
 };
 
-sdk.taxLiabilities.putV1TaxLiabilities(companyUuid, requestBody).then((res: PutV1TaxLiabilitiesResponse) => {
+  const res = await sdk.taxLiabilities.putV1TaxLiabilities(companyUuid, requestBody);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -116,20 +108,23 @@ Finalizes tax liabilities for a company. All external payrolls edit action will 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1TaxLiabilitiesFinishRequest, PutV1TaxLiabilitiesFinishResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1TaxLiabilitiesFinishRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "modi";
+(async() => {
+  const sdk = new Gusto({
+    security: {
+      authorization: "",
+    },
+  });
+const companyUuid: string = "string";
 
-sdk.taxLiabilities.putV1TaxLiabilitiesFinish(companyUuid).then((res: PutV1TaxLiabilitiesFinishResponse) => {
+  const res = await sdk.taxLiabilities.putV1TaxLiabilitiesFinish(companyUuid);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

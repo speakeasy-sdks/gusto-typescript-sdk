@@ -81,6 +81,9 @@ export class PostV1SandboxGenerate1099Form extends SpeakeasyBase {
 }
 
 export class PostV1SandboxGenerate1099Response extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -90,9 +93,15 @@ export class PostV1SandboxGenerate1099Response extends SpeakeasyBase {
     @SpeakeasyMetadata()
     form?: PostV1SandboxGenerate1099Form;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

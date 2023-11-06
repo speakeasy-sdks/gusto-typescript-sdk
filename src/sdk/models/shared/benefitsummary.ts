@@ -98,9 +98,6 @@ export class BenefitSummaryEmployees extends SpeakeasyBase {
     uuid?: string;
 }
 
-/**
- * Benefit summary response
- */
 export class BenefitSummary extends SpeakeasyBase {
     /**
      * The aggregate of company contribution for all employees given the period of time and benefit type.

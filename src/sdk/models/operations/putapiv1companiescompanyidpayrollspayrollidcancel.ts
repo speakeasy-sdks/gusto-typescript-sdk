@@ -21,6 +21,9 @@ export class PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest extends Sp
 }
 
 export class PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -30,9 +33,15 @@ export class PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse extends S
     @SpeakeasyMetadata()
     payroll?: shared.Payroll;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 

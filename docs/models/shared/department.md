@@ -1,7 +1,5 @@
 # Department
 
-Department Object Example
-
 
 ## Fields
 
