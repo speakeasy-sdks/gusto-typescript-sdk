@@ -1,5 +1,5 @@
 # Companies
-(*companies*)
+(*.companies*)
 
 ### Available Operations
 

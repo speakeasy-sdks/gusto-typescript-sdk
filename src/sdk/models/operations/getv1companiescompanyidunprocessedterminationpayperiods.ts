@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest extends SpeakeasyBase {
@@ -37,5 +37,5 @@ export class GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse ext
      * Example response
      */
     @SpeakeasyMetadata({ elemType: shared.UnprocessedTerminationPayPeriod })
-    unprocessedTerminationPayPeriods?: shared.UnprocessedTerminationPayPeriod[];
+    classes?: shared.UnprocessedTerminationPayPeriod[];
 }

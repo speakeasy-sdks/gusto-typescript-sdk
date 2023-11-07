@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetCompaniesDepartmentsRequest extends SpeakeasyBase {
@@ -22,12 +22,6 @@ export class GetCompaniesDepartmentsResponse extends SpeakeasyBase {
     contentType: string;
 
     /**
-     * List of departments
-     */
-    @SpeakeasyMetadata({ elemType: shared.Department })
-    departments?: shared.Department[];
-
-    /**
      * HTTP response status code for this operation
      */
     @SpeakeasyMetadata()
@@ -38,4 +32,10 @@ export class GetCompaniesDepartmentsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
+
+    /**
+     * List of departments
+     */
+    @SpeakeasyMetadata({ elemType: shared.Department })
+    classes?: shared.Department[];
 }

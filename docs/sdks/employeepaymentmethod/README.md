@@ -1,5 +1,5 @@
 # EmployeePaymentMethod
-(*employeePaymentMethod*)
+(*.employeePaymentMethod*)
 
 ### Available Operations
 
@@ -99,9 +99,9 @@ Creates an employee bank account. An employee can have multiple bank accounts. N
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostV1EmployeesEmployeeIdBankAccountsAccountType,
   PostV1EmployeesEmployeeIdBankAccountsRequest,
   PostV1EmployeesEmployeeIdBankAccountsRequestBody,
-  PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -113,7 +113,7 @@ import {
 const employeeId: string = "string";
 const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
   accountNumber: "string",
-  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Savings,
+  accountType: PostV1EmployeesEmployeeIdBankAccountsAccountType.Savings,
   name: "string",
   routingNumber: "string",
 };
@@ -152,9 +152,9 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1EmployeesEmployeeIdPaymentMethodRequest,
   PutV1EmployeesEmployeeIdPaymentMethodRequestBody,
-  PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy,
-  PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits,
-  PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType,
+  PutV1EmployeesEmployeeIdPaymentMethodType,
+  SplitBy,
+  Splits,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -168,7 +168,7 @@ const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
   splits: [
     {},
   ],
-  type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.Check,
+  type: PutV1EmployeesEmployeeIdPaymentMethodType.Check,
   version: "string",
 };
 

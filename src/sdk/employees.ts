@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -97,7 +97,7 @@ export class Employees {
      */
     async getV1Employees(
         employeeId: string,
-        include?: operations.GetV1EmployeesInclude,
+        include?: operations.Include,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1EmployeesResponse> {
         const req = new operations.GetV1EmployeesRequest({
@@ -233,11 +233,10 @@ export class Employees {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getV1EmployeesEmployeeIdCustomFields200ApplicationJSONObject =
-                        utils.objectToClass(
-                            JSON.parse(decodedRes),
-                            operations.GetV1EmployeesEmployeeIdCustomFields200ApplicationJSON
-                        );
+                    res.object = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        operations.GetV1EmployeesEmployeeIdCustomFieldsResponseBody
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

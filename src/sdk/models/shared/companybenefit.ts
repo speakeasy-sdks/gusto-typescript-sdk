@@ -8,7 +8,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * An object representing the type and value of the company contribution.
  */
-export class CompanyBenefitEmployeeBenefitsContribution extends SpeakeasyBase {
+export class CompanyBenefitContribution extends SpeakeasyBase {
     /**
      * The company contribution scheme.
      *
@@ -36,7 +36,7 @@ export class CompanyBenefitEmployeeBenefitsContribution extends SpeakeasyBase {
     value?: any;
 }
 
-export class CompanyBenefitEmployeeBenefits extends SpeakeasyBase {
+export class EmployeeBenefits extends SpeakeasyBase {
     /**
      * Whether the employee benefit is active.
      */
@@ -63,8 +63,8 @@ export class CompanyBenefitEmployeeBenefits extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "contribution" })
-    @Type(() => CompanyBenefitEmployeeBenefitsContribution)
-    contribution?: CompanyBenefitEmployeeBenefitsContribution;
+    @Type(() => CompanyBenefitContribution)
+    contribution?: CompanyBenefitContribution;
 
     /**
      * Whether the employee deduction amount should be treated as a percentage to be deducted from each payroll.
@@ -124,10 +124,10 @@ export class CompanyBenefit extends SpeakeasyBase {
     @Expose({ name: "description" })
     description?: string;
 
-    @SpeakeasyMetadata({ elemType: CompanyBenefitEmployeeBenefits })
+    @SpeakeasyMetadata({ elemType: EmployeeBenefits })
     @Expose({ name: "employee_benefits" })
-    @Type(() => CompanyBenefitEmployeeBenefits)
-    employeeBenefits?: CompanyBenefitEmployeeBenefits[];
+    @Type(() => EmployeeBenefits)
+    employeeBenefits?: EmployeeBenefits[];
 
     /**
      * Whether the employer is subject to file W-2 forms for an employee on leave. Only applicable to third party sick pay benefits.

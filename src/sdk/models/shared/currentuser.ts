@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { CompanyAddress } from "./companyaddress";
 import { Expose, Type } from "class-transformer";
 
-export class CurrentUserRolesPayrollAdminCompanies extends SpeakeasyBase {
+export class Companies extends SpeakeasyBase {
     /**
      * Whether the company is fully managed by a partner via the API
      */
@@ -51,24 +51,24 @@ export class CurrentUserRolesPayrollAdminCompanies extends SpeakeasyBase {
     uuid?: string;
 }
 
-export class CurrentUserRolesPayrollAdmin extends SpeakeasyBase {
+export class PayrollAdmin extends SpeakeasyBase {
     /**
      * A lists of companies for which the current user has admin permissions. Users (most notably accountants) can have privileges with multiple companies.
      */
-    @SpeakeasyMetadata({ elemType: CurrentUserRolesPayrollAdminCompanies })
+    @SpeakeasyMetadata({ elemType: Companies })
     @Expose({ name: "companies" })
-    @Type(() => CurrentUserRolesPayrollAdminCompanies)
-    companies?: CurrentUserRolesPayrollAdminCompanies[];
+    @Type(() => Companies)
+    companies?: Companies[];
 }
 
 /**
  * An object containing each of the user's permissions.
  */
-export class CurrentUserRoles extends SpeakeasyBase {
+export class Roles extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "payroll_admin" })
-    @Type(() => CurrentUserRolesPayrollAdmin)
-    payrollAdmin?: CurrentUserRolesPayrollAdmin;
+    @Type(() => PayrollAdmin)
+    payrollAdmin?: PayrollAdmin;
 }
 
 export class CurrentUser extends SpeakeasyBase {
@@ -84,8 +84,8 @@ export class CurrentUser extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "roles" })
-    @Type(() => CurrentUserRoles)
-    roles?: CurrentUserRoles;
+    @Type(() => Roles)
+    roles?: Roles;
 
     /**
      * The UUID of the current user.

@@ -1,5 +1,5 @@
 # ContractorPayments
-(*contractorPayments*)
+(*.contractorPayments*)
 
 ### Available Operations
 
@@ -201,9 +201,9 @@ scope: `payrolls:run`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PaymentMethod,
   PostV1CompaniesCompanyIdContractorPaymentsRequest,
   PostV1CompaniesCompanyIdContractorPaymentsRequestBody,
-  PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 import { RFCDate } from "@speakeasy-sdks/gusto/dist/sdk/types";
 

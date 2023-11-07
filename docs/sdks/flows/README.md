@@ -1,5 +1,5 @@
 # Flows
-(*flows*)
+(*.flows*)
 
 ### Available Operations
 
@@ -13,11 +13,7 @@ Generate a link to access a pre-built workflow in Gusto white-label UI. For secu
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1CompanyFlowsRequest,
-  PostV1CompanyFlowsRequestBody,
-  PostV1CompanyFlowsRequestBodyEntityType,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { EntityType, PostV1CompanyFlowsRequest, PostV1CompanyFlowsRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new Gusto({

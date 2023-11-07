@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class EmployeeStateTaxInputQuestionFormatOptions extends SpeakeasyBase {
+export class Options extends SpeakeasyBase {
     /**
      * A display label that corresponds to the answer value
      */
@@ -25,10 +25,10 @@ export class EmployeeStateTaxInputQuestionFormat extends SpeakeasyBase {
     /**
      * For "Select" type questions, the allowed values and display labels.
      */
-    @SpeakeasyMetadata({ elemType: EmployeeStateTaxInputQuestionFormatOptions })
+    @SpeakeasyMetadata({ elemType: Options })
     @Expose({ name: "options" })
-    @Type(() => EmployeeStateTaxInputQuestionFormatOptions)
-    options?: EmployeeStateTaxInputQuestionFormatOptions[];
+    @Type(() => Options)
+    options?: Options[];
 
     /**
      * Describes the type of question - Text, Number, Select, Currency

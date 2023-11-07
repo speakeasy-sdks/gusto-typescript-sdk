@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -82,11 +82,10 @@ export class CompanyBenefits {
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject =
-                        utils.objectToClass(
-                            JSON.parse(decodedRes),
-                            operations.DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON
-                        );
+                    res.object = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        operations.DeleteV1CompanyBenefitsCompanyBenefitIdResponseBody
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -155,9 +154,9 @@ export class CompanyBenefits {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.supportedBenefits = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.supportedBenefits = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.SupportedBenefit,
                         resFieldDepth
@@ -500,9 +499,9 @@ export class CompanyBenefits {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.companyBenefits = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.companyBenefits = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.CompanyBenefit,
                         resFieldDepth

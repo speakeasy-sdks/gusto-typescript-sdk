@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
@@ -44,7 +44,7 @@ export class PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequest e
 /**
  * Example response
  */
-export class PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfService200ApplicationJSON extends SpeakeasyBase {
+export class PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponseBody extends SpeakeasyBase {
     /**
      * Whether the latest terms have been accepted by the user.
      */
@@ -87,5 +87,5 @@ export class PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse 
      * Example response
      */
     @SpeakeasyMetadata()
-    postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService200ApplicationJSONObject?: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfService200ApplicationJSON;
+    object?: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponseBody;
 }

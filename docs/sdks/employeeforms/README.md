@@ -1,5 +1,5 @@
 # EmployeeForms
-(*employeeForms*)
+(*.employeeForms*)
 
 ### Available Operations
 

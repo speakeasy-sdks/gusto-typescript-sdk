@@ -1,5 +1,5 @@
 # GeneratedDocuments
-(*generatedDocuments*)
+(*.generatedDocuments*)
 
 ### Available Operations
 

@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -82,9 +82,9 @@ export class Locations {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.locations = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.locations = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Location,
                         resFieldDepth
@@ -247,9 +247,9 @@ export class Locations {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.minimumWages = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.minimumWages = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.MinimumWage,
                         resFieldDepth
@@ -282,7 +282,7 @@ export class Locations {
      */
     async postV1CompaniesCompanyIdLocationsJson(
         companyId: string,
-        requestBody?: operations.PostV1CompaniesCompanyIdLocationsApplicationJSON,
+        requestBody?: operations.PostV1CompaniesCompanyIdLocationsJsonRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostV1CompaniesCompanyIdLocationsJsonResponse> {
         const req = new operations.PostV1CompaniesCompanyIdLocationsJsonRequest({

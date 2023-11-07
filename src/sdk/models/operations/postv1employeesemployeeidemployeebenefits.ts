@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -18,7 +18,7 @@ import { Expose, Type } from "class-transformer";
  *
  * `tiered`: The size of the company contribution corresponds to the size of the employee deduction relative to a tiered matching scheme.
  */
-export enum PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType {
+export enum PostV1EmployeesEmployeeIdEmployeeBenefitsType {
     Tiered = "tiered",
     Percentage = "percentage",
     Amount = "amount",
@@ -27,7 +27,7 @@ export enum PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType
 /**
  * An object representing the company contribution type and value.
  */
-export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution extends SpeakeasyBase {
+export class Contribution extends SpeakeasyBase {
     /**
      * The company contribution scheme.
      *
@@ -41,7 +41,7 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution ex
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType;
+    type?: PostV1EmployeesEmployeeIdEmployeeBenefitsType;
 
     /**
      * For the `amount` and `percentage` contribution types, the value of the corresponding amount or percentage.
@@ -58,7 +58,7 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution ex
 /**
  * Whether the employee deduction reduces taxable income or not. Only valid for Group Term Life benefits. Note: when the value is not "unset", coverage amount and coverage salary multiplier are ignored.
  */
-export enum PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome {
+export enum DeductionReducesTaxableIncome {
     Unset = "unset",
     ReducesTaxableIncome = "reduces_taxable_income",
     DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
@@ -117,8 +117,8 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody extends Speake
      */
     @SpeakeasyMetadata()
     @Expose({ name: "contribution" })
-    @Type(() => PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution)
-    contribution?: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution;
+    @Type(() => Contribution)
+    contribution?: Contribution;
 
     /**
      * The amount that the employee is insured for. Note: company contribution cannot be present if coverage amount is set.
@@ -146,7 +146,7 @@ export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody extends Speake
      */
     @SpeakeasyMetadata()
     @Expose({ name: "deduction_reduces_taxable_income" })
-    deductionReducesTaxableIncome?: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome;
+    deductionReducesTaxableIncome?: DeductionReducesTaxableIncome;
 
     /**
      * Whether the company contribution is elective (aka "matching"). For `tiered`, `elective_amount`, and `elective_percentage` contribution types this is ignored and assumed to be `true`.

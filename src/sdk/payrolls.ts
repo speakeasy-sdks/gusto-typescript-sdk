@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -171,9 +171,9 @@ export class Payrolls {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.payrolls = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.payrolls = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Payroll,
                         resFieldDepth
@@ -211,7 +211,7 @@ export class Payrolls {
     async getV1CompaniesCompanyIdPayrollsPayrollId(
         companyId: string,
         payrollId: string,
-        include?: operations.GetV1CompaniesCompanyIdPayrollsPayrollIdInclude,
+        include?: operations.GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude,
         showCalculation?: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1CompaniesCompanyIdPayrollsPayrollIdResponse> {
@@ -352,9 +352,9 @@ export class Payrolls {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.payrollBlockers = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.payrollBlockers = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.PayrollBlocker,
                         resFieldDepth
@@ -1162,8 +1162,7 @@ export class Payrolls {
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate422ApplicationJSONOneOf =
-                        JSON.parse(decodedRes);
+                    res.oneOf = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -1245,8 +1244,7 @@ export class Payrolls {
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit422ApplicationJSONOneOf =
-                        JSON.parse(decodedRes);
+                    res.oneOf = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

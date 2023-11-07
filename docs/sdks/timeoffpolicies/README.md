@@ -1,5 +1,5 @@
 # TimeOffPolicies
-(*timeOffPolicies*)
+(*.timeOffPolicies*)
 
 ### Available Operations
 
@@ -105,9 +105,9 @@ scope: `time_off_policies:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  AccrualMethod,
   PostCompaniesCompanyUuidTimeOffPoliciesRequest,
   PostCompaniesCompanyUuidTimeOffPoliciesRequestBody,
-  PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -118,7 +118,7 @@ import {
   });
 const companyUuid: string = "string";
 const requestBody: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody = {
-  accrualMethod: PostCompaniesCompanyUuidTimeOffPoliciesRequestBodyAccrualMethod.PerAnniversaryYear,
+  accrualMethod: AccrualMethod.PerAnniversaryYear,
   name: "string",
   policyType: "string",
 };
@@ -211,9 +211,9 @@ scope: `time_off_policies:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutTimeOffPoliciesTimeOffPolicyUuidAccrualMethod,
   PutTimeOffPoliciesTimeOffPolicyUuidRequest,
   PutTimeOffPoliciesTimeOffPolicyUuidRequestBody,
-  PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -298,9 +298,9 @@ scope: `time_off_policies:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesEmployees,
   PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequest,
   PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody,
-  PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBodyEmployees,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -349,9 +349,9 @@ scope: `time_off_policies:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesEmployees,
   PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest,
   PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody,
-  PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEmployees,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -400,9 +400,9 @@ scope: `time_off_policies:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceEmployees,
   PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequest,
   PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody,
-  PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBodyEmployees,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {

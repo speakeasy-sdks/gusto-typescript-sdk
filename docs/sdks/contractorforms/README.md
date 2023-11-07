@@ -1,5 +1,5 @@
 # ContractorForms
-(*contractorForms*)
+(*.contractorForms*)
 
 ### Available Operations
 

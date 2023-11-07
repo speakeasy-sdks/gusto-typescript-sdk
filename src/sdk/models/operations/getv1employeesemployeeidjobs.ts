@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 /**
@@ -12,7 +12,7 @@ import { AxiosResponse } from "axios";
  * @remarks
  * - all_compensations: Include all effective dated compensations for each job instead of only the current compensation
  */
-export enum GetV1EmployeesEmployeeIdJobsInclude {
+export enum QueryParamInclude {
     AllCompensations = "all_compensations",
 }
 
@@ -30,7 +30,7 @@ export class GetV1EmployeesEmployeeIdJobsRequest extends SpeakeasyBase {
      * - all_compensations: Include all effective dated compensations for each job instead of only the current compensation
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
-    include?: GetV1EmployeesEmployeeIdJobsInclude;
+    include?: QueryParamInclude;
 
     /**
      * The page that is requested. When unspecified, will load all objects.
@@ -53,12 +53,6 @@ export class GetV1EmployeesEmployeeIdJobsResponse extends SpeakeasyBase {
     contentType: string;
 
     /**
-     * Example response
-     */
-    @SpeakeasyMetadata({ elemType: shared.Job })
-    jobs?: shared.Job[];
-
-    /**
      * HTTP response status code for this operation
      */
     @SpeakeasyMetadata()
@@ -69,4 +63,10 @@ export class GetV1EmployeesEmployeeIdJobsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
+
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.Job })
+    classes?: shared.Job[];
 }

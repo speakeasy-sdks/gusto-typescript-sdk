@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompaniesPayrollBlockersCompanyUuidRequest extends SpeakeasyBase {
@@ -22,12 +22,6 @@ export class GetV1CompaniesPayrollBlockersCompanyUuidResponse extends SpeakeasyB
     contentType: string;
 
     /**
-     * Example response
-     */
-    @SpeakeasyMetadata({ elemType: shared.PayrollBlocker })
-    payrollBlockers?: shared.PayrollBlocker[];
-
-    /**
      * HTTP response status code for this operation
      */
     @SpeakeasyMetadata()
@@ -38,4 +32,10 @@ export class GetV1CompaniesPayrollBlockersCompanyUuidResponse extends SpeakeasyB
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
+
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.PayrollBlocker })
+    classes?: shared.PayrollBlocker[];
 }

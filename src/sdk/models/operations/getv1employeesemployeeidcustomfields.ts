@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -30,7 +30,7 @@ export class GetV1EmployeesEmployeeIdCustomFieldsRequest extends SpeakeasyBase {
 /**
  * OK
  */
-export class GetV1EmployeesEmployeeIdCustomFields200ApplicationJSON extends SpeakeasyBase {
+export class GetV1EmployeesEmployeeIdCustomFieldsResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.EmployeeCustomField })
     @Expose({ name: "custom_fields" })
     @Type(() => shared.EmployeeCustomField)
@@ -60,5 +60,5 @@ export class GetV1EmployeesEmployeeIdCustomFieldsResponse extends SpeakeasyBase 
      * OK
      */
     @SpeakeasyMetadata()
-    getV1EmployeesEmployeeIdCustomFields200ApplicationJSONObject?: GetV1EmployeesEmployeeIdCustomFields200ApplicationJSON;
+    object?: GetV1EmployeesEmployeeIdCustomFieldsResponseBody;
 }

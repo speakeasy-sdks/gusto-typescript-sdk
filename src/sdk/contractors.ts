@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -155,9 +155,9 @@ export class Contractors {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.contractors = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.contractors = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Contractor,
                         resFieldDepth
@@ -319,7 +319,7 @@ export class Contractors {
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractorAddress = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.ContractorAddress1
+                        shared.ContractorAddress
                     );
                 } else {
                     throw new errors.SDKError(
@@ -438,7 +438,7 @@ export class Contractors {
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractorOnboardingStatus = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.ContractorOnboardingStatus1
+                        shared.ContractorOnboardingStatus
                     );
                 } else if (utils.matchContentType(contentType, `application/xml`)) {
                     res.body = httpRes?.data;
@@ -764,7 +764,7 @@ export class Contractors {
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractorAddress = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.ContractorAddress1
+                        shared.ContractorAddress
                     );
                 } else {
                     throw new errors.SDKError(
@@ -893,7 +893,7 @@ export class Contractors {
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.contractorOnboardingStatus = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.ContractorOnboardingStatus1
+                        shared.ContractorOnboardingStatus
                     );
                 } else if (utils.matchContentType(contentType, `application/xml`)) {
                     res.body = httpRes?.data;

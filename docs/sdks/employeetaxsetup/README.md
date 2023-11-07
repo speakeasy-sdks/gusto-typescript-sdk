@@ -1,5 +1,5 @@
 # EmployeeTaxSetup
-(*employeeTaxSetup*)
+(*.employeeTaxSetup*)
 
 ### Available Operations
 
@@ -158,11 +158,11 @@ As described for the GET endpoint, the answers must be supplied in the effective
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  Answers,
   PutV1EmployeesEmployeeIdStateTaxesRequest,
   PutV1EmployeesEmployeeIdStateTaxesRequestBody,
-  PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates,
-  PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions,
-  PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers,
+  Questions,
+  States,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {

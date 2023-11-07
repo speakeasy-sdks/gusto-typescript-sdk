@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1LocationsLocationUuidMinimumWagesRequest extends SpeakeasyBase {
@@ -25,12 +25,6 @@ export class GetV1LocationsLocationUuidMinimumWagesResponse extends SpeakeasyBas
     contentType: string;
 
     /**
-     * Example response
-     */
-    @SpeakeasyMetadata({ elemType: shared.MinimumWage })
-    minimumWages?: shared.MinimumWage[];
-
-    /**
      * HTTP response status code for this operation
      */
     @SpeakeasyMetadata()
@@ -41,4 +35,10 @@ export class GetV1LocationsLocationUuidMinimumWagesResponse extends SpeakeasyBas
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
+
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.MinimumWage })
+    classes?: shared.MinimumWage[];
 }

@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
@@ -58,7 +58,7 @@ export class PutV1ContractorsContractorUuidAddressResponse extends SpeakeasyBase
      * Example response
      */
     @SpeakeasyMetadata()
-    contractorAddress?: shared.ContractorAddress1;
+    contractorAddress?: shared.ContractorAddress;
 
     /**
      * HTTP response status code for this operation

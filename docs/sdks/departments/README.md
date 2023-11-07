@@ -1,5 +1,5 @@
 # Departments
-(*departments*)
+(*.departments*)
 
 ### Available Operations
 
@@ -195,10 +195,10 @@ scope: `departments:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  Contractors,
+  Employees,
   PutAddPeopleToDepartmentRequest,
   PutAddPeopleToDepartmentRequestBody,
-  PutAddPeopleToDepartmentRequestBodyContractors,
-  PutAddPeopleToDepartmentRequestBodyEmployees,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -298,10 +298,10 @@ scope: `departments:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutRemovePeopleFromDepartmentContractors,
+  PutRemovePeopleFromDepartmentEmployees,
   PutRemovePeopleFromDepartmentRequest,
   PutRemovePeopleFromDepartmentRequestBody,
-  PutRemovePeopleFromDepartmentRequestBodyContractors,
-  PutRemovePeopleFromDepartmentRequestBodyEmployees,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {

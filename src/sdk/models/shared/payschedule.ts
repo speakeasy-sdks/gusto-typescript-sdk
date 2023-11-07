@@ -8,7 +8,7 @@ import { Expose } from "class-transformer";
 /**
  * The frequency that employees on this pay schedule are paid with Gusto.
  */
-export enum PayScheduleFrequency {
+export enum Frequency {
     EveryWeek = "Every week",
     EveryOtherWeek = "Every other week",
     TwicePerMonth = "Twice per month",
@@ -59,7 +59,7 @@ export class PaySchedule extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "frequency" })
-    frequency?: PayScheduleFrequency;
+    frequency?: Frequency;
 
     /**
      * Hourly when the pay schedule is for hourly employees. Salaried when the pay schedule is for salaried employees. It will be null when the pay schedule is for all employees.

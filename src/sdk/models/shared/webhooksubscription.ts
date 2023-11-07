@@ -14,7 +14,7 @@ export enum WebhookSubscriptionStatus {
     Removed = "removed",
 }
 
-export enum WebhookSubscriptionSubscriptionTypes {
+export enum SubscriptionTypes {
     BankAccount = "BankAccount",
     Company = "Company",
     CompanyBenefit = "CompanyBenefit",
@@ -47,7 +47,7 @@ export class WebhookSubscription extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "subscription_types" })
-    subscriptionTypes?: WebhookSubscriptionSubscriptionTypes[];
+    subscriptionTypes?: SubscriptionTypes[];
 
     /**
      * The webhook subscriber URL. Updates will be POSTed to this URL.

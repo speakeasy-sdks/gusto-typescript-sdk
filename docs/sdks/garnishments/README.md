@@ -1,5 +1,5 @@
 # Garnishments
-(*garnishments*)
+(*.garnishments*)
 
 ### Available Operations
 

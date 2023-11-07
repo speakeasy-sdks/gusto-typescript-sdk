@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEmployees extends SpeakeasyBase {
+export class PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesEmployees extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "balance" })
     balance?: string;
@@ -22,11 +22,11 @@ export class PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEm
  */
 export class PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody extends SpeakeasyBase {
     @SpeakeasyMetadata({
-        elemType: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEmployees,
+        elemType: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesEmployees,
     })
     @Expose({ name: "employees" })
-    @Type(() => PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEmployees)
-    employees?: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBodyEmployees[];
+    @Type(() => PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesEmployees)
+    employees?: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesEmployees[];
 }
 
 export class PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest extends SpeakeasyBase {

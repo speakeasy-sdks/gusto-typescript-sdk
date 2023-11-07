@@ -1,5 +1,5 @@
 # FederalTaxDetails
-(*federalTaxDetails*)
+(*.federalTaxDetails*)
 
 ### Available Operations
 

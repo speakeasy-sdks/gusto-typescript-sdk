@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 /**
  * The updated onboarding status for the employee
  */
-export enum PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus {
+export enum OnboardingStatus {
     OnboardingCompleted = "onboarding_completed",
 }
 
@@ -20,7 +20,7 @@ export class PutV1ContractorsContractorUuidOnboardingStatusRequestBody extends S
      */
     @SpeakeasyMetadata()
     @Expose({ name: "onboarding_status" })
-    onboardingStatus?: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus;
+    onboardingStatus?: OnboardingStatus;
 }
 
 export class PutV1ContractorsContractorUuidOnboardingStatusRequest extends SpeakeasyBase {
@@ -37,7 +37,7 @@ export class PutV1ContractorsContractorUuidOnboardingStatusRequest extends Speak
 /**
  * Example response.
  */
-export class PutV1ContractorsContractorUuidOnboardingStatus200ApplicationXML extends SpeakeasyBase {}
+export class PutV1ContractorsContractorUuidOnboardingStatusResponseBody extends SpeakeasyBase {}
 
 export class PutV1ContractorsContractorUuidOnboardingStatusResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -53,7 +53,7 @@ export class PutV1ContractorsContractorUuidOnboardingStatusResponse extends Spea
      * Example response.
      */
     @SpeakeasyMetadata()
-    contractorOnboardingStatus?: shared.ContractorOnboardingStatus1;
+    contractorOnboardingStatus?: shared.ContractorOnboardingStatus;
 
     /**
      * HTTP response status code for this operation

@@ -1,5 +1,5 @@
 # ContractorPaymentMethod
-(*contractorPaymentMethod*)
+(*.contractorPaymentMethod*)
 
 ### Available Operations
 
@@ -100,9 +100,9 @@ has a bank account will just replace it.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostV1ContractorsContractorUuidBankAccountsAccountType,
   PostV1ContractorsContractorUuidBankAccountsRequest,
   PostV1ContractorsContractorUuidBankAccountsRequestBody,
-  PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -114,7 +114,7 @@ import {
 const contractorUuid: string = "string";
 const requestBody: PostV1ContractorsContractorUuidBankAccountsRequestBody = {
   accountNumber: "string",
-  accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType.Checking,
+  accountType: PostV1ContractorsContractorUuidBankAccountsAccountType.Checking,
   name: "string",
   routingNumber: "string",
 };
@@ -153,7 +153,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1ContractorsContractorIdPaymentMethodRequest,
   PutV1ContractorsContractorIdPaymentMethodRequestBody,
-  PutV1ContractorsContractorIdPaymentMethodRequestBodyType,
+  TypeT,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -164,7 +164,7 @@ import {
   });
 const contractorUuid: string = "string";
 const requestBody: PutV1ContractorsContractorIdPaymentMethodRequestBody = {
-  type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType.Check,
+  type: TypeT.Check,
   version: "string",
 };
 

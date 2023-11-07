@@ -3,10 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export class PostV1CompaniesCompanyIdLocationsApplicationXML extends SpeakeasyBase {
+export class PostV1CompaniesCompanyIdLocationsRequestBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     city: string;
 

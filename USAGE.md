@@ -3,7 +3,7 @@
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdBankAccountsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async () => {
     const sdk = new Gusto({
@@ -11,9 +11,9 @@ import { GetV1CompaniesCompanyIdBankAccountsRequest } from "@speakeasy-sdks/gust
             authorization: "",
         },
     });
-    const companyId: string = "string";
+    const companyBenefitId: string = "string";
 
-    const res = await sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId);
+    const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
 
     if (res.statusCode == 200) {
         // handle response

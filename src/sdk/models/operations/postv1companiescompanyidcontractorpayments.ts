@@ -3,12 +3,12 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { RFCDate } from "../../types";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
+import { RFCDate } from "../../../sdk/types";
 import { AxiosResponse } from "axios";
 import { Expose, Transform, Type } from "class-transformer";
 
-export enum PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod {
+export enum PaymentMethod {
     DirectDeposit = "Direct Deposit",
     Check = "Check",
     HistoricalPayment = "Historical Payment",
@@ -47,7 +47,7 @@ export class PostV1CompaniesCompanyIdContractorPaymentsRequestBody extends Speak
 
     @SpeakeasyMetadata()
     @Expose({ name: "payment_method" })
-    paymentMethod?: PostV1CompaniesCompanyIdContractorPaymentsRequestBodyPaymentMethod;
+    paymentMethod?: PaymentMethod;
 
     /**
      * Reimbursed wages for the contractor

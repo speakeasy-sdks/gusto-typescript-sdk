@@ -1,5 +1,5 @@
 # Payrolls
-(*payrolls*)
+(*.payrolls*)
 
 ### Available Operations
 
@@ -79,7 +79,7 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdPayrollsInclude } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdPayrollsQueryParamInclude } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new Gusto({
@@ -91,7 +91,7 @@ import { GetV1CompaniesCompanyIdPayrollsInclude } from "@speakeasy-sdks/gusto/di
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
     companyId: "string",
     include: [
-      GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
+      GetV1CompaniesCompanyIdPayrollsQueryParamInclude.PayrollStatusMeta,
     ],
   });
 
@@ -132,7 +132,7 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  GetV1CompaniesCompanyIdPayrollsPayrollIdInclude,
+  GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude,
   GetV1CompaniesCompanyIdPayrollsPayrollIdRequest,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
@@ -144,7 +144,7 @@ import {
   });
 const companyId: string = "string";
 const payrollId: string = "string";
-const include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.PayrollStatusMeta;
+const include: GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude.PayrollStatusMeta;
 const showCalculation: string = "string";
 
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation);
@@ -162,7 +162,7 @@ const showCalculation: string = "string";
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `companyId`                                                                                                                                                                                                                                                                                                                     | *string*                                                                                                                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                                                                                                                              | The UUID of the company                                                                                                                                                                                                                                                                                                         |
 | `payrollId`                                                                                                                                                                                                                                                                                                                     | *string*                                                                                                                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                                                                                                                              | The UUID of the payroll                                                                                                                                                                                                                                                                                                         |
-| `include`                                                                                                                                                                                                                                                                                                                       | [operations.GetV1CompaniesCompanyIdPayrollsPayrollIdInclude](../../models/operations/getv1companiescompanyidpayrollspayrollidinclude.md)                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`                                                                                                                                                                                   |
+| `include`                                                                                                                                                                                                                                                                                                                       | [operations.GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude](../../models/operations/getv1companiescompanyidpayrollspayrollidqueryparaminclude.md)                                                                                                                                                                    | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`                                                                                                                                                                                   |
 | `showCalculation`                                                                                                                                                                                                                                                                                                               | *string*                                                                                                                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | With show_calculation = true, the calculated values specified by the include parameter will be shown if the payroll is in an unprocessed, but calculated state.<br/>If a payroll is in an unprocessed, but calculated state and a call is made to this endpoint without show_calculation = true, the calculation will be “cleared.” |
 | `config`                                                                                                                                                                                                                                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                                                                                                                                                    | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | Available config options for making requests.                                                                                                                                                                                                                                                                                   |
 
@@ -320,10 +320,10 @@ Creates a new, unprocessed, off-cycle payroll.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  OffCycleReason,
   PostV1CompaniesCompanyIdPayrollsRequest,
   PostV1CompaniesCompanyIdPayrollsRequestBody,
-  PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason,
-  PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod,
+  WithholdingPayPeriod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -339,7 +339,7 @@ const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
   ],
   endDate: "string",
   offCycle: false,
-  offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason.DismissedEmployee,
+  offCycleReason: OffCycleReason.DismissedEmployee,
   startDate: "string",
 };
 
@@ -471,13 +471,13 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1CompaniesCompanyIdPayrollsEmployeeCompensations,
+  PutV1CompaniesCompanyIdPayrollsFixedCompensations,
+  PutV1CompaniesCompanyIdPayrollsHourlyCompensations,
+  PutV1CompaniesCompanyIdPayrollsPaidTimeOff,
+  PutV1CompaniesCompanyIdPayrollsPaymentMethod,
   PutV1CompaniesCompanyIdPayrollsRequest,
   PutV1CompaniesCompanyIdPayrollsRequestBody,
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations,
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations,
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations,
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff,
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -542,13 +542,13 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  EmployeeCompensations,
+  FixedCompensations,
+  HourlyCompensations,
+  PaidTimeOff,
+  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDatePaymentMethod,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequest,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensations,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsFixedCompensations,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsHourlyCompensations,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaidTimeOff,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {

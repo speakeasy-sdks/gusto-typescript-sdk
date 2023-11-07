@@ -1,5 +1,5 @@
 # EarningTypes
-(*earningTypes*)
+(*.earningTypes*)
 
 ### Available Operations
 

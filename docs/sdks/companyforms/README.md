@@ -1,5 +1,5 @@
 # CompanyForms
-(*companyForms*)
+(*.companyForms*)
 
 ### Available Operations
 

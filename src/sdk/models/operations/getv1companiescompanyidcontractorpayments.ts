@@ -72,5 +72,5 @@ export class GetV1CompaniesCompanyIdContractorPaymentsResponse extends Speakeasy
      * A JSON object containing contractor payments information
      */
     @SpeakeasyMetadata()
-    getV1CompaniesCompanyIdContractorPayments200ApplicationJSONOneOf?: any;
+    oneOf?: any;
 }

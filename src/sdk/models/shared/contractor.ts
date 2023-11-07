@@ -8,7 +8,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * The contractor’s home address.
  */
-export class ContractorAddress extends SpeakeasyBase {
+export class Address extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "city" })
     city?: string;
@@ -37,7 +37,7 @@ export class ContractorAddress extends SpeakeasyBase {
 /**
  * One of the "onboarding_status" enum values.
  */
-export enum ContractorOnboardingStatus {
+export enum ContractorSchemasOnboardingStatus {
     OnboardingCompleted = "onboarding_completed",
     AdminOnboardingReview = "admin_onboarding_review",
     AdminOnboardingIncomplete = "admin_onboarding_incomplete",
@@ -68,8 +68,8 @@ export class Contractor extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "address" })
-    @Type(() => ContractorAddress)
-    address?: ContractorAddress;
+    @Type(() => Address)
+    address?: Address;
 
     /**
      * The name of the contractor business. This attribute is required for “Business” contractors and will be ignored for “Individual” contractors.
@@ -160,7 +160,7 @@ export class Contractor extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "onboarding_status" })
-    onboardingStatus?: ContractorOnboardingStatus;
+    onboardingStatus?: ContractorSchemasOnboardingStatus;
 
     /**
      * The contractor's start date.

@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetCompaniesCompanyUuidTimeOffPoliciesRequest extends SpeakeasyBase {
@@ -37,5 +37,5 @@ export class GetCompaniesCompanyUuidTimeOffPoliciesResponse extends SpeakeasyBas
      * Example response
      */
     @SpeakeasyMetadata({ elemType: shared.TimeOffPolicy })
-    timeOffPolicies?: shared.TimeOffPolicy[];
+    classes?: shared.TimeOffPolicy[];
 }

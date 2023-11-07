@@ -1,5 +1,5 @@
 # Signatories
-(*signatories*)
+(*.signatories*)
 
 ### Available Operations
 
@@ -147,9 +147,9 @@ Create a company signatory with complete information. A signatory can legally si
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  HomeAddress,
   PostV1CompanySignatoriesRequest,
   PostV1CompanySignatoriesRequestBody,
-  PostV1CompanySignatoriesRequestBodyHomeAddress,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -206,9 +206,9 @@ Update a signatory that has been either invited or created. If the signatory has
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidHomeAddress,
   PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest,
   PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody,
-  PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {

@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as shared from "../sdk/models/shared";
 import { BankAccounts } from "./bankaccounts";
 import { Companies } from "./companies";
 import { CompanyBenefits } from "./companybenefits";
@@ -27,7 +28,6 @@ import { GeneratedDocuments } from "./generateddocuments";
 import { IndustrySelection } from "./industryselection";
 import { JobsAndCompensations } from "./jobsandcompensations";
 import { Locations } from "./locations";
-import * as shared from "./models/shared";
 import { PaymentConfigs } from "./paymentconfigs";
 import { Payrolls } from "./payrolls";
 import { PaySchedules } from "./payschedules";
@@ -92,9 +92,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "2023-03-01";
-    sdkVersion = "0.50.0";
-    genVersion = "2.173.0";
-    userAgent = "speakeasy-sdk/typescript 0.50.0 2.173.0 2023-03-01 @speakeasy-sdks/gusto";
+    sdkVersion = "0.51.0";
+    genVersion = "2.181.1";
+    userAgent = "speakeasy-sdk/typescript 0.51.0 2.181.1 2023-03-01 @speakeasy-sdks/gusto";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -105,37 +105,37 @@ export class SDKConfiguration {
  * Gusto API: Welcome to Gusto's Embedded Payroll API documentation!
  */
 export class Gusto {
-    public bankAccounts: BankAccounts;
-    public companies: Companies;
     public companyBenefits: CompanyBenefits;
-    public companyForms: CompanyForms;
-    public contractorForms: ContractorForms;
-    public contractorPaymentMethod: ContractorPaymentMethod;
+    public companies: Companies;
+    public bankAccounts: BankAccounts;
     public contractorPayments: ContractorPayments;
     public contractors: Contractors;
-    public departments: Departments;
     public earningTypes: EarningTypes;
-    public employeeBenefits: EmployeeBenefits;
-    public employeeForms: EmployeeForms;
-    public employeePaymentMethod: EmployeePaymentMethod;
-    public employeeTaxSetup: EmployeeTaxSetup;
-    public employeeTermination: EmployeeTermination;
     public employees: Employees;
-    public externalPayrolls: ExternalPayrolls;
     public federalTaxDetails: FederalTaxDetails;
-    public flows: Flows;
-    public garnishments: Garnishments;
-    public generatedDocuments: GeneratedDocuments;
+    public companyForms: CompanyForms;
     public industrySelection: IndustrySelection;
-    public jobsAndCompensations: JobsAndCompensations;
     public locations: Locations;
     public paySchedules: PaySchedules;
-    public paymentConfigs: PaymentConfigs;
+    public employeeTermination: EmployeeTermination;
     public payrolls: Payrolls;
-    public signatories: Signatories;
+    public departments: Departments;
+    public externalPayrolls: ExternalPayrolls;
     public taxLiabilities: TaxLiabilities;
+    public flows: Flows;
+    public paymentConfigs: PaymentConfigs;
+    public signatories: Signatories;
     public taxRequirements: TaxRequirements;
     public timeOffPolicies: TimeOffPolicies;
+    public jobsAndCompensations: JobsAndCompensations;
+    public contractorPaymentMethod: ContractorPaymentMethod;
+    public contractorForms: ContractorForms;
+    public employeeBenefits: EmployeeBenefits;
+    public employeePaymentMethod: EmployeePaymentMethod;
+    public employeeForms: EmployeeForms;
+    public garnishments: Garnishments;
+    public employeeTaxSetup: EmployeeTaxSetup;
+    public generatedDocuments: GeneratedDocuments;
     public user: User;
     public webhookSubscriptions: WebhookSubscriptions;
 
@@ -157,37 +157,37 @@ export class Gusto {
             retryConfig: props?.retryConfig,
         });
 
-        this.bankAccounts = new BankAccounts(this.sdkConfiguration);
-        this.companies = new Companies(this.sdkConfiguration);
         this.companyBenefits = new CompanyBenefits(this.sdkConfiguration);
-        this.companyForms = new CompanyForms(this.sdkConfiguration);
-        this.contractorForms = new ContractorForms(this.sdkConfiguration);
-        this.contractorPaymentMethod = new ContractorPaymentMethod(this.sdkConfiguration);
+        this.companies = new Companies(this.sdkConfiguration);
+        this.bankAccounts = new BankAccounts(this.sdkConfiguration);
         this.contractorPayments = new ContractorPayments(this.sdkConfiguration);
         this.contractors = new Contractors(this.sdkConfiguration);
-        this.departments = new Departments(this.sdkConfiguration);
         this.earningTypes = new EarningTypes(this.sdkConfiguration);
-        this.employeeBenefits = new EmployeeBenefits(this.sdkConfiguration);
-        this.employeeForms = new EmployeeForms(this.sdkConfiguration);
-        this.employeePaymentMethod = new EmployeePaymentMethod(this.sdkConfiguration);
-        this.employeeTaxSetup = new EmployeeTaxSetup(this.sdkConfiguration);
-        this.employeeTermination = new EmployeeTermination(this.sdkConfiguration);
         this.employees = new Employees(this.sdkConfiguration);
-        this.externalPayrolls = new ExternalPayrolls(this.sdkConfiguration);
         this.federalTaxDetails = new FederalTaxDetails(this.sdkConfiguration);
-        this.flows = new Flows(this.sdkConfiguration);
-        this.garnishments = new Garnishments(this.sdkConfiguration);
-        this.generatedDocuments = new GeneratedDocuments(this.sdkConfiguration);
+        this.companyForms = new CompanyForms(this.sdkConfiguration);
         this.industrySelection = new IndustrySelection(this.sdkConfiguration);
-        this.jobsAndCompensations = new JobsAndCompensations(this.sdkConfiguration);
         this.locations = new Locations(this.sdkConfiguration);
         this.paySchedules = new PaySchedules(this.sdkConfiguration);
-        this.paymentConfigs = new PaymentConfigs(this.sdkConfiguration);
+        this.employeeTermination = new EmployeeTermination(this.sdkConfiguration);
         this.payrolls = new Payrolls(this.sdkConfiguration);
-        this.signatories = new Signatories(this.sdkConfiguration);
+        this.departments = new Departments(this.sdkConfiguration);
+        this.externalPayrolls = new ExternalPayrolls(this.sdkConfiguration);
         this.taxLiabilities = new TaxLiabilities(this.sdkConfiguration);
+        this.flows = new Flows(this.sdkConfiguration);
+        this.paymentConfigs = new PaymentConfigs(this.sdkConfiguration);
+        this.signatories = new Signatories(this.sdkConfiguration);
         this.taxRequirements = new TaxRequirements(this.sdkConfiguration);
         this.timeOffPolicies = new TimeOffPolicies(this.sdkConfiguration);
+        this.jobsAndCompensations = new JobsAndCompensations(this.sdkConfiguration);
+        this.contractorPaymentMethod = new ContractorPaymentMethod(this.sdkConfiguration);
+        this.contractorForms = new ContractorForms(this.sdkConfiguration);
+        this.employeeBenefits = new EmployeeBenefits(this.sdkConfiguration);
+        this.employeePaymentMethod = new EmployeePaymentMethod(this.sdkConfiguration);
+        this.employeeForms = new EmployeeForms(this.sdkConfiguration);
+        this.garnishments = new Garnishments(this.sdkConfiguration);
+        this.employeeTaxSetup = new EmployeeTaxSetup(this.sdkConfiguration);
+        this.generatedDocuments = new GeneratedDocuments(this.sdkConfiguration);
         this.user = new User(this.sdkConfiguration);
         this.webhookSubscriptions = new WebhookSubscriptions(this.sdkConfiguration);
     }

@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason {
+export enum OffCycleReason {
     Bonus = "Bonus",
     Correction = "Correction",
     DismissedEmployee = "Dismissed employee",
@@ -16,7 +16,7 @@ export enum PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason {
 /**
  * The payment schedule tax rate the payroll is based on
  */
-export enum PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod {
+export enum WithholdingPayPeriod {
     EveryWeek = "Every week",
     EveryOtherWeek = "Every other week",
     TwicePerMonth = "Twice per month",
@@ -55,7 +55,7 @@ export class PostV1CompaniesCompanyIdPayrollsRequestBody extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "off_cycle_reason" })
-    offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason;
+    offCycleReason: OffCycleReason;
 
     /**
      * Block regular deductions and contributions for this payroll.
@@ -73,7 +73,7 @@ export class PostV1CompaniesCompanyIdPayrollsRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "withholding_pay_period" })
-    withholdingPayPeriod?: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod;
+    withholdingPayPeriod?: WithholdingPayPeriod;
 }
 
 export class PostV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {

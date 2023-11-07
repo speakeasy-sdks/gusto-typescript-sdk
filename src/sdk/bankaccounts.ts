@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -77,9 +77,9 @@ export class BankAccounts {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.companyBankAccounts = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.companyBankAccounts = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.CompanyBankAccount,
                         resFieldDepth
@@ -304,7 +304,7 @@ export class BankAccounts {
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.postV1PlaidProcessorToken201ApplicationJSONOneOf = JSON.parse(decodedRes);
+                    res.oneOf = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

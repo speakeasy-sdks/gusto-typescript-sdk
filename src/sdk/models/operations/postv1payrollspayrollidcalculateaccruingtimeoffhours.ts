@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
@@ -63,12 +63,6 @@ export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequest extends
 
 export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse extends SpeakeasyBase {
     /**
-     * Example response
-     */
-    @SpeakeasyMetadata({ elemType: shared.AccruingTimeOffHour })
-    accruingTimeOffHours?: shared.AccruingTimeOffHour[];
-
-    /**
      * HTTP response content type for this operation
      */
     @SpeakeasyMetadata()
@@ -96,4 +90,10 @@ export class PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse extend
      */
     @SpeakeasyMetadata()
     unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.AccruingTimeOffHour })
+    classes?: shared.AccruingTimeOffHour[];
 }

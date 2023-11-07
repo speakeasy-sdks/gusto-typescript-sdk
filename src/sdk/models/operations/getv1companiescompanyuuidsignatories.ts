@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompaniesCompanyUuidSignatoriesRequest extends SpeakeasyBase {
@@ -22,12 +22,6 @@ export class GetV1CompaniesCompanyUuidSignatoriesResponse extends SpeakeasyBase 
     contentType: string;
 
     /**
-     * Example response
-     */
-    @SpeakeasyMetadata({ elemType: shared.Signatory })
-    signatories?: shared.Signatory[];
-
-    /**
      * HTTP response status code for this operation
      */
     @SpeakeasyMetadata()
@@ -38,4 +32,10 @@ export class GetV1CompaniesCompanyUuidSignatoriesResponse extends SpeakeasyBase 
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
+
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.Signatory })
+    classes?: shared.Signatory[];
 }

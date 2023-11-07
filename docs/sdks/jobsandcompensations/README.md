@@ -1,5 +1,5 @@
 # JobsAndCompensations
-(*jobsAndCompensations*)
+(*.jobsAndCompensations*)
 
 ### Available Operations
 
@@ -109,7 +109,7 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1EmployeesEmployeeIdJobsInclude, GetV1EmployeesEmployeeIdJobsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdJobsRequest, QueryParamInclude } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new Gusto({
@@ -118,7 +118,7 @@ import { GetV1EmployeesEmployeeIdJobsInclude, GetV1EmployeesEmployeeIdJobsReques
     },
   });
 const employeeId: string = "string";
-const include: GetV1EmployeesEmployeeIdJobsInclude = GetV1EmployeesEmployeeIdJobsInclude.AllCompensations;
+const include: QueryParamInclude = QueryParamInclude.AllCompensations;
 const page: number = 2958.61;
 const per: number = 7200.06;
 
@@ -136,7 +136,7 @@ const per: number = 7200.06;
 | Parameter                                                                                                                               | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
 | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `employeeId`                                                                                                                            | *string*                                                                                                                                | :heavy_check_mark:                                                                                                                      | The UUID of the employee                                                                                                                |
-| `include`                                                                                                                               | [operations.GetV1EmployeesEmployeeIdJobsInclude](../../models/operations/getv1employeesemployeeidjobsinclude.md)                        | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
+| `include`                                                                                                                               | [operations.QueryParamInclude](../../models/operations/queryparaminclude.md)                                                            | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
 | `page`                                                                                                                                  | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | The page that is requested. When unspecified, will load all objects.                                                                    |
 | `per`                                                                                                                                   | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | Number of objects per page. When unspecified, will default to 25                                                                        |
 | `config`                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                            | :heavy_minus_sign:                                                                                                                      | Available config options for making requests.                                                                                           |
@@ -157,7 +157,7 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1JobsJobIdInclude, GetV1JobsJobIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1JobsJobIdQueryParamInclude, GetV1JobsJobIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new Gusto({
@@ -166,7 +166,7 @@ import { GetV1JobsJobIdInclude, GetV1JobsJobIdRequest } from "@speakeasy-sdks/gu
     },
   });
 const jobId: string = "string";
-const include: GetV1JobsJobIdInclude = GetV1JobsJobIdInclude.AllCompensations;
+const include: GetV1JobsJobIdQueryParamInclude = GetV1JobsJobIdQueryParamInclude.AllCompensations;
 
   const res = await sdk.jobsAndCompensations.getV1JobsJobId(jobId, include);
 
@@ -182,7 +182,7 @@ const include: GetV1JobsJobIdInclude = GetV1JobsJobIdInclude.AllCompensations;
 | Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `jobId`                                                                                                                                | *string*                                                                                                                               | :heavy_check_mark:                                                                                                                     | The UUID of the job                                                                                                                    |
-| `include`                                                                                                                              | [operations.GetV1JobsJobIdInclude](../../models/operations/getv1jobsjobidinclude.md)                                                   | :heavy_minus_sign:                                                                                                                     | Available options:<br/>- all_compensations: Include all effective dated compensations for the job instead of only the current compensation |
+| `include`                                                                                                                              | [operations.GetV1JobsJobIdQueryParamInclude](../../models/operations/getv1jobsjobidqueryparaminclude.md)                               | :heavy_minus_sign:                                                                                                                     | Available options:<br/>- all_compensations: Include all effective dated compensations for the job instead of only the current compensation |
 | `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
 
 
@@ -205,7 +205,7 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1JobsJobIdCompensationsInclude, GetV1JobsJobIdCompensationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1JobsJobIdCompensationsQueryParamInclude, GetV1JobsJobIdCompensationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new Gusto({
@@ -214,7 +214,7 @@ import { GetV1JobsJobIdCompensationsInclude, GetV1JobsJobIdCompensationsRequest 
     },
   });
 const jobId: string = "string";
-const include: GetV1JobsJobIdCompensationsInclude = GetV1JobsJobIdCompensationsInclude.AllCompensations;
+const include: GetV1JobsJobIdCompensationsQueryParamInclude = GetV1JobsJobIdCompensationsQueryParamInclude.AllCompensations;
 const page: number = 8955.23;
 const per: number = 1707.54;
 
@@ -232,7 +232,7 @@ const per: number = 1707.54;
 | Parameter                                                                                                                               | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
 | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `jobId`                                                                                                                                 | *string*                                                                                                                                | :heavy_check_mark:                                                                                                                      | The UUID of the job                                                                                                                     |
-| `include`                                                                                                                               | [operations.GetV1JobsJobIdCompensationsInclude](../../models/operations/getv1jobsjobidcompensationsinclude.md)                          | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
+| `include`                                                                                                                               | [operations.GetV1JobsJobIdCompensationsQueryParamInclude](../../models/operations/getv1jobsjobidcompensationsqueryparaminclude.md)      | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
 | `page`                                                                                                                                  | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | The page that is requested. When unspecified, will load all objects.                                                                    |
 | `per`                                                                                                                                   | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | Number of objects per page. When unspecified, will default to 25                                                                        |
 | `config`                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                            | :heavy_minus_sign:                                                                                                                      | Available config options for making requests.                                                                                           |
@@ -300,11 +300,11 @@ scope: `jobs:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  FlsaStatus,
+  MinimumWages,
+  PaymentUnit,
   PutV1CompensationsCompensationIdRequest,
   PutV1CompensationsCompensationIdRequestBody,
-  PutV1CompensationsCompensationIdRequestBodyFlsaStatus,
-  PutV1CompensationsCompensationIdRequestBodyMinimumWages,
-  PutV1CompensationsCompensationIdRequestBodyPaymentUnit,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {

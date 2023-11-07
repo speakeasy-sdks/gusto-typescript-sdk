@@ -1,5 +1,5 @@
 # Locations
-(*locations*)
+(*.locations*)
 
 ### Available Operations
 
@@ -157,8 +157,8 @@ scope: `companies.write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdLocationsApplicationJSON,
   PostV1CompaniesCompanyIdLocationsJsonRequest,
+  PostV1CompaniesCompanyIdLocationsJsonRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -168,7 +168,7 @@ import {
     },
   });
 const companyId: string = "string";
-const requestBody: PostV1CompaniesCompanyIdLocationsApplicationJSON = {
+const requestBody: PostV1CompaniesCompanyIdLocationsJsonRequestBody = {
   city: "New Svenberg",
   phoneNumber: "string",
   state: "string",
@@ -190,7 +190,7 @@ const requestBody: PostV1CompaniesCompanyIdLocationsApplicationJSON = {
 | Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
 | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | `companyId`                                                                                                                                | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the company                                                                                                                    |
-| `requestBody`                                                                                                                              | [operations.PostV1CompaniesCompanyIdLocationsApplicationJSON](../../models/operations/postv1companiescompanyidlocationsapplicationjson.md) | :heavy_minus_sign:                                                                                                                         | Create a company location.                                                                                                                 |
+| `requestBody`                                                                                                                              | [operations.PostV1CompaniesCompanyIdLocationsJsonRequestBody](../../models/operations/postv1companiescompanyidlocationsjsonrequestbody.md) | :heavy_minus_sign:                                                                                                                         | Create a company location.                                                                                                                 |
 | `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
 
 
@@ -212,8 +212,8 @@ scope: `companies.write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdLocationsApplicationXML,
   PostV1CompaniesCompanyIdLocationsRawRequest,
+  PostV1CompaniesCompanyIdLocationsRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -223,7 +223,7 @@ import {
     },
   });
 const companyId: string = "string";
-const requestBody: Uint8Array = "1@:2||$cFa" as bytes <<<>>>;
+const requestBody: Uint8Array = new TextEncoder().encode("0x3754FF0f8f");
 
   const res = await sdk.locations.postV1CompaniesCompanyIdLocationsRaw(companyId, requestBody);
 

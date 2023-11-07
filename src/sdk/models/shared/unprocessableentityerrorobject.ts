@@ -8,9 +8,9 @@ import { Expose, Type } from "class-transformer";
 /**
  * Contains relevant data to identify the resource in question when applicable. For example, to identify an entity `entity_type` and `entity_uuid` will be provided.
  */
-export class UnprocessableEntityErrorObjectErrorsMetadata extends SpeakeasyBase {}
+export class UnprocessableEntityErrorObjectMetadata extends SpeakeasyBase {}
 
-export class UnprocessableEntityErrorObjectErrors extends SpeakeasyBase {
+export class Errors extends SpeakeasyBase {
     /**
      * Specifies the type of error. The category provides error groupings and can be used to build custom error handling in your integration.
      */
@@ -37,8 +37,8 @@ export class UnprocessableEntityErrorObjectErrors extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    @Type(() => UnprocessableEntityErrorObjectErrorsMetadata)
-    metadata?: UnprocessableEntityErrorObjectErrorsMetadata;
+    @Type(() => UnprocessableEntityErrorObjectMetadata)
+    metadata?: UnprocessableEntityErrorObjectMetadata;
 }
 
 /**
@@ -50,8 +50,8 @@ export class UnprocessableEntityErrorObjectErrors extends SpeakeasyBase {
  *
  */
 export class UnprocessableEntityErrorObject extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: UnprocessableEntityErrorObjectErrors })
+    @SpeakeasyMetadata({ elemType: Errors })
     @Expose({ name: "errors" })
-    @Type(() => UnprocessableEntityErrorObjectErrors)
-    errors?: UnprocessableEntityErrorObjectErrors[];
+    @Type(() => Errors)
+    errors?: Errors[];
 }

@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostV1ProvisionRequestBodyCompanyAddresses extends SpeakeasyBase {
+export class Addresses extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "city" })
     city?: string;
@@ -40,14 +40,14 @@ export class PostV1ProvisionRequestBodyCompanyAddresses extends SpeakeasyBase {
     zip?: string;
 }
 
-export class PostV1ProvisionRequestBodyCompany extends SpeakeasyBase {
+export class PostV1ProvisionCompany extends SpeakeasyBase {
     /**
      * The locations for the company. This includes mailing, work, and filing addresses.
      */
-    @SpeakeasyMetadata({ elemType: PostV1ProvisionRequestBodyCompanyAddresses })
+    @SpeakeasyMetadata({ elemType: Addresses })
     @Expose({ name: "addresses" })
-    @Type(() => PostV1ProvisionRequestBodyCompanyAddresses)
-    addresses?: PostV1ProvisionRequestBodyCompanyAddresses[];
+    @Type(() => Addresses)
+    addresses?: Addresses[];
 
     /**
      * The employer identification number (EIN) of the company.
@@ -88,7 +88,7 @@ export class PostV1ProvisionRequestBodyCompany extends SpeakeasyBase {
 /**
  * Information for the user who will be the primary payroll administrator for the new company.
  */
-export class PostV1ProvisionRequestBodyUser extends SpeakeasyBase {
+export class PostV1ProvisionUser extends SpeakeasyBase {
     /**
      * The email of the user who will be the primary payroll admin.
      */
@@ -121,22 +121,22 @@ export class PostV1ProvisionRequestBodyUser extends SpeakeasyBase {
 export class PostV1ProvisionRequestBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "company" })
-    @Type(() => PostV1ProvisionRequestBodyCompany)
-    company: PostV1ProvisionRequestBodyCompany;
+    @Type(() => PostV1ProvisionCompany)
+    company: PostV1ProvisionCompany;
 
     /**
      * Information for the user who will be the primary payroll administrator for the new company.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "user" })
-    @Type(() => PostV1ProvisionRequestBodyUser)
-    user: PostV1ProvisionRequestBodyUser;
+    @Type(() => PostV1ProvisionUser)
+    user: PostV1ProvisionUser;
 }
 
 /**
  * OK
  */
-export class PostV1Provision200ApplicationJSON extends SpeakeasyBase {
+export class PostV1ProvisionResponseBody extends SpeakeasyBase {
     /**
      * A URL where the user should be redirected to complete their account setup inside of Gusto.
      */
@@ -179,5 +179,5 @@ export class PostV1ProvisionResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    postV1Provision200ApplicationJSONObject?: PostV1Provision200ApplicationJSON;
+    object?: PostV1ProvisionResponseBody;
 }

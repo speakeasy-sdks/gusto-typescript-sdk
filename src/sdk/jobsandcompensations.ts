@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -187,7 +187,7 @@ export class JobsAndCompensations {
      */
     async getV1EmployeesEmployeeIdJobs(
         employeeId: string,
-        include?: operations.GetV1EmployeesEmployeeIdJobsInclude,
+        include?: operations.QueryParamInclude,
         page?: number,
         per?: number,
         config?: AxiosRequestConfig
@@ -243,9 +243,9 @@ export class JobsAndCompensations {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.jobs = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.jobs = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Job,
                         resFieldDepth
@@ -276,7 +276,7 @@ export class JobsAndCompensations {
      */
     async getV1JobsJobId(
         jobId: string,
-        include?: operations.GetV1JobsJobIdInclude,
+        include?: operations.GetV1JobsJobIdQueryParamInclude,
         config?: AxiosRequestConfig
     ): Promise<operations.GetV1JobsJobIdResponse> {
         const req = new operations.GetV1JobsJobIdRequest({
@@ -358,7 +358,7 @@ export class JobsAndCompensations {
      */
     async getV1JobsJobIdCompensations(
         jobId: string,
-        include?: operations.GetV1JobsJobIdCompensationsInclude,
+        include?: operations.GetV1JobsJobIdCompensationsQueryParamInclude,
         page?: number,
         per?: number,
         config?: AxiosRequestConfig
@@ -414,9 +414,9 @@ export class JobsAndCompensations {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.compensations = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.compensations = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Compensation,
                         resFieldDepth

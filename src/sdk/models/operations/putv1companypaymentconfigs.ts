@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 /**
  * The payment speed
  */
-export enum PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed {
+export enum PaymentSpeed {
     TwoDay = "2-day",
     FourDay = "4-day",
 }
@@ -28,7 +28,7 @@ export class PutV1CompanyPaymentConfigsRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "payment_speed" })
-    paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed;
+    paymentSpeed: PaymentSpeed;
 }
 
 export class PutV1CompanyPaymentConfigsRequest extends SpeakeasyBase {

@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -156,9 +156,9 @@ export class Companies {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.admins = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.admins = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Admin,
                         resFieldDepth
@@ -247,11 +247,10 @@ export class Companies {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getV1CompaniesCompanyIdCustomFields200ApplicationJSONObject =
-                        utils.objectToClass(
-                            JSON.parse(decodedRes),
-                            operations.GetV1CompaniesCompanyIdCustomFields200ApplicationJSON
-                        );
+                    res.object = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        operations.GetV1CompaniesCompanyIdCustomFieldsResponseBody
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -535,11 +534,10 @@ export class Companies {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService200ApplicationJSONObject =
-                        utils.objectToClass(
-                            JSON.parse(decodedRes),
-                            operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfService200ApplicationJSON
-                        );
+                    res.object = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponseBody
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -650,11 +648,10 @@ export class Companies {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSONObject =
-                        utils.objectToClass(
-                            JSON.parse(decodedRes),
-                            operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService200ApplicationJSON
-                        );
+                    res.object = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponseBody
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -865,9 +862,9 @@ export class Companies {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.postV1PartnerManagedCompanies200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.PostV1PartnerManagedCompanies200ApplicationJSON
+                        operations.PostV1PartnerManagedCompaniesResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -984,9 +981,9 @@ export class Companies {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.postV1Provision200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.PostV1Provision200ApplicationJSON
+                        operations.PostV1ProvisionResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -1097,11 +1094,10 @@ export class Companies {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.putV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSONObject =
-                        utils.objectToClass(
-                            JSON.parse(decodedRes),
-                            operations.PutV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSON
-                        );
+                    res.object = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateResponseBody
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

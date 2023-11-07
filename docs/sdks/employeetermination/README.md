@@ -1,5 +1,5 @@
 # EmployeeTermination
-(*employeeTermination*)
+(*.employeeTermination*)
 
 ### Available Operations
 

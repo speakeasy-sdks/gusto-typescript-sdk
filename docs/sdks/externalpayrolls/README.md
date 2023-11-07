@@ -1,5 +1,5 @@
 # ExternalPayrolls
-(*externalPayrolls*)
+(*.externalPayrolls*)
 
 ### Available Operations
 
@@ -236,13 +236,13 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  Benefits,
+  Earnings,
+  EarningType,
+  ExternalPayrollItems,
   PutV1ExternalPayrollRequest,
   PutV1ExternalPayrollRequestBody,
-  PutV1ExternalPayrollRequestBodyExternalPayrollItems,
-  PutV1ExternalPayrollRequestBodyExternalPayrollItemsBenefits,
-  PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarnings,
-  PutV1ExternalPayrollRequestBodyExternalPayrollItemsEarningsEarningType,
-  PutV1ExternalPayrollRequestBodyExternalPayrollItemsTaxes,
+  Taxes,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {

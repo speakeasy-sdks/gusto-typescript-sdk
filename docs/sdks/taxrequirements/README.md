@@ -1,5 +1,5 @@
 # TaxRequirements
-(*taxRequirements*)
+(*.taxRequirements*)
 
 ### Available Operations
 
@@ -142,8 +142,8 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1CompaniesCompanyUuidTaxRequirementsStateRequest,
   PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody,
-  PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets,
-  PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements,
+  Requirements,
+  RequirementSets,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {

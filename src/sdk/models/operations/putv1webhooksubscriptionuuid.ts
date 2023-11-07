@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes {
+export enum PutV1WebhookSubscriptionUuidSubscriptionTypes {
     BankAccount = "BankAccount",
     Company = "Company",
     CompanyBenefit = "CompanyBenefit",
@@ -27,7 +27,7 @@ export enum PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes {
 export class PutV1WebhookSubscriptionUuidRequestBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "subscription_types" })
-    subscriptionTypes: PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes[];
+    subscriptionTypes: PutV1WebhookSubscriptionUuidSubscriptionTypes[];
 }
 
 export class PutV1WebhookSubscriptionUuidRequest extends SpeakeasyBase {

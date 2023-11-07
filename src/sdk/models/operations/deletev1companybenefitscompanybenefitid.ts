@@ -14,7 +14,7 @@ export class DeleteV1CompanyBenefitsCompanyBenefitIdRequest extends SpeakeasyBas
     companyBenefitId: string;
 }
 
-export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase extends SpeakeasyBase {
+export class Base extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "full_message" })
     fullMessage?: string;
@@ -28,23 +28,21 @@ export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase
     type?: string;
 }
 
-export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrors extends SpeakeasyBase {
-    @SpeakeasyMetadata({
-        elemType: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase,
-    })
+export class Errors extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: Base })
     @Expose({ name: "base" })
-    @Type(() => DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase)
-    base?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrorsBase[];
+    @Type(() => Base)
+    base?: Base[];
 }
 
 /**
  * Unprocessable Entity
  */
-export class DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON extends SpeakeasyBase {
+export class DeleteV1CompanyBenefitsCompanyBenefitIdResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "errors" })
-    @Type(() => DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrors)
-    errors?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONErrors;
+    @Type(() => Errors)
+    errors?: Errors;
 }
 
 export class DeleteV1CompanyBenefitsCompanyBenefitIdResponse extends SpeakeasyBase {
@@ -70,5 +68,5 @@ export class DeleteV1CompanyBenefitsCompanyBenefitIdResponse extends SpeakeasyBa
      * Unprocessable Entity
      */
     @SpeakeasyMetadata()
-    deleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSONObject?: DeleteV1CompanyBenefitsCompanyBenefitId422ApplicationJSON;
+    object?: DeleteV1CompanyBenefitsCompanyBenefitIdResponseBody;
 }

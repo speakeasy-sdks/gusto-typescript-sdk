@@ -1,5 +1,5 @@
 # WebhookSubscriptions
-(*webhookSubscriptions*)
+(*.webhookSubscriptions*)
 
 ### Available Operations
 
@@ -215,7 +215,7 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1WebhookSubscriptionRequestBodySubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { SubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new Gusto({
@@ -226,7 +226,7 @@ import { PostV1WebhookSubscriptionRequestBodySubscriptionTypes } from "@speakeas
 
   const res = await sdk.webhookSubscriptions.postV1WebhookSubscription({
     subscriptionTypes: [
-      PostV1WebhookSubscriptionRequestBodySubscriptionTypes.PaySchedule,
+      SubscriptionTypes.PaySchedule,
     ],
     url: "http://adept-mutation.com",
   });
@@ -328,7 +328,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1WebhookSubscriptionUuidRequest,
   PutV1WebhookSubscriptionUuidRequestBody,
-  PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes,
+  PutV1WebhookSubscriptionUuidSubscriptionTypes,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -340,7 +340,7 @@ import {
 const webhookSubscriptionUuid: string = "string";
 const requestBody: PutV1WebhookSubscriptionUuidRequestBody = {
   subscriptionTypes: [
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Employee,
+    PutV1WebhookSubscriptionUuidSubscriptionTypes.Employee,
   ],
 };
 

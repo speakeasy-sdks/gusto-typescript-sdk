@@ -1,5 +1,5 @@
 # PaySchedules
-(*paySchedules*)
+(*.paySchedules*)
 
 ### Available Operations
 
@@ -160,9 +160,9 @@ Be sure to **[check state laws](https://www.dol.gov/agencies/whd/state/payday)**
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  Frequency,
   PostV1CompaniesCompanyIdPaySchedulesRequest,
   PostV1CompaniesCompanyIdPaySchedulesRequestBody,
-  PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -175,7 +175,7 @@ const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdPaySchedulesRequestBody = {
   anchorEndOfPayPeriod: "2020-05-08",
   anchorPayDate: "2020-05-15",
-  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.EveryOtherWeek,
+  frequency: Frequency.EveryOtherWeek,
 };
 
   const res = await sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules(companyId, requestBody);

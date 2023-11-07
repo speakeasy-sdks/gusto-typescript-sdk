@@ -1,5 +1,5 @@
 # BankAccounts
-(*bankAccounts*)
+(*.bankAccounts*)
 
 ### Available Operations
 
@@ -66,9 +66,9 @@ After successful verification, the bank account's verification_status is 'verifi
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  AccountType,
   PostV1CompaniesCompanyIdBankAccountsRequest,
   PostV1CompaniesCompanyIdBankAccountsRequestBody,
-  PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -120,7 +120,7 @@ This endpoint creates a new **verified** bank account by using a plaid processor
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1PlaidProcessorTokenRequestBodyOwnerType } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { OwnerType } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new Gusto({
@@ -131,7 +131,7 @@ import { PostV1PlaidProcessorTokenRequestBodyOwnerType } from "@speakeasy-sdks/g
 
   const res = await sdk.bankAccounts.postV1PlaidProcessorToken({
     ownerId: "string",
-    ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType.Company,
+    ownerType: OwnerType.Company,
     processorToken: "string",
   });
 

@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class PayrollReceiptEmployeeCompensations extends SpeakeasyBase {
+export class EmployeeCompensations extends SpeakeasyBase {
     /**
      * The total child support garnishment for the pay period.
      */
@@ -117,7 +117,7 @@ export class PayrollReceiptLicensee extends SpeakeasyBase {
     state?: string;
 }
 
-export class PayrollReceiptTaxes extends SpeakeasyBase {
+export class Taxes extends SpeakeasyBase {
     /**
      * The total amount paid by both employer and employee for this tax.
      */
@@ -191,10 +191,10 @@ export class PayrollReceipt extends SpeakeasyBase {
     /**
      * An array of employee compensations and withholdings for this payroll
      */
-    @SpeakeasyMetadata({ elemType: PayrollReceiptEmployeeCompensations })
+    @SpeakeasyMetadata({ elemType: EmployeeCompensations })
     @Expose({ name: "employee_compensations" })
-    @Type(() => PayrollReceiptEmployeeCompensations)
-    employeeCompensations?: PayrollReceiptEmployeeCompensations[];
+    @Type(() => EmployeeCompensations)
+    employeeCompensations?: EmployeeCompensations[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "liability_of_licensee" })
@@ -257,10 +257,10 @@ export class PayrollReceipt extends SpeakeasyBase {
     /**
      * An array of totaled employer and employee taxes for the pay period.
      */
-    @SpeakeasyMetadata({ elemType: PayrollReceiptTaxes })
+    @SpeakeasyMetadata({ elemType: Taxes })
     @Expose({ name: "taxes" })
-    @Type(() => PayrollReceiptTaxes)
-    taxes?: PayrollReceiptTaxes[];
+    @Type(() => Taxes)
+    taxes?: Taxes[];
 
     /**
      * The subtotals for the payroll.

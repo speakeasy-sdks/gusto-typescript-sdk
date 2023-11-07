@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements extends SpeakeasyBase {
+export class Requirements extends SpeakeasyBase {
     /**
      * An identifier for an individual requirement. Uniqueness is guaranteed within a requirement set.
      */
@@ -20,7 +20,7 @@ export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirement
     value?: string;
 }
 
-export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets extends SpeakeasyBase {
+export class RequirementSets extends SpeakeasyBase {
     /**
      * An ISO 8601 formatted date representing the date values became effective. Some requirement sets are effective dated, while others are not. Multiple requirement sets for the same state/key can/will exist with unique effective dates. If a requirement set is has an `effective_from` value, all requirement sets with the same key will also have an `effective_from` value.
      */
@@ -35,13 +35,10 @@ export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirement
     @Expose({ name: "key" })
     key?: string;
 
-    @SpeakeasyMetadata({
-        elemType:
-            PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements,
-    })
+    @SpeakeasyMetadata({ elemType: Requirements })
     @Expose({ name: "requirements" })
-    @Type(() => PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements)
-    requirements?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements[];
+    @Type(() => Requirements)
+    requirements?: Requirements[];
 
     /**
      * One of the two-letter state abbreviations for the fifty United States and the District of Columbia (DC)
@@ -52,12 +49,10 @@ export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirement
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody extends SpeakeasyBase {
-    @SpeakeasyMetadata({
-        elemType: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets,
-    })
+    @SpeakeasyMetadata({ elemType: RequirementSets })
     @Expose({ name: "requirement_sets" })
-    @Type(() => PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets)
-    requirementSets?: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets[];
+    @Type(() => RequirementSets)
+    requirementSets?: RequirementSets[];
 }
 
 export class PutV1CompaniesCompanyUuidTaxRequirementsStateRequest extends SpeakeasyBase {

@@ -1,5 +1,5 @@
 # EmployeeBenefits
-(*employeeBenefits*)
+(*.employeeBenefits*)
 
 ### Available Operations
 
@@ -200,11 +200,11 @@ scope: `employee_benefits:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  Contribution,
+  DeductionReducesTaxableIncome,
   PostV1EmployeesEmployeeIdEmployeeBenefitsRequest,
   PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody,
-  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution,
-  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType,
-  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome,
+  PostV1EmployeesEmployeeIdEmployeeBenefitsType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -255,11 +255,11 @@ scope: `employee_benefits:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1EmployeeBenefitsEmployeeBenefitIdContribution,
+  PutV1EmployeeBenefitsEmployeeBenefitIdDeductionReducesTaxableIncome,
   PutV1EmployeeBenefitsEmployeeBenefitIdRequest,
   PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody,
-  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContribution,
-  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionType,
-  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncome,
+  PutV1EmployeeBenefitsEmployeeBenefitIdType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {

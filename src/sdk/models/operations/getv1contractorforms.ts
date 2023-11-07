@@ -14,7 +14,7 @@ export class GetV1ContractorFormsRequest extends SpeakeasyBase {
     contractorUuid: string;
 }
 
-export class GetV1ContractorFormsForm extends SpeakeasyBase {
+export class Form extends SpeakeasyBase {
     /**
      * The contractor uuid
      */
@@ -87,6 +87,6 @@ export class GetV1ContractorFormsResponse extends SpeakeasyBase {
     /**
      * Example response
      */
-    @SpeakeasyMetadata({ elemType: GetV1ContractorFormsForm })
-    getV1ContractorFormsFormAnies?: GetV1ContractorFormsForm[];
+    @SpeakeasyMetadata({ elemType: Form })
+    classes?: Form[];
 }

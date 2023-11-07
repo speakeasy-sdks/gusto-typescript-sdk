@@ -8,7 +8,7 @@ import { Expose } from "class-transformer";
 /**
  * The version of w4 form.
  */
-export enum EmployeeFederalTaxW4DataType {
+export enum W4DataType {
     Pre2020W4 = "pre_2020_w4",
     Rev2020W4 = "rev_2020_w4",
 }
@@ -90,5 +90,5 @@ export class EmployeeFederalTax extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "w4_data_type" })
-    w4DataType?: EmployeeFederalTaxW4DataType;
+    w4DataType?: W4DataType;
 }

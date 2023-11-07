@@ -1,5 +1,5 @@
 # TaxLiabilities
-(*taxLiabilities*)
+(*.taxLiabilities*)
 
 ### Available Operations
 
@@ -57,11 +57,7 @@ Update tax liabilities for a company.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1TaxLiabilitiesRequest,
-  PutV1TaxLiabilitiesRequestBody,
-  PutV1TaxLiabilitiesRequestBodyLiabilitySelections,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { LiabilitySelections, PutV1TaxLiabilitiesRequest, PutV1TaxLiabilitiesRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new Gusto({

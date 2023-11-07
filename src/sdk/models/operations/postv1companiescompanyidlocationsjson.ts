@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 /**
  * Create a company location.
  */
-export class PostV1CompaniesCompanyIdLocationsApplicationJSON extends SpeakeasyBase {
+export class PostV1CompaniesCompanyIdLocationsJsonRequestBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "city" })
     city: string;
@@ -65,7 +65,7 @@ export class PostV1CompaniesCompanyIdLocationsJsonRequest extends SpeakeasyBase 
      * Create a company location.
      */
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostV1CompaniesCompanyIdLocationsApplicationJSON;
+    requestBody?: PostV1CompaniesCompanyIdLocationsJsonRequestBody;
 }
 
 export class PostV1CompaniesCompanyIdLocationsJsonResponse extends SpeakeasyBase {

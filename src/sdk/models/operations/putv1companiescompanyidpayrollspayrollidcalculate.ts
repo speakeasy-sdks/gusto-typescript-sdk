@@ -42,5 +42,5 @@ export class PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse extends S
      * Unprocessable Entity
      */
     @SpeakeasyMetadata()
-    putV1CompaniesCompanyIdPayrollsPayrollIdCalculate422ApplicationJSONOneOf?: any;
+    oneOf?: any;
 }

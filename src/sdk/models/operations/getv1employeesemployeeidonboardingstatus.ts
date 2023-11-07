@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1EmployeesEmployeeIdOnboardingStatusRequest extends SpeakeasyBase {
@@ -17,7 +17,7 @@ export class GetV1EmployeesEmployeeIdOnboardingStatusRequest extends SpeakeasyBa
 /**
  * Example response.
  */
-export class GetV1EmployeesEmployeeIdOnboardingStatus200ApplicationXML extends SpeakeasyBase {}
+export class GetV1EmployeesEmployeeIdOnboardingStatusResponseBody extends SpeakeasyBase {}
 
 export class GetV1EmployeesEmployeeIdOnboardingStatusResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()

@@ -3,10 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { RFCDate } from "../../types";
+import { RFCDate } from "../../../sdk/types";
 import { Expose, Transform, Type } from "class-transformer";
 
-export class ContractorPaymentReceiptContractorPayments extends SpeakeasyBase {
+export class ContractorPayments extends SpeakeasyBase {
     /**
      * The bonus amount in the payment.
      */
@@ -82,7 +82,7 @@ export class ContractorPaymentReceiptContractorPayments extends SpeakeasyBase {
 /**
  * The licensed payroll processor
  */
-export class ContractorPaymentReceiptLicensee extends SpeakeasyBase {
+export class Licensee extends SpeakeasyBase {
     /**
      * Always the fixed string "525 20th St"
      */
@@ -129,7 +129,7 @@ export class ContractorPaymentReceiptLicensee extends SpeakeasyBase {
 /**
  * The subtotals for the contractor payment.
  */
-export class ContractorPaymentReceiptTotals extends SpeakeasyBase {
+export class Totals extends SpeakeasyBase {
     /**
      * The total company debit for the contractor payment.
      */
@@ -156,10 +156,10 @@ export class ContractorPaymentReceipt extends SpeakeasyBase {
     /**
      * An array of contractor payments for this contractor payment.
      */
-    @SpeakeasyMetadata({ elemType: ContractorPaymentReceiptContractorPayments })
+    @SpeakeasyMetadata({ elemType: ContractorPayments })
     @Expose({ name: "contractor_payments" })
-    @Type(() => ContractorPaymentReceiptContractorPayments)
-    contractorPayments?: ContractorPaymentReceiptContractorPayments[];
+    @Type(() => ContractorPayments)
+    contractorPayments?: ContractorPayments[];
 
     /**
      * The debit date for the contractor payment.
@@ -196,8 +196,8 @@ export class ContractorPaymentReceipt extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "licensee" })
-    @Type(() => ContractorPaymentReceiptLicensee)
-    licensee?: ContractorPaymentReceiptLicensee;
+    @Type(() => Licensee)
+    licensee?: Licensee;
 
     /**
      * The individual or company name of the contractor receiving payment.
@@ -225,6 +225,6 @@ export class ContractorPaymentReceipt extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "totals" })
-    @Type(() => ContractorPaymentReceiptTotals)
-    totals?: ContractorPaymentReceiptTotals;
+    @Type(() => Totals)
+    totals?: Totals;
 }

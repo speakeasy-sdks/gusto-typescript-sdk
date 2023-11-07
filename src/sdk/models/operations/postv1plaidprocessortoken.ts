@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 /**
  * The owner type of the bank account
  */
-export enum PostV1PlaidProcessorTokenRequestBodyOwnerType {
+export enum OwnerType {
     Company = "Company",
 }
 
@@ -27,7 +27,7 @@ export class PostV1PlaidProcessorTokenRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "owner_type" })
-    ownerType: PostV1PlaidProcessorTokenRequestBodyOwnerType;
+    ownerType: OwnerType;
 
     /**
      * The Plaid processor token
@@ -71,5 +71,5 @@ export class PostV1PlaidProcessorTokenResponse extends SpeakeasyBase {
      * A JSON object containing bank information
      */
     @SpeakeasyMetadata()
-    postV1PlaidProcessorToken201ApplicationJSONOneOf?: any;
+    oneOf?: any;
 }

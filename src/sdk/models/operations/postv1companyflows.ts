@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 /**
  * the type of target entity applicable to the flow. This field is optional for company flows, please refer to the flow_types table above for more details.
  */
-export enum PostV1CompanyFlowsRequestBodyEntityType {
+export enum EntityType {
     Company = "Company",
     Employee = "Employee",
 }
@@ -21,7 +21,7 @@ export class PostV1CompanyFlowsRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "entity_type" })
-    entityType?: PostV1CompanyFlowsRequestBodyEntityType;
+    entityType?: EntityType;
 
     /**
      * UUID of the target entity applicable to the flow. This field is optional for company flows, please refer to the flow_types table above for more details.

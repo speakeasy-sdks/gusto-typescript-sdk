@@ -1,5 +1,5 @@
 # CompanyBenefits
-(*companyBenefits*)
+(*.companyBenefits*)
 
 ### Available Operations
 

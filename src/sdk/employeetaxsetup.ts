@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -170,9 +170,9 @@ export class EmployeeTaxSetup {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.employeeStateTaxes = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.employeeStateTaxes = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.EmployeeStateTax,
                         resFieldDepth
@@ -386,9 +386,9 @@ export class EmployeeTaxSetup {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.employeeStateTaxes = [];
+                    res.twoHundredApplicationJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.employeeStateTaxes = utils.objectToClass(
+                    res.twoHundredApplicationJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.EmployeeStateTax,
                         resFieldDepth
@@ -406,14 +406,13 @@ export class EmployeeTaxSetup {
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects = [];
+                    res.fourHundredAndTwentyTwoApplicationJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects =
-                        utils.objectToClass(
-                            JSON.parse(decodedRes),
-                            operations.PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON,
-                            resFieldDepth
-                        );
+                    res.fourHundredAndTwentyTwoApplicationJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        operations.ResponseBody,
+                        resFieldDepth
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

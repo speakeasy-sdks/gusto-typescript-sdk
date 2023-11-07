@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 /**
@@ -13,7 +13,7 @@ import { AxiosResponse } from "axios";
  * - all_compensations: Include all effective dated compensations for each job instead of only the current compensation
  * - custom_fields: Include employees' custom fields
  */
-export enum GetV1EmployeesInclude {
+export enum Include {
     AllCompensations = "all_compensations",
     CustomFields = "custom_fields",
 }
@@ -33,7 +33,7 @@ export class GetV1EmployeesRequest extends SpeakeasyBase {
      * - custom_fields: Include employees' custom fields
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
-    include?: GetV1EmployeesInclude;
+    include?: Include;
 }
 
 export class GetV1EmployeesResponse extends SpeakeasyBase {

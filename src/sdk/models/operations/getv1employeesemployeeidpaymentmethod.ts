@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1EmployeesEmployeeIdPaymentMethodRequest extends SpeakeasyBase {
@@ -25,7 +25,7 @@ export class GetV1EmployeesEmployeeIdPaymentMethodResponse extends SpeakeasyBase
      * Example response
      */
     @SpeakeasyMetadata()
-    employeePaymentMethod?: shared.EmployeePaymentMethod1;
+    employeePaymentMethod?: shared.EmployeePaymentMethod;
 
     /**
      * HTTP response status code for this operation

@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 /**
  * The contractor type.
  */
-export enum PostV1CompaniesCompanyIdContractorsRequestBodyType {
+export enum PostV1CompaniesCompanyIdContractorsType {
     Individual = "Individual",
     Business = "Business",
 }
@@ -21,7 +21,7 @@ export enum PostV1CompaniesCompanyIdContractorsRequestBodyType {
  * @remarks
  *
  */
-export enum PostV1CompaniesCompanyIdContractorsRequestBodyWageType {
+export enum WageType {
     Fixed = "Fixed",
     Hourly = "Hourly",
 }
@@ -144,7 +144,7 @@ export class PostV1CompaniesCompanyIdContractorsRequestBody extends SpeakeasyBas
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: PostV1CompaniesCompanyIdContractorsRequestBodyType;
+    type?: PostV1CompaniesCompanyIdContractorsType;
 
     /**
      * The contractor’s wage type.
@@ -154,7 +154,7 @@ export class PostV1CompaniesCompanyIdContractorsRequestBody extends SpeakeasyBas
      */
     @SpeakeasyMetadata()
     @Expose({ name: "wage_type" })
-    wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType;
+    wageType: WageType;
 
     /**
      * State where the contractor will be conducting the majority of their work for the company.

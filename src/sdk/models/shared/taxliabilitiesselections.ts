@@ -8,7 +8,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * Possible tax liabilities selections.
  */
-export class TaxLiabilitiesSelectionsPossibleLiabilities extends SpeakeasyBase {
+export class PossibleLiabilities extends SpeakeasyBase {
     /**
      * The UUID of the external payroll.
      */
@@ -47,8 +47,8 @@ export class TaxLiabilitiesSelections extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "possible_liabilities" })
-    @Type(() => TaxLiabilitiesSelectionsPossibleLiabilities)
-    possibleLiabilities?: TaxLiabilitiesSelectionsPossibleLiabilities;
+    @Type(() => PossibleLiabilities)
+    possibleLiabilities?: PossibleLiabilities;
 
     /**
      * The ID of the tax.

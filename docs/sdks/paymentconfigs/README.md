@@ -1,5 +1,5 @@
 # PaymentConfigs
-(*paymentConfigs*)
+(*.paymentConfigs*)
 
 ### Available Operations
 
@@ -55,9 +55,9 @@ Update payment speed for the company and fast payment limit (only applicable for
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PaymentSpeed,
   PutV1CompanyPaymentConfigsRequest,
   PutV1CompanyPaymentConfigsRequestBody,
-  PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -69,7 +69,7 @@ import {
 const companyUuid: string = "string";
 const requestBody: PutV1CompanyPaymentConfigsRequestBody = {
   fastPaymentLimit: "string",
-  paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.TwoDay,
+  paymentSpeed: PaymentSpeed.TwoDay,
 };
 
   const res = await sdk.paymentConfigs.putV1CompanyPaymentConfigs(companyUuid, requestBody);

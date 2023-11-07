@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType {
+export enum PostV1ContractorsContractorUuidBankAccountsAccountType {
     Checking = "Checking",
     Savings = "Savings",
 }
@@ -19,7 +19,7 @@ export class PostV1ContractorsContractorUuidBankAccountsRequestBody extends Spea
 
     @SpeakeasyMetadata()
     @Expose({ name: "account_type" })
-    accountType: PostV1ContractorsContractorUuidBankAccountsRequestBodyAccountType;
+    accountType: PostV1ContractorsContractorUuidBankAccountsAccountType;
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
@@ -44,7 +44,7 @@ export class PostV1ContractorsContractorUuidBankAccountsRequest extends Speakeas
 /**
  * Example response
  */
-export class PostV1ContractorsContractorUuidBankAccounts201ApplicationXML extends SpeakeasyBase {}
+export class PostV1ContractorsContractorUuidBankAccountsResponseBody extends SpeakeasyBase {}
 
 export class PostV1ContractorsContractorUuidBankAccountsResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()

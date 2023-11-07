@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompaniesCompanyIdCompanyBenefitsRequest extends SpeakeasyBase {
@@ -22,12 +22,6 @@ export class GetV1CompaniesCompanyIdCompanyBenefitsRequest extends SpeakeasyBase
 
 export class GetV1CompaniesCompanyIdCompanyBenefitsResponse extends SpeakeasyBase {
     /**
-     * Example response
-     */
-    @SpeakeasyMetadata({ elemType: shared.CompanyBenefit })
-    companyBenefits?: shared.CompanyBenefit[];
-
-    /**
      * HTTP response content type for this operation
      */
     @SpeakeasyMetadata()
@@ -44,4 +38,10 @@ export class GetV1CompaniesCompanyIdCompanyBenefitsResponse extends SpeakeasyBas
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
+
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.CompanyBenefit })
+    classes?: shared.CompanyBenefit[];
 }

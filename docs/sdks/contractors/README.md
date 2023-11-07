@@ -1,5 +1,5 @@
 # Contractors
-(*contractors*)
+(*.contractors*)
 
 ### Available Operations
 
@@ -269,8 +269,8 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1CompaniesCompanyIdContractorsRequest,
   PostV1CompaniesCompanyIdContractorsRequestBody,
-  PostV1CompaniesCompanyIdContractorsRequestBodyType,
-  PostV1CompaniesCompanyIdContractorsRequestBodyWageType,
+  PostV1CompaniesCompanyIdContractorsType,
+  WageType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -283,7 +283,7 @@ const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdContractorsRequestBody = {
   hourlyRate: "40.0",
   startDate: "2020-01-11",
-  wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType.Fixed,
+  wageType: WageType.Fixed,
 };
 
   const res = await sdk.contractors.postV1CompaniesCompanyIdContractors(companyId, requestBody);
@@ -326,8 +326,8 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1ContractorsContractorIdRequest,
   PutV1ContractorsContractorIdRequestBody,
-  PutV1ContractorsContractorIdRequestBodyType,
-  PutV1ContractorsContractorIdRequestBodyWageType,
+  PutV1ContractorsContractorIdType,
+  PutV1ContractorsContractorIdWageType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {
@@ -435,9 +435,9 @@ Below is a list of valid onboarding status changes depending on the intended act
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  OnboardingStatus,
   PutV1ContractorsContractorUuidOnboardingStatusRequest,
   PutV1ContractorsContractorUuidOnboardingStatusRequestBody,
-  PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 (async() => {

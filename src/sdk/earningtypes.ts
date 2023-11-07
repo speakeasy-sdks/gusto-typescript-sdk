@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -154,11 +154,10 @@ export class EarningTypes {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getV1CompaniesCompanyIdEarningTypes200ApplicationJSONObject =
-                        utils.objectToClass(
-                            JSON.parse(decodedRes),
-                            operations.GetV1CompaniesCompanyIdEarningTypes200ApplicationJSON
-                        );
+                    res.object = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        operations.GetV1CompaniesCompanyIdEarningTypesResponseBody
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

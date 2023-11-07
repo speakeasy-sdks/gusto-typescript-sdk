@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1TaxLiabilitiesRequestBodyLiabilitySelections extends SpeakeasyBase {
+export class LiabilitySelections extends SpeakeasyBase {
     /**
      * The UUID of the last unpaid external payroll uuid. It should be null when the full amount of tax liability has been paid.
      */
@@ -31,10 +31,10 @@ export class PutV1TaxLiabilitiesRequestBodyLiabilitySelections extends Speakeasy
 }
 
 export class PutV1TaxLiabilitiesRequestBody extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: PutV1TaxLiabilitiesRequestBodyLiabilitySelections })
+    @SpeakeasyMetadata({ elemType: LiabilitySelections })
     @Expose({ name: "liability_selections" })
-    @Type(() => PutV1TaxLiabilitiesRequestBodyLiabilitySelections)
-    liabilitySelections?: PutV1TaxLiabilitiesRequestBodyLiabilitySelections[];
+    @Type(() => LiabilitySelections)
+    liabilitySelections?: LiabilitySelections[];
 }
 
 export class PutV1TaxLiabilitiesRequest extends SpeakeasyBase {
@@ -68,12 +68,6 @@ export class PutV1TaxLiabilitiesResponse extends SpeakeasyBase {
     rawResponse?: AxiosResponse;
 
     /**
-     * Example response
-     */
-    @SpeakeasyMetadata({ elemType: shared.TaxLiabilitiesSelections })
-    taxLiabilitiesSelections?: shared.TaxLiabilitiesSelections[];
-
-    /**
      * Unprocessable Entity
      *
      * @remarks
@@ -83,4 +77,10 @@ export class PutV1TaxLiabilitiesResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.TaxLiabilitiesSelections })
+    classes?: shared.TaxLiabilitiesSelections[];
 }

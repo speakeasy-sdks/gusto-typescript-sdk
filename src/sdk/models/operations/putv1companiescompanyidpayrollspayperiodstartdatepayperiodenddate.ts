@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 /**
  * An array of fixed compensations for the employee. Fixed compensations include tips, bonuses, and one time reimbursements.
  */
-export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsFixedCompensations extends SpeakeasyBase {
+export class FixedCompensations extends SpeakeasyBase {
     /**
      * The amount of the compensation for the pay period.
      */
@@ -36,7 +36,7 @@ export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRe
 /**
  * An array of hourly compensations for the employee. Hourly compensations include regular, overtime, and double overtime hours.
  */
-export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsHourlyCompensations extends SpeakeasyBase {
+export class HourlyCompensations extends SpeakeasyBase {
     /**
      * The number of hours to be compensated for this pay period.
      */
@@ -59,7 +59,7 @@ export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRe
     name?: string;
 }
 
-export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaidTimeOff extends SpeakeasyBase {
+export class PaidTimeOff extends SpeakeasyBase {
     /**
      * The hours of this PTO taken during the pay period.
      */
@@ -85,12 +85,12 @@ export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRe
 /**
  * The employee's compensation payment method. Invalid values will be ignored.
  */
-export enum PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod {
+export enum PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDatePaymentMethod {
     DirectDeposit = "Direct Deposit",
     Check = "Check",
 }
 
-export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensations extends SpeakeasyBase {
+export class EmployeeCompensations extends SpeakeasyBase {
     /**
      * The UUID of the employee.
      */
@@ -105,61 +105,37 @@ export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRe
     @Expose({ name: "excluded" })
     excluded?: boolean;
 
-    @SpeakeasyMetadata({
-        elemType:
-            PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsFixedCompensations,
-    })
+    @SpeakeasyMetadata({ elemType: FixedCompensations })
     @Expose({ name: "fixed_compensations" })
-    @Type(
-        () =>
-            PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsFixedCompensations
-    )
-    fixedCompensations?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsFixedCompensations[];
+    @Type(() => FixedCompensations)
+    fixedCompensations?: FixedCompensations[];
 
-    @SpeakeasyMetadata({
-        elemType:
-            PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsHourlyCompensations,
-    })
+    @SpeakeasyMetadata({ elemType: HourlyCompensations })
     @Expose({ name: "hourly_compensations" })
-    @Type(
-        () =>
-            PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsHourlyCompensations
-    )
-    hourlyCompensations?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsHourlyCompensations[];
+    @Type(() => HourlyCompensations)
+    hourlyCompensations?: HourlyCompensations[];
 
     /**
      * An array of all paid time off the employee is eligible for this pay period. Each paid time off object can be the name or the specific policy_uuid.
      */
-    @SpeakeasyMetadata({
-        elemType:
-            PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaidTimeOff,
-    })
+    @SpeakeasyMetadata({ elemType: PaidTimeOff })
     @Expose({ name: "paid_time_off" })
-    @Type(
-        () =>
-            PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaidTimeOff
-    )
-    paidTimeOff?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaidTimeOff[];
+    @Type(() => PaidTimeOff)
+    paidTimeOff?: PaidTimeOff[];
 
     /**
      * The employee's compensation payment method. Invalid values will be ignored.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "payment_method" })
-    paymentMethod?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod;
+    paymentMethod?: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDatePaymentMethod;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody extends SpeakeasyBase {
-    @SpeakeasyMetadata({
-        elemType:
-            PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensations,
-    })
+    @SpeakeasyMetadata({ elemType: EmployeeCompensations })
     @Expose({ name: "employee_compensations" })
-    @Type(
-        () =>
-            PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensations
-    )
-    employeeCompensations: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensations[];
+    @Type(() => EmployeeCompensations)
+    employeeCompensations: EmployeeCompensations[];
 
     /**
      * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.

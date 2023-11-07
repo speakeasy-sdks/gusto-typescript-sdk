@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class PayrollEmployeeCompensationsBenefits extends SpeakeasyBase {
+export class PayrollSchemasBenefits extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "company_contribution" })
     companyContribution?: string;
@@ -23,7 +23,7 @@ export class PayrollEmployeeCompensationsBenefits extends SpeakeasyBase {
     name?: string;
 }
 
-export class PayrollEmployeeCompensationsDeductions extends SpeakeasyBase {
+export class Deductions extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
     amount?: string;
@@ -33,7 +33,7 @@ export class PayrollEmployeeCompensationsDeductions extends SpeakeasyBase {
     name?: string;
 }
 
-export class PayrollEmployeeCompensationsFixedCompensations extends SpeakeasyBase {
+export class FixedCompensations extends SpeakeasyBase {
     /**
      * The amount of the compensation for the pay period.
      */
@@ -56,7 +56,7 @@ export class PayrollEmployeeCompensationsFixedCompensations extends SpeakeasyBas
     name?: string;
 }
 
-export class PayrollEmployeeCompensationsHourlyCompensations extends SpeakeasyBase {
+export class HourlyCompensations extends SpeakeasyBase {
     /**
      * The amount multiplied by the base rate to calculate total compensation per hour worked.
      */
@@ -86,7 +86,7 @@ export class PayrollEmployeeCompensationsHourlyCompensations extends SpeakeasyBa
     name?: string;
 }
 
-export class PayrollEmployeeCompensationsPaidTimeOff extends SpeakeasyBase {
+export class PayrollPaidTimeOff extends SpeakeasyBase {
     /**
      * The outstanding hours paid upon termination. This field is only applicable for termination payrolls.
      */
@@ -112,12 +112,12 @@ export class PayrollEmployeeCompensationsPaidTimeOff extends SpeakeasyBase {
 /**
  * The employee's compensation payment method.
  */
-export enum PayrollEmployeeCompensationsPaymentMethod {
+export enum PayrollPaymentMethod {
     Check = "Check",
     DirectDeposit = "Direct Deposit",
 }
 
-export class PayrollEmployeeCompensationsTaxes extends SpeakeasyBase {
+export class PayrollTaxes extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
     amount: string;
@@ -135,18 +135,18 @@ export class PayrollEmployeeCompensations extends SpeakeasyBase {
     /**
      * An array of employee benefits for the pay period. Benefits are only included for processed payroll when the include parameter is present.
      */
-    @SpeakeasyMetadata({ elemType: PayrollEmployeeCompensationsBenefits })
+    @SpeakeasyMetadata({ elemType: PayrollSchemasBenefits })
     @Expose({ name: "benefits" })
-    @Type(() => PayrollEmployeeCompensationsBenefits)
-    benefits?: PayrollEmployeeCompensationsBenefits[];
+    @Type(() => PayrollSchemasBenefits)
+    benefits?: PayrollSchemasBenefits[];
 
     /**
      * An array of employee deductions for the pay period. Deductions are only included for processed payroll when the include parameter is present.
      */
-    @SpeakeasyMetadata({ elemType: PayrollEmployeeCompensationsDeductions })
+    @SpeakeasyMetadata({ elemType: Deductions })
     @Expose({ name: "deductions" })
-    @Type(() => PayrollEmployeeCompensationsDeductions)
-    deductions?: PayrollEmployeeCompensationsDeductions[];
+    @Type(() => Deductions)
+    deductions?: Deductions[];
 
     /**
      * The UUID of the employee.
@@ -165,10 +165,10 @@ export class PayrollEmployeeCompensations extends SpeakeasyBase {
     /**
      * An array of fixed compensations for the employee. Fixed compensations include tips, bonuses, and one time reimbursements. If this payroll has been processed, only fixed compensations with a value greater than 0.00 are returned. For an unprocessed payroll, all active fixed compensations are returned.
      */
-    @SpeakeasyMetadata({ elemType: PayrollEmployeeCompensationsFixedCompensations })
+    @SpeakeasyMetadata({ elemType: FixedCompensations })
     @Expose({ name: "fixed_compensations" })
-    @Type(() => PayrollEmployeeCompensationsFixedCompensations)
-    fixedCompensations?: PayrollEmployeeCompensationsFixedCompensations[];
+    @Type(() => FixedCompensations)
+    fixedCompensations?: FixedCompensations[];
 
     /**
      * The employee's gross pay. This value is only available for processed payrolls.
@@ -180,10 +180,10 @@ export class PayrollEmployeeCompensations extends SpeakeasyBase {
     /**
      * An array of hourly compensations for the employee. Hourly compensations include regular, overtime, and double overtime hours. If this payroll has been processed, only hourly compensations with a value greater than 0.00 are returned. For an unprocessed payroll, all active hourly compensations are returned.
      */
-    @SpeakeasyMetadata({ elemType: PayrollEmployeeCompensationsHourlyCompensations })
+    @SpeakeasyMetadata({ elemType: HourlyCompensations })
     @Expose({ name: "hourly_compensations" })
-    @Type(() => PayrollEmployeeCompensationsHourlyCompensations)
-    hourlyCompensations?: PayrollEmployeeCompensationsHourlyCompensations[];
+    @Type(() => HourlyCompensations)
+    hourlyCompensations?: HourlyCompensations[];
 
     /**
      * The employee's net pay. This value is only available for processed payrolls.
@@ -195,31 +195,31 @@ export class PayrollEmployeeCompensations extends SpeakeasyBase {
     /**
      * An array of all paid time off the employee is eligible for this pay period.
      */
-    @SpeakeasyMetadata({ elemType: PayrollEmployeeCompensationsPaidTimeOff })
+    @SpeakeasyMetadata({ elemType: PayrollPaidTimeOff })
     @Expose({ name: "paid_time_off" })
-    @Type(() => PayrollEmployeeCompensationsPaidTimeOff)
-    paidTimeOff?: PayrollEmployeeCompensationsPaidTimeOff[];
+    @Type(() => PayrollPaidTimeOff)
+    paidTimeOff?: PayrollPaidTimeOff[];
 
     /**
      * The employee's compensation payment method.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "payment_method" })
-    paymentMethod?: PayrollEmployeeCompensationsPaymentMethod;
+    paymentMethod?: PayrollPaymentMethod;
 
     /**
      * An array of employer and employee taxes for the pay period. Taxes are only included for processed payroll when the include parameter is present.
      */
-    @SpeakeasyMetadata({ elemType: PayrollEmployeeCompensationsTaxes })
+    @SpeakeasyMetadata({ elemType: PayrollTaxes })
     @Expose({ name: "taxes" })
-    @Type(() => PayrollEmployeeCompensationsTaxes)
-    taxes?: PayrollEmployeeCompensationsTaxes[];
+    @Type(() => PayrollTaxes)
+    taxes?: PayrollTaxes[];
 }
 
 /**
  * The off-cycle reason
  */
-export enum PayrollOffCycleReason {
+export enum OffCycleReason {
     BenefitReversal = "Benefit reversal",
     Bonus = "Bonus",
     Correction = "Correction",
@@ -255,7 +255,7 @@ export class PayrollPayPeriod extends SpeakeasyBase {
 /**
  * Only applicable when a payroll is moved to four day processing instead of fast ach.
  */
-export class PayrollPaymentSpeedChanged extends SpeakeasyBase {
+export class PaymentSpeedChanged extends SpeakeasyBase {
     /**
      * Current check date.
      */
@@ -295,7 +295,7 @@ export class PayrollPaymentSpeedChanged extends SpeakeasyBase {
 /**
  * Information about the payroll's status and expected dates
  */
-export class PayrollPayrollStatusMeta extends SpeakeasyBase {
+export class PayrollStatusMeta extends SpeakeasyBase {
     /**
      * true if the payroll may be cancelled
      */
@@ -487,7 +487,7 @@ export class PayrollTotals extends SpeakeasyBase {
 /**
  * The payment schedule tax rate the payroll is based on
  */
-export enum PayrollWithholdingPayPeriod {
+export enum WithholdingPayPeriod {
     EveryWeek = "Every week",
     EveryOtherWeek = "Every other week",
     TwicePerMonth = "Twice per month",
@@ -550,7 +550,7 @@ export class Payroll extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "off_cycle_reason" })
-    offCycleReason?: PayrollOffCycleReason;
+    offCycleReason?: OffCycleReason;
 
     @SpeakeasyMetadata()
     @Expose({ name: "pay_period" })
@@ -562,8 +562,8 @@ export class Payroll extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "payment_speed_changed" })
-    @Type(() => PayrollPaymentSpeedChanged)
-    paymentSpeedChanged?: PayrollPaymentSpeedChanged;
+    @Type(() => PaymentSpeedChanged)
+    paymentSpeedChanged?: PaymentSpeedChanged;
 
     /**
      * The deadline for the payroll to be run in order for employees to be paid on time.
@@ -577,8 +577,8 @@ export class Payroll extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "payroll_status_meta" })
-    @Type(() => PayrollPayrollStatusMeta)
-    payrollStatusMeta?: PayrollPayrollStatusMeta;
+    @Type(() => PayrollStatusMeta)
+    payrollStatusMeta?: PayrollStatusMeta;
 
     /**
      * The UUID of the payroll.
@@ -628,5 +628,5 @@ export class Payroll extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "withholding_pay_period" })
-    withholdingPayPeriod?: PayrollWithholdingPayPeriod;
+    withholdingPayPeriod?: WithholdingPayPeriod;
 }
