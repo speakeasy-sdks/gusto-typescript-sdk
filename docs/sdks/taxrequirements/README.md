@@ -1,5 +1,5 @@
 # TaxRequirements
-(*.taxRequirements*)
+(*taxRequirements*)
 
 ### Available Operations
 
@@ -27,7 +27,6 @@ const companyUuid: string = "string";
 
   const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -44,8 +43,12 @@ const companyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse](../../models/operations/getv1companiescompanyuuidtaxrequirementsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse](../../sdk/models/operations/getv1companiescompanyuuidtaxrequirementsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompaniesCompanyUuidTaxRequirementsState
 
@@ -109,7 +112,6 @@ const scheduling: boolean = false;
 
   const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -128,8 +130,12 @@ const scheduling: boolean = false;
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse](../../models/operations/getv1companiescompanyuuidtaxrequirementsstateresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse](../../sdk/models/operations/getv1companiescompanyuuidtaxrequirementsstateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1CompaniesCompanyUuidTaxRequirementsState
 
@@ -166,7 +172,6 @@ const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
 
   const res = await sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -175,15 +180,19 @@ const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                                                  | Type                                                                                                                                                       | Required                                                                                                                                                   | Description                                                                                                                                                |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                                                                              | *string*                                                                                                                                                   | :heavy_check_mark:                                                                                                                                         | The UUID of the company                                                                                                                                    |
-| `state`                                                                                                                                                    | *string*                                                                                                                                                   | :heavy_check_mark:                                                                                                                                         | 2-letter US state abbreviation                                                                                                                             |
-| `requestBody`                                                                                                                                              | [operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody](../../models/operations/putv1companiescompanyuuidtaxrequirementsstaterequestbody.md) | :heavy_minus_sign:                                                                                                                                         | N/A                                                                                                                                                        |
-| `config`                                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                               | :heavy_minus_sign:                                                                                                                                         | Available config options for making requests.                                                                                                              |
+| Parameter                                                                                                                                                         | Type                                                                                                                                                              | Required                                                                                                                                                          | Description                                                                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                                                                     | *string*                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                | The UUID of the company                                                                                                                                           |
+| `state`                                                                                                                                                           | *string*                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                | 2-letter US state abbreviation                                                                                                                                    |
+| `requestBody`                                                                                                                                                     | [operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody](../../../sdk/models/operations/putv1companiescompanyuuidtaxrequirementsstaterequestbody.md) | :heavy_minus_sign:                                                                                                                                                | N/A                                                                                                                                                               |
+| `config`                                                                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                      | :heavy_minus_sign:                                                                                                                                                | Available config options for making requests.                                                                                                                     |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse](../../models/operations/putv1companiescompanyuuidtaxrequirementsstateresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse](../../sdk/models/operations/putv1companiescompanyuuidtaxrequirementsstateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

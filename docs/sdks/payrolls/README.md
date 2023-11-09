@@ -1,5 +1,5 @@
 # Payrolls
-(*.payrolls*)
+(*payrolls*)
 
 ### Available Operations
 
@@ -41,7 +41,6 @@ const per: number = 7763.39;
 
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -60,8 +59,12 @@ const per: number = 7763.39;
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdPayrollReversalsResponse](../../models/operations/getv1companiescompanyidpayrollreversalsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdPayrollReversalsResponse](../../sdk/models/operations/getv1companiescompanyidpayrollreversalsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompaniesCompanyIdPayrolls
 
@@ -95,7 +98,6 @@ import { GetV1CompaniesCompanyIdPayrollsQueryParamInclude } from "@speakeasy-sdk
     ],
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -104,16 +106,20 @@ import { GetV1CompaniesCompanyIdPayrollsQueryParamInclude } from "@speakeasy-sdk
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.GetV1CompaniesCompanyIdPayrollsRequest](../../models/operations/getv1companiescompanyidpayrollsrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                  | [operations.GetV1CompaniesCompanyIdPayrollsRequest](../../sdk/models/operations/getv1companiescompanyidpayrollsrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+| `config`                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                               | :heavy_minus_sign:                                                                                                         | Available config options for making requests.                                                                              |
 
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdPayrollsResponse](../../models/operations/getv1companiescompanyidpayrollsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdPayrollsResponse](../../sdk/models/operations/getv1companiescompanyidpayrollsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompaniesCompanyIdPayrollsPayrollId
 
@@ -149,7 +155,6 @@ const showCalculation: string = "string";
 
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -162,15 +167,19 @@ const showCalculation: string = "string";
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `companyId`                                                                                                                                                                                                                                                                                                                     | *string*                                                                                                                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                                                                                                                              | The UUID of the company                                                                                                                                                                                                                                                                                                         |
 | `payrollId`                                                                                                                                                                                                                                                                                                                     | *string*                                                                                                                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                                                                                                                              | The UUID of the payroll                                                                                                                                                                                                                                                                                                         |
-| `include`                                                                                                                                                                                                                                                                                                                       | [operations.GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude](../../models/operations/getv1companiescompanyidpayrollspayrollidqueryparaminclude.md)                                                                                                                                                                    | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`                                                                                                                                                                                   |
+| `include`                                                                                                                                                                                                                                                                                                                       | [operations.GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude](../../../sdk/models/operations/getv1companiescompanyidpayrollspayrollidqueryparaminclude.md)                                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`                                                                                                                                                                                   |
 | `showCalculation`                                                                                                                                                                                                                                                                                                               | *string*                                                                                                                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | With show_calculation = true, the calculated values specified by the include parameter will be shown if the payroll is in an unprocessed, but calculated state.<br/>If a payroll is in an unprocessed, but calculated state and a call is made to this endpoint without show_calculation = true, the calculation will be “cleared.” |
 | `config`                                                                                                                                                                                                                                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                                                                                                                                                    | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | Available config options for making requests.                                                                                                                                                                                                                                                                                   |
 
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdPayrollsPayrollIdResponse](../../models/operations/getv1companiescompanyidpayrollspayrollidresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdPayrollsPayrollIdResponse](../../sdk/models/operations/getv1companiescompanyidpayrollspayrollidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompaniesPayrollBlockersCompanyUuid
 
@@ -196,7 +205,6 @@ const companyUuid: string = "string";
 
   const res = await sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -213,8 +221,12 @@ const companyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesPayrollBlockersCompanyUuidResponse](../../models/operations/getv1companiespayrollblockerscompanyuuidresponse.md)>**
+**Promise<[operations.GetV1CompaniesPayrollBlockersCompanyUuidResponse](../../sdk/models/operations/getv1companiespayrollblockerscompanyuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1PaymentReceiptsPayrollsPayrollUuid
 
@@ -243,7 +255,6 @@ const payrollUuid: string = "string";
 
   const res = await sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -260,8 +271,12 @@ const payrollUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1PaymentReceiptsPayrollsPayrollUuidResponse](../../models/operations/getv1paymentreceiptspayrollspayrolluuidresponse.md)>**
+**Promise<[operations.GetV1PaymentReceiptsPayrollsPayrollUuidResponse](../../sdk/models/operations/getv1paymentreceiptspayrollspayrolluuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub
 
@@ -286,7 +301,6 @@ const payrollId: string = "string";
 
   const res = await sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -304,8 +318,12 @@ const payrollId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse](../../models/operations/getv1payrollspayrolluuidemployeesemployeeuuidpaystubresponse.md)>**
+**Promise<[operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse](../../sdk/models/operations/getv1payrollspayrolluuidemployeesemployeeuuidpaystubresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1CompaniesCompanyIdPayrolls
 
@@ -345,7 +363,6 @@ const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
 
   const res = await sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -354,17 +371,21 @@ const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                      | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | The UUID of the company                                                                                                          |
-| `requestBody`                                                                                                                    | [operations.PostV1CompaniesCompanyIdPayrollsRequestBody](../../models/operations/postv1companiescompanyidpayrollsrequestbody.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                                                                                               | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                             | *string*                                                                                                                                | :heavy_check_mark:                                                                                                                      | The UUID of the company                                                                                                                 |
+| `requestBody`                                                                                                                           | [operations.PostV1CompaniesCompanyIdPayrollsRequestBody](../../../sdk/models/operations/postv1companiescompanyidpayrollsrequestbody.md) | :heavy_minus_sign:                                                                                                                      | N/A                                                                                                                                     |
+| `config`                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                            | :heavy_minus_sign:                                                                                                                      | Available config options for making requests.                                                                                           |
 
 
 ### Response
 
-**Promise<[operations.PostV1CompaniesCompanyIdPayrollsResponse](../../models/operations/postv1companiescompanyidpayrollsresponse.md)>**
+**Promise<[operations.PostV1CompaniesCompanyIdPayrollsResponse](../../sdk/models/operations/postv1companiescompanyidpayrollsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks
 
@@ -394,7 +415,6 @@ const requestBody: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollCh
 
   const res = await sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -403,17 +423,21 @@ const requestBody: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollCh
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                          | Type                                                                                                                                                                                               | Required                                                                                                                                                                                           | Description                                                                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `payrollId`                                                                                                                                                                                        | *string*                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                 | The UUID of the payroll                                                                                                                                                                            |
-| `requestBody`                                                                                                                                                                                      | [operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody](../../models/operations/postv1payrollspayrolluuidgenerateddocumentsprintablepayrollchecksrequestbody.md) | :heavy_minus_sign:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |
-| `config`                                                                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                 | Available config options for making requests.                                                                                                                                                      |
+| Parameter                                                                                                                                                                                                 | Type                                                                                                                                                                                                      | Required                                                                                                                                                                                                  | Description                                                                                                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `payrollId`                                                                                                                                                                                               | *string*                                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                                        | The UUID of the payroll                                                                                                                                                                                   |
+| `requestBody`                                                                                                                                                                                             | [operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody](../../../sdk/models/operations/postv1payrollspayrolluuidgenerateddocumentsprintablepayrollchecksrequestbody.md) | :heavy_minus_sign:                                                                                                                                                                                        | N/A                                                                                                                                                                                                       |
+| `config`                                                                                                                                                                                                  | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                                                        | Available config options for making requests.                                                                                                                                                             |
 
 
 ### Response
 
-**Promise<[operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse](../../models/operations/postv1payrollspayrolluuidgenerateddocumentsprintablepayrollchecksresponse.md)>**
+**Promise<[operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse](../../sdk/models/operations/postv1payrollspayrolluuidgenerateddocumentsprintablepayrollchecksresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel
 
@@ -439,7 +463,6 @@ const payrollId: string = "string";
 
   const res = await sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -457,8 +480,12 @@ const payrollId: string = "string";
 
 ### Response
 
-**Promise<[operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse](../../models/operations/putapiv1companiescompanyidpayrollspayrollidcancelresponse.md)>**
+**Promise<[operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse](../../sdk/models/operations/putapiv1companiescompanyidpayrollspayrollidcancelresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1CompaniesCompanyIdPayrolls
 
@@ -507,7 +534,6 @@ const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -516,18 +542,22 @@ const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `companyId`                                                                                                                    | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | The UUID of the company                                                                                                        |
-| `payrollId`                                                                                                                    | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | The UUID of the payroll                                                                                                        |
-| `requestBody`                                                                                                                  | [operations.PutV1CompaniesCompanyIdPayrollsRequestBody](../../models/operations/putv1companiescompanyidpayrollsrequestbody.md) | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
-| `config`                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                   | :heavy_minus_sign:                                                                                                             | Available config options for making requests.                                                                                  |
+| Parameter                                                                                                                             | Type                                                                                                                                  | Required                                                                                                                              | Description                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                           | *string*                                                                                                                              | :heavy_check_mark:                                                                                                                    | The UUID of the company                                                                                                               |
+| `payrollId`                                                                                                                           | *string*                                                                                                                              | :heavy_check_mark:                                                                                                                    | The UUID of the payroll                                                                                                               |
+| `requestBody`                                                                                                                         | [operations.PutV1CompaniesCompanyIdPayrollsRequestBody](../../../sdk/models/operations/putv1companiescompanyidpayrollsrequestbody.md) | :heavy_minus_sign:                                                                                                                    | N/A                                                                                                                                   |
+| `config`                                                                                                                              | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                          | :heavy_minus_sign:                                                                                                                    | Available config options for making requests.                                                                                         |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdPayrollsResponse](../../models/operations/putv1companiescompanyidpayrollsresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdPayrollsResponse](../../sdk/models/operations/putv1companiescompanyidpayrollsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate
 
@@ -579,7 +609,6 @@ const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEnd
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -588,19 +617,23 @@ const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEnd
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                          | Type                                                                                                                                                                                               | Required                                                                                                                                                                                           | Description                                                                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                                                                                        | *string*                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                 | The UUID of the company                                                                                                                                                                            |
-| `payPeriodEndDate`                                                                                                                                                                                 | *string*                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                 | The end_date of the pay period for the payroll                                                                                                                                                     |
-| `payPeriodStartDate`                                                                                                                                                                               | *string*                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                 | The start_date of the pay period for the payroll                                                                                                                                                   |
-| `requestBody`                                                                                                                                                                                      | [operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody](../../models/operations/putv1companiescompanyidpayrollspayperiodstartdatepayperiodenddaterequestbody.md) | :heavy_minus_sign:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |
-| `config`                                                                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                 | Available config options for making requests.                                                                                                                                                      |
+| Parameter                                                                                                                                                                                                 | Type                                                                                                                                                                                                      | Required                                                                                                                                                                                                  | Description                                                                                                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                                                                               | *string*                                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                                        | The UUID of the company                                                                                                                                                                                   |
+| `payPeriodEndDate`                                                                                                                                                                                        | *string*                                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                                        | The end_date of the pay period for the payroll                                                                                                                                                            |
+| `payPeriodStartDate`                                                                                                                                                                                      | *string*                                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                                        | The start_date of the pay period for the payroll                                                                                                                                                          |
+| `requestBody`                                                                                                                                                                                             | [operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody](../../../sdk/models/operations/putv1companiescompanyidpayrollspayperiodstartdatepayperiodenddaterequestbody.md) | :heavy_minus_sign:                                                                                                                                                                                        | N/A                                                                                                                                                                                                       |
+| `config`                                                                                                                                                                                                  | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                                                        | Available config options for making requests.                                                                                                                                                             |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse](../../models/operations/putv1companiescompanyidpayrollspayperiodstartdatepayperiodenddateresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse](../../sdk/models/operations/putv1companiescompanyidpayrollspayperiodstartdatepayperiodenddateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1CompaniesCompanyIdPayrollsPayrollIdCalculate
 
@@ -627,7 +660,6 @@ const payrollId: string = "string";
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -645,8 +677,12 @@ const payrollId: string = "string";
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse](../../models/operations/putv1companiescompanyidpayrollspayrollidcalculateresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse](../../sdk/models/operations/putv1companiescompanyidpayrollspayrollidcalculateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1CompaniesCompanyIdPayrollsPayrollIdSubmit
 
@@ -671,7 +707,6 @@ const payrollId: string = "string";
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -689,5 +724,9 @@ const payrollId: string = "string";
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse](../../models/operations/putv1companiescompanyidpayrollspayrollidsubmitresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse](../../sdk/models/operations/putv1companiescompanyidpayrollspayrollidsubmitresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

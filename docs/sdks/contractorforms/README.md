@@ -1,5 +1,5 @@
 # ContractorForms
-(*.contractorForms*)
+(*contractorForms*)
 
 ### Available Operations
 
@@ -29,7 +29,6 @@ const formId: string = "string";
 
   const res = await sdk.contractorForms.getV1ContractorForm(contractorUuid, formId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -47,8 +46,12 @@ const formId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1ContractorFormResponse](../../models/operations/getv1contractorformresponse.md)>**
+**Promise<[operations.GetV1ContractorFormResponse](../../sdk/models/operations/getv1contractorformresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1ContractorFormPdf
 
@@ -71,7 +74,6 @@ const formId: string = "string";
 
   const res = await sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -89,8 +91,12 @@ const formId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1ContractorFormPdfResponse](../../models/operations/getv1contractorformpdfresponse.md)>**
+**Promise<[operations.GetV1ContractorFormPdfResponse](../../sdk/models/operations/getv1contractorformpdfresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1ContractorForms
 
@@ -112,7 +118,6 @@ const contractorUuid: string = "string";
 
   const res = await sdk.contractorForms.getV1ContractorForms(contractorUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -129,8 +134,12 @@ const contractorUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1ContractorFormsResponse](../../models/operations/getv1contractorformsresponse.md)>**
+**Promise<[operations.GetV1ContractorFormsResponse](../../sdk/models/operations/getv1contractorformsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1SandboxGenerate1099
 
@@ -159,7 +168,6 @@ import { Gusto } from "@speakeasy-sdks/gusto";
     contractorId: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -168,13 +176,17 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PostV1SandboxGenerate1099RequestBody](../../models/operations/postv1sandboxgenerate1099requestbody.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                              | [operations.PostV1SandboxGenerate1099RequestBody](../../sdk/models/operations/postv1sandboxgenerate1099requestbody.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
 
 
 ### Response
 
-**Promise<[operations.PostV1SandboxGenerate1099Response](../../models/operations/postv1sandboxgenerate1099response.md)>**
+**Promise<[operations.PostV1SandboxGenerate1099Response](../../sdk/models/operations/postv1sandboxgenerate1099response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

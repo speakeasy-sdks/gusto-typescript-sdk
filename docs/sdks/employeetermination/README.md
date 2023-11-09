@@ -1,5 +1,5 @@
 # EmployeeTermination
-(*.employeeTermination*)
+(*employeeTermination*)
 
 ### Available Operations
 
@@ -29,7 +29,6 @@ const employeeId: string = "string";
 
   const res = await sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(employeeId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -46,8 +45,12 @@ const employeeId: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteV1EmployeesEmployeeIdTerminationsResponse](../../models/operations/deletev1employeesemployeeidterminationsresponse.md)>**
+**Promise<[operations.DeleteV1EmployeesEmployeeIdTerminationsResponse](../../sdk/models/operations/deletev1employeesemployeeidterminationsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods
 
@@ -71,7 +74,6 @@ const companyId: string = "string";
 
   const res = await sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(companyId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -88,8 +90,12 @@ const companyId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse](../../models/operations/getv1companiescompanyidunprocessedterminationpayperiodsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse](../../sdk/models/operations/getv1companiescompanyidunprocessedterminationpayperiodsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1EmployeesEmployeeIdTerminations
 
@@ -115,7 +121,6 @@ const employeeId: string = "string";
 
   const res = await sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(employeeId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -132,8 +137,12 @@ const employeeId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdTerminationsResponse](../../models/operations/getv1employeesemployeeidterminationsresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdTerminationsResponse](../../sdk/models/operations/getv1employeesemployeeidterminationsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1EmployeesEmployeeIdTerminations
 
@@ -165,7 +174,6 @@ const requestBody: PostV1EmployeesEmployeeIdTerminationsRequestBody = {
 
   const res = await sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations(employeeId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -174,17 +182,21 @@ const requestBody: PostV1EmployeesEmployeeIdTerminationsRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeId`                                                                                                                               | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the employee                                                                                                                   |
-| `requestBody`                                                                                                                              | [operations.PostV1EmployeesEmployeeIdTerminationsRequestBody](../../models/operations/postv1employeesemployeeidterminationsrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
+| Parameter                                                                                                                                         | Type                                                                                                                                              | Required                                                                                                                                          | Description                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                                      | *string*                                                                                                                                          | :heavy_check_mark:                                                                                                                                | The UUID of the employee                                                                                                                          |
+| `requestBody`                                                                                                                                     | [operations.PostV1EmployeesEmployeeIdTerminationsRequestBody](../../../sdk/models/operations/postv1employeesemployeeidterminationsrequestbody.md) | :heavy_minus_sign:                                                                                                                                | N/A                                                                                                                                               |
+| `config`                                                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                      | :heavy_minus_sign:                                                                                                                                | Available config options for making requests.                                                                                                     |
 
 
 ### Response
 
-**Promise<[operations.PostV1EmployeesEmployeeIdTerminationsResponse](../../models/operations/postv1employeesemployeeidterminationsresponse.md)>**
+**Promise<[operations.PostV1EmployeesEmployeeIdTerminationsResponse](../../sdk/models/operations/postv1employeesemployeeidterminationsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1TerminationsEmployeeId
 
@@ -214,7 +226,6 @@ const requestBody: PutV1TerminationsEmployeeIdRequestBody = {
 
   const res = await sdk.employeeTermination.putV1TerminationsEmployeeId(employeeId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -223,14 +234,18 @@ const requestBody: PutV1TerminationsEmployeeIdRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `employeeId`                                                                                                           | *string*                                                                                                               | :heavy_check_mark:                                                                                                     | The UUID of the employee                                                                                               |
-| `requestBody`                                                                                                          | [operations.PutV1TerminationsEmployeeIdRequestBody](../../models/operations/putv1terminationsemployeeidrequestbody.md) | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
+| Parameter                                                                                                                     | Type                                                                                                                          | Required                                                                                                                      | Description                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                  | *string*                                                                                                                      | :heavy_check_mark:                                                                                                            | The UUID of the employee                                                                                                      |
+| `requestBody`                                                                                                                 | [operations.PutV1TerminationsEmployeeIdRequestBody](../../../sdk/models/operations/putv1terminationsemployeeidrequestbody.md) | :heavy_minus_sign:                                                                                                            | N/A                                                                                                                           |
+| `config`                                                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                  | :heavy_minus_sign:                                                                                                            | Available config options for making requests.                                                                                 |
 
 
 ### Response
 
-**Promise<[operations.PutV1TerminationsEmployeeIdResponse](../../models/operations/putv1terminationsemployeeidresponse.md)>**
+**Promise<[operations.PutV1TerminationsEmployeeIdResponse](../../sdk/models/operations/putv1terminationsemployeeidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

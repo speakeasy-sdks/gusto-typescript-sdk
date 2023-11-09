@@ -35,7 +35,7 @@ export class ContractorForms {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/contractors/{contractor_uuid}/forms/{form_id}",
             req
@@ -56,7 +56,7 @@ export class ContractorForms {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -118,7 +118,7 @@ export class ContractorForms {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/contractors/{contractor_uuid}/forms/{form_id}/pdf",
             req
@@ -139,7 +139,7 @@ export class ContractorForms {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -196,7 +196,7 @@ export class ContractorForms {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/contractors/{contractor_uuid}/forms",
             req
@@ -217,7 +217,7 @@ export class ContractorForms {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -288,7 +288,7 @@ export class ContractorForms {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/sandbox/generate_1099";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/sandbox/generate_1099";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -319,7 +319,7 @@ export class ContractorForms {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

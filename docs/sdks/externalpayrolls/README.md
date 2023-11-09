@@ -1,5 +1,5 @@
 # ExternalPayrolls
-(*.externalPayrolls*)
+(*externalPayrolls*)
 
 ### Available Operations
 
@@ -32,7 +32,6 @@ const externalPayrollId: string = "string";
 
   const res = await sdk.externalPayrolls.deleteV1ExternalPayroll(companyUuid, externalPayrollId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -50,8 +49,12 @@ const externalPayrollId: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteV1ExternalPayrollResponse](../../models/operations/deletev1externalpayrollresponse.md)>**
+**Promise<[operations.DeleteV1ExternalPayrollResponse](../../sdk/models/operations/deletev1externalpayrollresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompanyExternalPayrolls
 
@@ -74,7 +77,6 @@ const companyUuid: string = "string";
 
   const res = await sdk.externalPayrolls.getV1CompanyExternalPayrolls(companyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -91,8 +93,12 @@ const companyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompanyExternalPayrollsResponse](../../models/operations/getv1companyexternalpayrollsresponse.md)>**
+**Promise<[operations.GetV1CompanyExternalPayrollsResponse](../../sdk/models/operations/getv1companyexternalpayrollsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1ExternalPayroll
 
@@ -116,7 +122,6 @@ const externalPayrollId: string = "string";
 
   const res = await sdk.externalPayrolls.getV1ExternalPayroll(companyUuid, externalPayrollId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -134,8 +139,12 @@ const externalPayrollId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1ExternalPayrollResponse](../../models/operations/getv1externalpayrollresponse.md)>**
+**Promise<[operations.GetV1ExternalPayrollResponse](../../sdk/models/operations/getv1externalpayrollresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1ExternalPayrollCalculateTaxes
 
@@ -158,7 +167,6 @@ const externalPayrollId: string = "string";
 
   const res = await sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes(companyUuid, externalPayrollId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -176,8 +184,12 @@ const externalPayrollId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1ExternalPayrollCalculateTaxesResponse](../../models/operations/getv1externalpayrollcalculatetaxesresponse.md)>**
+**Promise<[operations.GetV1ExternalPayrollCalculateTaxesResponse](../../sdk/models/operations/getv1externalpayrollcalculatetaxesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1ExternalPayroll
 
@@ -205,7 +217,6 @@ const requestBody: PostV1ExternalPayrollRequestBody = {
 
   const res = await sdk.externalPayrolls.postV1ExternalPayroll(companyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -214,17 +225,21 @@ const requestBody: PostV1ExternalPayrollRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                              | *string*                                                                                                   | :heavy_check_mark:                                                                                         | The UUID of the company                                                                                    |
-| `requestBody`                                                                                              | [operations.PostV1ExternalPayrollRequestBody](../../models/operations/postv1externalpayrollrequestbody.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                     | *string*                                                                                                          | :heavy_check_mark:                                                                                                | The UUID of the company                                                                                           |
+| `requestBody`                                                                                                     | [operations.PostV1ExternalPayrollRequestBody](../../../sdk/models/operations/postv1externalpayrollrequestbody.md) | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| `config`                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                      | :heavy_minus_sign:                                                                                                | Available config options for making requests.                                                                     |
 
 
 ### Response
 
-**Promise<[operations.PostV1ExternalPayrollResponse](../../models/operations/postv1externalpayrollresponse.md)>**
+**Promise<[operations.PostV1ExternalPayrollResponse](../../sdk/models/operations/postv1externalpayrollresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1ExternalPayroll
 
@@ -271,7 +286,6 @@ const requestBody: PutV1ExternalPayrollRequestBody = {
 
   const res = await sdk.externalPayrolls.putV1ExternalPayroll(companyUuid, externalPayrollId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -280,15 +294,19 @@ const requestBody: PutV1ExternalPayrollRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                            | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The UUID of the company                                                                                  |
-| `externalPayrollId`                                                                                      | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The UUID of the external payroll                                                                         |
-| `requestBody`                                                                                            | [operations.PutV1ExternalPayrollRequestBody](../../models/operations/putv1externalpayrollrequestbody.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                   | *string*                                                                                                        | :heavy_check_mark:                                                                                              | The UUID of the company                                                                                         |
+| `externalPayrollId`                                                                                             | *string*                                                                                                        | :heavy_check_mark:                                                                                              | The UUID of the external payroll                                                                                |
+| `requestBody`                                                                                                   | [operations.PutV1ExternalPayrollRequestBody](../../../sdk/models/operations/putv1externalpayrollrequestbody.md) | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
+| `config`                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                    | :heavy_minus_sign:                                                                                              | Available config options for making requests.                                                                   |
 
 
 ### Response
 
-**Promise<[operations.PutV1ExternalPayrollResponse](../../models/operations/putv1externalpayrollresponse.md)>**
+**Promise<[operations.PutV1ExternalPayrollResponse](../../sdk/models/operations/putv1externalpayrollresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

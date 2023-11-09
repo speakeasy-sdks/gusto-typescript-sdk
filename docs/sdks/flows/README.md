@@ -1,5 +1,5 @@
 # Flows
-(*.flows*)
+(*flows*)
 
 ### Available Operations
 
@@ -28,7 +28,6 @@ const requestBody: PostV1CompanyFlowsRequestBody = {
 
   const res = await sdk.flows.postV1CompanyFlows(companyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -37,14 +36,18 @@ const requestBody: PostV1CompanyFlowsRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                        | *string*                                                                                             | :heavy_check_mark:                                                                                   | The UUID of the company                                                                              |
-| `requestBody`                                                                                        | [operations.PostV1CompanyFlowsRequestBody](../../models/operations/postv1companyflowsrequestbody.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                               | *string*                                                                                                    | :heavy_check_mark:                                                                                          | The UUID of the company                                                                                     |
+| `requestBody`                                                                                               | [operations.PostV1CompanyFlowsRequestBody](../../../sdk/models/operations/postv1companyflowsrequestbody.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
+| `config`                                                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                | :heavy_minus_sign:                                                                                          | Available config options for making requests.                                                               |
 
 
 ### Response
 
-**Promise<[operations.PostV1CompanyFlowsResponse](../../models/operations/postv1companyflowsresponse.md)>**
+**Promise<[operations.PostV1CompanyFlowsResponse](../../sdk/models/operations/postv1companyflowsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

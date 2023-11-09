@@ -41,7 +41,7 @@ export class WebhookSubscriptions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/webhook_subscriptions/{webhook_subscription_uuid}",
             req
@@ -62,7 +62,7 @@ export class WebhookSubscriptions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -114,7 +114,7 @@ export class WebhookSubscriptions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/webhook_subscriptions/{webhook_subscription_uuid}",
             req
@@ -135,7 +135,7 @@ export class WebhookSubscriptions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -203,7 +203,7 @@ export class WebhookSubscriptions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/webhook_subscriptions/{webhook_subscription_uuid}/request_verification_token",
             req
@@ -224,7 +224,7 @@ export class WebhookSubscriptions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -271,7 +271,7 @@ export class WebhookSubscriptions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/webhook_subscriptions";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/webhook_subscriptions";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -288,7 +288,7 @@ export class WebhookSubscriptions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -360,7 +360,7 @@ export class WebhookSubscriptions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/webhook_subscriptions";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/webhook_subscriptions";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -391,7 +391,7 @@ export class WebhookSubscriptions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -480,7 +480,7 @@ export class WebhookSubscriptions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/webhook_subscriptions/{webhook_subscription_uuid}/verify",
             req
@@ -515,7 +515,7 @@ export class WebhookSubscriptions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -601,7 +601,7 @@ export class WebhookSubscriptions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/webhook_subscriptions/{webhook_subscription_uuid}",
             req
@@ -636,7 +636,7 @@ export class WebhookSubscriptions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

@@ -1,5 +1,5 @@
 # GeneratedDocuments
-(*.generatedDocuments*)
+(*generatedDocuments*)
 
 ### Available Operations
 
@@ -28,7 +28,6 @@ const requestUuid: string = "string";
 
   const res = await sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid(documentType, requestUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -46,5 +45,9 @@ const requestUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse](../../models/operations/getv1generateddocumentsdocumenttyperequestuuidresponse.md)>**
+**Promise<[operations.GetV1GeneratedDocumentsDocumentTypeRequestUuidResponse](../../sdk/models/operations/getv1generateddocumentsdocumenttyperequestuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

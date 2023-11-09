@@ -1,5 +1,5 @@
 # JobsAndCompensations
-(*.jobsAndCompensations*)
+(*jobsAndCompensations*)
 
 ### Available Operations
 
@@ -34,7 +34,6 @@ const jobId: string = "string";
 
   const res = await sdk.jobsAndCompensations.deleteV1JobsJobId(jobId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -51,8 +50,12 @@ const jobId: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteV1JobsJobIdResponse](../../models/operations/deletev1jobsjobidresponse.md)>**
+**Promise<[operations.DeleteV1JobsJobIdResponse](../../sdk/models/operations/deletev1jobsjobidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompensationsCompensationId
 
@@ -79,7 +82,6 @@ const compensationId: string = "string";
 
   const res = await sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -96,8 +98,12 @@ const compensationId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompensationsCompensationIdResponse](../../models/operations/getv1compensationscompensationidresponse.md)>**
+**Promise<[operations.GetV1CompensationsCompensationIdResponse](../../sdk/models/operations/getv1compensationscompensationidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1EmployeesEmployeeIdJobs
 
@@ -124,7 +130,6 @@ const per: number = 7200.06;
 
   const res = await sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page, per);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -136,7 +141,7 @@ const per: number = 7200.06;
 | Parameter                                                                                                                               | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
 | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `employeeId`                                                                                                                            | *string*                                                                                                                                | :heavy_check_mark:                                                                                                                      | The UUID of the employee                                                                                                                |
-| `include`                                                                                                                               | [operations.QueryParamInclude](../../models/operations/queryparaminclude.md)                                                            | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
+| `include`                                                                                                                               | [operations.QueryParamInclude](../../../sdk/models/operations/queryparaminclude.md)                                                     | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
 | `page`                                                                                                                                  | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | The page that is requested. When unspecified, will load all objects.                                                                    |
 | `per`                                                                                                                                   | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | Number of objects per page. When unspecified, will default to 25                                                                        |
 | `config`                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                            | :heavy_minus_sign:                                                                                                                      | Available config options for making requests.                                                                                           |
@@ -144,8 +149,12 @@ const per: number = 7200.06;
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdJobsResponse](../../models/operations/getv1employeesemployeeidjobsresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdJobsResponse](../../sdk/models/operations/getv1employeesemployeeidjobsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1JobsJobId
 
@@ -170,7 +179,6 @@ const include: GetV1JobsJobIdQueryParamInclude = GetV1JobsJobIdQueryParamInclude
 
   const res = await sdk.jobsAndCompensations.getV1JobsJobId(jobId, include);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -182,14 +190,18 @@ const include: GetV1JobsJobIdQueryParamInclude = GetV1JobsJobIdQueryParamInclude
 | Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `jobId`                                                                                                                                | *string*                                                                                                                               | :heavy_check_mark:                                                                                                                     | The UUID of the job                                                                                                                    |
-| `include`                                                                                                                              | [operations.GetV1JobsJobIdQueryParamInclude](../../models/operations/getv1jobsjobidqueryparaminclude.md)                               | :heavy_minus_sign:                                                                                                                     | Available options:<br/>- all_compensations: Include all effective dated compensations for the job instead of only the current compensation |
+| `include`                                                                                                                              | [operations.GetV1JobsJobIdQueryParamInclude](../../../sdk/models/operations/getv1jobsjobidqueryparaminclude.md)                        | :heavy_minus_sign:                                                                                                                     | Available options:<br/>- all_compensations: Include all effective dated compensations for the job instead of only the current compensation |
 | `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
 
 
 ### Response
 
-**Promise<[operations.GetV1JobsJobIdResponse](../../models/operations/getv1jobsjobidresponse.md)>**
+**Promise<[operations.GetV1JobsJobIdResponse](../../sdk/models/operations/getv1jobsjobidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1JobsJobIdCompensations
 
@@ -220,7 +232,6 @@ const per: number = 1707.54;
 
   const res = await sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -229,19 +240,23 @@ const per: number = 1707.54;
 
 ### Parameters
 
-| Parameter                                                                                                                               | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
-| --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `jobId`                                                                                                                                 | *string*                                                                                                                                | :heavy_check_mark:                                                                                                                      | The UUID of the job                                                                                                                     |
-| `include`                                                                                                                               | [operations.GetV1JobsJobIdCompensationsQueryParamInclude](../../models/operations/getv1jobsjobidcompensationsqueryparaminclude.md)      | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
-| `page`                                                                                                                                  | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | The page that is requested. When unspecified, will load all objects.                                                                    |
-| `per`                                                                                                                                   | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | Number of objects per page. When unspecified, will default to 25                                                                        |
-| `config`                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                            | :heavy_minus_sign:                                                                                                                      | Available config options for making requests.                                                                                           |
+| Parameter                                                                                                                                 | Type                                                                                                                                      | Required                                                                                                                                  | Description                                                                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `jobId`                                                                                                                                   | *string*                                                                                                                                  | :heavy_check_mark:                                                                                                                        | The UUID of the job                                                                                                                       |
+| `include`                                                                                                                                 | [operations.GetV1JobsJobIdCompensationsQueryParamInclude](../../../sdk/models/operations/getv1jobsjobidcompensationsqueryparaminclude.md) | :heavy_minus_sign:                                                                                                                        | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
+| `page`                                                                                                                                    | *number*                                                                                                                                  | :heavy_minus_sign:                                                                                                                        | The page that is requested. When unspecified, will load all objects.                                                                      |
+| `per`                                                                                                                                     | *number*                                                                                                                                  | :heavy_minus_sign:                                                                                                                        | Number of objects per page. When unspecified, will default to 25                                                                          |
+| `config`                                                                                                                                  | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                              | :heavy_minus_sign:                                                                                                                        | Available config options for making requests.                                                                                             |
 
 
 ### Response
 
-**Promise<[operations.GetV1JobsJobIdCompensationsResponse](../../models/operations/getv1jobsjobidcompensationsresponse.md)>**
+**Promise<[operations.GetV1JobsJobIdCompensationsResponse](../../sdk/models/operations/getv1jobsjobidcompensationsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1JobsJobId
 
@@ -266,7 +281,6 @@ const requestBody: PostV1JobsJobIdRequestBody = {};
 
   const res = await sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -275,17 +289,21 @@ const requestBody: PostV1JobsJobIdRequestBody = {};
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `employeeId`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | The UUID of the employee                                                                       |
-| `requestBody`                                                                                  | [operations.PostV1JobsJobIdRequestBody](../../models/operations/postv1jobsjobidrequestbody.md) | :heavy_minus_sign:                                                                             | Create a job.                                                                                  |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                          | *string*                                                                                              | :heavy_check_mark:                                                                                    | The UUID of the employee                                                                              |
+| `requestBody`                                                                                         | [operations.PostV1JobsJobIdRequestBody](../../../sdk/models/operations/postv1jobsjobidrequestbody.md) | :heavy_minus_sign:                                                                                    | Create a job.                                                                                         |
+| `config`                                                                                              | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                          | :heavy_minus_sign:                                                                                    | Available config options for making requests.                                                         |
 
 
 ### Response
 
-**Promise<[operations.PostV1JobsJobIdResponse](../../models/operations/postv1jobsjobidresponse.md)>**
+**Promise<[operations.PostV1JobsJobIdResponse](../../sdk/models/operations/postv1jobsjobidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1CompensationsCompensationId
 
@@ -323,7 +341,6 @@ const requestBody: PutV1CompensationsCompensationIdRequestBody = {
 
   const res = await sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -332,17 +349,21 @@ const requestBody: PutV1CompensationsCompensationIdRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `compensationId`                                                                                                                 | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | The UUID of the compensation                                                                                                     |
-| `requestBody`                                                                                                                    | [operations.PutV1CompensationsCompensationIdRequestBody](../../models/operations/putv1compensationscompensationidrequestbody.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                                                                                               | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `compensationId`                                                                                                                        | *string*                                                                                                                                | :heavy_check_mark:                                                                                                                      | The UUID of the compensation                                                                                                            |
+| `requestBody`                                                                                                                           | [operations.PutV1CompensationsCompensationIdRequestBody](../../../sdk/models/operations/putv1compensationscompensationidrequestbody.md) | :heavy_minus_sign:                                                                                                                      | N/A                                                                                                                                     |
+| `config`                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                            | :heavy_minus_sign:                                                                                                                      | Available config options for making requests.                                                                                           |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompensationsCompensationIdResponse](../../models/operations/putv1compensationscompensationidresponse.md)>**
+**Promise<[operations.PutV1CompensationsCompensationIdResponse](../../sdk/models/operations/putv1compensationscompensationidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1JobsJobId
 
@@ -369,7 +390,6 @@ const requestBody: PutV1JobsJobIdRequestBody = {
 
   const res = await sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -378,14 +398,18 @@ const requestBody: PutV1JobsJobIdRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `jobId`                                                                                      | *string*                                                                                     | :heavy_check_mark:                                                                           | The UUID of the job                                                                          |
-| `requestBody`                                                                                | [operations.PutV1JobsJobIdRequestBody](../../models/operations/putv1jobsjobidrequestbody.md) | :heavy_minus_sign:                                                                           | Update a job.                                                                                |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `jobId`                                                                                             | *string*                                                                                            | :heavy_check_mark:                                                                                  | The UUID of the job                                                                                 |
+| `requestBody`                                                                                       | [operations.PutV1JobsJobIdRequestBody](../../../sdk/models/operations/putv1jobsjobidrequestbody.md) | :heavy_minus_sign:                                                                                  | Update a job.                                                                                       |
+| `config`                                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                        | :heavy_minus_sign:                                                                                  | Available config options for making requests.                                                       |
 
 
 ### Response
 
-**Promise<[operations.PutV1JobsJobIdResponse](../../models/operations/putv1jobsjobidresponse.md)>**
+**Promise<[operations.PutV1JobsJobIdResponse](../../sdk/models/operations/putv1jobsjobidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

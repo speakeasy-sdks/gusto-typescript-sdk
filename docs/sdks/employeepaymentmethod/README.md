@@ -1,5 +1,5 @@
 # EmployeePaymentMethod
-(*.employeePaymentMethod*)
+(*employeePaymentMethod*)
 
 ### Available Operations
 
@@ -29,7 +29,6 @@ const employeeId: string = "string";
 
   const res = await sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -47,8 +46,12 @@ const employeeId: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse](../../models/operations/deletev1employeesemployeeidbankaccountsbankaccountidresponse.md)>**
+**Promise<[operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse](../../sdk/models/operations/deletev1employeesemployeeidbankaccountsbankaccountidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1EmployeesEmployeeIdPaymentMethod
 
@@ -70,7 +73,6 @@ const employeeId: string = "string";
 
   const res = await sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -87,8 +89,12 @@ const employeeId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdPaymentMethodResponse](../../models/operations/getv1employeesemployeeidpaymentmethodresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdPaymentMethodResponse](../../sdk/models/operations/getv1employeesemployeeidpaymentmethodresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1EmployeesEmployeeIdBankAccounts
 
@@ -120,7 +126,6 @@ const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
 
   const res = await sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -129,17 +134,21 @@ const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeId`                                                                                                                               | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the employee                                                                                                                   |
-| `requestBody`                                                                                                                              | [operations.PostV1EmployeesEmployeeIdBankAccountsRequestBody](../../models/operations/postv1employeesemployeeidbankaccountsrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
+| Parameter                                                                                                                                         | Type                                                                                                                                              | Required                                                                                                                                          | Description                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                                      | *string*                                                                                                                                          | :heavy_check_mark:                                                                                                                                | The UUID of the employee                                                                                                                          |
+| `requestBody`                                                                                                                                     | [operations.PostV1EmployeesEmployeeIdBankAccountsRequestBody](../../../sdk/models/operations/postv1employeesemployeeidbankaccountsrequestbody.md) | :heavy_minus_sign:                                                                                                                                | N/A                                                                                                                                               |
+| `config`                                                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                      | :heavy_minus_sign:                                                                                                                                | Available config options for making requests.                                                                                                     |
 
 
 ### Response
 
-**Promise<[operations.PostV1EmployeesEmployeeIdBankAccountsResponse](../../models/operations/postv1employeesemployeeidbankaccountsresponse.md)>**
+**Promise<[operations.PostV1EmployeesEmployeeIdBankAccountsResponse](../../sdk/models/operations/postv1employeesemployeeidbankaccountsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1EmployeesEmployeeIdPaymentMethod
 
@@ -174,7 +183,6 @@ const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
 
   const res = await sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -183,14 +191,18 @@ const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeId`                                                                                                                               | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the employee                                                                                                                   |
-| `requestBody`                                                                                                                              | [operations.PutV1EmployeesEmployeeIdPaymentMethodRequestBody](../../models/operations/putv1employeesemployeeidpaymentmethodrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
+| Parameter                                                                                                                                         | Type                                                                                                                                              | Required                                                                                                                                          | Description                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                                      | *string*                                                                                                                                          | :heavy_check_mark:                                                                                                                                | The UUID of the employee                                                                                                                          |
+| `requestBody`                                                                                                                                     | [operations.PutV1EmployeesEmployeeIdPaymentMethodRequestBody](../../../sdk/models/operations/putv1employeesemployeeidpaymentmethodrequestbody.md) | :heavy_minus_sign:                                                                                                                                | N/A                                                                                                                                               |
+| `config`                                                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                      | :heavy_minus_sign:                                                                                                                                | Available config options for making requests.                                                                                                     |
 
 
 ### Response
 
-**Promise<[operations.PutV1EmployeesEmployeeIdPaymentMethodResponse](../../models/operations/putv1employeesemployeeidpaymentmethodresponse.md)>**
+**Promise<[operations.PutV1EmployeesEmployeeIdPaymentMethodResponse](../../sdk/models/operations/putv1employeesemployeeidpaymentmethodresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

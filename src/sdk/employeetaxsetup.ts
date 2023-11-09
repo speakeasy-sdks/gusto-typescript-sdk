@@ -33,7 +33,7 @@ export class EmployeeTaxSetup {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/employees/{employee_uuid}/federal_taxes",
             req
@@ -54,7 +54,7 @@ export class EmployeeTaxSetup {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -126,7 +126,7 @@ export class EmployeeTaxSetup {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/employees/{employee_uuid}/state_taxes",
             req
@@ -147,7 +147,7 @@ export class EmployeeTaxSetup {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -212,7 +212,7 @@ export class EmployeeTaxSetup {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/employees/{employee_uuid}/federal_taxes",
             req
@@ -247,7 +247,7 @@ export class EmployeeTaxSetup {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -327,7 +327,7 @@ export class EmployeeTaxSetup {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/employees/{employee_uuid}/state_taxes",
             req
@@ -362,7 +362,7 @@ export class EmployeeTaxSetup {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

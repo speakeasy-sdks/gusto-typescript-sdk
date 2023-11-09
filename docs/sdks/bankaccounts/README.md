@@ -1,5 +1,5 @@
 # BankAccounts
-(*.bankAccounts*)
+(*bankAccounts*)
 
 ### Available Operations
 
@@ -28,7 +28,6 @@ const companyId: string = "string";
 
   const res = await sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -45,8 +44,12 @@ const companyId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdBankAccountsResponse](../../models/operations/getv1companiescompanyidbankaccountsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdBankAccountsResponse](../../sdk/models/operations/getv1companiescompanyidbankaccountsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1CompaniesCompanyIdBankAccounts
 
@@ -82,7 +85,6 @@ const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {};
 
   const res = await sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(companyId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -91,17 +93,21 @@ const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {};
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                              | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The UUID of the company                                                                                                                  |
-| `requestBody`                                                                                                                            | [operations.PostV1CompaniesCompanyIdBankAccountsRequestBody](../../models/operations/postv1companiescompanyidbankaccountsrequestbody.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
-| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
+| Parameter                                                                                                                                       | Type                                                                                                                                            | Required                                                                                                                                        | Description                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                     | *string*                                                                                                                                        | :heavy_check_mark:                                                                                                                              | The UUID of the company                                                                                                                         |
+| `requestBody`                                                                                                                                   | [operations.PostV1CompaniesCompanyIdBankAccountsRequestBody](../../../sdk/models/operations/postv1companiescompanyidbankaccountsrequestbody.md) | :heavy_minus_sign:                                                                                                                              | N/A                                                                                                                                             |
+| `config`                                                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                    | :heavy_minus_sign:                                                                                                                              | Available config options for making requests.                                                                                                   |
 
 
 ### Response
 
-**Promise<[operations.PostV1CompaniesCompanyIdBankAccountsResponse](../../models/operations/postv1companiescompanyidbankaccountsresponse.md)>**
+**Promise<[operations.PostV1CompaniesCompanyIdBankAccountsResponse](../../sdk/models/operations/postv1companiescompanyidbankaccountsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1PlaidProcessorToken
 
@@ -135,7 +141,6 @@ import { OwnerType } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
     processorToken: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -144,16 +149,20 @@ import { OwnerType } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PostV1PlaidProcessorTokenRequestBody](../../models/operations/postv1plaidprocessortokenrequestbody.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                              | [operations.PostV1PlaidProcessorTokenRequestBody](../../sdk/models/operations/postv1plaidprocessortokenrequestbody.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
 
 
 ### Response
 
-**Promise<[operations.PostV1PlaidProcessorTokenResponse](../../models/operations/postv1plaidprocessortokenresponse.md)>**
+**Promise<[operations.PostV1PlaidProcessorTokenResponse](../../sdk/models/operations/postv1plaidprocessortokenresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1CompaniesCompanyIdBankAccountsVerify
 
@@ -193,7 +202,6 @@ const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {};
 
   const res = await sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(bankAccountUuid, companyId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -202,15 +210,19 @@ const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {};
 
 ### Parameters
 
-| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bankAccountUuid`                                                                                                                                  | *string*                                                                                                                                           | :heavy_check_mark:                                                                                                                                 | The UUID of the bank account                                                                                                                       |
-| `companyId`                                                                                                                                        | *string*                                                                                                                                           | :heavy_check_mark:                                                                                                                                 | The UUID of the company                                                                                                                            |
-| `requestBody`                                                                                                                                      | [operations.PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody](../../models/operations/putv1companiescompanyidbankaccountsverifyrequestbody.md) | :heavy_minus_sign:                                                                                                                                 | N/A                                                                                                                                                |
-| `config`                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                       | :heavy_minus_sign:                                                                                                                                 | Available config options for making requests.                                                                                                      |
+| Parameter                                                                                                                                                 | Type                                                                                                                                                      | Required                                                                                                                                                  | Description                                                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `bankAccountUuid`                                                                                                                                         | *string*                                                                                                                                                  | :heavy_check_mark:                                                                                                                                        | The UUID of the bank account                                                                                                                              |
+| `companyId`                                                                                                                                               | *string*                                                                                                                                                  | :heavy_check_mark:                                                                                                                                        | The UUID of the company                                                                                                                                   |
+| `requestBody`                                                                                                                                             | [operations.PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody](../../../sdk/models/operations/putv1companiescompanyidbankaccountsverifyrequestbody.md) | :heavy_minus_sign:                                                                                                                                        | N/A                                                                                                                                                       |
+| `config`                                                                                                                                                  | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                              | :heavy_minus_sign:                                                                                                                                        | Available config options for making requests.                                                                                                             |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdBankAccountsVerifyResponse](../../models/operations/putv1companiescompanyidbankaccountsverifyresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdBankAccountsVerifyResponse](../../sdk/models/operations/putv1companiescompanyidbankaccountsverifyresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

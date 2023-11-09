@@ -1,5 +1,5 @@
 # ContractorPaymentMethod
-(*.contractorPaymentMethod*)
+(*contractorPaymentMethod*)
 
 ### Available Operations
 
@@ -28,7 +28,6 @@ const contractorUuid: string = "string";
 
   const res = await sdk.contractorPaymentMethod.getV1ContractorsContractorUuidBankAccounts(contractorUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -45,8 +44,12 @@ const contractorUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1ContractorsContractorUuidBankAccountsResponse](../../models/operations/getv1contractorscontractoruuidbankaccountsresponse.md)>**
+**Promise<[operations.GetV1ContractorsContractorUuidBankAccountsResponse](../../sdk/models/operations/getv1contractorscontractoruuidbankaccountsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1ContractorsContractorUuidPaymentMethod
 
@@ -68,7 +71,6 @@ const contractorUuid: string = "string";
 
   const res = await sdk.contractorPaymentMethod.getV1ContractorsContractorUuidPaymentMethod(contractorUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -85,8 +87,12 @@ const contractorUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1ContractorsContractorUuidPaymentMethodResponse](../../models/operations/getv1contractorscontractoruuidpaymentmethodresponse.md)>**
+**Promise<[operations.GetV1ContractorsContractorUuidPaymentMethodResponse](../../sdk/models/operations/getv1contractorscontractoruuidpaymentmethodresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1ContractorsContractorUuidBankAccounts
 
@@ -121,7 +127,6 @@ const requestBody: PostV1ContractorsContractorUuidBankAccountsRequestBody = {
 
   const res = await sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts(contractorUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -130,17 +135,21 @@ const requestBody: PostV1ContractorsContractorUuidBankAccountsRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                                              | Type                                                                                                                                                   | Required                                                                                                                                               | Description                                                                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `contractorUuid`                                                                                                                                       | *string*                                                                                                                                               | :heavy_check_mark:                                                                                                                                     | The UUID of the contractor                                                                                                                             |
-| `requestBody`                                                                                                                                          | [operations.PostV1ContractorsContractorUuidBankAccountsRequestBody](../../models/operations/postv1contractorscontractoruuidbankaccountsrequestbody.md) | :heavy_minus_sign:                                                                                                                                     | N/A                                                                                                                                                    |
-| `config`                                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                           | :heavy_minus_sign:                                                                                                                                     | Available config options for making requests.                                                                                                          |
+| Parameter                                                                                                                                                     | Type                                                                                                                                                          | Required                                                                                                                                                      | Description                                                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `contractorUuid`                                                                                                                                              | *string*                                                                                                                                                      | :heavy_check_mark:                                                                                                                                            | The UUID of the contractor                                                                                                                                    |
+| `requestBody`                                                                                                                                                 | [operations.PostV1ContractorsContractorUuidBankAccountsRequestBody](../../../sdk/models/operations/postv1contractorscontractoruuidbankaccountsrequestbody.md) | :heavy_minus_sign:                                                                                                                                            | N/A                                                                                                                                                           |
+| `config`                                                                                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                  | :heavy_minus_sign:                                                                                                                                            | Available config options for making requests.                                                                                                                 |
 
 
 ### Response
 
-**Promise<[operations.PostV1ContractorsContractorUuidBankAccountsResponse](../../models/operations/postv1contractorscontractoruuidbankaccountsresponse.md)>**
+**Promise<[operations.PostV1ContractorsContractorUuidBankAccountsResponse](../../sdk/models/operations/postv1contractorscontractoruuidbankaccountsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1ContractorsContractorIdPaymentMethod
 
@@ -170,7 +179,6 @@ const requestBody: PutV1ContractorsContractorIdPaymentMethodRequestBody = {
 
   const res = await sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod(contractorUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -179,14 +187,18 @@ const requestBody: PutV1ContractorsContractorIdPaymentMethodRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `contractorUuid`                                                                                                                                   | *string*                                                                                                                                           | :heavy_check_mark:                                                                                                                                 | The UUID of the contractor                                                                                                                         |
-| `requestBody`                                                                                                                                      | [operations.PutV1ContractorsContractorIdPaymentMethodRequestBody](../../models/operations/putv1contractorscontractoridpaymentmethodrequestbody.md) | :heavy_minus_sign:                                                                                                                                 | N/A                                                                                                                                                |
-| `config`                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                       | :heavy_minus_sign:                                                                                                                                 | Available config options for making requests.                                                                                                      |
+| Parameter                                                                                                                                                 | Type                                                                                                                                                      | Required                                                                                                                                                  | Description                                                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `contractorUuid`                                                                                                                                          | *string*                                                                                                                                                  | :heavy_check_mark:                                                                                                                                        | The UUID of the contractor                                                                                                                                |
+| `requestBody`                                                                                                                                             | [operations.PutV1ContractorsContractorIdPaymentMethodRequestBody](../../../sdk/models/operations/putv1contractorscontractoridpaymentmethodrequestbody.md) | :heavy_minus_sign:                                                                                                                                        | N/A                                                                                                                                                       |
+| `config`                                                                                                                                                  | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                              | :heavy_minus_sign:                                                                                                                                        | Available config options for making requests.                                                                                                             |
 
 
 ### Response
 
-**Promise<[operations.PutV1ContractorsContractorIdPaymentMethodResponse](../../models/operations/putv1contractorscontractoridpaymentmethodresponse.md)>**
+**Promise<[operations.PutV1ContractorsContractorIdPaymentMethodResponse](../../sdk/models/operations/putv1contractorscontractoridpaymentmethodresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

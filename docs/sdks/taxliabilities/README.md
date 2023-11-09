@@ -1,5 +1,5 @@
 # TaxLiabilities
-(*.taxLiabilities*)
+(*taxLiabilities*)
 
 ### Available Operations
 
@@ -28,7 +28,6 @@ const companyUuid: string = "string";
 
   const res = await sdk.taxLiabilities.getV1TaxLiabilities(companyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -45,8 +44,12 @@ const companyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1TaxLiabilitiesResponse](../../models/operations/getv1taxliabilitiesresponse.md)>**
+**Promise<[operations.GetV1TaxLiabilitiesResponse](../../sdk/models/operations/getv1taxliabilitiesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1TaxLiabilities
 
@@ -74,7 +77,6 @@ const requestBody: PutV1TaxLiabilitiesRequestBody = {
 
   const res = await sdk.taxLiabilities.putV1TaxLiabilities(companyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -83,17 +85,21 @@ const requestBody: PutV1TaxLiabilitiesRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `companyUuid`                                                                                          | *string*                                                                                               | :heavy_check_mark:                                                                                     | The UUID of the company                                                                                |
-| `requestBody`                                                                                          | [operations.PutV1TaxLiabilitiesRequestBody](../../models/operations/putv1taxliabilitiesrequestbody.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                 | *string*                                                                                                      | :heavy_check_mark:                                                                                            | The UUID of the company                                                                                       |
+| `requestBody`                                                                                                 | [operations.PutV1TaxLiabilitiesRequestBody](../../../sdk/models/operations/putv1taxliabilitiesrequestbody.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |
+| `config`                                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                  | :heavy_minus_sign:                                                                                            | Available config options for making requests.                                                                 |
 
 
 ### Response
 
-**Promise<[operations.PutV1TaxLiabilitiesResponse](../../models/operations/putv1taxliabilitiesresponse.md)>**
+**Promise<[operations.PutV1TaxLiabilitiesResponse](../../sdk/models/operations/putv1taxliabilitiesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1TaxLiabilitiesFinish
 
@@ -116,7 +122,6 @@ const companyUuid: string = "string";
 
   const res = await sdk.taxLiabilities.putV1TaxLiabilitiesFinish(companyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -133,5 +138,9 @@ const companyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.PutV1TaxLiabilitiesFinishResponse](../../models/operations/putv1taxliabilitiesfinishresponse.md)>**
+**Promise<[operations.PutV1TaxLiabilitiesFinishResponse](../../sdk/models/operations/putv1taxliabilitiesfinishresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

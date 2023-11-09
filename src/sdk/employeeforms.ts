@@ -35,7 +35,7 @@ export class EmployeeForms {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/employees/{employee_id}/forms/{form_id}",
             req
@@ -56,7 +56,7 @@ export class EmployeeForms {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -114,7 +114,7 @@ export class EmployeeForms {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/employees/{employee_id}/forms/{form_id}/pdf",
             req
@@ -135,7 +135,7 @@ export class EmployeeForms {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -192,7 +192,11 @@ export class EmployeeForms {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/employees/{employee_id}/forms", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/v1/employees/{employee_id}/forms",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -209,7 +213,7 @@ export class EmployeeForms {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -280,7 +284,7 @@ export class EmployeeForms {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/sandbox/generate_w2";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/sandbox/generate_w2";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -311,7 +315,7 @@ export class EmployeeForms {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -391,7 +395,7 @@ export class EmployeeForms {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/employees/{employee_id}/forms/{form_id}/sign",
             req
@@ -426,7 +430,7 @@ export class EmployeeForms {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

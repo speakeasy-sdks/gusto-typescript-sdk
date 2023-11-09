@@ -1,5 +1,5 @@
 # EmployeeTaxSetup
-(*.employeeTaxSetup*)
+(*employeeTaxSetup*)
 
 ### Available Operations
 
@@ -28,7 +28,6 @@ const employeeUuid: string = "string";
 
   const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -45,8 +44,12 @@ const employeeUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdFederalTaxesResponse](../../models/operations/getv1employeesemployeeidfederaltaxesresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdFederalTaxesResponse](../../sdk/models/operations/getv1employeesemployeeidfederaltaxesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1EmployeesEmployeeIdStateTaxes
 
@@ -80,7 +83,6 @@ const employeeUuid: string = "string";
 
   const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -97,8 +99,12 @@ const employeeUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdStateTaxesResponse](../../models/operations/getv1employeesemployeeidstatetaxesresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdStateTaxesResponse](../../sdk/models/operations/getv1employeesemployeeidstatetaxesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1EmployeesEmployeeIdFederalTaxes
 
@@ -126,7 +132,6 @@ const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
 
   const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -135,17 +140,21 @@ const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `employeeUuid`                                                                                                                           | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The UUID of the employee                                                                                                                 |
-| `requestBody`                                                                                                                            | [operations.PutV1EmployeesEmployeeIdFederalTaxesRequestBody](../../models/operations/putv1employeesemployeeidfederaltaxesrequestbody.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
-| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
+| Parameter                                                                                                                                       | Type                                                                                                                                            | Required                                                                                                                                        | Description                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeUuid`                                                                                                                                  | *string*                                                                                                                                        | :heavy_check_mark:                                                                                                                              | The UUID of the employee                                                                                                                        |
+| `requestBody`                                                                                                                                   | [operations.PutV1EmployeesEmployeeIdFederalTaxesRequestBody](../../../sdk/models/operations/putv1employeesemployeeidfederaltaxesrequestbody.md) | :heavy_minus_sign:                                                                                                                              | N/A                                                                                                                                             |
+| `config`                                                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                    | :heavy_minus_sign:                                                                                                                              | Available config options for making requests.                                                                                                   |
 
 
 ### Response
 
-**Promise<[operations.PutV1EmployeesEmployeeIdFederalTaxesResponse](../../models/operations/putv1employeesemployeeidfederaltaxesresponse.md)>**
+**Promise<[operations.PutV1EmployeesEmployeeIdFederalTaxesResponse](../../sdk/models/operations/putv1employeesemployeeidfederaltaxesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1EmployeesEmployeeIdStateTaxes
 
@@ -194,7 +203,6 @@ const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
 
   const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes(employeeUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -203,14 +211,18 @@ const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeUuid`                                                                                                                       | *string*                                                                                                                             | :heavy_check_mark:                                                                                                                   | The UUID of the employee                                                                                                             |
-| `requestBody`                                                                                                                        | [operations.PutV1EmployeesEmployeeIdStateTaxesRequestBody](../../models/operations/putv1employeesemployeeidstatetaxesrequestbody.md) | :heavy_minus_sign:                                                                                                                   | N/A                                                                                                                                  |
-| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
+| Parameter                                                                                                                                   | Type                                                                                                                                        | Required                                                                                                                                    | Description                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeUuid`                                                                                                                              | *string*                                                                                                                                    | :heavy_check_mark:                                                                                                                          | The UUID of the employee                                                                                                                    |
+| `requestBody`                                                                                                                               | [operations.PutV1EmployeesEmployeeIdStateTaxesRequestBody](../../../sdk/models/operations/putv1employeesemployeeidstatetaxesrequestbody.md) | :heavy_minus_sign:                                                                                                                          | N/A                                                                                                                                         |
+| `config`                                                                                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                | :heavy_minus_sign:                                                                                                                          | Available config options for making requests.                                                                                               |
 
 
 ### Response
 
-**Promise<[operations.PutV1EmployeesEmployeeIdStateTaxesResponse](../../models/operations/putv1employeesemployeeidstatetaxesresponse.md)>**
+**Promise<[operations.PutV1EmployeesEmployeeIdStateTaxesResponse](../../sdk/models/operations/putv1employeesemployeeidstatetaxesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

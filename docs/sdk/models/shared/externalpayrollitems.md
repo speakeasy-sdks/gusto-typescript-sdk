@@ -1,0 +1,11 @@
+# ExternalPayrollItems
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `benefits`                                                                          | [shared.Benefits](../../../sdk/models/shared/benefits.md)[]                         | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `earnings`                                                                          | [shared.Earnings](../../../sdk/models/shared/earnings.md)[]                         | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `employeeUuid`                                                                      | *string*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `taxes`                                                                             | [shared.ExternalPayrollTaxes](../../../sdk/models/shared/externalpayrolltaxes.md)[] | :heavy_minus_sign:                                                                  | N/A                                                                                 |

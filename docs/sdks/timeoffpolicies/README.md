@@ -1,5 +1,5 @@
 # TimeOffPolicies
-(*.timeOffPolicies*)
+(*timeOffPolicies*)
 
 ### Available Operations
 
@@ -34,7 +34,6 @@ const companyUuid: string = "string";
 
   const res = await sdk.timeOffPolicies.getCompaniesCompanyUuidTimeOffPolicies(companyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -51,8 +50,12 @@ const companyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse](../../models/operations/getcompaniescompanyuuidtimeoffpoliciesresponse.md)>**
+**Promise<[operations.GetCompaniesCompanyUuidTimeOffPoliciesResponse](../../sdk/models/operations/getcompaniescompanyuuidtimeoffpoliciesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getTimeOffPoliciesTimeOffPolicyUuid
 
@@ -75,7 +78,6 @@ const timeOffPolicyUuid: string = "string";
 
   const res = await sdk.timeOffPolicies.getTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -92,8 +94,12 @@ const timeOffPolicyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse](../../models/operations/gettimeoffpoliciestimeoffpolicyuuidresponse.md)>**
+**Promise<[operations.GetTimeOffPoliciesTimeOffPolicyUuidResponse](../../sdk/models/operations/gettimeoffpoliciestimeoffpolicyuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postCompaniesCompanyUuidTimeOffPolicies
 
@@ -125,7 +131,6 @@ const requestBody: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody = {
 
   const res = await sdk.timeOffPolicies.postCompaniesCompanyUuidTimeOffPolicies(companyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -134,17 +139,21 @@ const requestBody: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                                                                  | *string*                                                                                                                                       | :heavy_check_mark:                                                                                                                             | The UUID of the company                                                                                                                        |
-| `requestBody`                                                                                                                                  | [operations.PostCompaniesCompanyUuidTimeOffPoliciesRequestBody](../../models/operations/postcompaniescompanyuuidtimeoffpoliciesrequestbody.md) | :heavy_minus_sign:                                                                                                                             | Requires a policy name, a policy_type, and an accrual_method                                                                                   |
-| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
+| Parameter                                                                                                                                             | Type                                                                                                                                                  | Required                                                                                                                                              | Description                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                                                         | *string*                                                                                                                                              | :heavy_check_mark:                                                                                                                                    | The UUID of the company                                                                                                                               |
+| `requestBody`                                                                                                                                         | [operations.PostCompaniesCompanyUuidTimeOffPoliciesRequestBody](../../../sdk/models/operations/postcompaniescompanyuuidtimeoffpoliciesrequestbody.md) | :heavy_minus_sign:                                                                                                                                    | Requires a policy name, a policy_type, and an accrual_method                                                                                          |
+| `config`                                                                                                                                              | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                          | :heavy_minus_sign:                                                                                                                                    | Available config options for making requests.                                                                                                         |
 
 
 ### Response
 
-**Promise<[operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse](../../models/operations/postcompaniescompanyuuidtimeoffpoliciesresponse.md)>**
+**Promise<[operations.PostCompaniesCompanyUuidTimeOffPoliciesResponse](../../sdk/models/operations/postcompaniescompanyuuidtimeoffpoliciesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1PayrollsPayrollIdCalculateAccruingTimeOffHours
 
@@ -179,7 +188,6 @@ const requestBody: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBo
 
   const res = await sdk.timeOffPolicies.postV1PayrollsPayrollIdCalculateAccruingTimeOffHours(employeeId, payrollId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -188,18 +196,22 @@ const requestBody: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBo
 
 ### Parameters
 
-| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The UUID of the employee                                                                                                                                                 |
-| `payrollId`                                                                                                                                                              | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The UUID of the payroll                                                                                                                                                  |
-| `requestBody`                                                                                                                                                            | [operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody](../../models/operations/postv1payrollspayrollidcalculateaccruingtimeoffhoursrequestbody.md) | :heavy_minus_sign:                                                                                                                                                       | N/A                                                                                                                                                                      |
-| `config`                                                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                             | :heavy_minus_sign:                                                                                                                                                       | Available config options for making requests.                                                                                                                            |
+| Parameter                                                                                                                                                                       | Type                                                                                                                                                                            | Required                                                                                                                                                                        | Description                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                                                                    | *string*                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                              | The UUID of the employee                                                                                                                                                        |
+| `payrollId`                                                                                                                                                                     | *string*                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                              | The UUID of the payroll                                                                                                                                                         |
+| `requestBody`                                                                                                                                                                   | [operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody](../../../sdk/models/operations/postv1payrollspayrollidcalculateaccruingtimeoffhoursrequestbody.md) | :heavy_minus_sign:                                                                                                                                                              | N/A                                                                                                                                                                             |
+| `config`                                                                                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                    | :heavy_minus_sign:                                                                                                                                                              | Available config options for making requests.                                                                                                                                   |
 
 
 ### Response
 
-**Promise<[operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse](../../models/operations/postv1payrollspayrollidcalculateaccruingtimeoffhoursresponse.md)>**
+**Promise<[operations.PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursResponse](../../sdk/models/operations/postv1payrollspayrollidcalculateaccruingtimeoffhoursresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putTimeOffPoliciesTimeOffPolicyUuid
 
@@ -227,7 +239,6 @@ const requestBody: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody = {};
 
   const res = await sdk.timeOffPolicies.putTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -236,17 +247,21 @@ const requestBody: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody = {};
 
 ### Parameters
 
-| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `timeOffPolicyUuid`                                                                                                                    | *string*                                                                                                                               | :heavy_check_mark:                                                                                                                     | The UUID of the company time off policy                                                                                                |
-| `requestBody`                                                                                                                          | [operations.PutTimeOffPoliciesTimeOffPolicyUuidRequestBody](../../models/operations/puttimeoffpoliciestimeoffpolicyuuidrequestbody.md) | :heavy_minus_sign:                                                                                                                     | Can update any attributes of the time off policy except policy_type, is_active, complete & employees                                   |
-| `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
+| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `timeOffPolicyUuid`                                                                                                                           | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | The UUID of the company time off policy                                                                                                       |
+| `requestBody`                                                                                                                                 | [operations.PutTimeOffPoliciesTimeOffPolicyUuidRequestBody](../../../sdk/models/operations/puttimeoffpoliciestimeoffpolicyuuidrequestbody.md) | :heavy_minus_sign:                                                                                                                            | Can update any attributes of the time off policy except policy_type, is_active, complete & employees                                          |
+| `config`                                                                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                  | :heavy_minus_sign:                                                                                                                            | Available config options for making requests.                                                                                                 |
 
 
 ### Response
 
-**Promise<[operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse](../../models/operations/puttimeoffpoliciestimeoffpolicyuuidresponse.md)>**
+**Promise<[operations.PutTimeOffPoliciesTimeOffPolicyUuidResponse](../../sdk/models/operations/puttimeoffpoliciestimeoffpolicyuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate
 
@@ -268,7 +283,6 @@ const timeOffPolicyUuid: string = "string";
 
   const res = await sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate(timeOffPolicyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -285,8 +299,12 @@ const timeOffPolicyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse](../../models/operations/putv1timeoffpoliciestimeoffpolicyuuiddeactivateresponse.md)>**
+**Promise<[operations.PutV1TimeOffPoliciesTimeOffPolicyUuidDeactivateResponse](../../sdk/models/operations/putv1timeoffpoliciestimeoffpolicyuuiddeactivateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees
 
@@ -318,7 +336,6 @@ const requestBody: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBo
 
   const res = await sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployees(timeOffPolicyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -327,17 +344,21 @@ const requestBody: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBo
 
 ### Parameters
 
-| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `timeOffPolicyUuid`                                                                                                                                                      | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The UUID of the company time off policy                                                                                                                                  |
-| `requestBody`                                                                                                                                                            | [operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody](../../models/operations/putv1timeoffpoliciestimeoffpolicyuuidremoveemployeesrequestbody.md) | :heavy_minus_sign:                                                                                                                                                       | A list of employee objects containing the employee uuid                                                                                                                  |
-| `config`                                                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                             | :heavy_minus_sign:                                                                                                                                                       | Available config options for making requests.                                                                                                                            |
+| Parameter                                                                                                                                                                       | Type                                                                                                                                                                            | Required                                                                                                                                                                        | Description                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `timeOffPolicyUuid`                                                                                                                                                             | *string*                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                              | The UUID of the company time off policy                                                                                                                                         |
+| `requestBody`                                                                                                                                                                   | [operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody](../../../sdk/models/operations/putv1timeoffpoliciestimeoffpolicyuuidremoveemployeesrequestbody.md) | :heavy_minus_sign:                                                                                                                                                              | A list of employee objects containing the employee uuid                                                                                                                         |
+| `config`                                                                                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                    | :heavy_minus_sign:                                                                                                                                                              | Available config options for making requests.                                                                                                                                   |
 
 
 ### Response
 
-**Promise<[operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse](../../models/operations/putv1timeoffpoliciestimeoffpolicyuuidremoveemployeesresponse.md)>**
+**Promise<[operations.PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse](../../sdk/models/operations/putv1timeoffpoliciestimeoffpolicyuuidremoveemployeesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees
 
@@ -369,7 +390,6 @@ const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest
 
   const res = await sdk.timeOffPolicies.putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees(timeOffPolicyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -378,17 +398,21 @@ const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequest
 
 ### Parameters
 
-| Parameter                                                                                                                                                                    | Type                                                                                                                                                                         | Required                                                                                                                                                                     | Description                                                                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `timeOffPolicyUuid`                                                                                                                                                          | *string*                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                           | The UUID of the company time off policy                                                                                                                                      |
-| `requestBody`                                                                                                                                                                | [operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody](../../models/operations/putversiontimeoffpoliciestimeoffpolicyuuidaddemployeesrequestbody.md) | :heavy_minus_sign:                                                                                                                                                           | A list of employee objects containing the employee uuid                                                                                                                      |
-| `config`                                                                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                 | :heavy_minus_sign:                                                                                                                                                           | Available config options for making requests.                                                                                                                                |
+| Parameter                                                                                                                                                                           | Type                                                                                                                                                                                | Required                                                                                                                                                                            | Description                                                                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `timeOffPolicyUuid`                                                                                                                                                                 | *string*                                                                                                                                                                            | :heavy_check_mark:                                                                                                                                                                  | The UUID of the company time off policy                                                                                                                                             |
+| `requestBody`                                                                                                                                                                       | [operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody](../../../sdk/models/operations/putversiontimeoffpoliciestimeoffpolicyuuidaddemployeesrequestbody.md) | :heavy_minus_sign:                                                                                                                                                                  | A list of employee objects containing the employee uuid                                                                                                                             |
+| `config`                                                                                                                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                  | Available config options for making requests.                                                                                                                                       |
 
 
 ### Response
 
-**Promise<[operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse](../../models/operations/putversiontimeoffpoliciestimeoffpolicyuuidaddemployeesresponse.md)>**
+**Promise<[operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesResponse](../../sdk/models/operations/putversiontimeoffpoliciestimeoffpolicyuuidaddemployeesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putVersionTimeOffPoliciesTimeOffPolicyUuidBalance
 
@@ -420,7 +444,6 @@ const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody 
 
   const res = await sdk.timeOffPolicies.putVersionTimeOffPoliciesTimeOffPolicyUuidBalance(timeOffPolicyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -429,14 +452,18 @@ const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody 
 
 ### Parameters
 
-| Parameter                                                                                                                                                          | Type                                                                                                                                                               | Required                                                                                                                                                           | Description                                                                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `timeOffPolicyUuid`                                                                                                                                                | *string*                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                 | The UUID of the company time off policy                                                                                                                            |
-| `requestBody`                                                                                                                                                      | [operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody](../../models/operations/putversiontimeoffpoliciestimeoffpolicyuuidbalancerequestbody.md) | :heavy_minus_sign:                                                                                                                                                 | A list of employee objects containing the employee uuid and time off hours balance                                                                                 |
-| `config`                                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                       | :heavy_minus_sign:                                                                                                                                                 | Available config options for making requests.                                                                                                                      |
+| Parameter                                                                                                                                                                 | Type                                                                                                                                                                      | Required                                                                                                                                                                  | Description                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `timeOffPolicyUuid`                                                                                                                                                       | *string*                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                        | The UUID of the company time off policy                                                                                                                                   |
+| `requestBody`                                                                                                                                                             | [operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody](../../../sdk/models/operations/putversiontimeoffpoliciestimeoffpolicyuuidbalancerequestbody.md) | :heavy_minus_sign:                                                                                                                                                        | A list of employee objects containing the employee uuid and time off hours balance                                                                                        |
+| `config`                                                                                                                                                                  | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                              | :heavy_minus_sign:                                                                                                                                                        | Available config options for making requests.                                                                                                                             |
 
 
 ### Response
 
-**Promise<[operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse](../../models/operations/putversiontimeoffpoliciestimeoffpolicyuuidbalanceresponse.md)>**
+**Promise<[operations.PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse](../../sdk/models/operations/putversiontimeoffpoliciestimeoffpolicyuuidbalanceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

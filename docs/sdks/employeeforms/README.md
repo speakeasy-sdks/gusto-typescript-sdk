@@ -1,5 +1,5 @@
 # EmployeeForms
-(*.employeeForms*)
+(*employeeForms*)
 
 ### Available Operations
 
@@ -30,7 +30,6 @@ const formId: string = "string";
 
   const res = await sdk.employeeForms.getV1EmployeeForm(employeeId, formId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -48,8 +47,12 @@ const formId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1EmployeeFormResponse](../../models/operations/getv1employeeformresponse.md)>**
+**Promise<[operations.GetV1EmployeeFormResponse](../../sdk/models/operations/getv1employeeformresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1EmployeeFormPdf
 
@@ -72,7 +75,6 @@ const formId: string = "string";
 
   const res = await sdk.employeeForms.getV1EmployeeFormPdf(employeeId, formId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -90,8 +92,12 @@ const formId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1EmployeeFormPdfResponse](../../models/operations/getv1employeeformpdfresponse.md)>**
+**Promise<[operations.GetV1EmployeeFormPdfResponse](../../sdk/models/operations/getv1employeeformpdfresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1EmployeeForms
 
@@ -113,7 +119,6 @@ const employeeId: string = "string";
 
   const res = await sdk.employeeForms.getV1EmployeeForms(employeeId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -130,8 +135,12 @@ const employeeId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1EmployeeFormsResponse](../../models/operations/getv1employeeformsresponse.md)>**
+**Promise<[operations.GetV1EmployeeFormsResponse](../../sdk/models/operations/getv1employeeformsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1SandboxGenerateW2
 
@@ -160,7 +169,6 @@ import { Gusto } from "@speakeasy-sdks/gusto";
     employeeId: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -169,16 +177,20 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.PostV1SandboxGenerateW2RequestBody](../../models/operations/postv1sandboxgeneratew2requestbody.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                          | [operations.PostV1SandboxGenerateW2RequestBody](../../sdk/models/operations/postv1sandboxgeneratew2requestbody.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
 
 
 ### Response
 
-**Promise<[operations.PostV1SandboxGenerateW2Response](../../models/operations/postv1sandboxgeneratew2response.md)>**
+**Promise<[operations.PostV1SandboxGenerateW2Response](../../sdk/models/operations/postv1sandboxgeneratew2response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1EmployeeFormSign
 
@@ -206,7 +218,6 @@ const requestBody: PutV1EmployeeFormSignRequestBody = {
 
   const res = await sdk.employeeForms.putV1EmployeeFormSign(employeeId, formId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -215,15 +226,19 @@ const requestBody: PutV1EmployeeFormSignRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `employeeId`                                                                                               | *string*                                                                                                   | :heavy_check_mark:                                                                                         | The UUID of the employee                                                                                   |
-| `formId`                                                                                                   | *string*                                                                                                   | :heavy_check_mark:                                                                                         | The ID or UUID of the form                                                                                 |
-| `requestBody`                                                                                              | [operations.PutV1EmployeeFormSignRequestBody](../../models/operations/putv1employeeformsignrequestbody.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                      | *string*                                                                                                          | :heavy_check_mark:                                                                                                | The UUID of the employee                                                                                          |
+| `formId`                                                                                                          | *string*                                                                                                          | :heavy_check_mark:                                                                                                | The ID or UUID of the form                                                                                        |
+| `requestBody`                                                                                                     | [operations.PutV1EmployeeFormSignRequestBody](../../../sdk/models/operations/putv1employeeformsignrequestbody.md) | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| `config`                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                      | :heavy_minus_sign:                                                                                                | Available config options for making requests.                                                                     |
 
 
 ### Response
 
-**Promise<[operations.PutV1EmployeeFormSignResponse](../../models/operations/putv1employeeformsignresponse.md)>**
+**Promise<[operations.PutV1EmployeeFormSignResponse](../../sdk/models/operations/putv1employeeformsignresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -1,5 +1,5 @@
 # IndustrySelection
-(*.industrySelection*)
+(*industrySelection*)
 
 ### Available Operations
 
@@ -26,7 +26,6 @@ const companyId: string = "string";
 
   const res = await sdk.industrySelection.getV1CompanyIndustry(companyId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -43,8 +42,12 @@ const companyId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompanyIndustryResponse](../../models/operations/getv1companyindustryresponse.md)>**
+**Promise<[operations.GetV1CompanyIndustryResponse](../../sdk/models/operations/getv1companyindustryresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1CompanyIndustry
 
@@ -73,7 +76,6 @@ const requestBody: PutV1CompanyIndustryRequestBody = {
 
   const res = await sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -82,14 +84,18 @@ const requestBody: PutV1CompanyIndustryRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                              | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The UUID of the company                                                                                  |
-| `requestBody`                                                                                            | [operations.PutV1CompanyIndustryRequestBody](../../models/operations/putv1companyindustryrequestbody.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                     | *string*                                                                                                        | :heavy_check_mark:                                                                                              | The UUID of the company                                                                                         |
+| `requestBody`                                                                                                   | [operations.PutV1CompanyIndustryRequestBody](../../../sdk/models/operations/putv1companyindustryrequestbody.md) | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
+| `config`                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                    | :heavy_minus_sign:                                                                                              | Available config options for making requests.                                                                   |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompanyIndustryResponse](../../models/operations/putv1companyindustryresponse.md)>**
+**Promise<[operations.PutV1CompanyIndustryResponse](../../sdk/models/operations/putv1companyindustryresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

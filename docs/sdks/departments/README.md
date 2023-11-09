@@ -1,5 +1,5 @@
 # Departments
-(*.departments*)
+(*departments*)
 
 ### Available Operations
 
@@ -34,7 +34,6 @@ const departmentUuid: string = "string";
 
   const res = await sdk.departments.deleteDepartment(departmentUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -51,8 +50,12 @@ const departmentUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteDepartmentResponse](../../models/operations/deletedepartmentresponse.md)>**
+**Promise<[operations.DeleteDepartmentResponse](../../sdk/models/operations/deletedepartmentresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getCompaniesDepartments
 
@@ -76,7 +79,6 @@ const companyUuid: string = "string";
 
   const res = await sdk.departments.getCompaniesDepartments(companyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -93,8 +95,12 @@ const companyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetCompaniesDepartmentsResponse](../../models/operations/getcompaniesdepartmentsresponse.md)>**
+**Promise<[operations.GetCompaniesDepartmentsResponse](../../sdk/models/operations/getcompaniesdepartmentsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getDepartment
 
@@ -119,7 +125,6 @@ const departmentUuid: string = "string";
 
   const res = await sdk.departments.getDepartment(departmentUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -136,8 +141,12 @@ const departmentUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetDepartmentResponse](../../models/operations/getdepartmentresponse.md)>**
+**Promise<[operations.GetDepartmentResponse](../../sdk/models/operations/getdepartmentresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postDepartments
 
@@ -162,7 +171,6 @@ const requestBody: PostDepartmentsRequestBody = {};
 
   const res = await sdk.departments.postDepartments(companyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -171,17 +179,21 @@ const requestBody: PostDepartmentsRequestBody = {};
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                  | *string*                                                                                       | :heavy_check_mark:                                                                             | The UUID of the company                                                                        |
-| `requestBody`                                                                                  | [operations.PostDepartmentsRequestBody](../../models/operations/postdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                         | *string*                                                                                              | :heavy_check_mark:                                                                                    | The UUID of the company                                                                               |
+| `requestBody`                                                                                         | [operations.PostDepartmentsRequestBody](../../../sdk/models/operations/postdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
+| `config`                                                                                              | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                          | :heavy_minus_sign:                                                                                    | Available config options for making requests.                                                         |
 
 
 ### Response
 
-**Promise<[operations.PostDepartmentsResponse](../../models/operations/postdepartmentsresponse.md)>**
+**Promise<[operations.PostDepartmentsResponse](../../sdk/models/operations/postdepartmentsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putAddPeopleToDepartment
 
@@ -219,7 +231,6 @@ const requestBody: PutAddPeopleToDepartmentRequestBody = {
 
   const res = await sdk.departments.putAddPeopleToDepartment(departmentUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -228,17 +239,21 @@ const requestBody: PutAddPeopleToDepartmentRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `departmentUuid`                                                                                                 | *string*                                                                                                         | :heavy_check_mark:                                                                                               | The UUID of the department                                                                                       |
-| `requestBody`                                                                                                    | [operations.PutAddPeopleToDepartmentRequestBody](../../models/operations/putaddpeopletodepartmentrequestbody.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                                               | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `departmentUuid`                                                                                                        | *string*                                                                                                                | :heavy_check_mark:                                                                                                      | The UUID of the department                                                                                              |
+| `requestBody`                                                                                                           | [operations.PutAddPeopleToDepartmentRequestBody](../../../sdk/models/operations/putaddpeopletodepartmentrequestbody.md) | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |
+| `config`                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                            | :heavy_minus_sign:                                                                                                      | Available config options for making requests.                                                                           |
 
 
 ### Response
 
-**Promise<[operations.PutAddPeopleToDepartmentResponse](../../models/operations/putaddpeopletodepartmentresponse.md)>**
+**Promise<[operations.PutAddPeopleToDepartmentResponse](../../sdk/models/operations/putaddpeopletodepartmentresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putDepartments
 
@@ -265,7 +280,6 @@ const requestBody: PutDepartmentsRequestBody = {
 
   const res = await sdk.departments.putDepartments(departmentUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -274,17 +288,21 @@ const requestBody: PutDepartmentsRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `departmentUuid`                                                                             | *string*                                                                                     | :heavy_check_mark:                                                                           | The UUID of the department                                                                   |
-| `requestBody`                                                                                | [operations.PutDepartmentsRequestBody](../../models/operations/putdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                           | N/A                                                                                          |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `departmentUuid`                                                                                    | *string*                                                                                            | :heavy_check_mark:                                                                                  | The UUID of the department                                                                          |
+| `requestBody`                                                                                       | [operations.PutDepartmentsRequestBody](../../../sdk/models/operations/putdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `config`                                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                        | :heavy_minus_sign:                                                                                  | Available config options for making requests.                                                       |
 
 
 ### Response
 
-**Promise<[operations.PutDepartmentsResponse](../../models/operations/putdepartmentsresponse.md)>**
+**Promise<[operations.PutDepartmentsResponse](../../sdk/models/operations/putdepartmentsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putRemovePeopleFromDepartment
 
@@ -322,7 +340,6 @@ const requestBody: PutRemovePeopleFromDepartmentRequestBody = {
 
   const res = await sdk.departments.putRemovePeopleFromDepartment(departmentUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -331,14 +348,18 @@ const requestBody: PutRemovePeopleFromDepartmentRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `departmentUuid`                                                                                                           | *string*                                                                                                                   | :heavy_check_mark:                                                                                                         | The UUID of the department                                                                                                 |
-| `requestBody`                                                                                                              | [operations.PutRemovePeopleFromDepartmentRequestBody](../../models/operations/putremovepeoplefromdepartmentrequestbody.md) | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |
-| `config`                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                               | :heavy_minus_sign:                                                                                                         | Available config options for making requests.                                                                              |
+| Parameter                                                                                                                         | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `departmentUuid`                                                                                                                  | *string*                                                                                                                          | :heavy_check_mark:                                                                                                                | The UUID of the department                                                                                                        |
+| `requestBody`                                                                                                                     | [operations.PutRemovePeopleFromDepartmentRequestBody](../../../sdk/models/operations/putremovepeoplefromdepartmentrequestbody.md) | :heavy_minus_sign:                                                                                                                | N/A                                                                                                                               |
+| `config`                                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                      | :heavy_minus_sign:                                                                                                                | Available config options for making requests.                                                                                     |
 
 
 ### Response
 
-**Promise<[operations.PutRemovePeopleFromDepartmentResponse](../../models/operations/putremovepeoplefromdepartmentresponse.md)>**
+**Promise<[operations.PutRemovePeopleFromDepartmentResponse](../../sdk/models/operations/putremovepeoplefromdepartmentresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

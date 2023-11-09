@@ -1,5 +1,5 @@
 # Companies
-(*.companies*)
+(*companies*)
 
 ### Available Operations
 
@@ -40,7 +40,6 @@ const companyId: string = "string";
 
   const res = await sdk.companies.getV1Companies(companyId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -57,8 +56,12 @@ const companyId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesResponse](../../models/operations/getv1companiesresponse.md)>**
+**Promise<[operations.GetV1CompaniesResponse](../../sdk/models/operations/getv1companiesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompaniesCompanyIdAdmins
 
@@ -82,7 +85,6 @@ const per: number = 7436.28;
 
   const res = await sdk.companies.getV1CompaniesCompanyIdAdmins(companyId, page, per);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -101,8 +103,12 @@ const per: number = 7436.28;
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdAdminsResponse](../../models/operations/getv1companiescompanyidadminsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdAdminsResponse](../../sdk/models/operations/getv1companiescompanyidadminsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompaniesCompanyIdCustomFields
 
@@ -128,7 +134,6 @@ const per: number = 751.25;
 
   const res = await sdk.companies.getV1CompaniesCompanyIdCustomFields(companyId, page, per);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -147,8 +152,12 @@ const per: number = 751.25;
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdCustomFieldsResponse](../../models/operations/getv1companiescompanyidcustomfieldsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdCustomFieldsResponse](../../sdk/models/operations/getv1companiescompanyidcustomfieldsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompanyFinishOnboarding
 
@@ -181,7 +190,6 @@ const companyUuid: string = "string";
 
   const res = await sdk.companies.getV1CompanyFinishOnboarding(companyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -198,8 +206,12 @@ const companyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompanyFinishOnboardingResponse](../../models/operations/getv1companyfinishonboardingresponse.md)>**
+**Promise<[operations.GetV1CompanyFinishOnboardingResponse](../../sdk/models/operations/getv1companyfinishonboardingresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompanyOnboardingStatus
 
@@ -221,7 +233,6 @@ const companyUuid: string = "string";
 
   const res = await sdk.companies.getV1CompanyOnboardingStatus(companyUuid);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -238,8 +249,12 @@ const companyUuid: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompanyOnboardingStatusResponse](../../models/operations/getv1companyonboardingstatusresponse.md)>**
+**Promise<[operations.GetV1CompanyOnboardingStatusResponse](../../sdk/models/operations/getv1companyonboardingstatusresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService
 
@@ -269,7 +284,6 @@ const requestBody: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceReq
 
   const res = await sdk.companies.postPartnerManagedCompaniesCompanyUuidAcceptTermsOfService(companyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -278,17 +292,21 @@ const requestBody: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceReq
 
 ### Parameters
 
-| Parameter                                                                                                                                                                            | Type                                                                                                                                                                                 | Required                                                                                                                                                                             | Description                                                                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `companyUuid`                                                                                                                                                                        | *string*                                                                                                                                                                             | :heavy_check_mark:                                                                                                                                                                   | The UUID of the company                                                                                                                                                              |
-| `requestBody`                                                                                                                                                                        | [operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequestBody](../../models/operations/postpartnermanagedcompaniescompanyuuidaccepttermsofservicerequestbody.md) | :heavy_minus_sign:                                                                                                                                                                   | N/A                                                                                                                                                                                  |
-| `config`                                                                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                   | Available config options for making requests.                                                                                                                                        |
+| Parameter                                                                                                                                                                                   | Type                                                                                                                                                                                        | Required                                                                                                                                                                                    | Description                                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                                                                                               | *string*                                                                                                                                                                                    | :heavy_check_mark:                                                                                                                                                                          | The UUID of the company                                                                                                                                                                     |
+| `requestBody`                                                                                                                                                                               | [operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequestBody](../../../sdk/models/operations/postpartnermanagedcompaniescompanyuuidaccepttermsofservicerequestbody.md) | :heavy_minus_sign:                                                                                                                                                                          | N/A                                                                                                                                                                                         |
+| `config`                                                                                                                                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                | :heavy_minus_sign:                                                                                                                                                                          | Available config options for making requests.                                                                                                                                               |
 
 
 ### Response
 
-**Promise<[operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse](../../models/operations/postpartnermanagedcompaniescompanyuuidaccepttermsofserviceresponse.md)>**
+**Promise<[operations.PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceResponse](../../sdk/models/operations/postpartnermanagedcompaniescompanyuuidaccepttermsofserviceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService
 
@@ -316,7 +334,6 @@ const requestBody: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceR
 
   const res = await sdk.companies.postPartnerManagedCompaniesCompanyUuidRetrieveTermsOfService(companyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -325,17 +342,21 @@ const requestBody: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceR
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                | Type                                                                                                                                                                                     | Required                                                                                                                                                                                 | Description                                                                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                                                                                                            | *string*                                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                                       | The UUID of the company                                                                                                                                                                  |
-| `requestBody`                                                                                                                                                                            | [operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody](../../models/operations/postpartnermanagedcompaniescompanyuuidretrievetermsofservicerequestbody.md) | :heavy_minus_sign:                                                                                                                                                                       | N/A                                                                                                                                                                                      |
-| `config`                                                                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                       | Available config options for making requests.                                                                                                                                            |
+| Parameter                                                                                                                                                                                       | Type                                                                                                                                                                                            | Required                                                                                                                                                                                        | Description                                                                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                                                                                                   | *string*                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                              | The UUID of the company                                                                                                                                                                         |
+| `requestBody`                                                                                                                                                                                   | [operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody](../../../sdk/models/operations/postpartnermanagedcompaniescompanyuuidretrievetermsofservicerequestbody.md) | :heavy_minus_sign:                                                                                                                                                                              | N/A                                                                                                                                                                                             |
+| `config`                                                                                                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                    | :heavy_minus_sign:                                                                                                                                                                              | Available config options for making requests.                                                                                                                                                   |
 
 
 ### Response
 
-**Promise<[operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse](../../models/operations/postpartnermanagedcompaniescompanyuuidretrievetermsofserviceresponse.md)>**
+**Promise<[operations.PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceResponse](../../sdk/models/operations/postpartnermanagedcompaniescompanyuuidretrievetermsofserviceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1CompaniesCompanyIdAdmins
 
@@ -362,7 +383,6 @@ const requestBody: PostV1CompaniesCompanyIdAdminsRequestBody = {
 
   const res = await sdk.companies.postV1CompaniesCompanyIdAdmins(companyId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -371,17 +391,21 @@ const requestBody: PostV1CompaniesCompanyIdAdminsRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                  | *string*                                                                                                                     | :heavy_check_mark:                                                                                                           | The UUID of the company                                                                                                      |
-| `requestBody`                                                                                                                | [operations.PostV1CompaniesCompanyIdAdminsRequestBody](../../models/operations/postv1companiescompanyidadminsrequestbody.md) | :heavy_minus_sign:                                                                                                           | N/A                                                                                                                          |
-| `config`                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                 | :heavy_minus_sign:                                                                                                           | Available config options for making requests.                                                                                |
+| Parameter                                                                                                                           | Type                                                                                                                                | Required                                                                                                                            | Description                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                         | *string*                                                                                                                            | :heavy_check_mark:                                                                                                                  | The UUID of the company                                                                                                             |
+| `requestBody`                                                                                                                       | [operations.PostV1CompaniesCompanyIdAdminsRequestBody](../../../sdk/models/operations/postv1companiescompanyidadminsrequestbody.md) | :heavy_minus_sign:                                                                                                                  | N/A                                                                                                                                 |
+| `config`                                                                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                        | :heavy_minus_sign:                                                                                                                  | Available config options for making requests.                                                                                       |
 
 
 ### Response
 
-**Promise<[operations.PostV1CompaniesCompanyIdAdminsResponse](../../models/operations/postv1companiescompanyidadminsresponse.md)>**
+**Promise<[operations.PostV1CompaniesCompanyIdAdminsResponse](../../sdk/models/operations/postv1companiescompanyidadminsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1PartnerManagedCompanies
 
@@ -410,7 +434,6 @@ import { Gusto } from "@speakeasy-sdks/gusto";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -419,16 +442,20 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 
 ### Parameters
 
-| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                  | [operations.PostV1PartnerManagedCompaniesRequestBody](../../models/operations/postv1partnermanagedcompaniesrequestbody.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
-| `config`                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                               | :heavy_minus_sign:                                                                                                         | Available config options for making requests.                                                                              |
+| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                      | [operations.PostV1PartnerManagedCompaniesRequestBody](../../sdk/models/operations/postv1partnermanagedcompaniesrequestbody.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
+| `config`                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                   | :heavy_minus_sign:                                                                                                             | Available config options for making requests.                                                                                  |
 
 
 ### Response
 
-**Promise<[operations.PostV1PartnerManagedCompaniesResponse](../../models/operations/postv1partnermanagedcompaniesresponse.md)>**
+**Promise<[operations.PostV1PartnerManagedCompaniesResponse](../../sdk/models/operations/postv1partnermanagedcompaniesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## postV1Provision
 
@@ -475,7 +502,6 @@ import { Gusto } from "@speakeasy-sdks/gusto";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -484,16 +510,20 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.PostV1ProvisionRequestBody](../../models/operations/postv1provisionrequestbody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.PostV1ProvisionRequestBody](../../sdk/models/operations/postv1provisionrequestbody.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
 
-**Promise<[operations.PostV1ProvisionResponse](../../models/operations/postv1provisionresponse.md)>**
+**Promise<[operations.PostV1ProvisionResponse](../../sdk/models/operations/postv1provisionresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1PartnerManagedCompaniesCompanyUuidMigrate
 
@@ -523,7 +553,6 @@ const requestBody: PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody = {
 
   const res = await sdk.companies.putV1PartnerManagedCompaniesCompanyUuidMigrate(companyUuid, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -532,14 +561,18 @@ const requestBody: PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                                                                    | Type                                                                                                                                                         | Required                                                                                                                                                     | Description                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `companyUuid`                                                                                                                                                | *string*                                                                                                                                                     | :heavy_check_mark:                                                                                                                                           | The UUID of the company                                                                                                                                      |
-| `requestBody`                                                                                                                                                | [operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody](../../models/operations/putv1partnermanagedcompaniescompanyuuidmigraterequestbody.md) | :heavy_minus_sign:                                                                                                                                           | N/A                                                                                                                                                          |
-| `config`                                                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                 | :heavy_minus_sign:                                                                                                                                           | Available config options for making requests.                                                                                                                |
+| Parameter                                                                                                                                                           | Type                                                                                                                                                                | Required                                                                                                                                                            | Description                                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                                                                       | *string*                                                                                                                                                            | :heavy_check_mark:                                                                                                                                                  | The UUID of the company                                                                                                                                             |
+| `requestBody`                                                                                                                                                       | [operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody](../../../sdk/models/operations/putv1partnermanagedcompaniescompanyuuidmigraterequestbody.md) | :heavy_minus_sign:                                                                                                                                                  | N/A                                                                                                                                                                 |
+| `config`                                                                                                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                        | :heavy_minus_sign:                                                                                                                                                  | Available config options for making requests.                                                                                                                       |
 
 
 ### Response
 
-**Promise<[operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse](../../models/operations/putv1partnermanagedcompaniescompanyuuidmigrateresponse.md)>**
+**Promise<[operations.PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse](../../sdk/models/operations/putv1partnermanagedcompaniescompanyuuidmigrateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

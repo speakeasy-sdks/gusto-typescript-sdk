@@ -1,5 +1,5 @@
 # CompanyForms
-(*.companyForms*)
+(*companyForms*)
 
 ### Available Operations
 
@@ -28,7 +28,6 @@ const formId: string = "string";
 
   const res = await sdk.companyForms.getV1CompanyForm(formId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -45,8 +44,12 @@ const formId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompanyFormResponse](../../models/operations/getv1companyformresponse.md)>**
+**Promise<[operations.GetV1CompanyFormResponse](../../sdk/models/operations/getv1companyformresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompanyFormPdf
 
@@ -68,7 +71,6 @@ const formId: string = "string";
 
   const res = await sdk.companyForms.getV1CompanyFormPdf(formId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -85,8 +87,12 @@ const formId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompanyFormPdfResponse](../../models/operations/getv1companyformpdfresponse.md)>**
+**Promise<[operations.GetV1CompanyFormPdfResponse](../../sdk/models/operations/getv1companyformpdfresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## getV1CompanyForms
 
@@ -108,7 +114,6 @@ const companyId: string = "string";
 
   const res = await sdk.companyForms.getV1CompanyForms(companyId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -125,8 +130,12 @@ const companyId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetV1CompanyFormsResponse](../../models/operations/getv1companyformsresponse.md)>**
+**Promise<[operations.GetV1CompanyFormsResponse](../../sdk/models/operations/getv1companyformsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## putV1CompanyFormSign
 
@@ -153,7 +162,6 @@ const requestBody: PutV1CompanyFormSignRequestBody = {
 
   const res = await sdk.companyForms.putV1CompanyFormSign(formId, requestBody);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -162,14 +170,18 @@ const requestBody: PutV1CompanyFormSignRequestBody = {
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `formId`                                                                                                 | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The ID or UUID of the form                                                                               |
-| `requestBody`                                                                                            | [operations.PutV1CompanyFormSignRequestBody](../../models/operations/putv1companyformsignrequestbody.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `formId`                                                                                                        | *string*                                                                                                        | :heavy_check_mark:                                                                                              | The ID or UUID of the form                                                                                      |
+| `requestBody`                                                                                                   | [operations.PutV1CompanyFormSignRequestBody](../../../sdk/models/operations/putv1companyformsignrequestbody.md) | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
+| `config`                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                    | :heavy_minus_sign:                                                                                              | Available config options for making requests.                                                                   |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompanyFormSignResponse](../../models/operations/putv1companyformsignresponse.md)>**
+**Promise<[operations.PutV1CompanyFormSignResponse](../../sdk/models/operations/putv1companyformsignresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

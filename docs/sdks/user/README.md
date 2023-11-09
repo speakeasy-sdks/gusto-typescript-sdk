@@ -1,5 +1,5 @@
 # User
-(*.user*)
+(*user*)
 
 ### Available Operations
 
@@ -27,7 +27,6 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 
   const res = await sdk.user.getV1Me();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -43,5 +42,9 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 
 ### Response
 
-**Promise<[operations.GetV1MeResponse](../../models/operations/getv1meresponse.md)>**
+**Promise<[operations.GetV1MeResponse](../../sdk/models/operations/getv1meresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

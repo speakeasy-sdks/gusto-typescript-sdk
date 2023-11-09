@@ -37,7 +37,7 @@ export class GeneratedDocuments {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/generated_documents/{document_type}/{request_uuid}",
             req
@@ -58,7 +58,7 @@ export class GeneratedDocuments {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",

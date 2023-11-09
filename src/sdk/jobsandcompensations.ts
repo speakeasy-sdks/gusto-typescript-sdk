@@ -45,7 +45,7 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -62,7 +62,7 @@ export class JobsAndCompensations {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -111,7 +111,11 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/compensations/{compensation_id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/v1/compensations/{compensation_id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -132,7 +136,7 @@ export class JobsAndCompensations {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -202,7 +206,11 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/employees/{employee_id}/jobs", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/v1/employees/{employee_id}/jobs",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -220,7 +228,7 @@ export class JobsAndCompensations {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -287,7 +295,7 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -305,7 +313,7 @@ export class JobsAndCompensations {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -373,7 +381,11 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}/compensations", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/v1/jobs/{job_id}/compensations",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -391,7 +403,7 @@ export class JobsAndCompensations {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -458,7 +470,11 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/employees/{employee_id}/jobs", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/v1/employees/{employee_id}/jobs",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -489,7 +505,7 @@ export class JobsAndCompensations {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -568,7 +584,11 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/compensations/{compensation_id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/v1/compensations/{compensation_id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -603,7 +623,7 @@ export class JobsAndCompensations {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -685,7 +705,7 @@ export class JobsAndCompensations {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/v1/jobs/{job_id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -716,7 +736,7 @@ export class JobsAndCompensations {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
