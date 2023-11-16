@@ -30,5 +30,5 @@ export class DeleteV1EmployeesEmployeeIdTerminationsResponse extends SpeakeasyBa
      * Raw HTTP response; suitable for custom response parsing
      */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 }

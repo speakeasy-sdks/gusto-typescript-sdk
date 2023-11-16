@@ -36,7 +36,7 @@ export class PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse extends S
      * Raw HTTP response; suitable for custom response parsing
      */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

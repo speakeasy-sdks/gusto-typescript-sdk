@@ -54,7 +54,7 @@ export class PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesResponse extend
      * Raw HTTP response; suitable for custom response parsing
      */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * OK

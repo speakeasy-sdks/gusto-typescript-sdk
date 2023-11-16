@@ -51,7 +51,7 @@ export class PostV1EmployeesEmployeeIdTerminationsResponse extends SpeakeasyBase
      * Raw HTTP response; suitable for custom response parsing
      */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     @SpeakeasyMetadata()
     termination?: shared.Termination;
