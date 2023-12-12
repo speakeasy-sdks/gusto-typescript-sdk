@@ -25,10 +25,10 @@ Use this endpoint to delete an employee who is in onboarding. Deleting an onboar
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { DeleteV1EmployeeRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -38,7 +38,9 @@ const employeeId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -71,10 +73,10 @@ scope: `employees:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesRequest, Include } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -85,7 +87,9 @@ const include: Include = Include.AllCompensations;
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -93,7 +97,7 @@ const include: Include = Include.AllCompensations;
 | Parameter                                                                                                                                                                                                                                                                                     | Type                                                                                                                                                                                                                                                                                          | Required                                                                                                                                                                                                                                                                                      | Description                                                                                                                                                                                                                                                                                   |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `employeeId`                                                                                                                                                                                                                                                                                  | *string*                                                                                                                                                                                                                                                                                      | :heavy_check_mark:                                                                                                                                                                                                                                                                            | The UUID of the employee                                                                                                                                                                                                                                                                      |
-| `include`                                                                                                                                                                                                                                                                                     | [operations.Include](../../../sdk/models/operations/include.md)                                                                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                                                                                                                            | Include the requested attribute(s) in each employee response, multiple options are comma separated. Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation<br/>- custom_fields: Include employees' custom fields |
+| `include`                                                                                                                                                                                                                                                                                     | [operations.Include](../../sdk/models/operations/include.md)                                                                                                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                                                                                                                                            | Include the requested attribute(s) in each employee response, multiple options are comma separated. Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation<br/>- custom_fields: Include employees' custom fields |
 | `config`                                                                                                                                                                                                                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                                                                                                                                            | Available config options for making requests.                                                                                                                                                                                                                                                 |
 
 
@@ -118,10 +122,10 @@ scope: `employees:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdCustomFieldsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -133,7 +137,9 @@ const per: number = 9828.87;
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -167,10 +173,10 @@ scope: `employees:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdHomeAddressRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -180,7 +186,9 @@ const employeeId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -247,10 +255,10 @@ scope: `employees:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeesEmployeeIdOnboardingStatusRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -260,7 +268,9 @@ const employeeId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -292,10 +302,10 @@ scope: `employee_time_off_activities:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetVersionEmployeesTimeOffActivitiesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeUuid: string = "string";
@@ -306,7 +316,9 @@ const timeOffType: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -339,10 +351,10 @@ scope: `employees:write`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PostV1EmployeesRequest, PostV1EmployeesRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyId: string = "string";
@@ -353,16 +365,18 @@ const requestBody: PostV1EmployeesRequestBody = {};
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                           | *string*                                                                                              | :heavy_check_mark:                                                                                    | The UUID of the company                                                                               |
-| `requestBody`                                                                                         | [operations.PostV1EmployeesRequestBody](../../../sdk/models/operations/postv1employeesrequestbody.md) | :heavy_minus_sign:                                                                                    | Create an employee.                                                                                   |
-| `config`                                                                                              | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                          | :heavy_minus_sign:                                                                                    | Available config options for making requests.                                                         |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                        | *string*                                                                                           | :heavy_check_mark:                                                                                 | The UUID of the company                                                                            |
+| `requestBody`                                                                                      | [operations.PostV1EmployeesRequestBody](../../sdk/models/operations/postv1employeesrequestbody.md) | :heavy_minus_sign:                                                                                 | Create an employee.                                                                                |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
@@ -386,10 +400,10 @@ Call this endpoint as the very last step of employee onboarding to complete thei
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1EmployeeFinishOnboardingRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -399,7 +413,9 @@ const employeeId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -431,10 +447,10 @@ scope: `employees:write`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1EmployeesRequest, PutV1EmployeesRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -447,16 +463,18 @@ const requestBody: PutV1EmployeesRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `employeeId`                                                                                        | *string*                                                                                            | :heavy_check_mark:                                                                                  | The UUID of the employee                                                                            |
-| `requestBody`                                                                                       | [operations.PutV1EmployeesRequestBody](../../../sdk/models/operations/putv1employeesrequestbody.md) | :heavy_minus_sign:                                                                                  | Update an employee.                                                                                 |
-| `config`                                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                        | :heavy_minus_sign:                                                                                  | Available config options for making requests.                                                       |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `employeeId`                                                                                     | *string*                                                                                         | :heavy_check_mark:                                                                               | The UUID of the employee                                                                         |
+| `requestBody`                                                                                    | [operations.PutV1EmployeesRequestBody](../../sdk/models/operations/putv1employeesrequestbody.md) | :heavy_minus_sign:                                                                               | Update an employee.                                                                              |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
@@ -483,10 +501,10 @@ import {
   PutV1EmployeesEmployeeIdHomeAddressRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -499,16 +517,18 @@ const requestBody: PutV1EmployeesEmployeeIdHomeAddressRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                     | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `employeeId`                                                                                                                                  | *string*                                                                                                                                      | :heavy_check_mark:                                                                                                                            | The UUID of the employee                                                                                                                      |
-| `requestBody`                                                                                                                                 | [operations.PutV1EmployeesEmployeeIdHomeAddressRequestBody](../../../sdk/models/operations/putv1employeesemployeeidhomeaddressrequestbody.md) | :heavy_minus_sign:                                                                                                                            | N/A                                                                                                                                           |
-| `config`                                                                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                  | :heavy_minus_sign:                                                                                                                            | Available config options for making requests.                                                                                                 |
+| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `employeeId`                                                                                                                               | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the employee                                                                                                                   |
+| `requestBody`                                                                                                                              | [operations.PutV1EmployeesEmployeeIdHomeAddressRequestBody](../../sdk/models/operations/putv1employeesemployeeidhomeaddressrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
+| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
 
 
 ### Response
@@ -544,10 +564,10 @@ import {
   PutV1EmployeesEmployeeIdOnboardingStatusRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -560,16 +580,18 @@ const requestBody: PutV1EmployeesEmployeeIdOnboardingStatusRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                               | Type                                                                                                                                                    | Required                                                                                                                                                | Description                                                                                                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `employeeId`                                                                                                                                            | *string*                                                                                                                                                | :heavy_check_mark:                                                                                                                                      | The UUID of the employee                                                                                                                                |
-| `requestBody`                                                                                                                                           | [operations.PutV1EmployeesEmployeeIdOnboardingStatusRequestBody](../../../sdk/models/operations/putv1employeesemployeeidonboardingstatusrequestbody.md) | :heavy_minus_sign:                                                                                                                                      | N/A                                                                                                                                                     |
-| `config`                                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                            | :heavy_minus_sign:                                                                                                                                      | Available config options for making requests.                                                                                                           |
+| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                                         | *string*                                                                                                                                             | :heavy_check_mark:                                                                                                                                   | The UUID of the employee                                                                                                                             |
+| `requestBody`                                                                                                                                        | [operations.PutV1EmployeesEmployeeIdOnboardingStatusRequestBody](../../sdk/models/operations/putv1employeesemployeeidonboardingstatusrequestbody.md) | :heavy_minus_sign:                                                                                                                                   | N/A                                                                                                                                                  |
+| `config`                                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                         | :heavy_minus_sign:                                                                                                                                   | Available config options for making requests.                                                                                                        |
 
 
 ### Response

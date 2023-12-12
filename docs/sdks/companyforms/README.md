@@ -18,10 +18,10 @@ Get a company form
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompanyFormRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const formId: string = "string";
@@ -31,7 +31,9 @@ const formId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -61,10 +63,10 @@ Get the link to the form PDF
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompanyFormPdfRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const formId: string = "string";
@@ -74,7 +76,9 @@ const formId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -104,10 +108,10 @@ Get a list of all company's forms
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompanyFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyId: string = "string";
@@ -117,7 +121,9 @@ const companyId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -147,10 +153,10 @@ Sign a company form
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1CompanyFormSignRequest, PutV1CompanyFormSignRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const formId: string = "string";
@@ -165,16 +171,18 @@ const requestBody: PutV1CompanyFormSignRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `formId`                                                                                                        | *string*                                                                                                        | :heavy_check_mark:                                                                                              | The ID or UUID of the form                                                                                      |
-| `requestBody`                                                                                                   | [operations.PutV1CompanyFormSignRequestBody](../../../sdk/models/operations/putv1companyformsignrequestbody.md) | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
-| `config`                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                    | :heavy_minus_sign:                                                                                              | Available config options for making requests.                                                                   |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `formId`                                                                                                     | *string*                                                                                                     | :heavy_check_mark:                                                                                           | The ID or UUID of the form                                                                                   |
+| `requestBody`                                                                                                | [operations.PutV1CompanyFormSignRequestBody](../../sdk/models/operations/putv1companyformsignrequestbody.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response

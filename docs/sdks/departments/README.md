@@ -24,10 +24,10 @@ scope: `departments:write`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { DeleteDepartmentRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const departmentUuid: string = "string";
@@ -37,7 +37,9 @@ const departmentUuid: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -69,10 +71,10 @@ scope: `departments:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetCompaniesDepartmentsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -82,7 +84,9 @@ const companyUuid: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -115,10 +119,10 @@ scope: `departments:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetDepartmentRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const departmentUuid: string = "string";
@@ -128,7 +132,9 @@ const departmentUuid: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -160,10 +166,10 @@ scope: `departments:write`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PostDepartmentsRequest, PostDepartmentsRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -174,16 +180,18 @@ const requestBody: PostDepartmentsRequestBody = {};
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                         | *string*                                                                                              | :heavy_check_mark:                                                                                    | The UUID of the company                                                                               |
-| `requestBody`                                                                                         | [operations.PostDepartmentsRequestBody](../../../sdk/models/operations/postdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
-| `config`                                                                                              | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                          | :heavy_minus_sign:                                                                                    | Available config options for making requests.                                                         |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                      | *string*                                                                                           | :heavy_check_mark:                                                                                 | The UUID of the company                                                                            |
+| `requestBody`                                                                                      | [operations.PostDepartmentsRequestBody](../../sdk/models/operations/postdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
@@ -213,10 +221,10 @@ import {
   PutAddPeopleToDepartmentRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const departmentUuid: string = "string";
@@ -234,16 +242,18 @@ const requestBody: PutAddPeopleToDepartmentRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                               | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `departmentUuid`                                                                                                        | *string*                                                                                                                | :heavy_check_mark:                                                                                                      | The UUID of the department                                                                                              |
-| `requestBody`                                                                                                           | [operations.PutAddPeopleToDepartmentRequestBody](../../../sdk/models/operations/putaddpeopletodepartmentrequestbody.md) | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |
-| `config`                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                            | :heavy_minus_sign:                                                                                                      | Available config options for making requests.                                                                           |
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `departmentUuid`                                                                                                     | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | The UUID of the department                                                                                           |
+| `requestBody`                                                                                                        | [operations.PutAddPeopleToDepartmentRequestBody](../../sdk/models/operations/putaddpeopletodepartmentrequestbody.md) | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
 
 
 ### Response
@@ -267,10 +277,10 @@ scope: `departments:write`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutDepartmentsRequest, PutDepartmentsRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const departmentUuid: string = "string";
@@ -283,16 +293,18 @@ const requestBody: PutDepartmentsRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `departmentUuid`                                                                                    | *string*                                                                                            | :heavy_check_mark:                                                                                  | The UUID of the department                                                                          |
-| `requestBody`                                                                                       | [operations.PutDepartmentsRequestBody](../../../sdk/models/operations/putdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
-| `config`                                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                        | :heavy_minus_sign:                                                                                  | Available config options for making requests.                                                       |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `departmentUuid`                                                                                 | *string*                                                                                         | :heavy_check_mark:                                                                               | The UUID of the department                                                                       |
+| `requestBody`                                                                                    | [operations.PutDepartmentsRequestBody](../../sdk/models/operations/putdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
@@ -322,10 +334,10 @@ import {
   PutRemovePeopleFromDepartmentRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const departmentUuid: string = "string";
@@ -343,16 +355,18 @@ const requestBody: PutRemovePeopleFromDepartmentRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                         | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `departmentUuid`                                                                                                                  | *string*                                                                                                                          | :heavy_check_mark:                                                                                                                | The UUID of the department                                                                                                        |
-| `requestBody`                                                                                                                     | [operations.PutRemovePeopleFromDepartmentRequestBody](../../../sdk/models/operations/putremovepeoplefromdepartmentrequestbody.md) | :heavy_minus_sign:                                                                                                                | N/A                                                                                                                               |
-| `config`                                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                      | :heavy_minus_sign:                                                                                                                | Available config options for making requests.                                                                                     |
+| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `departmentUuid`                                                                                                               | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | The UUID of the department                                                                                                     |
+| `requestBody`                                                                                                                  | [operations.PutRemovePeopleFromDepartmentRequestBody](../../sdk/models/operations/putremovepeoplefromdepartmentrequestbody.md) | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
+| `config`                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                   | :heavy_minus_sign:                                                                                                             | Available config options for making requests.                                                                                  |
 
 
 ### Response

@@ -18,10 +18,10 @@ scope: `payrolls:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1TaxLiabilitiesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -31,7 +31,9 @@ const companyUuid: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -62,10 +64,10 @@ Update tax liabilities for a company.
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { LiabilitySelections, PutV1TaxLiabilitiesRequest, PutV1TaxLiabilitiesRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -80,16 +82,18 @@ const requestBody: PutV1TaxLiabilitiesRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                                 | *string*                                                                                                      | :heavy_check_mark:                                                                                            | The UUID of the company                                                                                       |
-| `requestBody`                                                                                                 | [operations.PutV1TaxLiabilitiesRequestBody](../../../sdk/models/operations/putv1taxliabilitiesrequestbody.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |
-| `config`                                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                  | :heavy_minus_sign:                                                                                            | Available config options for making requests.                                                                 |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                              | *string*                                                                                                   | :heavy_check_mark:                                                                                         | The UUID of the company                                                                                    |
+| `requestBody`                                                                                              | [operations.PutV1TaxLiabilitiesRequestBody](../../sdk/models/operations/putv1taxliabilitiesrequestbody.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -112,10 +116,10 @@ Finalizes tax liabilities for a company. All external payrolls edit action will 
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1TaxLiabilitiesFinishRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -125,7 +129,9 @@ const companyUuid: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

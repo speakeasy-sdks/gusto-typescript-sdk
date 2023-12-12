@@ -19,11 +19,11 @@ import {
   GetV1CompaniesCompanyIdFederalTaxDetailsSecurity,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto();
 const companyId: string = "string";
 const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
-  authorization: "",
+  authorization: "<YOUR_BEARER_TOKEN_HERE>",
 };
 
   const res = await sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails(operationSecurity, companyId);
@@ -31,7 +31,9 @@ const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -65,10 +67,10 @@ import {
   PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyId: string = "string";
@@ -81,16 +83,18 @@ const requestBody: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                               | Type                                                                                                                                                    | Required                                                                                                                                                | Description                                                                                                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                                             | *string*                                                                                                                                                | :heavy_check_mark:                                                                                                                                      | The UUID of the company                                                                                                                                 |
-| `requestBody`                                                                                                                                           | [operations.PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody](../../../sdk/models/operations/putv1companiescompanyidfederaltaxdetailsrequestbody.md) | :heavy_minus_sign:                                                                                                                                      | Attributes related to federal tax details that can be updated via this endpoint include:                                                                |
-| `config`                                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                            | :heavy_minus_sign:                                                                                                                                      | Available config options for making requests.                                                                                                           |
+| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                          | *string*                                                                                                                                             | :heavy_check_mark:                                                                                                                                   | The UUID of the company                                                                                                                              |
+| `requestBody`                                                                                                                                        | [operations.PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody](../../sdk/models/operations/putv1companiescompanyidfederaltaxdetailsrequestbody.md) | :heavy_minus_sign:                                                                                                                                   | Attributes related to federal tax details that can be updated via this endpoint include:                                                             |
+| `config`                                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                         | :heavy_minus_sign:                                                                                                                                   | Available config options for making requests.                                                                                                        |
 
 
 ### Response

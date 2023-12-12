@@ -19,10 +19,10 @@ Get an employee form
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeeFormRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -33,7 +33,9 @@ const formId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -64,10 +66,10 @@ Get the link to the form PDF
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeeFormPdfRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -78,7 +80,9 @@ const formId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -109,10 +113,10 @@ Get a list of all employee's forms
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1EmployeeFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -122,7 +126,9 @@ const employeeId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -158,10 +164,10 @@ Generates a W2 document for testing purposes.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 
@@ -172,7 +178,9 @@ import { Gusto } from "@speakeasy-sdks/gusto";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -202,10 +210,10 @@ Sign a company form
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1EmployeeFormSignRequest, PutV1EmployeeFormSignRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const employeeId: string = "string";
@@ -221,17 +229,19 @@ const requestBody: PutV1EmployeeFormSignRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
-| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `employeeId`                                                                                                      | *string*                                                                                                          | :heavy_check_mark:                                                                                                | The UUID of the employee                                                                                          |
-| `formId`                                                                                                          | *string*                                                                                                          | :heavy_check_mark:                                                                                                | The ID or UUID of the form                                                                                        |
-| `requestBody`                                                                                                     | [operations.PutV1EmployeeFormSignRequestBody](../../../sdk/models/operations/putv1employeeformsignrequestbody.md) | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
-| `config`                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                      | :heavy_minus_sign:                                                                                                | Available config options for making requests.                                                                     |
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                   | *string*                                                                                                       | :heavy_check_mark:                                                                                             | The UUID of the employee                                                                                       |
+| `formId`                                                                                                       | *string*                                                                                                       | :heavy_check_mark:                                                                                             | The ID or UUID of the form                                                                                     |
+| `requestBody`                                                                                                  | [operations.PutV1EmployeeFormSignRequestBody](../../sdk/models/operations/putv1employeeformsignrequestbody.md) | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
+| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
 
 
 ### Response

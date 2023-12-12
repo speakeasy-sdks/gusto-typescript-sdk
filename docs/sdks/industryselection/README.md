@@ -16,10 +16,10 @@ Get industry selection for the company.
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompanyIndustryRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyId: string = "string";
@@ -29,7 +29,9 @@ const companyId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -59,10 +61,10 @@ Update the company industry selection by passing in industry classification code
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1CompanyIndustryRequest, PutV1CompanyIndustryRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyId: string = "string";
@@ -79,16 +81,18 @@ const requestBody: PutV1CompanyIndustryRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                     | *string*                                                                                                        | :heavy_check_mark:                                                                                              | The UUID of the company                                                                                         |
-| `requestBody`                                                                                                   | [operations.PutV1CompanyIndustryRequestBody](../../../sdk/models/operations/putv1companyindustryrequestbody.md) | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
-| `config`                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                    | :heavy_minus_sign:                                                                                              | Available config options for making requests.                                                                   |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `companyId`                                                                                                  | *string*                                                                                                     | :heavy_check_mark:                                                                                           | The UUID of the company                                                                                      |
+| `requestBody`                                                                                                | [operations.PutV1CompanyIndustryRequestBody](../../sdk/models/operations/putv1companyindustryrequestbody.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response

@@ -15,10 +15,10 @@ Generate a link to access a pre-built workflow in Gusto white-label UI. For secu
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { EntityType, PostV1CompanyFlowsRequest, PostV1CompanyFlowsRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -31,16 +31,18 @@ const requestBody: PostV1CompanyFlowsRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                               | *string*                                                                                                    | :heavy_check_mark:                                                                                          | The UUID of the company                                                                                     |
-| `requestBody`                                                                                               | [operations.PostV1CompanyFlowsRequestBody](../../../sdk/models/operations/postv1companyflowsrequestbody.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
-| `config`                                                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                | :heavy_minus_sign:                                                                                          | Available config options for making requests.                                                               |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                            | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The UUID of the company                                                                                  |
+| `requestBody`                                                                                            | [operations.PostV1CompanyFlowsRequestBody](../../sdk/models/operations/postv1companyflowsrequestbody.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response

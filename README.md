@@ -9,7 +9,7 @@
   <a href="https://github.com/speakeasy-sdks/gusto-typescript-sdk/releases"><img src="https://img.shields.io/github/v/release/speakeasy-sdks/gusto-typescript-sdk?sort=semver&style=for-the-badge" /></a>
 </div>
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ### NPM
@@ -23,7 +23,7 @@ npm add @speakeasy-sdks/gusto
 ```bash
 yarn add @speakeasy-sdks/gusto
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
 ## Authentication
 
@@ -39,18 +39,19 @@ Then create a demo company so that you can explore our product and successfully 
 
 Once you have your API Token, `client_id`, `secret`, and a demo company, you’re ready to begin building your integration. Check out this [short video tutorial](https://www.loom.com/share/b374109a4f98499195e49f1e52330bc8) for an introduction on testing the Gusto API (in demo).
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new Gusto({
         security: {
-            authorization: "",
+            authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
     const companyBenefitId: string = "string";
@@ -60,14 +61,15 @@ import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [companyBenefits](docs/sdks/companybenefits/README.md)
 
@@ -341,17 +343,13 @@ import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/
 * [postV1WebhookSubscription](docs/sdks/webhooksubscriptions/README.md#postv1webhooksubscription) - Create a Webhook Subscription
 * [putV1VerifyWebhookSubscriptionUuid](docs/sdks/webhooksubscriptions/README.md#putv1verifywebhooksubscriptionuuid) - Verify the webhook subscription
 * [putV1WebhookSubscriptionUuid](docs/sdks/webhooksubscriptions/README.md#putv1webhooksubscriptionuuid) - Update a webhook subscription
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
 
 
-
-<!-- Start Error Handling -->
+<!-- Start Error Handling [errors] -->
 ## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
@@ -366,10 +364,10 @@ Example
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new Gusto({
         security: {
-            authorization: "",
+            authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
     const companyBenefitId: string = "string";
@@ -377,19 +375,26 @@ import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/
     let res;
     try {
         res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
-    } catch (e) {}
+    } catch (err) {
+        if (err instanceof errors.SDKError) {
+            console.error(err); // handle exception
+            throw err;
+        }
+    }
 
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Error Handling -->
+<!-- End Error Handling [errors] -->
 
 
 
-<!-- Start Server Selection -->
+<!-- Start Server Selection [server] -->
 ## Server Selection
 
 ### Select Server by Name
@@ -400,17 +405,18 @@ You can override the default server globally by passing a server name to the `se
 | ----- | ------ | --------- |
 | `demo` | `https://api.gusto-demo.com` | None |
 | `prod` | `https://api.gusto.com` | None |
+
 #### Example
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new Gusto({
         server: "prod",
         security: {
-            authorization: "",
+            authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
     const companyBenefitId: string = "string";
@@ -420,7 +426,9 @@ import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 
@@ -432,11 +440,11 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new Gusto({
         serverURL: "https://api.gusto-demo.com",
         security: {
-            authorization: "",
+            authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
     const companyBenefitId: string = "string";
@@ -446,23 +454,25 @@ import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Server Selection -->
+<!-- End Server Selection [server] -->
 
 
 
-<!-- Start Custom HTTP Client -->
+<!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
-The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
 
 For example, you could specify a header for every request that your sdk makes as follows:
 
 ```typescript
-from @speakeasy-sdks/gusto import Gusto;
-import axios;
+import { @speakeasy-sdks/gusto } from "Gusto";
+import axios from "axios";
 
 const httpClient = axios.create({
     headers: {'x-custom-header': 'someValue'}
@@ -470,11 +480,11 @@ const httpClient = axios.create({
 
 const sdk = new Gusto({defaultClient: httpClient});
 ```
-<!-- End Custom HTTP Client -->
+<!-- End Custom HTTP Client [http-client] -->
 
 
 
-<!-- Start Authentication -->
+<!-- Start Authentication [security] -->
 ## Authentication
 
 ### Per-Client Security Schemes
@@ -490,10 +500,10 @@ You can set the security parameters through the `security` optional parameter wh
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new Gusto({
         security: {
-            authorization: "",
+            authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
     const companyBenefitId: string = "string";
@@ -503,7 +513,9 @@ import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 
@@ -517,11 +529,11 @@ import {
     GetV1CompaniesCompanyIdFederalTaxDetailsSecurity,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new Gusto();
     const companyId: string = "string";
     const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
-        authorization: "",
+        authorization: "<YOUR_BEARER_TOKEN_HERE>",
     };
 
     const res = await sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails(
@@ -532,10 +544,12 @@ import {
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Authentication -->
+<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

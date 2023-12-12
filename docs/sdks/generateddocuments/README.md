@@ -17,10 +17,10 @@ scope: `generated_documents:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1GeneratedDocumentsDocumentTypeRequestUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const documentType: string = "string";
@@ -31,7 +31,9 @@ const requestUuid: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

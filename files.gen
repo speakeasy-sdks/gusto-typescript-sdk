@@ -300,7 +300,6 @@ src/sdk/models/shared/security.ts
 src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/index.ts
-USAGE.md
 docs/sdk/models/operations/deletev1companybenefitscompanybenefitidrequest.md
 docs/sdk/models/operations/base.md
 docs/sdk/models/operations/errors.md
@@ -1034,4 +1033,5 @@ docs/sdks/employeetaxsetup/README.md
 docs/sdks/generateddocuments/README.md
 docs/sdks/user/README.md
 docs/sdks/webhooksubscriptions/README.md
+USAGE.md
 .gitattributes

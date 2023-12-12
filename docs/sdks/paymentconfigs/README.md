@@ -16,10 +16,10 @@ Get payment speed for the company and fast payment limit (only applicable for 2-
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompanyPaymentConfigsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -29,7 +29,9 @@ const companyUuid: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -63,10 +65,10 @@ import {
   PutV1CompanyPaymentConfigsRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -80,16 +82,18 @@ const requestBody: PutV1CompanyPaymentConfigsRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                   | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
-| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                                               | *string*                                                                                                                    | :heavy_check_mark:                                                                                                          | The UUID of the company                                                                                                     |
-| `requestBody`                                                                                                               | [operations.PutV1CompanyPaymentConfigsRequestBody](../../../sdk/models/operations/putv1companypaymentconfigsrequestbody.md) | :heavy_minus_sign:                                                                                                          | N/A                                                                                                                         |
-| `config`                                                                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                | :heavy_minus_sign:                                                                                                          | Available config options for making requests.                                                                               |
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `companyUuid`                                                                                                            | *string*                                                                                                                 | :heavy_check_mark:                                                                                                       | The UUID of the company                                                                                                  |
+| `requestBody`                                                                                                            | [operations.PutV1CompanyPaymentConfigsRequestBody](../../sdk/models/operations/putv1companypaymentconfigsrequestbody.md) | :heavy_minus_sign:                                                                                                       | N/A                                                                                                                      |
+| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
 
 
 ### Response

@@ -24,10 +24,10 @@ scope: `companies:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyIdLocationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyId: string = "string";
@@ -39,7 +39,9 @@ const per: number = 6096.54;
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -73,10 +75,10 @@ scope: `companies:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1LocationsLocationIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const locationId: string = "string";
@@ -86,7 +88,9 @@ const locationId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -118,10 +122,10 @@ scope: `companies:read`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1LocationsLocationUuidMinimumWagesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const locationUuid: string = "string";
@@ -132,7 +136,9 @@ const effectiveDate: string = "2020-01-31";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -170,10 +176,10 @@ import {
   PostV1CompaniesCompanyIdLocationsJsonRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyId: string = "string";
@@ -190,16 +196,18 @@ const requestBody: PostV1CompaniesCompanyIdLocationsJsonRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                         | Type                                                                                                                                              | Required                                                                                                                                          | Description                                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                                       | *string*                                                                                                                                          | :heavy_check_mark:                                                                                                                                | The UUID of the company                                                                                                                           |
-| `requestBody`                                                                                                                                     | [operations.PostV1CompaniesCompanyIdLocationsJsonRequestBody](../../../sdk/models/operations/postv1companiescompanyidlocationsjsonrequestbody.md) | :heavy_minus_sign:                                                                                                                                | Create a company location.                                                                                                                        |
-| `config`                                                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                      | :heavy_minus_sign:                                                                                                                                | Available config options for making requests.                                                                                                     |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                    | *string*                                                                                                                                       | :heavy_check_mark:                                                                                                                             | The UUID of the company                                                                                                                        |
+| `requestBody`                                                                                                                                  | [operations.PostV1CompaniesCompanyIdLocationsJsonRequestBody](../../sdk/models/operations/postv1companiescompanyidlocationsjsonrequestbody.md) | :heavy_minus_sign:                                                                                                                             | Create a company location.                                                                                                                     |
+| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
 
 
 ### Response
@@ -228,10 +236,10 @@ import {
   PostV1CompaniesCompanyIdLocationsRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyId: string = "string";
@@ -242,7 +250,9 @@ const requestBody: Uint8Array = new TextEncoder().encode("0x3754FF0f8f");
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -275,10 +285,10 @@ scope: `companies.write`
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { PutV1LocationsLocationIdRequest, PutV1LocationsLocationIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const locationId: string = "string";
@@ -291,16 +301,18 @@ const requestBody: PutV1LocationsLocationIdRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                               | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `locationId`                                                                                                            | *string*                                                                                                                | :heavy_check_mark:                                                                                                      | The UUID of the location                                                                                                |
-| `requestBody`                                                                                                           | [operations.PutV1LocationsLocationIdRequestBody](../../../sdk/models/operations/putv1locationslocationidrequestbody.md) | :heavy_minus_sign:                                                                                                      | Update a location                                                                                                       |
-| `config`                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                            | :heavy_minus_sign:                                                                                                      | Available config options for making requests.                                                                           |
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `locationId`                                                                                                         | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | The UUID of the location                                                                                             |
+| `requestBody`                                                                                                        | [operations.PutV1LocationsLocationIdRequestBody](../../sdk/models/operations/putv1locationslocationidrequestbody.md) | :heavy_minus_sign:                                                                                                   | Update a location                                                                                                    |
+| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
 
 
 ### Response

@@ -17,10 +17,10 @@ Returns objects describing the states that have tax requirements for the company
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyUuidTaxRequirementsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -30,7 +30,9 @@ const companyUuid: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -100,10 +102,10 @@ Get all tax requirements for a given state.
 import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1CompaniesCompanyUuidTaxRequirementsStateRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -115,7 +117,9 @@ const scheduling: boolean = false;
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -152,10 +156,10 @@ import {
   RequirementSets,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Gusto({
     security: {
-      authorization: "",
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 const companyUuid: string = "string";
@@ -175,17 +179,19 @@ const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                         | Type                                                                                                                                                              | Required                                                                                                                                                          | Description                                                                                                                                                       |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                                                                                     | *string*                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                | The UUID of the company                                                                                                                                           |
-| `state`                                                                                                                                                           | *string*                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                | 2-letter US state abbreviation                                                                                                                                    |
-| `requestBody`                                                                                                                                                     | [operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody](../../../sdk/models/operations/putv1companiescompanyuuidtaxrequirementsstaterequestbody.md) | :heavy_minus_sign:                                                                                                                                                | N/A                                                                                                                                                               |
-| `config`                                                                                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                      | :heavy_minus_sign:                                                                                                                                                | Available config options for making requests.                                                                                                                     |
+| Parameter                                                                                                                                                      | Type                                                                                                                                                           | Required                                                                                                                                                       | Description                                                                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                                                                  | *string*                                                                                                                                                       | :heavy_check_mark:                                                                                                                                             | The UUID of the company                                                                                                                                        |
+| `state`                                                                                                                                                        | *string*                                                                                                                                                       | :heavy_check_mark:                                                                                                                                             | 2-letter US state abbreviation                                                                                                                                 |
+| `requestBody`                                                                                                                                                  | [operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody](../../sdk/models/operations/putv1companiescompanyuuidtaxrequirementsstaterequestbody.md) | :heavy_minus_sign:                                                                                                                                             | N/A                                                                                                                                                            |
+| `config`                                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                   | :heavy_minus_sign:                                                                                                                                             | Available config options for making requests.                                                                                                                  |
 
 
 ### Response
