@@ -308,6 +308,7 @@ const companyId: string = "string";
 const requestBody: PostV1CompaniesCompanyIdContractorsRequestBody = {
   hourlyRate: "40.0",
   startDate: "2020-01-11",
+  type: PostV1CompaniesCompanyIdContractorsType.Individual,
   wageType: WageType.Fixed,
 };
 
@@ -487,7 +488,9 @@ async function run() {
     },
   });
 const contractorUuid: string = "string";
-const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {};
+const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {
+  onboardingStatus: OnboardingStatus.OnboardingCompleted,
+};
 
   const res = await sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus(contractorUuid, requestBody);
 

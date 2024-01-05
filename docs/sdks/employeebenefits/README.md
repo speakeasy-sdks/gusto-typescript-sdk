@@ -179,6 +179,8 @@ async function run() {
 const employeeId: string = "string";
 const postEmployeeYtdBenefitAmountsFromDifferentCompany: PostEmployeeYtdBenefitAmountsFromDifferentCompany = {
   taxYear: 5497.18,
+  ytdCompanyContributionAmount: "string",
+  ytdEmployeeDeductionAmount: "string",
 };
 
   const res = await sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany(employeeId, postEmployeeYtdBenefitAmountsFromDifferentCompany);
