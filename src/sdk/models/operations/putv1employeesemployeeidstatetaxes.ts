@@ -103,18 +103,6 @@ export class ResponseBody extends SpeakeasyBase {
 
 export class PutV1EmployeesEmployeeIdStateTaxesResponse extends SpeakeasyBase {
     /**
-     * Example response
-     */
-    @SpeakeasyMetadata({ elemType: shared.EmployeeStateTax })
-    twoHundredApplicationJsonClasses?: shared.EmployeeStateTax[];
-
-    /**
-     * Unprocessable Entity (WebDAV)
-     */
-    @SpeakeasyMetadata({ elemType: ResponseBody })
-    fourHundredAndTwentyTwoApplicationJsonClasses?: ResponseBody[];
-
-    /**
      * HTTP response content type for this operation
      */
     @SpeakeasyMetadata()
@@ -131,4 +119,16 @@ export class PutV1EmployeesEmployeeIdStateTaxesResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse: AxiosResponse;
+
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.EmployeeStateTax })
+    classes?: shared.EmployeeStateTax[];
+
+    /**
+     * Unprocessable Entity (WebDAV)
+     */
+    @SpeakeasyMetadata({ elemType: ResponseBody })
+    classes1?: ResponseBody[];
 }

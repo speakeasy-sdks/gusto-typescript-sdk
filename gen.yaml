@@ -5,8 +5,10 @@ generation:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
 typescript:
-  version: 0.52.1
+  version: 0.53.0
   author: gusto
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: false

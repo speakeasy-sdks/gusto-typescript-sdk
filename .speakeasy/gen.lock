@@ -4,9 +4,9 @@ management:
   docChecksum: b3be58d6a42b3f6b9a53f2e76d05f1a8
   docVersion: "2023-03-01"
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 0.52.1
-  configChecksum: e4c11ad6ba056f7f1070dec64179f58c
+  generationVersion: 2.250.12
+  releaseVersion: 0.53.0
+  configChecksum: 787553519eef5a2d395819d4c5f41e6f
   repoURL: https://github.com/speakeasy-sdks/gusto-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/gusto-typescript-sdk
@@ -14,7 +14,7 @@ management:
 features:
   typescript:
     acceptHeaders: 2.81.1
-    core: 3.4.1
+    core: 3.4.6
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.82.2

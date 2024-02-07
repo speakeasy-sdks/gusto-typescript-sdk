@@ -386,9 +386,9 @@ export class EmployeeTaxSetup {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.twoHundredApplicationJsonClasses = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.twoHundredApplicationJsonClasses = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.EmployeeStateTax,
                         resFieldDepth
@@ -406,9 +406,9 @@ export class EmployeeTaxSetup {
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.fourHundredAndTwentyTwoApplicationJsonClasses = [];
+                    res.classes1 = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.fourHundredAndTwentyTwoApplicationJsonClasses = utils.objectToClass(
+                    res.classes1 = utils.objectToClass(
                         JSON.parse(decodedRes),
                         operations.ResponseBody,
                         resFieldDepth

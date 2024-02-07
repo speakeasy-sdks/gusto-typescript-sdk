@@ -1,6 +1,6 @@
 {
   "name": "@speakeasy-sdks/gusto",
-  "version": "0.52.1",
+  "version": "0.53.0",
   "author": "gusto",
   "scripts": {
     "prepare": "tsc --build",
