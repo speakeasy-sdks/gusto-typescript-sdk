@@ -28,7 +28,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeBenefitId: string = "string";
+const employeeBenefitId: string = "<value>";
 
   const res = await sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId);
 
@@ -75,7 +75,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeBenefitId: string = "string";
+const employeeBenefitId: string = "<value>";
 
   const res = await sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId);
 
@@ -124,7 +124,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const page: number = 2519.68;
 const per: number = 8862.03;
 
@@ -176,11 +176,11 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const postEmployeeYtdBenefitAmountsFromDifferentCompany: PostEmployeeYtdBenefitAmountsFromDifferentCompany = {
   taxYear: 5497.18,
-  ytdCompanyContributionAmount: "string",
-  ytdEmployeeDeductionAmount: "string",
+  ytdCompanyContributionAmount: "<value>",
+  ytdEmployeeDeductionAmount: "<value>",
 };
 
   const res = await sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany(employeeId, postEmployeeYtdBenefitAmountsFromDifferentCompany);
@@ -235,11 +235,11 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const requestBody: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody = {
-  companyBenefitUuid: "string",
+  companyBenefitUuid: "<value>",
   contribution: {
-    value: "string",
+    value: "<value>",
   },
 };
 
@@ -295,12 +295,12 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeBenefitId: string = "string";
+const employeeBenefitId: string = "<value>";
 const requestBody: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody = {
   contribution: {
-    value: "string",
+    value: "<value>",
   },
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId, requestBody);

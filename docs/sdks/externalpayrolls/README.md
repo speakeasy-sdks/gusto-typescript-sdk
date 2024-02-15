@@ -27,8 +27,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
-const externalPayrollId: string = "string";
+const companyUuid: string = "<value>";
+const externalPayrollId: string = "<value>";
 
   const res = await sdk.externalPayrolls.deleteV1ExternalPayroll(companyUuid, externalPayrollId);
 
@@ -75,7 +75,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.externalPayrolls.getV1CompanyExternalPayrolls(companyUuid);
 
@@ -121,8 +121,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
-const externalPayrollId: string = "string";
+const companyUuid: string = "<value>";
+const externalPayrollId: string = "<value>";
 
   const res = await sdk.externalPayrolls.getV1ExternalPayroll(companyUuid, externalPayrollId);
 
@@ -168,8 +168,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
-const externalPayrollId: string = "string";
+const companyUuid: string = "<value>";
+const externalPayrollId: string = "<value>";
 
   const res = await sdk.externalPayrolls.getV1ExternalPayrollCalculateTaxes(companyUuid, externalPayrollId);
 
@@ -216,11 +216,11 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PostV1ExternalPayrollRequestBody = {
-  checkDate: "string",
-  paymentPeriodEndDate: "string",
-  paymentPeriodStartDate: "string",
+  checkDate: "<value>",
+  paymentPeriodEndDate: "<value>",
+  paymentPeriodStartDate: "<value>",
 };
 
   const res = await sdk.externalPayrolls.postV1ExternalPayroll(companyUuid, requestBody);
@@ -276,8 +276,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
-const externalPayrollId: string = "string";
+const companyUuid: string = "<value>";
+const externalPayrollId: string = "<value>";
 const requestBody: PutV1ExternalPayrollRequestBody = {
   externalPayrollItems: [
     {

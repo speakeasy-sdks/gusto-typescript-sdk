@@ -24,7 +24,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 
   const res = await sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId);
 
@@ -82,7 +82,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdBankAccountsRequestBody = {};
 
   const res = await sdk.bankAccounts.postV1CompaniesCompanyIdBankAccounts(companyId, requestBody);
@@ -140,9 +140,9 @@ async function run() {
   });
 
   const res = await sdk.bankAccounts.postV1PlaidProcessorToken({
-    ownerId: "string",
+    ownerId: "<value>",
     ownerType: OwnerType.Company,
-    processorToken: "string",
+    processorToken: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -202,8 +202,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const bankAccountUuid: string = "string";
-const companyId: string = "string";
+const bankAccountUuid: string = "<value>";
+const companyId: string = "<value>";
 const requestBody: PutV1CompaniesCompanyIdBankAccountsVerifyRequestBody = {};
 
   const res = await sdk.bankAccounts.putV1CompaniesCompanyIdBankAccountsVerify(bankAccountUuid, companyId, requestBody);

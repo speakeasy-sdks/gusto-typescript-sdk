@@ -24,7 +24,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
+const contractorUuid: string = "<value>";
 
   const res = await sdk.contractorPaymentMethod.getV1ContractorsContractorUuidBankAccounts(contractorUuid);
 
@@ -69,7 +69,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
+const contractorUuid: string = "<value>";
 
   const res = await sdk.contractorPaymentMethod.getV1ContractorsContractorUuidPaymentMethod(contractorUuid);
 
@@ -121,12 +121,12 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
+const contractorUuid: string = "<value>";
 const requestBody: PostV1ContractorsContractorUuidBankAccountsRequestBody = {
-  accountNumber: "string",
+  accountNumber: "<value>",
   accountType: PostV1ContractorsContractorUuidBankAccountsAccountType.Checking,
-  name: "string",
-  routingNumber: "string",
+  name: "<value>",
+  routingNumber: "<value>",
 };
 
   const res = await sdk.contractorPaymentMethod.postV1ContractorsContractorUuidBankAccounts(contractorUuid, requestBody);
@@ -177,10 +177,10 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
+const contractorUuid: string = "<value>";
 const requestBody: PutV1ContractorsContractorIdPaymentMethodRequestBody = {
   type: TypeT.Check,
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.contractorPaymentMethod.putV1ContractorsContractorIdPaymentMethod(contractorUuid, requestBody);

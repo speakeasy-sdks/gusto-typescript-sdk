@@ -29,7 +29,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const endDate: string = "2020-01-31";
 const startDate: string = "2020-01-01";
 
@@ -80,7 +80,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const page: number = 3004.3;
 const per: number = 9327.24;
 
@@ -131,8 +131,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const payScheduleId: string = "string";
+const companyId: string = "<value>";
+const payScheduleId: string = "<value>";
 
   const res = await sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId);
 
@@ -186,7 +186,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdPaySchedulesRequestBody = {
   anchorEndOfPayPeriod: "2020-05-08",
   anchorPayDate: "2020-05-15",
@@ -240,10 +240,10 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const payScheduleId: string = "string";
+const companyId: string = "<value>";
+const payScheduleId: string = "<value>";
 const requestBody: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId, requestBody);

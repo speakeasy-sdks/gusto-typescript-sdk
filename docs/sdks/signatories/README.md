@@ -25,8 +25,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
-const signatoryUuid: string = "string";
+const companyUuid: string = "<value>";
+const signatoryUuid: string = "<value>";
 
   const res = await sdk.signatories.deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid(companyUuid, signatoryUuid);
 
@@ -72,7 +72,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.signatories.getV1CompaniesCompanyUuidSignatories(companyUuid);
 
@@ -120,7 +120,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PostV1CompaniesCompanyUuidSignatoriesInviteRequestBody = {
   email: "Ellis_Morissette@yahoo.com",
 };
@@ -173,20 +173,20 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PostV1CompanySignatoriesRequestBody = {
-  birthday: "string",
+  birthday: "<value>",
   email: "Libby.Cole5@gmail.com",
   firstName: "Ian",
   homeAddress: {
     city: "South Maggieshire",
-    state: "string",
-    street1: "string",
-    zip: "string",
+    state: "Oklahoma",
+    street1: "<value>",
+    zip: "66898-8681",
   },
-  lastName: "Quitzon",
-  ssn: "string",
-  title: "string",
+  lastName: "Okuneva",
+  ssn: "<value>",
+  title: "<value>",
 };
 
   const res = await sdk.signatories.postV1CompanySignatories(companyUuid, requestBody);
@@ -237,8 +237,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
-const signatoryUuid: string = "string";
+const companyUuid: string = "<value>";
+const signatoryUuid: string = "<value>";
 const requestBody: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody = {
   homeAddress: {},
 };

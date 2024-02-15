@@ -22,7 +22,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.paymentConfigs.getV1CompanyPaymentConfigs(companyUuid);
 
@@ -71,9 +71,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PutV1CompanyPaymentConfigsRequestBody = {
-  fastPaymentLimit: "string",
+  fastPaymentLimit: "<value>",
   paymentSpeed: PaymentSpeed.TwoDay,
 };
 

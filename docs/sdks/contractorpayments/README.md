@@ -27,8 +27,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const contractorPaymentId: string = "string";
+const companyId: string = "<value>";
+const contractorPaymentId: string = "<value>";
 
   const res = await sdk.contractorPayments.deleteV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId);
 
@@ -76,8 +76,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const contractorPaymentId: string = "string";
+const companyId: string = "<value>";
+const contractorPaymentId: string = "<value>";
 
   const res = await sdk.contractorPayments.getV1CompaniesCompanyIdContractorPaymentContractorPayment(companyId, contractorPaymentId);
 
@@ -126,7 +126,7 @@ async function run() {
   });
 
   const res = await sdk.contractorPayments.getV1CompaniesCompanyIdContractorPayments({
-    companyId: "string",
+    companyId: "<value>",
     endDate: "2020-12-31",
     startDate: "2020-01-01",
   });
@@ -181,7 +181,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorPaymentUuid: string = "string";
+const contractorPaymentUuid: string = "<value>";
 
   const res = await sdk.contractorPayments.getV1ContractorPaymentsContractorPaymentUuidReceipt(contractorPaymentUuid);
 
@@ -233,10 +233,10 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdContractorPaymentsRequestBody = {
   bonus: 500,
-  contractorUuid: "string",
+  contractorUuid: "<value>",
   date: new RFCDate("2020-01-01"),
   hours: 40,
   reimbursement: 20,

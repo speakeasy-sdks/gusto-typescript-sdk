@@ -30,7 +30,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.timeOffPolicies.getCompaniesCompanyUuidTimeOffPolicies(companyUuid);
 
@@ -76,7 +76,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const timeOffPolicyUuid: string = "string";
+const timeOffPolicyUuid: string = "<value>";
 
   const res = await sdk.timeOffPolicies.getTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid);
 
@@ -126,11 +126,11 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PostCompaniesCompanyUuidTimeOffPoliciesRequestBody = {
   accrualMethod: AccrualMethod.PerAnniversaryYear,
-  name: "string",
-  policyType: "string",
+  name: "<value>",
+  policyType: "<value>",
 };
 
   const res = await sdk.timeOffPolicies.postCompaniesCompanyUuidTimeOffPolicies(companyUuid, requestBody);
@@ -188,8 +188,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
-const payrollId: string = "string";
+const employeeId: string = "<value>";
+const payrollId: string = "<value>";
 const requestBody: PostV1PayrollsPayrollIdCalculateAccruingTimeOffHoursRequestBody = {};
 
   const res = await sdk.timeOffPolicies.postV1PayrollsPayrollIdCalculateAccruingTimeOffHours(employeeId, payrollId, requestBody);
@@ -242,7 +242,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const timeOffPolicyUuid: string = "string";
+const timeOffPolicyUuid: string = "<value>";
 const requestBody: PutTimeOffPoliciesTimeOffPolicyUuidRequestBody = {};
 
   const res = await sdk.timeOffPolicies.putTimeOffPoliciesTimeOffPolicyUuid(timeOffPolicyUuid, requestBody);
@@ -289,7 +289,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const timeOffPolicyUuid: string = "string";
+const timeOffPolicyUuid: string = "<value>";
 
   const res = await sdk.timeOffPolicies.putV1TimeOffPoliciesTimeOffPolicyUuidDeactivate(timeOffPolicyUuid);
 
@@ -339,7 +339,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const timeOffPolicyUuid: string = "string";
+const timeOffPolicyUuid: string = "<value>";
 const requestBody: PutV1TimeOffPoliciesTimeOffPolicyUuidRemoveEmployeesRequestBody = {
   employees: [
     {},
@@ -395,7 +395,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const timeOffPolicyUuid: string = "string";
+const timeOffPolicyUuid: string = "<value>";
 const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployeesRequestBody = {
   employees: [
     {},
@@ -451,7 +451,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const timeOffPolicyUuid: string = "string";
+const timeOffPolicyUuid: string = "<value>";
 const requestBody: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody = {
   employees: [
     {},

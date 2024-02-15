@@ -24,7 +24,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.taxLiabilities.getV1TaxLiabilities(companyUuid);
 
@@ -70,7 +70,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PutV1TaxLiabilitiesRequestBody = {
   liabilitySelections: [
     {},
@@ -122,7 +122,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.taxLiabilities.putV1TaxLiabilitiesFinish(companyUuid);
 

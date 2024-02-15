@@ -31,7 +31,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 
   const res = await sdk.employees.deleteV1Employee(employeeId);
 
@@ -79,7 +79,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const include: Include = Include.AllCompensations;
 
   const res = await sdk.employees.getV1Employees(employeeId, include);
@@ -128,7 +128,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const page: number = 6617.63;
 const per: number = 9828.87;
 
@@ -179,7 +179,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 
   const res = await sdk.employees.getV1EmployeesEmployeeIdHomeAddress(employeeId);
 
@@ -261,7 +261,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 
   const res = await sdk.employees.getV1EmployeesEmployeeIdOnboardingStatus(employeeId);
 
@@ -308,8 +308,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeUuid: string = "string";
-const timeOffType: string = "string";
+const employeeUuid: string = "<value>";
+const timeOffType: string = "<value>";
 
   const res = await sdk.employees.getVersionEmployeesTimeOffActivities(employeeUuid, timeOffType);
 
@@ -357,7 +357,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PostV1EmployeesRequestBody = {};
 
   const res = await sdk.employees.postV1Employees(companyId, requestBody);
@@ -406,7 +406,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 
   const res = await sdk.employees.putV1EmployeeFinishOnboarding(employeeId);
 
@@ -453,9 +453,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const requestBody: PutV1EmployeesRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.employees.putV1Employees(employeeId, requestBody);
@@ -507,9 +507,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const requestBody: PutV1EmployeesEmployeeIdHomeAddressRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.employees.putV1EmployeesEmployeeIdHomeAddress(employeeId, requestBody);
@@ -570,9 +570,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const requestBody: PutV1EmployeesEmployeeIdOnboardingStatusRequestBody = {
-  onboardingStatus: "string",
+  onboardingStatus: "<value>",
 };
 
   const res = await sdk.employees.putV1EmployeesEmployeeIdOnboardingStatus(employeeId, requestBody);

@@ -9,7 +9,7 @@ async function run() {
             authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
-    const companyBenefitId: string = "string";
+    const companyBenefitId: string = "<value>";
 
     const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
 

@@ -30,7 +30,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const jobId: string = "string";
+const jobId: string = "<value>";
 
   const res = await sdk.jobsAndCompensations.deleteV1JobsJobId(jobId);
 
@@ -80,7 +80,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const compensationId: string = "string";
+const compensationId: string = "<value>";
 
   const res = await sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId);
 
@@ -127,7 +127,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const include: QueryParamInclude = QueryParamInclude.AllCompensations;
 const page: number = 2958.61;
 const per: number = 7200.06;
@@ -180,7 +180,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const jobId: string = "string";
+const jobId: string = "<value>";
 const include: GetV1JobsJobIdQueryParamInclude = GetV1JobsJobIdQueryParamInclude.AllCompensations;
 
   const res = await sdk.jobsAndCompensations.getV1JobsJobId(jobId, include);
@@ -233,7 +233,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const jobId: string = "string";
+const jobId: string = "<value>";
 const include: GetV1JobsJobIdCompensationsQueryParamInclude = GetV1JobsJobIdCompensationsQueryParamInclude.AllCompensations;
 const page: number = 8955.23;
 const per: number = 1707.54;
@@ -286,7 +286,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const requestBody: PostV1JobsJobIdRequestBody = {};
 
   const res = await sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody);
@@ -343,12 +343,12 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const compensationId: string = "string";
+const compensationId: string = "<value>";
 const requestBody: PutV1CompensationsCompensationIdRequestBody = {
   minimumWages: [
     {},
   ],
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody);
@@ -397,9 +397,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const jobId: string = "string";
+const jobId: string = "<value>";
 const requestBody: PutV1JobsJobIdRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody);

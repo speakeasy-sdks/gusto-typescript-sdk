@@ -30,7 +30,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const departmentUuid: string = "string";
+const departmentUuid: string = "<value>";
 
   const res = await sdk.departments.deleteDepartment(departmentUuid);
 
@@ -77,7 +77,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.departments.getCompaniesDepartments(companyUuid);
 
@@ -125,7 +125,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const departmentUuid: string = "string";
+const departmentUuid: string = "<value>";
 
   const res = await sdk.departments.getDepartment(departmentUuid);
 
@@ -172,7 +172,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PostDepartmentsRequestBody = {};
 
   const res = await sdk.departments.postDepartments(companyUuid, requestBody);
@@ -227,7 +227,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const departmentUuid: string = "string";
+const departmentUuid: string = "<value>";
 const requestBody: PutAddPeopleToDepartmentRequestBody = {
   contractors: [
     {},
@@ -283,9 +283,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const departmentUuid: string = "string";
+const departmentUuid: string = "<value>";
 const requestBody: PutDepartmentsRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.departments.putDepartments(departmentUuid, requestBody);
@@ -340,7 +340,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const departmentUuid: string = "string";
+const departmentUuid: string = "<value>";
 const requestBody: PutRemovePeopleFromDepartmentRequestBody = {
   contractors: [
     {},

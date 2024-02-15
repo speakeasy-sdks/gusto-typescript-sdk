@@ -36,7 +36,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 
   const res = await sdk.companies.getV1Companies(companyId);
 
@@ -81,7 +81,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const page: number = 2654.95;
 const per: number = 7436.28;
 
@@ -132,7 +132,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const page: number = 9765.05;
 const per: number = 751.25;
 
@@ -192,7 +192,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.companies.getV1CompanyFinishOnboarding(companyUuid);
 
@@ -237,7 +237,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.companies.getV1CompanyOnboardingStatus(companyUuid);
 
@@ -285,10 +285,10 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PostPartnerManagedCompaniesCompanyUuidAcceptTermsOfServiceRequestBody = {
   email: "Estrella_Gottlieb27@yahoo.com",
-  externalUserId: "string",
+  externalUserId: "<value>",
   ipAddress: "171.196.45.198",
 };
 
@@ -339,7 +339,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PostPartnerManagedCompaniesCompanyUuidRetrieveTermsOfServiceRequestBody = {
   email: "Nya13@yahoo.com",
 };
@@ -388,7 +388,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdAdminsRequestBody = {
   email: "Teagan_Kulas60@yahoo.com",
   firstName: "Sallie",
@@ -441,7 +441,7 @@ async function run() {
 
   const res = await sdk.companies.postV1PartnerManagedCompanies({
     company: {
-      name: "string",
+      name: "<value>",
     },
     user: {
       email: "Noble.OKon@yahoo.com",
@@ -508,9 +508,9 @@ async function run() {
       addresses: [
         {},
       ],
-      name: "string",
+      name: "<value>",
       states: [
-        "string",
+        "<value>",
       ],
     },
     user: {
@@ -564,10 +564,10 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PutV1PartnerManagedCompaniesCompanyUuidMigrateRequestBody = {
   email: "Harley87@hotmail.com",
-  externalUserId: "string",
+  externalUserId: "<value>",
   ipAddress: "3.103.93.184",
 };
 

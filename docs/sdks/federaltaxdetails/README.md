@@ -21,7 +21,7 @@ import {
 
 async function run() {
   const sdk = new Gusto();
-const companyId: string = "string";
+const companyId: string = "<value>";
 const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
   authorization: "<YOUR_BEARER_TOKEN_HERE>",
 };
@@ -73,9 +73,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PutV1CompaniesCompanyIdFederalTaxDetailsRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.federalTaxDetails.putV1CompaniesCompanyIdFederalTaxDetails(companyId, requestBody);

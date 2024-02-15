@@ -24,7 +24,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const formId: string = "string";
+const formId: string = "<value>";
 
   const res = await sdk.companyForms.getV1CompanyForm(formId);
 
@@ -69,7 +69,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const formId: string = "string";
+const formId: string = "<value>";
 
   const res = await sdk.companyForms.getV1CompanyFormPdf(formId);
 
@@ -114,7 +114,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 
   const res = await sdk.companyForms.getV1CompanyForms(companyId);
 
@@ -159,11 +159,11 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const formId: string = "string";
+const formId: string = "<value>";
 const requestBody: PutV1CompanyFormSignRequestBody = {
   agree: false,
-  signatureText: "string",
-  signedByIpAddress: "string",
+  signatureText: "<value>",
+  signedByIpAddress: "<value>",
 };
 
   const res = await sdk.companyForms.putV1CompanyFormSign(formId, requestBody);

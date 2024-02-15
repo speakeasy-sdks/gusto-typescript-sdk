@@ -21,9 +21,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 const requestBody: PostV1CompanyFlowsRequestBody = {
-  flowType: "string",
+  flowType: "<value>",
 };
 
   const res = await sdk.flows.postV1CompanyFlows(companyUuid, requestBody);

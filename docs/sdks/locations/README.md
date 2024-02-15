@@ -30,7 +30,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const page: number = 4858.9;
 const per: number = 6096.54;
 
@@ -81,7 +81,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const locationId: string = "string";
+const locationId: string = "<value>";
 
   const res = await sdk.locations.getV1LocationsLocationId(locationId);
 
@@ -128,7 +128,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const locationUuid: string = "string";
+const locationUuid: string = "<value>";
 const effectiveDate: string = "2020-01-31";
 
   const res = await sdk.locations.getV1LocationsLocationUuidMinimumWages(locationUuid, effectiveDate);
@@ -182,13 +182,13 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdLocationsJsonRequestBody = {
   city: "New Svenberg",
-  phoneNumber: "string",
-  state: "string",
-  street1: "string",
-  zip: "string",
+  phoneNumber: "<value>",
+  state: "South Dakota",
+  street1: "<value>",
+  zip: "45200-6236",
 };
 
   const res = await sdk.locations.postV1CompaniesCompanyIdLocationsJson(companyId, requestBody);
@@ -242,7 +242,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: Uint8Array = new TextEncoder().encode("0x3754FF0f8f");
 
   const res = await sdk.locations.postV1CompaniesCompanyIdLocationsRaw(companyId, requestBody);
@@ -291,9 +291,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const locationId: string = "string";
+const locationId: string = "<value>";
 const requestBody: PutV1LocationsLocationIdRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.locations.putV1LocationsLocationId(locationId, requestBody);

@@ -23,8 +23,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const documentType: string = "string";
-const requestUuid: string = "string";
+const documentType: string = "<value>";
+const requestUuid: string = "<value>";
 
   const res = await sdk.generatedDocuments.getV1GeneratedDocumentsDocumentTypeRequestUuid(documentType, requestUuid);
 

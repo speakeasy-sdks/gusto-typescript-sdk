@@ -26,8 +26,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const earningTypeUuid: string = "string";
+const companyId: string = "<value>";
+const earningTypeUuid: string = "<value>";
 
   const res = await sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid);
 
@@ -81,7 +81,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 
   const res = await sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(companyId);
 
@@ -133,9 +133,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdEarningTypesRequestBody = {
-  name: "string",
+  name: "<value>",
 };
 
   const res = await sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes(companyId, requestBody);
@@ -187,8 +187,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const earningTypeUuid: string = "string";
+const companyId: string = "<value>";
+const earningTypeUuid: string = "<value>";
 const requestBody: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody = {};
 
   const res = await sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid, requestBody);

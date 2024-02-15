@@ -26,7 +26,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const page: number = 5514.05;
 const per: number = 9088.83;
 
@@ -77,7 +77,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const garnishmentId: string = "string";
+const garnishmentId: string = "<value>";
 
   const res = await sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId);
 
@@ -127,9 +127,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const requestBody: PostV1EmployeesEmployeeIdGarnishmentsRequestBody = {
-  amount: "string",
+  amount: "<value>",
   courtOrdered: false,
   description: "Advanced systematic hardware",
 };
@@ -180,9 +180,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const garnishmentId: string = "string";
+const garnishmentId: string = "<value>";
 const requestBody: PutV1GarnishmentsGarnishmentIdRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody);

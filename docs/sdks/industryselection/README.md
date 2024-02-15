@@ -22,7 +22,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 
   const res = await sdk.industrySelection.getV1CompanyIndustry(companyId);
 
@@ -67,13 +67,13 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PutV1CompanyIndustryRequestBody = {
-  naicsCode: "string",
+  naicsCode: "<value>",
   sicCodes: [
-    "string",
+    "<value>",
   ],
-  title: "string",
+  title: "<value>",
 };
 
   const res = await sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody);

@@ -35,7 +35,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const page: number = 8487.52;
 const per: number = 7763.39;
 
@@ -94,7 +94,7 @@ async function run() {
   });
 
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
-    companyId: "string",
+    companyId: "<value>",
     include: [
       GetV1CompaniesCompanyIdPayrollsQueryParamInclude.PayrollStatusMeta,
     ],
@@ -152,10 +152,10 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const payrollId: string = "string";
+const companyId: string = "<value>";
+const payrollId: string = "<value>";
 const include: GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude.PayrollStatusMeta;
-const showCalculation: string = "string";
+const showCalculation: string = "<value>";
 
   const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation);
 
@@ -207,7 +207,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid);
 
@@ -259,7 +259,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const payrollUuid: string = "string";
+const payrollUuid: string = "<value>";
 
   const res = await sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid);
 
@@ -306,8 +306,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
-const payrollId: string = "string";
+const employeeId: string = "<value>";
+const payrollId: string = "<value>";
 
   const res = await sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId);
 
@@ -362,15 +362,15 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
   employeeUuids: [
-    "string",
+    "<value>",
   ],
-  endDate: "string",
+  endDate: "<value>",
   offCycle: false,
   offCycleReason: OffCycleReason.DismissedEmployee,
-  startDate: "string",
+  startDate: "<value>",
 };
 
   const res = await sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody);
@@ -422,9 +422,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const payrollId: string = "string";
+const payrollId: string = "<value>";
 const requestBody: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody = {
-  printingFormat: "string",
+  printingFormat: "<value>",
 };
 
   const res = await sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody);
@@ -474,8 +474,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const payrollId: string = "string";
+const companyId: string = "<value>";
+const payrollId: string = "<value>";
 
   const res = await sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId);
 
@@ -531,8 +531,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const payrollId: string = "string";
+const companyId: string = "<value>";
+const payrollId: string = "<value>";
 const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
   employeeCompensations: [
     {
@@ -547,7 +547,7 @@ const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
       ],
     },
   ],
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody);
@@ -607,9 +607,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const payPeriodEndDate: string = "string";
-const payPeriodStartDate: string = "string";
+const companyId: string = "<value>";
+const payPeriodEndDate: string = "<value>";
+const payPeriodStartDate: string = "<value>";
 const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody = {
   employeeCompensations: [
     {
@@ -624,7 +624,7 @@ const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEnd
       ],
     },
   ],
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody);
@@ -677,8 +677,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const payrollId: string = "string";
+const companyId: string = "<value>";
+const payrollId: string = "<value>";
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId);
 
@@ -726,8 +726,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
-const payrollId: string = "string";
+const companyId: string = "<value>";
+const payrollId: string = "<value>";
 
   const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId);
 

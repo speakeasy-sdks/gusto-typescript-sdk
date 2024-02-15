@@ -54,7 +54,7 @@ async function run() {
             authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
-    const companyBenefitId: string = "string";
+    const companyBenefitId: string = "<value>";
 
     const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
 
@@ -370,7 +370,7 @@ async function run() {
             authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
-    const companyBenefitId: string = "string";
+    const companyBenefitId: string = "<value>";
 
     let res;
     try {
@@ -419,7 +419,7 @@ async function run() {
             authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
-    const companyBenefitId: string = "string";
+    const companyBenefitId: string = "<value>";
 
     const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
 
@@ -447,7 +447,7 @@ async function run() {
             authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
-    const companyBenefitId: string = "string";
+    const companyBenefitId: string = "<value>";
 
     const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
 
@@ -506,7 +506,7 @@ async function run() {
             authorization: "<YOUR_BEARER_TOKEN_HERE>",
         },
     });
-    const companyBenefitId: string = "string";
+    const companyBenefitId: string = "<value>";
 
     const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
 
@@ -531,7 +531,7 @@ import {
 
 async function run() {
     const sdk = new Gusto();
-    const companyId: string = "string";
+    const companyId: string = "<value>";
     const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
         authorization: "<YOUR_BEARER_TOKEN_HERE>",
     };

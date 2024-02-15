@@ -24,8 +24,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const bankAccountUuid: string = "string";
-const employeeId: string = "string";
+const bankAccountUuid: string = "<value>";
+const employeeId: string = "<value>";
 
   const res = await sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId);
 
@@ -71,7 +71,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 
   const res = await sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId);
 
@@ -120,12 +120,12 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
-  accountNumber: "string",
+  accountNumber: "<value>",
   accountType: PostV1EmployeesEmployeeIdBankAccountsAccountType.Savings,
-  name: "string",
-  routingNumber: "string",
+  name: "<value>",
+  routingNumber: "<value>",
 };
 
   const res = await sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody);
@@ -178,13 +178,13 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
   splits: [
     {},
   ],
   type: PutV1EmployeesEmployeeIdPaymentMethodType.Check,
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody);

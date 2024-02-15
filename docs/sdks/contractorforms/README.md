@@ -24,8 +24,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
-const formId: string = "string";
+const contractorUuid: string = "<value>";
+const formId: string = "<value>";
 
   const res = await sdk.contractorForms.getV1ContractorForm(contractorUuid, formId);
 
@@ -71,8 +71,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
-const formId: string = "string";
+const contractorUuid: string = "<value>";
+const formId: string = "<value>";
 
   const res = await sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId);
 
@@ -118,7 +118,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
+const contractorUuid: string = "<value>";
 
   const res = await sdk.contractorForms.getV1ContractorForms(contractorUuid);
 
@@ -171,7 +171,7 @@ async function run() {
   });
 
   const res = await sdk.contractorForms.postV1SandboxGenerate1099({
-    contractorId: "string",
+    contractorId: "<value>",
   });
 
   if (res.statusCode == 200) {

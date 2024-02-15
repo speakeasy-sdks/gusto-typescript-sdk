@@ -23,7 +23,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
+const companyUuid: string = "<value>";
 
   const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid);
 
@@ -108,8 +108,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
-const state: string = "string";
+const companyUuid: string = "<value>";
+const state: string = "<value>";
 const scheduling: boolean = false;
 
   const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling);
@@ -162,8 +162,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyUuid: string = "string";
-const state: string = "string";
+const companyUuid: string = "<value>";
+const state: string = "<value>";
 const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
   requirementSets: [
     {

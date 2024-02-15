@@ -29,7 +29,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorId: string = "string";
+const contractorId: string = "<value>";
 
   const res = await sdk.contractors.deleteV1ContractorsContractorId(contractorId);
 
@@ -76,7 +76,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const page: number = 5925.71;
 const per: number = 9595.07;
 
@@ -127,7 +127,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorId: string = "string";
+const contractorId: string = "<value>";
 
   const res = await sdk.contractors.getV1ContractorsContractorId(contractorId);
 
@@ -174,7 +174,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
+const contractorUuid: string = "<value>";
 
   const res = await sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid);
 
@@ -252,7 +252,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
+const contractorUuid: string = "<value>";
 
   const res = await sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid);
 
@@ -304,7 +304,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdContractorsRequestBody = {
   hourlyRate: "40.0",
   startDate: "2020-01-11",
@@ -367,11 +367,11 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorId: string = "string";
+const contractorId: string = "<value>";
 const requestBody: PutV1ContractorsContractorIdRequestBody = {
   hourlyRate: "40.0",
   startDate: "2020-01-11",
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody);
@@ -423,9 +423,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
+const contractorUuid: string = "<value>";
 const requestBody: PutV1ContractorsContractorUuidAddressRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody);
@@ -487,7 +487,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const contractorUuid: string = "string";
+const contractorUuid: string = "<value>";
 const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {
   onboardingStatus: OnboardingStatus.OnboardingCompleted,
 };

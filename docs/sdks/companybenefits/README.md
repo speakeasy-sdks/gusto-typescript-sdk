@@ -32,7 +32,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyBenefitId: string = "string";
+const companyBenefitId: string = "<value>";
 
   const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
 
@@ -127,7 +127,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const benefitId: string = "string";
+const benefitId: string = "<value>";
 
   const res = await sdk.companyBenefits.getV1BenefitsBenefitId(benefitId);
 
@@ -174,7 +174,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const benefitId: string = "string";
+const benefitId: string = "<value>";
 
   const res = await sdk.companyBenefits.getV1BenefitsBenefitsIdRequirements(benefitId);
 
@@ -221,7 +221,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyBenefitId: string = "string";
+const companyBenefitId: string = "<value>";
 const detailed: boolean = false;
 const endDate: string = "2022-12-31";
 const startDate: string = "2022-01-01";
@@ -276,7 +276,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const enrollmentCount: boolean = false;
 
   const res = await sdk.companyBenefits.getV1CompaniesCompanyIdCompanyBenefits(companyId, enrollmentCount);
@@ -329,7 +329,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyBenefitId: string = "string";
+const companyBenefitId: string = "<value>";
 const withEmployeeBenefits: boolean = false;
 
   const res = await sdk.companyBenefits.getV1CompanyBenefitsCompanyBenefitId(companyBenefitId, withEmployeeBenefits);
@@ -383,7 +383,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdCompanyBenefitsRequestBody = {
   description: "Persevering intangible website",
 };
@@ -439,9 +439,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyBenefitId: string = "string";
+const companyBenefitId: string = "<value>";
 const requestBody: PutV1CompanyBenefitsCompanyBenefitIdRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.companyBenefits.putV1CompanyBenefitsCompanyBenefitId(companyBenefitId, requestBody);

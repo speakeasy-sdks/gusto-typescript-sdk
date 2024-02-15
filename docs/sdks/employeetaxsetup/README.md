@@ -24,7 +24,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeUuid: string = "string";
+const employeeUuid: string = "<value>";
 
   const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid);
 
@@ -81,7 +81,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeUuid: string = "string";
+const employeeUuid: string = "<value>";
 
   const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid);
 
@@ -129,9 +129,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeUuid: string = "string";
+const employeeUuid: string = "<value>";
 const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
-  version: "string",
+  version: "<value>",
 };
 
   const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody);
@@ -186,23 +186,23 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeUuid: string = "string";
+const employeeUuid: string = "<value>";
 const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
-  employeeId: "string",
+  employeeId: "<value>",
   states: [
     {
       questions: [
         {
           answers: [
             {
-              validFrom: "string",
-              value: "string",
+              validFrom: "<value>",
+              value: "<value>",
             },
           ],
           key: "<key>",
         },
       ],
-      state: "string",
+      state: "Rhode Island",
     },
   ],
 };

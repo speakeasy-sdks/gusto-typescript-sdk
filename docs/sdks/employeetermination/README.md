@@ -25,7 +25,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 
   const res = await sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(employeeId);
 
@@ -72,7 +72,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const companyId: string = "string";
+const companyId: string = "<value>";
 
   const res = await sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(companyId);
 
@@ -121,7 +121,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 
   const res = await sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(employeeId);
 
@@ -173,9 +173,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const requestBody: PostV1EmployeesEmployeeIdTerminationsRequestBody = {
-  effectiveDate: "string",
+  effectiveDate: "<value>",
 };
 
   const res = await sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations(employeeId, requestBody);
@@ -226,10 +226,10 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 const requestBody: PutV1TerminationsEmployeeIdRequestBody = {
-  effectiveDate: "string",
-  version: "string",
+  effectiveDate: "<value>",
+  version: "<value>",
 };
 
   const res = await sdk.employeeTermination.putV1TerminationsEmployeeId(employeeId, requestBody);

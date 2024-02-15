@@ -25,8 +25,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
-const formId: string = "string";
+const employeeId: string = "<value>";
+const formId: string = "<value>";
 
   const res = await sdk.employeeForms.getV1EmployeeForm(employeeId, formId);
 
@@ -72,8 +72,8 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
-const formId: string = "string";
+const employeeId: string = "<value>";
+const formId: string = "<value>";
 
   const res = await sdk.employeeForms.getV1EmployeeFormPdf(employeeId, formId);
 
@@ -119,7 +119,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
+const employeeId: string = "<value>";
 
   const res = await sdk.employeeForms.getV1EmployeeForms(employeeId);
 
@@ -172,7 +172,7 @@ async function run() {
   });
 
   const res = await sdk.employeeForms.postV1SandboxGenerateW2({
-    employeeId: "string",
+    employeeId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -216,12 +216,12 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const employeeId: string = "string";
-const formId: string = "string";
+const employeeId: string = "<value>";
+const formId: string = "<value>";
 const requestBody: PutV1EmployeeFormSignRequestBody = {
   agree: false,
-  signatureText: "string",
-  signedByIpAddress: "string",
+  signatureText: "<value>",
+  signedByIpAddress: "<value>",
 };
 
   const res = await sdk.employeeForms.putV1EmployeeFormSign(employeeId, formId, requestBody);

@@ -35,7 +35,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const webhookSubscriptionUuid: string = "string";
+const webhookSubscriptionUuid: string = "<value>";
 
   const res = await sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
 
@@ -88,7 +88,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const webhookSubscriptionUuid: string = "string";
+const webhookSubscriptionUuid: string = "<value>";
 
   const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
 
@@ -141,7 +141,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const webhookSubscriptionUuid: string = "string";
+const webhookSubscriptionUuid: string = "<value>";
 
   const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid);
 
@@ -306,9 +306,9 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const webhookSubscriptionUuid: string = "string";
+const webhookSubscriptionUuid: string = "<value>";
 const requestBody: PutV1VerifyWebhookSubscriptionUuidRequestBody = {
-  verificationToken: "string",
+  verificationToken: "<value>",
 };
 
   const res = await sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody);
@@ -367,7 +367,7 @@ async function run() {
       authorization: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
-const webhookSubscriptionUuid: string = "string";
+const webhookSubscriptionUuid: string = "<value>";
 const requestBody: PutV1WebhookSubscriptionUuidRequestBody = {
   subscriptionTypes: [
     PutV1WebhookSubscriptionUuidSubscriptionTypes.Employee,
