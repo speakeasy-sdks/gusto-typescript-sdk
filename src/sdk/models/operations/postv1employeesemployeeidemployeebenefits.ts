@@ -62,7 +62,6 @@ export enum DeductionReducesTaxableIncome {
     Unset = "unset",
     ReducesTaxableIncome = "reduces_taxable_income",
     DoesNotReduceTaxableIncome = "does_not_reduce_taxable_income",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody extends SpeakeasyBase {

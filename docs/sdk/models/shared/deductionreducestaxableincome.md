@@ -10,4 +10,3 @@ Whether the employee deduction reduces taxable income or not. Only valid for Gro
 | `Unset`                        | unset                          |
 | `ReducesTaxableIncome`         | reduces_taxable_income         |
 | `DoesNotReduceTaxableIncome`   | does_not_reduce_taxable_income |
-| `LessThanNilGreaterThan`       | <nil>                          |
