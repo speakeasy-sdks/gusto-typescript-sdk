@@ -30,11 +30,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import { DeleteV1WebhookSubscriptionUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new Gusto({
-    security: {
-      authorization: "<YOUR_BEARER_TOKEN_HERE>",
-    },
-  });
+  const sdk = new Gusto();
 const webhookSubscriptionUuid: string = "<value>";
 
   const res = await sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
@@ -83,11 +79,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1WebhookSubscriptionUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new Gusto({
-    security: {
-      authorization: "<YOUR_BEARER_TOKEN_HERE>",
-    },
-  });
+  const sdk = new Gusto();
 const webhookSubscriptionUuid: string = "<value>";
 
   const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
@@ -136,11 +128,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import { GetV1WebhookSubscriptionVerificationTokenUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new Gusto({
-    security: {
-      authorization: "<YOUR_BEARER_TOKEN_HERE>",
-    },
-  });
+  const sdk = new Gusto();
 const webhookSubscriptionUuid: string = "<value>";
 
   const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid);
@@ -187,11 +175,7 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 import { Gusto } from "@speakeasy-sdks/gusto";
 
 async function run() {
-  const sdk = new Gusto({
-    security: {
-      authorization: "<YOUR_BEARER_TOKEN_HERE>",
-    },
-  });
+  const sdk = new Gusto();
 
   const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptions();
 
@@ -238,11 +222,7 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import { SubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new Gusto({
-    security: {
-      authorization: "<YOUR_BEARER_TOKEN_HERE>",
-    },
-  });
+  const sdk = new Gusto();
 
   const res = await sdk.webhookSubscriptions.postV1WebhookSubscription({
     subscriptionTypes: [
@@ -301,11 +281,7 @@ import {
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new Gusto({
-    security: {
-      authorization: "<YOUR_BEARER_TOKEN_HERE>",
-    },
-  });
+  const sdk = new Gusto();
 const webhookSubscriptionUuid: string = "<value>";
 const requestBody: PutV1VerifyWebhookSubscriptionUuidRequestBody = {
   verificationToken: "<value>",
@@ -362,11 +338,7 @@ import {
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new Gusto({
-    security: {
-      authorization: "<YOUR_BEARER_TOKEN_HERE>",
-    },
-  });
+  const sdk = new Gusto();
 const webhookSubscriptionUuid: string = "<value>";
 const requestBody: PutV1WebhookSubscriptionUuidRequestBody = {
   subscriptionTypes: [

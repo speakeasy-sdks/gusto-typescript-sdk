@@ -433,11 +433,7 @@ Create a new partner managed company
 import { Gusto } from "@speakeasy-sdks/gusto";
 
 async function run() {
-  const sdk = new Gusto({
-    security: {
-      authorization: "<YOUR_BEARER_TOKEN_HERE>",
-    },
-  });
+  const sdk = new Gusto();
 
   const res = await sdk.companies.postV1PartnerManagedCompanies({
     company: {
@@ -497,11 +493,7 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 import { Gusto } from "@speakeasy-sdks/gusto";
 
 async function run() {
-  const sdk = new Gusto({
-    security: {
-      authorization: "<YOUR_BEARER_TOKEN_HERE>",
-    },
-  });
+  const sdk = new Gusto();
 
   const res = await sdk.companies.postV1Provision({
     company: {
