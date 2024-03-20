@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PostV1WebhookSubscriptionRequestBodySubscriptionTypes {
+export enum SubscriptionTypes {
     BankAccount = "BankAccount",
     Company = "Company",
     CompanyBenefit = "CompanyBenefit",
@@ -27,7 +27,7 @@ export enum PostV1WebhookSubscriptionRequestBodySubscriptionTypes {
 export class PostV1WebhookSubscriptionRequestBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "subscription_types" })
-    subscriptionTypes: PostV1WebhookSubscriptionRequestBodySubscriptionTypes[];
+    subscriptionTypes: SubscriptionTypes[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "url" })
@@ -35,14 +35,23 @@ export class PostV1WebhookSubscriptionRequestBody extends SpeakeasyBase {
 }
 
 export class PostV1WebhookSubscriptionResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

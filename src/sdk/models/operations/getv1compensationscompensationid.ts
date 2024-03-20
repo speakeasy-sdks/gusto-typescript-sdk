@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1CompensationsCompensationIdRequest extends SpeakeasyBase {
@@ -17,7 +17,7 @@ export class GetV1CompensationsCompensationIdRequest extends SpeakeasyBase {
 /**
  * Example response
  */
-export class GetV1CompensationsCompensationId200ApplicationXML extends SpeakeasyBase {}
+export class GetV1CompensationsCompensationIdResponseBody extends SpeakeasyBase {}
 
 export class GetV1CompensationsCompensationIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -29,12 +29,21 @@ export class GetV1CompensationsCompensationIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     compensation?: shared.Compensation;
 
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 }

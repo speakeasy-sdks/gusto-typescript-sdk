@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class PayPeriodEligibleEmployees extends SpeakeasyBase {
+export class EligibleEmployees extends SpeakeasyBase {
     /**
      * The ID of the employee that is eligible for the pay period.
      */
@@ -54,10 +54,10 @@ export class PayPeriod extends SpeakeasyBase {
     /**
      * The employees who are (or were) eligible during the pay period.
      */
-    @SpeakeasyMetadata({ elemType: PayPeriodEligibleEmployees })
+    @SpeakeasyMetadata({ elemType: EligibleEmployees })
     @Expose({ name: "eligible_employees" })
-    @Type(() => PayPeriodEligibleEmployees)
-    eligibleEmployees?: PayPeriodEligibleEmployees[];
+    @Type(() => EligibleEmployees)
+    eligibleEmployees?: EligibleEmployees[];
 
     /**
      * The end date, inclusive, of the pay period.

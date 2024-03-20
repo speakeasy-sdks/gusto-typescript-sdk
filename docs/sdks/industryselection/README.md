@@ -1,4 +1,5 @@
-# industrySelection
+# IndustrySelection
+(*industrySelection*)
 
 ### Available Operations
 
@@ -13,20 +14,24 @@ Get industry selection for the company.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyIndustryRequest, GetV1CompanyIndustryResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyIndustryRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "tempora";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
 
-sdk.industrySelection.getV1CompanyIndustry(companyId).then((res: GetV1CompanyIndustryResponse) => {
+  const res = await sdk.industrySelection.getV1CompanyIndustry(companyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -39,8 +44,12 @@ sdk.industrySelection.getV1CompanyIndustry(companyId).then((res: GetV1CompanyInd
 
 ### Response
 
-**Promise<[operations.GetV1CompanyIndustryResponse](../../models/operations/getv1companyindustryresponse.md)>**
+**Promise<[operations.GetV1CompanyIndustryResponse](../../sdk/models/operations/getv1companyindustryresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompanyIndustry
 
@@ -50,44 +59,47 @@ Update the company industry selection by passing in industry classification code
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompanyIndustryRequest,
-  PutV1CompanyIndustryRequestBody,
-  PutV1CompanyIndustryResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1CompanyIndustryRequest, PutV1CompanyIndustryRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "aspernatur";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
 const requestBody: PutV1CompanyIndustryRequestBody = {
-  naicsCode: "voluptas",
+  naicsCode: "<value>",
   sicCodes: [
-    "voluptas",
-    "minima",
+    "<value>",
   ],
-  title: "Miss",
+  title: "<value>",
 };
 
-sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody).then((res: PutV1CompanyIndustryResponse) => {
+  const res = await sdk.industrySelection.putV1CompanyIndustry(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                              | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The UUID of the company                                                                                  |
-| `requestBody`                                                                                            | [operations.PutV1CompanyIndustryRequestBody](../../models/operations/putv1companyindustryrequestbody.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `companyId`                                                                                                  | *string*                                                                                                     | :heavy_check_mark:                                                                                           | The UUID of the company                                                                                      |
+| `requestBody`                                                                                                | [operations.PutV1CompanyIndustryRequestBody](../../sdk/models/operations/putv1companyindustryrequestbody.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompanyIndustryResponse](../../models/operations/putv1companyindustryresponse.md)>**
+**Promise<[operations.PutV1CompanyIndustryResponse](../../sdk/models/operations/putv1companyindustryresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

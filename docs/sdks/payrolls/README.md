@@ -1,4 +1,5 @@
-# payrolls
+# Payrolls
+(*payrolls*)
 
 ### Available Operations
 
@@ -26,25 +27,26 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdPayrollReversalsRequest,
-  GetV1CompaniesCompanyIdPayrollReversalsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdPayrollReversalsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "natus";
-const page: number = 3283.03;
-const per: number = 1334.61;
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const page: number = 8487.52;
+const per: number = 7763.39;
 
-sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per).then((res: GetV1CompaniesCompanyIdPayrollReversalsResponse) => {
+  const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -59,8 +61,12 @@ sdk.payrolls.getV1CompaniesCompanyIdPayrollReversals(companyId, page, per).then(
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdPayrollReversalsResponse](../../models/operations/getv1companiescompanyidpayrollreversalsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdPayrollReversalsResponse](../../sdk/models/operations/getv1companiescompanyidpayrollreversalsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompaniesCompanyIdPayrolls
 
@@ -78,44 +84,46 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompaniesCompanyIdPayrollsInclude, GetV1CompaniesCompanyIdPayrollsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdPayrollsQueryParamInclude } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
 
-sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
-  companyId: "ex",
-  endDate: "maiores",
-  include: [
-    GetV1CompaniesCompanyIdPayrollsInclude.Taxes,
-    GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
-    GetV1CompaniesCompanyIdPayrollsInclude.PayrollStatusMeta,
-  ],
-  includeOffCycle: false,
-  processed: false,
-  startDate: "suscipit",
-}).then((res: GetV1CompaniesCompanyIdPayrollsResponse) => {
+  const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrolls({
+    companyId: "<value>",
+    include: [
+      GetV1CompaniesCompanyIdPayrollsQueryParamInclude.PayrollStatusMeta,
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.GetV1CompaniesCompanyIdPayrollsRequest](../../models/operations/getv1companiescompanyidpayrollsrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                  | [operations.GetV1CompaniesCompanyIdPayrollsRequest](../../sdk/models/operations/getv1companiescompanyidpayrollsrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+| `config`                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                               | :heavy_minus_sign:                                                                                                         | Available config options for making requests.                                                                              |
 
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdPayrollsResponse](../../models/operations/getv1companiescompanyidpayrollsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdPayrollsResponse](../../sdk/models/operations/getv1companiescompanyidpayrollsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompaniesCompanyIdPayrollsPayrollId
 
@@ -134,26 +142,29 @@ scope: `payrolls:read`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  GetV1CompaniesCompanyIdPayrollsPayrollIdInclude,
+  GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude,
   GetV1CompaniesCompanyIdPayrollsPayrollIdRequest,
-  GetV1CompaniesCompanyIdPayrollsPayrollIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "repudiandae";
-const payrollId: string = "atque";
-const include: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdInclude.PayrollStatusMeta;
-const showCalculation: string = "sunt";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const payrollId: string = "<value>";
+const include: GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude = GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude.PayrollStatusMeta;
+const showCalculation: string = "<value>";
 
-sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation).then((res: GetV1CompaniesCompanyIdPayrollsPayrollIdResponse) => {
+  const res = await sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, include, showCalculation);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -162,15 +173,19 @@ sdk.payrolls.getV1CompaniesCompanyIdPayrollsPayrollId(companyId, payrollId, incl
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `companyId`                                                                                                                                                                                                                                                                                                                     | *string*                                                                                                                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                                                                                                                              | The UUID of the company                                                                                                                                                                                                                                                                                                         |
 | `payrollId`                                                                                                                                                                                                                                                                                                                     | *string*                                                                                                                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                                                                                                                              | The UUID of the payroll                                                                                                                                                                                                                                                                                                         |
-| `include`                                                                                                                                                                                                                                                                                                                       | [operations.GetV1CompaniesCompanyIdPayrollsPayrollIdInclude](../../models/operations/getv1companiescompanyidpayrollspayrollidinclude.md)                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`                                                                                                                                                                                   |
+| `include`                                                                                                                                                                                                                                                                                                                       | [operations.GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude](../../sdk/models/operations/getv1companiescompanyidpayrollspayrollidqueryparaminclude.md)                                                                                                                                                                | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`                                                                                                                                                                                   |
 | `showCalculation`                                                                                                                                                                                                                                                                                                               | *string*                                                                                                                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | With show_calculation = true, the calculated values specified by the include parameter will be shown if the payroll is in an unprocessed, but calculated state.<br/>If a payroll is in an unprocessed, but calculated state and a call is made to this endpoint without show_calculation = true, the calculation will be “cleared.” |
 | `config`                                                                                                                                                                                                                                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                                                                                                                                                    | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                              | Available config options for making requests.                                                                                                                                                                                                                                                                                   |
 
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdPayrollsPayrollIdResponse](../../models/operations/getv1companiescompanyidpayrollspayrollidresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdPayrollsPayrollIdResponse](../../sdk/models/operations/getv1companiescompanyidpayrollspayrollidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompaniesPayrollBlockersCompanyUuid
 
@@ -184,23 +199,24 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesPayrollBlockersCompanyUuidRequest,
-  GetV1CompaniesPayrollBlockersCompanyUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesPayrollBlockersCompanyUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "recusandae";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
 
-sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid).then((res: GetV1CompaniesPayrollBlockersCompanyUuidResponse) => {
+  const res = await sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -213,8 +229,12 @@ sdk.payrolls.getV1CompaniesPayrollBlockersCompanyUuid(companyUuid).then((res: Ge
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesPayrollBlockersCompanyUuidResponse](../../models/operations/getv1companiespayrollblockerscompanyuuidresponse.md)>**
+**Promise<[operations.GetV1CompaniesPayrollBlockersCompanyUuidResponse](../../sdk/models/operations/getv1companiespayrollblockerscompanyuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1PaymentReceiptsPayrollsPayrollUuid
 
@@ -231,23 +251,24 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1PaymentReceiptsPayrollsPayrollUuidRequest,
-  GetV1PaymentReceiptsPayrollsPayrollUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1PaymentReceiptsPayrollsPayrollUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const payrollUuid: string = "dolorum";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const payrollUuid: string = "<value>";
 
-sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid).then((res: GetV1PaymentReceiptsPayrollsPayrollUuidResponse) => {
+  const res = await sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -260,8 +281,12 @@ sdk.payrolls.getV1PaymentReceiptsPayrollsPayrollUuid(payrollUuid).then((res: Get
 
 ### Response
 
-**Promise<[operations.GetV1PaymentReceiptsPayrollsPayrollUuidResponse](../../models/operations/getv1paymentreceiptspayrollspayrolluuidresponse.md)>**
+**Promise<[operations.GetV1PaymentReceiptsPayrollsPayrollUuidResponse](../../sdk/models/operations/getv1paymentreceiptspayrollspayrolluuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub
 
@@ -273,24 +298,25 @@ scope: `payrolls:run`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest,
-  GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "repellendus";
-const payrollId: string = "labore";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
+const payrollId: string = "<value>";
 
-sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId).then((res: GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse) => {
+  const res = await sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, payrollId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -304,8 +330,12 @@ sdk.payrolls.getV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStub(employeeId, pa
 
 ### Response
 
-**Promise<[operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse](../../models/operations/getv1payrollspayrolluuidemployeesemployeeuuidpaystubresponse.md)>**
+**Promise<[operations.GetV1PayrollsPayrollUuidEmployeesEmployeeUuidPayStubResponse](../../sdk/models/operations/getv1payrollspayrolluuidemployeesemployeeuuidpaystubresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1CompaniesCompanyIdPayrolls
 
@@ -320,56 +350,56 @@ Creates a new, unprocessed, off-cycle payroll.
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  OffCycleReason,
   PostV1CompaniesCompanyIdPayrollsRequest,
   PostV1CompaniesCompanyIdPayrollsRequestBody,
-  PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason,
-  PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod,
-  PostV1CompaniesCompanyIdPayrollsResponse,
+  WithholdingPayPeriod,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "reiciendis";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdPayrollsRequestBody = {
-  checkDate: "doloremque",
   employeeUuids: [
-    "dicta",
-    "accusantium",
-    "beatae",
-    "dolores",
+    "<value>",
   ],
-  endDate: "enim",
-  fixedWithholdingRate: false,
+  endDate: "<value>",
   offCycle: false,
-  offCycleReason: PostV1CompaniesCompanyIdPayrollsRequestBodyOffCycleReason.Correction,
-  skipRegularDeductions: false,
-  startDate: "velit",
-  withholdingPayPeriod: PostV1CompaniesCompanyIdPayrollsRequestBodyWithholdingPayPeriod.Annually,
+  offCycleReason: OffCycleReason.DismissedEmployee,
+  startDate: "<value>",
 };
 
-sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody).then((res: PostV1CompaniesCompanyIdPayrollsResponse) => {
+  const res = await sdk.payrolls.postV1CompaniesCompanyIdPayrolls(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                      | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | The UUID of the company                                                                                                          |
-| `requestBody`                                                                                                                    | [operations.PostV1CompaniesCompanyIdPayrollsRequestBody](../../models/operations/postv1companiescompanyidpayrollsrequestbody.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `companyId`                                                                                                                          | *string*                                                                                                                             | :heavy_check_mark:                                                                                                                   | The UUID of the company                                                                                                              |
+| `requestBody`                                                                                                                        | [operations.PostV1CompaniesCompanyIdPayrollsRequestBody](../../sdk/models/operations/postv1companiescompanyidpayrollsrequestbody.md) | :heavy_minus_sign:                                                                                                                   | N/A                                                                                                                                  |
+| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
 
 
 ### Response
 
-**Promise<[operations.PostV1CompaniesCompanyIdPayrollsResponse](../../models/operations/postv1companiescompanyidpayrollsresponse.md)>**
+**Promise<[operations.PostV1CompaniesCompanyIdPayrollsResponse](../../sdk/models/operations/postv1companiescompanyidpayrollsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks
 
@@ -384,40 +414,46 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequest,
   PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody,
-  PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const payrollId: string = "molestias";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const payrollId: string = "<value>";
 const requestBody: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody = {
-  printingFormat: "magnam",
-  startingCheckNumber: 906355,
+  printingFormat: "<value>",
 };
 
-sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody).then((res: PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse) => {
+  const res = await sdk.payrolls.postV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecks(payrollId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                          | Type                                                                                                                                                                                               | Required                                                                                                                                                                                           | Description                                                                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `payrollId`                                                                                                                                                                                        | *string*                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                 | The UUID of the payroll                                                                                                                                                                            |
-| `requestBody`                                                                                                                                                                                      | [operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody](../../models/operations/postv1payrollspayrolluuidgenerateddocumentsprintablepayrollchecksrequestbody.md) | :heavy_minus_sign:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |
-| `config`                                                                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                 | Available config options for making requests.                                                                                                                                                      |
+| Parameter                                                                                                                                                                                              | Type                                                                                                                                                                                                   | Required                                                                                                                                                                                               | Description                                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `payrollId`                                                                                                                                                                                            | *string*                                                                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                     | The UUID of the payroll                                                                                                                                                                                |
+| `requestBody`                                                                                                                                                                                          | [operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksRequestBody](../../sdk/models/operations/postv1payrollspayrolluuidgenerateddocumentsprintablepayrollchecksrequestbody.md) | :heavy_minus_sign:                                                                                                                                                                                     | N/A                                                                                                                                                                                                    |
+| `config`                                                                                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                     | Available config options for making requests.                                                                                                                                                          |
 
 
 ### Response
 
-**Promise<[operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse](../../models/operations/postv1payrollspayrolluuidgenerateddocumentsprintablepayrollchecksresponse.md)>**
+**Promise<[operations.PostV1PayrollsPayrollUuidGeneratedDocumentsPrintablePayrollChecksResponse](../../sdk/models/operations/postv1payrollspayrolluuidgenerateddocumentsprintablepayrollchecksresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel
 
@@ -430,24 +466,25 @@ Transitions a `processed` payroll back to the `unprocessed` state. A payroll can
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest,
-  PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "consequuntur";
-const payrollId: string = "occaecati";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const payrollId: string = "<value>";
 
-sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId).then((res: PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse) => {
+  const res = await sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrollId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -461,8 +498,12 @@ sdk.payrolls.putApiV1CompaniesCompanyIdPayrollsPayrollIdCancel(companyId, payrol
 
 ### Response
 
-**Promise<[operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse](../../models/operations/putapiv1companiescompanyidpayrollspayrollidcancelresponse.md)>**
+**Promise<[operations.PutApiV1CompaniesCompanyIdPayrollsPayrollIdCancelResponse](../../sdk/models/operations/putapiv1companiescompanyidpayrollspayrollidcancelresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompaniesCompanyIdPayrolls
 
@@ -475,168 +516,68 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1CompaniesCompanyIdPayrollsEmployeeCompensations,
+  PutV1CompaniesCompanyIdPayrollsFixedCompensations,
+  PutV1CompaniesCompanyIdPayrollsHourlyCompensations,
+  PutV1CompaniesCompanyIdPayrollsPaidTimeOff,
+  PutV1CompaniesCompanyIdPayrollsPaymentMethod,
   PutV1CompaniesCompanyIdPayrollsRequest,
   PutV1CompaniesCompanyIdPayrollsRequestBody,
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations,
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations,
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations,
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff,
-  PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod,
-  PutV1CompaniesCompanyIdPayrollsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "officiis";
-const payrollId: string = "perspiciatis";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const payrollId: string = "<value>";
 const requestBody: PutV1CompaniesCompanyIdPayrollsRequestBody = {
   employeeCompensations: [
     {
-      employeeUuid: "adipisci",
-      excluded: false,
       fixedCompensations: [
-        {
-          amount: "occaecati",
-          jobUuid: 160230,
-          name: "Amelia Harvey",
-        },
-        {
-          amount: "illo",
-          jobUuid: 361306,
-          name: "Conrad Franey III",
-        },
-        {
-          amount: "ipsa",
-          jobUuid: 517612,
-          name: "Nellie Upton",
-        },
-        {
-          amount: "iure",
-          jobUuid: 898063,
-          name: "Maggie Rau",
-        },
+        {},
       ],
       hourlyCompensations: [
-        {
-          hours: "ad",
-          jobUuid: 997963,
-          name: "Renee Metz",
-        },
-        {
-          hours: "voluptas",
-          jobUuid: 5189,
-          name: "Dominick Daniel",
-        },
+        {},
       ],
       paidTimeOff: [
-        {
-          finalPayoutUnusedHoursInput: "dolorum",
-          hours: "nesciunt",
-          name: "Sophie Mohr",
-          policyUuid: "ex",
-        },
-        {
-          finalPayoutUnusedHoursInput: "ut",
-          hours: "culpa",
-          name: "Raquel Larkin",
-          policyUuid: "recusandae",
-        },
+        {},
       ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
-    },
-    {
-      employeeUuid: "provident",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "eum",
-          jobUuid: 970494,
-          name: "Miss Bruce Hermann",
-        },
-        {
-          amount: "mollitia",
-          jobUuid: 591027,
-          name: "Lynn Jacobson DVM",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "ullam",
-          jobUuid: 448143,
-          name: "Darin Nienow",
-        },
-        {
-          hours: "modi",
-          jobUuid: 976226,
-          name: "Stewart Will MD",
-        },
-        {
-          hours: "tempora",
-          jobUuid: 335498,
-          name: "Mr. Denise Runolfsdottir",
-        },
-        {
-          hours: "aspernatur",
-          jobUuid: 432281,
-          name: "Deanna Swaniawski",
-        },
-      ],
-      paidTimeOff: [
-        {
-          finalPayoutUnusedHoursInput: "eum",
-          hours: "dicta",
-          name: "Teresa McCullough",
-          policyUuid: "soluta",
-        },
-        {
-          finalPayoutUnusedHoursInput: "hic",
-          hours: "illum",
-          name: "Sonja Metz",
-          policyUuid: "aliquid",
-        },
-        {
-          finalPayoutUnusedHoursInput: "porro",
-          hours: "suscipit",
-          name: "Denise Runolfsdottir",
-          policyUuid: "animi",
-        },
-        {
-          finalPayoutUnusedHoursInput: "necessitatibus",
-          hours: "nulla",
-          name: "Joyce Borer",
-          policyUuid: "occaecati",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
     },
   ],
-  version: "adipisci",
+  version: "<value>",
 };
 
-sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody).then((res: PutV1CompaniesCompanyIdPayrollsResponse) => {
+  const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrolls(companyId, payrollId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `companyId`                                                                                                                    | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | The UUID of the company                                                                                                        |
-| `payrollId`                                                                                                                    | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | The UUID of the payroll                                                                                                        |
-| `requestBody`                                                                                                                  | [operations.PutV1CompaniesCompanyIdPayrollsRequestBody](../../models/operations/putv1companiescompanyidpayrollsrequestbody.md) | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
-| `config`                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                   | :heavy_minus_sign:                                                                                                             | Available config options for making requests.                                                                                  |
+| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                        | *string*                                                                                                                           | :heavy_check_mark:                                                                                                                 | The UUID of the company                                                                                                            |
+| `payrollId`                                                                                                                        | *string*                                                                                                                           | :heavy_check_mark:                                                                                                                 | The UUID of the payroll                                                                                                            |
+| `requestBody`                                                                                                                      | [operations.PutV1CompaniesCompanyIdPayrollsRequestBody](../../sdk/models/operations/putv1companiescompanyidpayrollsrequestbody.md) | :heavy_minus_sign:                                                                                                                 | N/A                                                                                                                                |
+| `config`                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                       | :heavy_minus_sign:                                                                                                                 | Available config options for making requests.                                                                                      |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdPayrollsResponse](../../models/operations/putv1companiescompanyidpayrollsresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdPayrollsResponse](../../sdk/models/operations/putv1companiescompanyidpayrollsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate
 
@@ -651,246 +592,70 @@ scope: `payrolls:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  EmployeeCompensations,
+  FixedCompensations,
+  HourlyCompensations,
+  PaidTimeOff,
+  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDatePaymentMethod,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequest,
   PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensations,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsFixedCompensations,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsHourlyCompensations,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaidTimeOff,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod,
-  PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "quasi";
-const payPeriodEndDate: string = "magni";
-const payPeriodStartDate: string = "doloribus";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const payPeriodEndDate: string = "<value>";
+const payPeriodStartDate: string = "<value>";
 const requestBody: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody = {
   employeeCompensations: [
     {
-      employeeUuid: "necessitatibus",
-      excluded: false,
       fixedCompensations: [
-        {
-          amount: "tempora",
-          jobUuid: "nihil",
-          name: "Jean Kris",
-        },
+        {},
       ],
       hourlyCompensations: [
-        {
-          hours: "reiciendis",
-          jobUuid: "vel",
-          name: "Ms. Janis Batz",
-        },
-        {
-          hours: "esse",
-          jobUuid: "ex",
-          name: "Jeanne Beer II",
-        },
-        {
-          hours: "fugiat",
-          jobUuid: "expedita",
-          name: "Brandi Homenick III",
-        },
-        {
-          hours: "voluptas",
-          jobUuid: "iste",
-          name: "Raymond Muller",
-        },
+        {},
       ],
       paidTimeOff: [
-        {
-          hours: "laborum",
-          name: "Derek Leuschke PhD",
-          policyUuid: "ex",
-        },
-        {
-          hours: "quo",
-          name: "Debbie Hammes V",
-          policyUuid: "cum",
-        },
-        {
-          hours: "aliquid",
-          name: "Miss Nora Moen",
-          policyUuid: "culpa",
-        },
+        {},
       ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
-    },
-    {
-      employeeUuid: "sapiente",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "architecto",
-          jobUuid: "fuga",
-          name: "Ms. Doyle Barrows",
-        },
-        {
-          amount: "ex",
-          jobUuid: "sapiente",
-          name: "Israel Hickle",
-        },
-        {
-          amount: "ullam",
-          jobUuid: "perferendis",
-          name: "Jimmie Russel",
-        },
-        {
-          amount: "ipsam",
-          jobUuid: "culpa",
-          name: "Michele Bode II",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "consequatur",
-          jobUuid: "architecto",
-          name: "Ms. Pauline Considine I",
-        },
-      ],
-      paidTimeOff: [
-        {
-          hours: "ipsam",
-          name: "Cynthia Macejkovic",
-          policyUuid: "officiis",
-        },
-        {
-          hours: "esse",
-          name: "Aaron Hartmann",
-          policyUuid: "eum",
-        },
-        {
-          hours: "vel",
-          name: "Miss Oscar Heller",
-          policyUuid: "nobis",
-        },
-        {
-          hours: "laboriosam",
-          name: "Carlos Barrows",
-          policyUuid: "quasi",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.DirectDeposit,
-    },
-    {
-      employeeUuid: "at",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "est",
-          jobUuid: "harum",
-          name: "Ora VonRueden",
-        },
-        {
-          amount: "nemo",
-          jobUuid: "voluptate",
-          name: "Gerard Hodkiewicz",
-        },
-        {
-          amount: "quos",
-          jobUuid: "eius",
-          name: "Caroline Dooley",
-        },
-        {
-          amount: "incidunt",
-          jobUuid: "quasi",
-          name: "Clint Carroll",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "aperiam",
-          jobUuid: "cupiditate",
-          name: "Dominic Abernathy",
-        },
-      ],
-      paidTimeOff: [
-        {
-          hours: "iste",
-          name: "Stephanie Pfannerstill",
-          policyUuid: "distinctio",
-        },
-        {
-          hours: "omnis",
-          name: "Darrell Lang",
-          policyUuid: "temporibus",
-        },
-        {
-          hours: "quos",
-          name: "Lorena Johns",
-          policyUuid: "modi",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.Check,
-    },
-    {
-      employeeUuid: "vero",
-      excluded: false,
-      fixedCompensations: [
-        {
-          amount: "ipsam",
-          jobUuid: "vel",
-          name: "Frances Franey",
-        },
-      ],
-      hourlyCompensations: [
-        {
-          hours: "nulla",
-          jobUuid: "deserunt",
-          name: "Ida Kilback",
-        },
-        {
-          hours: "sint",
-          jobUuid: "accusamus",
-          name: "Irvin Tromp",
-        },
-        {
-          hours: "voluptas",
-          jobUuid: "debitis",
-          name: "Eric Schiller",
-        },
-      ],
-      paidTimeOff: [
-        {
-          hours: "velit",
-          name: "Dale Rutherford",
-          policyUuid: "repudiandae",
-        },
-      ],
-      paymentMethod: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBodyEmployeeCompensationsPaymentMethod.Check,
     },
   ],
-  version: "dolore",
+  version: "<value>",
 };
 
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody).then((res: PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse) => {
+  const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDate(companyId, payPeriodEndDate, payPeriodStartDate, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                          | Type                                                                                                                                                                                               | Required                                                                                                                                                                                           | Description                                                                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                                                                                        | *string*                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                 | The UUID of the company                                                                                                                                                                            |
-| `payPeriodEndDate`                                                                                                                                                                                 | *string*                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                 | The end_date of the pay period for the payroll                                                                                                                                                     |
-| `payPeriodStartDate`                                                                                                                                                                               | *string*                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                 | The start_date of the pay period for the payroll                                                                                                                                                   |
-| `requestBody`                                                                                                                                                                                      | [operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody](../../models/operations/putv1companiescompanyidpayrollspayperiodstartdatepayperiodenddaterequestbody.md) | :heavy_minus_sign:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |
-| `config`                                                                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                 | Available config options for making requests.                                                                                                                                                      |
+| Parameter                                                                                                                                                                                              | Type                                                                                                                                                                                                   | Required                                                                                                                                                                                               | Description                                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `companyId`                                                                                                                                                                                            | *string*                                                                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                     | The UUID of the company                                                                                                                                                                                |
+| `payPeriodEndDate`                                                                                                                                                                                     | *string*                                                                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                     | The end_date of the pay period for the payroll                                                                                                                                                         |
+| `payPeriodStartDate`                                                                                                                                                                                   | *string*                                                                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                     | The start_date of the pay period for the payroll                                                                                                                                                       |
+| `requestBody`                                                                                                                                                                                          | [operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateRequestBody](../../sdk/models/operations/putv1companiescompanyidpayrollspayperiodstartdatepayperiodenddaterequestbody.md) | :heavy_minus_sign:                                                                                                                                                                                     | N/A                                                                                                                                                                                                    |
+| `config`                                                                                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                     | Available config options for making requests.                                                                                                                                                          |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse](../../models/operations/putv1companiescompanyidpayrollspayperiodstartdatepayperiodenddateresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayPeriodStartDatePayPeriodEndDateResponse](../../sdk/models/operations/putv1companiescompanyidpayrollspayperiodstartdatepayperiodenddateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompaniesCompanyIdPayrollsPayrollIdCalculate
 
@@ -904,24 +669,25 @@ If the company is blocked from running payroll due to issues like incomplete set
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest,
-  PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "iusto";
-const payrollId: string = "voluptate";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const payrollId: string = "<value>";
 
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse) => {
+  const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrollId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -935,8 +701,12 @@ sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdCalculate(companyId, payrol
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse](../../models/operations/putv1companiescompanyidpayrollspayrollidcalculateresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayrollIdCalculateResponse](../../sdk/models/operations/putv1companiescompanyidpayrollspayrollidcalculateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompaniesCompanyIdPayrollsPayrollIdSubmit
 
@@ -948,24 +718,25 @@ If the company is blocked from running payroll due to issues like incomplete set
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest,
-  PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "sequi";
-const payrollId: string = "dignissimos";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const payrollId: string = "<value>";
 
-sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId).then((res: PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse) => {
+  const res = await sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -979,5 +750,9 @@ sdk.payrolls.putV1CompaniesCompanyIdPayrollsPayrollIdSubmit(companyId, payrollId
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse](../../models/operations/putv1companiescompanyidpayrollspayrollidsubmitresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdPayrollsPayrollIdSubmitResponse](../../sdk/models/operations/putv1companiescompanyidpayrollspayrollidsubmitresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

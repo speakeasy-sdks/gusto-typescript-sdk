@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Example response
- */
 export class EmployeeAddress extends SpeakeasyBase {
     /**
      * The status of the location. Inactive locations have been deleted, but may still have historical data associated with them.

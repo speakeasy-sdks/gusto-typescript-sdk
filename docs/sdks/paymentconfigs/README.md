@@ -1,4 +1,5 @@
-# paymentConfigs
+# PaymentConfigs
+(*paymentConfigs*)
 
 ### Available Operations
 
@@ -13,20 +14,24 @@ Get payment speed for the company and fast payment limit (only applicable for 2-
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyPaymentConfigsRequest, GetV1CompanyPaymentConfigsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyPaymentConfigsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "error";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
 
-sdk.paymentConfigs.getV1CompanyPaymentConfigs(companyUuid).then((res: GetV1CompanyPaymentConfigsResponse) => {
+  const res = await sdk.paymentConfigs.getV1CompanyPaymentConfigs(companyUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -39,8 +44,12 @@ sdk.paymentConfigs.getV1CompanyPaymentConfigs(companyUuid).then((res: GetV1Compa
 
 ### Response
 
-**Promise<[operations.GetV1CompanyPaymentConfigsResponse](../../models/operations/getv1companypaymentconfigsresponse.md)>**
+**Promise<[operations.GetV1CompanyPaymentConfigsResponse](../../sdk/models/operations/getv1companypaymentconfigsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompanyPaymentConfigs
 
@@ -51,40 +60,47 @@ Update payment speed for the company and fast payment limit (only applicable for
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PaymentSpeed,
   PutV1CompanyPaymentConfigsRequest,
   PutV1CompanyPaymentConfigsRequestBody,
-  PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed,
-  PutV1CompanyPaymentConfigsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "officiis";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
 const requestBody: PutV1CompanyPaymentConfigsRequestBody = {
-  fastPaymentLimit: "officiis",
-  paymentSpeed: PutV1CompanyPaymentConfigsRequestBodyPaymentSpeed.FourDay,
+  fastPaymentLimit: "<value>",
+  paymentSpeed: PaymentSpeed.TwoDay,
 };
 
-sdk.paymentConfigs.putV1CompanyPaymentConfigs(companyUuid, requestBody).then((res: PutV1CompanyPaymentConfigsResponse) => {
+  const res = await sdk.paymentConfigs.putV1CompanyPaymentConfigs(companyUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                                        | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | The UUID of the company                                                                                              |
-| `requestBody`                                                                                                        | [operations.PutV1CompanyPaymentConfigsRequestBody](../../models/operations/putv1companypaymentconfigsrequestbody.md) | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `companyUuid`                                                                                                            | *string*                                                                                                                 | :heavy_check_mark:                                                                                                       | The UUID of the company                                                                                                  |
+| `requestBody`                                                                                                            | [operations.PutV1CompanyPaymentConfigsRequestBody](../../sdk/models/operations/putv1companypaymentconfigsrequestbody.md) | :heavy_minus_sign:                                                                                                       | N/A                                                                                                                      |
+| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompanyPaymentConfigsResponse](../../models/operations/putv1companypaymentconfigsresponse.md)>**
+**Promise<[operations.PutV1CompanyPaymentConfigsResponse](../../sdk/models/operations/putv1companypaymentconfigsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

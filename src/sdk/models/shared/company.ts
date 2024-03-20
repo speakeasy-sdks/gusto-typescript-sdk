@@ -9,13 +9,13 @@ import { Expose, Type } from "class-transformer";
 /**
  * The status of the company in Gusto. "Approved" companies may run payroll with Gusto. "Not Approved" companies may not yet run payroll with Gusto. In order to run payroll, the company may need to complete onboarding or contact support. "Suspended" companies may not run payroll with Gusto. In order to unsuspend their account, the company must contact support.
  */
-export enum CompanyCompanyStatus {
+export enum CompanyStatus {
     Approved = "Approved",
     NotApproved = "Not Approved",
     Suspended = "Suspended",
 }
 
-export class CompanyCompensationsFixed extends SpeakeasyBase {
+export class Fixed extends SpeakeasyBase {
     /**
      * The name of the fixed compensation.
      */
@@ -24,7 +24,7 @@ export class CompanyCompensationsFixed extends SpeakeasyBase {
     name?: string;
 }
 
-export class CompanyCompensationsHourly extends SpeakeasyBase {
+export class Hourly extends SpeakeasyBase {
     /**
      * The amount multiplied by the base rate of a job to calculate compensation.
      */
@@ -40,7 +40,7 @@ export class CompanyCompensationsHourly extends SpeakeasyBase {
     name?: string;
 }
 
-export class CompanyCompensationsPaidTimeOff extends SpeakeasyBase {
+export class CompanyPaidTimeOff extends SpeakeasyBase {
     /**
      * The name of the paid time off type.
      */
@@ -52,36 +52,36 @@ export class CompanyCompensationsPaidTimeOff extends SpeakeasyBase {
 /**
  * The available company-wide compensation rates for the company.
  */
-export class CompanyCompensations extends SpeakeasyBase {
+export class Compensations extends SpeakeasyBase {
     /**
      * The available fixed compensation rates for the company.
      */
-    @SpeakeasyMetadata({ elemType: CompanyCompensationsFixed })
+    @SpeakeasyMetadata({ elemType: Fixed })
     @Expose({ name: "fixed" })
-    @Type(() => CompanyCompensationsFixed)
-    fixed?: CompanyCompensationsFixed[];
+    @Type(() => Fixed)
+    fixed?: Fixed[];
 
     /**
      * The available hourly compensation rates for the company.
      */
-    @SpeakeasyMetadata({ elemType: CompanyCompensationsHourly })
+    @SpeakeasyMetadata({ elemType: Hourly })
     @Expose({ name: "hourly" })
-    @Type(() => CompanyCompensationsHourly)
-    hourly?: CompanyCompensationsHourly[];
+    @Type(() => Hourly)
+    hourly?: Hourly[];
 
     /**
      * The available types of paid time off for the company.
      */
-    @SpeakeasyMetadata({ elemType: CompanyCompensationsPaidTimeOff })
+    @SpeakeasyMetadata({ elemType: CompanyPaidTimeOff })
     @Expose({ name: "paid_time_off" })
-    @Type(() => CompanyCompensationsPaidTimeOff)
-    paidTimeOff?: CompanyCompensationsPaidTimeOff[];
+    @Type(() => CompanyPaidTimeOff)
+    paidTimeOff?: CompanyPaidTimeOff[];
 }
 
 /**
  * The tax payer type of the company.
  */
-export enum CompanyEntityType {
+export enum EntityType {
     CCorporation = "C-Corporation",
     SCorporation = "S-Corporation",
     SoleProprietor = "Sole proprietor",
@@ -99,7 +99,7 @@ export enum CompanyEntityType {
 /**
  * The primary payroll admin of the company.
  */
-export class CompanyPrimaryPayrollAdmin extends SpeakeasyBase {
+export class PrimaryPayrollAdmin extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "email" })
     email?: string;
@@ -117,7 +117,7 @@ export class CompanyPrimaryPayrollAdmin extends SpeakeasyBase {
     phone?: string;
 }
 
-export class CompanyPrimarySignatoryHomeAddress extends SpeakeasyBase {
+export class CompanyHomeAddress extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "city" })
     city?: string;
@@ -146,7 +146,7 @@ export class CompanyPrimarySignatoryHomeAddress extends SpeakeasyBase {
 /**
  * The primary signatory of the company.
  */
-export class CompanyPrimarySignatory extends SpeakeasyBase {
+export class PrimarySignatory extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "email" })
     email?: string;
@@ -157,8 +157,8 @@ export class CompanyPrimarySignatory extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "home_address" })
-    @Type(() => CompanyPrimarySignatoryHomeAddress)
-    homeAddress?: CompanyPrimarySignatoryHomeAddress;
+    @Type(() => CompanyHomeAddress)
+    homeAddress?: CompanyHomeAddress;
 
     @SpeakeasyMetadata()
     @Expose({ name: "last_name" })
@@ -176,7 +176,7 @@ export class CompanyPrimarySignatory extends SpeakeasyBase {
 /**
  * The Gusto product tier of the company (not applicable to Embedded partner managed companies).
  */
-export enum CompanyTier {
+export enum Tier {
     Simple = "simple",
     Plus = "plus",
     Premium = "premium",
@@ -196,15 +196,15 @@ export class Company extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "company_status" })
-    companyStatus?: CompanyCompanyStatus;
+    companyStatus?: CompanyStatus;
 
     /**
      * The available company-wide compensation rates for the company.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "compensations" })
-    @Type(() => CompanyCompensations)
-    compensations?: CompanyCompensations;
+    @Type(() => Compensations)
+    compensations?: Compensations;
 
     /**
      * The Federal Employer Identification Number of the company.
@@ -218,7 +218,7 @@ export class Company extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "entity_type" })
-    entityType?: CompanyEntityType;
+    entityType?: EntityType;
 
     /**
      * Whether the company is fully managed by a partner via the API
@@ -254,23 +254,23 @@ export class Company extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "primary_payroll_admin" })
-    @Type(() => CompanyPrimaryPayrollAdmin)
-    primaryPayrollAdmin?: CompanyPrimaryPayrollAdmin;
+    @Type(() => PrimaryPayrollAdmin)
+    primaryPayrollAdmin?: PrimaryPayrollAdmin;
 
     /**
      * The primary signatory of the company.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "primary_signatory" })
-    @Type(() => CompanyPrimarySignatory)
-    primarySignatory?: CompanyPrimarySignatory;
+    @Type(() => PrimarySignatory)
+    primarySignatory?: PrimarySignatory;
 
     /**
      * The Gusto product tier of the company (not applicable to Embedded partner managed companies).
      */
     @SpeakeasyMetadata()
     @Expose({ name: "tier" })
-    tier?: CompanyTier;
+    tier?: Tier;
 
     /**
      * The trade name of the company.

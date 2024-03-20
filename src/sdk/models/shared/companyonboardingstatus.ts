@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class CompanyOnboardingStatusOnboardingStep extends SpeakeasyBase {
+export class OnboardingStep extends SpeakeasyBase {
     /**
      * The boolean flag indicating whether the step is completed or not.
      */
@@ -56,10 +56,10 @@ export class CompanyOnboardingStatus extends SpeakeasyBase {
     /**
      * a list of company onboarding steps
      */
-    @SpeakeasyMetadata({ elemType: CompanyOnboardingStatusOnboardingStep })
+    @SpeakeasyMetadata({ elemType: OnboardingStep })
     @Expose({ name: "onboarding_steps" })
-    @Type(() => CompanyOnboardingStatusOnboardingStep)
-    onboardingSteps?: CompanyOnboardingStatusOnboardingStep[];
+    @Type(() => OnboardingStep)
+    onboardingSteps?: OnboardingStep[];
 
     /**
      * the UUID of the company

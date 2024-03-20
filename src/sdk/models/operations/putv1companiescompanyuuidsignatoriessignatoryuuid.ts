@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress extends SpeakeasyBase {
+export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidHomeAddress extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "city" })
     city?: string;
@@ -40,8 +40,8 @@ export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBody extend
 
     @SpeakeasyMetadata()
     @Expose({ name: "home_address" })
-    @Type(() => PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress)
-    homeAddress?: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequestBodyHomeAddress;
+    @Type(() => PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidHomeAddress)
+    homeAddress?: PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidHomeAddress;
 
     @SpeakeasyMetadata()
     @Expose({ name: "last_name" })
@@ -89,6 +89,9 @@ export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidRequest extends Sp
 }
 
 export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -98,11 +101,17 @@ export class PutV1CompaniesCompanyUuidSignatoriesSignatoryUuidResponse extends S
     @SpeakeasyMetadata()
     signatory?: shared.Signatory;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

@@ -1,4 +1,5 @@
-# locations
+# Locations
+(*locations*)
 
 ### Available Operations
 
@@ -21,25 +22,26 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdLocationsRequest,
-  GetV1CompaniesCompanyIdLocationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdLocationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "atque";
-const page: number = 6719.57;
-const per: number = 7241.48;
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const page: number = 4858.9;
+const per: number = 6096.54;
 
-sdk.locations.getV1CompaniesCompanyIdLocations(companyId, page, per).then((res: GetV1CompaniesCompanyIdLocationsResponse) => {
+  const res = await sdk.locations.getV1CompaniesCompanyIdLocations(companyId, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -54,8 +56,12 @@ sdk.locations.getV1CompaniesCompanyIdLocations(companyId, page, per).then((res: 
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdLocationsResponse](../../models/operations/getv1companiescompanyidlocationsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdLocationsResponse](../../sdk/models/operations/getv1companiescompanyidlocationsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1LocationsLocationId
 
@@ -67,20 +73,24 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1LocationsLocationIdRequest, GetV1LocationsLocationIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1LocationsLocationIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const locationId: string = "tenetur";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const locationId: string = "<value>";
 
-sdk.locations.getV1LocationsLocationId(locationId).then((res: GetV1LocationsLocationIdResponse) => {
+  const res = await sdk.locations.getV1LocationsLocationId(locationId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -93,8 +103,12 @@ sdk.locations.getV1LocationsLocationId(locationId).then((res: GetV1LocationsLoca
 
 ### Response
 
-**Promise<[operations.GetV1LocationsLocationIdResponse](../../models/operations/getv1locationslocationidresponse.md)>**
+**Promise<[operations.GetV1LocationsLocationIdResponse](../../sdk/models/operations/getv1locationslocationidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1LocationsLocationUuidMinimumWages
 
@@ -106,24 +120,25 @@ scope: `companies:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1LocationsLocationUuidMinimumWagesRequest,
-  GetV1LocationsLocationUuidMinimumWagesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1LocationsLocationUuidMinimumWagesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const locationUuid: string = "laboriosam";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const locationUuid: string = "<value>";
 const effectiveDate: string = "2020-01-31";
 
-sdk.locations.getV1LocationsLocationUuidMinimumWages(locationUuid, effectiveDate).then((res: GetV1LocationsLocationUuidMinimumWagesResponse) => {
+  const res = await sdk.locations.getV1LocationsLocationUuidMinimumWages(locationUuid, effectiveDate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -137,8 +152,12 @@ sdk.locations.getV1LocationsLocationUuidMinimumWages(locationUuid, effectiveDate
 
 ### Response
 
-**Promise<[operations.GetV1LocationsLocationUuidMinimumWagesResponse](../../models/operations/getv1locationslocationuuidminimumwagesresponse.md)>**
+**Promise<[operations.GetV1LocationsLocationUuidMinimumWagesResponse](../../sdk/models/operations/getv1locationslocationuuidminimumwagesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1CompaniesCompanyIdLocationsJson
 
@@ -153,49 +172,52 @@ scope: `companies.write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdLocationsApplicationJSON,
   PostV1CompaniesCompanyIdLocationsJsonRequest,
-  PostV1CompaniesCompanyIdLocationsJsonResponse,
+  PostV1CompaniesCompanyIdLocationsJsonRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "alias";
-const requestBody: PostV1CompaniesCompanyIdLocationsApplicationJSON = {
-  city: "Lake Jackeline",
-  country: "Morocco",
-  filingAddress: false,
-  mailingAddress: false,
-  phoneNumber: "reiciendis",
-  state: "provident",
-  street1: "repellendus",
-  street2: "delectus",
-  zip: "voluptates",
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const requestBody: PostV1CompaniesCompanyIdLocationsJsonRequestBody = {
+  city: "New Svenberg",
+  phoneNumber: "<value>",
+  state: "South Dakota",
+  street1: "<value>",
+  zip: "45200-6236",
 };
 
-sdk.locations.postV1CompaniesCompanyIdLocationsJson(companyId, requestBody).then((res: PostV1CompaniesCompanyIdLocationsJsonResponse) => {
+  const res = await sdk.locations.postV1CompaniesCompanyIdLocationsJson(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `companyId`                                                                                                                                | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the company                                                                                                                    |
-| `requestBody`                                                                                                                              | [operations.PostV1CompaniesCompanyIdLocationsApplicationJSON](../../models/operations/postv1companiescompanyidlocationsapplicationjson.md) | :heavy_minus_sign:                                                                                                                         | Create a company location.                                                                                                                 |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                    | *string*                                                                                                                                       | :heavy_check_mark:                                                                                                                             | The UUID of the company                                                                                                                        |
+| `requestBody`                                                                                                                                  | [operations.PostV1CompaniesCompanyIdLocationsJsonRequestBody](../../sdk/models/operations/postv1companiescompanyidlocationsjsonrequestbody.md) | :heavy_minus_sign:                                                                                                                             | Create a company location.                                                                                                                     |
+| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
 
 
 ### Response
 
-**Promise<[operations.PostV1CompaniesCompanyIdLocationsJsonResponse](../../models/operations/postv1companiescompanyidlocationsjsonresponse.md)>**
+**Promise<[operations.PostV1CompaniesCompanyIdLocationsJsonResponse](../../sdk/models/operations/postv1companiescompanyidlocationsjsonresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1CompaniesCompanyIdLocationsRaw
 
@@ -210,24 +232,27 @@ scope: `companies.write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
-  PostV1CompaniesCompanyIdLocationsApplicationXML,
   PostV1CompaniesCompanyIdLocationsRawRequest,
-  PostV1CompaniesCompanyIdLocationsRawResponse,
+  PostV1CompaniesCompanyIdLocationsRequestBody,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "perferendis";
-const requestBody: Uint8Array = "est".encode();
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const requestBody: Uint8Array = new TextEncoder().encode("0x3754FF0f8f");
 
-sdk.locations.postV1CompaniesCompanyIdLocationsRaw(companyId, requestBody).then((res: PostV1CompaniesCompanyIdLocationsRawResponse) => {
+  const res = await sdk.locations.postV1CompaniesCompanyIdLocationsRaw(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -241,8 +266,12 @@ sdk.locations.postV1CompaniesCompanyIdLocationsRaw(companyId, requestBody).then(
 
 ### Response
 
-**Promise<[operations.PostV1CompaniesCompanyIdLocationsRawResponse](../../models/operations/postv1companiescompanyidlocationsrawresponse.md)>**
+**Promise<[operations.PostV1CompaniesCompanyIdLocationsRawResponse](../../sdk/models/operations/postv1companiescompanyidlocationsrawresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1LocationsLocationId
 
@@ -254,48 +283,43 @@ scope: `companies.write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1LocationsLocationIdRequest,
-  PutV1LocationsLocationIdRequestBody,
-  PutV1LocationsLocationIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1LocationsLocationIdRequest, PutV1LocationsLocationIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const locationId: string = "quidem";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const locationId: string = "<value>";
 const requestBody: PutV1LocationsLocationIdRequestBody = {
-  city: "Raquelchester",
-  country: "Lithuania",
-  filingAddress: false,
-  mailingAddress: false,
-  phoneNumber: "mollitia",
-  state: "veniam",
-  street1: "voluptatem",
-  street2: "quisquam",
-  version: "repudiandae",
-  zip: "quasi",
+  version: "<value>",
 };
 
-sdk.locations.putV1LocationsLocationId(locationId, requestBody).then((res: PutV1LocationsLocationIdResponse) => {
+  const res = await sdk.locations.putV1LocationsLocationId(locationId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `locationId`                                                                                                     | *string*                                                                                                         | :heavy_check_mark:                                                                                               | The UUID of the location                                                                                         |
-| `requestBody`                                                                                                    | [operations.PutV1LocationsLocationIdRequestBody](../../models/operations/putv1locationslocationidrequestbody.md) | :heavy_minus_sign:                                                                                               | Update a location                                                                                                |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `locationId`                                                                                                         | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | The UUID of the location                                                                                             |
+| `requestBody`                                                                                                        | [operations.PutV1LocationsLocationIdRequestBody](../../sdk/models/operations/putv1locationslocationidrequestbody.md) | :heavy_minus_sign:                                                                                                   | Update a location                                                                                                    |
+| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
 
 
 ### Response
 
-**Promise<[operations.PutV1LocationsLocationIdResponse](../../models/operations/putv1locationslocationidresponse.md)>**
+**Promise<[operations.PutV1LocationsLocationIdResponse](../../sdk/models/operations/putv1locationslocationidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

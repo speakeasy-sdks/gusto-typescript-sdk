@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class ExternalPayrollApplicableBenefits extends SpeakeasyBase {
+export class ApplicableBenefits extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "active" })
     active?: boolean;
@@ -19,7 +19,7 @@ export class ExternalPayrollApplicableBenefits extends SpeakeasyBase {
     id?: number;
 }
 
-export class ExternalPayrollApplicableEarnings extends SpeakeasyBase {
+export class ApplicableEarnings extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "category" })
     category?: string;
@@ -41,7 +41,7 @@ export class ExternalPayrollApplicableEarnings extends SpeakeasyBase {
     name?: string;
 }
 
-export class ExternalPayrollApplicableTaxes extends SpeakeasyBase {
+export class ApplicableTaxes extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id?: number;
@@ -51,7 +51,7 @@ export class ExternalPayrollApplicableTaxes extends SpeakeasyBase {
     name?: string;
 }
 
-export class ExternalPayrollExternalPayrollItemsBenefits extends SpeakeasyBase {
+export class Benefits extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "benefit_id" })
     benefitId?: number;
@@ -65,7 +65,7 @@ export class ExternalPayrollExternalPayrollItemsBenefits extends SpeakeasyBase {
     employeeDeductionAmount?: string;
 }
 
-export class ExternalPayrollExternalPayrollItemsEarnings extends SpeakeasyBase {
+export class Earnings extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
     amount?: string;
@@ -83,7 +83,7 @@ export class ExternalPayrollExternalPayrollItemsEarnings extends SpeakeasyBase {
     hours?: string;
 }
 
-export class ExternalPayrollExternalPayrollItemsTaxes extends SpeakeasyBase {
+export class ExternalPayrollTaxes extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
     amount?: string;
@@ -93,31 +93,31 @@ export class ExternalPayrollExternalPayrollItemsTaxes extends SpeakeasyBase {
     taxId?: number;
 }
 
-export class ExternalPayrollExternalPayrollItems extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItemsBenefits })
+export class ExternalPayrollItems extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: Benefits })
     @Expose({ name: "benefits" })
-    @Type(() => ExternalPayrollExternalPayrollItemsBenefits)
-    benefits?: ExternalPayrollExternalPayrollItemsBenefits[];
+    @Type(() => Benefits)
+    benefits?: Benefits[];
 
-    @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItemsEarnings })
+    @SpeakeasyMetadata({ elemType: Earnings })
     @Expose({ name: "earnings" })
-    @Type(() => ExternalPayrollExternalPayrollItemsEarnings)
-    earnings?: ExternalPayrollExternalPayrollItemsEarnings[];
+    @Type(() => Earnings)
+    earnings?: Earnings[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "employee_uuid" })
     employeeUuid?: string;
 
-    @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItemsTaxes })
+    @SpeakeasyMetadata({ elemType: ExternalPayrollTaxes })
     @Expose({ name: "taxes" })
-    @Type(() => ExternalPayrollExternalPayrollItemsTaxes)
-    taxes?: ExternalPayrollExternalPayrollItemsTaxes[];
+    @Type(() => ExternalPayrollTaxes)
+    taxes?: ExternalPayrollTaxes[];
 }
 
 /**
  * Stores metadata of the external payroll.
  */
-export class ExternalPayrollMetadata extends SpeakeasyBase {
+export class Metadata extends SpeakeasyBase {
     /**
      * Determines if the external payroll can be deleted.
      */
@@ -133,26 +133,26 @@ export class ExternalPayroll extends SpeakeasyBase {
     /**
      * Applicable benefits based on company provisioning.
      */
-    @SpeakeasyMetadata({ elemType: ExternalPayrollApplicableBenefits })
+    @SpeakeasyMetadata({ elemType: ApplicableBenefits })
     @Expose({ name: "applicable_benefits" })
-    @Type(() => ExternalPayrollApplicableBenefits)
-    applicableBenefits?: ExternalPayrollApplicableBenefits[];
+    @Type(() => ApplicableBenefits)
+    applicableBenefits?: ApplicableBenefits[];
 
     /**
      * Applicable earnings based on company provisioning.
      */
-    @SpeakeasyMetadata({ elemType: ExternalPayrollApplicableEarnings })
+    @SpeakeasyMetadata({ elemType: ApplicableEarnings })
     @Expose({ name: "applicable_earnings" })
-    @Type(() => ExternalPayrollApplicableEarnings)
-    applicableEarnings?: ExternalPayrollApplicableEarnings[];
+    @Type(() => ApplicableEarnings)
+    applicableEarnings?: ApplicableEarnings[];
 
     /**
      * Applicable taxes based on company provisioning.
      */
-    @SpeakeasyMetadata({ elemType: ExternalPayrollApplicableTaxes })
+    @SpeakeasyMetadata({ elemType: ApplicableTaxes })
     @Expose({ name: "applicable_taxes" })
-    @Type(() => ExternalPayrollApplicableTaxes)
-    applicableTaxes?: ExternalPayrollApplicableTaxes[];
+    @Type(() => ApplicableTaxes)
+    applicableTaxes?: ApplicableTaxes[];
 
     /**
      * External payroll's check date.
@@ -171,18 +171,18 @@ export class ExternalPayroll extends SpeakeasyBase {
     /**
      * External payroll items for employees
      */
-    @SpeakeasyMetadata({ elemType: ExternalPayrollExternalPayrollItems })
+    @SpeakeasyMetadata({ elemType: ExternalPayrollItems })
     @Expose({ name: "external_payroll_items" })
-    @Type(() => ExternalPayrollExternalPayrollItems)
-    externalPayrollItems?: ExternalPayrollExternalPayrollItems[];
+    @Type(() => ExternalPayrollItems)
+    externalPayrollItems?: ExternalPayrollItems[];
 
     /**
      * Stores metadata of the external payroll.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    @Type(() => ExternalPayrollMetadata)
-    metadata?: ExternalPayrollMetadata;
+    @Type(() => Metadata)
+    metadata?: Metadata;
 
     /**
      * External payroll's pay period end date.

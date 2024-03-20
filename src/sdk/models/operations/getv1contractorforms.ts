@@ -14,7 +14,7 @@ export class GetV1ContractorFormsRequest extends SpeakeasyBase {
     contractorUuid: string;
 }
 
-export class GetV1ContractorFormsForm extends SpeakeasyBase {
+export class Form extends SpeakeasyBase {
     /**
      * The contractor uuid
      */
@@ -66,18 +66,27 @@ export class GetV1ContractorFormsForm extends SpeakeasyBase {
 }
 
 export class GetV1ContractorFormsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Example response
      */
-    @SpeakeasyMetadata({ elemType: GetV1ContractorFormsForm })
-    getV1ContractorFormsFormAnies?: GetV1ContractorFormsForm[];
+    @SpeakeasyMetadata({ elemType: Form })
+    classes?: Form[];
 }

@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBodyEmployees extends SpeakeasyBase {
+export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceEmployees extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "balance" })
     balance?: string;
@@ -21,12 +21,10 @@ export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBodyEmploye
  * A list of employee objects containing the employee uuid and time off hours balance
  */
 export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBody extends SpeakeasyBase {
-    @SpeakeasyMetadata({
-        elemType: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBodyEmployees,
-    })
+    @SpeakeasyMetadata({ elemType: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceEmployees })
     @Expose({ name: "employees" })
-    @Type(() => PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBodyEmployees)
-    employees?: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequestBodyEmployees[];
+    @Type(() => PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceEmployees)
+    employees?: PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceEmployees[];
 }
 
 export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequest extends SpeakeasyBase {
@@ -44,14 +42,23 @@ export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceRequest extends Sp
 }
 
 export class PutVersionTimeOffPoliciesTimeOffPolicyUuidBalanceResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * OK

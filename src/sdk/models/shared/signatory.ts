@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class SignatoryHomeAddress extends SpeakeasyBase {
+export class HomeAddress extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "city" })
     city?: string;
@@ -42,7 +42,7 @@ export class SignatoryHomeAddress extends SpeakeasyBase {
  * | Skipped | Signatory cannot sign Form 8655 until the form is manually uploaded as wet-signed |
  * | null | Identity verification process has not been completed |
  */
-export enum SignatoryIdentityVerificationStatus {
+export enum IdentityVerificationStatus {
     Pass = "Pass",
     Fail = "Fail",
     Skipped = "Skipped",
@@ -73,8 +73,8 @@ export class Signatory extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "home_address" })
-    @Type(() => SignatoryHomeAddress)
-    homeAddress?: SignatoryHomeAddress;
+    @Type(() => HomeAddress)
+    homeAddress?: HomeAddress;
 
     /**
      * |   |   |
@@ -89,7 +89,7 @@ export class Signatory extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "identity_verification_status" })
-    identityVerificationStatus?: SignatoryIdentityVerificationStatus;
+    identityVerificationStatus?: IdentityVerificationStatus;
 
     /**
      * Whether or not the signatory is also the payroll admin of the company.

@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostV1PartnerManagedCompaniesRequestBodyCompany extends SpeakeasyBase {
+export class Company extends SpeakeasyBase {
     /**
      * The employer identification number (EIN) of the company.
      */
@@ -33,7 +33,7 @@ export class PostV1PartnerManagedCompaniesRequestBodyCompany extends SpeakeasyBa
 /**
  * Information for the user who will be the primary payroll administrator for the new company.
  */
-export class PostV1PartnerManagedCompaniesRequestBodyUser extends SpeakeasyBase {
+export class User extends SpeakeasyBase {
     /**
      * The email of the user who will be the primary payroll admin.
      */
@@ -66,22 +66,22 @@ export class PostV1PartnerManagedCompaniesRequestBodyUser extends SpeakeasyBase 
 export class PostV1PartnerManagedCompaniesRequestBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "company" })
-    @Type(() => PostV1PartnerManagedCompaniesRequestBodyCompany)
-    company: PostV1PartnerManagedCompaniesRequestBodyCompany;
+    @Type(() => Company)
+    company: Company;
 
     /**
      * Information for the user who will be the primary payroll administrator for the new company.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "user" })
-    @Type(() => PostV1PartnerManagedCompaniesRequestBodyUser)
-    user: PostV1PartnerManagedCompaniesRequestBodyUser;
+    @Type(() => User)
+    user: User;
 }
 
 /**
  * Object returned when creating a partner managed company
  */
-export class PostV1PartnerManagedCompanies200ApplicationJSON extends SpeakeasyBase {
+export class PostV1PartnerManagedCompaniesResponseBody extends SpeakeasyBase {
     /**
      * Access token that can be used for OAuth access to the account. Access tokens expire 2 hours after they are issued.
      */
@@ -105,14 +105,23 @@ export class PostV1PartnerManagedCompanies200ApplicationJSON extends SpeakeasyBa
 }
 
 export class PostV1PartnerManagedCompaniesResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity
@@ -129,5 +138,5 @@ export class PostV1PartnerManagedCompaniesResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    postV1PartnerManagedCompanies200ApplicationJSONObject?: PostV1PartnerManagedCompanies200ApplicationJSON;
+    object?: PostV1PartnerManagedCompaniesResponseBody;
 }

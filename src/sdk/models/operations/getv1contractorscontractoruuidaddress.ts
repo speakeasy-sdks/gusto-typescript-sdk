@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1ContractorsContractorUuidAddressRequest extends SpeakeasyBase {
@@ -15,6 +15,9 @@ export class GetV1ContractorsContractorUuidAddressRequest extends SpeakeasyBase 
 }
 
 export class GetV1ContractorsContractorUuidAddressResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -22,11 +25,17 @@ export class GetV1ContractorsContractorUuidAddressResponse extends SpeakeasyBase
      * Example response
      */
     @SpeakeasyMetadata()
-    contractorAddress?: shared.ContractorAddress1;
+    contractorAddress?: shared.ContractorAddress;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 }

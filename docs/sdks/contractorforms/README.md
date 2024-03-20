@@ -1,4 +1,5 @@
-# contractorForms
+# ContractorForms
+(*contractorForms*)
 
 ### Available Operations
 
@@ -15,21 +16,25 @@ Get a contractor form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormRequest, GetV1ContractorFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorFormRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "assumenda";
-const formId: string = "ipsam";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const contractorUuid: string = "<value>";
+const formId: string = "<value>";
 
-sdk.contractorForms.getV1ContractorForm(contractorUuid, formId).then((res: GetV1ContractorFormResponse) => {
+  const res = await sdk.contractorForms.getV1ContractorForm(contractorUuid, formId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -43,8 +48,12 @@ sdk.contractorForms.getV1ContractorForm(contractorUuid, formId).then((res: GetV1
 
 ### Response
 
-**Promise<[operations.GetV1ContractorFormResponse](../../models/operations/getv1contractorformresponse.md)>**
+**Promise<[operations.GetV1ContractorFormResponse](../../sdk/models/operations/getv1contractorformresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1ContractorFormPdf
 
@@ -54,21 +63,25 @@ Get the link to the form PDF
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormPdfRequest, GetV1ContractorFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorFormPdfRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "alias";
-const formId: string = "fugit";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const contractorUuid: string = "<value>";
+const formId: string = "<value>";
 
-sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId).then((res: GetV1ContractorFormPdfResponse) => {
+  const res = await sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -82,8 +95,12 @@ sdk.contractorForms.getV1ContractorFormPdf(contractorUuid, formId).then((res: Ge
 
 ### Response
 
-**Promise<[operations.GetV1ContractorFormPdfResponse](../../models/operations/getv1contractorformpdfresponse.md)>**
+**Promise<[operations.GetV1ContractorFormPdfResponse](../../sdk/models/operations/getv1contractorformpdfresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1ContractorForms
 
@@ -93,20 +110,24 @@ Get a list of all contractor's forms
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorFormsRequest, GetV1ContractorFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "dolorum";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const contractorUuid: string = "<value>";
 
-sdk.contractorForms.getV1ContractorForms(contractorUuid).then((res: GetV1ContractorFormsResponse) => {
+  const res = await sdk.contractorForms.getV1ContractorForms(contractorUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -119,8 +140,12 @@ sdk.contractorForms.getV1ContractorForms(contractorUuid).then((res: GetV1Contrac
 
 ### Response
 
-**Promise<[operations.GetV1ContractorFormsResponse](../../models/operations/getv1contractorformsresponse.md)>**
+**Promise<[operations.GetV1ContractorFormsResponse](../../sdk/models/operations/getv1contractorformsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1SandboxGenerate1099
 
@@ -137,33 +162,39 @@ Generates a 1099 document for testing purposes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1SandboxGenerate1099Response } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
 
-sdk.contractorForms.postV1SandboxGenerate1099({
-  contractorId: "excepturi",
-  year: 270008,
-}).then((res: PostV1SandboxGenerate1099Response) => {
+  const res = await sdk.contractorForms.postV1SandboxGenerate1099({
+    contractorId: "<value>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PostV1SandboxGenerate1099RequestBody](../../models/operations/postv1sandboxgenerate1099requestbody.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                              | [operations.PostV1SandboxGenerate1099RequestBody](../../sdk/models/operations/postv1sandboxgenerate1099requestbody.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
 
 
 ### Response
 
-**Promise<[operations.PostV1SandboxGenerate1099Response](../../models/operations/postv1sandboxgenerate1099response.md)>**
+**Promise<[operations.PostV1SandboxGenerate1099Response](../../sdk/models/operations/postv1sandboxgenerate1099response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

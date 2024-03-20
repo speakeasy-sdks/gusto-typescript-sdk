@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType {
+export enum PostV1EmployeesEmployeeIdBankAccountsAccountType {
     Checking = "Checking",
     Savings = "Savings",
 }
@@ -19,7 +19,7 @@ export class PostV1EmployeesEmployeeIdBankAccountsRequestBody extends SpeakeasyB
 
     @SpeakeasyMetadata()
     @Expose({ name: "account_type" })
-    accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType;
+    accountType: PostV1EmployeesEmployeeIdBankAccountsAccountType;
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
@@ -42,6 +42,9 @@ export class PostV1EmployeesEmployeeIdBankAccountsRequest extends SpeakeasyBase 
 }
 
 export class PostV1EmployeesEmployeeIdBankAccountsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -51,11 +54,17 @@ export class PostV1EmployeesEmployeeIdBankAccountsResponse extends SpeakeasyBase
     @SpeakeasyMetadata()
     employeeBankAccount?: shared.EmployeeBankAccount;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

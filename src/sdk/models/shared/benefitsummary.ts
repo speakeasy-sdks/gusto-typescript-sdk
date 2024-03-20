@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class BenefitSummaryEmployeesPayrollBenefitsPayPeriod extends SpeakeasyBase {
+export class BenefitSummaryPayPeriod extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "end_date" })
     endDate?: string;
@@ -15,7 +15,7 @@ export class BenefitSummaryEmployeesPayrollBenefitsPayPeriod extends SpeakeasyBa
     startDate?: string;
 }
 
-export class BenefitSummaryEmployeesPayrollBenefits extends SpeakeasyBase {
+export class PayrollBenefits extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "check_date" })
     checkDate?: string;
@@ -34,8 +34,8 @@ export class BenefitSummaryEmployeesPayrollBenefits extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "pay_period" })
-    @Type(() => BenefitSummaryEmployeesPayrollBenefitsPayPeriod)
-    payPeriod?: BenefitSummaryEmployeesPayrollBenefitsPayPeriod;
+    @Type(() => BenefitSummaryPayPeriod)
+    payPeriod?: BenefitSummaryPayPeriod;
 
     /**
      * Whether it is regular or bonus payroll
@@ -49,7 +49,7 @@ export class BenefitSummaryEmployeesPayrollBenefits extends SpeakeasyBase {
     payrollUuid?: string;
 }
 
-export class BenefitSummaryEmployees extends SpeakeasyBase {
+export class Employees extends SpeakeasyBase {
     /**
      * Sum of company contribution given the period of time for this specific employee.
      */
@@ -87,8 +87,8 @@ export class BenefitSummaryEmployees extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "payroll_benefits" })
-    @Type(() => BenefitSummaryEmployeesPayrollBenefits)
-    payrollBenefits?: BenefitSummaryEmployeesPayrollBenefits;
+    @Type(() => PayrollBenefits)
+    payrollBenefits?: PayrollBenefits;
 
     /**
      * The UUID of the employee
@@ -98,9 +98,6 @@ export class BenefitSummaryEmployees extends SpeakeasyBase {
     uuid?: string;
 }
 
-/**
- * Benefit summary response
- */
 export class BenefitSummary extends SpeakeasyBase {
     /**
      * The aggregate of company contribution for all employees given the period of time and benefit type.
@@ -125,8 +122,8 @@ export class BenefitSummary extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "employees" })
-    @Type(() => BenefitSummaryEmployees)
-    employees?: BenefitSummaryEmployees;
+    @Type(() => Employees)
+    employees?: Employees;
 
     /**
      * The end date of benefit summary.

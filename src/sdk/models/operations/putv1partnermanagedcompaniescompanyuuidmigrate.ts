@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
@@ -44,7 +44,7 @@ export class PutV1PartnerManagedCompaniesCompanyUuidMigrateRequest extends Speak
 /**
  * Example response
  */
-export class PutV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSON extends SpeakeasyBase {
+export class PutV1PartnerManagedCompaniesCompanyUuidMigrateResponseBody extends SpeakeasyBase {
     /**
      * The company UUID
      */
@@ -61,14 +61,23 @@ export class PutV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSON ex
 }
 
 export class PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity
@@ -85,5 +94,5 @@ export class PutV1PartnerManagedCompaniesCompanyUuidMigrateResponse extends Spea
      * Example response
      */
     @SpeakeasyMetadata()
-    putV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSONObject?: PutV1PartnerManagedCompaniesCompanyUuidMigrate200ApplicationJSON;
+    object?: PutV1PartnerManagedCompaniesCompanyUuidMigrateResponseBody;
 }

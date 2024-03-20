@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class DepartmentContractors extends SpeakeasyBase {
+export class Contractors extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "uuid" })
     uuid?: string;
@@ -17,9 +17,6 @@ export class DepartmentEmployees extends SpeakeasyBase {
     uuid?: string;
 }
 
-/**
- * Department Object Example
- */
 export class Department extends SpeakeasyBase {
     /**
      * The UUID of the company
@@ -31,10 +28,10 @@ export class Department extends SpeakeasyBase {
     /**
      * Array of contractors assigned to the department.
      */
-    @SpeakeasyMetadata({ elemType: DepartmentContractors })
+    @SpeakeasyMetadata({ elemType: Contractors })
     @Expose({ name: "contractors" })
-    @Type(() => DepartmentContractors)
-    contractors?: DepartmentContractors[];
+    @Type(() => Contractors)
+    contractors?: Contractors[];
 
     /**
      * Array of employees assigned to the department.

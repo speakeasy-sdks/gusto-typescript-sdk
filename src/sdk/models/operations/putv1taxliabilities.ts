@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1TaxLiabilitiesRequestBodyLiabilitySelections extends SpeakeasyBase {
+export class LiabilitySelections extends SpeakeasyBase {
     /**
      * The UUID of the last unpaid external payroll uuid. It should be null when the full amount of tax liability has been paid.
      */
@@ -31,10 +31,10 @@ export class PutV1TaxLiabilitiesRequestBodyLiabilitySelections extends Speakeasy
 }
 
 export class PutV1TaxLiabilitiesRequestBody extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: PutV1TaxLiabilitiesRequestBodyLiabilitySelections })
+    @SpeakeasyMetadata({ elemType: LiabilitySelections })
     @Expose({ name: "liability_selections" })
-    @Type(() => PutV1TaxLiabilitiesRequestBodyLiabilitySelections)
-    liabilitySelections?: PutV1TaxLiabilitiesRequestBodyLiabilitySelections[];
+    @Type(() => LiabilitySelections)
+    liabilitySelections?: LiabilitySelections[];
 }
 
 export class PutV1TaxLiabilitiesRequest extends SpeakeasyBase {
@@ -49,20 +49,23 @@ export class PutV1TaxLiabilitiesRequest extends SpeakeasyBase {
 }
 
 export class PutV1TaxLiabilitiesResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
-    @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
-
     /**
-     * Example response
+     * Raw HTTP response; suitable for custom response parsing
      */
-    @SpeakeasyMetadata({ elemType: shared.TaxLiabilitiesSelections })
-    taxLiabilitiesSelections?: shared.TaxLiabilitiesSelections[];
+    @SpeakeasyMetadata()
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity
@@ -74,4 +77,10 @@ export class PutV1TaxLiabilitiesResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     unprocessableEntityErrorObject?: shared.UnprocessableEntityErrorObject;
+
+    /**
+     * Example response
+     */
+    @SpeakeasyMetadata({ elemType: shared.TaxLiabilitiesSelections })
+    classes?: shared.TaxLiabilitiesSelections[];
 }

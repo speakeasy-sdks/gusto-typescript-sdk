@@ -1,4 +1,5 @@
-# flows
+# Flows
+(*flows*)
 
 ### Available Operations
 
@@ -12,42 +13,43 @@ Generate a link to access a pre-built workflow in Gusto white-label UI. For secu
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1CompanyFlowsRequest,
-  PostV1CompanyFlowsRequestBody,
-  PostV1CompanyFlowsRequestBodyEntityType,
-  PostV1CompanyFlowsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { EntityType, PostV1CompanyFlowsRequest, PostV1CompanyFlowsRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "quidem";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
 const requestBody: PostV1CompanyFlowsRequestBody = {
-  entityType: PostV1CompanyFlowsRequestBodyEntityType.Employee,
-  entityUuid: "necessitatibus",
-  flowType: "dolore",
+  flowType: "<value>",
 };
 
-sdk.flows.postV1CompanyFlows(companyUuid, requestBody).then((res: PostV1CompanyFlowsResponse) => {
+  const res = await sdk.flows.postV1CompanyFlows(companyUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                        | *string*                                                                                             | :heavy_check_mark:                                                                                   | The UUID of the company                                                                              |
-| `requestBody`                                                                                        | [operations.PostV1CompanyFlowsRequestBody](../../models/operations/postv1companyflowsrequestbody.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                            | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The UUID of the company                                                                                  |
+| `requestBody`                                                                                            | [operations.PostV1CompanyFlowsRequestBody](../../sdk/models/operations/postv1companyflowsrequestbody.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
 
-**Promise<[operations.PostV1CompanyFlowsResponse](../../models/operations/postv1companyflowsresponse.md)>**
+**Promise<[operations.PostV1CompanyFlowsResponse](../../sdk/models/operations/postv1companyflowsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

@@ -8,7 +8,7 @@ import { Expose } from "class-transformer";
 /**
  * The payment method.
  */
-export enum ContractorPaymentPaymentMethod {
+export enum PaymentMethod {
     DirectDeposit = "Direct Deposit",
     Check = "Check",
     HistoricalPayment = "Historical Payment",
@@ -18,7 +18,7 @@ export enum ContractorPaymentPaymentMethod {
 /**
  * Contractor payment status
  */
-export enum ContractorPaymentStatus {
+export enum Status {
     Funded = "Funded",
     Unfunded = "Unfunded",
 }
@@ -26,7 +26,7 @@ export enum ContractorPaymentStatus {
 /**
  * The wage type for the payment.
  */
-export enum ContractorPaymentWageType {
+export enum WageType {
     Hourly = "Hourly",
     Fixed = "Fixed",
 }
@@ -82,7 +82,7 @@ export class ContractorPayment extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "payment_method" })
-    paymentMethod?: ContractorPaymentPaymentMethod;
+    paymentMethod?: PaymentMethod;
 
     /**
      * The reimbursement amount in the payment.
@@ -96,7 +96,7 @@ export class ContractorPayment extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
-    status?: ContractorPaymentStatus;
+    status?: Status;
 
     /**
      * The unique identifier of the contractor payment in Gusto.
@@ -124,5 +124,5 @@ export class ContractorPayment extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "wage_type" })
-    wageType?: ContractorPaymentWageType;
+    wageType?: WageType;
 }

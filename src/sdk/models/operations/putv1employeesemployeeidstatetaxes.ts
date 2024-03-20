@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers extends SpeakeasyBase {
+export class Answers extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "valid_from" })
     validFrom: string;
@@ -21,24 +21,22 @@ export class PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers
     value: string;
 }
 
-export class PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions extends SpeakeasyBase {
-    @SpeakeasyMetadata({
-        elemType: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers,
-    })
+export class Questions extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: Answers })
     @Expose({ name: "answers" })
-    @Type(() => PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers)
-    answers?: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers[];
+    @Type(() => Answers)
+    answers?: Answers[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "key" })
     key: string;
 }
 
-export class PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions })
+export class States extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: Questions })
     @Expose({ name: "questions" })
-    @Type(() => PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions)
-    questions?: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions[];
+    @Type(() => Questions)
+    questions?: Questions[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "state" })
@@ -50,10 +48,10 @@ export class PutV1EmployeesEmployeeIdStateTaxesRequestBody extends SpeakeasyBase
     @Expose({ name: "employee_id" })
     employeeId: string;
 
-    @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates })
+    @SpeakeasyMetadata({ elemType: States })
     @Expose({ name: "states" })
-    @Type(() => PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates)
-    states: PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates[];
+    @Type(() => States)
+    states: States[];
 }
 
 export class PutV1EmployeesEmployeeIdStateTaxesRequest extends SpeakeasyBase {
@@ -67,7 +65,7 @@ export class PutV1EmployeesEmployeeIdStateTaxesRequest extends SpeakeasyBase {
     requestBody?: PutV1EmployeesEmployeeIdStateTaxesRequestBody;
 }
 
-export class PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswers extends SpeakeasyBase {
+export class PutV1EmployeesEmployeeIdStateTaxesAnswers extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "errors" })
     errors?: string[];
@@ -81,24 +79,22 @@ export class PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswer
     validUpTo?: any;
 }
 
-export class PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestions extends SpeakeasyBase {
-    @SpeakeasyMetadata({
-        elemType: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswers,
-    })
+export class PutV1EmployeesEmployeeIdStateTaxesQuestions extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxesAnswers })
     @Expose({ name: "answers" })
-    @Type(() => PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswers)
-    answers?: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestionsAnswers[];
+    @Type(() => PutV1EmployeesEmployeeIdStateTaxesAnswers)
+    answers?: PutV1EmployeesEmployeeIdStateTaxesAnswers[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "key" })
     key: string;
 }
 
-export class PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestions })
+export class ResponseBody extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxesQuestions })
     @Expose({ name: "questions" })
-    @Type(() => PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestions)
-    questions: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSONQuestions[];
+    @Type(() => PutV1EmployeesEmployeeIdStateTaxesQuestions)
+    questions: PutV1EmployeesEmployeeIdStateTaxesQuestions[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "state" })
@@ -106,24 +102,33 @@ export class PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON extends Speake
 }
 
 export class PutV1EmployeesEmployeeIdStateTaxesResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
+
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
+
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse: AxiosResponse;
 
     /**
      * Example response
      */
     @SpeakeasyMetadata({ elemType: shared.EmployeeStateTax })
-    employeeStateTaxes?: shared.EmployeeStateTax[];
-
-    @SpeakeasyMetadata()
-    statusCode: number;
-
-    @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    classes?: shared.EmployeeStateTax[];
 
     /**
      * Unprocessable Entity (WebDAV)
      */
-    @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON })
-    putV1EmployeesEmployeeIdStateTaxes422ApplicationJSONObjects?: PutV1EmployeesEmployeeIdStateTaxes422ApplicationJSON[];
+    @SpeakeasyMetadata({ elemType: ResponseBody })
+    classes1?: ResponseBody[];
 }

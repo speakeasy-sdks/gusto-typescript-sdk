@@ -1,4 +1,5 @@
-# user
+# User
+(*user*)
 
 ### Available Operations
 
@@ -16,19 +17,22 @@ The employees:read scope is required to return non-work locations.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1MeResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
 
-sdk.user.getV1Me().then((res: GetV1MeResponse) => {
+  const res = await sdk.user.getV1Me();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -40,5 +44,9 @@ sdk.user.getV1Me().then((res: GetV1MeResponse) => {
 
 ### Response
 
-**Promise<[operations.GetV1MeResponse](../../models/operations/getv1meresponse.md)>**
+**Promise<[operations.GetV1MeResponse](../../sdk/models/operations/getv1meresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

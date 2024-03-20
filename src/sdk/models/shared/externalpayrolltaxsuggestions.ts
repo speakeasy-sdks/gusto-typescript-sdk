@@ -8,7 +8,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * Possible tax liabilities selections.
  */
-export class ExternalPayrollTaxSuggestionsTaxSuggestions extends SpeakeasyBase {
+export class TaxSuggestions extends SpeakeasyBase {
     /**
      * Calculated tax amount.
      */
@@ -40,6 +40,6 @@ export class ExternalPayrollTaxSuggestions extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "tax_suggestions" })
-    @Type(() => ExternalPayrollTaxSuggestionsTaxSuggestions)
-    taxSuggestions?: ExternalPayrollTaxSuggestionsTaxSuggestions;
+    @Type(() => TaxSuggestions)
+    taxSuggestions?: TaxSuggestions;
 }

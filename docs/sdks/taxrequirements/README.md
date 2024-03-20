@@ -1,4 +1,5 @@
-# taxRequirements
+# TaxRequirements
+(*taxRequirements*)
 
 ### Available Operations
 
@@ -14,23 +15,24 @@ Returns objects describing the states that have tax requirements for the company
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyUuidTaxRequirementsRequest,
-  GetV1CompaniesCompanyUuidTaxRequirementsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyUuidTaxRequirementsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "neque";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
 
-sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid).then((res: GetV1CompaniesCompanyUuidTaxRequirementsResponse) => {
+  const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -43,8 +45,12 @@ sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirements(companyUuid).then((
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse](../../models/operations/getv1companiescompanyuuidtaxrequirementsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyUuidTaxRequirementsResponse](../../sdk/models/operations/getv1companiescompanyuuidtaxrequirementsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompaniesCompanyUuidTaxRequirementsState
 
@@ -94,25 +100,26 @@ Get all tax requirements for a given state.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyUuidTaxRequirementsStateRequest,
-  GetV1CompaniesCompanyUuidTaxRequirementsStateResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyUuidTaxRequirementsStateRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "exercitationem";
-const state: string = "itaque";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
+const state: string = "<value>";
 const scheduling: boolean = false;
 
-sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling).then((res: GetV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
+  const res = await sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, scheduling);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -127,8 +134,12 @@ sdk.taxRequirements.getV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, s
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse](../../models/operations/getv1companiescompanyuuidtaxrequirementsstateresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyUuidTaxRequirementsStateResponse](../../sdk/models/operations/getv1companiescompanyuuidtaxrequirementsstateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompaniesCompanyUuidTaxRequirementsState
 
@@ -141,102 +152,53 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1CompaniesCompanyUuidTaxRequirementsStateRequest,
   PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody,
-  PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSets,
-  PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBodyRequirementSetsRequirements,
-  PutV1CompaniesCompanyUuidTaxRequirementsStateResponse,
+  Requirements,
+  RequirementSets,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "et";
-const state: string = "ipsum";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
+const state: string = "<value>";
 const requestBody: PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody = {
   requirementSets: [
     {
-      effectiveFrom: "nulla",
-      key: "distinctio",
       requirements: [
-        {
-          key: "quia",
-          value: "quia",
-        },
-        {
-          key: "nostrum",
-          value: "omnis",
-        },
-        {
-          key: "libero",
-          value: "dicta",
-        },
-        {
-          key: "id",
-          value: "libero",
-        },
+        {},
       ],
-      state: "fugiat",
-    },
-    {
-      effectiveFrom: "officia",
-      key: "quos",
-      requirements: [
-        {
-          key: "sit",
-          value: "iusto",
-        },
-        {
-          key: "ipsa",
-          value: "voluptates",
-        },
-        {
-          key: "inventore",
-          value: "aperiam",
-        },
-        {
-          key: "totam",
-          value: "dolore",
-        },
-      ],
-      state: "eligendi",
-    },
-    {
-      effectiveFrom: "distinctio",
-      key: "voluptatem",
-      requirements: [
-        {
-          key: "esse",
-          value: "dolores",
-        },
-        {
-          key: "assumenda",
-          value: "beatae",
-        },
-      ],
-      state: "est",
     },
   ],
 };
 
-sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, requestBody).then((res: PutV1CompaniesCompanyUuidTaxRequirementsStateResponse) => {
+  const res = await sdk.taxRequirements.putV1CompaniesCompanyUuidTaxRequirementsState(companyUuid, state, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                  | Type                                                                                                                                                       | Required                                                                                                                                                   | Description                                                                                                                                                |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                                                                              | *string*                                                                                                                                                   | :heavy_check_mark:                                                                                                                                         | The UUID of the company                                                                                                                                    |
-| `state`                                                                                                                                                    | *string*                                                                                                                                                   | :heavy_check_mark:                                                                                                                                         | 2-letter US state abbreviation                                                                                                                             |
-| `requestBody`                                                                                                                                              | [operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody](../../models/operations/putv1companiescompanyuuidtaxrequirementsstaterequestbody.md) | :heavy_minus_sign:                                                                                                                                         | N/A                                                                                                                                                        |
-| `config`                                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                               | :heavy_minus_sign:                                                                                                                                         | Available config options for making requests.                                                                                                              |
+| Parameter                                                                                                                                                      | Type                                                                                                                                                           | Required                                                                                                                                                       | Description                                                                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                                                                  | *string*                                                                                                                                                       | :heavy_check_mark:                                                                                                                                             | The UUID of the company                                                                                                                                        |
+| `state`                                                                                                                                                        | *string*                                                                                                                                                       | :heavy_check_mark:                                                                                                                                             | 2-letter US state abbreviation                                                                                                                                 |
+| `requestBody`                                                                                                                                                  | [operations.PutV1CompaniesCompanyUuidTaxRequirementsStateRequestBody](../../sdk/models/operations/putv1companiescompanyuuidtaxrequirementsstaterequestbody.md) | :heavy_minus_sign:                                                                                                                                             | N/A                                                                                                                                                            |
+| `config`                                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                   | :heavy_minus_sign:                                                                                                                                             | Available config options for making requests.                                                                                                                  |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse](../../models/operations/putv1companiescompanyuuidtaxrequirementsstateresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyUuidTaxRequirementsStateResponse](../../sdk/models/operations/putv1companiescompanyuuidtaxrequirementsstateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

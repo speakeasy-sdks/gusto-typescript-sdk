@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 /**
  * The frequency that employees on this pay schedule are paid with Gusto.
  */
-export enum PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency {
+export enum Frequency {
     EveryWeek = "Every week",
     EveryOtherWeek = "Every other week",
     TwicePerMonth = "Twice per month",
@@ -51,7 +51,7 @@ export class PostV1CompaniesCompanyIdPaySchedulesRequestBody extends SpeakeasyBa
      */
     @SpeakeasyMetadata()
     @Expose({ name: "frequency" })
-    frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency;
+    frequency: Frequency;
 }
 
 export class PostV1CompaniesCompanyIdPaySchedulesRequest extends SpeakeasyBase {
@@ -66,6 +66,9 @@ export class PostV1CompaniesCompanyIdPaySchedulesRequest extends SpeakeasyBase {
 }
 
 export class PostV1CompaniesCompanyIdPaySchedulesResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -75,11 +78,17 @@ export class PostV1CompaniesCompanyIdPaySchedulesResponse extends SpeakeasyBase 
     @SpeakeasyMetadata()
     paySchedule?: shared.PaySchedule;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

@@ -1,4 +1,5 @@
-# webhookSubscriptions
+# WebhookSubscriptions
+(*webhookSubscriptions*)
 
 ### Available Operations
 
@@ -26,20 +27,20 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1WebhookSubscriptionUuidRequest, DeleteV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1WebhookSubscriptionUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const webhookSubscriptionUuid: string = "quae";
+async function run() {
+  const sdk = new Gusto();
+const webhookSubscriptionUuid: string = "<value>";
 
-sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid).then((res: DeleteV1WebhookSubscriptionUuidResponse) => {
+  const res = await sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -52,8 +53,12 @@ sdk.webhookSubscriptions.deleteV1WebhookSubscriptionUuid(webhookSubscriptionUuid
 
 ### Response
 
-**Promise<[operations.DeleteV1WebhookSubscriptionUuidResponse](../../models/operations/deletev1webhooksubscriptionuuidresponse.md)>**
+**Promise<[operations.DeleteV1WebhookSubscriptionUuidResponse](../../sdk/models/operations/deletev1webhooksubscriptionuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1WebhookSubscriptionUuid
 
@@ -71,20 +76,20 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1WebhookSubscriptionUuidRequest, GetV1WebhookSubscriptionUuidResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1WebhookSubscriptionUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const webhookSubscriptionUuid: string = "amet";
+async function run() {
+  const sdk = new Gusto();
+const webhookSubscriptionUuid: string = "<value>";
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid).then((res: GetV1WebhookSubscriptionUuidResponse) => {
+  const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -97,8 +102,12 @@ sdk.webhookSubscriptions.getV1WebhookSubscriptionUuid(webhookSubscriptionUuid).t
 
 ### Response
 
-**Promise<[operations.GetV1WebhookSubscriptionUuidResponse](../../models/operations/getv1webhooksubscriptionuuidresponse.md)>**
+**Promise<[operations.GetV1WebhookSubscriptionUuidResponse](../../sdk/models/operations/getv1webhooksubscriptionuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1WebhookSubscriptionVerificationTokenUuid
 
@@ -116,23 +125,20 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1WebhookSubscriptionVerificationTokenUuidRequest,
-  GetV1WebhookSubscriptionVerificationTokenUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1WebhookSubscriptionVerificationTokenUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const webhookSubscriptionUuid: string = "illum";
+async function run() {
+  const sdk = new Gusto();
+const webhookSubscriptionUuid: string = "<value>";
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid).then((res: GetV1WebhookSubscriptionVerificationTokenUuidResponse) => {
+  const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSubscriptionUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -145,8 +151,12 @@ sdk.webhookSubscriptions.getV1WebhookSubscriptionVerificationTokenUuid(webhookSu
 
 ### Response
 
-**Promise<[operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse](../../models/operations/getv1webhooksubscriptionverificationtokenuuidresponse.md)>**
+**Promise<[operations.GetV1WebhookSubscriptionVerificationTokenUuidResponse](../../sdk/models/operations/getv1webhooksubscriptionverificationtokenuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1WebhookSubscriptions
 
@@ -163,19 +173,18 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1WebhookSubscriptionsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+async function run() {
+  const sdk = new Gusto();
 
-sdk.webhookSubscriptions.getV1WebhookSubscriptions().then((res: GetV1WebhookSubscriptionsResponse) => {
+  const res = await sdk.webhookSubscriptions.getV1WebhookSubscriptions();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -187,8 +196,12 @@ sdk.webhookSubscriptions.getV1WebhookSubscriptions().then((res: GetV1WebhookSubs
 
 ### Response
 
-**Promise<[operations.GetV1WebhookSubscriptionsResponse](../../models/operations/getv1webhooksubscriptionsresponse.md)>**
+**Promise<[operations.GetV1WebhookSubscriptionsResponse](../../sdk/models/operations/getv1webhooksubscriptionsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1WebhookSubscription
 
@@ -206,43 +219,42 @@ Authorization: Token bbb286ff1a4fe6b84742b0d49b8d0d65bd0208d27d3d50333591df71
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostV1WebhookSubscriptionRequestBodySubscriptionTypes,
-  PostV1WebhookSubscriptionResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { SubscriptionTypes } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
+async function run() {
+  const sdk = new Gusto();
 
-sdk.webhookSubscriptions.postV1WebhookSubscription({
-  subscriptionTypes: [
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Form,
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Location,
-    PostV1WebhookSubscriptionRequestBodySubscriptionTypes.Contractor,
-  ],
-  url: "quasi",
-}).then((res: PostV1WebhookSubscriptionResponse) => {
+  const res = await sdk.webhookSubscriptions.postV1WebhookSubscription({
+    subscriptionTypes: [
+      SubscriptionTypes.PaySchedule,
+    ],
+    url: "http://adept-mutation.com",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PostV1WebhookSubscriptionRequestBody](../../models/operations/postv1webhooksubscriptionrequestbody.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                              | [operations.PostV1WebhookSubscriptionRequestBody](../../sdk/models/operations/postv1webhooksubscriptionrequestbody.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
 
 
 ### Response
 
-**Promise<[operations.PostV1WebhookSubscriptionResponse](../../models/operations/postv1webhooksubscriptionresponse.md)>**
+**Promise<[operations.PostV1WebhookSubscriptionResponse](../../sdk/models/operations/postv1webhooksubscriptionresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1VerifyWebhookSubscriptionUuid
 
@@ -266,39 +278,42 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1VerifyWebhookSubscriptionUuidRequest,
   PutV1VerifyWebhookSubscriptionUuidRequestBody,
-  PutV1VerifyWebhookSubscriptionUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const webhookSubscriptionUuid: string = "dicta";
+async function run() {
+  const sdk = new Gusto();
+const webhookSubscriptionUuid: string = "<value>";
 const requestBody: PutV1VerifyWebhookSubscriptionUuidRequestBody = {
-  verificationToken: "laudantium",
+  verificationToken: "<value>",
 };
 
-sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody).then((res: PutV1VerifyWebhookSubscriptionUuidResponse) => {
+  const res = await sdk.webhookSubscriptions.putV1VerifyWebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `webhookSubscriptionUuid`                                                                                                            | *string*                                                                                                                             | :heavy_check_mark:                                                                                                                   | The webhook subscription UUID.                                                                                                       |
-| `requestBody`                                                                                                                        | [operations.PutV1VerifyWebhookSubscriptionUuidRequestBody](../../models/operations/putv1verifywebhooksubscriptionuuidrequestbody.md) | :heavy_minus_sign:                                                                                                                   | N/A                                                                                                                                  |
-| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `webhookSubscriptionUuid`                                                                                                                | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The webhook subscription UUID.                                                                                                           |
+| `requestBody`                                                                                                                            | [operations.PutV1VerifyWebhookSubscriptionUuidRequestBody](../../sdk/models/operations/putv1verifywebhooksubscriptionuuidrequestbody.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
+| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
 
 
 ### Response
 
-**Promise<[operations.PutV1VerifyWebhookSubscriptionUuidResponse](../../models/operations/putv1verifywebhooksubscriptionuuidresponse.md)>**
+**Promise<[operations.PutV1VerifyWebhookSubscriptionUuidResponse](../../sdk/models/operations/putv1verifywebhooksubscriptionuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1WebhookSubscriptionUuid
 
@@ -319,42 +334,42 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1WebhookSubscriptionUuidRequest,
   PutV1WebhookSubscriptionUuidRequestBody,
-  PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes,
-  PutV1WebhookSubscriptionUuidResponse,
+  PutV1WebhookSubscriptionUuidSubscriptionTypes,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const webhookSubscriptionUuid: string = "doloremque";
+async function run() {
+  const sdk = new Gusto();
+const webhookSubscriptionUuid: string = "<value>";
 const requestBody: PutV1WebhookSubscriptionUuidRequestBody = {
   subscriptionTypes: [
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.EmployeeBenefit,
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Contractor,
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.ExternalPayroll,
-    PutV1WebhookSubscriptionUuidRequestBodySubscriptionTypes.Form,
+    PutV1WebhookSubscriptionUuidSubscriptionTypes.Employee,
   ],
 };
 
-sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody).then((res: PutV1WebhookSubscriptionUuidResponse) => {
+  const res = await sdk.webhookSubscriptions.putV1WebhookSubscriptionUuid(webhookSubscriptionUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `webhookSubscriptionUuid`                                                                                                | *string*                                                                                                                 | :heavy_check_mark:                                                                                                       | The webhook subscription UUID.                                                                                           |
-| `requestBody`                                                                                                            | [operations.PutV1WebhookSubscriptionUuidRequestBody](../../models/operations/putv1webhooksubscriptionuuidrequestbody.md) | :heavy_minus_sign:                                                                                                       | N/A                                                                                                                      |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
+| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `webhookSubscriptionUuid`                                                                                                    | *string*                                                                                                                     | :heavy_check_mark:                                                                                                           | The webhook subscription UUID.                                                                                               |
+| `requestBody`                                                                                                                | [operations.PutV1WebhookSubscriptionUuidRequestBody](../../sdk/models/operations/putv1webhooksubscriptionuuidrequestbody.md) | :heavy_minus_sign:                                                                                                           | N/A                                                                                                                          |
+| `config`                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                 | :heavy_minus_sign:                                                                                                           | Available config options for making requests.                                                                                |
 
 
 ### Response
 
-**Promise<[operations.PutV1WebhookSubscriptionUuidResponse](../../models/operations/putv1webhooksubscriptionuuidresponse.md)>**
+**Promise<[operations.PutV1WebhookSubscriptionUuidResponse](../../sdk/models/operations/putv1webhooksubscriptionuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

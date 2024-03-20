@@ -3,10 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export enum GetV1CompaniesCompanyIdPayrollsInclude {
+export enum GetV1CompaniesCompanyIdPayrollsQueryParamInclude {
     Benefits = "benefits",
     Deductions = "deductions",
     PayrollStatusMeta = "payroll_status_meta",
@@ -30,7 +30,7 @@ export class GetV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {
      * Include the requested attribute in the response
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
-    include?: GetV1CompaniesCompanyIdPayrollsInclude[];
+    include?: GetV1CompaniesCompanyIdPayrollsQueryParamInclude[];
 
     /**
      * Whether to include off cycle payrolls in the response
@@ -52,18 +52,27 @@ export class GetV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {
 }
 
 export class GetV1CompaniesCompanyIdPayrollsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
+
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
+
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse: AxiosResponse;
 
     /**
      * Example response
      */
     @SpeakeasyMetadata({ elemType: shared.Payroll })
-    payrolls?: shared.Payroll[];
-
-    @SpeakeasyMetadata()
-    statusCode: number;
-
-    @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    classes?: shared.Payroll[];
 }

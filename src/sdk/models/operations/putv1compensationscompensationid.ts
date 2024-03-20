@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 /**
  * The FLSA status for this compensation. Salaried ('Exempt') employees are paid a fixed salary every pay period. Salaried with overtime ('Salaried Nonexempt') employees are paid a fixed salary every pay period, and receive overtime pay when applicable. Hourly ('Nonexempt') employees are paid for the hours they work, and receive overtime pay when applicable. Commissioned employees ('Commission Only Exempt') earn wages based only on commission. Commissioned with overtime ('Commission Only Nonexempt') earn wages based on commission, and receive overtime pay when applicable. Owners ('Owner') are employees that own at least twenty percent of the company.
  */
-export enum PutV1CompensationsCompensationIdRequestBodyFlsaStatus {
+export enum FlsaStatus {
     Exempt = "Exempt",
     SalariedNonexempt = "Salaried Nonexempt",
     Nonexempt = "Nonexempt",
@@ -22,7 +22,7 @@ export enum PutV1CompensationsCompensationIdRequestBodyFlsaStatus {
 /**
  * The minimum wage record you want to apply to the compensation
  */
-export class PutV1CompensationsCompensationIdRequestBodyMinimumWages extends SpeakeasyBase {
+export class MinimumWages extends SpeakeasyBase {
     /**
      * The UUID of the minimum wage record. Required if adjust_for_minimum_wage set to true
      */
@@ -34,7 +34,7 @@ export class PutV1CompensationsCompensationIdRequestBodyMinimumWages extends Spe
 /**
  * The unit accompanying the compensation rate. If the employee is an owner, rate should be 'Paycheck'.
  */
-export enum PutV1CompensationsCompensationIdRequestBodyPaymentUnit {
+export enum PaymentUnit {
     Hour = "Hour",
     Week = "Week",
     Month = "Month",
@@ -55,19 +55,19 @@ export class PutV1CompensationsCompensationIdRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "flsa_status" })
-    flsaStatus?: PutV1CompensationsCompensationIdRequestBodyFlsaStatus;
+    flsaStatus?: FlsaStatus;
 
-    @SpeakeasyMetadata({ elemType: PutV1CompensationsCompensationIdRequestBodyMinimumWages })
+    @SpeakeasyMetadata({ elemType: MinimumWages })
     @Expose({ name: "minimum_wages" })
-    @Type(() => PutV1CompensationsCompensationIdRequestBodyMinimumWages)
-    minimumWages?: PutV1CompensationsCompensationIdRequestBodyMinimumWages[];
+    @Type(() => MinimumWages)
+    minimumWages?: MinimumWages[];
 
     /**
      * The unit accompanying the compensation rate. If the employee is an owner, rate should be 'Paycheck'.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "payment_unit" })
-    paymentUnit?: PutV1CompensationsCompensationIdRequestBodyPaymentUnit;
+    paymentUnit?: PaymentUnit;
 
     /**
      * The dollar amount paid per payment unit.
@@ -98,7 +98,7 @@ export class PutV1CompensationsCompensationIdRequest extends SpeakeasyBase {
 /**
  * Example response
  */
-export class PutV1CompensationsCompensationId200ApplicationXML extends SpeakeasyBase {}
+export class PutV1CompensationsCompensationIdResponseBody extends SpeakeasyBase {}
 
 export class PutV1CompensationsCompensationIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -110,14 +110,23 @@ export class PutV1CompensationsCompensationIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     compensation?: shared.Compensation;
 
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

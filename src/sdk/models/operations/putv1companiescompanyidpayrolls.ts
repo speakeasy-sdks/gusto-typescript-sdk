@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 /**
  * An array of fixed compensations for the employee. Fixed compensations include tips, bonuses, and one time reimbursements.
  */
-export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations extends SpeakeasyBase {
+export class PutV1CompaniesCompanyIdPayrollsFixedCompensations extends SpeakeasyBase {
     /**
      * The amount of the compensation for the pay period.
      */
@@ -36,7 +36,7 @@ export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixe
 /**
  * An array of hourly compensations for the employee. Hourly compensations include regular, overtime, and double overtime hours.
  */
-export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations extends SpeakeasyBase {
+export class PutV1CompaniesCompanyIdPayrollsHourlyCompensations extends SpeakeasyBase {
     /**
      * The number of hours to be compensated for this pay period.
      */
@@ -59,7 +59,7 @@ export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHour
     name?: string;
 }
 
-export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff extends SpeakeasyBase {
+export class PutV1CompaniesCompanyIdPayrollsPaidTimeOff extends SpeakeasyBase {
     /**
      * The outstanding hours paid upon termination. This field is only applicable for termination payrolls.
      */
@@ -92,12 +92,12 @@ export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaid
 /**
  * The employee's compensation payment method. Invalid values will be ignored.
  */
-export enum PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod {
+export enum PutV1CompaniesCompanyIdPayrollsPaymentMethod {
     DirectDeposit = "Direct Deposit",
     Check = "Check",
 }
 
-export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations extends SpeakeasyBase {
+export class PutV1CompaniesCompanyIdPayrollsEmployeeCompensations extends SpeakeasyBase {
     /**
      * The UUID of the employee.
      */
@@ -112,46 +112,37 @@ export class PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations ext
     @Expose({ name: "excluded" })
     excluded?: boolean;
 
-    @SpeakeasyMetadata({
-        elemType: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations,
-    })
+    @SpeakeasyMetadata({ elemType: PutV1CompaniesCompanyIdPayrollsFixedCompensations })
     @Expose({ name: "fixed_compensations" })
-    @Type(() => PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations)
-    fixedCompensations?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsFixedCompensations[];
+    @Type(() => PutV1CompaniesCompanyIdPayrollsFixedCompensations)
+    fixedCompensations?: PutV1CompaniesCompanyIdPayrollsFixedCompensations[];
 
-    @SpeakeasyMetadata({
-        elemType:
-            PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations,
-    })
+    @SpeakeasyMetadata({ elemType: PutV1CompaniesCompanyIdPayrollsHourlyCompensations })
     @Expose({ name: "hourly_compensations" })
-    @Type(() => PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations)
-    hourlyCompensations?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsHourlyCompensations[];
+    @Type(() => PutV1CompaniesCompanyIdPayrollsHourlyCompensations)
+    hourlyCompensations?: PutV1CompaniesCompanyIdPayrollsHourlyCompensations[];
 
     /**
      * An array of all paid time off the employee is eligible for this pay period. Each paid time off object can be the name or the specific policy_uuid.
      */
-    @SpeakeasyMetadata({
-        elemType: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff,
-    })
+    @SpeakeasyMetadata({ elemType: PutV1CompaniesCompanyIdPayrollsPaidTimeOff })
     @Expose({ name: "paid_time_off" })
-    @Type(() => PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff)
-    paidTimeOff?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaidTimeOff[];
+    @Type(() => PutV1CompaniesCompanyIdPayrollsPaidTimeOff)
+    paidTimeOff?: PutV1CompaniesCompanyIdPayrollsPaidTimeOff[];
 
     /**
      * The employee's compensation payment method. Invalid values will be ignored.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "payment_method" })
-    paymentMethod?: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensationsPaymentMethod;
+    paymentMethod?: PutV1CompaniesCompanyIdPayrollsPaymentMethod;
 }
 
 export class PutV1CompaniesCompanyIdPayrollsRequestBody extends SpeakeasyBase {
-    @SpeakeasyMetadata({
-        elemType: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations,
-    })
+    @SpeakeasyMetadata({ elemType: PutV1CompaniesCompanyIdPayrollsEmployeeCompensations })
     @Expose({ name: "employee_compensations" })
-    @Type(() => PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations)
-    employeeCompensations: PutV1CompaniesCompanyIdPayrollsRequestBodyEmployeeCompensations[];
+    @Type(() => PutV1CompaniesCompanyIdPayrollsEmployeeCompensations)
+    employeeCompensations: PutV1CompaniesCompanyIdPayrollsEmployeeCompensations[];
 
     /**
      * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
@@ -179,6 +170,9 @@ export class PutV1CompaniesCompanyIdPayrollsRequest extends SpeakeasyBase {
 }
 
 export class PutV1CompaniesCompanyIdPayrollsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -188,11 +182,17 @@ export class PutV1CompaniesCompanyIdPayrollsResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     payroll?: shared.Payroll;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

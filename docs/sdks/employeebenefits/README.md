@@ -1,4 +1,5 @@
-# employeeBenefits
+# EmployeeBenefits
+(*employeeBenefits*)
 
 ### Available Operations
 
@@ -19,23 +20,24 @@ scope: `employee_benefits:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest,
-  DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1EmployeeBenefitsEmployeeBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeBenefitId: string = "consequatur";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeBenefitId: string = "<value>";
 
-sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId).then((res: DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
+  const res = await sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -48,8 +50,12 @@ sdk.employeeBenefits.deleteV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId
 
 ### Response
 
-**Promise<[operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse](../../models/operations/deletev1employeebenefitsemployeebenefitidresponse.md)>**
+**Promise<[operations.DeleteV1EmployeeBenefitsEmployeeBenefitIdResponse](../../sdk/models/operations/deletev1employeebenefitsemployeebenefitidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1EmployeeBenefitsEmployeeBenefitId
 
@@ -61,23 +67,24 @@ scope: `employee_benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeeBenefitsEmployeeBenefitIdRequest,
-  GetV1EmployeeBenefitsEmployeeBenefitIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeeBenefitsEmployeeBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeBenefitId: string = "est";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeBenefitId: string = "<value>";
 
-sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId).then((res: GetV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
+  const res = await sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -90,8 +97,12 @@ sdk.employeeBenefits.getV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId).t
 
 ### Response
 
-**Promise<[operations.GetV1EmployeeBenefitsEmployeeBenefitIdResponse](../../models/operations/getv1employeebenefitsemployeebenefitidresponse.md)>**
+**Promise<[operations.GetV1EmployeeBenefitsEmployeeBenefitIdResponse](../../sdk/models/operations/getv1employeebenefitsemployeebenefitidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1EmployeesEmployeeIdEmployeeBenefits
 
@@ -105,25 +116,26 @@ scope: `employee_benefits:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdEmployeeBenefitsRequest,
-  GetV1EmployeesEmployeeIdEmployeeBenefitsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdEmployeeBenefitsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "repellendus";
-const page: number = 7851.53;
-const per: number = 9843.3;
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
+const page: number = 2519.68;
+const per: number = 8862.03;
 
-sdk.employeeBenefits.getV1EmployeesEmployeeIdEmployeeBenefits(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdEmployeeBenefitsResponse) => {
+  const res = await sdk.employeeBenefits.getV1EmployeesEmployeeIdEmployeeBenefits(employeeId, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -138,8 +150,12 @@ sdk.employeeBenefits.getV1EmployeesEmployeeIdEmployeeBenefits(employeeId, page, 
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdEmployeeBenefitsResponse](../../models/operations/getv1employeesemployeeidemployeebenefitsresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdEmployeeBenefitsResponse](../../sdk/models/operations/getv1employeesemployeeidemployeebenefitsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postEmployeeYtdBenefitAmountsFromDifferentCompany
 
@@ -151,45 +167,49 @@ scope: `employee_benefits:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest,
-  PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody,
-  PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostEmployeeYtdBenefitAmountsFromDifferentCompany } from "@speakeasy-sdks/gusto/dist/sdk/models/shared";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "ut";
-const requestBody: PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody = {
-  benefitType: 7034.95,
-  taxYear: 5864.1,
-  ytdCompanyContributionAmount: "qui",
-  ytdEmployeeDeductionAmount: "quae",
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
+const postEmployeeYtdBenefitAmountsFromDifferentCompany: PostEmployeeYtdBenefitAmountsFromDifferentCompany = {
+  taxYear: 5497.18,
+  ytdCompanyContributionAmount: "<value>",
+  ytdEmployeeDeductionAmount: "<value>",
 };
 
-sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany(employeeId, requestBody).then((res: PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse) => {
+  const res = await sdk.employeeBenefits.postEmployeeYtdBenefitAmountsFromDifferentCompany(employeeId, postEmployeeYtdBenefitAmountsFromDifferentCompany);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                          | Type                                                                                                                                                               | Required                                                                                                                                                           | Description                                                                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeId`                                                                                                                                                       | *string*                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                 | The UUID of the employee                                                                                                                                           |
-| `requestBody`                                                                                                                                                      | [operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyRequestBody](../../models/operations/postemployeeytdbenefitamountsfromdifferentcompanyrequestbody.md) | :heavy_minus_sign:                                                                                                                                                 | N/A                                                                                                                                                                |
-| `config`                                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                       | :heavy_minus_sign:                                                                                                                                                 | Available config options for making requests.                                                                                                                      |
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                             | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The UUID of the employee                                                                                                                 |
+| `postEmployeeYtdBenefitAmountsFromDifferentCompany`                                                                                      | [shared.PostEmployeeYtdBenefitAmountsFromDifferentCompany](../../sdk/models/shared/postemployeeytdbenefitamountsfromdifferentcompany.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
+| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
 
 
 ### Response
 
-**Promise<[operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse](../../models/operations/postemployeeytdbenefitamountsfromdifferentcompanyresponse.md)>**
+**Promise<[operations.PostEmployeeYtdBenefitAmountsFromDifferentCompanyResponse](../../sdk/models/operations/postemployeeytdbenefitamountsfromdifferentcompanyresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1EmployeesEmployeeIdEmployeeBenefits
 
@@ -202,75 +222,54 @@ scope: `employee_benefits:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  Contribution,
+  DeductionReducesTaxableIncome,
   PostV1EmployeesEmployeeIdEmployeeBenefitsRequest,
   PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody,
-  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContribution,
-  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType,
-  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionValue2,
-  PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome,
-  PostV1EmployeesEmployeeIdEmployeeBenefitsResponse,
+  PostV1EmployeesEmployeeIdEmployeeBenefitsType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "laudantium";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
 const requestBody: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody = {
-  active: false,
-  catchUp: false,
-  companyBenefitUuid: "odio",
-  companyContribution: "occaecati",
-  companyContributionAnnualMaximum: "voluptatibus",
-  contributeAsPercentage: false,
+  companyBenefitUuid: "<value>",
   contribution: {
-    type: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyContributionType.Amount,
-    value: [
-      {
-        rate: "quis",
-        threshold: "ipsum",
-      },
-      {
-        rate: "delectus",
-        threshold: "voluptate",
-      },
-      {
-        rate: "consectetur",
-        threshold: "vero",
-      },
-    ],
+    value: "<value>",
   },
-  coverageAmount: "tenetur",
-  coverageSalaryMultiplier: "dignissimos",
-  deductAsPercentage: false,
-  deductionReducesTaxableIncome: PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBodyDeductionReducesTaxableIncome.LessThanNilGreaterThan,
-  elective: false,
-  employeeDeduction: "distinctio",
-  employeeDeductionAnnualMaximum: "quod",
-  limitOption: "odio",
 };
 
-sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdEmployeeBenefitsResponse) => {
+  const res = await sdk.employeeBenefits.postV1EmployeesEmployeeIdEmployeeBenefits(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `employeeId`                                                                                                                                       | *string*                                                                                                                                           | :heavy_check_mark:                                                                                                                                 | The UUID of the employee                                                                                                                           |
-| `requestBody`                                                                                                                                      | [operations.PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody](../../models/operations/postv1employeesemployeeidemployeebenefitsrequestbody.md) | :heavy_minus_sign:                                                                                                                                 | N/A                                                                                                                                                |
-| `config`                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                       | :heavy_minus_sign:                                                                                                                                 | Available config options for making requests.                                                                                                      |
+| Parameter                                                                                                                                              | Type                                                                                                                                                   | Required                                                                                                                                               | Description                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `employeeId`                                                                                                                                           | *string*                                                                                                                                               | :heavy_check_mark:                                                                                                                                     | The UUID of the employee                                                                                                                               |
+| `requestBody`                                                                                                                                          | [operations.PostV1EmployeesEmployeeIdEmployeeBenefitsRequestBody](../../sdk/models/operations/postv1employeesemployeeidemployeebenefitsrequestbody.md) | :heavy_minus_sign:                                                                                                                                     | N/A                                                                                                                                                    |
+| `config`                                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                           | :heavy_minus_sign:                                                                                                                                     | Available config options for making requests.                                                                                                          |
 
 
 ### Response
 
-**Promise<[operations.PostV1EmployeesEmployeeIdEmployeeBenefitsResponse](../../models/operations/postv1employeesemployeeidemployeebenefitsresponse.md)>**
+**Promise<[operations.PostV1EmployeesEmployeeIdEmployeeBenefitsResponse](../../sdk/models/operations/postv1employeesemployeeidemployeebenefitsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1EmployeeBenefitsEmployeeBenefitId
 
@@ -283,59 +282,51 @@ scope: `employee_benefits:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutV1EmployeeBenefitsEmployeeBenefitIdContribution,
+  PutV1EmployeeBenefitsEmployeeBenefitIdDeductionReducesTaxableIncome,
   PutV1EmployeeBenefitsEmployeeBenefitIdRequest,
   PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody,
-  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContribution,
-  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionType,
-  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionValue2,
-  PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncome,
-  PutV1EmployeeBenefitsEmployeeBenefitIdResponse,
+  PutV1EmployeeBenefitsEmployeeBenefitIdType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeBenefitId: string = "similique";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeBenefitId: string = "<value>";
 const requestBody: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody = {
-  active: false,
-  catchUp: false,
-  companyContribution: "facilis",
-  companyContributionAnnualMaximum: "vero",
-  contributeAsPercentage: false,
   contribution: {
-    type: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyContributionType.Percentage,
-    value: "quibusdam",
+    value: "<value>",
   },
-  coverageAmount: "illum",
-  coverageSalaryMultiplier: "sequi",
-  deductAsPercentage: false,
-  deductionReducesTaxableIncome: PutV1EmployeeBenefitsEmployeeBenefitIdRequestBodyDeductionReducesTaxableIncome.DoesNotReduceTaxableIncome,
-  elective: false,
-  employeeDeduction: "impedit",
-  employeeDeductionAnnualMaximum: "aut",
-  limitOption: "voluptatibus",
-  version: "exercitationem",
+  version: "<value>",
 };
 
-sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId, requestBody).then((res: PutV1EmployeeBenefitsEmployeeBenefitIdResponse) => {
+  const res = await sdk.employeeBenefits.putV1EmployeeBenefitsEmployeeBenefitId(employeeBenefitId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                    | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
-| -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `employeeBenefitId`                                                                                                                          | *string*                                                                                                                                     | :heavy_check_mark:                                                                                                                           | The UUID of the employee benefit.                                                                                                            |
-| `requestBody`                                                                                                                                | [operations.PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody](../../models/operations/putv1employeebenefitsemployeebenefitidrequestbody.md) | :heavy_minus_sign:                                                                                                                           | N/A                                                                                                                                          |
-| `config`                                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                 | :heavy_minus_sign:                                                                                                                           | Available config options for making requests.                                                                                                |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `employeeBenefitId`                                                                                                                              | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | The UUID of the employee benefit.                                                                                                                |
+| `requestBody`                                                                                                                                    | [operations.PutV1EmployeeBenefitsEmployeeBenefitIdRequestBody](../../sdk/models/operations/putv1employeebenefitsemployeebenefitidrequestbody.md) | :heavy_minus_sign:                                                                                                                               | N/A                                                                                                                                              |
+| `config`                                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                     | :heavy_minus_sign:                                                                                                                               | Available config options for making requests.                                                                                                    |
 
 
 ### Response
 
-**Promise<[operations.PutV1EmployeeBenefitsEmployeeBenefitIdResponse](../../models/operations/putv1employeebenefitsemployeebenefitidresponse.md)>**
+**Promise<[operations.PutV1EmployeeBenefitsEmployeeBenefitIdResponse](../../sdk/models/operations/putv1employeebenefitsemployeebenefitidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

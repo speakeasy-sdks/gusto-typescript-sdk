@@ -3,19 +3,19 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 /**
  * Describes how the payment will be split. If split_by is Percentage, then the split amounts must add up to exactly 100. If split_by is Amount, then the last split amount must be nil to capture the remainder.
  */
-export enum PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy {
+export enum SplitBy {
     Amount = "Amount",
     Percentage = "Percentage",
 }
 
-export class PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits extends SpeakeasyBase {
+export class Splits extends SpeakeasyBase {
     /**
      * The bank account name
      */
@@ -51,7 +51,7 @@ export class PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits extends Spea
 /**
  * The payment method type. If type is Check, then split_by and splits do not need to be populated. If type is Direct Deposit, split_by and splits are required.
  */
-export enum PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType {
+export enum PutV1EmployeesEmployeeIdPaymentMethodType {
     DirectDeposit = "Direct Deposit",
     Check = "Check",
 }
@@ -62,19 +62,19 @@ export class PutV1EmployeesEmployeeIdPaymentMethodRequestBody extends SpeakeasyB
      */
     @SpeakeasyMetadata()
     @Expose({ name: "split_by" })
-    splitBy?: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy;
+    splitBy?: SplitBy;
 
-    @SpeakeasyMetadata({ elemType: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits })
+    @SpeakeasyMetadata({ elemType: Splits })
     @Expose({ name: "splits" })
-    @Type(() => PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits)
-    splits?: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits[];
+    @Type(() => Splits)
+    splits?: Splits[];
 
     /**
      * The payment method type. If type is Check, then split_by and splits do not need to be populated. If type is Direct Deposit, split_by and splits are required.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType;
+    type: PutV1EmployeesEmployeeIdPaymentMethodType;
 
     /**
      * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
@@ -96,6 +96,9 @@ export class PutV1EmployeesEmployeeIdPaymentMethodRequest extends SpeakeasyBase 
 }
 
 export class PutV1EmployeesEmployeeIdPaymentMethodResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -103,13 +106,19 @@ export class PutV1EmployeesEmployeeIdPaymentMethodResponse extends SpeakeasyBase
      * Example response
      */
     @SpeakeasyMetadata()
-    employeePaymentMethod?: shared.EmployeePaymentMethod1;
+    employeePaymentMethod?: shared.EmployeePaymentMethod;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

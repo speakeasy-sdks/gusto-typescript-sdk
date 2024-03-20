@@ -679,3 +679,173 @@ Based on:
 - [typescript v0.49.0] .
 ### Releases
 - [NPM v0.49.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.49.0 - .
+
+## 2023-11-06 00:27:25
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.112.1 (2.173.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.50.0] .
+### Releases
+- [NPM v0.50.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.50.0 - .
+
+## 2023-11-07 00:26:36
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.114.1 (2.181.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.51.0] .
+### Releases
+- [NPM v0.51.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.51.0 - .
+
+## 2023-11-09 00:26:16
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.116.0 (2.185.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.51.1] .
+### Releases
+- [NPM v0.51.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.51.1 - .
+
+## 2023-11-10 00:26:23
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.118.3 (2.187.7) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.51.2] .
+### Releases
+- [NPM v0.51.2] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.51.2 - .
+
+## 2023-11-16 00:27:26
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.120.3 (2.192.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.51.3] .
+### Releases
+- [NPM v0.51.3] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.51.3 - .
+
+## 2023-11-18 00:26:54
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.121.1 (2.194.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.51.4] .
+### Releases
+- [NPM v0.51.4] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.51.4 - .
+
+## 2023-12-12 00:28:41
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.126.0 (2.213.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.52.0] .
+### Releases
+- [NPM v0.52.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.52.0 - .
+
+## 2023-12-19 00:02:18
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.127.0 (2.220.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.52.1] .
+### Releases
+- [NPM v0.52.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.52.1 - .
+
+## 2024-01-05 00:01:55
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.130.1 (2.225.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.52.1] .
+### Releases
+- [NPM v0.52.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.52.1 - .
+
+## 2024-02-07 00:02:57
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.170.1 (2.250.12) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.53.0] .
+### Releases
+- [NPM v0.53.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.53.0 - .
+
+## 2024-02-13 00:03:08
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.178.0 (2.253.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.53.0] .
+### Releases
+- [NPM v0.53.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.53.0 - .
+
+## 2024-02-15 00:03:09
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.180.0 (2.258.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.53.1] .
+### Releases
+- [NPM v0.53.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.53.1 - .
+
+## 2024-02-16 00:02:32
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.182.0 (2.259.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.53.1] .
+### Releases
+- [NPM v0.53.1] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.53.1 - .
+
+## 2024-02-24 00:04:05
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.193.4 (2.272.4) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.53.2] .
+### Releases
+- [NPM v0.53.2] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.53.2 - .
+
+## 2024-02-27 00:02:34
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.194.0 (2.272.7) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.53.3] .
+### Releases
+- [NPM v0.53.3] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.53.3 - .
+
+## 2024-03-13 00:03:45
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.207.1 (2.280.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.53.4] .
+### Releases
+- [NPM v0.53.4] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.53.4 - .
+
+## 2024-03-20 00:26:53
+### Changes
+Based on:
+- OpenAPI Doc 2023-03-01 https://prod.speakeasyapi.dev/v1/apis/gusto-api/version/1.0.0/schema/download
+- Speakeasy CLI 1.213.0 (2.283.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.54.0] .
+### Releases
+- [NPM v0.54.0] https://www.npmjs.com/package/@speakeasy-sdks/gusto/v/0.54.0 - .

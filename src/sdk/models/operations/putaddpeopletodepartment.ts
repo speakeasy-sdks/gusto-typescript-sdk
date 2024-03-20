@@ -3,17 +3,17 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PutAddPeopleToDepartmentRequestBodyContractors extends SpeakeasyBase {
+export class Contractors extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "uuid" })
     uuid?: string;
 }
 
-export class PutAddPeopleToDepartmentRequestBodyEmployees extends SpeakeasyBase {
+export class Employees extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "uuid" })
     uuid?: string;
@@ -23,18 +23,18 @@ export class PutAddPeopleToDepartmentRequestBody extends SpeakeasyBase {
     /**
      * Array of contractors to add to the department
      */
-    @SpeakeasyMetadata({ elemType: PutAddPeopleToDepartmentRequestBodyContractors })
+    @SpeakeasyMetadata({ elemType: Contractors })
     @Expose({ name: "contractors" })
-    @Type(() => PutAddPeopleToDepartmentRequestBodyContractors)
-    contractors?: PutAddPeopleToDepartmentRequestBodyContractors[];
+    @Type(() => Contractors)
+    contractors?: Contractors[];
 
     /**
      * Array of employees to add to the department
      */
-    @SpeakeasyMetadata({ elemType: PutAddPeopleToDepartmentRequestBodyEmployees })
+    @SpeakeasyMetadata({ elemType: Employees })
     @Expose({ name: "employees" })
-    @Type(() => PutAddPeopleToDepartmentRequestBodyEmployees)
-    employees?: PutAddPeopleToDepartmentRequestBodyEmployees[];
+    @Type(() => Employees)
+    employees?: Employees[];
 
     /**
      * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/versioning#object-layer) for information on how to use this field.
@@ -56,6 +56,9 @@ export class PutAddPeopleToDepartmentRequest extends SpeakeasyBase {
 }
 
 export class PutAddPeopleToDepartmentResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -65,9 +68,15 @@ export class PutAddPeopleToDepartmentResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     department?: shared.Department;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 }

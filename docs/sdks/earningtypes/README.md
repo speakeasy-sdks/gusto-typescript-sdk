@@ -1,4 +1,5 @@
-# earningTypes
+# EarningTypes
+(*earningTypes*)
 
 ### Available Operations
 
@@ -17,24 +18,25 @@ scope: `payrolls:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
-  DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "veritatis";
-const earningTypeUuid: string = "nobis";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const earningTypeUuid: string = "<value>";
 
-sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid).then((res: DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
+  const res = await sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -48,8 +50,12 @@ sdk.earningTypes.deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId
 
 ### Response
 
-**Promise<[operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse](../../models/operations/deletev1companiescompanyidearningtypesearningtypeuuidresponse.md)>**
+**Promise<[operations.DeleteV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse](../../sdk/models/operations/deletev1companiescompanyidearningtypesearningtypeuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompaniesCompanyIdEarningTypes
 
@@ -67,23 +73,24 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdEarningTypesRequest,
-  GetV1CompaniesCompanyIdEarningTypesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdEarningTypesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "quos";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
 
-sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(companyId).then((res: GetV1CompaniesCompanyIdEarningTypesResponse) => {
+  const res = await sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(companyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -96,8 +103,12 @@ sdk.earningTypes.getV1CompaniesCompanyIdEarningTypes(companyId).then((res: GetV1
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdEarningTypesResponse](../../models/operations/getv1companiescompanyidearningtypesresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdEarningTypesResponse](../../sdk/models/operations/getv1companiescompanyidearningtypesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1CompaniesCompanyIdEarningTypes
 
@@ -114,39 +125,46 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1CompaniesCompanyIdEarningTypesRequest,
   PostV1CompaniesCompanyIdEarningTypesRequestBody,
-  PostV1CompaniesCompanyIdEarningTypesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "tempore";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdEarningTypesRequestBody = {
-  name: "Kevin Willms",
+  name: "<value>",
 };
 
-sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes(companyId, requestBody).then((res: PostV1CompaniesCompanyIdEarningTypesResponse) => {
+  const res = await sdk.earningTypes.postV1CompaniesCompanyIdEarningTypes(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                              | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The UUID of the company                                                                                                                  |
-| `requestBody`                                                                                                                            | [operations.PostV1CompaniesCompanyIdEarningTypesRequestBody](../../models/operations/postv1companiescompanyidearningtypesrequestbody.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
-| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
+| Parameter                                                                                                                                    | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                  | *string*                                                                                                                                     | :heavy_check_mark:                                                                                                                           | The UUID of the company                                                                                                                      |
+| `requestBody`                                                                                                                                | [operations.PostV1CompaniesCompanyIdEarningTypesRequestBody](../../sdk/models/operations/postv1companiescompanyidearningtypesrequestbody.md) | :heavy_minus_sign:                                                                                                                           | N/A                                                                                                                                          |
+| `config`                                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                 | :heavy_minus_sign:                                                                                                                           | Available config options for making requests.                                                                                                |
 
 
 ### Response
 
-**Promise<[operations.PostV1CompaniesCompanyIdEarningTypesResponse](../../models/operations/postv1companiescompanyidearningtypesresponse.md)>**
+**Promise<[operations.PostV1CompaniesCompanyIdEarningTypesResponse](../../sdk/models/operations/postv1companiescompanyidearningtypesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompaniesCompanyIdEarningTypesEarningTypeUuid
 
@@ -161,38 +179,43 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequest,
   PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody,
-  PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "labore";
-const earningTypeUuid: string = "adipisci";
-const requestBody: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody = {
-  name: "Ms. Joe Berge",
-};
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const earningTypeUuid: string = "<value>";
+const requestBody: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody = {};
 
-sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid, requestBody).then((res: PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse) => {
+  const res = await sdk.earningTypes.putV1CompaniesCompanyIdEarningTypesEarningTypeUuid(companyId, earningTypeUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                            | Type                                                                                                                                                                 | Required                                                                                                                                                             | Description                                                                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                                                          | *string*                                                                                                                                                             | :heavy_check_mark:                                                                                                                                                   | The UUID of the company                                                                                                                                              |
-| `earningTypeUuid`                                                                                                                                                    | *string*                                                                                                                                                             | :heavy_check_mark:                                                                                                                                                   | The UUID of the earning type                                                                                                                                         |
-| `requestBody`                                                                                                                                                        | [operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody](../../models/operations/putv1companiescompanyidearningtypesearningtypeuuidrequestbody.md) | :heavy_minus_sign:                                                                                                                                                   | N/A                                                                                                                                                                  |
-| `config`                                                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                         | :heavy_minus_sign:                                                                                                                                                   | Available config options for making requests.                                                                                                                        |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `companyId`                                                                                                                                                              | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The UUID of the company                                                                                                                                                  |
+| `earningTypeUuid`                                                                                                                                                        | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The UUID of the earning type                                                                                                                                             |
+| `requestBody`                                                                                                                                                            | [operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidRequestBody](../../sdk/models/operations/putv1companiescompanyidearningtypesearningtypeuuidrequestbody.md) | :heavy_minus_sign:                                                                                                                                                       | N/A                                                                                                                                                                      |
+| `config`                                                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                             | :heavy_minus_sign:                                                                                                                                                       | Available config options for making requests.                                                                                                                            |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse](../../models/operations/putv1companiescompanyidearningtypesearningtypeuuidresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdEarningTypesEarningTypeUuidResponse](../../sdk/models/operations/putv1companiescompanyidearningtypesearningtypeuuidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

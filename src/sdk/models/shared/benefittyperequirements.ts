@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class BenefitTypeRequirementsCatchUpDefaultValue extends SpeakeasyBase {
+export class DefaultValue extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
     type?: string;
@@ -15,15 +15,15 @@ export class BenefitTypeRequirementsCatchUpDefaultValue extends SpeakeasyBase {
     value?: string;
 }
 
-export class BenefitTypeRequirementsCatchUp extends SpeakeasyBase {
+export class CatchUp extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "choices" })
     choices?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "default_value" })
-    @Type(() => BenefitTypeRequirementsCatchUpDefaultValue)
-    defaultValue?: BenefitTypeRequirementsCatchUpDefaultValue;
+    @Type(() => DefaultValue)
+    defaultValue?: DefaultValue;
 
     @SpeakeasyMetadata()
     @Expose({ name: "editable" })
@@ -34,7 +34,7 @@ export class BenefitTypeRequirementsCatchUp extends SpeakeasyBase {
     required?: boolean;
 }
 
-export class BenefitTypeRequirementsCompanyContributionAnnualMaximumDefaultValue extends SpeakeasyBase {
+export class BenefitTypeRequirementsDefaultValue extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
     type?: string;
@@ -44,15 +44,15 @@ export class BenefitTypeRequirementsCompanyContributionAnnualMaximumDefaultValue
     value?: string;
 }
 
-export class BenefitTypeRequirementsCompanyContributionAnnualMaximum extends SpeakeasyBase {
+export class CompanyContributionAnnualMaximum extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "choices" })
     choices?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "default_value" })
-    @Type(() => BenefitTypeRequirementsCompanyContributionAnnualMaximumDefaultValue)
-    defaultValue?: BenefitTypeRequirementsCompanyContributionAnnualMaximumDefaultValue;
+    @Type(() => BenefitTypeRequirementsDefaultValue)
+    defaultValue?: BenefitTypeRequirementsDefaultValue;
 
     @SpeakeasyMetadata()
     @Expose({ name: "editable" })
@@ -63,7 +63,7 @@ export class BenefitTypeRequirementsCompanyContributionAnnualMaximum extends Spe
     required?: boolean;
 }
 
-export class BenefitTypeRequirementsContributionDefaultValue extends SpeakeasyBase {
+export class BenefitTypeRequirementsSchemasDefaultValue extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
     type?: string;
@@ -73,15 +73,15 @@ export class BenefitTypeRequirementsContributionDefaultValue extends SpeakeasyBa
     value?: string;
 }
 
-export class BenefitTypeRequirementsContribution extends SpeakeasyBase {
+export class Contribution extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "choices" })
     choices?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "default_value" })
-    @Type(() => BenefitTypeRequirementsContributionDefaultValue)
-    defaultValue?: BenefitTypeRequirementsContributionDefaultValue;
+    @Type(() => BenefitTypeRequirementsSchemasDefaultValue)
+    defaultValue?: BenefitTypeRequirementsSchemasDefaultValue;
 
     @SpeakeasyMetadata()
     @Expose({ name: "editable" })
@@ -92,7 +92,7 @@ export class BenefitTypeRequirementsContribution extends SpeakeasyBase {
     required?: boolean;
 }
 
-export class BenefitTypeRequirementsCoverageAmountDefaultValue extends SpeakeasyBase {
+export class BenefitTypeRequirementsSchemasCoverageAmountDefaultValue extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
     type?: string;
@@ -102,15 +102,15 @@ export class BenefitTypeRequirementsCoverageAmountDefaultValue extends Speakeasy
     value?: string;
 }
 
-export class BenefitTypeRequirementsCoverageAmount extends SpeakeasyBase {
+export class CoverageAmount extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "choices" })
     choices?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "default_value" })
-    @Type(() => BenefitTypeRequirementsCoverageAmountDefaultValue)
-    defaultValue?: BenefitTypeRequirementsCoverageAmountDefaultValue;
+    @Type(() => BenefitTypeRequirementsSchemasCoverageAmountDefaultValue)
+    defaultValue?: BenefitTypeRequirementsSchemasCoverageAmountDefaultValue;
 
     @SpeakeasyMetadata()
     @Expose({ name: "editable" })
@@ -121,7 +121,7 @@ export class BenefitTypeRequirementsCoverageAmount extends SpeakeasyBase {
     required?: boolean;
 }
 
-export class BenefitTypeRequirementsCoverageSalaryMultiplierDefaultValue extends SpeakeasyBase {
+export class BenefitTypeRequirementsSchemasCoverageSalaryMultiplierDefaultValue extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
     type?: string;
@@ -131,15 +131,15 @@ export class BenefitTypeRequirementsCoverageSalaryMultiplierDefaultValue extends
     value?: string;
 }
 
-export class BenefitTypeRequirementsCoverageSalaryMultiplier extends SpeakeasyBase {
+export class CoverageSalaryMultiplier extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "choices" })
     choices?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "default_value" })
-    @Type(() => BenefitTypeRequirementsCoverageSalaryMultiplierDefaultValue)
-    defaultValue?: BenefitTypeRequirementsCoverageSalaryMultiplierDefaultValue;
+    @Type(() => BenefitTypeRequirementsSchemasCoverageSalaryMultiplierDefaultValue)
+    defaultValue?: BenefitTypeRequirementsSchemasCoverageSalaryMultiplierDefaultValue;
 
     @SpeakeasyMetadata()
     @Expose({ name: "editable" })
@@ -150,7 +150,7 @@ export class BenefitTypeRequirementsCoverageSalaryMultiplier extends SpeakeasyBa
     required?: boolean;
 }
 
-export class BenefitTypeRequirementsDeductAsPercentageDefaultValue extends SpeakeasyBase {
+export class BenefitTypeRequirementsSchemasDeductAsPercentageDefaultValue extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
     type?: string;
@@ -160,15 +160,15 @@ export class BenefitTypeRequirementsDeductAsPercentageDefaultValue extends Speak
     value?: string;
 }
 
-export class BenefitTypeRequirementsDeductAsPercentage extends SpeakeasyBase {
+export class DeductAsPercentage extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "choices" })
     choices?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "default_value" })
-    @Type(() => BenefitTypeRequirementsDeductAsPercentageDefaultValue)
-    defaultValue?: BenefitTypeRequirementsDeductAsPercentageDefaultValue;
+    @Type(() => BenefitTypeRequirementsSchemasDeductAsPercentageDefaultValue)
+    defaultValue?: BenefitTypeRequirementsSchemasDeductAsPercentageDefaultValue;
 
     @SpeakeasyMetadata()
     @Expose({ name: "editable" })
@@ -179,7 +179,7 @@ export class BenefitTypeRequirementsDeductAsPercentage extends SpeakeasyBase {
     required?: boolean;
 }
 
-export class BenefitTypeRequirementsEmployeeDeductionDefaultValue extends SpeakeasyBase {
+export class BenefitTypeRequirementsSchemasEmployeeDeductionDefaultValue extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
     type?: string;
@@ -189,15 +189,15 @@ export class BenefitTypeRequirementsEmployeeDeductionDefaultValue extends Speake
     value?: string;
 }
 
-export class BenefitTypeRequirementsEmployeeDeduction extends SpeakeasyBase {
+export class EmployeeDeduction extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "choices" })
     choices?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "default_value" })
-    @Type(() => BenefitTypeRequirementsEmployeeDeductionDefaultValue)
-    defaultValue?: BenefitTypeRequirementsEmployeeDeductionDefaultValue;
+    @Type(() => BenefitTypeRequirementsSchemasEmployeeDeductionDefaultValue)
+    defaultValue?: BenefitTypeRequirementsSchemasEmployeeDeductionDefaultValue;
 
     @SpeakeasyMetadata()
     @Expose({ name: "editable" })
@@ -208,7 +208,7 @@ export class BenefitTypeRequirementsEmployeeDeduction extends SpeakeasyBase {
     required?: boolean;
 }
 
-export class BenefitTypeRequirementsLimitOptionDefaultValue extends SpeakeasyBase {
+export class BenefitTypeRequirementsSchemasLimitOptionDefaultValue extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
     type?: string;
@@ -218,15 +218,15 @@ export class BenefitTypeRequirementsLimitOptionDefaultValue extends SpeakeasyBas
     value?: string;
 }
 
-export class BenefitTypeRequirementsLimitOption extends SpeakeasyBase {
+export class LimitOption extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "choices" })
     choices?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "default_value" })
-    @Type(() => BenefitTypeRequirementsLimitOptionDefaultValue)
-    defaultValue?: BenefitTypeRequirementsLimitOptionDefaultValue;
+    @Type(() => BenefitTypeRequirementsSchemasLimitOptionDefaultValue)
+    defaultValue?: BenefitTypeRequirementsSchemasLimitOptionDefaultValue;
 
     @SpeakeasyMetadata()
     @Expose({ name: "editable" })
@@ -237,47 +237,44 @@ export class BenefitTypeRequirementsLimitOption extends SpeakeasyBase {
     required?: boolean;
 }
 
-/**
- * Benefit type requirements response
- */
 export class BenefitTypeRequirements extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "catch_up" })
-    @Type(() => BenefitTypeRequirementsCatchUp)
-    catchUp?: BenefitTypeRequirementsCatchUp;
+    @Type(() => CatchUp)
+    catchUp?: CatchUp;
 
     @SpeakeasyMetadata()
     @Expose({ name: "company_contribution_annual_maximum" })
-    @Type(() => BenefitTypeRequirementsCompanyContributionAnnualMaximum)
-    companyContributionAnnualMaximum?: BenefitTypeRequirementsCompanyContributionAnnualMaximum;
+    @Type(() => CompanyContributionAnnualMaximum)
+    companyContributionAnnualMaximum?: CompanyContributionAnnualMaximum;
 
     @SpeakeasyMetadata()
     @Expose({ name: "contribution" })
-    @Type(() => BenefitTypeRequirementsContribution)
-    contribution?: BenefitTypeRequirementsContribution;
+    @Type(() => Contribution)
+    contribution?: Contribution;
 
     @SpeakeasyMetadata()
     @Expose({ name: "coverage_amount" })
-    @Type(() => BenefitTypeRequirementsCoverageAmount)
-    coverageAmount?: BenefitTypeRequirementsCoverageAmount;
+    @Type(() => CoverageAmount)
+    coverageAmount?: CoverageAmount;
 
     @SpeakeasyMetadata()
     @Expose({ name: "coverage_salary_multiplier" })
-    @Type(() => BenefitTypeRequirementsCoverageSalaryMultiplier)
-    coverageSalaryMultiplier?: BenefitTypeRequirementsCoverageSalaryMultiplier;
+    @Type(() => CoverageSalaryMultiplier)
+    coverageSalaryMultiplier?: CoverageSalaryMultiplier;
 
     @SpeakeasyMetadata()
     @Expose({ name: "deduct_as_percentage" })
-    @Type(() => BenefitTypeRequirementsDeductAsPercentage)
-    deductAsPercentage?: BenefitTypeRequirementsDeductAsPercentage;
+    @Type(() => DeductAsPercentage)
+    deductAsPercentage?: DeductAsPercentage;
 
     @SpeakeasyMetadata()
     @Expose({ name: "employee_deduction" })
-    @Type(() => BenefitTypeRequirementsEmployeeDeduction)
-    employeeDeduction?: BenefitTypeRequirementsEmployeeDeduction;
+    @Type(() => EmployeeDeduction)
+    employeeDeduction?: EmployeeDeduction;
 
     @SpeakeasyMetadata()
     @Expose({ name: "limit_option" })
-    @Type(() => BenefitTypeRequirementsLimitOption)
-    limitOption?: BenefitTypeRequirementsLimitOption;
+    @Type(() => LimitOption)
+    limitOption?: LimitOption;
 }

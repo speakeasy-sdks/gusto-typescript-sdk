@@ -3,13 +3,13 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 /**
  * Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`
  */
-export enum GetV1CompaniesCompanyIdPayrollsPayrollIdInclude {
+export enum GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude {
     Benefits = "benefits",
     Deductions = "deductions",
     PayrollStatusMeta = "payroll_status_meta",
@@ -33,7 +33,7 @@ export class GetV1CompaniesCompanyIdPayrollsPayrollIdRequest extends SpeakeasyBa
      * Include the requested attribute in the response, for multiple attributes comma separate the values, i.e. `?include=benefits,deductions,taxes`
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include" })
-    include?: GetV1CompaniesCompanyIdPayrollsPayrollIdInclude;
+    include?: GetV1CompaniesCompanyIdPayrollsPayrollIdQueryParamInclude;
 
     /**
      * With show_calculation = true, the calculated values specified by the include parameter will be shown if the payroll is in an unprocessed, but calculated state.
@@ -46,6 +46,9 @@ export class GetV1CompaniesCompanyIdPayrollsPayrollIdRequest extends SpeakeasyBa
 }
 
 export class GetV1CompaniesCompanyIdPayrollsPayrollIdResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -55,9 +58,15 @@ export class GetV1CompaniesCompanyIdPayrollsPayrollIdResponse extends SpeakeasyB
     @SpeakeasyMetadata()
     payroll?: shared.Payroll;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 }

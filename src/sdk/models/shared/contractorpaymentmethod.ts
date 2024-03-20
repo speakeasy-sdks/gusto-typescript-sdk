@@ -9,7 +9,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * Describes how the payment will be split. If split_by is Percentage, then the split amounts must add up to exactly 100. If split_by is Amount, then the last split amount must be nil to capture the remainder.
  */
-export enum ContractorPaymentMethodSplitBy {
+export enum SplitBy {
     Amount = "Amount",
     Percentage = "Percentage",
 }
@@ -17,21 +17,18 @@ export enum ContractorPaymentMethodSplitBy {
 /**
  * The payment method type. If type is Check, then split_by and splits do not need to be populated. If type is Direct Deposit, split_by and splits are required.
  */
-export enum ContractorPaymentMethodType {
+export enum TypeT {
     DirectDeposit = "Direct Deposit",
     Check = "Check",
 }
 
-/**
- * Example response
- */
 export class ContractorPaymentMethod extends SpeakeasyBase {
     /**
      * Describes how the payment will be split. If split_by is Percentage, then the split amounts must add up to exactly 100. If split_by is Amount, then the last split amount must be nil to capture the remainder.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "split_by" })
-    splitBy?: ContractorPaymentMethodSplitBy;
+    splitBy?: SplitBy;
 
     @SpeakeasyMetadata({ elemType: PaymentMethodBankAccount })
     @Expose({ name: "splits" })
@@ -43,7 +40,7 @@ export class ContractorPaymentMethod extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: ContractorPaymentMethodType;
+    type?: TypeT;
 
     /**
      * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.

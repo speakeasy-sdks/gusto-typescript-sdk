@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
@@ -13,7 +13,7 @@ import { Expose } from "class-transformer";
  * @remarks
  * see [Bank account endpoint](./post-v1-contractors-contractor_uuid-bank_accounts)
  */
-export enum PutV1ContractorsContractorIdPaymentMethodRequestBodyType {
+export enum TypeT {
     DirectDeposit = "Direct Deposit",
     Check = "Check",
 }
@@ -27,7 +27,7 @@ export class PutV1ContractorsContractorIdPaymentMethodRequestBody extends Speake
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: PutV1ContractorsContractorIdPaymentMethodRequestBodyType;
+    type: TypeT;
 
     /**
      * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
@@ -49,6 +49,9 @@ export class PutV1ContractorsContractorIdPaymentMethodRequest extends SpeakeasyB
 }
 
 export class PutV1ContractorsContractorIdPaymentMethodResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -58,11 +61,17 @@ export class PutV1ContractorsContractorIdPaymentMethodResponse extends Speakeasy
     @SpeakeasyMetadata()
     contractorPaymentMethod?: shared.ContractorPaymentMethod;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

@@ -1,4 +1,5 @@
-# employeeTermination
+# EmployeeTermination
+(*employeeTermination*)
 
 ### Available Operations
 
@@ -16,23 +17,24 @@ Delete an employee termination. To update an employee's termination, delete the 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1EmployeesEmployeeIdTerminationsRequest,
-  DeleteV1EmployeesEmployeeIdTerminationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1EmployeesEmployeeIdTerminationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "reprehenderit";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
 
-sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(employeeId).then((res: DeleteV1EmployeesEmployeeIdTerminationsResponse) => {
+  const res = await sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -45,8 +47,12 @@ sdk.employeeTermination.deleteV1EmployeesEmployeeIdTerminations(employeeId).then
 
 ### Response
 
-**Promise<[operations.DeleteV1EmployeesEmployeeIdTerminationsResponse](../../models/operations/deletev1employeesemployeeidterminationsresponse.md)>**
+**Promise<[operations.DeleteV1EmployeesEmployeeIdTerminationsResponse](../../sdk/models/operations/deletev1employeesemployeeidterminationsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods
 
@@ -58,23 +64,24 @@ This endpoint returns the unprocessed pay periods for past and future terminated
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest,
-  GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "ullam";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
 
-sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(companyId).then((res: GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse) => {
+  const res = await sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(companyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -87,8 +94,12 @@ sdk.employeeTermination.getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods(
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse](../../models/operations/getv1companiescompanyidunprocessedterminationpayperiodsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdUnprocessedTerminationPayPeriodsResponse](../../sdk/models/operations/getv1companiescompanyidunprocessedterminationpayperiodsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1EmployeesEmployeeIdTerminations
 
@@ -102,23 +113,24 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdTerminationsRequest,
-  GetV1EmployeesEmployeeIdTerminationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdTerminationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "nisi";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
 
-sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(employeeId).then((res: GetV1EmployeesEmployeeIdTerminationsResponse) => {
+  const res = await sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -131,8 +143,12 @@ sdk.employeeTermination.getV1EmployeesEmployeeIdTerminations(employeeId).then((r
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdTerminationsResponse](../../models/operations/getv1employeesemployeeidterminationsresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdTerminationsResponse](../../sdk/models/operations/getv1employeesemployeeidterminationsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1EmployeesEmployeeIdTerminations
 
@@ -149,40 +165,46 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1EmployeesEmployeeIdTerminationsRequest,
   PostV1EmployeesEmployeeIdTerminationsRequestBody,
-  PostV1EmployeesEmployeeIdTerminationsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "aut";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
 const requestBody: PostV1EmployeesEmployeeIdTerminationsRequestBody = {
-  effectiveDate: "voluptatum",
-  runTerminationPayroll: false,
+  effectiveDate: "<value>",
 };
 
-sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdTerminationsResponse) => {
+  const res = await sdk.employeeTermination.postV1EmployeesEmployeeIdTerminations(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeId`                                                                                                                               | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the employee                                                                                                                   |
-| `requestBody`                                                                                                                              | [operations.PostV1EmployeesEmployeeIdTerminationsRequestBody](../../models/operations/postv1employeesemployeeidterminationsrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                                   | *string*                                                                                                                                       | :heavy_check_mark:                                                                                                                             | The UUID of the employee                                                                                                                       |
+| `requestBody`                                                                                                                                  | [operations.PostV1EmployeesEmployeeIdTerminationsRequestBody](../../sdk/models/operations/postv1employeesemployeeidterminationsrequestbody.md) | :heavy_minus_sign:                                                                                                                             | N/A                                                                                                                                            |
+| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
 
 
 ### Response
 
-**Promise<[operations.PostV1EmployeesEmployeeIdTerminationsResponse](../../models/operations/postv1employeesemployeeidterminationsresponse.md)>**
+**Promise<[operations.PostV1EmployeesEmployeeIdTerminationsResponse](../../sdk/models/operations/postv1employeesemployeeidterminationsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1TerminationsEmployeeId
 
@@ -196,41 +218,44 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1TerminationsEmployeeIdRequest,
-  PutV1TerminationsEmployeeIdRequestBody,
-  PutV1TerminationsEmployeeIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1TerminationsEmployeeIdRequest, PutV1TerminationsEmployeeIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "qui";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
 const requestBody: PutV1TerminationsEmployeeIdRequestBody = {
-  effectiveDate: "quibusdam",
-  runTerminationPayroll: false,
-  version: "ex",
+  effectiveDate: "<value>",
+  version: "<value>",
 };
 
-sdk.employeeTermination.putV1TerminationsEmployeeId(employeeId, requestBody).then((res: PutV1TerminationsEmployeeIdResponse) => {
+  const res = await sdk.employeeTermination.putV1TerminationsEmployeeId(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `employeeId`                                                                                                           | *string*                                                                                                               | :heavy_check_mark:                                                                                                     | The UUID of the employee                                                                                               |
-| `requestBody`                                                                                                          | [operations.PutV1TerminationsEmployeeIdRequestBody](../../models/operations/putv1terminationsemployeeidrequestbody.md) | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                               | *string*                                                                                                                   | :heavy_check_mark:                                                                                                         | The UUID of the employee                                                                                                   |
+| `requestBody`                                                                                                              | [operations.PutV1TerminationsEmployeeIdRequestBody](../../sdk/models/operations/putv1terminationsemployeeidrequestbody.md) | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |
+| `config`                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                               | :heavy_minus_sign:                                                                                                         | Available config options for making requests.                                                                              |
 
 
 ### Response
 
-**Promise<[operations.PutV1TerminationsEmployeeIdResponse](../../models/operations/putv1terminationsemployeeidresponse.md)>**
+**Promise<[operations.PutV1TerminationsEmployeeIdResponse](../../sdk/models/operations/putv1terminationsemployeeidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

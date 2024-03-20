@@ -1,4 +1,5 @@
-# departments
+# Departments
+(*departments*)
 
 ### Available Operations
 
@@ -21,20 +22,24 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteDepartmentRequest, DeleteDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteDepartmentRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const departmentUuid: string = "ad";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const departmentUuid: string = "<value>";
 
-sdk.departments.deleteDepartment(departmentUuid).then((res: DeleteDepartmentResponse) => {
+  const res = await sdk.departments.deleteDepartment(departmentUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -47,8 +52,12 @@ sdk.departments.deleteDepartment(departmentUuid).then((res: DeleteDepartmentResp
 
 ### Response
 
-**Promise<[operations.DeleteDepartmentResponse](../../models/operations/deletedepartmentresponse.md)>**
+**Promise<[operations.DeleteDepartmentResponse](../../sdk/models/operations/deletedepartmentresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getCompaniesDepartments
 
@@ -60,20 +69,24 @@ scope: `departments:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetCompaniesDepartmentsRequest, GetCompaniesDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetCompaniesDepartmentsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "eum";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
 
-sdk.departments.getCompaniesDepartments(companyUuid).then((res: GetCompaniesDepartmentsResponse) => {
+  const res = await sdk.departments.getCompaniesDepartments(companyUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -86,8 +99,12 @@ sdk.departments.getCompaniesDepartments(companyUuid).then((res: GetCompaniesDepa
 
 ### Response
 
-**Promise<[operations.GetCompaniesDepartmentsResponse](../../models/operations/getcompaniesdepartmentsresponse.md)>**
+**Promise<[operations.GetCompaniesDepartmentsResponse](../../sdk/models/operations/getcompaniesdepartmentsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getDepartment
 
@@ -100,20 +117,24 @@ scope: `departments:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetDepartmentRequest, GetDepartmentResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetDepartmentRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const departmentUuid: string = "dolor";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const departmentUuid: string = "<value>";
 
-sdk.departments.getDepartment(departmentUuid).then((res: GetDepartmentResponse) => {
+  const res = await sdk.departments.getDepartment(departmentUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -126,8 +147,12 @@ sdk.departments.getDepartment(departmentUuid).then((res: GetDepartmentResponse) 
 
 ### Response
 
-**Promise<[operations.GetDepartmentResponse](../../models/operations/getdepartmentresponse.md)>**
+**Promise<[operations.GetDepartmentResponse](../../sdk/models/operations/getdepartmentresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postDepartments
 
@@ -139,38 +164,44 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostDepartmentsRequest, PostDepartmentsRequestBody, PostDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostDepartmentsRequest, PostDepartmentsRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "necessitatibus";
-const requestBody: PostDepartmentsRequestBody = {
-  title: "Mr.",
-};
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
+const requestBody: PostDepartmentsRequestBody = {};
 
-sdk.departments.postDepartments(companyUuid, requestBody).then((res: PostDepartmentsResponse) => {
+  const res = await sdk.departments.postDepartments(companyUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `companyUuid`                                                                                  | *string*                                                                                       | :heavy_check_mark:                                                                             | The UUID of the company                                                                        |
-| `requestBody`                                                                                  | [operations.PostDepartmentsRequestBody](../../models/operations/postdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                      | *string*                                                                                           | :heavy_check_mark:                                                                                 | The UUID of the company                                                                            |
+| `requestBody`                                                                                      | [operations.PostDepartmentsRequestBody](../../sdk/models/operations/postdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
 
-**Promise<[operations.PostDepartmentsResponse](../../models/operations/postdepartmentsresponse.md)>**
+**Promise<[operations.PostDepartmentsResponse](../../sdk/models/operations/postdepartmentsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putAddPeopleToDepartment
 
@@ -184,53 +215,55 @@ scope: `departments:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  Contractors,
+  Employees,
   PutAddPeopleToDepartmentRequest,
   PutAddPeopleToDepartmentRequestBody,
-  PutAddPeopleToDepartmentRequestBodyContractors,
-  PutAddPeopleToDepartmentRequestBodyEmployees,
-  PutAddPeopleToDepartmentResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const departmentUuid: string = "nemo";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const departmentUuid: string = "<value>";
 const requestBody: PutAddPeopleToDepartmentRequestBody = {
   contractors: [
-    {
-      uuid: "6fe4c8b7-11e5-4b7f-92ed-028921cddc69",
-    },
+    {},
   ],
   employees: [
-    {
-      uuid: "601fb576-b0d5-4f0d-b0c5-fbb258705320",
-    },
+    {},
   ],
-  version: "dolores",
 };
 
-sdk.departments.putAddPeopleToDepartment(departmentUuid, requestBody).then((res: PutAddPeopleToDepartmentResponse) => {
+  const res = await sdk.departments.putAddPeopleToDepartment(departmentUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `departmentUuid`                                                                                                 | *string*                                                                                                         | :heavy_check_mark:                                                                                               | The UUID of the department                                                                                       |
-| `requestBody`                                                                                                    | [operations.PutAddPeopleToDepartmentRequestBody](../../models/operations/putaddpeopletodepartmentrequestbody.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `departmentUuid`                                                                                                     | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | The UUID of the department                                                                                           |
+| `requestBody`                                                                                                        | [operations.PutAddPeopleToDepartmentRequestBody](../../sdk/models/operations/putaddpeopletodepartmentrequestbody.md) | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
 
 
 ### Response
 
-**Promise<[operations.PutAddPeopleToDepartmentResponse](../../models/operations/putaddpeopletodepartmentresponse.md)>**
+**Promise<[operations.PutAddPeopleToDepartmentResponse](../../sdk/models/operations/putaddpeopletodepartmentresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putDepartments
 
@@ -242,39 +275,46 @@ scope: `departments:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutDepartmentsRequest, PutDepartmentsRequestBody, PutDepartmentsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutDepartmentsRequest, PutDepartmentsRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const departmentUuid: string = "minus";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const departmentUuid: string = "<value>";
 const requestBody: PutDepartmentsRequestBody = {
-  title: "Ms.",
-  version: "dolor",
+  version: "<value>",
 };
 
-sdk.departments.putDepartments(departmentUuid, requestBody).then((res: PutDepartmentsResponse) => {
+  const res = await sdk.departments.putDepartments(departmentUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `departmentUuid`                                                                             | *string*                                                                                     | :heavy_check_mark:                                                                           | The UUID of the department                                                                   |
-| `requestBody`                                                                                | [operations.PutDepartmentsRequestBody](../../models/operations/putdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                           | N/A                                                                                          |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `departmentUuid`                                                                                 | *string*                                                                                         | :heavy_check_mark:                                                                               | The UUID of the department                                                                       |
+| `requestBody`                                                                                    | [operations.PutDepartmentsRequestBody](../../sdk/models/operations/putdepartmentsrequestbody.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
 
-**Promise<[operations.PutDepartmentsResponse](../../models/operations/putdepartmentsresponse.md)>**
+**Promise<[operations.PutDepartmentsResponse](../../sdk/models/operations/putdepartmentsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putRemovePeopleFromDepartment
 
@@ -288,59 +328,52 @@ scope: `departments:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PutRemovePeopleFromDepartmentContractors,
+  PutRemovePeopleFromDepartmentEmployees,
   PutRemovePeopleFromDepartmentRequest,
   PutRemovePeopleFromDepartmentRequestBody,
-  PutRemovePeopleFromDepartmentRequestBodyContractors,
-  PutRemovePeopleFromDepartmentRequestBodyEmployees,
-  PutRemovePeopleFromDepartmentResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const departmentUuid: string = "vero";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const departmentUuid: string = "<value>";
 const requestBody: PutRemovePeopleFromDepartmentRequestBody = {
   contractors: [
-    {
-      uuid: "fe9b90c2-8909-4b3f-a49a-8d9cbf486333",
-    },
-    {
-      uuid: "23f9b77f-3a41-4006-b4eb-f69280d1ba77",
-    },
+    {},
   ],
   employees: [
-    {
-      uuid: "89ebf737-ae42-403c-a5e6-a95d8a0d446c",
-    },
-    {
-      uuid: "e2af7a73-cf3b-4e45-bf87-0b326b5a7342",
-    },
-    {
-      uuid: "9cdb1a84-22bb-4679-9232-2715bf0cbb1e",
-    },
+    {},
   ],
-  version: "ipsum",
 };
 
-sdk.departments.putRemovePeopleFromDepartment(departmentUuid, requestBody).then((res: PutRemovePeopleFromDepartmentResponse) => {
+  const res = await sdk.departments.putRemovePeopleFromDepartment(departmentUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `departmentUuid`                                                                                                           | *string*                                                                                                                   | :heavy_check_mark:                                                                                                         | The UUID of the department                                                                                                 |
-| `requestBody`                                                                                                              | [operations.PutRemovePeopleFromDepartmentRequestBody](../../models/operations/putremovepeoplefromdepartmentrequestbody.md) | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |
-| `config`                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                               | :heavy_minus_sign:                                                                                                         | Available config options for making requests.                                                                              |
+| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `departmentUuid`                                                                                                               | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | The UUID of the department                                                                                                     |
+| `requestBody`                                                                                                                  | [operations.PutRemovePeopleFromDepartmentRequestBody](../../sdk/models/operations/putremovepeoplefromdepartmentrequestbody.md) | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
+| `config`                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                   | :heavy_minus_sign:                                                                                                             | Available config options for making requests.                                                                                  |
 
 
 ### Response
 
-**Promise<[operations.PutRemovePeopleFromDepartmentResponse](../../models/operations/putremovepeoplefromdepartmentresponse.md)>**
+**Promise<[operations.PutRemovePeopleFromDepartmentResponse](../../sdk/models/operations/putremovepeoplefromdepartmentresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

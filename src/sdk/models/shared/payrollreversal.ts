@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Example response
- */
 export class PayrollReversal extends SpeakeasyBase {
     /**
      * Timestamp of when the reversal was approved.

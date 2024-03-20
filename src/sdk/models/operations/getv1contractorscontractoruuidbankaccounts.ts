@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1ContractorsContractorUuidBankAccountsRequest extends SpeakeasyBase {
@@ -15,18 +15,27 @@ export class GetV1ContractorsContractorUuidBankAccountsRequest extends Speakeasy
 }
 
 export class GetV1ContractorsContractorUuidBankAccountsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
+
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
+
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse: AxiosResponse;
 
     /**
      * Example response
      */
     @SpeakeasyMetadata({ elemType: shared.ContractorBankAccount })
-    contractorBankAccounts?: shared.ContractorBankAccount[];
-
-    @SpeakeasyMetadata()
-    statusCode: number;
-
-    @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    classes?: shared.ContractorBankAccount[];
 }

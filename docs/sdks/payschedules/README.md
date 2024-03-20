@@ -1,4 +1,5 @@
-# paySchedules
+# PaySchedules
+(*paySchedules*)
 
 ### Available Operations
 
@@ -20,25 +21,26 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdPayPeriodsRequest,
-  GetV1CompaniesCompanyIdPayPeriodsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdPayPeriodsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "atque";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
 const endDate: string = "2020-01-31";
 const startDate: string = "2020-01-01";
 
-sdk.paySchedules.getV1CompaniesCompanyIdPayPeriods(companyId, endDate, startDate).then((res: GetV1CompaniesCompanyIdPayPeriodsResponse) => {
+  const res = await sdk.paySchedules.getV1CompaniesCompanyIdPayPeriods(companyId, endDate, startDate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -53,8 +55,12 @@ sdk.paySchedules.getV1CompaniesCompanyIdPayPeriods(companyId, endDate, startDate
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdPayPeriodsResponse](../../models/operations/getv1companiescompanyidpayperiodsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdPayPeriodsResponse](../../sdk/models/operations/getv1companiescompanyidpayperiodsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompaniesCompanyIdPaySchedules
 
@@ -66,25 +72,26 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdPaySchedulesRequest,
-  GetV1CompaniesCompanyIdPaySchedulesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdPaySchedulesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "reprehenderit";
-const page: number = 9911.42;
-const per: number = 5199.52;
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const page: number = 3004.3;
+const per: number = 9327.24;
 
-sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules(companyId, page, per).then((res: GetV1CompaniesCompanyIdPaySchedulesResponse) => {
+  const res = await sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules(companyId, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -99,8 +106,12 @@ sdk.paySchedules.getV1CompaniesCompanyIdPaySchedules(companyId, page, per).then(
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdPaySchedulesResponse](../../models/operations/getv1companiescompanyidpayschedulesresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdPaySchedulesResponse](../../sdk/models/operations/getv1companiescompanyidpayschedulesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompaniesCompanyIdPaySchedulesPayScheduleId
 
@@ -112,24 +123,25 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
-  GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "suscipit";
-const payScheduleId: string = "quidem";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const payScheduleId: string = "<value>";
 
-sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId).then((res: GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
+  const res = await sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -143,8 +155,12 @@ sdk.paySchedules.getV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, pay
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse](../../models/operations/getv1companiescompanyidpayschedulespayscheduleidresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse](../../sdk/models/operations/getv1companiescompanyidpayschedulespayscheduleidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1CompaniesCompanyIdPaySchedules
 
@@ -159,46 +175,51 @@ Be sure to **[check state laws](https://www.dol.gov/agencies/whd/state/payday)**
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  Frequency,
   PostV1CompaniesCompanyIdPaySchedulesRequest,
   PostV1CompaniesCompanyIdPaySchedulesRequestBody,
-  PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency,
-  PostV1CompaniesCompanyIdPaySchedulesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "maxime";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdPaySchedulesRequestBody = {
   anchorEndOfPayPeriod: "2020-05-08",
   anchorPayDate: "2020-05-15",
-  day1: 90885,
-  day2: 461007,
-  frequency: PostV1CompaniesCompanyIdPaySchedulesRequestBodyFrequency.EveryWeek,
+  frequency: Frequency.EveryOtherWeek,
 };
 
-sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules(companyId, requestBody).then((res: PostV1CompaniesCompanyIdPaySchedulesResponse) => {
+  const res = await sdk.paySchedules.postV1CompaniesCompanyIdPaySchedules(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                              | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The UUID of the company                                                                                                                  |
-| `requestBody`                                                                                                                            | [operations.PostV1CompaniesCompanyIdPaySchedulesRequestBody](../../models/operations/postv1companiescompanyidpayschedulesrequestbody.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
-| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
+| Parameter                                                                                                                                    | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                  | *string*                                                                                                                                     | :heavy_check_mark:                                                                                                                           | The UUID of the company                                                                                                                      |
+| `requestBody`                                                                                                                                | [operations.PostV1CompaniesCompanyIdPaySchedulesRequestBody](../../sdk/models/operations/postv1companiescompanyidpayschedulesrequestbody.md) | :heavy_minus_sign:                                                                                                                           | N/A                                                                                                                                          |
+| `config`                                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                 | :heavy_minus_sign:                                                                                                                           | Available config options for making requests.                                                                                                |
 
 
 ### Response
 
-**Promise<[operations.PostV1CompaniesCompanyIdPaySchedulesResponse](../../models/operations/postv1companiescompanyidpayschedulesresponse.md)>**
+**Promise<[operations.PostV1CompaniesCompanyIdPaySchedulesResponse](../../sdk/models/operations/postv1companiescompanyidpayschedulesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompaniesCompanyIdPaySchedulesPayScheduleId
 
@@ -211,39 +232,45 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequest,
   PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody,
-  PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "assumenda";
-const payScheduleId: string = "ea";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const payScheduleId: string = "<value>";
 const requestBody: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody = {
-  autoPilot: false,
-  version: "atque",
+  version: "<value>",
 };
 
-sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId, requestBody).then((res: PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse) => {
+  const res = await sdk.paySchedules.putV1CompaniesCompanyIdPaySchedulesPayScheduleId(companyId, payScheduleId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                        | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                                                      | *string*                                                                                                                                                         | :heavy_check_mark:                                                                                                                                               | The UUID of the company                                                                                                                                          |
-| `payScheduleId`                                                                                                                                                  | *string*                                                                                                                                                         | :heavy_check_mark:                                                                                                                                               | The UUID of the pay schedule                                                                                                                                     |
-| `requestBody`                                                                                                                                                    | [operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody](../../models/operations/putv1companiescompanyidpayschedulespayscheduleidrequestbody.md) | :heavy_minus_sign:                                                                                                                                               | N/A                                                                                                                                                              |
-| `config`                                                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                     | :heavy_minus_sign:                                                                                                                                               | Available config options for making requests.                                                                                                                    |
+| Parameter                                                                                                                                                            | Type                                                                                                                                                                 | Required                                                                                                                                                             | Description                                                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `companyId`                                                                                                                                                          | *string*                                                                                                                                                             | :heavy_check_mark:                                                                                                                                                   | The UUID of the company                                                                                                                                              |
+| `payScheduleId`                                                                                                                                                      | *string*                                                                                                                                                             | :heavy_check_mark:                                                                                                                                                   | The UUID of the pay schedule                                                                                                                                         |
+| `requestBody`                                                                                                                                                        | [operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdRequestBody](../../sdk/models/operations/putv1companiescompanyidpayschedulespayscheduleidrequestbody.md) | :heavy_minus_sign:                                                                                                                                                   | N/A                                                                                                                                                                  |
+| `config`                                                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                         | :heavy_minus_sign:                                                                                                                                                   | Available config options for making requests.                                                                                                                        |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse](../../models/operations/putv1companiescompanyidpayschedulespayscheduleidresponse.md)>**
+**Promise<[operations.PutV1CompaniesCompanyIdPaySchedulesPayScheduleIdResponse](../../sdk/models/operations/putv1companiescompanyidpayschedulespayscheduleidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

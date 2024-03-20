@@ -1,4 +1,5 @@
-# jobsAndCompensations
+# JobsAndCompensations
+(*jobsAndCompensations*)
 
 ### Available Operations
 
@@ -21,20 +22,24 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1JobsJobIdRequest, DeleteV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1JobsJobIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const jobId: string = "dolorum";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const jobId: string = "<value>";
 
-sdk.jobsAndCompensations.deleteV1JobsJobId(jobId).then((res: DeleteV1JobsJobIdResponse) => {
+  const res = await sdk.jobsAndCompensations.deleteV1JobsJobId(jobId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -47,8 +52,12 @@ sdk.jobsAndCompensations.deleteV1JobsJobId(jobId).then((res: DeleteV1JobsJobIdRe
 
 ### Response
 
-**Promise<[operations.DeleteV1JobsJobIdResponse](../../models/operations/deletev1jobsjobidresponse.md)>**
+**Promise<[operations.DeleteV1JobsJobIdResponse](../../sdk/models/operations/deletev1jobsjobidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompensationsCompensationId
 
@@ -63,23 +72,24 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompensationsCompensationIdRequest,
-  GetV1CompensationsCompensationIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompensationsCompensationIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const compensationId: string = "adipisci";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const compensationId: string = "<value>";
 
-sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId).then((res: GetV1CompensationsCompensationIdResponse) => {
+  const res = await sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -92,8 +102,12 @@ sdk.jobsAndCompensations.getV1CompensationsCompensationId(compensationId).then((
 
 ### Response
 
-**Promise<[operations.GetV1CompensationsCompensationIdResponse](../../models/operations/getv1compensationscompensationidresponse.md)>**
+**Promise<[operations.GetV1CompensationsCompensationIdResponse](../../sdk/models/operations/getv1compensationscompensationidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1EmployeesEmployeeIdJobs
 
@@ -105,27 +119,27 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdJobsInclude,
-  GetV1EmployeesEmployeeIdJobsRequest,
-  GetV1EmployeesEmployeeIdJobsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdJobsRequest, QueryParamInclude } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "minus";
-const include: GetV1EmployeesEmployeeIdJobsInclude = GetV1EmployeesEmployeeIdJobsInclude.AllCompensations;
-const page: number = 1718.53;
-const per: number = 5039.34;
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
+const include: QueryParamInclude = QueryParamInclude.AllCompensations;
+const page: number = 2958.61;
+const per: number = 7200.06;
 
-sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page, per).then((res: GetV1EmployeesEmployeeIdJobsResponse) => {
+  const res = await sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -133,7 +147,7 @@ sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page,
 | Parameter                                                                                                                               | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
 | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `employeeId`                                                                                                                            | *string*                                                                                                                                | :heavy_check_mark:                                                                                                                      | The UUID of the employee                                                                                                                |
-| `include`                                                                                                                               | [operations.GetV1EmployeesEmployeeIdJobsInclude](../../models/operations/getv1employeesemployeeidjobsinclude.md)                        | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
+| `include`                                                                                                                               | [operations.QueryParamInclude](../../sdk/models/operations/queryparaminclude.md)                                                        | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
 | `page`                                                                                                                                  | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | The page that is requested. When unspecified, will load all objects.                                                                    |
 | `per`                                                                                                                                   | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | Number of objects per page. When unspecified, will default to 25                                                                        |
 | `config`                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                            | :heavy_minus_sign:                                                                                                                      | Available config options for making requests.                                                                                           |
@@ -141,8 +155,12 @@ sdk.jobsAndCompensations.getV1EmployeesEmployeeIdJobs(employeeId, include, page,
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdJobsResponse](../../models/operations/getv1employeesemployeeidjobsresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdJobsResponse](../../sdk/models/operations/getv1employeesemployeeidjobsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1JobsJobId
 
@@ -154,21 +172,25 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1JobsJobIdInclude, GetV1JobsJobIdRequest, GetV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1JobsJobIdQueryParamInclude, GetV1JobsJobIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const jobId: string = "in";
-const include: GetV1JobsJobIdInclude = GetV1JobsJobIdInclude.AllCompensations;
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const jobId: string = "<value>";
+const include: GetV1JobsJobIdQueryParamInclude = GetV1JobsJobIdQueryParamInclude.AllCompensations;
 
-sdk.jobsAndCompensations.getV1JobsJobId(jobId, include).then((res: GetV1JobsJobIdResponse) => {
+  const res = await sdk.jobsAndCompensations.getV1JobsJobId(jobId, include);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -176,14 +198,18 @@ sdk.jobsAndCompensations.getV1JobsJobId(jobId, include).then((res: GetV1JobsJobI
 | Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `jobId`                                                                                                                                | *string*                                                                                                                               | :heavy_check_mark:                                                                                                                     | The UUID of the job                                                                                                                    |
-| `include`                                                                                                                              | [operations.GetV1JobsJobIdInclude](../../models/operations/getv1jobsjobidinclude.md)                                                   | :heavy_minus_sign:                                                                                                                     | Available options:<br/>- all_compensations: Include all effective dated compensations for the job instead of only the current compensation |
+| `include`                                                                                                                              | [operations.GetV1JobsJobIdQueryParamInclude](../../sdk/models/operations/getv1jobsjobidqueryparaminclude.md)                           | :heavy_minus_sign:                                                                                                                     | Available options:<br/>- all_compensations: Include all effective dated compensations for the job instead of only the current compensation |
 | `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
 
 
 ### Response
 
-**Promise<[operations.GetV1JobsJobIdResponse](../../models/operations/getv1jobsjobidresponse.md)>**
+**Promise<[operations.GetV1JobsJobIdResponse](../../sdk/models/operations/getv1jobsjobidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1JobsJobIdCompensations
 
@@ -199,27 +225,27 @@ scope: `jobs:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1JobsJobIdCompensationsInclude,
-  GetV1JobsJobIdCompensationsRequest,
-  GetV1JobsJobIdCompensationsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1JobsJobIdCompensationsQueryParamInclude, GetV1JobsJobIdCompensationsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const jobId: string = "dolore";
-const include: GetV1JobsJobIdCompensationsInclude = GetV1JobsJobIdCompensationsInclude.AllCompensations;
-const page: number = 3044.68;
-const per: number = 8859.63;
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const jobId: string = "<value>";
+const include: GetV1JobsJobIdCompensationsQueryParamInclude = GetV1JobsJobIdCompensationsQueryParamInclude.AllCompensations;
+const page: number = 8955.23;
+const per: number = 1707.54;
 
-sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per).then((res: GetV1JobsJobIdCompensationsResponse) => {
+  const res = await sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -227,7 +253,7 @@ sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per).
 | Parameter                                                                                                                               | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
 | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `jobId`                                                                                                                                 | *string*                                                                                                                                | :heavy_check_mark:                                                                                                                      | The UUID of the job                                                                                                                     |
-| `include`                                                                                                                               | [operations.GetV1JobsJobIdCompensationsInclude](../../models/operations/getv1jobsjobidcompensationsinclude.md)                          | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
+| `include`                                                                                                                               | [operations.GetV1JobsJobIdCompensationsQueryParamInclude](../../sdk/models/operations/getv1jobsjobidcompensationsqueryparaminclude.md)  | :heavy_minus_sign:                                                                                                                      | Available options:<br/>- all_compensations: Include all effective dated compensations for each job instead of only the current compensation |
 | `page`                                                                                                                                  | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | The page that is requested. When unspecified, will load all objects.                                                                    |
 | `per`                                                                                                                                   | *number*                                                                                                                                | :heavy_minus_sign:                                                                                                                      | Number of objects per page. When unspecified, will default to 25                                                                        |
 | `config`                                                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                            | :heavy_minus_sign:                                                                                                                      | Available config options for making requests.                                                                                           |
@@ -235,8 +261,12 @@ sdk.jobsAndCompensations.getV1JobsJobIdCompensations(jobId, include, page, per).
 
 ### Response
 
-**Promise<[operations.GetV1JobsJobIdCompensationsResponse](../../models/operations/getv1jobsjobidcompensationsresponse.md)>**
+**Promise<[operations.GetV1JobsJobIdCompensationsResponse](../../sdk/models/operations/getv1jobsjobidcompensationsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1JobsJobId
 
@@ -248,40 +278,44 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PostV1JobsJobIdRequest, PostV1JobsJobIdRequestBody, PostV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PostV1JobsJobIdRequest, PostV1JobsJobIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "temporibus";
-const requestBody: PostV1JobsJobIdRequestBody = {
-  hireDate: "ullam",
-  locationUuid: "adipisci",
-  title: "Miss",
-};
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
+const requestBody: PostV1JobsJobIdRequestBody = {};
 
-sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody).then((res: PostV1JobsJobIdResponse) => {
+  const res = await sdk.jobsAndCompensations.postV1JobsJobId(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `employeeId`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | The UUID of the employee                                                                       |
-| `requestBody`                                                                                  | [operations.PostV1JobsJobIdRequestBody](../../models/operations/postv1jobsjobidrequestbody.md) | :heavy_minus_sign:                                                                             | Create a job.                                                                                  |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                       | *string*                                                                                           | :heavy_check_mark:                                                                                 | The UUID of the employee                                                                           |
+| `requestBody`                                                                                      | [operations.PostV1JobsJobIdRequestBody](../../sdk/models/operations/postv1jobsjobidrequestbody.md) | :heavy_minus_sign:                                                                                 | Create a job.                                                                                      |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
 
-**Promise<[operations.PostV1JobsJobIdResponse](../../models/operations/postv1jobsjobidresponse.md)>**
+**Promise<[operations.PostV1JobsJobIdResponse](../../sdk/models/operations/postv1jobsjobidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompensationsCompensationId
 
@@ -296,62 +330,54 @@ scope: `jobs:write`
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  FlsaStatus,
+  MinimumWages,
+  PaymentUnit,
   PutV1CompensationsCompensationIdRequest,
   PutV1CompensationsCompensationIdRequestBody,
-  PutV1CompensationsCompensationIdRequestBodyFlsaStatus,
-  PutV1CompensationsCompensationIdRequestBodyMinimumWages,
-  PutV1CompensationsCompensationIdRequestBodyPaymentUnit,
-  PutV1CompensationsCompensationIdResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const compensationId: string = "blanditiis";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const compensationId: string = "<value>";
 const requestBody: PutV1CompensationsCompensationIdRequestBody = {
-  adjustForMinimumWage: false,
-  flsaStatus: PutV1CompensationsCompensationIdRequestBodyFlsaStatus.CommissionOnlyExempt,
   minimumWages: [
-    {
-      uuid: "3a8d8f5c-0b2f-42fb-bb19-4a276b26916f",
-    },
-    {
-      uuid: "e1f08f42-94e3-4698-b447-f603e8b445e8",
-    },
-    {
-      uuid: "0ca55efd-20e4-457e-9858-b6a89fbe3a5a",
-    },
-    {
-      uuid: "a8e4824d-0ab4-4075-888e-51862065e904",
-    },
+    {},
   ],
-  paymentUnit: PutV1CompensationsCompensationIdRequestBodyPaymentUnit.Paycheck,
-  rate: "dolorem",
-  version: "harum",
+  version: "<value>",
 };
 
-sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody).then((res: PutV1CompensationsCompensationIdResponse) => {
+  const res = await sdk.jobsAndCompensations.putV1CompensationsCompensationId(compensationId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `compensationId`                                                                                                                 | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | The UUID of the compensation                                                                                                     |
-| `requestBody`                                                                                                                    | [operations.PutV1CompensationsCompensationIdRequestBody](../../models/operations/putv1compensationscompensationidrequestbody.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `compensationId`                                                                                                                     | *string*                                                                                                                             | :heavy_check_mark:                                                                                                                   | The UUID of the compensation                                                                                                         |
+| `requestBody`                                                                                                                        | [operations.PutV1CompensationsCompensationIdRequestBody](../../sdk/models/operations/putv1compensationscompensationidrequestbody.md) | :heavy_minus_sign:                                                                                                                   | N/A                                                                                                                                  |
+| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompensationsCompensationIdResponse](../../models/operations/putv1compensationscompensationidresponse.md)>**
+**Promise<[operations.PutV1CompensationsCompensationIdResponse](../../sdk/models/operations/putv1compensationscompensationidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1JobsJobId
 
@@ -363,38 +389,43 @@ scope: `jobs:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1JobsJobIdRequest, PutV1JobsJobIdRequestBody, PutV1JobsJobIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1JobsJobIdRequest, PutV1JobsJobIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const jobId: string = "dicta";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const jobId: string = "<value>";
 const requestBody: PutV1JobsJobIdRequestBody = {
-  hireDate: "architecto",
-  locationUuid: "occaecati",
-  title: "Mrs.",
-  version: "quidem",
+  version: "<value>",
 };
 
-sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody).then((res: PutV1JobsJobIdResponse) => {
+  const res = await sdk.jobsAndCompensations.putV1JobsJobId(jobId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `jobId`                                                                                      | *string*                                                                                     | :heavy_check_mark:                                                                           | The UUID of the job                                                                          |
-| `requestBody`                                                                                | [operations.PutV1JobsJobIdRequestBody](../../models/operations/putv1jobsjobidrequestbody.md) | :heavy_minus_sign:                                                                           | Update a job.                                                                                |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `jobId`                                                                                          | *string*                                                                                         | :heavy_check_mark:                                                                               | The UUID of the job                                                                              |
+| `requestBody`                                                                                    | [operations.PutV1JobsJobIdRequestBody](../../sdk/models/operations/putv1jobsjobidrequestbody.md) | :heavy_minus_sign:                                                                               | Update a job.                                                                                    |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
 
-**Promise<[operations.PutV1JobsJobIdResponse](../../models/operations/putv1jobsjobidresponse.md)>**
+**Promise<[operations.PutV1JobsJobIdResponse](../../sdk/models/operations/putv1jobsjobidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

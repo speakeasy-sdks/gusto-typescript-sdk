@@ -1,4 +1,5 @@
-# garnishments
+# Garnishments
+(*garnishments*)
 
 ### Available Operations
 
@@ -17,25 +18,26 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdGarnishmentsRequest,
-  GetV1EmployeesEmployeeIdGarnishmentsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdGarnishmentsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "sunt";
-const page: number = 9920.12;
-const per: number = 2415.45;
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
+const page: number = 5514.05;
+const per: number = 9088.83;
 
-sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per).then((res: GetV1EmployeesEmployeeIdGarnishmentsResponse) => {
+  const res = await sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -50,8 +52,12 @@ sdk.garnishments.getV1EmployeesEmployeeIdGarnishments(employeeId, page, per).the
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdGarnishmentsResponse](../../models/operations/getv1employeesemployeeidgarnishmentsresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdGarnishmentsResponse](../../sdk/models/operations/getv1employeesemployeeidgarnishmentsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1GarnishmentsGarnishmentId
 
@@ -63,20 +69,24 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1GarnishmentsGarnishmentIdRequest, GetV1GarnishmentsGarnishmentIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1GarnishmentsGarnishmentIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const garnishmentId: string = "non";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const garnishmentId: string = "<value>";
 
-sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId).then((res: GetV1GarnishmentsGarnishmentIdResponse) => {
+  const res = await sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -89,8 +99,12 @@ sdk.garnishments.getV1GarnishmentsGarnishmentId(garnishmentId).then((res: GetV1G
 
 ### Response
 
-**Promise<[operations.GetV1GarnishmentsGarnishmentIdResponse](../../models/operations/getv1garnishmentsgarnishmentidresponse.md)>**
+**Promise<[operations.GetV1GarnishmentsGarnishmentIdResponse](../../sdk/models/operations/getv1garnishmentsgarnishmentidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1EmployeesEmployeeIdGarnishments
 
@@ -105,47 +119,48 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1EmployeesEmployeeIdGarnishmentsRequest,
   PostV1EmployeesEmployeeIdGarnishmentsRequestBody,
-  PostV1EmployeesEmployeeIdGarnishmentsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "amet";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
 const requestBody: PostV1EmployeesEmployeeIdGarnishmentsRequestBody = {
-  active: false,
-  amount: "beatae",
-  annualMaximum: "dignissimos",
+  amount: "<value>",
   courtOrdered: false,
-  deductAsPercentage: false,
-  description: "a",
-  payPeriodMaximum: "debitis",
-  recurring: false,
-  times: 233420,
+  description: "Advanced systematic hardware",
 };
 
-sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdGarnishmentsResponse) => {
+  const res = await sdk.garnishments.postV1EmployeesEmployeeIdGarnishments(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeId`                                                                                                                               | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the employee                                                                                                                   |
-| `requestBody`                                                                                                                              | [operations.PostV1EmployeesEmployeeIdGarnishmentsRequestBody](../../models/operations/postv1employeesemployeeidgarnishmentsrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                                   | *string*                                                                                                                                       | :heavy_check_mark:                                                                                                                             | The UUID of the employee                                                                                                                       |
+| `requestBody`                                                                                                                                  | [operations.PostV1EmployeesEmployeeIdGarnishmentsRequestBody](../../sdk/models/operations/postv1employeesemployeeidgarnishmentsrequestbody.md) | :heavy_minus_sign:                                                                                                                             | N/A                                                                                                                                            |
+| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
 
 
 ### Response
 
-**Promise<[operations.PostV1EmployeesEmployeeIdGarnishmentsResponse](../../models/operations/postv1employeesemployeeidgarnishmentsresponse.md)>**
+**Promise<[operations.PostV1EmployeesEmployeeIdGarnishmentsResponse](../../sdk/models/operations/postv1employeesemployeeidgarnishmentsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1GarnishmentsGarnishmentId
 
@@ -157,48 +172,43 @@ scope: `employees:write`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1GarnishmentsGarnishmentIdRequest,
-  PutV1GarnishmentsGarnishmentIdRequestBody,
-  PutV1GarnishmentsGarnishmentIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1GarnishmentsGarnishmentIdRequest, PutV1GarnishmentsGarnishmentIdRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const garnishmentId: string = "corporis";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const garnishmentId: string = "<value>";
 const requestBody: PutV1GarnishmentsGarnishmentIdRequestBody = {
-  active: false,
-  amount: "harum",
-  annualMaximum: "laboriosam",
-  courtOrdered: false,
-  deductAsPercentage: false,
-  description: "ipsa",
-  payPeriodMaximum: "voluptates",
-  recurring: false,
-  times: 730709,
-  version: "vitae",
+  version: "<value>",
 };
 
-sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody).then((res: PutV1GarnishmentsGarnishmentIdResponse) => {
+  const res = await sdk.garnishments.putV1GarnishmentsGarnishmentId(garnishmentId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `garnishmentId`                                                                                                              | *string*                                                                                                                     | :heavy_check_mark:                                                                                                           | The UUID of the garnishment                                                                                                  |
-| `requestBody`                                                                                                                | [operations.PutV1GarnishmentsGarnishmentIdRequestBody](../../models/operations/putv1garnishmentsgarnishmentidrequestbody.md) | :heavy_minus_sign:                                                                                                           | N/A                                                                                                                          |
-| `config`                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                 | :heavy_minus_sign:                                                                                                           | Available config options for making requests.                                                                                |
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `garnishmentId`                                                                                                                  | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | The UUID of the garnishment                                                                                                      |
+| `requestBody`                                                                                                                    | [operations.PutV1GarnishmentsGarnishmentIdRequestBody](../../sdk/models/operations/putv1garnishmentsgarnishmentidrequestbody.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
+| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
 
 
 ### Response
 
-**Promise<[operations.PutV1GarnishmentsGarnishmentIdResponse](../../models/operations/putv1garnishmentsgarnishmentidresponse.md)>**
+**Promise<[operations.PutV1GarnishmentsGarnishmentIdResponse](../../sdk/models/operations/putv1garnishmentsgarnishmentidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

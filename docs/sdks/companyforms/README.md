@@ -1,4 +1,5 @@
-# companyForms
+# CompanyForms
+(*companyForms*)
 
 ### Available Operations
 
@@ -15,20 +16,24 @@ Get a company form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyFormRequest, GetV1CompanyFormResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyFormRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const formId: string = "qui";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const formId: string = "<value>";
 
-sdk.companyForms.getV1CompanyForm(formId).then((res: GetV1CompanyFormResponse) => {
+  const res = await sdk.companyForms.getV1CompanyForm(formId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -41,8 +46,12 @@ sdk.companyForms.getV1CompanyForm(formId).then((res: GetV1CompanyFormResponse) =
 
 ### Response
 
-**Promise<[operations.GetV1CompanyFormResponse](../../models/operations/getv1companyformresponse.md)>**
+**Promise<[operations.GetV1CompanyFormResponse](../../sdk/models/operations/getv1companyformresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompanyFormPdf
 
@@ -52,20 +61,24 @@ Get the link to the form PDF
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyFormPdfRequest, GetV1CompanyFormPdfResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyFormPdfRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const formId: string = "aliquid";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const formId: string = "<value>";
 
-sdk.companyForms.getV1CompanyFormPdf(formId).then((res: GetV1CompanyFormPdfResponse) => {
+  const res = await sdk.companyForms.getV1CompanyFormPdf(formId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -78,8 +91,12 @@ sdk.companyForms.getV1CompanyFormPdf(formId).then((res: GetV1CompanyFormPdfRespo
 
 ### Response
 
-**Promise<[operations.GetV1CompanyFormPdfResponse](../../models/operations/getv1companyformpdfresponse.md)>**
+**Promise<[operations.GetV1CompanyFormPdfResponse](../../sdk/models/operations/getv1companyformpdfresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompanyForms
 
@@ -89,20 +106,24 @@ Get a list of all company's forms
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1CompanyFormsRequest, GetV1CompanyFormsResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompanyFormsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "cupiditate";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
 
-sdk.companyForms.getV1CompanyForms(companyId).then((res: GetV1CompanyFormsResponse) => {
+  const res = await sdk.companyForms.getV1CompanyForms(companyId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -115,8 +136,12 @@ sdk.companyForms.getV1CompanyForms(companyId).then((res: GetV1CompanyFormsRespon
 
 ### Response
 
-**Promise<[operations.GetV1CompanyFormsResponse](../../models/operations/getv1companyformsresponse.md)>**
+**Promise<[operations.GetV1CompanyFormsResponse](../../sdk/models/operations/getv1companyformsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1CompanyFormSign
 
@@ -126,41 +151,45 @@ Sign a company form
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1CompanyFormSignRequest,
-  PutV1CompanyFormSignRequestBody,
-  PutV1CompanyFormSignResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1CompanyFormSignRequest, PutV1CompanyFormSignRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const formId: string = "quos";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const formId: string = "<value>";
 const requestBody: PutV1CompanyFormSignRequestBody = {
   agree: false,
-  signatureText: "perferendis",
-  signedByIpAddress: "magni",
+  signatureText: "<value>",
+  signedByIpAddress: "<value>",
 };
 
-sdk.companyForms.putV1CompanyFormSign(formId, requestBody).then((res: PutV1CompanyFormSignResponse) => {
+  const res = await sdk.companyForms.putV1CompanyFormSign(formId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `formId`                                                                                                 | *string*                                                                                                 | :heavy_check_mark:                                                                                       | The ID or UUID of the form                                                                               |
-| `requestBody`                                                                                            | [operations.PutV1CompanyFormSignRequestBody](../../models/operations/putv1companyformsignrequestbody.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `formId`                                                                                                     | *string*                                                                                                     | :heavy_check_mark:                                                                                           | The ID or UUID of the form                                                                                   |
+| `requestBody`                                                                                                | [operations.PutV1CompanyFormSignRequestBody](../../sdk/models/operations/putv1companyformsignrequestbody.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response
 
-**Promise<[operations.PutV1CompanyFormSignResponse](../../models/operations/putv1companyformsignresponse.md)>**
+**Promise<[operations.PutV1CompanyFormSignResponse](../../sdk/models/operations/putv1companyformsignresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

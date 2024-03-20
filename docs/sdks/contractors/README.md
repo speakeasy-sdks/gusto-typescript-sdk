@@ -1,4 +1,5 @@
-# contractors
+# Contractors
+(*contractors*)
 
 ### Available Operations
 
@@ -20,20 +21,24 @@ A contractor can only be deleted when there are no contractor payments.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { DeleteV1ContractorsContractorIdRequest, DeleteV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1ContractorsContractorIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorId: string = "ea";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const contractorId: string = "<value>";
 
-sdk.contractors.deleteV1ContractorsContractorId(contractorId).then((res: DeleteV1ContractorsContractorIdResponse) => {
+  const res = await sdk.contractors.deleteV1ContractorsContractorId(contractorId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -46,8 +51,12 @@ sdk.contractors.deleteV1ContractorsContractorId(contractorId).then((res: DeleteV
 
 ### Response
 
-**Promise<[operations.DeleteV1ContractorsContractorIdResponse](../../models/operations/deletev1contractorscontractoridresponse.md)>**
+**Promise<[operations.DeleteV1ContractorsContractorIdResponse](../../sdk/models/operations/deletev1contractorscontractoridresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1CompaniesCompanyIdContractors
 
@@ -59,25 +68,26 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdContractorsRequest,
-  GetV1CompaniesCompanyIdContractorsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdContractorsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "aliquid";
-const page: number = 6754.39;
-const per: number = 8811.04;
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
+const page: number = 5925.71;
+const per: number = 9595.07;
 
-sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per).then((res: GetV1CompaniesCompanyIdContractorsResponse) => {
+  const res = await sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -92,8 +102,12 @@ sdk.contractors.getV1CompaniesCompanyIdContractors(companyId, page, per).then((r
 
 ### Response
 
-**Promise<[operations.GetV1CompaniesCompanyIdContractorsResponse](../../models/operations/getv1companiescompanyidcontractorsresponse.md)>**
+**Promise<[operations.GetV1CompaniesCompanyIdContractorsResponse](../../sdk/models/operations/getv1companiescompanyidcontractorsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1ContractorsContractorId
 
@@ -105,20 +119,24 @@ scope: `employees:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1ContractorsContractorIdRequest, GetV1ContractorsContractorIdResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorId: string = "non";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const contractorId: string = "<value>";
 
-sdk.contractors.getV1ContractorsContractorId(contractorId).then((res: GetV1ContractorsContractorIdResponse) => {
+  const res = await sdk.contractors.getV1ContractorsContractorId(contractorId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -131,8 +149,12 @@ sdk.contractors.getV1ContractorsContractorId(contractorId).then((res: GetV1Contr
 
 ### Response
 
-**Promise<[operations.GetV1ContractorsContractorIdResponse](../../models/operations/getv1contractorscontractoridresponse.md)>**
+**Promise<[operations.GetV1ContractorsContractorIdResponse](../../sdk/models/operations/getv1contractorscontractoridresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1ContractorsContractorUuidAddress
 
@@ -144,23 +166,24 @@ scope: `contractors:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorsContractorUuidAddressRequest,
-  GetV1ContractorsContractorUuidAddressResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorUuidAddressRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "occaecati";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const contractorUuid: string = "<value>";
 
-sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid).then((res: GetV1ContractorsContractorUuidAddressResponse) => {
+  const res = await sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -173,8 +196,12 @@ sdk.contractors.getV1ContractorsContractorUuidAddress(contractorUuid).then((res:
 
 ### Response
 
-**Promise<[operations.GetV1ContractorsContractorUuidAddressResponse](../../models/operations/getv1contractorscontractoruuidaddressresponse.md)>**
+**Promise<[operations.GetV1ContractorsContractorUuidAddressResponse](../../sdk/models/operations/getv1contractorscontractoruuidaddressresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1ContractorsContractorUuidOnboardingStatus
 
@@ -217,23 +244,24 @@ scope: `contractors.read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1ContractorsContractorUuidOnboardingStatusRequest,
-  GetV1ContractorsContractorUuidOnboardingStatusResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1ContractorsContractorUuidOnboardingStatusRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "enim";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const contractorUuid: string = "<value>";
 
-sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid).then((res: GetV1ContractorsContractorUuidOnboardingStatusResponse) => {
+  const res = await sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -246,8 +274,12 @@ sdk.contractors.getV1ContractorsContractorUuidOnboardingStatus(contractorUuid).t
 
 ### Response
 
-**Promise<[operations.GetV1ContractorsContractorUuidOnboardingStatusResponse](../../models/operations/getv1contractorscontractoruuidonboardingstatusresponse.md)>**
+**Promise<[operations.GetV1ContractorsContractorUuidOnboardingStatusResponse](../../sdk/models/operations/getv1contractorscontractoruuidonboardingstatusresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1CompaniesCompanyIdContractors
 
@@ -262,55 +294,51 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PostV1CompaniesCompanyIdContractorsRequest,
   PostV1CompaniesCompanyIdContractorsRequestBody,
-  PostV1CompaniesCompanyIdContractorsRequestBodyType,
-  PostV1CompaniesCompanyIdContractorsRequestBodyWageType,
-  PostV1CompaniesCompanyIdContractorsResponse,
+  PostV1CompaniesCompanyIdContractorsType,
+  WageType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "accusamus";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyId: string = "<value>";
 const requestBody: PostV1CompaniesCompanyIdContractorsRequestBody = {
-  businessName: "delectus",
-  ein: "quidem",
-  email: "Mohammad_Olson@yahoo.com",
-  fileNewHireReport: false,
-  firstName: "Verlie",
   hourlyRate: "40.0",
-  isActive: false,
-  lastName: "Feeney",
-  middleInitial: "deserunt",
-  selfOnboarding: false,
-  ssn: "nisi",
   startDate: "2020-01-11",
-  type: PostV1CompaniesCompanyIdContractorsRequestBodyType.Individual,
-  wageType: PostV1CompaniesCompanyIdContractorsRequestBodyWageType.Hourly,
-  workState: "omnis",
+  type: PostV1CompaniesCompanyIdContractorsType.Individual,
+  wageType: WageType.Fixed,
 };
 
-sdk.contractors.postV1CompaniesCompanyIdContractors(companyId, requestBody).then((res: PostV1CompaniesCompanyIdContractorsResponse) => {
+  const res = await sdk.contractors.postV1CompaniesCompanyIdContractors(companyId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `companyId`                                                                                                                            | *string*                                                                                                                               | :heavy_check_mark:                                                                                                                     | The UUID of the company                                                                                                                |
-| `requestBody`                                                                                                                          | [operations.PostV1CompaniesCompanyIdContractorsRequestBody](../../models/operations/postv1companiescompanyidcontractorsrequestbody.md) | :heavy_minus_sign:                                                                                                                     | Create an individual or business contractor.                                                                                           |
-| `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
+| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `companyId`                                                                                                                                | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the company                                                                                                                    |
+| `requestBody`                                                                                                                              | [operations.PostV1CompaniesCompanyIdContractorsRequestBody](../../sdk/models/operations/postv1companiescompanyidcontractorsrequestbody.md) | :heavy_minus_sign:                                                                                                                         | Create an individual or business contractor.                                                                                               |
+| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
 
 
 ### Response
 
-**Promise<[operations.PostV1CompaniesCompanyIdContractorsResponse](../../models/operations/postv1companiescompanyidcontractorsresponse.md)>**
+**Promise<[operations.PostV1CompaniesCompanyIdContractorsResponse](../../sdk/models/operations/postv1companiescompanyidcontractorsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1ContractorsContractorId
 
@@ -329,56 +357,50 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1ContractorsContractorIdRequest,
   PutV1ContractorsContractorIdRequestBody,
-  PutV1ContractorsContractorIdRequestBodyType,
-  PutV1ContractorsContractorIdRequestBodyWageType,
-  PutV1ContractorsContractorIdResponse,
+  PutV1ContractorsContractorIdType,
+  PutV1ContractorsContractorIdWageType,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorId: string = "molestiae";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const contractorId: string = "<value>";
 const requestBody: PutV1ContractorsContractorIdRequestBody = {
-  businessName: "perferendis",
-  ein: "nihil",
-  email: "Michele29@gmail.com",
-  fileNewHireReport: false,
-  firstName: "Geraldine",
   hourlyRate: "40.0",
-  isActive: false,
-  lastName: "Mosciski",
-  middleInitial: "nobis",
-  selfOnboarding: false,
-  ssn: "eum",
   startDate: "2020-01-11",
-  type: PutV1ContractorsContractorIdRequestBodyType.Business,
-  version: "aspernatur",
-  wageType: PutV1ContractorsContractorIdRequestBodyWageType.Fixed,
-  workState: "magnam",
+  version: "<value>",
 };
 
-sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody).then((res: PutV1ContractorsContractorIdResponse) => {
+  const res = await sdk.contractors.putV1ContractorsContractorId(contractorId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `contractorId`                                                                                                           | *string*                                                                                                                 | :heavy_check_mark:                                                                                                       | The ID or UUID of the contractor                                                                                         |
-| `requestBody`                                                                                                            | [operations.PutV1ContractorsContractorIdRequestBody](../../models/operations/putv1contractorscontractoridrequestbody.md) | :heavy_minus_sign:                                                                                                       | N/A                                                                                                                      |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
+| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `contractorId`                                                                                                               | *string*                                                                                                                     | :heavy_check_mark:                                                                                                           | The ID or UUID of the contractor                                                                                             |
+| `requestBody`                                                                                                                | [operations.PutV1ContractorsContractorIdRequestBody](../../sdk/models/operations/putv1contractorscontractoridrequestbody.md) | :heavy_minus_sign:                                                                                                           | N/A                                                                                                                          |
+| `config`                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                 | :heavy_minus_sign:                                                                                                           | Available config options for making requests.                                                                                |
 
 
 ### Response
 
-**Promise<[operations.PutV1ContractorsContractorIdResponse](../../models/operations/putv1contractorscontractoridresponse.md)>**
+**Promise<[operations.PutV1ContractorsContractorIdResponse](../../sdk/models/operations/putv1contractorscontractoridresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1ContractorsContractorUuidAddress
 
@@ -393,44 +415,46 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1ContractorsContractorUuidAddressRequest,
   PutV1ContractorsContractorUuidAddressRequestBody,
-  PutV1ContractorsContractorUuidAddressResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "et";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const contractorUuid: string = "<value>";
 const requestBody: PutV1ContractorsContractorUuidAddressRequestBody = {
-  city: "Fernestead",
-  state: "quos",
-  street1: "sint",
-  street2: "accusantium",
-  version: "mollitia",
-  zip: "reiciendis",
+  version: "<value>",
 };
 
-sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody).then((res: PutV1ContractorsContractorUuidAddressResponse) => {
+  const res = await sdk.contractors.putV1ContractorsContractorUuidAddress(contractorUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `contractorUuid`                                                                                                                           | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the contractor                                                                                                                 |
-| `requestBody`                                                                                                                              | [operations.PutV1ContractorsContractorUuidAddressRequestBody](../../models/operations/putv1contractorscontractoruuidaddressrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `contractorUuid`                                                                                                                               | *string*                                                                                                                                       | :heavy_check_mark:                                                                                                                             | The UUID of the contractor                                                                                                                     |
+| `requestBody`                                                                                                                                  | [operations.PutV1ContractorsContractorUuidAddressRequestBody](../../sdk/models/operations/putv1contractorscontractoruuidaddressrequestbody.md) | :heavy_minus_sign:                                                                                                                             | N/A                                                                                                                                            |
+| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
 
 
 ### Response
 
-**Promise<[operations.PutV1ContractorsContractorUuidAddressResponse](../../models/operations/putv1contractorscontractoruuidaddressresponse.md)>**
+**Promise<[operations.PutV1ContractorsContractorUuidAddressResponse](../../sdk/models/operations/putv1contractorscontractoruuidaddressresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1ContractorsContractorUuidOnboardingStatus
 
@@ -452,39 +476,46 @@ Below is a list of valid onboarding status changes depending on the intended act
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  OnboardingStatus,
   PutV1ContractorsContractorUuidOnboardingStatusRequest,
   PutV1ContractorsContractorUuidOnboardingStatusRequestBody,
-  PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus,
-  PutV1ContractorsContractorUuidOnboardingStatusResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const contractorUuid: string = "mollitia";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const contractorUuid: string = "<value>";
 const requestBody: PutV1ContractorsContractorUuidOnboardingStatusRequestBody = {
-  onboardingStatus: PutV1ContractorsContractorUuidOnboardingStatusRequestBodyOnboardingStatus.OnboardingCompleted,
+  onboardingStatus: OnboardingStatus.OnboardingCompleted,
 };
 
-sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus(contractorUuid, requestBody).then((res: PutV1ContractorsContractorUuidOnboardingStatusResponse) => {
+  const res = await sdk.contractors.putV1ContractorsContractorUuidOnboardingStatus(contractorUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                    | Type                                                                                                                                                         | Required                                                                                                                                                     | Description                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `contractorUuid`                                                                                                                                             | *string*                                                                                                                                                     | :heavy_check_mark:                                                                                                                                           | The UUID of the contractor                                                                                                                                   |
-| `requestBody`                                                                                                                                                | [operations.PutV1ContractorsContractorUuidOnboardingStatusRequestBody](../../models/operations/putv1contractorscontractoruuidonboardingstatusrequestbody.md) | :heavy_minus_sign:                                                                                                                                           | N/A                                                                                                                                                          |
-| `config`                                                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                 | :heavy_minus_sign:                                                                                                                                           | Available config options for making requests.                                                                                                                |
+| Parameter                                                                                                                                                        | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `contractorUuid`                                                                                                                                                 | *string*                                                                                                                                                         | :heavy_check_mark:                                                                                                                                               | The UUID of the contractor                                                                                                                                       |
+| `requestBody`                                                                                                                                                    | [operations.PutV1ContractorsContractorUuidOnboardingStatusRequestBody](../../sdk/models/operations/putv1contractorscontractoruuidonboardingstatusrequestbody.md) | :heavy_minus_sign:                                                                                                                                               | N/A                                                                                                                                                              |
+| `config`                                                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                     | :heavy_minus_sign:                                                                                                                                               | Available config options for making requests.                                                                                                                    |
 
 
 ### Response
 
-**Promise<[operations.PutV1ContractorsContractorUuidOnboardingStatusResponse](../../models/operations/putv1contractorscontractoruuidonboardingstatusresponse.md)>**
+**Promise<[operations.PutV1ContractorsContractorUuidOnboardingStatusResponse](../../sdk/models/operations/putv1contractorscontractoruuidonboardingstatusresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

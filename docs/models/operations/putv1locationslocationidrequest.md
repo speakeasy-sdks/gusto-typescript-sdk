@@ -1,9 +1,0 @@
-# PutV1LocationsLocationIdRequest
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `locationId`                                                                                          | *string*                                                                                              | :heavy_check_mark:                                                                                    | The UUID of the location                                                                              |
-| `requestBody`                                                                                         | [PutV1LocationsLocationIdRequestBody](../../models/operations/putv1locationslocationidrequestbody.md) | :heavy_minus_sign:                                                                                    | Update a location                                                                                     |

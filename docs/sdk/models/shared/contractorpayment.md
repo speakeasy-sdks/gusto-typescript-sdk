@@ -1,0 +1,22 @@
+# ContractorPayment
+
+The representation of a single contractor payment.
+
+
+## Fields
+
+| Field                                                               | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `bonus`                                                             | *string*                                                            | :heavy_minus_sign:                                                  | The bonus amount in the payment.                                    |
+| `contractorUuid`                                                    | *string*                                                            | :heavy_minus_sign:                                                  | The UUID of the contractor.                                         |
+| `date`                                                              | *string*                                                            | :heavy_minus_sign:                                                  | The payment date.                                                   |
+| `hourlyRate`                                                        | *string*                                                            | :heavy_minus_sign:                                                  | The rate per hour worked for the payment.                           |
+| `hours`                                                             | *string*                                                            | :heavy_minus_sign:                                                  | The number of hours worked for the payment.                         |
+| `mayCancel`                                                         | *boolean*                                                           | :heavy_minus_sign:                                                  | Determine if the contractor payment can be cancelled.               |
+| `paymentMethod`                                                     | [shared.PaymentMethod](../../../sdk/models/shared/paymentmethod.md) | :heavy_minus_sign:                                                  | The payment method.                                                 |
+| `reimbursement`                                                     | *string*                                                            | :heavy_minus_sign:                                                  | The reimbursement amount in the payment.                            |
+| `status`                                                            | [shared.Status](../../../sdk/models/shared/status.md)               | :heavy_minus_sign:                                                  | Contractor payment status                                           |
+| `uuid`                                                              | *string*                                                            | :heavy_minus_sign:                                                  | The unique identifier of the contractor payment in Gusto.           |
+| `wage`                                                              | *string*                                                            | :heavy_minus_sign:                                                  | The fixed wage of the payment, regardless of hours worked.          |
+| `wageTotal`                                                         | *string*                                                            | :heavy_minus_sign:                                                  | (hours * hourly_rate) + wage + bonus                                |
+| `wageType`                                                          | [shared.WageType](../../../sdk/models/shared/wagetype.md)           | :heavy_minus_sign:                                                  | The wage type for the payment.                                      |

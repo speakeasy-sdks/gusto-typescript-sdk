@@ -1,0 +1,9 @@
+# PutV1CompanyPaymentConfigsRequestBody
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `fastPaymentLimit`                                                                                             | *string*                                                                                                       | :heavy_check_mark:                                                                                             | Fast payment limit (only applicable to 2-day payroll). This limit is an aggregate of all fast payrolls amount. |
+| `paymentSpeed`                                                                                                 | [operations.PaymentSpeed](../../../sdk/models/operations/paymentspeed.md)                                      | :heavy_check_mark:                                                                                             | The payment speed                                                                                              |

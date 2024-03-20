@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 /**
  * Accrual method of the time off policy
  */
-export enum PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod {
+export enum PutTimeOffPoliciesTimeOffPolicyUuidAccrualMethod {
     Unlimited = "unlimited",
     PerPayPeriod = "per_pay_period",
     PerCalendarYear = "per_calendar_year",
@@ -30,7 +30,7 @@ export class PutTimeOffPoliciesTimeOffPolicyUuidRequestBody extends SpeakeasyBas
      */
     @SpeakeasyMetadata()
     @Expose({ name: "accrual_method" })
-    accrualMethod?: PutTimeOffPoliciesTimeOffPolicyUuidRequestBodyAccrualMethod;
+    accrualMethod?: PutTimeOffPoliciesTimeOffPolicyUuidAccrualMethod;
 
     /**
      * The rate at which the time off hours will accrue for an employee on the policy. Represented as a float, e.g. "40.0".
@@ -104,14 +104,23 @@ export class PutTimeOffPoliciesTimeOffPolicyUuidRequest extends SpeakeasyBase {
 }
 
 export class PutTimeOffPoliciesTimeOffPolicyUuidResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * OK

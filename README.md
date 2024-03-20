@@ -9,7 +9,7 @@
   <a href="https://github.com/speakeasy-sdks/gusto-typescript-sdk/releases"><img src="https://img.shields.io/github/v/release/speakeasy-sdks/gusto-typescript-sdk?sort=semver&style=for-the-badge" /></a>
 </div>
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ### NPM
@@ -23,7 +23,7 @@ npm add @speakeasy-sdks/gusto
 ```bash
 yarn add @speakeasy-sdks/gusto
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
 ## Authentication
 
@@ -39,42 +39,49 @@ Then create a demo company so that you can explore our product and successfully 
 
 Once you have your API Token, `client_id`, `secret`, and a demo company, you’re ready to begin building your integration. Check out this [short video tutorial](https://www.loom.com/share/b374109a4f98499195e49f1e52330bc8) for an introduction on testing the Gusto API (in demo).
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
 
+### Example
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdBankAccountsRequest,
-  GetV1CompaniesCompanyIdBankAccountsResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyId: string = "corrupti";
+async function run() {
+    const sdk = new Gusto({
+        security: {
+            authorization: "<YOUR_BEARER_TOKEN_HERE>",
+        },
+    });
+    const companyBenefitId: string = "<value>";
 
-sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1CompaniesCompanyIdBankAccountsResponse) => {
-  if (res.statusCode == 200) {
-    // handle response
-  }
-});
+    const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
+### [companyBenefits](docs/sdks/companybenefits/README.md)
 
-### [bankAccounts](docs/sdks/bankaccounts/README.md)
-
-* [getV1CompaniesCompanyIdBankAccounts](docs/sdks/bankaccounts/README.md#getv1companiescompanyidbankaccounts) - Get all company bank accounts
-* [postV1CompaniesCompanyIdBankAccounts](docs/sdks/bankaccounts/README.md#postv1companiescompanyidbankaccounts) - Create a company bank account
-* [postV1PlaidProcessorToken](docs/sdks/bankaccounts/README.md#postv1plaidprocessortoken) - Create a bank account from a plaid processor token
-* [putV1CompaniesCompanyIdBankAccountsVerify](docs/sdks/bankaccounts/README.md#putv1companiescompanyidbankaccountsverify) - Verify a company bank account
+* [deleteV1CompanyBenefitsCompanyBenefitId](docs/sdks/companybenefits/README.md#deletev1companybenefitscompanybenefitid) - Delete a company benefit
+* [getV1Benefits](docs/sdks/companybenefits/README.md#getv1benefits) - Get all benefits supported by Gusto
+* [getV1BenefitsBenefitId](docs/sdks/companybenefits/README.md#getv1benefitsbenefitid) - Get a supported benefit by ID
+* [getV1BenefitsBenefitsIdRequirements](docs/sdks/companybenefits/README.md#getv1benefitsbenefitsidrequirements) - Get benefit fields requirements by ID
+* [getV1BenefitsCompanyBenefitIdSummary](docs/sdks/companybenefits/README.md#getv1benefitscompanybenefitidsummary) - Get company benefit summary by company benefit id.
+* [getV1CompaniesCompanyIdCompanyBenefits](docs/sdks/companybenefits/README.md#getv1companiescompanyidcompanybenefits) - Get benefits for a company
+* [getV1CompanyBenefitsCompanyBenefitId](docs/sdks/companybenefits/README.md#getv1companybenefitscompanybenefitid) - Get a company benefit
+* [postV1CompaniesCompanyIdCompanyBenefits](docs/sdks/companybenefits/README.md#postv1companiescompanyidcompanybenefits) - Create a company benefit
+* [putV1CompanyBenefitsCompanyBenefitId](docs/sdks/companybenefits/README.md#putv1companybenefitscompanybenefitid) - Update a company benefit
 
 ### [companies](docs/sdks/companies/README.md)
 
@@ -90,38 +97,12 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1
 * [postV1Provision](docs/sdks/companies/README.md#postv1provision) - Create a company
 * [putV1PartnerManagedCompaniesCompanyUuidMigrate](docs/sdks/companies/README.md#putv1partnermanagedcompaniescompanyuuidmigrate) - Migrate company to embedded payroll
 
-### [companyBenefits](docs/sdks/companybenefits/README.md)
+### [bankAccounts](docs/sdks/bankaccounts/README.md)
 
-* [deleteV1CompanyBenefitsCompanyBenefitId](docs/sdks/companybenefits/README.md#deletev1companybenefitscompanybenefitid) - Delete a company benefit
-* [getV1Benefits](docs/sdks/companybenefits/README.md#getv1benefits) - Get all benefits supported by Gusto
-* [getV1BenefitsBenefitId](docs/sdks/companybenefits/README.md#getv1benefitsbenefitid) - Get a supported benefit by ID
-* [getV1BenefitsBenefitsIdRequirements](docs/sdks/companybenefits/README.md#getv1benefitsbenefitsidrequirements) - Get benefit fields requirements by ID
-* [getV1BenefitsCompanyBenefitIdSummary](docs/sdks/companybenefits/README.md#getv1benefitscompanybenefitidsummary) - Get company benefit summary by company benefit id.
-* [getV1CompaniesCompanyIdCompanyBenefits](docs/sdks/companybenefits/README.md#getv1companiescompanyidcompanybenefits) - Get benefits for a company
-* [getV1CompanyBenefitsCompanyBenefitId](docs/sdks/companybenefits/README.md#getv1companybenefitscompanybenefitid) - Get a company benefit
-* [postV1CompaniesCompanyIdCompanyBenefits](docs/sdks/companybenefits/README.md#postv1companiescompanyidcompanybenefits) - Create a company benefit
-* [putV1CompanyBenefitsCompanyBenefitId](docs/sdks/companybenefits/README.md#putv1companybenefitscompanybenefitid) - Update a company benefit
-
-### [companyForms](docs/sdks/companyforms/README.md)
-
-* [getV1CompanyForm](docs/sdks/companyforms/README.md#getv1companyform) - Get a company form
-* [getV1CompanyFormPdf](docs/sdks/companyforms/README.md#getv1companyformpdf) - Get a company form pdf
-* [getV1CompanyForms](docs/sdks/companyforms/README.md#getv1companyforms) - Get all company forms
-* [putV1CompanyFormSign](docs/sdks/companyforms/README.md#putv1companyformsign) - Sign a company form
-
-### [contractorForms](docs/sdks/contractorforms/README.md)
-
-* [getV1ContractorForm](docs/sdks/contractorforms/README.md#getv1contractorform) - Get a contractor form
-* [getV1ContractorFormPdf](docs/sdks/contractorforms/README.md#getv1contractorformpdf) - Get the contractor form pdf
-* [getV1ContractorForms](docs/sdks/contractorforms/README.md#getv1contractorforms) - Get all contractor forms
-* [postV1SandboxGenerate1099](docs/sdks/contractorforms/README.md#postv1sandboxgenerate1099) - Generate a 1099 form [SANDBOX]
-
-### [contractorPaymentMethod](docs/sdks/contractorpaymentmethod/README.md)
-
-* [getV1ContractorsContractorUuidBankAccounts](docs/sdks/contractorpaymentmethod/README.md#getv1contractorscontractoruuidbankaccounts) - Get all contractor bank accounts
-* [getV1ContractorsContractorUuidPaymentMethod](docs/sdks/contractorpaymentmethod/README.md#getv1contractorscontractoruuidpaymentmethod) - Get a contractor's payment method
-* [postV1ContractorsContractorUuidBankAccounts](docs/sdks/contractorpaymentmethod/README.md#postv1contractorscontractoruuidbankaccounts) - Create an contractor bank account
-* [putV1ContractorsContractorIdPaymentMethod](docs/sdks/contractorpaymentmethod/README.md#putv1contractorscontractoridpaymentmethod) - Update a contractor's payment method
+* [getV1CompaniesCompanyIdBankAccounts](docs/sdks/bankaccounts/README.md#getv1companiescompanyidbankaccounts) - Get all company bank accounts
+* [postV1CompaniesCompanyIdBankAccounts](docs/sdks/bankaccounts/README.md#postv1companiescompanyidbankaccounts) - Create a company bank account
+* [postV1PlaidProcessorToken](docs/sdks/bankaccounts/README.md#postv1plaidprocessortoken) - Create a bank account from a plaid processor token
+* [putV1CompaniesCompanyIdBankAccountsVerify](docs/sdks/bankaccounts/README.md#putv1companiescompanyidbankaccountsverify) - Verify a company bank account
 
 ### [contractorPayments](docs/sdks/contractorpayments/README.md)
 
@@ -143,61 +124,12 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1
 * [putV1ContractorsContractorUuidAddress](docs/sdks/contractors/README.md#putv1contractorscontractoruuidaddress) - Update a contractor's address
 * [putV1ContractorsContractorUuidOnboardingStatus](docs/sdks/contractors/README.md#putv1contractorscontractoruuidonboardingstatus) - Change the contractor's onboarding status
 
-### [departments](docs/sdks/departments/README.md)
-
-* [deleteDepartment](docs/sdks/departments/README.md#deletedepartment) - Delete a department
-* [getCompaniesDepartments](docs/sdks/departments/README.md#getcompaniesdepartments) - Get all departments of a company
-* [getDepartment](docs/sdks/departments/README.md#getdepartment) - Get a department
-* [postDepartments](docs/sdks/departments/README.md#postdepartments) - Create a department
-* [putAddPeopleToDepartment](docs/sdks/departments/README.md#putaddpeopletodepartment) - Add people to a department
-* [putDepartments](docs/sdks/departments/README.md#putdepartments) - Update a department
-* [putRemovePeopleFromDepartment](docs/sdks/departments/README.md#putremovepeoplefromdepartment) - Remove people from a department
-
 ### [earningTypes](docs/sdks/earningtypes/README.md)
 
 * [deleteV1CompaniesCompanyIdEarningTypesEarningTypeUuid](docs/sdks/earningtypes/README.md#deletev1companiescompanyidearningtypesearningtypeuuid) - Deactivate an earning type
 * [getV1CompaniesCompanyIdEarningTypes](docs/sdks/earningtypes/README.md#getv1companiescompanyidearningtypes) - Get all earning types for a company
 * [postV1CompaniesCompanyIdEarningTypes](docs/sdks/earningtypes/README.md#postv1companiescompanyidearningtypes) - Create a custom earning type
 * [putV1CompaniesCompanyIdEarningTypesEarningTypeUuid](docs/sdks/earningtypes/README.md#putv1companiescompanyidearningtypesearningtypeuuid) - Update an earning type
-
-### [employeeBenefits](docs/sdks/employeebenefits/README.md)
-
-* [deleteV1EmployeeBenefitsEmployeeBenefitId](docs/sdks/employeebenefits/README.md#deletev1employeebenefitsemployeebenefitid) - Delete an employee benefit
-* [getV1EmployeeBenefitsEmployeeBenefitId](docs/sdks/employeebenefits/README.md#getv1employeebenefitsemployeebenefitid) - Get an employee benefit
-* [getV1EmployeesEmployeeIdEmployeeBenefits](docs/sdks/employeebenefits/README.md#getv1employeesemployeeidemployeebenefits) - Get all benefits for an employee
-* [postEmployeeYtdBenefitAmountsFromDifferentCompany](docs/sdks/employeebenefits/README.md#postemployeeytdbenefitamountsfromdifferentcompany) - Create year-to-date benefit amounts from a different company
-* [postV1EmployeesEmployeeIdEmployeeBenefits](docs/sdks/employeebenefits/README.md#postv1employeesemployeeidemployeebenefits) - Create an employee benefit
-* [putV1EmployeeBenefitsEmployeeBenefitId](docs/sdks/employeebenefits/README.md#putv1employeebenefitsemployeebenefitid) - Update an employee benefit
-
-### [employeeForms](docs/sdks/employeeforms/README.md)
-
-* [getV1EmployeeForm](docs/sdks/employeeforms/README.md#getv1employeeform) - Get an employee form
-* [getV1EmployeeFormPdf](docs/sdks/employeeforms/README.md#getv1employeeformpdf) - Get the employee form pdf
-* [getV1EmployeeForms](docs/sdks/employeeforms/README.md#getv1employeeforms) - Get all employee forms
-* [postV1SandboxGenerateW2](docs/sdks/employeeforms/README.md#postv1sandboxgeneratew2) - Generate a W2 form [SANDBOX]
-* [putV1EmployeeFormSign](docs/sdks/employeeforms/README.md#putv1employeeformsign) - Sign an employee form
-
-### [employeePaymentMethod](docs/sdks/employeepaymentmethod/README.md)
-
-* [deleteV1EmployeesEmployeeIdBankAccountsBankAccountId](docs/sdks/employeepaymentmethod/README.md#deletev1employeesemployeeidbankaccountsbankaccountid) - Delete an employee bank account
-* [getV1EmployeesEmployeeIdPaymentMethod](docs/sdks/employeepaymentmethod/README.md#getv1employeesemployeeidpaymentmethod) - Get an employee's payment method
-* [postV1EmployeesEmployeeIdBankAccounts](docs/sdks/employeepaymentmethod/README.md#postv1employeesemployeeidbankaccounts) - Create an employee bank account
-* [putV1EmployeesEmployeeIdPaymentMethod](docs/sdks/employeepaymentmethod/README.md#putv1employeesemployeeidpaymentmethod) - Update an employee's payment method
-
-### [employeeTaxSetup](docs/sdks/employeetaxsetup/README.md)
-
-* [getV1EmployeesEmployeeIdFederalTaxes](docs/sdks/employeetaxsetup/README.md#getv1employeesemployeeidfederaltaxes) - Get an employee's federal taxes
-* [getV1EmployeesEmployeeIdStateTaxes](docs/sdks/employeetaxsetup/README.md#getv1employeesemployeeidstatetaxes) - Get an employee's state taxes
-* [putV1EmployeesEmployeeIdFederalTaxes](docs/sdks/employeetaxsetup/README.md#putv1employeesemployeeidfederaltaxes) - Update an employee's federal taxes
-* [putV1EmployeesEmployeeIdStateTaxes](docs/sdks/employeetaxsetup/README.md#putv1employeesemployeeidstatetaxes) - Update an employee's state taxes
-
-### [employeeTermination](docs/sdks/employeetermination/README.md)
-
-* [deleteV1EmployeesEmployeeIdTerminations](docs/sdks/employeetermination/README.md#deletev1employeesemployeeidterminations) - Delete an employee termination
-* [getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods](docs/sdks/employeetermination/README.md#getv1companiescompanyidunprocessedterminationpayperiods) - Get termination pay periods for a company
-* [getV1EmployeesEmployeeIdTerminations](docs/sdks/employeetermination/README.md#getv1employeesemployeeidterminations) - Get terminations for an employee
-* [postV1EmployeesEmployeeIdTerminations](docs/sdks/employeetermination/README.md#postv1employeesemployeeidterminations) - Create an employee termination
-* [putV1TerminationsEmployeeId](docs/sdks/employeetermination/README.md#putv1terminationsemployeeid) - Update an employee termination
 
 ### [employees](docs/sdks/employees/README.md)
 
@@ -213,50 +145,22 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1
 * [putV1EmployeesEmployeeIdHomeAddress](docs/sdks/employees/README.md#putv1employeesemployeeidhomeaddress) - Update an employee's home address
 * [putV1EmployeesEmployeeIdOnboardingStatus](docs/sdks/employees/README.md#putv1employeesemployeeidonboardingstatus) - Update the employee's onboarding status
 
-### [externalPayrolls](docs/sdks/externalpayrolls/README.md)
-
-* [deleteV1ExternalPayroll](docs/sdks/externalpayrolls/README.md#deletev1externalpayroll) - Delete an external payroll
-* [getV1CompanyExternalPayrolls](docs/sdks/externalpayrolls/README.md#getv1companyexternalpayrolls) - Get external payrolls for a company
-* [getV1ExternalPayroll](docs/sdks/externalpayrolls/README.md#getv1externalpayroll) - Get an external payroll
-* [getV1ExternalPayrollCalculateTaxes](docs/sdks/externalpayrolls/README.md#getv1externalpayrollcalculatetaxes) - Get tax suggestions for an external payroll
-* [postV1ExternalPayroll](docs/sdks/externalpayrolls/README.md#postv1externalpayroll) - Create a new external payroll for a company
-* [putV1ExternalPayroll](docs/sdks/externalpayrolls/README.md#putv1externalpayroll) - Update an external payroll
-
 ### [federalTaxDetails](docs/sdks/federaltaxdetails/README.md)
 
 * [getV1CompaniesCompanyIdFederalTaxDetails](docs/sdks/federaltaxdetails/README.md#getv1companiescompanyidfederaltaxdetails) - Get Federal Tax Details
 * [putV1CompaniesCompanyIdFederalTaxDetails](docs/sdks/federaltaxdetails/README.md#putv1companiescompanyidfederaltaxdetails) - Update Federal Tax Details
 
-### [flows](docs/sdks/flows/README.md)
+### [companyForms](docs/sdks/companyforms/README.md)
 
-* [postV1CompanyFlows](docs/sdks/flows/README.md#postv1companyflows) - Create a flow
-
-### [garnishments](docs/sdks/garnishments/README.md)
-
-* [getV1EmployeesEmployeeIdGarnishments](docs/sdks/garnishments/README.md#getv1employeesemployeeidgarnishments) - Get garnishments for an employee
-* [getV1GarnishmentsGarnishmentId](docs/sdks/garnishments/README.md#getv1garnishmentsgarnishmentid) - Get a garnishment
-* [postV1EmployeesEmployeeIdGarnishments](docs/sdks/garnishments/README.md#postv1employeesemployeeidgarnishments) - Create a garnishment
-* [putV1GarnishmentsGarnishmentId](docs/sdks/garnishments/README.md#putv1garnishmentsgarnishmentid) - Update a garnishment
-
-### [generatedDocuments](docs/sdks/generateddocuments/README.md)
-
-* [getV1GeneratedDocumentsDocumentTypeRequestUuid](docs/sdks/generateddocuments/README.md#getv1generateddocumentsdocumenttyperequestuuid) - Get a generated document
+* [getV1CompanyForm](docs/sdks/companyforms/README.md#getv1companyform) - Get a company form
+* [getV1CompanyFormPdf](docs/sdks/companyforms/README.md#getv1companyformpdf) - Get a company form pdf
+* [getV1CompanyForms](docs/sdks/companyforms/README.md#getv1companyforms) - Get all company forms
+* [putV1CompanyFormSign](docs/sdks/companyforms/README.md#putv1companyformsign) - Sign a company form
 
 ### [industrySelection](docs/sdks/industryselection/README.md)
 
 * [getV1CompanyIndustry](docs/sdks/industryselection/README.md#getv1companyindustry) - Get a company industry selection
 * [putV1CompanyIndustry](docs/sdks/industryselection/README.md#putv1companyindustry) - Update a company industry selection
-
-### [jobsAndCompensations](docs/sdks/jobsandcompensations/README.md)
-
-* [deleteV1JobsJobId](docs/sdks/jobsandcompensations/README.md#deletev1jobsjobid) - Delete an individual job
-* [getV1CompensationsCompensationId](docs/sdks/jobsandcompensations/README.md#getv1compensationscompensationid) - Get a compensation
-* [getV1EmployeesEmployeeIdJobs](docs/sdks/jobsandcompensations/README.md#getv1employeesemployeeidjobs) - Get jobs for an employee
-* [getV1JobsJobId](docs/sdks/jobsandcompensations/README.md#getv1jobsjobid) - Get a job
-* [getV1JobsJobIdCompensations](docs/sdks/jobsandcompensations/README.md#getv1jobsjobidcompensations) - Get compensations for a job
-* [postV1JobsJobId](docs/sdks/jobsandcompensations/README.md#postv1jobsjobid) - Create a job
-* [putV1CompensationsCompensationId](docs/sdks/jobsandcompensations/README.md#putv1compensationscompensationid) - Update a compensation
-* [putV1JobsJobId](docs/sdks/jobsandcompensations/README.md#putv1jobsjobid) - Update a job
 
 ### [locations](docs/sdks/locations/README.md)
 
@@ -275,10 +179,13 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1
 * [postV1CompaniesCompanyIdPaySchedules](docs/sdks/payschedules/README.md#postv1companiescompanyidpayschedules) - Create a new single pay schedule
 * [putV1CompaniesCompanyIdPaySchedulesPayScheduleId](docs/sdks/payschedules/README.md#putv1companiescompanyidpayschedulespayscheduleid) - Update a pay schedule
 
-### [paymentConfigs](docs/sdks/paymentconfigs/README.md)
+### [employeeTermination](docs/sdks/employeetermination/README.md)
 
-* [getV1CompanyPaymentConfigs](docs/sdks/paymentconfigs/README.md#getv1companypaymentconfigs) - Get a company's payment configs
-* [putV1CompanyPaymentConfigs](docs/sdks/paymentconfigs/README.md#putv1companypaymentconfigs) - Update a company's payment configs
+* [deleteV1EmployeesEmployeeIdTerminations](docs/sdks/employeetermination/README.md#deletev1employeesemployeeidterminations) - Delete an employee termination
+* [getV1CompaniesCompanyIdUnprocessedTerminationPayPeriods](docs/sdks/employeetermination/README.md#getv1companiescompanyidunprocessedterminationpayperiods) - Get termination pay periods for a company
+* [getV1EmployeesEmployeeIdTerminations](docs/sdks/employeetermination/README.md#getv1employeesemployeeidterminations) - Get terminations for an employee
+* [postV1EmployeesEmployeeIdTerminations](docs/sdks/employeetermination/README.md#postv1employeesemployeeidterminations) - Create an employee termination
+* [putV1TerminationsEmployeeId](docs/sdks/employeetermination/README.md#putv1terminationsemployeeid) - Update an employee termination
 
 ### [payrolls](docs/sdks/payrolls/README.md)
 
@@ -296,6 +203,40 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1
 * [putV1CompaniesCompanyIdPayrollsPayrollIdCalculate](docs/sdks/payrolls/README.md#putv1companiescompanyidpayrollspayrollidcalculate) - Calculate a payroll
 * [putV1CompaniesCompanyIdPayrollsPayrollIdSubmit](docs/sdks/payrolls/README.md#putv1companiescompanyidpayrollspayrollidsubmit) - Submit payroll
 
+### [departments](docs/sdks/departments/README.md)
+
+* [deleteDepartment](docs/sdks/departments/README.md#deletedepartment) - Delete a department
+* [getCompaniesDepartments](docs/sdks/departments/README.md#getcompaniesdepartments) - Get all departments of a company
+* [getDepartment](docs/sdks/departments/README.md#getdepartment) - Get a department
+* [postDepartments](docs/sdks/departments/README.md#postdepartments) - Create a department
+* [putAddPeopleToDepartment](docs/sdks/departments/README.md#putaddpeopletodepartment) - Add people to a department
+* [putDepartments](docs/sdks/departments/README.md#putdepartments) - Update a department
+* [putRemovePeopleFromDepartment](docs/sdks/departments/README.md#putremovepeoplefromdepartment) - Remove people from a department
+
+### [externalPayrolls](docs/sdks/externalpayrolls/README.md)
+
+* [deleteV1ExternalPayroll](docs/sdks/externalpayrolls/README.md#deletev1externalpayroll) - Delete an external payroll
+* [getV1CompanyExternalPayrolls](docs/sdks/externalpayrolls/README.md#getv1companyexternalpayrolls) - Get external payrolls for a company
+* [getV1ExternalPayroll](docs/sdks/externalpayrolls/README.md#getv1externalpayroll) - Get an external payroll
+* [getV1ExternalPayrollCalculateTaxes](docs/sdks/externalpayrolls/README.md#getv1externalpayrollcalculatetaxes) - Get tax suggestions for an external payroll
+* [postV1ExternalPayroll](docs/sdks/externalpayrolls/README.md#postv1externalpayroll) - Create a new external payroll for a company
+* [putV1ExternalPayroll](docs/sdks/externalpayrolls/README.md#putv1externalpayroll) - Update an external payroll
+
+### [taxLiabilities](docs/sdks/taxliabilities/README.md)
+
+* [getV1TaxLiabilities](docs/sdks/taxliabilities/README.md#getv1taxliabilities) - Get tax liabilities
+* [putV1TaxLiabilities](docs/sdks/taxliabilities/README.md#putv1taxliabilities) - Update tax liabilities
+* [putV1TaxLiabilitiesFinish](docs/sdks/taxliabilities/README.md#putv1taxliabilitiesfinish) - Finalize tax liabilities options and convert into processed payrolls
+
+### [flows](docs/sdks/flows/README.md)
+
+* [postV1CompanyFlows](docs/sdks/flows/README.md#postv1companyflows) - Create a flow
+
+### [paymentConfigs](docs/sdks/paymentconfigs/README.md)
+
+* [getV1CompanyPaymentConfigs](docs/sdks/paymentconfigs/README.md#getv1companypaymentconfigs) - Get a company's payment configs
+* [putV1CompanyPaymentConfigs](docs/sdks/paymentconfigs/README.md#putv1companypaymentconfigs) - Update a company's payment configs
+
 ### [signatories](docs/sdks/signatories/README.md)
 
 * [deleteV1CompaniesCompanyUuidSignatoriesSignatoryUuid](docs/sdks/signatories/README.md#deletev1companiescompanyuuidsignatoriessignatoryuuid) - Delete a signatory
@@ -303,12 +244,6 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1
 * [postV1CompaniesCompanyUuidSignatoriesInvite](docs/sdks/signatories/README.md#postv1companiescompanyuuidsignatoriesinvite) - Invite a signatory
 * [postV1CompanySignatories](docs/sdks/signatories/README.md#postv1companysignatories) - Create a signatory
 * [putV1CompaniesCompanyUuidSignatoriesSignatoryUuid](docs/sdks/signatories/README.md#putv1companiescompanyuuidsignatoriessignatoryuuid) - Update a signatory
-
-### [taxLiabilities](docs/sdks/taxliabilities/README.md)
-
-* [getV1TaxLiabilities](docs/sdks/taxliabilities/README.md#getv1taxliabilities) - Get tax liabilities
-* [putV1TaxLiabilities](docs/sdks/taxliabilities/README.md#putv1taxliabilities) - Update tax liabilities
-* [putV1TaxLiabilitiesFinish](docs/sdks/taxliabilities/README.md#putv1taxliabilitiesfinish) - Finalize tax liabilities options and convert into processed payrolls
 
 ### [taxRequirements](docs/sdks/taxrequirements/README.md)
 
@@ -328,6 +263,73 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1
 * [putVersionTimeOffPoliciesTimeOffPolicyUuidAddEmployees](docs/sdks/timeoffpolicies/README.md#putversiontimeoffpoliciestimeoffpolicyuuidaddemployees) - Add employees to a time off policy
 * [putVersionTimeOffPoliciesTimeOffPolicyUuidBalance](docs/sdks/timeoffpolicies/README.md#putversiontimeoffpoliciestimeoffpolicyuuidbalance) - Update employee time off hour balances
 
+### [jobsAndCompensations](docs/sdks/jobsandcompensations/README.md)
+
+* [deleteV1JobsJobId](docs/sdks/jobsandcompensations/README.md#deletev1jobsjobid) - Delete an individual job
+* [getV1CompensationsCompensationId](docs/sdks/jobsandcompensations/README.md#getv1compensationscompensationid) - Get a compensation
+* [getV1EmployeesEmployeeIdJobs](docs/sdks/jobsandcompensations/README.md#getv1employeesemployeeidjobs) - Get jobs for an employee
+* [getV1JobsJobId](docs/sdks/jobsandcompensations/README.md#getv1jobsjobid) - Get a job
+* [getV1JobsJobIdCompensations](docs/sdks/jobsandcompensations/README.md#getv1jobsjobidcompensations) - Get compensations for a job
+* [postV1JobsJobId](docs/sdks/jobsandcompensations/README.md#postv1jobsjobid) - Create a job
+* [putV1CompensationsCompensationId](docs/sdks/jobsandcompensations/README.md#putv1compensationscompensationid) - Update a compensation
+* [putV1JobsJobId](docs/sdks/jobsandcompensations/README.md#putv1jobsjobid) - Update a job
+
+### [contractorPaymentMethod](docs/sdks/contractorpaymentmethod/README.md)
+
+* [getV1ContractorsContractorUuidBankAccounts](docs/sdks/contractorpaymentmethod/README.md#getv1contractorscontractoruuidbankaccounts) - Get all contractor bank accounts
+* [getV1ContractorsContractorUuidPaymentMethod](docs/sdks/contractorpaymentmethod/README.md#getv1contractorscontractoruuidpaymentmethod) - Get a contractor's payment method
+* [postV1ContractorsContractorUuidBankAccounts](docs/sdks/contractorpaymentmethod/README.md#postv1contractorscontractoruuidbankaccounts) - Create an contractor bank account
+* [putV1ContractorsContractorIdPaymentMethod](docs/sdks/contractorpaymentmethod/README.md#putv1contractorscontractoridpaymentmethod) - Update a contractor's payment method
+
+### [contractorForms](docs/sdks/contractorforms/README.md)
+
+* [getV1ContractorForm](docs/sdks/contractorforms/README.md#getv1contractorform) - Get a contractor form
+* [getV1ContractorFormPdf](docs/sdks/contractorforms/README.md#getv1contractorformpdf) - Get the contractor form pdf
+* [getV1ContractorForms](docs/sdks/contractorforms/README.md#getv1contractorforms) - Get all contractor forms
+* [postV1SandboxGenerate1099](docs/sdks/contractorforms/README.md#postv1sandboxgenerate1099) - Generate a 1099 form [SANDBOX]
+
+### [employeeBenefits](docs/sdks/employeebenefits/README.md)
+
+* [deleteV1EmployeeBenefitsEmployeeBenefitId](docs/sdks/employeebenefits/README.md#deletev1employeebenefitsemployeebenefitid) - Delete an employee benefit
+* [getV1EmployeeBenefitsEmployeeBenefitId](docs/sdks/employeebenefits/README.md#getv1employeebenefitsemployeebenefitid) - Get an employee benefit
+* [getV1EmployeesEmployeeIdEmployeeBenefits](docs/sdks/employeebenefits/README.md#getv1employeesemployeeidemployeebenefits) - Get all benefits for an employee
+* [postEmployeeYtdBenefitAmountsFromDifferentCompany](docs/sdks/employeebenefits/README.md#postemployeeytdbenefitamountsfromdifferentcompany) - Create year-to-date benefit amounts from a different company
+* [postV1EmployeesEmployeeIdEmployeeBenefits](docs/sdks/employeebenefits/README.md#postv1employeesemployeeidemployeebenefits) - Create an employee benefit
+* [putV1EmployeeBenefitsEmployeeBenefitId](docs/sdks/employeebenefits/README.md#putv1employeebenefitsemployeebenefitid) - Update an employee benefit
+
+### [employeePaymentMethod](docs/sdks/employeepaymentmethod/README.md)
+
+* [deleteV1EmployeesEmployeeIdBankAccountsBankAccountId](docs/sdks/employeepaymentmethod/README.md#deletev1employeesemployeeidbankaccountsbankaccountid) - Delete an employee bank account
+* [getV1EmployeesEmployeeIdPaymentMethod](docs/sdks/employeepaymentmethod/README.md#getv1employeesemployeeidpaymentmethod) - Get an employee's payment method
+* [postV1EmployeesEmployeeIdBankAccounts](docs/sdks/employeepaymentmethod/README.md#postv1employeesemployeeidbankaccounts) - Create an employee bank account
+* [putV1EmployeesEmployeeIdPaymentMethod](docs/sdks/employeepaymentmethod/README.md#putv1employeesemployeeidpaymentmethod) - Update an employee's payment method
+
+### [employeeForms](docs/sdks/employeeforms/README.md)
+
+* [getV1EmployeeForm](docs/sdks/employeeforms/README.md#getv1employeeform) - Get an employee form
+* [getV1EmployeeFormPdf](docs/sdks/employeeforms/README.md#getv1employeeformpdf) - Get the employee form pdf
+* [getV1EmployeeForms](docs/sdks/employeeforms/README.md#getv1employeeforms) - Get all employee forms
+* [postV1SandboxGenerateW2](docs/sdks/employeeforms/README.md#postv1sandboxgeneratew2) - Generate a W2 form [SANDBOX]
+* [putV1EmployeeFormSign](docs/sdks/employeeforms/README.md#putv1employeeformsign) - Sign an employee form
+
+### [garnishments](docs/sdks/garnishments/README.md)
+
+* [getV1EmployeesEmployeeIdGarnishments](docs/sdks/garnishments/README.md#getv1employeesemployeeidgarnishments) - Get garnishments for an employee
+* [getV1GarnishmentsGarnishmentId](docs/sdks/garnishments/README.md#getv1garnishmentsgarnishmentid) - Get a garnishment
+* [postV1EmployeesEmployeeIdGarnishments](docs/sdks/garnishments/README.md#postv1employeesemployeeidgarnishments) - Create a garnishment
+* [putV1GarnishmentsGarnishmentId](docs/sdks/garnishments/README.md#putv1garnishmentsgarnishmentid) - Update a garnishment
+
+### [employeeTaxSetup](docs/sdks/employeetaxsetup/README.md)
+
+* [getV1EmployeesEmployeeIdFederalTaxes](docs/sdks/employeetaxsetup/README.md#getv1employeesemployeeidfederaltaxes) - Get an employee's federal taxes
+* [getV1EmployeesEmployeeIdStateTaxes](docs/sdks/employeetaxsetup/README.md#getv1employeesemployeeidstatetaxes) - Get an employee's state taxes
+* [putV1EmployeesEmployeeIdFederalTaxes](docs/sdks/employeetaxsetup/README.md#putv1employeesemployeeidfederaltaxes) - Update an employee's federal taxes
+* [putV1EmployeesEmployeeIdStateTaxes](docs/sdks/employeetaxsetup/README.md#putv1employeesemployeeidstatetaxes) - Update an employee's state taxes
+
+### [generatedDocuments](docs/sdks/generateddocuments/README.md)
+
+* [getV1GeneratedDocumentsDocumentTypeRequestUuid](docs/sdks/generateddocuments/README.md#getv1generateddocumentsdocumenttyperequestuuid) - Get a generated document
+
 ### [user](docs/sdks/user/README.md)
 
 * [getV1Me](docs/sdks/user/README.md#getv1me) - Get the current user
@@ -341,6 +343,185 @@ sdk.bankAccounts.getV1CompaniesCompanyIdBankAccounts(companyId).then((res: GetV1
 * [postV1WebhookSubscription](docs/sdks/webhooksubscriptions/README.md#postv1webhooksubscription) - Create a Webhook Subscription
 * [putV1VerifyWebhookSubscriptionUuid](docs/sdks/webhooksubscriptions/README.md#putv1verifywebhooksubscriptionuuid) - Verify the webhook subscription
 * [putV1WebhookSubscriptionUuid](docs/sdks/webhooksubscriptions/README.md#putv1webhooksubscriptionuuid) - Update a webhook subscription
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
+
+
+
+
+
+<!-- Start Error Handling [errors] -->
+## Error Handling
+
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
+Example
+
+```typescript
+import { Gusto } from "@speakeasy-sdks/gusto";
+import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+
+async function run() {
+    const sdk = new Gusto({
+        security: {
+            authorization: "<YOUR_BEARER_TOKEN_HERE>",
+        },
+    });
+    const companyBenefitId: string = "<value>";
+
+    let res;
+    try {
+        res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
+    } catch (err) {
+        if (err instanceof errors.SDKError) {
+            console.error(err); // handle exception
+            throw err;
+        }
+    }
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
+<!-- End Error Handling [errors] -->
+
+
+
+<!-- Start Server Selection [server] -->
+## Server Selection
+
+### Select Server by Name
+
+You can override the default server globally by passing a server name to the `server: string` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the names associated with the available servers:
+
+| Name | Server | Variables |
+| ----- | ------ | --------- |
+| `demo` | `https://api.gusto-demo.com` | None |
+| `prod` | `https://api.gusto.com` | None |
+
+#### Example
+
+```typescript
+import { Gusto } from "@speakeasy-sdks/gusto";
+import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+
+async function run() {
+    const sdk = new Gusto({
+        server: "prod",
+        security: {
+            authorization: "<YOUR_BEARER_TOKEN_HERE>",
+        },
+    });
+    const companyBenefitId: string = "<value>";
+
+    const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
+
+
+### Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
+```typescript
+import { Gusto } from "@speakeasy-sdks/gusto";
+import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+
+async function run() {
+    const sdk = new Gusto({
+        serverURL: "https://api.gusto-demo.com",
+        security: {
+            authorization: "<YOUR_BEARER_TOKEN_HERE>",
+        },
+    });
+    const companyBenefitId: string = "<value>";
+
+    const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
+<!-- End Server Selection [server] -->
+
+
+
+<!-- Start Custom HTTP Client [http-client] -->
+## Custom HTTP Client
+
+The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+
+For example, you could specify a header for every request that your sdk makes as follows:
+
+```typescript
+import { @speakeasy-sdks/gusto } from "Gusto";
+import axios from "axios";
+
+const httpClient = axios.create({
+    headers: {'x-custom-header': 'someValue'}
+})
+
+const sdk = new Gusto({defaultClient: httpClient});
+```
+<!-- End Custom HTTP Client [http-client] -->
+
+
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name            | Type            | Scheme          |
+| --------------- | --------------- | --------------- |
+| `authorization` | http            | HTTP Bearer     |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
+```typescript
+import { Gusto } from "@speakeasy-sdks/gusto";
+import { DeleteV1CompanyBenefitsCompanyBenefitIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+
+async function run() {
+    const sdk = new Gusto({
+        security: {
+            authorization: "<YOUR_BEARER_TOKEN_HERE>",
+        },
+    });
+    const companyBenefitId: string = "<value>";
+
+    const res = await sdk.companyBenefits.deleteV1CompanyBenefitsCompanyBenefitId(companyBenefitId);
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
+<!-- End Authentication [security] -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)

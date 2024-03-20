@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetV1EmployeeFormsRequest extends SpeakeasyBase {
@@ -15,18 +15,27 @@ export class GetV1EmployeeFormsRequest extends SpeakeasyBase {
 }
 
 export class GetV1EmployeeFormsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
+
+    /**
+     * HTTP response status code for this operation
+     */
+    @SpeakeasyMetadata()
+    statusCode: number;
+
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
+    @SpeakeasyMetadata()
+    rawResponse: AxiosResponse;
 
     /**
      * Example response
      */
     @SpeakeasyMetadata({ elemType: shared.Form })
-    forms?: shared.Form[];
-
-    @SpeakeasyMetadata()
-    statusCode: number;
-
-    @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    classes?: shared.Form[];
 }

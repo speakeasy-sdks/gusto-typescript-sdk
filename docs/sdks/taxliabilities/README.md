@@ -1,4 +1,5 @@
-# taxLiabilities
+# TaxLiabilities
+(*taxLiabilities*)
 
 ### Available Operations
 
@@ -15,20 +16,24 @@ scope: `payrolls:read`
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { GetV1TaxLiabilitiesRequest, GetV1TaxLiabilitiesResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1TaxLiabilitiesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "nemo";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
 
-sdk.taxLiabilities.getV1TaxLiabilities(companyUuid).then((res: GetV1TaxLiabilitiesResponse) => {
+  const res = await sdk.taxLiabilities.getV1TaxLiabilities(companyUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -41,8 +46,12 @@ sdk.taxLiabilities.getV1TaxLiabilities(companyUuid).then((res: GetV1TaxLiabiliti
 
 ### Response
 
-**Promise<[operations.GetV1TaxLiabilitiesResponse](../../models/operations/getv1taxliabilitiesresponse.md)>**
+**Promise<[operations.GetV1TaxLiabilitiesResponse](../../sdk/models/operations/getv1taxliabilitiesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1TaxLiabilities
 
@@ -53,59 +62,48 @@ Update tax liabilities for a company.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  PutV1TaxLiabilitiesRequest,
-  PutV1TaxLiabilitiesRequestBody,
-  PutV1TaxLiabilitiesRequestBodyLiabilitySelections,
-  PutV1TaxLiabilitiesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { LiabilitySelections, PutV1TaxLiabilitiesRequest, PutV1TaxLiabilitiesRequestBody } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "soluta";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
 const requestBody: PutV1TaxLiabilitiesRequestBody = {
   liabilitySelections: [
-    {
-      lastUnpaidExternalPayrollUuid: "rem",
-      taxId: 678060,
-      unpaidLiabilityAmount: 4876.76,
-    },
-    {
-      lastUnpaidExternalPayrollUuid: "fugit",
-      taxId: 545,
-      unpaidLiabilityAmount: 1680.42,
-    },
-    {
-      lastUnpaidExternalPayrollUuid: "vel",
-      taxId: 64435,
-      unpaidLiabilityAmount: 635.53,
-    },
+    {},
   ],
 };
 
-sdk.taxLiabilities.putV1TaxLiabilities(companyUuid, requestBody).then((res: PutV1TaxLiabilitiesResponse) => {
+  const res = await sdk.taxLiabilities.putV1TaxLiabilities(companyUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `companyUuid`                                                                                          | *string*                                                                                               | :heavy_check_mark:                                                                                     | The UUID of the company                                                                                |
-| `requestBody`                                                                                          | [operations.PutV1TaxLiabilitiesRequestBody](../../models/operations/putv1taxliabilitiesrequestbody.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                              | *string*                                                                                                   | :heavy_check_mark:                                                                                         | The UUID of the company                                                                                    |
+| `requestBody`                                                                                              | [operations.PutV1TaxLiabilitiesRequestBody](../../sdk/models/operations/putv1taxliabilitiesrequestbody.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.PutV1TaxLiabilitiesResponse](../../models/operations/putv1taxliabilitiesresponse.md)>**
+**Promise<[operations.PutV1TaxLiabilitiesResponse](../../sdk/models/operations/putv1taxliabilitiesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1TaxLiabilitiesFinish
 
@@ -116,20 +114,24 @@ Finalizes tax liabilities for a company. All external payrolls edit action will 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import { PutV1TaxLiabilitiesFinishRequest, PutV1TaxLiabilitiesFinishResponse } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { PutV1TaxLiabilitiesFinishRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const companyUuid: string = "modi";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const companyUuid: string = "<value>";
 
-sdk.taxLiabilities.putV1TaxLiabilitiesFinish(companyUuid).then((res: PutV1TaxLiabilitiesFinishResponse) => {
+  const res = await sdk.taxLiabilities.putV1TaxLiabilitiesFinish(companyUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -142,5 +144,9 @@ sdk.taxLiabilities.putV1TaxLiabilitiesFinish(companyUuid).then((res: PutV1TaxLia
 
 ### Response
 
-**Promise<[operations.PutV1TaxLiabilitiesFinishResponse](../../models/operations/putv1taxliabilitiesfinishresponse.md)>**
+**Promise<[operations.PutV1TaxLiabilitiesFinishResponse](../../sdk/models/operations/putv1taxliabilitiesfinishresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

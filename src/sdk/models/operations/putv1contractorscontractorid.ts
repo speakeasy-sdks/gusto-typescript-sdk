@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 /**
  * The contractor type.
  */
-export enum PutV1ContractorsContractorIdRequestBodyType {
+export enum PutV1ContractorsContractorIdType {
     Individual = "Individual",
     Business = "Business",
 }
@@ -21,7 +21,7 @@ export enum PutV1ContractorsContractorIdRequestBodyType {
  * @remarks
  *
  */
-export enum PutV1ContractorsContractorIdRequestBodyWageType {
+export enum PutV1ContractorsContractorIdWageType {
     Fixed = "Fixed",
     Hourly = "Hourly",
 }
@@ -141,7 +141,7 @@ export class PutV1ContractorsContractorIdRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: PutV1ContractorsContractorIdRequestBodyType;
+    type?: PutV1ContractorsContractorIdType;
 
     /**
      * The current version of the object. See the [versioning guide](https://docs.gusto.com/embedded-payroll/docs/idempotency) for information on how to use this field.
@@ -158,7 +158,7 @@ export class PutV1ContractorsContractorIdRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "wage_type" })
-    wageType?: PutV1ContractorsContractorIdRequestBodyWageType;
+    wageType?: PutV1ContractorsContractorIdWageType;
 
     /**
      * State where the contractor will be conducting the majority of their work for the company.
@@ -184,6 +184,9 @@ export class PutV1ContractorsContractorIdRequest extends SpeakeasyBase {
 }
 
 export class PutV1ContractorsContractorIdResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -193,11 +196,17 @@ export class PutV1ContractorsContractorIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contractor?: shared.Contractor;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

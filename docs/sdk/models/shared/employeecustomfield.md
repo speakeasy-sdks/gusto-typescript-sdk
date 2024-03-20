@@ -1,0 +1,16 @@
+# EmployeeCustomField
+
+A custom field of an employee
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `companyCustomFieldId`                                                            | *string*                                                                          | :heavy_check_mark:                                                                | This is the id of the response object from when you get the company custom fields |
+| `description`                                                                     | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `id`                                                                              | *string*                                                                          | :heavy_check_mark:                                                                | N/A                                                                               |
+| `name`                                                                            | *string*                                                                          | :heavy_check_mark:                                                                | N/A                                                                               |
+| `selectionOptions`                                                                | *string*[]                                                                        | :heavy_minus_sign:                                                                | An array of options for fields of type radio. Otherwise, null.                    |
+| `type`                                                                            | [shared.CustomFieldType](../../../sdk/models/shared/customfieldtype.md)           | :heavy_check_mark:                                                                | Input type for the custom field.                                                  |
+| `value`                                                                           | *string*                                                                          | :heavy_check_mark:                                                                | N/A                                                                               |

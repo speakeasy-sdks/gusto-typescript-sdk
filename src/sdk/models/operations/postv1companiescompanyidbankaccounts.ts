@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 /**
  * The bank account type
  */
-export enum PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType {
+export enum AccountType {
     Checking = "Checking",
     Savings = "Savings",
 }
@@ -28,7 +28,7 @@ export class PostV1CompaniesCompanyIdBankAccountsRequestBody extends SpeakeasyBa
      */
     @SpeakeasyMetadata()
     @Expose({ name: "account_type" })
-    accountType?: PostV1CompaniesCompanyIdBankAccountsRequestBodyAccountType;
+    accountType?: AccountType;
 
     /**
      * The bank routing number
@@ -56,14 +56,23 @@ export class PostV1CompaniesCompanyIdBankAccountsResponse extends SpeakeasyBase 
     @SpeakeasyMetadata()
     companyBankAccount?: shared.CompanyBankAccount;
 
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

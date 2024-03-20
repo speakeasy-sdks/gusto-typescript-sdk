@@ -1,4 +1,5 @@
-# employeeTaxSetup
+# EmployeeTaxSetup
+(*employeeTaxSetup*)
 
 ### Available Operations
 
@@ -15,23 +16,24 @@ Get attributes relevant for an employee's federal taxes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdFederalTaxesRequest,
-  GetV1EmployeesEmployeeIdFederalTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdFederalTaxesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeUuid: string = "explicabo";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeUuid: string = "<value>";
 
-sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdFederalTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -44,8 +46,12 @@ sdk.employeeTaxSetup.getV1EmployeesEmployeeIdFederalTaxes(employeeUuid).then((re
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdFederalTaxesResponse](../../models/operations/getv1employeesemployeeidfederaltaxesresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdFederalTaxesResponse](../../sdk/models/operations/getv1employeesemployeeidfederaltaxesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1EmployeesEmployeeIdStateTaxes
 
@@ -67,23 +73,24 @@ Payroll Admins are responsible for filing a new hire report for each Employee. T
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdStateTaxesRequest,
-  GetV1EmployeesEmployeeIdStateTaxesResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdStateTaxesRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeUuid: string = "minima";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeUuid: string = "<value>";
 
-sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid).then((res: GetV1EmployeesEmployeeIdStateTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -96,8 +103,12 @@ sdk.employeeTaxSetup.getV1EmployeesEmployeeIdStateTaxes(employeeUuid).then((res:
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdStateTaxesResponse](../../models/operations/getv1employeesemployeeidstatetaxesresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdStateTaxesResponse](../../sdk/models/operations/getv1employeesemployeeidstatetaxesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1EmployeesEmployeeIdFederalTaxes
 
@@ -110,46 +121,46 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1EmployeesEmployeeIdFederalTaxesRequest,
   PutV1EmployeesEmployeeIdFederalTaxesRequestBody,
-  PutV1EmployeesEmployeeIdFederalTaxesResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeUuid: string = "nisi";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeUuid: string = "<value>";
 const requestBody: PutV1EmployeesEmployeeIdFederalTaxesRequestBody = {
-  deductions: "fugit",
-  dependentsAmount: "sapiente",
-  extraWithholding: "consequuntur",
-  filingStatus: "ratione",
-  otherIncome: "explicabo",
-  twoJobs: false,
-  version: "saepe",
-  w4DataType: "occaecati",
+  version: "<value>",
 };
 
-sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody).then((res: PutV1EmployeesEmployeeIdFederalTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdFederalTaxes(employeeUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `employeeUuid`                                                                                                                           | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The UUID of the employee                                                                                                                 |
-| `requestBody`                                                                                                                            | [operations.PutV1EmployeesEmployeeIdFederalTaxesRequestBody](../../models/operations/putv1employeesemployeeidfederaltaxesrequestbody.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
-| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
+| Parameter                                                                                                                                    | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeUuid`                                                                                                                               | *string*                                                                                                                                     | :heavy_check_mark:                                                                                                                           | The UUID of the employee                                                                                                                     |
+| `requestBody`                                                                                                                                | [operations.PutV1EmployeesEmployeeIdFederalTaxesRequestBody](../../sdk/models/operations/putv1employeesemployeeidfederaltaxesrequestbody.md) | :heavy_minus_sign:                                                                                                                           | N/A                                                                                                                                          |
+| `config`                                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                 | :heavy_minus_sign:                                                                                                                           | Available config options for making requests.                                                                                                |
 
 
 ### Response
 
-**Promise<[operations.PutV1EmployeesEmployeeIdFederalTaxesResponse](../../models/operations/putv1employeesemployeeidfederaltaxesresponse.md)>**
+**Promise<[operations.PutV1EmployeesEmployeeIdFederalTaxesResponse](../../sdk/models/operations/putv1employeesemployeeidfederaltaxesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1EmployeesEmployeeIdStateTaxes
 
@@ -162,168 +173,64 @@ As described for the GET endpoint, the answers must be supplied in the effective
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  Answers,
   PutV1EmployeesEmployeeIdStateTaxesRequest,
   PutV1EmployeesEmployeeIdStateTaxesRequestBody,
-  PutV1EmployeesEmployeeIdStateTaxesRequestBodyStates,
-  PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestions,
-  PutV1EmployeesEmployeeIdStateTaxesRequestBodyStatesQuestionsAnswers,
-  PutV1EmployeesEmployeeIdStateTaxesResponse,
+  Questions,
+  States,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeUuid: string = "atque";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeUuid: string = "<value>";
 const requestBody: PutV1EmployeesEmployeeIdStateTaxesRequestBody = {
-  employeeId: "et",
+  employeeId: "<value>",
   states: [
     {
       questions: [
         {
           answers: [
             {
-              validFrom: "veritatis",
-              validUpTo: "esse",
-              value: "quod",
-            },
-            {
-              validFrom: "nam",
-              validUpTo: "vero",
-              value: "aliquid",
-            },
-            {
-              validFrom: "quasi",
-              validUpTo: "saepe",
-              value: "vel",
-            },
-            {
-              validFrom: "harum",
-              validUpTo: "molestiae",
-              value: "rerum",
+              validFrom: "<value>",
+              value: "<value>",
             },
           ],
-          key: "occaecati",
-        },
-        {
-          answers: [
-            {
-              validFrom: "distinctio",
-              validUpTo: "eligendi",
-              value: "sit",
-            },
-            {
-              validFrom: "culpa",
-              validUpTo: "tempore",
-              value: "adipisci",
-            },
-          ],
-          key: "cumque",
-        },
-        {
-          answers: [
-            {
-              validFrom: "consequatur",
-              validUpTo: "minus",
-              value: "quaerat",
-            },
-          ],
-          key: "sapiente",
-        },
-        {
-          answers: [
-            {
-              validFrom: "esse",
-              validUpTo: "blanditiis",
-              value: "provident",
-            },
-          ],
-          key: "a",
+          key: "<key>",
         },
       ],
-      state: "nulla",
-    },
-    {
-      questions: [
-        {
-          answers: [
-            {
-              validFrom: "quasi",
-              validUpTo: "a",
-              value: "error",
-            },
-            {
-              validFrom: "sint",
-              validUpTo: "pariatur",
-              value: "possimus",
-            },
-          ],
-          key: "quia",
-        },
-        {
-          answers: [
-            {
-              validFrom: "asperiores",
-              validUpTo: "facere",
-              value: "veritatis",
-            },
-            {
-              validFrom: "consequuntur",
-              validUpTo: "quasi",
-              value: "similique",
-            },
-            {
-              validFrom: "culpa",
-              validUpTo: "aliquid",
-              value: "tenetur",
-            },
-            {
-              validFrom: "quae",
-              validUpTo: "earum",
-              value: "vel",
-            },
-          ],
-          key: "in",
-        },
-        {
-          answers: [
-            {
-              validFrom: "libero",
-              validUpTo: "illum",
-              value: "soluta",
-            },
-            {
-              validFrom: "accusantium",
-              validUpTo: "aliquam",
-              value: "sapiente",
-            },
-          ],
-          key: "dicta",
-        },
-      ],
-      state: "ullam",
+      state: "Rhode Island",
     },
   ],
 };
 
-sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes(employeeUuid, requestBody).then((res: PutV1EmployeesEmployeeIdStateTaxesResponse) => {
+  const res = await sdk.employeeTaxSetup.putV1EmployeesEmployeeIdStateTaxes(employeeUuid, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeUuid`                                                                                                                       | *string*                                                                                                                             | :heavy_check_mark:                                                                                                                   | The UUID of the employee                                                                                                             |
-| `requestBody`                                                                                                                        | [operations.PutV1EmployeesEmployeeIdStateTaxesRequestBody](../../models/operations/putv1employeesemployeeidstatetaxesrequestbody.md) | :heavy_minus_sign:                                                                                                                   | N/A                                                                                                                                  |
-| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeUuid`                                                                                                                           | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The UUID of the employee                                                                                                                 |
+| `requestBody`                                                                                                                            | [operations.PutV1EmployeesEmployeeIdStateTaxesRequestBody](../../sdk/models/operations/putv1employeesemployeeidstatetaxesrequestbody.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
+| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
 
 
 ### Response
 
-**Promise<[operations.PutV1EmployeesEmployeeIdStateTaxesResponse](../../models/operations/putv1employeesemployeeidstatetaxesresponse.md)>**
+**Promise<[operations.PutV1EmployeesEmployeeIdStateTaxesResponse](../../sdk/models/operations/putv1employeesemployeeidstatetaxesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

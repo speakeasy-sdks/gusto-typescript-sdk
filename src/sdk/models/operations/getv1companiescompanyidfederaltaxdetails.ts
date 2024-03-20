@@ -3,15 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
-
-export class GetV1CompaniesCompanyIdFederalTaxDetailsSecurity extends SpeakeasyBase {
-    @SpeakeasyMetadata({
-        data: "security, scheme=true;type=http;subtype=bearer;name=Authorization",
-    })
-    authorization: string;
-}
 
 export class GetV1CompaniesCompanyIdFederalTaxDetailsRequest extends SpeakeasyBase {
     /**
@@ -22,6 +15,9 @@ export class GetV1CompaniesCompanyIdFederalTaxDetailsRequest extends SpeakeasyBa
 }
 
 export class GetV1CompaniesCompanyIdFederalTaxDetailsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -31,9 +27,15 @@ export class GetV1CompaniesCompanyIdFederalTaxDetailsResponse extends SpeakeasyB
     @SpeakeasyMetadata()
     federalTaxDetails?: shared.FederalTaxDetails;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 }

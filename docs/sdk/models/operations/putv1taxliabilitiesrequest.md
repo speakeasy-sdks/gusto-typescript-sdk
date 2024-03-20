@@ -1,0 +1,9 @@
+# PutV1TaxLiabilitiesRequest
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `companyUuid`                                                                                                 | *string*                                                                                                      | :heavy_check_mark:                                                                                            | The UUID of the company                                                                                       |
+| `requestBody`                                                                                                 | [operations.PutV1TaxLiabilitiesRequestBody](../../../sdk/models/operations/putv1taxliabilitiesrequestbody.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |

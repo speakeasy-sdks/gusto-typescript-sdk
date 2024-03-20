@@ -1,4 +1,5 @@
-# employeePaymentMethod
+# EmployeePaymentMethod
+(*employeePaymentMethod*)
 
 ### Available Operations
 
@@ -15,24 +16,25 @@ Deletes an employee bank account. To update an employee's bank account details, 
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest,
-  DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const bankAccountUuid: string = "ipsam";
-const employeeId: string = "ea";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const bankAccountUuid: string = "<value>";
+const employeeId: string = "<value>";
 
-sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId).then((res: DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse) => {
+  const res = await sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(bankAccountUuid, employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -46,8 +48,12 @@ sdk.employeePaymentMethod.deleteV1EmployeesEmployeeIdBankAccountsBankAccountId(b
 
 ### Response
 
-**Promise<[operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse](../../models/operations/deletev1employeesemployeeidbankaccountsbankaccountidresponse.md)>**
+**Promise<[operations.DeleteV1EmployeesEmployeeIdBankAccountsBankAccountIdResponse](../../sdk/models/operations/deletev1employeesemployeeidbankaccountsbankaccountidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## getV1EmployeesEmployeeIdPaymentMethod
 
@@ -57,23 +63,24 @@ Fetches an employee's payment method. An employee payment method describes how t
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1EmployeesEmployeeIdPaymentMethodRequest,
-  GetV1EmployeesEmployeeIdPaymentMethodResponse,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1EmployeesEmployeeIdPaymentMethodRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "aspernatur";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
 
-sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId).then((res: GetV1EmployeesEmployeeIdPaymentMethodResponse) => {
+  const res = await sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -86,8 +93,12 @@ sdk.employeePaymentMethod.getV1EmployeesEmployeeIdPaymentMethod(employeeId).then
 
 ### Response
 
-**Promise<[operations.GetV1EmployeesEmployeeIdPaymentMethodResponse](../../models/operations/getv1employeesemployeeidpaymentmethodresponse.md)>**
+**Promise<[operations.GetV1EmployeesEmployeeIdPaymentMethodResponse](../../sdk/models/operations/getv1employeesemployeeidpaymentmethodresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## postV1EmployeesEmployeeIdBankAccounts
 
@@ -98,45 +109,52 @@ Creates an employee bank account. An employee can have multiple bank accounts. N
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
 import {
+  PostV1EmployeesEmployeeIdBankAccountsAccountType,
   PostV1EmployeesEmployeeIdBankAccountsRequest,
   PostV1EmployeesEmployeeIdBankAccountsRequestBody,
-  PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType,
-  PostV1EmployeesEmployeeIdBankAccountsResponse,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "vel";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
 const requestBody: PostV1EmployeesEmployeeIdBankAccountsRequestBody = {
-  accountNumber: "possimus",
-  accountType: PostV1EmployeesEmployeeIdBankAccountsRequestBodyAccountType.Checking,
-  name: "Mrs. Vicki Langosh",
-  routingNumber: "quasi",
+  accountNumber: "<value>",
+  accountType: PostV1EmployeesEmployeeIdBankAccountsAccountType.Savings,
+  name: "<value>",
+  routingNumber: "<value>",
 };
 
-sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody).then((res: PostV1EmployeesEmployeeIdBankAccountsResponse) => {
+  const res = await sdk.employeePaymentMethod.postV1EmployeesEmployeeIdBankAccounts(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeId`                                                                                                                               | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the employee                                                                                                                   |
-| `requestBody`                                                                                                                              | [operations.PostV1EmployeesEmployeeIdBankAccountsRequestBody](../../models/operations/postv1employeesemployeeidbankaccountsrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                                   | *string*                                                                                                                                       | :heavy_check_mark:                                                                                                                             | The UUID of the employee                                                                                                                       |
+| `requestBody`                                                                                                                                  | [operations.PostV1EmployeesEmployeeIdBankAccountsRequestBody](../../sdk/models/operations/postv1employeesemployeeidbankaccountsrequestbody.md) | :heavy_minus_sign:                                                                                                                             | N/A                                                                                                                                            |
+| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
 
 
 ### Response
 
-**Promise<[operations.PostV1EmployeesEmployeeIdBankAccountsResponse](../../models/operations/postv1employeesemployeeidbankaccountsresponse.md)>**
+**Promise<[operations.PostV1EmployeesEmployeeIdBankAccountsResponse](../../sdk/models/operations/postv1employeesemployeeidbankaccountsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## putV1EmployeesEmployeeIdPaymentMethod
 
@@ -149,61 +167,50 @@ import { Gusto } from "@speakeasy-sdks/gusto";
 import {
   PutV1EmployeesEmployeeIdPaymentMethodRequest,
   PutV1EmployeesEmployeeIdPaymentMethodRequestBody,
-  PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy,
-  PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplits,
-  PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType,
-  PutV1EmployeesEmployeeIdPaymentMethodResponse,
+  PutV1EmployeesEmployeeIdPaymentMethodType,
+  SplitBy,
+  Splits,
 } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
-const sdk = new Gusto({
-  security: {
-    authorization: "",
-  },
-});
-const employeeId: string = "ex";
+async function run() {
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
+const employeeId: string = "<value>";
 const requestBody: PutV1EmployeesEmployeeIdPaymentMethodRequestBody = {
-  splitBy: PutV1EmployeesEmployeeIdPaymentMethodRequestBodySplitBy.Percentage,
   splits: [
-    {
-      name: "Gordon Willms",
-      priority: 411372,
-      splitAmount: 774048,
-      uuid: "556146c3-e250-4fb0-88c4-2e141aac366c",
-    },
-    {
-      name: "Mack Stoltenberg",
-      priority: 96549,
-      splitAmount: 270328,
-      uuid: "42907474-778a-47bd-866d-28c10ab3cdca",
-    },
-    {
-      name: "Ms. Ruby Hintz II",
-      priority: 892050,
-      splitAmount: 370853,
-      uuid: "23c7e0bc-7178-4e47-96f2-a70c688282aa",
-    },
+    {},
   ],
-  type: PutV1EmployeesEmployeeIdPaymentMethodRequestBodyType.DirectDeposit,
-  version: "atque",
+  type: PutV1EmployeesEmployeeIdPaymentMethodType.Check,
+  version: "<value>",
 };
 
-sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody).then((res: PutV1EmployeesEmployeeIdPaymentMethodResponse) => {
+  const res = await sdk.employeePaymentMethod.putV1EmployeesEmployeeIdPaymentMethod(employeeId, requestBody);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `employeeId`                                                                                                                               | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | The UUID of the employee                                                                                                                   |
-| `requestBody`                                                                                                                              | [operations.PutV1EmployeesEmployeeIdPaymentMethodRequestBody](../../models/operations/putv1employeesemployeeidpaymentmethodrequestbody.md) | :heavy_minus_sign:                                                                                                                         | N/A                                                                                                                                        |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employeeId`                                                                                                                                   | *string*                                                                                                                                       | :heavy_check_mark:                                                                                                                             | The UUID of the employee                                                                                                                       |
+| `requestBody`                                                                                                                                  | [operations.PutV1EmployeesEmployeeIdPaymentMethodRequestBody](../../sdk/models/operations/putv1employeesemployeeidpaymentmethodrequestbody.md) | :heavy_minus_sign:                                                                                                                             | N/A                                                                                                                                            |
+| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
 
 
 ### Response
 
-**Promise<[operations.PutV1EmployeesEmployeeIdPaymentMethodResponse](../../models/operations/putv1employeesemployeeidpaymentmethodresponse.md)>**
+**Promise<[operations.PutV1EmployeesEmployeeIdPaymentMethodResponse](../../sdk/models/operations/putv1employeesemployeeidpaymentmethodresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

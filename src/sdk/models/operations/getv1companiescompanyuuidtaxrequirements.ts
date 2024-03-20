@@ -14,7 +14,7 @@ export class GetV1CompaniesCompanyUuidTaxRequirementsRequest extends SpeakeasyBa
     companyUuid: string;
 }
 
-export class GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON extends SpeakeasyBase {
+export class GetV1CompaniesCompanyUuidTaxRequirementsResponseBody extends SpeakeasyBase {
     /**
      * If all requirements for the state have been satisfied such that the company can complete
      *
@@ -35,18 +35,27 @@ export class GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON extends 
 }
 
 export class GetV1CompaniesCompanyUuidTaxRequirementsResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * OK
      */
-    @SpeakeasyMetadata({ elemType: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON })
-    getV1CompaniesCompanyUuidTaxRequirements200ApplicationJSONObjects?: GetV1CompaniesCompanyUuidTaxRequirements200ApplicationJSON[];
+    @SpeakeasyMetadata({ elemType: GetV1CompaniesCompanyUuidTaxRequirementsResponseBody })
+    classes?: GetV1CompaniesCompanyUuidTaxRequirementsResponseBody[];
 }

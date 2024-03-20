@@ -3,14 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
 /**
  * The signatory's home address
  */
-export class PostV1CompanySignatoriesRequestBodyHomeAddress extends SpeakeasyBase {
+export class HomeAddress extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "city" })
     city: string;
@@ -50,8 +50,8 @@ export class PostV1CompanySignatoriesRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "home_address" })
-    @Type(() => PostV1CompanySignatoriesRequestBodyHomeAddress)
-    homeAddress: PostV1CompanySignatoriesRequestBodyHomeAddress;
+    @Type(() => HomeAddress)
+    homeAddress: HomeAddress;
 
     @SpeakeasyMetadata()
     @Expose({ name: "last_name" })
@@ -86,6 +86,9 @@ export class PostV1CompanySignatoriesRequest extends SpeakeasyBase {
 }
 
 export class PostV1CompanySignatoriesResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -95,11 +98,17 @@ export class PostV1CompanySignatoriesResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     signatory?: shared.Signatory;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * Unprocessable Entity

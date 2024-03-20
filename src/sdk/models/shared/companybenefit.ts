@@ -6,55 +6,9 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
 /**
- * A single tier of a tiered matching scheme.
- */
-export class CompanyBenefitEmployeeBenefitsContributionValue2Tiers extends SpeakeasyBase {
-    /**
-     * The percentage of employee deduction within this tier the company contribution will match.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "rate" })
-    rate?: string;
-
-    /**
-     * The percentage threshold at which this tier ends (inclusive).
-     *
-     * @remarks
-     *
-     * For example, a value of "5" means the company contribution will match employee deductions from the previous tier's threshold up to and including 5% of payroll.
-     *
-     * If this is the first tier, a value of "5" means the company contribution will match employee deductions from 0% up to and including 5% of payroll.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "threshold" })
-    threshold?: string;
-
-    /**
-     * The step up difference between this tier's threshold and the previous tier's threshold. In the first tier, this is equivalent to threshold.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "threshold_delta" })
-    thresholdDelta?: string;
-}
-
-/**
- * For the `amount` and `percentage` contribution types, the value of the corresponding amount or percentage.
- *
- * @remarks
- *
- * For the `tiered` contribution type, an array of tiers.
- */
-export class CompanyBenefitEmployeeBenefitsContributionValue2 extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: CompanyBenefitEmployeeBenefitsContributionValue2Tiers })
-    @Expose({ name: "tiers" })
-    @Type(() => CompanyBenefitEmployeeBenefitsContributionValue2Tiers)
-    tiers?: CompanyBenefitEmployeeBenefitsContributionValue2Tiers[];
-}
-
-/**
  * An object representing the type and value of the company contribution.
  */
-export class CompanyBenefitEmployeeBenefitsContribution extends SpeakeasyBase {
+export class CompanyBenefitContribution extends SpeakeasyBase {
     /**
      * The company contribution scheme.
      *
@@ -82,7 +36,7 @@ export class CompanyBenefitEmployeeBenefitsContribution extends SpeakeasyBase {
     value?: any;
 }
 
-export class CompanyBenefitEmployeeBenefits extends SpeakeasyBase {
+export class EmployeeBenefits extends SpeakeasyBase {
     /**
      * Whether the employee benefit is active.
      */
@@ -109,8 +63,8 @@ export class CompanyBenefitEmployeeBenefits extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "contribution" })
-    @Type(() => CompanyBenefitEmployeeBenefitsContribution)
-    contribution?: CompanyBenefitEmployeeBenefitsContribution;
+    @Type(() => CompanyBenefitContribution)
+    contribution?: CompanyBenefitContribution;
 
     /**
      * Whether the employee deduction amount should be treated as a percentage to be deducted from each payroll.
@@ -170,10 +124,10 @@ export class CompanyBenefit extends SpeakeasyBase {
     @Expose({ name: "description" })
     description?: string;
 
-    @SpeakeasyMetadata({ elemType: CompanyBenefitEmployeeBenefits })
+    @SpeakeasyMetadata({ elemType: EmployeeBenefits })
     @Expose({ name: "employee_benefits" })
-    @Type(() => CompanyBenefitEmployeeBenefits)
-    employeeBenefits?: CompanyBenefitEmployeeBenefits[];
+    @Type(() => EmployeeBenefits)
+    employeeBenefits?: EmployeeBenefits[];
 
     /**
      * Whether the employer is subject to file W-2 forms for an employee on leave. Only applicable to third party sick pay benefits.

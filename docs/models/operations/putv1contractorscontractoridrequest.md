@@ -1,9 +1,0 @@
-# PutV1ContractorsContractorIdRequest
-
-
-## Fields
-
-| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `contractorId`                                                                                                | *string*                                                                                                      | :heavy_check_mark:                                                                                            | The ID or UUID of the contractor                                                                              |
-| `requestBody`                                                                                                 | [PutV1ContractorsContractorIdRequestBody](../../models/operations/putv1contractorscontractoridrequestbody.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |
