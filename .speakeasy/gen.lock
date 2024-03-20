@@ -3,10 +3,10 @@ id: 9a7e63d3-289a-4a3b-b794-9ea70d66043c
 management:
   docChecksum: b3be58d6a42b3f6b9a53f2e76d05f1a8
   docVersion: "2023-03-01"
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 0.53.4
-  configChecksum: bc2e7f0382545291e19ea5403f63b118
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 0.54.0
+  configChecksum: e987bcf21fe617eb6a05b8b930af8a41
   repoURL: https://github.com/speakeasy-sdks/gusto-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/gusto-typescript-sdk
@@ -17,9 +17,8 @@ features:
     core: 3.4.8
     deprecations: 2.81.1
     flattening: 2.81.1
-    globalSecurity: 2.82.4
+    globalSecurity: 2.82.5
     globalServerURLs: 2.82.2
-    methodSecurity: 2.82.0
     serverIDs: 2.81.2
 generatedFiles:
   - src/sdk/companybenefits.ts
@@ -478,7 +477,6 @@ generatedFiles:
   - docs/sdk/models/operations/putv1employeesemployeeidonboardingstatusrequest.md
   - docs/sdk/models/operations/putv1employeesemployeeidonboardingstatusresponsebody.md
   - docs/sdk/models/operations/putv1employeesemployeeidonboardingstatusresponse.md
-  - docs/sdk/models/operations/getv1companiescompanyidfederaltaxdetailssecurity.md
   - docs/sdk/models/operations/getv1companiescompanyidfederaltaxdetailsrequest.md
   - docs/sdk/models/operations/getv1companiescompanyidfederaltaxdetailsresponse.md
   - docs/sdk/models/operations/putv1companiescompanyidfederaltaxdetailsrequestbody.md

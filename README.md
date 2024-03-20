@@ -518,37 +518,6 @@ async function run() {
 run();
 
 ```
-
-### Per-Operation Security Schemes
-
-Some operations in this SDK require the security scheme to be specified at the request level. For example:
-```typescript
-import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-    GetV1CompaniesCompanyIdFederalTaxDetailsRequest,
-    GetV1CompaniesCompanyIdFederalTaxDetailsSecurity,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
-
-async function run() {
-    const sdk = new Gusto();
-    const companyId: string = "<value>";
-    const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
-        authorization: "<YOUR_BEARER_TOKEN_HERE>",
-    };
-
-    const res = await sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails(
-        operationSecurity,
-        companyId
-    );
-
-    if (res.statusCode == 200) {
-        // handle response
-    }
-}
-
-run();
-
-```
 <!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

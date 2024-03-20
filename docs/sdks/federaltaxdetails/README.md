@@ -14,19 +14,17 @@ Fetches attributes relevant for a company's federal taxes.
 
 ```typescript
 import { Gusto } from "@speakeasy-sdks/gusto";
-import {
-  GetV1CompaniesCompanyIdFederalTaxDetailsRequest,
-  GetV1CompaniesCompanyIdFederalTaxDetailsSecurity,
-} from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
+import { GetV1CompaniesCompanyIdFederalTaxDetailsRequest } from "@speakeasy-sdks/gusto/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new Gusto();
+  const sdk = new Gusto({
+    security: {
+      authorization: "<YOUR_BEARER_TOKEN_HERE>",
+    },
+  });
 const companyId: string = "<value>";
-const operationSecurity: GetV1CompaniesCompanyIdFederalTaxDetailsSecurity = {
-  authorization: "<YOUR_BEARER_TOKEN_HERE>",
-};
 
-  const res = await sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails(operationSecurity, companyId);
+  const res = await sdk.federalTaxDetails.getV1CompaniesCompanyIdFederalTaxDetails(companyId);
 
   if (res.statusCode == 200) {
     // handle response
@@ -38,11 +36,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                                     | [operations.GetV1CompaniesCompanyIdFederalTaxDetailsSecurity](../../sdk/models/operations/getv1companiescompanyidfederaltaxdetailssecurity.md) | :heavy_check_mark:                                                                                                                             | The security requirements to use for the request.                                                                                              |
-| `companyId`                                                                                                                                    | *string*                                                                                                                                       | :heavy_check_mark:                                                                                                                             | The UUID of the company                                                                                                                        |
-| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `companyId`                                                  | *string*                                                     | :heavy_check_mark:                                           | The UUID of the company                                      |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

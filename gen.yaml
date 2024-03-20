@@ -10,7 +10,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 typescript:
-  version: 0.53.4
+  version: 0.54.0
   author: gusto
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: false
